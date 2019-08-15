@@ -1,0 +1,56 @@
+/* r.a.d. input WebBlue skin */
+
+.Default_WebBlue,
+.Over_WebBlue,
+.Focus_WebBlue,
+.Error_WebBlue
+{
+	font: normal 11px Arial, Verdana, Tahoma, Sans-Serif;
+}
+
+.Default_WebBlue
+{
+	color: #afbec5;
+	border: solid 1px #afbec5;
+	background: #f7f8f9;
+}
+
+.Over_WebBlue
+{
+	color: #899aa2;
+	border: solid 1px #899aa2;
+	background: white;
+}
+
+.Focus_WebBlue
+{
+	color: #899aa2;
+	border: solid 1px #899aa2;
+	background: #f7f8f9;
+}
+
+.Error_WebBlue
+{
+	color: #ff9000;
+	border: solid 1px #ff9000;
+	background: white;
+}
+
+.Hint_WebBlue
+{
+	margin-top: 5px;
+	background: #f7f8f9;
+	border: solid 1px #f7f8f9;
+	text-align: left;
+	overflow: auto;
+}
+
+.Hint_WebBlue a,
+.Hint_WebBlue a:visited,
+.Hint_WebBlue a:hover
+{
+	margin: 2px;
+	color: #f7f8f9;
+	text-decoration: none;
+	font-size: small;
+}

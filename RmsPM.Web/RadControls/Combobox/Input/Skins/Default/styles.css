@@ -1,0 +1,53 @@
+.Over_Default
+{
+	font: normal 11px Arial, Verdana, Tahoma, Sans-Serif;
+	color: #242424;
+	background: white;
+	border: solid 1px #c6c6c6;
+	vertical-align: middle;
+}
+
+.Focus_Default
+{
+	font: normal 11px Arial, Verdana, Tahoma, Sans-Serif;
+	color: #242424;
+	border: solid 1px #777;
+	background-color: white;
+	vertical-align: middle;
+}
+
+.Default_Default
+{
+	font: normal 11px Arial, Verdana, Tahoma, Sans-Serif;
+	color: #424242;
+	border: solid 1px #aeaeae;
+	background: white;
+	vertical-align: middle;
+}
+
+.Error_Default
+{
+	font: normal 11px Arial, Verdana, Tahoma, Sans-Serif;
+	color: #ff9000;
+	border: solid 1px #ff9000;
+	background: white;
+	vertical-align: middle;
+}
+.Hint_Default
+{
+	background: infobackground;
+	margin-top: 5px;
+	border: solid 1px black;
+	text-align: left;
+	overflow: auto;
+}
+
+.Hint_Default a,
+.Hint_Default a:visited,
+.Hint_Default a:hover
+{
+	margin: 2px;
+	color: black;
+	text-decoration: none;
+	font-size: small;
+}

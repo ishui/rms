@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Localizations>
+<Loc _locID="RES_SlideViewer_Play">播放</Loc>
+<Loc _locID="RES_SlideViewer_Pause">暂停</Loc>
+<Loc _locID="RES_SlideViewer_Stop">停止</Loc>
+<Loc _locID="RES_SlideViewer_Previous">上一张</Loc>
+<Loc _locID="RES_SlideViewer_Next">下一张</Loc>
+<Loc _locID="RES_SlideViewer_ShowTitles">显示标题</Loc>
+<Loc _locID="RES_SlideViewer_Slow">慢速</Loc>
+<Loc _locID="RES_SlideViewer_Fast">快速</Loc>
+<Loc _locID="RES_SlideViewer_Loading">加载</Loc>
+<Loc _locID="RES_SlideViewer_LoadingPleaseWait">正在加载...</Loc>
+<Loc _locID="RES_SlideViewer_WindowTitle">PicList</Loc>
+<Loc _locID="RES_SlideViewer_ImageNotAvailable">图像不可用</Loc>
+<Loc _locID="RES_ErrorMessage">此时无法打开照片查看器。要重试，请单击您的浏览器上的“刷新”按钮。</Loc>
+<Loc _locID="RES_PlayPause_ShortcutKey">Ctrl-Alt-p</Loc>
+<Loc _locID="RES_Stop_ShortcutKey">Ctrl-Alt-s</Loc>
+<Loc _locID="RES_Next_ShortcutKey">右箭头</Loc>
+<Loc _locID="RES_Previous_ShortcutKey">左箭头</Loc>
+<Loc _locID="RES_Speed_ShortcutKey">快速 (+) /慢速 (-)</Loc>
+<Loc _locID="RES_ToggleText_ShortcutKey">Ctrl-Alt-t</Loc>
+</Localizations>

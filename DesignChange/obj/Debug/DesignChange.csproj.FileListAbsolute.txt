@@ -1,0 +1,12 @@
+G:\源代码\工程项目管理系统源码\DesignChange\bin\Debug\DesignChange.dll
+G:\源代码\工程项目管理系统源码\DesignChange\bin\Debug\DesignChange.pdb
+G:\源代码\工程项目管理系统源码\DesignChange\obj\Debug\DesignChange.csprojAssemblyReference.cache
+G:\源代码\工程项目管理系统源码\DesignChange\obj\Debug\DesignChange.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码\DesignChange\obj\Debug\DesignChange.dll
+G:\源代码\工程项目管理系统源码\DesignChange\obj\Debug\DesignChange.pdb
+G:\源代码\工程项目管理系统源码_20190605\DesignChange\bin\Debug\DesignChange.dll
+G:\源代码\工程项目管理系统源码_20190605\DesignChange\bin\Debug\DesignChange.pdb
+G:\源代码\工程项目管理系统源码_20190605\DesignChange\obj\Debug\DesignChange.csprojAssemblyReference.cache
+G:\源代码\工程项目管理系统源码_20190605\DesignChange\obj\Debug\DesignChange.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码_20190605\DesignChange\obj\Debug\DesignChange.dll
+G:\源代码\工程项目管理系统源码_20190605\DesignChange\obj\Debug\DesignChange.pdb

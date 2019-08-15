@@ -1,0 +1,2650 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Infragistics.WebUI.UltraWebChart.v5.1</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.UltraChart.Render.ActiveImage.ActiveImageRender">
+            <summary>
+            Summary description for ActiveImageRender.
+            </summary>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.ActiveImageRender.#ctor(Infragistics.UltraChart.Resources.IChartComponent,Infragistics.UltraChart.Core.ChartCore)">
+            <summary>
+            ActiveImageRender constructor.
+            </summary>
+            <param name="component">A reference to the chart component being used.</param>
+            <param name="core">The chart core responsible for this ActiveImage renderer.</param>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.ActiveImageRender.Draw(Infragistics.UltraChart.Core.Primitives.GraphicsContext)">
+            <summary>
+            Draws a GraphicsContext primitive to the rendering device.
+            </summary>
+            <param name="gc">The GraphicsContext to render.</param>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.ActiveImageRender.RenderChart(Infragistics.UltraChart.Render.IFGDevice3D,Infragistics.UltraChart.Render.ActiveImage.CIMMap,System.Boolean,System.Boolean)">
+            <summary>
+            Renders the chart shapes to the ActiveImage CIMMap.
+            </summary>
+            <param name="device">The IFGDevice3D containing the chart.</param>
+            <param name="map">The CIMMap to add the shapes to.</param>
+            <param name="is3DChart">Determines whether or not a 3D chart is being rendered.</param>
+            <param name="is508Compliant">Determines whether or not the WebChart being rendered has 508 compliance turned on.</param>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.ActiveImageRender.RenderChart(Infragistics.UltraChart.Core.SceneGraph,Infragistics.UltraChart.Render.ActiveImage.CIMMap,System.Boolean,System.Boolean)">
+            <summary>
+            Renders the chart shapes to the ActiveImage CIMMap. 
+            </summary>
+            <param name="scene">The SceneGraph containing the chart primitives.</param>
+            <param name="map">The CIMMap to render the chart shapes to.</param>
+            <param name="is3DChart">Indicates whether or not a 3D chart is being rendered.</param>
+            <param name="is508Compliant">Indicates whether or not the WebChart being rendered has 508 compliance turned on.</param>
+        </member>
+        <member name="T:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate">
+            <summary>
+            Client-Side ImageMap Event Delegate class.
+            </summary>
+        </member>
+        <member name="F:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.MOUSE_OVER">
+            <summary>
+            Mouse over signal constant.
+            </summary>
+        </member>
+        <member name="F:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.MOUSE_OUT">
+            <summary>
+            Mouse out signal constant.
+            </summary>
+        </member>
+        <member name="F:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.MOUSE_CLICKED">
+            <summary>
+            Mouse clicked signal constant.
+            </summary>
+        </member>
+        <member name="F:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.DRILLED_DOWN">
+            <summary>
+            Drilled down signal constant.
+            </summary>
+        </member>
+        <member name="F:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.MOUSE_DOUBLECLICKED">
+            <summary>
+            Mouse doubleclicked signal constant.
+            </summary>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.#ctor">
+            <summary>
+            CIMEventDelegate constructor.
+            </summary>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.#ctor(Infragistics.UltraChart.Render.ActiveImage.ScriptLanguage)">
+            <summary>
+            CIMEventDelegate constructor.
+            </summary>
+            <param name="name">Script language being used by this CIMEventDelegate.</param>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.#ctor(System.String)">
+            <summary>
+            CIMEventDelegate constructor.
+            </summary>
+            <param name="name">Name identifier of this CIMEventDelegate.</param>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.#ctor(System.String,Infragistics.UltraChart.Render.ActiveImage.ScriptLanguage)">
+            <summary>
+            CIMEventDelegate constructor.
+            </summary>
+            <param name="name">Name identifier of this CIMEventDelegate.</param>
+            <param name="language">Script language being used by this CIMEventDelegate.</param>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.ToString">
+            <summary>
+            Converts this CIMEventDelegate to a string in the form of a script block.
+            </summary>
+            <returns>A string containing a script block used by this CIMEventDelegate.</returns>
+        </member>
+        <member name="P:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.URL">
+            <summary>
+            The current URL for this CIMEventDelegate.
+            </summary>
+        </member>
+        <member name="P:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.Arguments">
+            <summary>
+            Arguments for this CIMEventDelegate.
+            </summary>
+        </member>
+        <member name="P:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.Code">
+            <summary>
+            Code used for this CIMEventDelegate.
+            </summary>
+        </member>
+        <member name="P:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.Language">
+            <summary>
+            ScriptLanguage to be used by this CIMEventDelegate.
+            </summary>
+        </member>
+        <member name="P:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.Name">
+            <summary>
+            Name identifier of this CIMEventDelegate.
+            </summary>
+        </member>
+        <member name="P:Infragistics.UltraChart.Render.ActiveImage.CIMEventDelegate.DeclSpec">
+            <summary>
+            Special declarations for this CIMEventDelegate
+            </summary>
+        </member>
+        <member name="T:Infragistics.UltraChart.Render.ActiveImage.CIMMap">
+            <summary>
+            Client-Side Image Map class.
+            </summary>
+        </member>
+        <member name="T:Infragistics.UltraChart.Render.ActiveImage.HTMLTag">
+            <summary>
+            This member supports the charting internal infrastructure and is not intended to be used directly from your code
+            </summary>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMMap.#ctor">
+            <summary>
+            CIMMap constructor.
+            </summary>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMMap.setData(Infragistics.UltraChart.Data.IChartData)">
+            <summary>
+            Sets the data to be used by this CIMMap.
+            </summary>
+            <param name="dat">The IChartData being used by this CIMMap.</param>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMMap.setEnvironment(System.Collections.Hashtable)">
+            <summary>
+            Sets the environment hashtable for this CIMMap.
+            </summary>
+            <param name="environment">The environment hashtable for this CIMMap, from the chart core.</param>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMMap.setEnginePrefix(System.String)">
+            <summary>
+            Sets the event engine prefix string for this CIMMap.
+            </summary>
+            <param name="pre">The prefix to use.</param>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMMap.getEnginePrefix">
+            <summary>
+            Gets the event engine prefix for this CIMMap.
+            </summary>
+            <returns>The event engine prefix for this CIMMap.</returns>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMMap.setClientSideCallbackLanguage(Infragistics.UltraChart.Render.ActiveImage.ScriptLanguage)">
+            <summary>
+            Sets the client-side event delegation language.
+            </summary>
+            <param name="l">The language to use.</param>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMMap.getClientSideCallbackLanguage">
+            <summary>
+            Gets the client-side event delegation language used by this CIMMap.
+            </summary>
+            <returns>The client-side event delegation language used by this CIMMap.</returns>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMMap.setPVCEventMask(System.Int32)">
+            <summary>
+            Sets the event mask for this CIMMap.
+            </summary>
+            <param name="evtM">The event mask for this CIMMap.</param>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMMap.getPVCEventMask">
+            <summary>
+            Gets the event mask for this CIMMap.
+            </summary>
+            <returns>The event mask for this CIMMap.</returns>
+        </member>
+        <member name="F:Infragistics.UltraChart.Render.ActiveImage.CIMMap.Listener">
+            <summary>
+            The listener used by this CIMMap.
+            </summary>
+        </member>
+        <member name="F:Infragistics.UltraChart.Render.ActiveImage.CIMMap.CodeTrail">
+            <summary>
+            Code trail field used by this CIMMap.
+            </summary>
+        </member>
+        <member name="F:Infragistics.UltraChart.Render.ActiveImage.CIMMap.DeclSpec">
+            <summary>
+            Special declarations used by this CIMMap.
+            </summary>
+        </member>
+        <member name="M:Infragistics.UltraChart.Render.ActiveImage.CIMMap.ToString">
+            <summary>
+            Converts this CIMMap into a string.
+            </summary>
+            <returns>The string representation of this CIMMap.</returns>
+        </member>
+        <member name="P:Infragistics.UltraChart.Render.ActiveImage.CIMMap.GenerateListenerCode">
+            <summary>
+            Determines whether or not this CIMMap should generate the code for the event listeners.
+            </summary>
+        </member>
+        <member name="P:Infragistics.UltraChart.Render.ActiveImage.CIMMap.ClientSide">
+            <summary>
+            Determines whether or not this CIMMap exists on the client machine.
+            </summary>
+        </member>
+        <member name="P:Infragistics.UltraChart.Render.ActiveImage.CIMMap.ServerSide">
+            <summary>
+            Determines whether or not this CIMMap exists on the server.
+            </summary>
+        </member>
+        <member name="T:Infragistics.UltraChart.Render.ActiveImage.CIMTooltip">
+            <summary>
+            Summary description for CIMTooltip.
+            </summary>
+        </member>
+        <member name="T:Infragistics.UltraChart.Render.ActiveImage.ScriptConstants">
+            <summary>
+            Summary description for ScriptConstants.
+            </summary>
+        </member>
+        <member name="T:Infragistics.UltraChart.Render.Svg.SvgXml">
+            <summary>
+            Summary description for SvgXml.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebChart.WebChartHelper.UltraWebChartBuilder">
+            <summary>
+            Summary description for WebChartControlBuilder.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebChart.WebChartHelper.UltraWebChartDVS">
+            <summary>
+            Delta View State for UltraChart
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebChartHelper.UltraWebChartDVS.#ctor">
+            <summary>
+            This class supports charting framework. Not to be used explictly in the code.
+            </summary>
+        </member>
+        <member name="T:Infragistics.UltraChart.Shared.Exceptions.ImageStoreException">
+            <summary>
+            Thrown when a file path passed into a method is not valid.
+            This usually means that the path is not found or access has been denied.
+            </summary>
+        </member>
+        <member name="M:Infragistics.UltraChart.Shared.Exceptions.ImageStoreException.#ctor">
+            <summary>
+            Creates a ImageStoreException with default properties.
+            </summary>
+        </member>
+        <member name="M:Infragistics.UltraChart.Shared.Exceptions.ImageStoreException.#ctor(System.String)">
+            <summary>
+            Creates a ImageStoreException with the specified exception message.
+            </summary>
+            <param name="message">An error message.</param>
+        </member>
+        <member name="M:Infragistics.UltraChart.Shared.Exceptions.ImageStoreException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates a ImageStoreException with the specified exception message, and inner exception.
+            </summary>
+            <param name="message">An error message.</param>
+            <param name="innerEx">An inner exception.</param>
+        </member>
+        <member name="T:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems">
+            <summary>
+            Summary description for Section508WebItems.
+            </summary>
+        </member>
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.ShouldSerializeTitleFormatString">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.TitleFormatString"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.TitleFormatString"/> property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.ResetTitleFormatString"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.ResetTitleFormatString">
+            <summary>
+            Resets the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.TitleFormatString"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.TitleFormatString"/> property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.ShouldSerializeTitleFormatString"/> method will return False until the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.TitleFormatString"/> property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.ShouldSerializeLongDescUrl">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.LongDescUrl"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.LongDescUrl"/> property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.ResetLongDescUrl"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.ResetLongDescUrl">
+            <summary>
+            Resets the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.LongDescUrl"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.LongDescUrl"/> property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.ShouldSerializeLongDescUrl"/> method will return False until the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.LongDescUrl"/> property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.Reset">
+            <summary>
+            Resets the <see cref="!:Section508WebItems"/> class to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.ShouldSerialize"/> method will return False until the <see cref="!:Section508WebItems"/>'s properties are set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.ShouldSerialize">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="T:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems"/>'s properties are set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the <see cref="T:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems"/> 's properties are set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.Reset"/> method to reset the properties to their default value.</p>
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.TitleFormatString" -->
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.LongDescUrl" -->
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.TitleAttribute" -->
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.UltraChart.Resources.Appearance.Section508ChartItems.LongDescAttribute" -->
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.ShouldSerializeAltFormatString">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.AltFormatString"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.AltFormatString"/> property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.ResetAltFormatString"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.ResetAltFormatString">
+            <summary>
+            Resets the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.AltFormatString"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.AltFormatString"/> property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.ShouldSerializeAltFormatString"/> method will return False until the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.AltFormatString"/> property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.ShouldSerializeDescriptionLinkUrl">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.DescriptionLinkUrl"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.DescriptionLinkUrl"/> property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.ResetDescriptionLinkUrl"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.ResetDescriptionLinkUrl">
+            <summary>
+            Resets the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.DescriptionLinkUrl"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.DescriptionLinkUrl"/> property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.ShouldSerializeDescriptionLinkUrl"/> method will return False until the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.DescriptionLinkUrl"/> property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.Reset">
+            <summary>
+            Resets the <see cref="!:Section508WebItems"/> class to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.ShouldSerialize"/> method will return False until the <see cref="!:Section508WebItems"/>'s properties are set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.ShouldSerialize">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="T:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage"/>'s properties are set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the <see cref="T:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage"/> 's properties are set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.Reset"/> method to reset the properties to their default value.</p>
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.AltFormatString" -->
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.DescriptionLinkUrl" -->
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.AltAttribute" -->
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.UltraChart.Resources.Appearance.Section508ChartImage.DescriptionLinkTag" -->
+        <member name="T:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance">
+            <summary>
+            Summary description for Section508WebAppearance.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ShouldSerializeChartItems" -->
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ResetChartItems">
+            <summary>
+            Resets the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ChartItems"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ChartItems"/> property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ShouldSerializeChartItems"/> method will return False until the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ChartItems"/> property is set again.</p>
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ShouldSerializeChartImage" -->
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ResetChartImage">
+            <summary>
+            Resets the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ChartImage"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ChartImage"/> property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ShouldSerializeChartImage"/> method will return False until the <see cref="P:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ChartImage"/> property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ShouldSerialize">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="T:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance"/>'s properties are set to their default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.Reset">
+            <summary>
+            Resets the <see cref="T:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance"/>'s  properties to their default values.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ChartItems" -->
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.UltraChart.Resources.Appearance.Section508WebAppearance.ChartImage" -->
+        <member name="T:Infragistics.WebUI.UltraWebChart.SecureImagePipe">
+            <summary>
+            Image server control to server the images to UltraWebChart
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.SecureImagePipe.#ctor">
+            <summary>
+            Creates an instance of secure image pipe for delivering chart images on web.
+            </summary>
+            <remarks>
+            <p class="body">Because charts in your web application may contain sensitive or 
+            confidential data, UltraWebChart provides a secure channel for chart images via 
+            the SecureImagePipe. The SecureImagePipe establishes connection between the server 
+            and the browser that is used to transmit all chart image data. The <b>SecureImagePipe</b> 
+            property provides access to the settings of the secure image pipe, such as the format 
+            that will be used to stream the image and whether the browser will cache images locally.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.SecureImagePipe.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the chart image and streams it to the browser using the HTTP connection.
+            </summary>
+            <param name="output">Output stream.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Infragistics.WebUI.UltraWebChart.SecureImagePipe.ShouldSerializeImageType" -->
+        <member name="M:Infragistics.WebUI.UltraWebChart.SecureImagePipe.ResetSerializeImageType">
+            <summary>
+            Resets SerializeImageType to its default setting.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.SecureImagePipe.ShouldSerializePragmaNoCache">
+            <summary>
+            Indicates whether the PragmaNoCache property should be persisted.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.SecureImagePipe.ImageType">
+            <summary>
+            Specifies the image file format used to stream the chart. 
+            </summary>
+            <remarks>
+            Available image formats include the compressed formats GIF, JPEG and PNG and the uncompressed formats BMP and TIFF.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.SecureImagePipe.PragmaNoCache">
+            <summary>
+            Cache setting of chart image in the browser.
+            </summary>
+            <remarks>
+            <p class="body">"PragmaNoCache" is an element of the HTTP header that specifies that the browser should not cache the image locally, but re-fetch it from the server whenever the page is refreshed. If your chart is updated frequently, you should set this property to True to ensure that the browser is always displaying the latest version of the chart. You should also set this property to True if your application automatically forces page refreshes on the browser.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.SecureImagePipe.ID">
+            <summary>
+            Returns the unique ID of the SecureImagePipe.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.SecureImagePipe.EnableViewState">
+            <summary>
+            Gets or sets a value indicating whether the server control persists its view state, and the view state of any child controls it contains, to the requesting client.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.SecureImagePipe.Visible">
+            <summary>
+            Gets or sets a value that indicates whether a server control is rendered as UI on the page.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.LocalizedCategoryAttribute.GetLocalizedString(System.String)">
+            <summary>
+            Returns the localized category name
+            </summary>
+            <param name="value">Name of the category to retreive</param>
+            <returns>The localized string value</returns>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebChart.UltraChart">
+            <summary>
+            The UltraChart, charting control from Infragistics, Inc. 
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebChart.UltraChart.filterDoc">
+            <summary>
+            For internal use only.
+            </summary>		
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.SavePreset(System.String,System.String,System.String,Infragistics.WebUI.PresetType)">
+            <summary>
+            Saves preset to file path.
+            </summary>
+            <param name="filePath">Path of file</param>
+            <param name="presetType">The type of properties (Appearance, Behavior, or Both) which should be saved in this preset.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.SavePreset(System.IO.TextWriter,System.String,System.String,Infragistics.WebUI.PresetType)">
+            <summary>
+            Save preset to text writer. This can be used to save preset to string using StringWriter.
+            </summary>
+            <param name="xtw">text writer</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.SavePreset(System.IO.Stream,System.String,System.String,Infragistics.WebUI.PresetType)">
+            <summary>
+            Save preset to the stream
+            </summary>
+            <param name="stream">reference to stream object</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.LoadPreset(System.String,System.Boolean)">
+            <summary>
+            Load a preset from a file.
+            </summary>
+            <param name="filePath">file path</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.LoadPreset(System.IO.Stream,System.Boolean)">
+            <summary>
+            Load a preset from a stream.
+            </summary>
+            <param name="xtw">stream object</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.LoadPreset(System.IO.TextReader,System.Boolean)">
+            <summary>
+            Load a preset from a text reader.
+            </summary>
+            <param name="xtw">text reader</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.BeginInit">
+            <summary>
+            Signals the object that initialization is starting.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.EndInit">
+            <summary>
+            Signals the object that initialization is ending.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.GetClientSideEvents">
+            <summary>
+            Provides with list of public events
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.GetClientSideControlName">
+            <summary>
+            Provides Control Name.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.#ctor(System.String)">
+            <summary>
+            Creates an instance of UltraChart for webform (ASP.NET) with default settings with given ID.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.#ctor">
+            <summary>
+            Creates an instance of UltraChart for webform (ASP.NET) with default settings.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.OnInit(System.EventArgs)">
+            <summary>
+            OnInit is called upon initialization of the component after an instance is created.
+            </summary>
+            <param name="evt"></param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.LoadViewState(System.Object)">
+            <summary>
+            This method is overridden to implement the saving of view state in Ultrachart
+            </summary>
+            <param name="state">State passed by system</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.SaveViewState">
+            <summary>
+            This is overridden to implement the view state in the UltraChart.
+            </summary>
+            <returns>Returns the view state of the control.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.PrintChart">
+            <summary>
+            Prints the chart to the default printer using the default page settings.
+            </summary>
+            
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.PrintChart(System.Drawing.Printing.PrinterSettings,System.Drawing.Printing.PageSettings)">
+            <summary>
+            Prints the chart to the specified printer using the specified page settings.
+            </summary>
+            <remarks>
+            <p class="body">The PageSettings object is used to specify the attributes of the print job, such as page size, orientation, margins, etc.</p>
+            </remarks>
+            <param name="printer">The <a href="ms-help://MS.VSCC/MS.MSDNVS/cpref/html/frlrfsystemdrawingprintingprintersettingsclasstopic.htm">PrinterSettings</a> object that names the printer. If no value is supplied, the default printer will be used</param>
+            <param name="page">The <a href="ms-help://MS.VSCC/MS.MSDNVS/cpref/html/frlrfsystemdrawingprintingpagesettingsclasstopic.htm">PageSettings</a> object that specifies how the print job will formatted. If no value is supplied, the default page settings will be used.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeChartImagesPath">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ChartImagesPath"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            ChartImagesPath property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ChartImagesPath"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetChartImagesPath">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ChartImagesPath"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            ChartImagesPath property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeChartImagesPath"/> method will return False until the
+            ChartImagesPath property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeEnableScrollBar">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.EnableScrollBar"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            EnableScrollBar property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.EnableScrollBar"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetEnableScrollBar">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.EnableScrollBar"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            EnableScrollBar property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeEnableScrollBar"/> method will return False until the
+            EnableScrollBar property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeScrollBarImagesPrefix">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScrollBarImagesPrefix"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScrollBarImagesPrefix"/> property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetScrollBarImagesPrefix"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetScrollBarImagesPrefix">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScrollBarImagesPrefix"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScrollBarImagesPrefix"/> property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeScrollBarImagesPrefix"/> method will return False until the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScrollBarImagesPrefix"/> property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeJavaScriptFileName">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.JavaScriptFileName"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the JavaScriptFileName property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetJavaScriptFileName"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeJavaScriptEnabled">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.JavaScriptEnabled"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the JavaScriptEnabled property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetJavaScriptEnabled"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetJavaScriptFileName">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.JavaScriptFileName"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            JavaScriptFileName property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeJavaScriptFileName"/> method will return False until the
+            JavaScriptFileName property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetJavaScriptEnabled">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.JavaScriptEnabled"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            JavaScriptEnabled property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeJavaScriptEnabled"/> method will return False until the
+            JavaScriptEnabled property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeClientSideEvents">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ClientSideEvents"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ClientSideEvents property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetClientSideEvents"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetClientSideEvents">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ClientSideEvents"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            ClientSideEvents property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeClientSideEvents"/> method will return False until the
+            ClientSideEvents property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeImagePipePageName">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ImagePipePageName"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ImagePipePageName property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetImagePipePageName"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetImagePipePageName">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ImagePipePageName"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            ImagePipeName property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeImagePipeName"/> method will return False until the
+            ImagePipeName property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeImagePipeName">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ImagePipePageName"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ImagePipePageName property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetImagePipePageName"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeWidth">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Width"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the Width property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetWidth"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetWidth">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Width"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the Width property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeWidth"/> method will return False until the Width property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeHeight">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Height"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the Height property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetHeight"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetHeight">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Height"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the Height property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeHeight"/> method will return False until the
+            Height property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeChartType">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ChartType"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ChartType property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetChartType"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetChartType">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ChartType"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            ChartType property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeChartType"/> method will return False until the
+            ChartType property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeColumnLineChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ColumnLineChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            ColumnLineChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetColumnLineChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetColumnLineChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ColumnLineChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            ColumnLineChart property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeColumnLineChart"/> method will return False until the
+            ColumnLineChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeScatterLineChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScatterLineChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            ScatterLineChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetScatterLineChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetScatterLineChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScatterLineChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            ScatterLineChart property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeScatterLineChart"/> method will return False until the
+            ScatterLineChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeTransform3D">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Transform3D"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the Transform3D property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetTransform3D"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetTransform3D">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Transform3D"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the Transform3D property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeTransform3D"/> method will return False until the
+            Transform3D property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBorder">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Border"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the Border property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBorder"/> method will return False until the
+            Border property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBorder">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Border"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            Border property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBorder"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetLegend">
+            <summary>
+            Resets the Legend property to its default value.
+            </summary>
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Legend"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the Legend property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeLegend"/> method will return False until the
+            Legend property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeLegend">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Legend"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            Legend property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetLegend"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeData">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Data"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            Data property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetData"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetData">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Data"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            Data property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeData"/> method will return False until the
+            Data property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeEmptyChartText">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.EmptyChartText"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the EmptyChartText property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetEmptyChartText"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetEmptyChartText">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.EmptyChartText"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the EmptyChartText property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeEmptyChartText"/> method will return False until the
+            EmptyChartText property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeTitleTop">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.TitleTop"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            TitleTop property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetTitleTop"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetTitleTop">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.TitleTop"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            TitleTop property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeTitleTop"/> method will return False until the
+            TitleTop property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeTitleLeft">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.TitleLeft"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            TitleLeft property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetTitleLeft"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetTitleLeft">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.TitleLeft"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            TitleLeft property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeTitleLeft"/> method will return False until the
+            TitleLeft property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeTitleRight">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.TitleRight"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            TitleRight property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetTitleRight"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetTitleRight">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.TitleRight"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            TitleRight property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeTitleRight"/> method will return False until the
+            TitleRight property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeTitleBottom">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.TitleBottom"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            TitleBottom property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetTitleBottom"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetTitleBottom">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.TitleBottom"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            TitleBottom property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeTitleBottom"/> method will return False until the
+            TitleBottom property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeColorModel">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ColorModel"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            ColorModel property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ColorModel"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetColorModel">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ColorModel"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            ColorModel property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeColorModel"/> method will return False until the
+            ColorModel property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeLineChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.LineChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            LineChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetLineChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetLineChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.LineChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            LineChart property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeLineChart"/> method will return False until the
+            LineChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeScatterChart">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScatterChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ScatterChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetScatterChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetScatterChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScatterChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the ScatterChart property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeScatterChart"/> method will return False until the
+            ScatterChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializePieChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.PieChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            PieChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetPieChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetPieChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.PieChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            PieChart property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializePieChart"/> method will return False until the
+            PieChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeHeatMapChart3D">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.HeatMapChart3D"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            HeatMapChart3D property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetHeatMapChart3D"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetHeatMapChart3D">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.HeatMapChart3D"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            HeatMapChart3D property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeHeatMapChart3D"/> method will return False until the
+            HeatMapChart3D property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeDoughnutChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.DoughnutChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            DoughnutChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetDoughnutChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetDoughnutChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.DoughnutChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            DoughnutChart property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeDoughnutChart"/> method will return False until the
+            DoughnutChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeSplineChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.SplineChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            SplineChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetSplineChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetSplineChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.SplineChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            SplineChart property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeSplineChart"/> method will return False until the
+            SplineChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeSplineAreaChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.SplineAreaChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            SplineAreaChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetSplineAreaChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetSplineAreaChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.SplineAreaChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            SplineAreaChart property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeSplineAreaChart"/> method will return False until the
+            SplineAreaChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeRadarChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.RadarChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            RadarChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetPieChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetRadarChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.RadarChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            RadarChart property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeRadarChart"/> method will return False until the
+            RadarChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializePieChart3D">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.PieChart3D"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            PieChart3D property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetPieChart3D"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetPieChart3D">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.PieChart3D"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            PieChart3D property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializePieChart3D"/> method will return False until the
+            PieChart3D property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBarChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.BarChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            BarChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBarChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBarChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.BarChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the BarChart property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBarChart"/> method will return False until the
+            BarChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBarChart3D">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="!:BarChar3Dt"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            BarChart3D property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBarChart3D"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBarChart3D">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.BarChart3D"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the BarChart3D property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBarChart3D"/> method will return False until the
+            BarChart3D property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeColumnChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ColumnChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            ColumnChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetColumnChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetColumnChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ColumnChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            ColumnChart property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeColumnChart"/> method will return False until the
+            ColumnChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeGanttChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.GanttChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            GanttChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetGanttChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetGanttChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.GanttChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            GanttChart property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeGanttChart"/> method will return False until the
+            GanttChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeColumnChart3D">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ColumnChart3D"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            ColumnChart3D property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetColumnChart3D"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetColumnChart3D">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ColumnChart3D"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            ColumnChart3D property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeColumnChart3D"/> method will return False until the
+            ColumnChart3D property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeAreaChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.AreaChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            AreaChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetAreaChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetAreaChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.AreaChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            AreaChart property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeAreaChart"/> method will return False until the
+            AreaChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeAxis">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Axis"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            Axis property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetAxis"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetAxis">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Axis"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            Axis property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeAxis"/> method will return False until the
+            Axis property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeHeatMapChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.HeatMapChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            HeatMapChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetHeatMapChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetHeatMapChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.HeatMapChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            HeatMapChart property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeHeatMapChart"/> method will return False until the
+            HeatMapChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBubbleChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.BubbleChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            BubbleChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBubbleChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBubbleChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.BubbleChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the BubbleChart property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBubbleChart"/> method will return False until the
+            BubbleChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBackColor">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.BackColor"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the BackColor property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBackColor"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBackColor">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.BackColor"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the BackColor property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBackColor"/> method will return False until the
+            BackColor property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeCrossHairColor">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.CrossHairColor"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the CrossHairColor property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetEnableCrossHair"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetCrossHairColor">
+            <summary>
+            Resets the CrossHairColor property to its default value.
+            </summary>
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.EnableCrossHair"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the EnableCrossHair property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeEnableCrossHair"/> method will return False until the
+            EnableCrossHair property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeEnableCrossHair">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.EnableCrossHair"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the EnableCrossHair property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetEnableCrossHair"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetEnableCrossHair">
+            <summary>
+            Resets the EnableCrossHair property to its default value.
+            </summary>
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.EnableCrossHair"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the EnableCrossHair property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeEnableCrossHair"/> method will return False until the
+            EnableCrossHair property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBackgroundImageFileName">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.BackgroundImageFileName"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the BackgroundImage property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBackgroundImageFileName"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBackgroundImageFileName">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.BackgroundImageFileName"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the BackgroundImageFileName property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBackgroundImageFileName"/> method will return False until the
+            Background property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBackgroundImageStyle">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.BackgroundImageStyle"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the BackgroundImageStyle property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBackgroundImageStyle"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetBackgroundImageStyle">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.BackgroundImageStyle"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the BackgroundImageStyle property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeBackgroundImageStyle"/> method will return False until the
+            BackgroundImageStyle property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeTooltips">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Tooltips"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            Tooltips property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetTooltips"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetTooltips">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Tooltips"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            Tooltips property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeTooltips"/> method will return False until the
+            Tooltips property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeCandleChart">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.CandleChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            CandleChart property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetCandleChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetCandleChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.CandleChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the CandleChart property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeCandleChart"/> method will return False until the
+            CandleChart property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.Infragistics#UltraChart#Resources#IChartComponent#ResetDemoData">
+            <summary>
+            Reset the demo data. This only be used when chart has demo data. Otherwise it will give wrong chart.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.Infragistics#UltraChart#Resources#IChartComponent#OnAppearanceChanged">
+            <summary>
+            Updates component in designer if anything is changed.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.SaveTo(System.String,System.Drawing.Imaging.ImageFormat)">
+            <remarks>
+            <p class="body">This method saves the current chart image to a local file on the server. When the file is saved, the <see cref="!:ImageURL"/> property returns the URL of the image file.</p>
+            </remarks>
+            <param name="filePath">The full path and filename of the image that is being saved.</param>
+            <param name="imageType">The file format of the image, specified using <a href="ms-help://Infragistics.WebUI.UltraWebChart/Infragistics.WebUI.UltraWebChart/Infragistics.UltraChart.Resources~Infragistics.UltraChart.Shared.Styles.SupportedImageType.html">ImageType</a>.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.SaveTo(System.IO.Stream,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Saves the current chart image to a stream using the specified image format.
+            </summary>
+            <remarks>
+            <p class="body">This method saves the current chart image to a stream. The stream is kept open and it is up to application calling this method to close it.</p>
+            </remarks>
+            <param name="stream">The <a href="ms-help://MS.VSCC/MS.MSDNVS/cpref/html/frlrfsystemiostreamclasstopic.htm">stream</a> being used to save the image.</param>
+            <param name="imageType">The file format of the image, specified using <a href="ms-help://Infragistics.WebUI.UltraWebChart/Infragistics.WebUI.UltraWebChart/Infragistics.UltraChart.Resources~Infragistics.UltraChart.Shared.Styles.SupportedImageType.html">ImageType</a>.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.SaveLayout(System.Object,System.String)">
+            <summary>
+            [Depricated] Saves chart properties in xml format. 
+            </summary>
+            <param name="component">This component</param>
+            <param name="filePath">Path where to save layout at.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.SaveLayout(System.Object,System.IO.TextWriter)">
+            <summary>
+            [Depricated] Saves chart properties in xml format. 
+            </summary>
+            <param name="component">This component</param>
+            <param name="textWriter">Text writer to save layout to.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Infragistics.WebUI.UltraWebChart.UltraChart.SaveLayout(System.Object,System.Xml.XmlTextWriter)" -->
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.LoadLayout(System.Object,System.String)">
+            <summary>
+            [Deprecated] Loads chart properties from xml file. Please see LoadPreset.
+            </summary>
+            <param name="component">This component</param>
+            <param name="filePath">Xml file path to load layout from.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.LoadLayout(System.Object,System.IO.StreamReader)">
+            <summary>
+            [Deprecated] Loads chart properties from xml file. Please see LoadPreset.
+            </summary>
+            <param name="component">This component</param>
+            <param name="streamReader">stream reader</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.LoadLayout(System.Object,System.Xml.XmlTextReader)">
+            <summary>
+            [Deprecated] Loads chart properties from xml file. Please see LoadPreset.
+            </summary>
+            <param name="component">This component</param>
+            <param name="xmlW">Xml text reader to load layout from.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.IsDesignMode">
+            <summary>
+            Returns true if the component is in designer mode.
+            </summary>
+            <returns>boolean, true or false, depending upon if component is in design mode.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.DataValidity(System.Boolean,System.String)">
+            <summary>
+            sets whether the data is valid or not. NOT to be used by end user
+            </summary>
+            <returns>NOT to be used by the end user</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.InvalidateLayers">
+            <summary>
+            Redraw layers.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.RaisePostBackEvent(System.String)">
+            <summary>
+            This method handles the occurrence of post-back events on the server.
+            </summary>
+            <remarks>
+            <p class="body">This method is invoked in the component when an event occurs which requires data to be posted back to the server from the client. Typically, such events will require a page refresh on the browser to display any updated information.</p>
+            </remarks>
+            <param name="eventArgument"></param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeScrollBarImage">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScrollBarImage"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            ScrollBarImage property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScrollBarImage"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetScrollBarImage">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScrollBarImage"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            ScrollBarImage property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeScrollBarImage"/> method will return False until the
+            ScrollBarImage property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.DataBind">
+            <summary>
+            Forces the chart data to be refreshed.
+            </summary>
+            <remarks>
+            <p class="body">When first binding the chart control to a data source, it is necessary to assign a data source to the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.DataSource"/> property <i>and</i> call the DataBind() method.</p>
+            <p class="body">Normally, the chart will automatically update it's display when it recieves a notification from the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.DataSource"/> that something has changed.  However, if the DataSource does not provide this notification, this method can be called to refresh the chart.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeDeploymentScenario">
+            <summary>
+            Returns a Boolean value that determines whether the 
+            <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.DeploymentScenario"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the 
+            DeploymentScenario property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.DeploymentScenario"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetDeploymentScenario">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.DeploymentScenario"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the 
+            DeploymentScenario property to its default value.</p> 
+            <p class="body">Once this method is invoked, the 
+            <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeDeploymentScenario"/> method will return False until the
+            DeploymentScenario property is set again.</p>
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeSection508Compliant" -->
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetSection508Compliant">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Section508Compliant"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Section508Compliant"/> property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeSection508Compliant"/> method will return False until the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Section508Compliant"/> property is set again.</p>
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeSection508" -->
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetSection508">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Section508"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Section508"/> property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializeSection508"/> method will return False until the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.Section508"/> property is set again.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializePolarChart">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.PolarChart"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.PolarChart"/> property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetPolarChart"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraChart.ResetPolarChart">
+            <summary>
+            Resets the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.PolarChart"/> property to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to reset the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.PolarChart"/> property to its default value.</p>
+            <p class="body">Once this method is invoked, the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.ShouldSerializePolarChart"/> method will return False until the <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.PolarChart"/> property is set again.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.ChartImagesPath">
+            <summary>
+            Name of the JavaScript file that provides helper functions for the control.
+            </summary>
+            <remarks>
+            This property specifies the URL to the JavaScript file that is needed for normal operation of UltraWebChart. The JavaScript file contains all of the code for client- and server-side event handling, along with tooltip and ActiveImages code.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.EnableScrollBar">
+            <summary>
+            Enable/Disable scroll bar on the web chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.JavaScriptFileName">
+            <summary>
+            Name of the JavaScript file that provides helper functions for the control.
+            </summary>
+            <remarks>
+            This property specifies the URL to the JavaScript file that is needed for normal operation of UltraWebChart. The JavaScript file contains all of the code for client- and server-side event handling, along with tooltip and ActiveImages code.
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.WebUI.UltraWebChart.UltraChart.ScrollBarImagesPrefix" -->
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.JavaScriptEnabled">
+            <summary>
+            Determines whether or not client-side scripting is enabled for the UltraChart.
+            </summary>
+            <remarks>
+            Setting this property to False will result in Tooltips, Crosshair, Highlighting, and DrillDown being disabled.  The chart will be rendered to the client as a simple image.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.ImageUrl">
+            <summary>
+            The URL of a chart image saved on the server using the <b>SaveTo</b> method.
+            </summary>
+            <remarks>
+            <p class="body">This property is used in conjunction with the <see cref="M:Infragistics.WebUI.UltraWebChart.UltraChart.SaveTo(System.String,System.Drawing.Imaging.ImageFormat)"/> method.</p> 
+            <p class="body">When a chart is saved to a file on the server, this property returns the URL that maps to the location of the chart in the server's file system. The developer should make sure that URL specified by this property is publicly visible on the server.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.ClientSideEvents">
+            <summary>
+            Configures client-side event handling.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.ImagePipePageName">
+            <summary>
+            The name of the web form designated as the secure image pipe. 
+            </summary>
+            <remarks>
+            <p class="body">Name of WebForm in the project which contains the "SecureImagePipe" component. This page is used to stream the chart image data securely from the server to the browser.</p>
+            <p class="body">For more information, see <see cref="T:Infragistics.WebUI.UltraWebChart.SecureImagePipe"/>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Width">
+            <summary>
+            The width of chart in pixels.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Height">
+            <summary>
+            The height of the chart in pixels.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.LabelHash">
+            <summary>
+            Sets or gets the hash table for the chart's custom labels.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.ChartType">
+            <summary>
+            Specifies which type of chart will be rendered. This affects the set of visible properties in the Designer.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.ColumnLineChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of an ColumnLine Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScatterLineChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of an ScatterLine Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Transform3D">
+            <summary>
+            Changes the perspective used when displaying a 3-D chart.
+            </summary>
+            <remarks>
+            <p class="body">3-D charts can be rotated around their X and Y axes, as well as scaled (moved along the Z axis). The <b>Transform3D</b> property gives you the ability to manipulate the orientation and scaling of the chart to achieve the best perspective on the 3-D data being displayed.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Border">
+            <summary>
+            The set of all appearance-related properties that apply to the border, including color, draw style, and thickness.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Legend">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of the chart's legend.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Drill">
+            <summary>
+            Appearance of the hierarchical Drill Down chart behavior.
+            </summary>
+            <remarks>
+            <p class="body">This property exposes the <see cref="!:System.UltraChart.Resources.Appearance.DrillDownAppearance"/> to the UltraWebChart control, allowing the developer to set properties related to UltraWebChart's drill down behavior at run-time (defining drill down hierarchies in the design-time environment is unsupported.)</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Override">
+            <summary>
+            Contains the Override collection and other appearance
+            properties relevant to overrides.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Effects">
+            <summary>
+            Contains the Effects collection and other appearance
+            properties relevant to visual effects.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Annotations">
+            <summary>
+            Contains the Annotations collection and other appearance
+            properties relevant to annotations.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Data">
+            <summary>
+            Returns a DataAppearance object that can be used to configure the data connection of the chart to the data source.
+            </summary>
+            <remarks>
+            For more information, see <see cref="T:Infragistics.UltraChart.Resources.Appearance.DataAppearance"/>.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.EmptyChartText">
+            <summary>
+            Text to be shown to user until the chart data is available.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.TitleTop">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of title box at the top of the chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.TitleLeft">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of title box at the left edge of the chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.TitleRight">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of title box at the right edge of the chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.TitleBottom">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of title box at the bottom of the chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.ColorModel">
+            <summary>
+            The set of all color model properties such as Random, Linear, or Grayscale shading.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.LineChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a Line Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScatterChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a Scatter Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.PieChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a Pie Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.HeatMapChart3D">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a 3-D Heat Map Chart. 
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.DoughnutChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a Doughnut Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.SplineChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a Doughnut Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.SplineAreaChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a Doughnut Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.RadarChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a Radar Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.PieChart3D">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a 3-D Pie Chart. 
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.BarChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of an Bar Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.BarChart3D">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a 3-D Bar Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.ColumnChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a Column Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.GanttChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a Gantt Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.ColumnChart3D">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of an 3-D Column Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.AreaChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of an Area Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Axis">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of the chart's axes.
+            </summary>
+            <remarks>
+            This object provides access to the chart's x, y and where applicable, z axes.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.HeatMapChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a Heat Map Chart. 
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.BubbleChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a Bubble Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.BackColor">
+            <summary>
+            Sets the background color for the entire chart control.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.CrossHairColor">
+            <summary>
+            Gets or Set the color of the cross hair.
+            </summary>
+            <remarks>
+            The cross-hair cursor provides a greater degree of accuracy to assist users when clicking on active segments of the chart, such as individual data points.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.EnableCrossHair">
+            <summary>
+            Displays a cross-hair cursor when the mouse passes over the control at run-time.
+            </summary>
+            <remarks>
+            The cross-hair cursor provides a greater degree of accuracy to assist users when clicking on active segments of the chart, such as individual data points.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.BackgroundImageFileName">
+            <summary>
+            Sets the background image for the control's background.
+            </summary>
+            <remarks>
+            <p class="body">Specify the full path and filename of a valid image file that will be displayed in the chart's background. The selected image will be scaled to the dimemsions of the chart (the default setting) or tiled to fill the available space, depending on the value of <see cref="P:Infragistics.WebUI.UltraWebChart.UltraChart.BackgroundImageStyle"/>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.BackgroundImageStyle">
+            <summary>
+            Determines whether the background image displayed in the cart is stretched or tiled to fill the available area of the chart.
+            </summary>
+            <remarks>
+            <p class="body">Use the <see cref="!:BackgroundImage"/> property to specify the image that will be displayed in the chart's background.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Tooltips">
+            <summary>
+            Returns an object that you can use to access all the formatting properties of the chart's tooltips, including such behavioral settings as highlighting and mouse events.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.CandleChart">
+            <summary>
+            Returns an Appearance object that you can use to access all the formatting properties of a Candle Chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Layer">
+            <summary>
+            Contains any custom layers added to chart.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.WebUI.UltraWebChart.UltraChart.UserLayerIndex" -->
+        <member name="E:Infragistics.WebUI.UltraWebChart.UltraChart.ChartDataClicked">
+            <summary>
+            Event handler for UltraChart mouse click events.
+            </summary>
+        </member>
+        <member name="E:Infragistics.WebUI.UltraWebChart.UltraChart.ChartDataDoubleClicked">
+            <summary>
+            Event handler for UltraChart double click events.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.Primitives">
+            <summary>
+            Gets Primitives for manipulating individual chart elements.
+            </summary>
+            <value>An IProvidePrimitives implementation.</value>
+            <remarks>
+            <p class="body">Developers can use this property to retrieve an <see cref="T:Infragistics.UltraChart.Core.IProvidePrimitives">IProvidePrimitives</see> implementation for accessing individual graphical elements in the Scene by their <i>row</i> and <i>column</i> indexes.</p>
+            <p class="body">Primitives may be managed differently depending on whether an UltraWebChart has scrolling and/or scaling (zoom) enabled, therefore developers should not expect a reference to the IPrimitiveProvider to remain valid if an UltraWebChart control's scrolling and/or scaling state is changed at run-time.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.About">
+            <summary>
+            Displays the About information for the UltraWebChart control.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.ScrollBarImage">
+            <summary>
+            Scrollbar skin image. 
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.DataSource">
+            <summary>
+            Gets/sets the object which the Chart uses for data.
+            </summary>
+            <returns>A variety of object types may be specified as the DataSource, see below for details.</returns>
+            <remarks>
+            <p class="body">The control supports a variety of data source types.</p>
+            <p class="body">The most robust and extensible data source is the <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemDataDataTableClassTopic.htm">DataTable</a>, which provides update notifications via the <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemComponentModelIBindingListClassTopic.htm">IBindingList</a> interface.  Use of these built-in ADO.NET data management types offers the greatest flexibility.</p>
+            <p class="body">Many charts also support data-binding to ICollections (including simple arrays) provided the a single-typed, one-dimensional array can meet the chart type's Data Requirements.  Chartable data sources include custom ICollections, and custom data objects that additionally support IBindingList may take advantage of live data-binding to the chart component.</p>
+            <p class="body">Another data source that may be provided is the local filename of an XML or comma-delimited text file.</p>
+            <p class="body">XML documents require an internal XML Schema document, and must be readily mappable to the Framework's DataSet (their <b>msdata:IsDataSet</b> attribute is set to <i>true</i>).  The schema is also necessary since each XML element must be strongly-typed (otherwise their data type will be inferred as <b>xsd:string</b> and this will not translate readily into a DataSet, even though the data content of the element may be numeric.)  Please see <a href="ms-help://MS.NETFrameworkSDK/cpguidenf/html/_generating_dataset_relational_structure_from_xsd.htm">Generating DataSet Relational Structure from XML Schema</a> in the .NET Framework documentation for more on the issues involved, and consult the samples included with this product for working schema.</p>
+            <p class="body">Data may be unbound from a chart by calling the <see cref="!:ResetDataSource"/> method.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.DataMember">
+            <summary>
+            Gets/sets a specific list in DataMember for which the control displays the data.
+            </summary>
+            <remarks>
+            Name of the DataMember.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.UltraChart.DeploymentScenario">
+            <summary>
+            Allows application designer to configure the chart images deployment scenarios.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.WebUI.UltraWebChart.UltraChart.Section508Compliant" -->
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.WebUI.UltraWebChart.UltraChart.Section508" -->
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.WebUI.UltraWebChart.UltraChart.PolarChart" -->
+        <member name="E:Infragistics.WebUI.UltraWebChart.UltraChart.ChartDrawItem">
+            <summary>
+            DrawItem event. This event is fired everytime the 
+            chart has to draw a primitive in the chart renderer. 
+            This is fired just before drawing the item on the chart.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebChart.UltraWebChartDesigner">
+            <summary>
+            This class will do the standard designer for a component but also allow
+            filtering of properties and attributes in the design window to dynamically
+            update what the user can
+            For UltraChart, we will hide those chart specific properties that do not
+            apply to the chart type the user has selected
+            Make sure to call TypeDescriptor.Refresh(component) from your component
+            in order to clear the cache and requery these filters
+            This member supports the charting internal infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.UltraWebChartDesigner.PostFilterProperties(System.Collections.IDictionary)">
+            <summary>
+            This member supports charting framework. Not to be used explictly in the code.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario">
+            <summary>
+            The appearance object that houses the set of properties related to the display of tooltips and highlighting of data at run-time for UltraWebChart.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ShouldSerializeImageURL">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ImageURL"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ImageURL property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ResetImageURL"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ResetImageURL">
+            <summary>
+            Resets the ImageURL property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ShouldSerializeFilePath">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.FilePath"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the FilePath property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ResetFilePath"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ResetFilePath">
+            <summary>
+            Resets the FilePath property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ShouldSerializeScenario">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.Scenario"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the Scenario property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ResetScenario"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ResetScenario">
+            <summary>
+            Resets the Scenario property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ShouldSerializeImageType">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ImageType"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ImageType property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ResetImageType"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ResetImageType">
+            <summary>
+            Resets the ImageType property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.Reset">
+            <summary>
+            Resets the ImageType property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.#ctor">
+            <summary>
+            Creates Web Tooltips Appearance object with default properties.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.#ctor(Infragistics.UltraChart.Resources.IChartComponent)">
+            <summary>
+            Creates Web Tooltips Appearance object with default properties for given component.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ToString">
+            <summary>
+            Converts the string representation of WebDeploymentScenario
+            </summary>
+            <returns>string representation</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.UpdateCircularFilenames(System.String)">
+            <summary>
+            This is for internal uses. Not be directly used by programmers.
+            </summary>
+            <param name="mappedPath">mapped path</param>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ImageURLResolved1">
+            <summary>
+            Image URL resolved after updating the file name according to the SEQNUM specified.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ImageURLResolved2">
+            <summary>
+            Image URL resolved after updating the file name according to the SEQNUM specified.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ImageURL">
+            <summary>
+            Mapped URL Location.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.FilePath">
+            <summary>
+            Location where file should be saved.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.Scenario">
+            <summary>
+            Deployment Scenario for chart.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebDeploymentScenario.ImageType">
+            <summary>
+            Specifies the image file format used to save the chart. 
+            </summary>
+            <remarks>
+            Available image formats include the compressed formats GIF, JPEG and PNG and the uncompressed formats BMP and TIFF.
+            </remarks>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebChart.WebEventAppearance">
+            <summary>
+            Summary description for WebEventAppearance.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.#ctor">
+            <summary>
+            Creates Web client side event Appearance object with default properties
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ShouldSerializeClientOnMouseOver">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnMouseOver"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ClientOnMouseOver property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnMouseOver"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnMouseOver">
+            <summary>
+            Resets the ClientOnMouseOver property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ShouldSerializeClientOnMouseOut">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnMouseOut"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ClientOnMouseOut property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnMouseOut"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnMouseOut">
+            <summary>
+            Resets the ClientOnMouseOut property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ShouldSerializeClientOnMouseClick">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnMouseClick"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ClientOnMouseClick property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnMouseClick"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnMouseClick">
+            <summary>
+            Resets the ClientOnMouseClick property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ShouldSerializeClientOnDrilledDown">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="!:ClientDrilledDown"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ClientOnDrilledDown property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnDrilledDown"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnDrilledDown">
+            <summary>
+            Resets the ClientOnDrilledDown property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ToString">
+            <summary>
+            Returns a string representation of a <see cref="T:Infragistics.WebUI.UltraWebChart.WebEventAppearance"/> object.
+            </summary>
+            <remarks>
+            <p class="body">Some objects do not have values that can be converted to a string. In these cases, an empty string is returned.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ShouldSerializeClientOnShowTooltip">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnShowTooltip"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ClientOnShowTooltip property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnShowTooltip"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnShowTooltip">
+            <summary>
+            Resets the ClientOnShowTooltip property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ShouldSerializeClientOnHideTooltip">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnHideTooltip"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ClientOnHideTooltip property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnHideTooltip"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnHideTooltip">
+            <summary>
+            Resets the ClientOnHideTooltip property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ShouldSerializeClientOnShowCrosshair">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnShowCrosshair"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ClientOnShowCrosshair property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnShowCrosshair"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnShowCrosshair">
+            <summary>
+            Resets the ClientOnShowCrosshair property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ShouldSerializeClientOnHideCrosshair">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnHideCrosshair"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ClientOnHideCrosshair property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnHideCrosshair"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnHideCrosshair">
+            <summary>
+            Resets the ClientOnHideCrosshair property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ShouldSerializeClientOnCrosshairMove">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnCrosshairMove"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ClientOnCrosshairMove property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnCrosshairMove"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnCrosshairMove">
+            <summary>
+            Resets the ClientOnCrosshairMove property to its default value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ShouldSerializeClientOnChartScroll">
+            <summary>
+            Returns a Boolean value that determines whether the <see cref="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnChartScroll"/> property is set to its default value.
+            </summary>
+            <remarks>
+            <p class="body">Returns True if the ClientOnChartScroll property is not set to its default value; otherwise, it returns False.</p>
+            <p class="body">Invoke the <see cref="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnChartScroll"/> method to reset this property to its default value.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ResetClientOnChartScroll">
+            <summary>
+            Resets the ClientOnChartScroll property to its default value.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnMouseOver">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            when the mouse cursor moves over charted data.
+            </summary>
+            <remarks>
+            <p class="body">The name of the JavaScript function can be user defined or native. For example, to specify that the native function alert should be called, this property could be set to "alert('hello')." To specify that a user-defined function, myFunction, should be called, this property would be set to "myFunction."</p>
+            <p class="body">A user-defined function must be defined either inline or in a linked JavaScript (.JS) file and can accept the following parameters:</p>
+            <dl>
+            <dt><i>row</i></dt><dd><p class="body">Integer. The number of the row that contains the data that was clicked.</p></dd>
+            <dt><i>column</i></dt><dd><p class="body">Integer. The number of the column that contains the data that was clicked.</p></dd>
+            <dt><i>value</i></dt><dd><p class="body">Double. The value of the data that was clicked.</p></dd>
+            <dt><i>rowLabel</i></dt><dd><p class="body">String. The label of the row that contains the data that was clicked.</p></dd>
+            <dt><i>columnLabel</i></dt><dd><p class="body">String. The label of the column that contains the data that was clicked.</p></dd>
+            <dt><i>eventName</i></dt><dd><p class="body">String. The name of the event that occurred. One of "MOUSE_OVER," "MOUSE_OUT," or "MOUSE_CLICKED."</p></dd>
+            </dl>
+            <p class="body">For more information about using this property, please see <a href="using_client_side_events.htm">Using Client-Side Events</a>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnMouseOut">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            when the mouse cursor moves out of charted data.
+            </summary>
+            <remarks>
+            <p class="body">The name of the JavaScript function can be user defined or native. For example, to specify that the native function alert should be called, this property could be set to "alert('hello')." To specify that a user-defined function, myFunction, should be called, this property would be set to "myFunction."</p>
+            <p class="body">A user-defined function must be defined either inline or in a linked JavaScript (.JS) file and can accept the following parameters:</p>
+            <dl>
+            <dt><i>row</i></dt><dd><p class="body">Integer. The number of the row that contains the data that was clicked.</p></dd>
+            <dt><i>column</i></dt><dd><p class="body">Integer. The number of the column that contains the data that was clicked.</p></dd>
+            <dt><i>value</i></dt><dd><p class="body">Double. The value of the data that was clicked.</p></dd>
+            <dt><i>rowLabel</i></dt><dd><p class="body">String. The label of the row that contains the data that was clicked.</p></dd>
+            <dt><i>columnLabel</i></dt><dd><p class="body">String. The label of the column that contains the data that was clicked.</p></dd>
+            <dt><i>eventName</i></dt><dd><p class="body">String. The name of the event that occurred. One of "MOUSE_OVER," "MOUSE_OUT," or "MOUSE_CLICKED."</p></dd>
+            </dl>
+            <p class="body">For more information about using this property, please see <a href="using_client_side_events.htm">Using Client-Side Events</a>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnMouseClick">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            when charted data is clicked.
+            </summary>
+            <remarks>
+            <p class="body">The name of the JavaScript function can be user defined or native. For example, to specify that the native function alert should be called, this property could be set to "alert('hello')." To specify that a user-defined function, myFunction, should be called, this property would be set to "myFunction."</p>
+            <p class="body">A user-defined function must be defined either inline or in a linked JavaScript (.JS) file and can accept the following parameters:</p>
+            <dl>
+            <dt><i>row</i></dt><dd><p class="body">Integer. The number of the row that contains the data that was clicked.</p></dd>
+            <dt><i>column</i></dt><dd><p class="body">Integer. The number of the column that contains the data that was clicked.</p></dd>
+            <dt><i>value</i></dt><dd><p class="body">Double. The value of the data that was clicked.</p></dd>
+            <dt><i>rowLabel</i></dt><dd><p class="body">String. The label of the row that contains the data that was clicked.</p></dd>
+            <dt><i>columnLabel</i></dt><dd><p class="body">String. The label of the column that contains the data that was clicked.</p></dd>
+            <dt><i>eventName</i></dt><dd><p class="body">String. The name of the event that occurred. One of "MOUSE_OVER," "MOUSE_OUT," or "MOUSE_CLICKED."</p></dd>
+            </dl>
+            <p class="body">For more information about using this property, please see <a href="using_client_side_events.htm">Using Client-Side Events</a>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnDrilledDown">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            when charted data is clicked.
+            </summary>
+            <remarks>
+            <p class="body">The name of the JavaScript function can be user defined or native. For example, to specify that the native function alert should be called, this property could be set to "alert('hello')." To specify that a user-defined function, myFunction, should be called, this property would be set to "myFunction."</p>
+            <p class="body">A user-defined function must be defined either inline or in a linked JavaScript (.JS) file and can accept the following parameters:</p>
+            <dl>
+            <dt><i>row</i></dt><dd><p class="body">Integer. The number of the row that contains the data that was clicked.</p></dd>
+            <dt><i>column</i></dt><dd><p class="body">Integer. The number of the column that contains the data that was clicked.</p></dd>
+            <dt><i>value</i></dt><dd><p class="body">Double. The value of the data that was clicked.</p></dd>
+            <dt><i>rowLabel</i></dt><dd><p class="body">String. The label of the row that contains the data that was clicked.</p></dd>
+            <dt><i>columnLabel</i></dt><dd><p class="body">String. The label of the column that contains the data that was clicked.</p></dd>
+            <dt><i>eventName</i></dt><dd><p class="body">String. The name of the event that occurred. event name is  "DRILLED_DOWN"</p></dd>
+            </dl>
+            <p class="body">For more information about using this property, please see <a href="using_client_side_events.htm">Using Client-Side Events</a>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnShowTooltip">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            when the mouse cursor moves ShowTooltip charted data.
+            </summary>
+            <remarks>
+            <p class="body">For more information about using this property, please see <a href="using_client_side_events.htm">Using Client-Side Events</a>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnHideTooltip">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            when the mouse cursor moves HideTooltip charted data.
+            </summary>
+            <remarks>
+            <p class="body">For more information about using this property, please see <a href="using_client_side_events.htm">Using Client-Side Events</a>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnShowCrosshair">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            when the mouse cursor moves ShowCrosshair charted data.
+            </summary>
+            <remarks>
+            <p class="body">For more information about using this property, please see <a href="using_client_side_events.htm">Using Client-Side Events</a>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnHideCrosshair">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            when the mouse cursor moves HideCrosshair charted data.
+            </summary>
+            <remarks>
+            <p class="body">For more information about using this property, please see <a href="using_client_side_events.htm">Using Client-Side Events</a>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnCrosshairMove">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            when the mouse cursor moves CrosshairMove charted data.
+            </summary>
+            <remarks>
+            <p class="body">The name of the JavaScript function can be user defined or native. For example, to specify that the native function alert should be called, this property could be set to "alert('hello')." To specify that a user-defined function, myFunction, should be called, this property would be set to "myFunction."</p>
+            <p class="body">A user-defined function must be defined either inline or in a linked JavaScript (.JS) file and can accept the following parameters:</p>
+            <p class="body">For more information about using this property, please see <a href="using_client_side_events.htm">Using Client-Side Events</a>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebChart.WebEventAppearance.ClientOnChartScroll">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            when the mouse cursor moves ChartScroll charted data.
+            </summary>
+            <remarks>
+            <p class="body">The name of the JavaScript function can be user defined or native. For example, to specify that the native function alert should be called, this property could be set to "alert('hello')." To specify that a user-defined function, myFunction, should be called, this property would be set to "myFunction."</p>
+            <p class="body">A user-defined function must be defined either inline or in a linked JavaScript (.JS) file and can accept the following parameters:</p>
+            <p class="body">For more information about using this property, please see <a href="using_client_side_events.htm">Using Client-Side Events</a>.</p>
+            </remarks>
+        </member>
+    </members>
+</doc>

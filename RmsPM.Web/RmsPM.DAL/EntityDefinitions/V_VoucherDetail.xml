@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>V_VoucherDetail</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>V_VoucherDetail</Name>
+		<Column>
+			<Name>VoucherDetailCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String> select  * from V_VoucherDetail as VoucherDetail</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+	</Table>
+</Entity>

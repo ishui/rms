@@ -1,0 +1,12 @@
+G:\源代码\工程项目管理系统源码\Rms.ORMap\bin\Debug\Rms.ORMap.dll
+G:\源代码\工程项目管理系统源码\Rms.ORMap\bin\Debug\Rms.ORMap.pdb
+G:\源代码\工程项目管理系统源码\Rms.ORMap\obj\Debug\Rms.ORMap.csprojAssemblyReference.cache
+G:\源代码\工程项目管理系统源码\Rms.ORMap\obj\Debug\Rms.ORMap.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码\Rms.ORMap\obj\Debug\Rms.ORMap.dll
+G:\源代码\工程项目管理系统源码\Rms.ORMap\obj\Debug\Rms.ORMap.pdb
+G:\源代码\工程项目管理系统源码_20190605\Rms.ORMap\bin\Debug\Rms.ORMap.dll
+G:\源代码\工程项目管理系统源码_20190605\Rms.ORMap\bin\Debug\Rms.ORMap.pdb
+G:\源代码\工程项目管理系统源码_20190605\Rms.ORMap\obj\Debug\Rms.ORMap.csprojAssemblyReference.cache
+G:\源代码\工程项目管理系统源码_20190605\Rms.ORMap\obj\Debug\Rms.ORMap.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码_20190605\Rms.ORMap\obj\Debug\Rms.ORMap.dll
+G:\源代码\工程项目管理系统源码_20190605\Rms.ORMap\obj\Debug\Rms.ORMap.pdb

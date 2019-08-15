@@ -1,0 +1,107 @@
+/* r.a.d.grid windows skin */
+
+.RadGrid_Windows
+{
+	background: #eaf2fd;
+	padding: 7px;
+	font: normal 11px Arial, Verdana;
+	cursor: default;
+}
+
+.MasterTable_Windows
+{
+	font: normal 11px Arial, Verdana;
+	border-left: 1px solid #b3c5e1;
+	border-right: 1px solid #b3c5e1;
+	width: 100%;
+	background: white;
+}
+
+.GridRow_Windows .ResizeItem
+{
+	border-bottom: 1px solid #d5d2cb;
+	border-right: 0px;
+}
+
+.GridHeader_Windows,
+.ResizeHeader_Windows
+{
+	font-weight: bold;
+	text-align: center;
+	border:0px;
+	background: url('Img/headerBg.gif') repeat-x;
+	height: 31px;
+	padding: 0;
+	color: #244272;
+}
+
+.GridHeader_Windows a
+{
+	color: #244272;
+}
+
+.GridRow_Windows td,
+.GridAltRow_Windows td
+{
+	padding-left: 5px;
+	line-height: 20px;
+	border-bottom: solid 1px #f1efe9;
+	border-right: solid 1px #f1efe9;
+}
+
+.SelectedRow_Windows td
+{
+	background: #ffffe1;
+}
+
+.ActiveRow_Windows td
+{
+	background: #f3f7f9;
+}
+
+.GridPager_Windows td
+{
+	height: 21px;
+	color: #242500;
+	padding-left: 14px;
+	border-bottom: 1px solid #b3c5e1;
+	border-top: solid 1px #f1efe9;
+}
+
+.GridPager_Windows a
+{
+	color: #242500;
+}
+
+.GroupPanel_Windows
+{
+	background: #ecf5ff url('Img/GroupPanel.gif') repeat-x;
+	height: 24px;
+	border-collapse: collapse;
+	border: solid 1px #d0e6f3;
+	width: 100%;
+	margin-bottom: 3px;
+}
+
+.GroupPanel_Windows td
+{
+	padding-left: 4px;
+}
+
+.GroupPanel_Windows Table Table
+{
+	border-collapse: collapse;
+	border: 0;
+}
+
+.GroupPanelItems_Windows
+{
+	color: #7797c7;
+	border: solid 1px #c3d9f9;
+	background: #f1f8ff;
+}
+
+.GroupHeader_Windows
+{
+	background: #f1efe9;
+}

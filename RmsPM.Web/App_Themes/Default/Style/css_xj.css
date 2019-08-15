@@ -1,0 +1,23 @@
+#hh1 {
+	border: 5px solid #E4EFF6;
+	height: 100%;
+	width: 100%;
+}
+#hh2 {
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #A1A7AB;
+	border-left-color: #A1A7AB;
+	width: 100%;
+	height: 94%;
+}
+
+#hh3 {display: block; width: 99%;height:95%;position:relative;overflow:auto;}
+
+#hh33 {display: block; width: 99%;height:90%;position:relative;overflow:auto;}
+
+#hh333 {display: block; width: 99%;height:96%;position:relative;overflow:auto;}
+
+#hh4 {vertical-align:bottom;}

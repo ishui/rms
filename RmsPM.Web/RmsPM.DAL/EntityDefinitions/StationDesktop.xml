@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>StationDesktop</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>StationDesktop</Name>
+		<Column>
+			<Name>StationID</Name>
+			<DataType>System.Int32</DataType>
+			<IsKey>true</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>4</ColumnSize>
+		</Column>
+		<Column>
+			<Name>StyleID</Name>
+			<DataType>System.Int32</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>4</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>Select</Name>
+			<String>select * from StationDesktop where  StationID=@StationID</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@StationID</Name>
+				<Column>StationID</Column>
+				<SqlDbType>Int</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String>select * from StationDesktop</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>Insert</Name>
+			<String> Insert into StationDesktop (  StationID, StyleID ) values (  @StationID, @StyleID )</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@StationID</Name>
+				<Column>StationID</Column>
+				<SqlDbType>Int</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@StyleID</Name>
+				<Column>StyleID</Column>
+				<SqlDbType>Int</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Update</Name>
+			<String> Update StationDesktop set StyleID=@StyleID where  StationID=@StationID</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@StationID</Name>
+				<Column>StationID</Column>
+				<SqlDbType>Int</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@StyleID</Name>
+				<Column>StyleID</Column>
+				<SqlDbType>Int</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Delete</Name>
+			<String> Delete from StationDesktop  where  StationID=@StationID</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@StationID</Name>
+				<Column>StationID</Column>
+				<SqlDbType>Int</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>SelectByStyleID</Name>
+			<String>select * from StationDesktop where StyleID=@StyleID </String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@StyleID</Name>
+				<Column>StyleID</Column>
+				<SqlDbType>Int</SqlDbType>
+			</Param>
+		</Sql>
+	</Table>
+</Entity>

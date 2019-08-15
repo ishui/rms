@@ -1,0 +1,9 @@
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\LocaleViseBLL\bin\Debug\LocaleViseBLL.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\LocaleViseBLL\bin\Debug\LocaleViseBLL.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\LocaleViseBLL\bin\Debug\LocaleViseDAL.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\LocaleViseBLL\bin\Debug\LocaleViseMODEL.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\LocaleViseBLL\bin\Debug\LocaleViseMODEL.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\LocaleViseBLL\bin\Debug\LocaleViseDAL.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\LocaleViseBLL\obj\Debug\ResolveAssemblyReference.cache
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\LocaleViseBLL\obj\Debug\LocaleViseBLL.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\LocaleViseBLL\obj\Debug\LocaleViseBLL.pdb

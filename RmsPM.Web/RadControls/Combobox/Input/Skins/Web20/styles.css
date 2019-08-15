@@ -1,0 +1,42 @@
+.Over_Web20
+{
+	font: normal 18px  Arial, Verdana, Sans-Serif;
+	background: white;
+	border: solid 1px #a5bedf;
+	border-bottom-width: 2px;
+	color: black;
+}
+
+.Default_Web20, .Focus_Web20
+{
+	font: normal 18px  Arial, Verdana, Sans-Serif;
+	color: black;
+	border: solid 1px #6788be;
+	border-bottom-width: 2px;
+	background: white;
+}
+
+.Error_Web20
+{
+	color: black;
+	font: normal 18px  Arial, Verdana, Sans-Serif;
+	background: white;
+	border: solid 1px red;
+	border-bottom-width: 2px;
+}
+.Hint_Web20
+{
+	background: infobackground;
+	margin-top: 5px;
+	border: 1px solid black;
+	text-align: left;
+	overflow: auto;
+}
+
+.Hint_Web20 a, Hint_Web20 a:visited, .Hint_Web20 a:hover
+{
+	margin: 2px;
+	color: black;
+	text-decoration: none;
+	font-size: small;
+}

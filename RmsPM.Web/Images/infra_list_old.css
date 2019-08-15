@@ -1,0 +1,33 @@
+.infra-list {
+	border-top:3px solid #A6C6DD;
+	border-bottom: 1px solid #A6C6DD;
+	border-right:1px solid #FFFFFF;
+	background-color: #FFFFFF;
+	border-collapse: collapse;
+	margin-bottom: 9px
+}
+
+.infra-list-title {
+	border-top: 2px solid #A6C6DD;
+	background-color: #ECF4FA;
+	color: #003366;
+	float: bold;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+tr.infra-list-title td {
+	border-right: 1px solid #A6C6DD;
+}
+
+.infra-list-item {
+	border-bottom: 1px solid #DCDCDC;
+	border-right: 1px solid #A6C6DD;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 23px;
+}
+
+.infra-list-td {
+	border-right: 1px solid #A6C6DD;
+}

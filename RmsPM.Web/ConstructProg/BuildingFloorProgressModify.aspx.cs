@@ -1,0 +1,302 @@
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Web;
+using System.Web.SessionState;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+
+using Rms.ORMap;
+using RmsPM.DAL;
+using RmsPM.DAL.EntityDAO;
+using RmsPM.DAL.QueryStrategy;
+using Rms.Web;
+using RmsPM.BLL;
+
+namespace RmsPM.Web.ConstructProg
+{
+	/// <summary>
+	/// BuildingFloorProgressModify 的摘要说明。
+	/// </summary>
+	public partial class BuildingFloorProgressModify :PageBase
+	{
+		protected System.Web.UI.HtmlControls.HtmlInputHidden txtPBSUnitCode;
+	
+		protected void Page_Load(object sender, System.EventArgs e)
+		{
+			if ( !IsPostBack )
+			{
+				IniPage();
+				LoadData();
+			}
+		}
+
+		private void IniPage()
+		{
+			try 
+			{
+				this.txtBuildingFloorCode.Value = Request.QueryString["BuildingFloorCode"];
+				this.txtWBSCode.Value = Request.QueryString["WBSCode"];
+				this.txtVisualProgressCode.Value = Request.QueryString["VisualProgressCode"];
+				this.txtAct.Value = Request.QueryString["action"];
+			}
+			catch (Exception ex)
+			{
+				ApplicationLog.WriteLog(this.ToString(),ex,"");
+				Response.Write(Rms.Web.JavaScript.Alert(true, "初始化页面出错：" + ex.Message));
+			}
+		}
+
+		private void LoadData() 
+		{
+			try 
+			{
+				if (!user.HasRight("030303"))  //楼栋进度填写权限
+				{
+					Response.Redirect( "../RejectAccess.aspx?OperationCode=030303" );
+					Response.End();
+				}
+
+				if ((this.txtBuildingFloorCode.Value.Trim() == "") || (this.txtWBSCode.Value.Trim() == "")  || (this.txtVisualProgressCode.Value.Trim() == ""))
+				{
+					Response.Write(Rms.Web.JavaScript.Alert(true, "未传入楼层代码、工作代码或形象进度代码"));
+					return;
+				}
+
+				//取楼层
+				EntityData entityFloor = DAL.EntityDAO.ProductDAO.GetBuildingFloorByCode(this.txtBuildingFloorCode.Value);
+				entityFloor.Dispose();
+				if (!entityFloor.HasRecord()) 
+				{
+					Response.Write(Rms.Web.JavaScript.Alert(true, "楼层不存在"));
+					return;
+				}
+
+				this.txtBuildingCode.Value = entityFloor.GetString("BuildingCode");
+				this.txtProjectCode.Value = entityFloor.GetString("ProjectCode");
+				this.lblFloorName.Text = entityFloor.GetString("FloorName");
+				this.lblBuildingName.Text = BLL.ProductRule.GetBuildingName(this.txtBuildingCode.Value);
+
+				//取工作
+				this.lblVisualProgressName.Text = BLL.WBSRule.GetWBSName(this.txtVisualProgressCode.Value);
+				this.lblTaskName.Text = BLL.WBSRule.GetWBSName(this.txtWBSCode.Value);
+
+				//是否有工作项的修改权限
+				if (!WBSRule.IsTaskModify(this.txtVisualProgressCode.Value, user.UserCode))
+				{
+					Response.Redirect( "../RejectAccess.aspx?OperationName=工作项[" + lblVisualProgressName.Text + "]修改" );
+					Response.End();
+				}
+
+				//取进度
+				EntityData entity = DAL.EntityDAO.ProductDAO.GetBuildingFloorProgressByBuildingFloorWBSCode (this.txtBuildingFloorCode.Value, this.txtWBSCode.Value);
+				entity.Dispose();
+				if (entity.HasRecord()) 
+				{
+					this.txtProgressCode.Value = entity.GetString("ProgressCode");
+
+					this.sltStatus.Value = entity.GetInt("Status").ToString();
+					this.txtCompletePercent.Value = entity.GetInt("CompletePercent").ToString();
+
+					this.txtPStartDate.Value = entity.GetDateTimeOnlyDate("PStartDate");
+					this.txtPEndDate.Value = entity.GetDateTimeOnlyDate("PEndDate");
+					this.txtStartDate.Value = entity.GetDateTimeOnlyDate("StartDate");
+					this.txtEndDate.Value = entity.GetDateTimeOnlyDate("EndDate");
+				}
+				else 
+				{
+					//新增时的缺省值
+					this.sltStatus.Value = "0";
+				}
+
+				//缺省实际开始、结束日期为当天（便于状态改成“进行中”或“已完成”时有缺省日期，保存时若状态为“未开始”要自动清空）
+				if (this.txtStartDate.Value == "")
+					this.txtStartDate.Value = DateTime.Today.ToString("yyyy-MM-dd");
+				if (this.txtEndDate.Value == "")
+					this.txtEndDate.Value = DateTime.Today.ToString("yyyy-MM-dd");
+			}
+			catch (Exception ex)
+			{
+				ApplicationLog.WriteLog(this.ToString(),ex,"");
+				Response.Write(Rms.Web.JavaScript.Alert(true, "初始化页面出错：" + ex.Message));
+			}
+		}
+
+		#region Web 窗体设计器生成的代码
+		override protected void OnInit(EventArgs e)
+		{
+			//
+			// CODEGEN: 该调用是 ASP.NET Web 窗体设计器所必需的。
+			//
+			InitializeComponent();
+			base.OnInit(e);
+		}
+		
+		/// <summary>
+		/// 设计器支持所需的方法 - 不要使用代码编辑器修改
+		/// 此方法的内容。
+		/// </summary>
+		private void InitializeComponent()
+		{    
+
+		}
+		#endregion
+
+		/// <summary>
+		/// 返回
+		/// </summary>
+		private void GoBack() 
+		{
+			Response.Write(Rms.Web.JavaScript.ScriptStart);
+			Response.Write("window.opener.location = window.opener.location;");
+			Response.Write(Rms.Web.JavaScript.WinClose(false));
+			Response.Write(Rms.Web.JavaScript.ScriptEnd);
+		}
+
+		protected void btnSave_ServerClick(object sender, System.EventArgs e)
+		{
+			try
+			{
+				string Hint = "";
+				if (!CheckValid(ref Hint)) 
+				{
+					Response.Write(Rms.Web.JavaScript.Alert(true, Hint));
+					return;
+				}
+
+				Save();
+
+			}
+			catch ( Exception ex )
+			{
+				ApplicationLog.WriteLog(this.ToString(),ex,"");
+				Response.Write(Rms.Web.JavaScript.Alert(true, "保存出错：" + ex.Message));
+				return;
+			}
+
+			GoBack();
+		}
+
+		/// <summary>
+		/// 保存
+		/// </summary>
+		private void Save() 
+		{
+			try 
+			{
+				string BuildingFloorCode = this.txtBuildingFloorCode.Value;
+				string WBSCode = this.txtWBSCode.Value;
+
+				EntityData entity = DAL.EntityDAO.ProductDAO.GetBuildingFloorProgressByBuildingFloorWBSCode(BuildingFloorCode, WBSCode);
+				bool isNew = !entity.HasRecord();
+				DataRow dr;
+
+				if (isNew) 
+				{
+					dr = entity.CurrentTable.NewRow();
+					this.txtProgressCode.Value = DAL.EntityDAO.SystemManageDAO.GetNewSysCode("BuildingFloorProgressCode");
+
+					dr["ProgressCode"] = this.txtProgressCode.Value;
+					dr["BuildingFloorCode"] = BuildingFloorCode;
+					dr["WBSCode"] = WBSCode;
+					dr["BuildingCode"] = txtBuildingCode.Value;
+					dr["ProjectCode"] = txtProjectCode.Value;
+					dr["VisualProgressCode"] = txtVisualProgressCode.Value;
+
+					entity.CurrentTable.Rows.Add(dr);
+				}
+				else 
+				{
+					dr = entity.CurrentRow;
+				}
+
+				int Status = BLL.ConvertRule.ToInt(this.sltStatus.Value);
+				dr["Status"] = Status;
+
+				dr["PStartDate"] = BLL.ConvertRule.ToDate(this.txtPStartDate.Value.Trim());
+				dr["PEndDate"] = BLL.ConvertRule.ToDate(this.txtPEndDate.Value.Trim());
+
+				switch (Status) 
+				{
+					case 0:
+						//未完成
+						dr["StartDate"] = DBNull.Value;
+						dr["EndDate"] = DBNull.Value;
+						dr["CompletePercent"] = 0;
+						break;
+
+					case 1:
+						//进行中
+						dr["StartDate"] = BLL.ConvertRule.ToDate(this.txtStartDate.Value.Trim());
+						dr["EndDate"] = DBNull.Value;
+						dr["CompletePercent"] = BLL.ConvertRule.ToInt(this.txtCompletePercent.Value);
+						break;
+
+					case 2:
+						//已完成
+						dr["StartDate"] = BLL.ConvertRule.ToDate(this.txtStartDate.Value.Trim());
+						dr["EndDate"] = BLL.ConvertRule.ToDate(this.txtEndDate.Value.Trim());
+						dr["CompletePercent"] = 100;
+						break;
+
+					default:
+						break;
+				}
+
+				dr["ModiDate"] = DateTime.Now;
+				dr["ModiPerson"] = base.user.UserCode;
+
+				DAL.EntityDAO.ProductDAO.SubmitAllBuildingFloorProgress(entity);
+				entity.Dispose();
+
+				//更新工作项的完成进度
+				BLL.ConstructProgRule.UpdateTaskPercentByConstructProg(this.txtBuildingCode.Value, WBSCode);
+                //更新时间
+                BLL.WBSRule.UpdateTaskData(this.txtBuildingCode.Value, WBSCode);
+
+			}
+			catch ( Exception ex )
+			{
+				throw ex;
+			}
+		}
+
+		/// <summary>
+		/// 有效性检查
+		/// </summary>
+		/// <param name="Hint"></param>
+		/// <returns></returns>
+		private bool CheckValid(ref string Hint) 
+		{
+			Hint = "";
+
+			if ( this.sltStatus.Value.Trim() == "" )
+			{
+				Hint = "请输入状态 ！ ";
+				return false;
+			}
+
+			if ( this.txtCompletePercent.Value != "" )
+			{
+				if ( ! Rms.Check.StringCheck.IsInt(txtCompletePercent.Value))
+				{
+					Hint = "完成百分比必须是整数 ！ ";
+					return false;
+				}
+
+				int CompletePercent = BLL.ConvertRule.ToInt(this.txtCompletePercent.Value);
+				if ((CompletePercent < 0) || (CompletePercent > 100))
+				{
+					Hint = "完成百分比必须位于 0 到 100 之间 ！ ";
+					return false;
+				}
+			}
+
+			return true;
+		}
+
+	}
+}

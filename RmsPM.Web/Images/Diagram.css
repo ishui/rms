@@ -1,0 +1,13 @@
+.DiagramHeadTd
+{
+	border-right: #999999 1px solid;
+	border-bottom: #999999 1px solid;
+}
+.DiagramDataTd
+{
+	border-right: #999999 1px solid;
+}
+.DiagramField
+{
+	border-bottom: #999999 1px solid;
+}

@@ -1,0 +1,452 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LocaleViseDAL</name>
+    </assembly>
+    <members>
+        <member name="T:RmsPM.DAL.HandMadeDAL">
+            ################################################################################################
+             <summary>
+             <para>摘要：HandMadeDAL 类，封装手工编写应用。</para>
+             <para>说明：</para>
+             <para>Programmer： clm</para>
+             <para>Email： nmgclm626@hotmail.com</para>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="F:RmsPM.DAL.HandMadeDAL._DataProcess">
+            <summary>
+            数据库连接对象
+            </summary>
+        </member>
+        <member name="M:RmsPM.DAL.HandMadeDAL.#ctor(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            构造
+            </summary>
+            <param name="Connection">数据库连接对象</param>
+        </member>
+        <member name="M:RmsPM.DAL.HandMadeDAL.#ctor(System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            构造
+            </summary>
+            <param name="Transaction">事务对象</param>
+        </member>
+        <member name="M:RmsPM.DAL.HandMadeDAL.GetVisesMoneySqlStringByCostGroup(System.String)">
+            <summary>
+            获取根据签证代码列表获取费用项分组金额信息的完整 sql 语句
+            </summary>
+            <param name="ViseCodes">签证代码列表（签证代码 in 查询）</param>
+            <returns>根据签证代码列表获取费用项分组金额信息的完整 sql 语句</returns>
+        </member>
+        <member name="M:RmsPM.DAL.HandMadeDAL.GetSumCheckMoneyByContract(System.String)">
+            <summary>
+            获取合同相关累计已审签证金额
+            </summary>
+            <param name="ContractCode">合同代码</param>
+            <returns>合同相关累计已审签证金额</returns>
+        </member>
+        <member name="T:RmsPM.DAL.LocaleViseCostDAL">
+            ################################################################################################
+             <summary>
+             <para>摘要：LocaleViseCostDAL 类，封装数据表基本应用。</para>
+             <para>说明：</para>
+             <para>Programmer： clm</para>
+             <para>Email： nmgclm626@hotmail.com</para>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="F:RmsPM.DAL.LocaleViseCostDAL._DataProcess">
+            <summary>
+            数据库连接对象
+            </summary>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL._Insert(TiannuoPM.MODEL.LocaleViseCostModel)">
+            <summary>
+            添加
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>产生主键值</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL._Update(TiannuoPM.MODEL.LocaleViseCostModel)">
+            <summary>
+            修改
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL._Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="Code">主键值</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL._Select(TiannuoPM.MODEL.LocaleViseCostQueryModel)">
+            <summary>
+            查询
+            </summary>
+            <param name="qmObj">查询规则对象</param>
+            <returns>查询结果集合</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL._DataBind(System.Int32)">
+            <summary>
+            实例化对象
+            </summary>
+            <param name="Code">主键值</param>
+            <returns>实例化对象</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL.Initialize(System.Data.SqlClient.SqlDataReader,TiannuoPM.MODEL.LocaleViseCostModel)">
+            <summary>
+            对象付值
+            </summary>
+            <param name="reader">数据源对象</param>
+            <param name="obj">需实例化对象</param>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL.#ctor(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            构造
+            </summary>
+            <param name="Connection">数据库连接对象</param>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL.#ctor(System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            构造
+            </summary>
+            <param name="Transaction">事务对象</param>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL.Insert(TiannuoPM.MODEL.LocaleViseCostModel)">
+            <summary>
+            添加
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>产生主键值</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL.Update(TiannuoPM.MODEL.LocaleViseCostModel)">
+            <summary>
+            修改
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL.Delete(TiannuoPM.MODEL.LocaleViseCostModel)">
+            <summary>
+            删除
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="Code">主键值</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL.GetModel(System.Int32)">
+            <summary>
+            获取模型对象
+            </summary>
+            <param name="Code">主键值</param>
+            <returns>模型对象</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL.Select">
+            <summary>
+            查询
+            </summary>
+            <returns>查询结果集合</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseCostDAL.Select(TiannuoPM.MODEL.LocaleViseCostQueryModel)">
+            <summary>
+            查询
+            </summary>
+            <param name="qmObj">查询规则对象</param>
+            <returns>查询结果集合</returns>
+        </member>
+        <member name="T:RmsPM.DAL.SqlDataProcess">
+            ################################################################################################
+             <summary>
+             SqlDataProcess 是针对sql应用而建立的，封装了常用的数据库应用。
+             Programmer:CLM; Email:nmgclm626@hotmail.com
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="F:RmsPM.DAL.SqlDataProcess._Command">
+            <summary>
+            数据库执行
+            </summary>
+        </member>
+        <member name="F:RmsPM.DAL.SqlDataProcess._SqlParameters">
+            <summary>
+            参数集合
+            </summary>
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess._GetDataSet">
+            ***************************************************************************************
+            <summary>
+            返回 DataSet 数据集合
+            </summary>
+            <returns>查询结果集</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess._GetSqlDataReader">
+            ***************************************************************************************
+            <summary>
+            返回 SqlDataReader 数据集合
+            </summary>
+            <returns>查询结果集</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess._RunSql">
+            ***************************************************************************************
+            <summary>
+            执行 sql 语句
+            </summary>
+            <returns>影响行数</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.#ctor">
+            ***************************************************************************************
+            <summary>
+            构造函数
+            </summary>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.#ctor(System.Data.SqlClient.SqlConnection)">
+            ***************************************************************************************
+            <summary>
+            构造函数
+            </summary>
+            <param name="Connection">数据库连接对象</param>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.#ctor(System.Data.SqlClient.SqlTransaction)">
+            ***************************************************************************************
+            <summary>
+            构造函数
+            </summary>
+            <param name="Transaction">事务对象</param>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.GetDataSet">
+            ***************************************************************************************
+            <summary>
+            返回 DataSet 数据集合
+            </summary>
+            <returns>查询结果集</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.GetDataSet(System.String)">
+            ***************************************************************************************
+            <summary>
+            返回 DataSet 数据集合
+            </summary>
+            <param name="CommandText">执行对象文本</param>
+            <returns>查询结果集</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.GetSqlDataReader">
+            ***************************************************************************************
+            <summary>
+            返回 SqlDataReader 数据集合
+            </summary>
+            <returns>查询结果集</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.GetSqlDataReader(System.String)">
+            ***************************************************************************************
+            <summary>
+            返回 SqlDataReader 数据集合
+            </summary>
+            <param name="CommandText">执行对象文本</param>
+            <returns>查询结果集</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.RunSql">
+            ***************************************************************************************
+            <summary>
+            执行 sql 语句
+            </summary>
+            <returns>影响行数</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.RunSql(System.String)">
+            ***************************************************************************************
+            <summary>
+            执行 sql 语句
+            </summary>
+            <param name="CommandText">执行对象文本</param>
+            <returns>影响行数</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.ProcessParametersAdd(System.String,System.Data.SqlDbType,System.Int32,System.Object)">
+            ***************************************************************************************
+            <summary>
+            添加参数
+            </summary>
+            <param name="ParameterName">参数名称</param>
+            <param name="ParameterType">类型</param>
+            <param name="Size">长度</param>
+            <param name="Value">值</param>
+            <returns>参数对象</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.GetSqlDataReaderFieldIndex(System.Data.SqlClient.SqlDataReader,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="FieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RmsPM.DAL.SqlDataProcess.CommandText">
+            ****************************************************************************************
+             <summary>
+             Transact-SQL 语句
+             </summary>
+            ****************************************************************************************
+        </member>
+        <member name="P:RmsPM.DAL.SqlDataProcess.IsProcess">
+            ****************************************************************************************
+             <summary>
+             是否为存储过程
+             </summary>
+            ****************************************************************************************
+        </member>
+        <member name="P:RmsPM.DAL.SqlDataProcess.Transaction">
+            ****************************************************************************************
+             <summary>
+             事务对象
+             </summary>
+            ****************************************************************************************
+        </member>
+        <member name="P:RmsPM.DAL.SqlDataProcess.Connection">
+            <summary>
+            数据库连接对象
+            </summary>
+        </member>
+        <member name="P:RmsPM.DAL.SqlDataProcess.SqlParameters">
+            ***************************************************************************************
+            <summary>
+            参数集合
+            </summary>
+            ***************************************************************************************
+        </member>
+        <member name="T:RmsPM.DAL.LocaleViseDAL">
+            ################################################################################################
+             <summary>
+             <para>摘要：LocaleViseDAL 类，封装数据表基本应用。</para>
+             <para>说明：</para>
+             <para>Programmer： </para>
+             <para>Email： </para>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="F:RmsPM.DAL.LocaleViseDAL._DataProcess">
+            <summary>
+            数据库连接对象
+            </summary>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL._Insert(TiannuoPM.MODEL.LocaleViseModel)">
+            <summary>
+            添加
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>产生主键值</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL._Update(TiannuoPM.MODEL.LocaleViseModel)">
+            <summary>
+            修改
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL._Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="Code">主键值</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL._Select(TiannuoPM.MODEL.LocaleViseQueryModel)">
+            <summary>
+            查询
+            </summary>
+            <param name="qmObj">查询规则对象</param>
+            <returns>查询结果集合</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL._DataBind(System.Int32)">
+            <summary>
+            实例化对象
+            </summary>
+            <param name="Code">主键值</param>
+            <returns>实例化对象</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL.Initialize(System.Data.SqlClient.SqlDataReader,TiannuoPM.MODEL.LocaleViseModel)">
+            <summary>
+            对象付值
+            </summary>
+            <param name="reader">数据源对象</param>
+            <param name="obj">需实例化对象</param>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL.#ctor(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            构造
+            </summary>
+            <param name="Connection">数据库连接对象</param>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL.#ctor(System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            构造
+            </summary>
+            <param name="Transaction">事务对象</param>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL.Insert(TiannuoPM.MODEL.LocaleViseModel)">
+            <summary>
+            添加
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>产生主键值</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL.Update(TiannuoPM.MODEL.LocaleViseModel)">
+            <summary>
+            修改
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL.Delete(TiannuoPM.MODEL.LocaleViseModel)">
+            <summary>
+            删除
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="Code">主键值</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL.GetModel(System.Int32)">
+            <summary>
+            获取模型对象
+            </summary>
+            <param name="Code">主键值</param>
+            <returns>模型对象</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL.Select">
+            <summary>
+            查询
+            </summary>
+            <returns>查询结果集合</returns>
+        </member>
+        <member name="M:RmsPM.DAL.LocaleViseDAL.Select(TiannuoPM.MODEL.LocaleViseQueryModel)">
+            <summary>
+            查询
+            </summary>
+            <param name="qmObj">查询规则对象</param>
+            <returns>查询结果集合</returns>
+        </member>
+    </members>
+</doc>

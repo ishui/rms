@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>UserDesktop</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>UserDesktop</Name>
+		<Column>
+			<Name>UserID</Name>
+			<DataType>System.Int32</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>4</ColumnSize>
+		</Column>
+		<Column>
+			<Name>ControlID</Name>
+			<DataType>System.Int32</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>true</IsAllowNull>
+			<ColumnSize>4</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>Select</Name>
+			<String>select * from UserDesktop</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String>select * from UserDesktop</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>Insert</Name>
+			<String> Insert into UserDesktop (  UserID, ControlID ) values (  @UserID, @ControlID )</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@UserID</Name>
+				<Column>UserID</Column>
+				<SqlDbType>Int</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@ControlID</Name>
+				<Column>ControlID</Column>
+				<SqlDbType>Int</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Update</Name>
+			<String> Update UserDesktop set UserID=@UserID,ControlID=@ControlID</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@UserID</Name>
+				<Column>UserID</Column>
+				<SqlDbType>Int</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@ControlID</Name>
+				<Column>ControlID</Column>
+				<SqlDbType>Int</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Delete</Name>
+			<String> Delete from UserDesktop </String>
+			<CommandType>Text</CommandType>
+		</Sql>
+	</Table>
+</Entity>

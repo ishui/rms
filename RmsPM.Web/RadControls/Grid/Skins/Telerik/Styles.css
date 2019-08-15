@@ -1,0 +1,167 @@
+/* r.a.d.grid Telerik / embedded skin */
+
+div.RadGrid_Telerik
+{
+	background: #f9f9f9;
+	border: solid 1px #b1b1b1;
+	font: normal 11px Arial, Verdana, Sans-serif;
+	text-align: left;
+	cursor: default;
+	scrollbar-face-color: #E9E9E9;
+	scrollbar-highlight-color: white;
+	scrollbar-shadow-color: #E9E9E9;
+	scrollbar-3dlight-color: #DBDBDB;
+	scrollbar-arrow-color: #787878;
+	scrollbar-track-color: #F5F5F5;
+	scrollbar-darkshadow-color: #AEAEAE;
+}
+
+.RadGrid_Telerik td,
+.RadGrid_Telerik td a
+{ 
+	font: normal 11px Arial, Verdana, Sans-serif;
+	color: #000000;
+}
+
+.MasterTable_Telerik
+{
+	border: 0px !important;
+	border-collapse: separate !important;
+	width: 100%;
+	color: #000000;
+}
+
+.MasterTable_Telerik td,
+.MasterTable_Telerik th
+{
+	padding-left: 4px;
+}
+
+th.GridHeader_Telerik,
+th.ResizeHeader_Telerik
+{
+	background: white url('Img/headerBg.gif') repeat-x bottom;
+	border-bottom: solid 1px #e9f8ae;
+	padding-left: 6px; /*more than items to compensate for item borders!*/
+	height: 28px;
+}
+
+.GridHeader_Telerik a
+{
+	color: black;
+	text-decoration: none;
+}
+
+.GridRow_Telerik td
+{
+	line-height: 22px;
+	border-top: solid 1px #ececec;
+	border-right: solid 1px #f9f9f9;
+	border-left: solid 1px #ececec;
+	border-bottom: solid 1px white;
+}
+
+.GridAltRow_Telerik td
+{
+	background: #f1f1f1;
+	line-height: 22px;
+	border-top: solid 1px #eaeaea;
+	border-left: solid 1px #f1f1f1;
+	border-right: solid 1px #eaeaea;
+	border-bottom: solid 1px #fefefe;
+}
+
+.SelectedRow_Telerik td
+{
+	background: #d9ff43 url('Img/selectedRow.gif') repeat-x bottom !important;
+	line-height: 22px;
+	border-top: solid 1px #eaeaea;
+	border-right: none !important;
+	border-bottom: solid 1px #83c60b;
+}
+
+.ActiveRow_Telerik td
+{
+	background: #edf2d9;
+	line-height: 22px;
+	border-top: solid 1px #eaeaea;
+	border-right: solid 1px #eaeaea;
+	border-bottom: solid 1px #fefefe;
+}
+
+.GridPager_Telerik td
+{
+	background: white;
+	border: solid 1px white;
+	border-top: 1px solid #c7c7c7;
+	height: 16px;
+	color: #999;
+}
+
+.GridFooter_Telerik td
+{
+	background: #fbfbfb;
+	border: solid 1px #fbfbfb;
+	border-top: 1px solid #e8e6e6;
+	height: 16px;
+	color: #666;
+}
+
+.GridFooter_Telerik td a
+{
+	color: #666;
+}
+
+.GridPager_Telerik td a
+{
+	color: #999;
+}
+
+.GridPager_Telerik td a:hover, .GridFooter_Telerik td a:hover
+{
+	color: #333;
+}
+
+
+tr.GroupHeader_Telerik td
+{
+	background: white;
+	height: 22px;
+	border: solid 1px white;
+	border-bottom: solid 1px #c2c2c2;
+}
+
+.GroupPanel_Telerik
+{
+	background-color: #e8e8e8;
+	width: 100%;
+	border-collapse: collapse;
+	border-bottom: 1px solid #b1b1b1;
+}
+
+.GroupPanel_Telerik td
+{
+	padding: 2px 4px;
+}
+
+.GroupPanelItems_Telerik
+{
+	background: #efefef;
+	color: #999999;
+	border: solid 1px white;
+	border-right: solid 1px #c6c6c6;
+	border-bottom: solid 1px #c6c6c6;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+td.GridHeader_Telerik input
+{
+	width: auto;
+	float: left;
+	border: solid 1px #666;
+	background: #fafafa;
+	font: bold 10px Verdana, Arial, Sans-serif;
+	color: #989cb0;
+	height: 14px;
+	vertical-align:middle;
+}

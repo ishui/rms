@@ -1,0 +1,128 @@
+.RadGrid_3D
+{
+	border-left: solid 1px #B4B3A6;
+	border-right: solid 1px #B4B3A6;
+	border-top: 1px solid #cccaba;
+	border-bottom: 1px solid #c2b12e;
+	font: normal 11px Arial, Verdana, Sans-serif;
+	text-align: left;
+	cursor: default;
+	background: #ecebe4 url('Img/headerBg.gif') repeat-x;
+}
+
+.MasterTable_3D
+{
+	width: 100%;
+	border:0px;
+	color: #242500;
+}
+
+th.GridHeader_3D, th.ResizeHeader_3D
+{
+	font-weight: bold;
+	font-size: 11px;
+	height: 34px;
+	border:0px;
+	padding: 0px 0px 7px 5px;
+	background: #ecebe4 url('Img/headerBg.gif') repeat-x;
+}
+
+.GridHeader_3D a
+{
+	color: #242500;
+	text-decoration: none;
+}
+
+td.GridHeader_3D input
+{
+	width: auto;
+	float: left;
+	border: solid 1px #474b38;
+	background: #fafafa;
+	font: bold 10px Verdana, Arial, Sans-serif;
+	color: #989cb0;
+	margin-right: 2px;
+}
+
+.GridRow_3D TD, .GridAltRow_3D TD
+{
+	background: url('Img/rowBg.gif') repeat-x bottom;
+	padding-left: 5px;
+	height: 23px;
+	border:0;
+    font: normal 11px Arial, Verdana, Sans-serif;
+}
+
+.SelectedRow_3D TD
+{
+	background: #f9f8f4 url('Img/rowBg.gif') repeat-x bottom;
+	padding-left: 5px;
+	height: 23px;
+	border:0;
+}
+
+.ActiveRow_3D td
+{
+	background: #fff url('Img/rowBg.gif') repeat-x bottom;
+	padding-left: 5px;
+	height: 23px;
+	border:0;
+}
+
+.GridFooter_3D
+{
+	border:0;
+}
+
+.GridPager_3D td
+{
+	background: transparent url('Img/footerBg.gif') repeat-x bottom;
+	height: 36px;
+	color: #242500;
+	padding: 0px 0px 2px 5px;
+	vertical-align: bottom;
+	text-align: left;
+	border:0;
+}
+
+.GridPager_3D a
+{
+	color: #242500;
+}
+
+.GridPager_3D a:hover
+{
+	color: #c97600;
+}
+
+.GroupPanel_3D
+{
+	height: 30px;
+	width: 100%;
+	text-align: left;
+	background: #e7e6de;
+}
+
+.GridHeader_3D img,
+.GroupPanelItems_3D input
+{
+	vertical-align: middle;
+}
+
+/* grouping button */
+.GroupPanelItems_3D
+{
+	background: #c3c2b3;
+	color: #333;
+	padding-left: 3px;
+	border: solid 1px #fff;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+
+tr.GroupHeader_3D
+{
+	background: #cccabd;
+	color: #706e65;
+	font-weight: bold;
+}

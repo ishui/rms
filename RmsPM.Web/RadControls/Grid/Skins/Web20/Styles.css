@@ -1,0 +1,158 @@
+/* r.a.d.grid Web 2.0 skin */
+
+div.RadGrid_Web20
+{
+	background: white;
+	border: solid 1px #6788be;
+	padding: 11px;
+	font: normal 11px Arial, Verdana, Sans-serif;
+	text-align: left;
+	cursor: default;
+	scrollbar-face-color: #E9E9E9;
+	scrollbar-highlight-color: white;
+	scrollbar-shadow-color: #E9E9E9;
+	scrollbar-3dlight-color: #DBDBDB;
+	scrollbar-arrow-color: #787878;
+	scrollbar-track-color: #F5F5F5;
+	scrollbar-darkshadow-color: #AEAEAE;
+}
+
+.RadGrid_Web20 td,
+.RadGrid_Web20 td a
+{ 
+	font: normal 11px  Arial, Verdana, Sans-serif;
+	color: #333;
+}
+
+.MasterTable_Web20
+{
+	border: 0px !important;
+	border-collapse: separate !important;
+	width: 100%;
+	color: #333;
+}
+
+.MasterTable_Web20 td,
+.MasterTable_Web20 th
+{
+	padding-left: 4px;
+}
+
+th.GridHeader_Web20,
+th.ResizeHeader_Web20
+{
+	font: bold 11px Arial, Verdana, Sans-serif;
+	background: #92b4e0;
+	padding-left: 6px; /*more than items to compensate for item borders!*/
+	height: 22px;
+	color: white;
+}
+
+.GridHeader_Web20 a
+{
+	color: white;
+	font: bold 11px Arial, Verdana, Sans-serif;
+	text-decoration: none;
+}
+
+.GridRow_Web20 td,
+.GridAltRow_Web20 td
+{
+	background: white;
+	line-height: 22px;
+	border-bottom: solid 1px #d8dde0;
+}
+
+.SelectedRow_Web20 td
+{
+	background: #dcfc5c !important;
+	height: 22px;
+	border-bottom: solid 1px #accb2d;
+}
+
+.ActiveRow_Web20 td
+{
+	background: #e7f1ff !important;
+	height: 22px;
+	border-bottom: solid 1px #a5bedf;
+}
+
+.GridPager_Web20 td
+{
+	background: #d6d6d6;
+	height: 25px;
+	color: #666;
+	font-weight: bold;
+}
+
+.GridFooter_Web20 td
+{
+	background: #fbfbfb;
+	border: solid 1px #fbfbfb;
+	border-top: 1px solid #e8e6e6;
+	height: 21px;
+	color: #666;
+	font-weight: bold;
+}
+
+.GridFooter_Web20 td a,
+.GridPager_Web20 td a
+{
+	color: black;
+	font-weight: bold;
+}
+
+.GridPager_Web20 td a:hover, .GridFooter_Web20 td a:hover
+{
+	color: #666;
+}
+
+tr.GroupHeader_Web20 td
+{
+	background: white;
+	height: 22px;
+	border-bottom: solid 2px #6788be;
+}
+
+table.GroupPanel_Web20
+{
+	background: #ffebcc;
+	width: 100%;
+	height: 20px;
+	border-collapse: collapse;
+	border: dashed 1px #ff9900;
+	margin-bottom: 12px;
+	text-align: center;
+	color: #333;
+}
+
+.GroupPanelItems_Web20
+{
+	background: #544b58 url('Img/GroupPanelItemsButtonBg.gif') repeat-x;
+	color: #ffebcc;
+	border: solid 1px #8e827f;
+	white-space:  nowrap;
+	font-size: 11px;
+	padding: 0px 30px;
+	height: 18px;
+}
+
+td.GridHeader_Web20 input
+{
+	margin-top: 10px;
+	width: auto;
+	float: left;
+	border: solid 1px #92b4e0;
+	background: white;
+	font: bold 11px Arial, Verdana, Sans-serif;
+	color: #92b4e0;
+	height: 14px;
+	vertical-align: middle;
+}
+
+td.GridHeader_Web20 img
+{
+	margin-top: 10px;
+	margin-left: 2px;
+	float: left;
+}

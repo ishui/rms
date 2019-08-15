@@ -1,0 +1,124 @@
+.RadGrid_Outlook
+{
+	background-color: ButtonFace;
+	color: WindowText;
+	border: 1px solid #002D96;
+	font-size: 11px;
+	font-family:Tahoma;
+}
+
+.GridPager_Outlook TD
+{
+	background-color: ButtonFace;
+	color: WindowText;
+	border-top: 3px solid #d2cfbe;
+	padding: 3px 9px;
+	cursor: default;
+}
+
+.RadGrid_Outlook a,
+.GridPager_Outlook a
+{
+	color: WindowText;
+}
+
+.MasterTable_Outlook
+{
+	background-color: Window;
+	color: WindowText;
+	border: 0;
+	border-top: 1px solid #c5c2b2;
+	width: 100%;
+}
+
+.GridHeader_Outlook,
+.ResizeHeader_Outlook
+{
+	background-color: ButtonFace;
+	color: WindowText;
+	border-right: 2px inset white;
+	border-top: 3px solid ButtonFace;
+	border-bottom: 2px solid #d2cfbe;
+	font-weight:normal;
+	text-align: left;
+	padding: 4px 0px;
+	font-weight:normal;
+}
+
+.GridHeader_Outlook a
+{
+	text-decoration: none;
+	padding-left: 3px;
+	color: WindowText;
+}
+
+.GridHeader_Outlook span
+{
+	text-decoration: none;
+	padding-left: 3px;
+	color: WindowText;
+	cursor: default;
+}
+
+.ResizeHeader_Outlook
+{
+	background-image: url(Img/resizeHeader.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.GridRow_Outlook td,
+.GridAltRow_Outlook td
+{
+	border-bottom: 1px solid #EAE9E1;
+	cursor: default;
+	padding: 2px 0px;
+}
+
+.SelectedRow_Outlook td
+{
+	background: Highlight !important;
+	color: white;
+	padding: 2px 0px;
+}
+
+.ActiveRow_Outlook td
+{
+	background: #ffffe1 !important;
+	color: black;
+	padding: 2px 0px;
+}
+
+.GroupPanelItems_Outlook
+{
+	white-space:nowrap;
+	color: white;
+}
+
+.GroupPanel_Outlook
+{
+	background-image: url(Img/topBg.gif);
+	background-repeat: repeat-x;
+	width: 100%;
+	height: 20px;
+	border-collapse: collapse;
+	color: white;
+}
+
+.GroupPanel_Outlook td
+{
+	padding-left: 4px;
+}
+
+.GroupPanel_Outlook TABLE TABLE
+{
+	border-collapse: collapse;
+}
+
+.GroupHeader_Outlook td
+{
+	border-bottom: 2px solid #7BA4E0;
+	padding-top:11px;
+	color: #3768b9;
+	font-weight: bold;
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>Standard_ConstructAnnualPlan</Name>
+	<Type>Standard</Type>
+	<Table>
+		<Name>ConstructAnnualPlan</Name>
+		<Type>Main</Type>
+	</Table>
+</Entity>

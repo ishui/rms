@@ -1,0 +1,114 @@
+/* r.a.d.grid MS Excel skin */
+
+.RadGrid_Excel
+{
+	background: white;
+	border: 1px solid #c0c0c0;
+	cursor: default;
+}
+
+.RadGrid_Excel table td
+{
+	height: 18px;
+}
+
+.MasterTable_Excel
+{
+	width:100%;
+	font: 11px tahoma;
+	color: #000000;
+	border-collapse: separate !important;
+}
+
+.RadGrid_Excel th,
+.RadGrid_Excel th a
+{ 
+	font: normal 11px Tahoma;
+	color: black;
+	text-transform: uppercase;
+}
+
+.RadGrid_Excel a
+{ 
+	color: #000000;
+}
+
+.GridHeader_Excel,
+.ResizeHeader_Excel
+{
+	color: white;
+	border-bottom: 1px solid #7e7d68;
+	border-right: 1px solid #7e7d68;
+	background: #EFEBDE;
+	padding: 4px 5px;
+}
+
+.GridHeader_Excel img
+{
+	vertical-align: middle;
+	margin-top: 2px;
+}
+
+.GridHeader_Excel a
+{
+	color: black;
+}
+
+.GridRow_Excel td, .GridAltRow_Excel td
+{
+	border-bottom: 1px solid #c0c0c0;
+	border-right: 1px solid #c0c0c0;
+	padding-left: 3px;
+}
+
+.SelectedRow_Excel
+{
+	background: #ffffe1;
+}
+
+.ActiveRow_Excel
+{
+	background: #f3f7f9;
+}
+
+.GridPager_Excel td
+{
+	padding-left: 6px;
+}
+
+.GridPager_Excel a
+{
+	color: black;	
+}
+
+tr.GroupHeader_Excel td
+{
+	background: #f3f3eb;
+	border-bottom: 1px solid #c0c0c0;
+	border-right: 1px solid #c0c0c0;
+}
+
+.GroupPanelItems_Excel
+{
+	background: #efebde;
+	border: solid 1px #333;
+}
+
+.GroupPanelItems_Excel img
+{
+	vertical-align: middle;
+	margin-top: 4px !important;
+}
+
+.GroupPanel_Excel
+{
+	background: #7e7d68;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.GroupPanel_Excel td
+{
+	color: white;
+	padding: 2px;
+}

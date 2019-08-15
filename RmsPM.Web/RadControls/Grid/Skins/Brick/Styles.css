@@ -1,0 +1,135 @@
+﻿/* r.a.d.grid brick skin */
+
+.RadGrid_Brick
+{
+	background: #930015;
+	border-left: solid 1px #B4B3A6;
+	border-right: solid 1px #B4B3A6;
+	border-top: 1px solid #cccaba;
+	border-bottom: 1px solid #c2b12e;
+	font: normal 11px Arial, Verdana, Sans-serif;
+	text-align: left;
+	cursor: default;
+}
+
+.RadGrid_Brick th, .RadGrid_Brick th a
+{ 
+	font: bold 11px Tahoma;
+	color: white;
+}
+
+.RadGrid_Brick td,
+.RadGrid_Brick td a
+{ 
+	font: 11px tahoma;
+	color: #000000;
+}
+
+.MasterTable_Brick
+{
+	border: 0px !important;
+	width: 100%;
+}
+
+.GridHeader_Brick
+{
+	color: white;
+	height: 34px;
+	background: #930015;
+}
+
+.GridHeader_Brick a
+{
+	color: white;
+}
+
+.GridRow_Brick td
+{
+	background-color: #FBF4F3;
+	height:20px;
+	border-bottom:1px solid #ecd6cf;
+}
+
+.SelectedRow_Brick td
+{
+	background-color: #ffffff !important;
+	height:20px;
+	border-bottom:1px solid #ecd6cf;
+}
+
+.ActiveRow_Brick td
+{
+	background-color: #ecd6cf !important;
+	height:20px;
+	border-bottom:1px solid #ecd6cf;
+}
+
+.GridAltRow_Brick td
+{
+	background-color: #F5E9E7;
+	height:20px;
+	border-bottom:1px solid #ecd6cf;
+}
+
+.GridPager_Brick TD
+{
+	background: #e7d0c8;
+	border-top: 1px solid #c2a9a0;
+	height: 17px;
+	padding-left: 11px;
+}
+
+.GridPager_Brick a
+{
+	color: #333;	
+}
+
+.GridHeader_Brick img
+{
+	vertical-align: middle;
+}
+
+td.GridHeader_Brick input
+{
+	width: auto;
+	float: left;
+	border: solid 1px #666;
+	background: #fafafa;
+	font: bold 10px Verdana, Arial, Sans-serif;
+	color: #989cb0;
+	height: 14px;
+	vertical-align:middle;
+}
+
+/* grouping button */
+.GroupPanelItems_Brick
+{
+	background: #930015;
+	color: white !important;
+	border: solid 1px #bc988c;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+
+tr.GroupHeader_Brick
+{
+	background: #e7d0c8;
+	color: #706e65;
+	font-weight: bold;
+	height:20px;
+}
+
+.GroupPanel_Brick
+{
+	height: 20px;
+	width: 100%;
+	text-align: left;
+	background: #69000f;
+	border-bottom: 1px solid #bc988c;
+	border-collapse: collapse;
+}
+
+.GroupPanel_Brick td
+{
+	color: White;
+}

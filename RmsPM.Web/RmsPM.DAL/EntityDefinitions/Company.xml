@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>Company</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>Company</Name>
+		<Column>
+			<Name>CompanyCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>true</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Column>
+			<Name>CompanyName</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>true</IsAllowNull>
+			<ColumnSize>200</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>Select</Name>
+			<String> select  CompanyCode, CompanyName from Company where  CompanyCode=@CompanyCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@CompanyCode</Name>
+				<Column>CompanyCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String> select  CompanyCode, CompanyName from Company</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>Insert</Name>
+			<String> Insert into Company (  CompanyCode, CompanyName ) values (  @CompanyCode, @CompanyName )</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@CompanyCode</Name>
+				<Column>CompanyCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@CompanyName</Name>
+				<Column>CompanyName</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Update</Name>
+			<String> Update Company set CompanyName=@CompanyName where  CompanyCode=@CompanyCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@CompanyCode</Name>
+				<Column>CompanyCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@CompanyName</Name>
+				<Column>CompanyName</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Delete</Name>
+			<String> Delete from Company  where  CompanyCode=@CompanyCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@CompanyCode</Name>
+				<Column>CompanyCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+	</Table>
+</Entity>

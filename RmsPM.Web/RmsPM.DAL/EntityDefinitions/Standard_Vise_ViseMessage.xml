@@ -1,0 +1,9 @@
+﻿<?xml version="1.0"?>
+<Entity>
+  <Name>Standard_Vise_ViseMessage</Name>
+  <Type>Standard</Type>
+  <Table>
+    <Name>Vise_ViseMessage</Name>
+    <Type>Main</Type>
+  </Table>
+</Entity>

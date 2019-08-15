@@ -1,0 +1,10 @@
+G:\源代码\工程项目管理系统源码\Rms.Interface\bin\Debug\Rms.Interface.dll
+G:\源代码\工程项目管理系统源码\Rms.Interface\bin\Debug\Rms.Interface.pdb
+G:\源代码\工程项目管理系统源码\Rms.Interface\obj\Debug\Rms.Interface.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码\Rms.Interface\obj\Debug\Rms.Interface.dll
+G:\源代码\工程项目管理系统源码\Rms.Interface\obj\Debug\Rms.Interface.pdb
+G:\源代码\工程项目管理系统源码_20190605\Rms.Interface\bin\Debug\Rms.Interface.dll
+G:\源代码\工程项目管理系统源码_20190605\Rms.Interface\bin\Debug\Rms.Interface.pdb
+G:\源代码\工程项目管理系统源码_20190605\Rms.Interface\obj\Debug\Rms.Interface.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码_20190605\Rms.Interface\obj\Debug\Rms.Interface.dll
+G:\源代码\工程项目管理系统源码_20190605\Rms.Interface\obj\Debug\Rms.Interface.pdb

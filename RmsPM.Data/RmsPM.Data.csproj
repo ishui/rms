@@ -1,0 +1,525 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{907F5C74-4813-4E21-BF31-514B148FDA16}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>TiannuoPM.Data</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EnvDTE">
+      <Name>EnvDTE</Name>
+    </Reference>
+    <Reference Include="EnvDTE80">
+      <Name>EnvDTE80</Name>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\RmsPM.Web_1\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\RmsPM.Web_1\bin\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="TiannuoPM.Entities">
+      <Name>TiannuoPM.Entities</Name>
+      <HintPath>..\TiannuoPM.Entities\obj\Debug\TiannuoPM.Entities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ChildEntityProperty!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ChildEntityTypeAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ChildEntityTypesList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractAccountChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractAccountFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractAccountParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractAccountProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractAccountProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractBillChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractBillFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractBillParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractBillProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractBillProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractChangeChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractChangeFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractChangeParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractChangeProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractChangeProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostChangeChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostChangeFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostChangeParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostChangeProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostChangeProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostPlanChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostPlanFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostPlanParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostPlanProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostPlanProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractCostProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractMaterialChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractMaterialFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractMaterialParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractMaterialPlanChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractMaterialPlanFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractMaterialPlanParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractMaterialPlanProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractMaterialPlanProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractMaterialProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractMaterialProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractNexusChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractNexusFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractNexusParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractNexusProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractNexusProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ContractProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\DictionaryItemChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\DictionaryItemFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\DictionaryItemParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\DictionaryItemProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\DictionaryItemProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\DictionaryNameChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\DictionaryNameFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\DictionaryNameParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\DictionaryNameProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\DictionaryNameProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\EntityProviderBase!2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\EntityProviderBaseCore!2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\EntityViewProviderBase!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\EntityViewProviderBaseCore!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\IChildEntityProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\InspectSituationChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\InspectSituationFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\InspectSituationParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\InspectSituationProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\InspectSituationProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialPurchasChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialPurchasDtlChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialPurchasDtlFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialPurchasDtlParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialPurchasDtlProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialPurchasDtlProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialPurchasFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialPurchasParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialPurchasProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\MaterialPurchasProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\NetTiersProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\NetTiersProviderCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\NetTiersServiceSection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PaymentChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PaymentFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PaymentItemChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PaymentItemFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PaymentItemParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PaymentItemProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PaymentItemProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PaymentParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PaymentProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PaymentProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PayoutChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PayoutFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PayoutItemChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PayoutItemFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PayoutItemParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PayoutItemProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PayoutItemProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PayoutParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PayoutProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\PayoutProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ProjectChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ProjectFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ProjectParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ProjectProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\ProjectProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\SystemUserChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\SystemUserFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\SystemUserParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\SystemUserProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\SystemUserProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\TroubleChildEntityTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\TroubleFilterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\TroubleParameterBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\TroubleProviderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Bases\TroubleProviderBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\DataRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\DeepLoadType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\DeepSaveType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\ExpressionParserBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\IEntityProvider!2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\IEntityViewProvider!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\ParameterizedSqlExpressionParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\ParameterizedSqlFilterBuilder!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\SqlComparisonType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\SqlExpressionParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\SqlFilterBuilder!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\SqlFilterParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\SqlFilterParameterCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\SqlStringBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\SqlUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\StringTokenizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\TransactionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Data\Utility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

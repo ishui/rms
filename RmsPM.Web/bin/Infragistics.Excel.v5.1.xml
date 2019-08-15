@@ -1,0 +1,2580 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Infragistics.Excel.v5.1</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.Excel.BIFF8Writer">
+            <summary>
+            BIFF8Writer provides static methods for exporting abstract workbook object to concrete Excel file.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Excel.BIFF8Writer.WriteWorkbookToFile(Infragistics.Excel.Workbook,System.String)">
+            <summary>
+            Writes existing workbook object to a file in BIFF8 format.
+            </summary>
+            <param name="workbook">Workbook to export.</param>
+            <param name="fileName">Filename of resulting excel file. If path is not included, file is created in default program folder.</param>
+        </member>
+        <member name="M:Infragistics.Excel.BIFF8Writer.WriteWorkbookToStream(Infragistics.Excel.Workbook,System.IO.Stream)">
+            <summary>
+            Writes existing workbook object to a stream.
+            </summary>
+            <param name="workbook">Workbook to export.</param>
+            <param name="outStream">Output file stream.</param>
+        </member>
+        <member name="M:Infragistics.Excel.BIFF8Writer.WriteWorkbookToStreamEx(Infragistics.Excel.Workbook,System.IO.Stream)">
+            <summary>
+            Writes existing workbook object to a stream in BIFF8 format.
+            </summary>
+            <param name="workbook">Workbook to export.</param>
+            <param name="outStream">An output stream to generate the BIFF8 content into.</param>
+        </member>
+        <member name="M:Infragistics.Excel.BIFF8Writer.WriteWorksheet(Infragistics.Excel.BIFF8Writer.TemporaryWriterData,Infragistics.Excel.Worksheet,Infragistics.Excel.BIFFRecordset)">
+            <summary>
+            Writes a Worksheet section.
+            </summary>
+            <param name="writerData">A sink into which data is written.</param>
+            <param name="ws">The Worksheet instance to serialize out.</param>
+            <param name="brs">A record set.</param>
+            <remarks>
+            <p class="body">Before calling this method, you must have called <see cref="M:Infragistics.Excel.BIFF8Writer.WriteWorkbookGlobals(Infragistics.Excel.BIFF8Writer.TemporaryWriterData)"/>.  The caller is responsible for
+            writing a BOF before and an EOF after each <see cref="T:Infragistics.Excel.Worksheet"/> serialized.  One or more Worksheet substreams may follow the Workbook Globals
+            section of the BIFF8 file.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.BIFF8Writer.WriteWorkbookGlobals(Infragistics.Excel.BIFF8Writer.TemporaryWriterData)">
+            <summary>
+            Writes the Workbook Globals section.
+            </summary>
+            <param name="writerData">A sink into which data is written.</param>
+            <remarks>
+            <p class="body">The Workbook Globals substream appears once at the beginning of the file stream specifying information applicable to all Worksheets.
+            The order in which BIFF records appear in substreams is important.  This globals substream is then followed by one or more Worksheet substreams.</p>
+            <p class="body">The <see cref="F:Infragistics.Excel.BIFF8Writer.TemporaryWriterData.Workbook">Workbook</see> and <see cref="F:Infragistics.Excel.BIFF8Writer.TemporaryWriterData.MainBIFFStream">MainBIFFStream</see>
+            properties of <b>TemporaryWriterData</b> must have already been pre-initialized before a call is made to this method.</p>
+            <p class="body">The caller of this method is responsible for writing the initial BOF and trailing EOF for this substream.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.BIFF8Writer.DefaultFonts(Infragistics.Excel.BIFF8Writer.TemporaryWriterData,Infragistics.Excel.BIFFRecordset)">
+            <summary>
+            Bulk copies default fonts into Workbook stream.
+            </summary>
+            <param name="writerData">A writer context used to initialize the set of default Fonts.</param>
+            <param name="brs">A BIFF record set into which these currency formats are stored.</param>
+            <remarks>
+            <p class="body">Unless the <see cref="P:Infragistics.Excel.Workbook.Fonts"/> collection has been modified, the default FONT records
+            are set to Arial, 10pt, Black, Regular by <see cref="M:Infragistics.Excel.WorkbookFontData.ResolvedFontData">ResolvedFontData</see>.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.BIFF8Writer.DefaultFormats(Infragistics.Excel.BIFFRecordset)">
+            <summary>
+            Bulk copies default currency formats into Workbook stream.
+            </summary>
+            <param name="brs">A BIFF record set into which these currency formats are stored.</param>
+            <remarks>
+            <p class="body">Excel normally generates these on the client based on the client locale
+            when saving a file. These default currency <see cref="T:Infragistics.Excel.FORMAT"/> records are hardcoded to
+            use the US Dollar ($), with the exception of <i>#41</i> through <i>#44</i> which support a
+            blind currency symbol provided it appears after the currency value (for instance, the
+            Euro and Yen in some locales).</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.BIFF8Writer.DefaultExtendedFormats(Infragistics.Excel.BIFFRecordset)">
+            <summary>
+            Bulk copies default extended formats into Workbook stream.
+            </summary>
+            <param name="brs">A BIFF record set into which these XF records are stored.</param>
+        </member>
+        <member name="M:Infragistics.Excel.BIFF8Writer.DefaultStyles(Infragistics.Excel.BIFFRecordset)">
+            <summary>
+            Bulk copies default built-in styles into Workbook stream.
+            </summary>
+            <param name="brs">A BIFF record set into which built-in styles are stored.</param>
+            <remarks>
+            <p class="body">The STYLE records injected by this method into the Workbook stream are of the abbreviated, built-in type.  Variable-length, user-defined styles are not injected by this method.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.ConvertibleToBinaryData">
+            <summary>
+            Base class for all classes that can be converted to binary data.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.BaseRecord">
+            <summary>
+            Base class for all record clases. Derive concrete records directly from this  
+            class only if record has constant non-zero length.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.RecordZeroSize">
+            <summary>
+            Base class for all records with zero size.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.RecordVarSize">
+            <summary>
+            Base class for all records with variable size.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.GenericRecord">
+            <summary>
+            Concrete class representing generic record.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.CellRecord">
+            <summary>
+            Base class for cell records.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.BIFFRecordset">
+            <summary>
+            Represents XLS workbook as list of BIFF records.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.BOF">
+            <summary>
+            Marks the beginning of the Book stream in the BIFF file. It also marks 
+            the beginning of record groups (or "substreams" of the Book stream) for 
+            sheets in the workbook.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.BOF.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.BOF.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.BOF.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.BOF.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.PROTECT">
+            <summary>
+            Protection state for a sheet or workbook.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.PROTECT.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.PROTECT.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.PROTECT.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.PROTECT.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.DEFAULTROWHEIGHT">
+            <summary>
+            Default height for rows in a worksheet.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.DEFAULTROWHEIGHT.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.DEFAULTROWHEIGHT.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.DEFAULTROWHEIGHT.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.DEFAULTROWHEIGHT.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.DEFCOLWIDTH">
+            <summary>
+            Default width for columns in a worksheet.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.DEFCOLWIDTH.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.DEFCOLWIDTH.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.DEFCOLWIDTH.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.DEFCOLWIDTH.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.WINDOW1">
+            <summary>
+            Contains workbook-level window attributes.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Excel.WINDOW1.#ctor(System.UInt16,System.UInt16,System.UInt16,System.UInt16,Infragistics.Excel.WINDOW1.WindowOptions,System.UInt16,System.UInt16,System.UInt16,System.UInt16)">
+            <summary>
+            Create a WINDOW1 record.
+            </summary>
+            <param name="xWndw">Horizontal position of the Workbook window (in twips).</param>
+            <param name="yWndw">Vertical position of the Workbook window (in twips).</param>
+            <param name="width">Width of the Workbook window (in twips).</param>
+            <param name="height">Height of the Workbook window (in twips).</param>
+            <param name="wndwFlags">Options regarding the visibility of the Workbook window, scroll and tab bars.</param>
+            <param name="currentSheetID">Index of the currently active Worksheet (zero-based).</param>
+            <param name="firstTabID">Index of the first visible tab in the Worksheet tab bar (zero-based).  This value should be -1 when <i>wndwFlags</i> does not include <see cref="F:Infragistics.Excel.WINDOW1.WindowOptions.BotAdornment"/>.</param>
+            <param name="selectedSheets">Count of selected Worksheets in the Worksheet tab bar.  This value should be 0 when <i>wndwFlags</i> does not include <see cref="F:Infragistics.Excel.WINDOW1.WindowOptions.BotAdornment"/>.</param>
+            <param name="tabWidthMillis">Width of the Worksheet tab bar (in thousandths of the Workbook window width). This argument is ignored when <i>wndwFlags</i> does not include either <see cref="F:Infragistics.Excel.WINDOW1.WindowOptions.BotAdornment"/> or <see cref="F:Infragistics.Excel.WINDOW1.WindowOptions.DspHScroll"/>.</param>
+            <remarks>
+            <p class="body">This record format is not compatible with BIFF4 (BIFF4W) and earlier.</p>
+            <p class="body">A <i>twip</i> equals 1/20th of a point.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.WINDOW1.WriteData(System.IO.BinaryWriter)">
+            <summary>
+            Write a WINDOW1 record.
+            </summary>
+            <param name="bw">Sink into which to deposit this record's content.</param>
+        </member>
+        <member name="P:Infragistics.Excel.WINDOW1.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.WINDOW1.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.WINDOW1.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.WINDOW1.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.WINDOW1.WindowOptions">
+            <summary>
+            Options regarding the window visibility, scroll and tab bars.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW1.WindowOptions.Hidden">
+            <summary>
+            Workbook window is hidden (default is visible).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW1.WindowOptions.Iconic">
+            <summary>
+            Workbook window is minimized (default is open).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW1.WindowOptions.DspHScroll">
+            <summary>
+            Workbook window has a horizontal scrollbar (default is no).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW1.WindowOptions.DspVScroll">
+            <summary>
+            Workbook window has a vertical scrollbar (default is no).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW1.WindowOptions.BotAdornment">
+            <summary>
+            Worksheet tab bar is displayed (default is hidden).
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.FONT">
+            <summary>
+            Describes a font record.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.FONT.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.FONT.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.FONT.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.FONT.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.FORMAT">
+            <summary>
+            Describes a number format in the workbook.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.FORMAT.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.FORMAT.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.FORMAT.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.FORMAT.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.XF">
+            <summary>
+            eXtended Format.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.XF.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.XF.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.XF.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.XF.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.STYLE">
+            <summary>
+            Style Information.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.STYLE.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.STYLE.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.STYLE.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.STYLE.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.PALETTE">
+            <summary>
+            The PALETTE record describes the colors selected in the Options dialog box, Color tab. 
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.PALETTE.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.PALETTE.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.PALETTE.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.PALETTE.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.INDEX">
+            <summary>
+            Contains file pointers to DBCELL records. Goes immediately after the BOF record 
+            for each worksheet substream in a BIFF file.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.INDEX.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.INDEX.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.INDEX.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.INDEX.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.COLINFO">
+            <summary>
+            Describes the column formatting for a range of columns.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.COLINFO.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.COLINFO.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.COLINFO.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.COLINFO.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.DIMENSIONS">
+            <summary>
+            Contains the minimum and maximum bounds of the sheet. It provides 
+            a concise indication of the sheet size.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.DIMENSIONS.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.DIMENSIONS.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.DIMENSIONS.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.DIMENSIONS.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.ROW">
+            <summary>
+            Describes a single row on a Microsoft Excel sheet. 
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.ROW.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.ROW.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.ROW.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.ROW.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.LABELSST">
+            <summary>
+            Describes a cell that contains a string constant from the shared string table, 
+            which is new to BIFF8.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.LABELSST.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.LABELSST.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.LABELSST.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.LABELSST.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.BLANK">
+            <summary>
+            Marks a blank cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.BLANK.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.BLANK.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.BLANK.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.BLANK.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.DBCELL">
+            <summary>
+            Stores stream offsets for the BIFF file. There is one DBCELL record for each 
+            block of ROW records and associated cell records. Each block can contain data 
+            for up to 32 rows.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.DBCELL.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.DBCELL.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.DBCELL.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.DBCELL.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.RK">
+            <summary>
+            Record that represents cell that contains RK value (integer or floating-point).
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.RK.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.RK.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.RK.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.RK.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.LABEL">
+            <summary>
+            Record that represents cell with string value.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.LABEL.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.LABEL.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.LABEL.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.LABEL.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.NUMBER">
+            <summary>
+            Contains 64-bit floating point value. 
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.NUMBER.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.NUMBER.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.NUMBER.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.NUMBER.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.BOUNDSHEET">
+            <summary>
+            Stores the sheet name, sheet type, and stream position.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.BOUNDSHEET.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.BOUNDSHEET.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.BOUNDSHEET.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.BOUNDSHEET.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.SST">
+            <summary>
+            Shared String Table record.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.SST.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.SST.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.SST.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.SST.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.EXTSST">
+            <summary>
+            Contains a hash table that optimizes external copy operations.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.EXTSST.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.EXTSST.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.EXTSST.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.EXTSST.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.WINDOW2">
+            <summary>
+            Contains window attributes for a sheet in a workbook.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Excel.WINDOW2.#ctor(Infragistics.Excel.WINDOW2.OptionsEnum,System.UInt16,System.UInt16,System.UInt32,System.UInt16,System.UInt16)">
+            <summary>
+            Create a WINDOW2 record.
+            </summary>
+            <param name="_options">Optional flags governing the appearance of the Worksheet window.</param>
+            <param name="_rwTop">Index of topmost row visible in Worksheet window (zero-based).</param>
+            <param name="_colLeft">Index of leftmost row visible in Worksheet window (zero-based).</param>
+            <param name="_icvGridln">Color index of grid line color.</param>
+            <param name="_wScaleSLV">Page Break Preview zoom percentage (0 uses default setting).</param>
+            <param name="_wScaleNormal">Normal View zoom percentage (0 uses default setting).</param>
+        </member>
+        <member name="M:Infragistics.Excel.WINDOW2.WriteData(System.IO.BinaryWriter)">
+            <summary>
+            Write a WINDOW2 record.
+            </summary>
+            <param name="bw">Sink into which to deposit this record's content.</param>
+        </member>
+        <member name="P:Infragistics.Excel.WINDOW2.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.WINDOW2.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.WINDOW2.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.WINDOW2.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.WINDOW2.OptionsEnum">
+            <summary>
+            Worksheet option flags.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW2.OptionsEnum.DspFmla">
+            <summary>
+            Display formulas (default is display calculation results).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW2.OptionsEnum.DspGrid">
+            <summary>
+            Display grid lines (default is grid lines hidden).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW2.OptionsEnum.DspRwCol">
+            <summary>
+            Display worksheet headings (default is worksheet headings hidden).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW2.OptionsEnum.Frozen">
+            <summary>
+            Freeze panes (default is panes are not frozen).
+            </summary>
+            <remarks>
+            <p class="body">Use of this flag requires that there exist one or more subsequent <b>PANE</b> records in the Worksheet stream.  The <b>PANE</b> record is not supported in the current implementation.</p>
+            </remarks>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW2.OptionsEnum.DspZeros">
+            <summary>
+            Display zero as values (default is display zero as an empty cell).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW2.OptionsEnum.AutoGridColors">
+            <summary>
+            Automatic grid line colors (default is manual grid line colors).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW2.OptionsEnum.RightToLeft">
+            <summary>
+            Columns from right-to-left (default is left-to-right).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW2.OptionsEnum.DspOutlines">
+            <summary>
+            Display outline symbols (default is outline symbols hidden).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW2.OptionsEnum.DefrostNoSplit">
+            <summary>
+            Remove splitter bars when pane no longer frozen (default is to retain splitter bars).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW2.OptionsEnum.Selected">
+            <summary>
+            Worksheet is selected (default is not selected).
+            </summary>
+            <remarks>
+            <p class="body">The number of Worksheets with this flag set must match the corresponding value of <i>selectedSheets</i> in the corresponding <see cref="T:Infragistics.Excel.WINDOW1"/> record of the Workbook.</p>
+            <p class="body">This flag is not compatible with BIFF4 (BIFF4W) and earlier formats.</p>
+            </remarks>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW2.OptionsEnum.Visible">
+            <summary>
+            Display Worksheet (default is Worksheet hidden).
+            </summary>
+            <remarks>
+            <p class="body">This flag is not compatible with BIFF4 (BIFF4W) and earlier formats.</p>
+            </remarks>
+        </member>
+        <member name="F:Infragistics.Excel.WINDOW2.OptionsEnum.Paged">
+            <summary>
+            Display Worksheet in Page Break Preview (default is display Worksheet in Normal View).
+            </summary>
+            <remarks>
+            <p class="body">This flag is not compatible with BIFF7 and earlier formats.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.MERGEDCELLS">
+            <summary>
+            Describes merged ranges in the worksheet.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.MERGEDCELLS.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.MERGEDCELLS.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.MERGEDCELLS.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.MERGEDCELLS.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.WSBOOL">
+            <summary>
+            Stores information about additional worksheet settings.
+            </summary>
+            <remarks>
+            <p class="body">The settings of this record are maintained as a
+            collection of bit flags.</p>
+            <see cref="T:Infragistics.Excel.WSBOOL.Options">Worksheet Bit Options</see>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.WSBOOL.#ctor(Infragistics.Excel.WSBOOL.Options)">
+            <summary>
+            Creates a <b>WSBOOL</b> record compatible with BIFF8.
+            </summary>
+            <param name="options">Flags describing the options applicable to worksheets
+            in the end user's workspace.</param>
+            <remarks>
+            <p class="body">The record created does not support the BIFF4 capability
+            of specifying the workspace's windowing arrangement.  In later BIFF formats,
+            see <see cref="T:Infragistics.Excel.WINDOW1"/> and <see cref="T:Infragistics.Excel.WINDOW2"/> instead.</p>
+            <p class="body">The record created does not support the BIFF3 and BIFF4
+            capacity for storing a flag describing how external links are serialized,
+            this capability is supported instead by <b>BOOKBOOL</b> on the <b>Workbook</b>
+            level by later BIFF formats.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.WSBOOL.WriteData(System.IO.BinaryWriter)">
+            <summary>
+            Writes out the <b>WSBOOL</b> record in binary format.
+            </summary>
+            <param name="bw">A binary sink that receives the
+            serialization of this record.</param>
+        </member>
+        <member name="P:Infragistics.Excel.WSBOOL.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.WSBOOL.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.WSBOOL.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.WSBOOL.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.WSBOOL.Options">
+            <summary>
+            Describes the available worksheet settings customizable through
+            the <b>WSBOOL</b> record.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WSBOOL.Options.None">
+            <summary>
+            Default settings for flat grid data.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WSBOOL.Options.ShowAutoBreaks">
+            <summary>
+            Display automatic page breaks (default is no).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WSBOOL.Options.Dialog">
+            <summary>
+            Display the worksheet as a dialog (default is to display as a spreadsheet).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WSBOOL.Options.ApplyStyles">
+            <summary>
+            Apply automatic styles to row and column outline groupings (default is no).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WSBOOL.Options.RowGroupAbove">
+            <summary>
+            Display the outline expansion button at the top of an outline group of rows (the default is at the bottom).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WSBOOL.Options.ColGroupLeft">
+            <summary>
+            Display the outline expansion button at the left of an outline group of columns (the default is at the right).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WSBOOL.Options.FitToPage">
+            <summary>
+            Determines whether the spreadsheet is fitted to the page (the default is to use a scale percentage).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WSBOOL.Options.DspGuts">
+            <summary>
+            Display up to 8 levels of expandable, hierarchical groupings.
+            Must be used together with <see cref="F:Infragistics.Excel.WSBOOL.Options.RowGroupAbove"/> and/or
+            <see cref="F:Infragistics.Excel.WSBOOL.Options.ColGroupLeft"/>.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WSBOOL.Options.AlternateExpEval">
+            <summary>
+            Use an alternate expression evaluation (the default is no).
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.WSBOOL.Options.AlternateForEntry">
+            <summary>
+            Use the alternate formula entries (the default is no).
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.GUTS">
+            <summary>
+            This record contains the size of the row and column gutters, measured in pixels.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Excel.GUTS.#ctor(System.UInt16,System.UInt16,System.UInt16,System.UInt16)">
+            <summary>
+            Creates a <b>GUTS</b> record compatible with BIFF8.
+            </summary>
+            <param name="dxRwGut">Width (in pixels) of the left margin used to display outline row groupings.</param>
+            <param name="dyColGut">Height (in pixels) of the top margin used to display outline column groupings.</param>
+            <param name="levelRwMac">Number of visible row outlines (maximum is 8, specify 0 if unused).</param>
+            <param name="levelColMac">Number of visible column outlines (maximum is 8, specify 0 if unused).</param>
+        </member>
+        <member name="M:Infragistics.Excel.GUTS.WriteData(System.IO.BinaryWriter)">
+            <summary>
+            Writes out the <b>GUTS</b> record in binary format.
+            </summary>
+            <param name="bw">A binary sink that receives the
+            serialization of this record.</param>
+        </member>
+        <member name="P:Infragistics.Excel.GUTS.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.GUTS.DataSize"/> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.GUTS.DataSize">
+            <summary>
+            Gets the byte size of this record's data segment.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="P:Infragistics.Excel.GUTS.Type"/> and <b>DataSize</b> make up
+            the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.EOF">
+            <summary>
+            Marks the end of the Workbook stream or the end of one of the substreams within 
+            the Workbook stream (<i>e.g.,</i> the Worksheet streams).
+            </summary>
+            <remarks>
+            <p class="body">This is a zero-length record, that is it has no <b>DataSize</b>
+            nor data segment.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.EOF.Type">
+            <summary>
+            Gets the BIFF record type.
+            </summary>
+            <remarks>
+            <p class="body">The <b>Type</b> and <see cref="P:Infragistics.Excel.ConvertibleToBinaryData.DataSize"/> make 
+            up the header of the record, and their length is not included in the
+            calculated <b>DataSize</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.WorkbookStyleCollection">
+            <summary>
+            Collection of workbook styles.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Excel.WorkbookStyleCollection.AddUserDefinedStyle(Infragistics.Excel.IWorksheetCellFormat,System.String)">
+            <summary>
+            Adds new user defined style to the workbook.
+            </summary>
+            <param name="styleFormat">Style cell format.</param>
+            <param name="name">Style name.</param>
+        </member>
+        <member name="T:Infragistics.Excel.WorksheetCollection">
+            <summary>
+            Collection of worksheets.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Excel.WorksheetCollection.GetEnumerator">
+            <summary>
+            Implements IEnumerable.GetEnumerator().
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.Excel.WorksheetCollection.Add(System.String)">
+            <summary>
+            Creates new Worksheet and adds it to the collection. Returns created object.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetCollection.ParentWorkbook">
+            <summary>
+            Parent workbook.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetCollection.Count">
+            <summary>
+            Number of worksheets in the collection.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetCollection.Item(System.Int32)">
+            <summary>
+            Indexer.
+            </summary>
+            <param name="index">Zero-based index.</param>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetCollection.Item(System.String)">
+            <summary>
+            Indexer.
+            </summary>
+            <param name="name">Name of the worksheet.</param>
+        </member>
+        <member name="T:Infragistics.Excel.WorksheetRowCollection">
+            <summary>
+            Collection of worksheet rows.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.RowColumnCollectionBase">
+            <summary>
+            Base class for row collection and column collection.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetRowCollection.Item(System.Int32)">
+            <summary>
+            Indexer.
+            </summary>
+            <param name="index">Zero-based index.</param>
+        </member>
+        <member name="T:Infragistics.Excel.WorksheetColumnCollection">
+            <summary>
+            Collection of worksheet columns.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetColumnCollection.Item(System.Int32)">
+            <summary>
+            Indexer.
+            </summary>
+            <param name="index">Zero-based index.</param>
+        </member>
+        <member name="T:Infragistics.Excel.WorksheetCellCollection">
+            <summary>
+            Collection of worksheet cells.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetCellCollection.Item(System.Int32)">
+            <summary>
+            Indexer.
+            </summary>
+            <param name="index">Zero-based index.</param>
+        </member>
+        <member name="T:Infragistics.Excel.WorksheetMergedCellsRegionCollection">
+            <summary>
+            Collection of merged regions.
+            </summary>
+            <remarks>
+            <p class="body">Contains all merged cells regions in a Worksheet.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.WorksheetMergedCellsRegionCollection.GetEnumerator">
+            <summary>
+            Implements IEnumerable.GetEnumerator().
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.Excel.WorksheetMergedCellsRegionCollection.IsOverlappingWithMergedRegion(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Checks if any part of specified region is already a part of merged cells region.
+            </summary>
+            <param name="firstRow">First (top) row.</param>
+            <param name="firstColumn">First (left) column.</param>
+            <param name="lastRow">Last (bottom) row.</param>
+            <param name="lastColumn">Last (right) column.</param>
+            <returns>True if any part of specified region is a part of merged cells region.</returns>
+        </member>
+        <member name="M:Infragistics.Excel.WorksheetMergedCellsRegionCollection.Add(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates new merged cell region.
+            </summary>
+            <param name="firstRow">First (top) row.</param>
+            <param name="firstColumn">First (left) column.</param>
+            <param name="lastRow">Last (bottom) row.</param>
+            <param name="lastColumn">Last (right) column.</param>
+            <returns>Created WorksheetMergedCellsRegion.</returns>
+            <remarks>
+            <p class="body">If merged cells regions overlap, exception of type <see cref="T:System.Exception"/> is thrown.</p>
+            <p class="body">Merged cells region will take value and formatting from first cell (looking from left to right, top to bottom) with some value and non-default cell format.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetMergedCellsRegionCollection.Count">
+            <summary>
+            Number of merged regions in the collection.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetMergedCellsRegionCollection.Item(System.Int32)">
+            <summary>
+            Indexer.
+            </summary>
+            <param name="index">Zero-based index.</param>
+        </member>
+        <member name="T:Infragistics.Excel.IWorksheetCellFormat">
+            <summary>
+            Cell formatting interface.
+            </summary>
+            <remarks>
+            <p class="body">Provides interface to cell specific formatting (font, number format, appearance etc.). Cell formatting can be associated with specific cell, row or column in a Worksheet. If cell format property has default value, value of previous object in resolution chain is used. Resolution priority is: CELL (top priority), ROW, COLUMN, DEFAULT CELL FORMAT (lowest priority). 
+            For example, if row cell format background color is blue and column cell format background color is set to red, cell with default background color (Color.Empty) and positioned in that row and column will have blue color in exported file (as row has higher priority than column). Resolution process is done internally during exporting process, which means that cell format background color is always default if not explicitly set.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.IWorksheetCellFormat.SetFormatting(Infragistics.Excel.IWorksheetCellFormat)">
+            <summary>
+            Sets all cell format properties to specific cell formatting.
+            </summary>
+            <param name="source">Source cell format.</param>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.Font">
+            <summary>
+            Font formatting.
+            </summary>
+            <remarks>
+            <p class="body">Use this property to get or set specific font formatting.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.FormatString">
+            <summary>
+            Excel number format string.
+            </summary>
+            <remarks>
+            <p class="body">For more information on excel format strings, consult Microsoft Excel help.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.Locked">
+            <summary>
+            True if the cell is locked in protected mode.
+            </summary>
+            <remarks>
+            <p class="body">Locked property is used in Excel file <b>only</b> if Worksheet or Workbook is protected. Otherwise it has no meaning.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.WrapText">
+            <summary>
+            Wrap text option.
+            </summary>
+            <remarks>
+            <p class="body">Wraps text into multiple lines in a cell.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.ShrinkToFit">
+            <summary>
+            Shrink to fit option.
+            </summary>
+            <remarks>
+            <p class="body">Reduces the apparent size of font characters so that all data in a selected cell fits within the column.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.Alignment">
+            <summary>
+            Horizontal alignment.
+            </summary>
+            <remarks>
+            <p class="body">Horizontal text alignment inside a cell. For more information see <see cref="T:Infragistics.Excel.HorizontalCellAlignment"/>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.VerticalAlignment">
+            <summary>
+            Vertical alignment.
+            </summary>
+            <remarks>
+            <p class="body">Vertical text alignment inside a cell. For more information see <see cref="T:Infragistics.Excel.VerticalCellAlignment"/>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.Rotation">
+            <summary>
+            Rotation (degrees).
+            </summary>
+            <remarks>
+            <p class="body">Cell text rotation, in degrees; 0 – 90 is up 0 – 90 degrees, 91 – 180 is down 1 – 90 degrees, and 255 is vertical.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.Indent">
+            <summary>
+            Indent (0-15). Each increment is equivalent to the width of one character.
+            </summary>
+            <remarks>
+            <p class="body">Excel indent value (Format Cells dialog box, Alignment tab).</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.LeftBorderStyle">
+            <summary>
+            Left border style.
+            </summary>
+            <remarks>
+            <p class="body">For more information see <see cref="T:Infragistics.Excel.CellBorderLineStyle"/>.</p>
+            <p class="body">If border style is set to some value and border color is Color.Empty, resolved border color writen to excel file is Color.Black.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.RightBorderStyle">
+            <summary>
+            Right border style.
+            </summary>
+            <remarks>
+            <p class="body">For more information on excel border styles see <see cref="T:Infragistics.Excel.CellBorderLineStyle"/>.</p>
+            <p class="body">If border style is set to some value and border color is Color.Empty, resolved border color writen to excel file is Color.Black.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.TopBorderStyle">
+            <summary>
+            Top border style.
+            </summary>
+            <remarks>
+            <p class="body">For more information on excel border styles see <see cref="T:Infragistics.Excel.CellBorderLineStyle"/>.</p>
+            <p class="body">If border style is set to some value and border color is Color.Empty, resolved border color writen to excel file is Color.Black.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.BottomBorderStyle">
+            <summary>
+            Bottom border style.
+            </summary>
+            <remarks>
+            <p class="body">For more information on excel border styles see <see cref="T:Infragistics.Excel.CellBorderLineStyle"/>.</p>
+            <p class="body">If border style is set to some value and border color is Color.Empty, resolved border color writen to excel file is Color.Black.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.LeftBorderColor">
+            <summary>
+            Left border color.
+            </summary>
+            <remarks>
+            <p class="body">For more information on .NET Framework colors see <see cref="T:System.Drawing.Color"/>.</p>
+            <p class="body">If border color is set to some value and border line style is CellBorderLineStyle.Default, resolved border line style is CellBorderLineStyle.Thin.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.RightBorderColor">
+            <summary>
+            Right border color.
+            </summary>
+            <remarks>
+            <p class="body">For more information on .NET Framework colors see <see cref="T:System.Drawing.Color"/>.</p>
+            <p class="body">If border color is set to some value and border line style is CellBorderLineStyle.Default, resolved border line style is CellBorderLineStyle.Thin.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.TopBorderColor">
+            <summary>
+            Top border color.
+            </summary>
+            <remarks>
+            <p class="body">For more information on .NET Framework colors see <see cref="T:System.Drawing.Color"/>.</p>
+            <p class="body">If border color is set to some value and border line style is CellBorderLineStyle.Default, resolved border line style is CellBorderLineStyle.Thin.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.BottomBorderColor">
+            <summary>
+            Bottom border color.
+            </summary>
+            <remarks>
+            <p class="body">For more information on .NET Framework colors see <see cref="T:System.Drawing.Color"/>.</p>
+            <p class="body">If border color is set to some value and border line style is CellBorderLineStyle.Default, resolved border line style is CellBorderLineStyle.Thin.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.FillPattern">
+            <summary>
+            Fill pattern.
+            </summary>
+            <remarks>
+            <p class="body">Excel fill pattern value (Format Cells dialog box, Alignment tab).</p>
+            <p class="body">If fill pattern is set to FillPatternStyle.Solid, cell is painted using just fill pattern <see cref="P:Infragistics.Excel.IWorksheetCellFormat.FillPatternForegroundColor"/> color. For all other patterns, both <see cref="P:Infragistics.Excel.IWorksheetCellFormat.FillPatternForegroundColor"/> and <see cref="P:Infragistics.Excel.IWorksheetCellFormat.FillPatternBackgroundColor"/> are used.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.FillPatternForegroundColor">
+            <summary>
+            Foreground color of the fill pattern.
+            </summary>
+            <remarks>
+            <p class="body">If foreground color is set and fill pattern style is set to FillPatternStyle.Default, resolved fill pattern style is FillPatternStyle.Solid. In other words you can easily set cell background color to some value if you just set FillPatternForegroundColor to some value.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.IWorksheetCellFormat.FillPatternBackgroundColor">
+            <summary>
+            Background color of the fill pattern.
+            </summary>
+            <remarks>
+            <p class="body">If background color is set and fill pattern style is set to FillPatternStyle.Default, resolved fill pattern style is FillPatternStyle.Gray50percent.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.GenericCacheElement">
+            <summary>
+            GenericCacheElement. All derived classes MUST implement:
+            1) object Clone()
+            2) int GetHashCode()
+            3) bool Equals(object obj)
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.HorizontalCellAlignment">
+            <summary>
+            An enumerator for horizontal alignment styles. Default value is used in property override situations.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.HorizontalCellAlignment.Default">
+            <summary>
+            Use the current default.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.HorizontalCellAlignment.General">
+            <summary>
+            Alignment depends on underlying data type.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.HorizontalCellAlignment.Left">
+            <summary>
+            Left alignment.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.HorizontalCellAlignment.Center">
+            <summary>
+            Centered alignment.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.HorizontalCellAlignment.Right">
+            <summary>
+            Right alignment.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.HorizontalCellAlignment.Fill">
+            <summary>
+            Repeat cell value to fill whole cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.HorizontalCellAlignment.Justify">
+            <summary>
+            Justify alignment.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.HorizontalCellAlignment.CenterAcrossSelection">
+            <summary>
+            Centers the contents of the left-most cell in a center across selection group. All other cells in the center across selection group must be empty. The cells are not merged, and the data may appear to be in a cell other than the left-most cell.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.VerticalCellAlignment">
+            <summary>
+            An enumerator for vertical alignment styles. Default value is used in property override situations.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.VerticalCellAlignment.Default">
+            <summary>
+            Use the current default
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.VerticalCellAlignment.Top">
+            <summary>
+            Top alignment.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.VerticalCellAlignment.Center">
+            <summary>
+            Center alignment.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.VerticalCellAlignment.Bottom">
+            <summary>
+            Bottom alignment.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.VerticalCellAlignment.Justify">
+            <summary>
+            Justify alignment.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.CellBorderLineStyle">
+            <summary>
+            An enumerator for cell border line styles. Default value is used in property override situations.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.Default">
+            <summary>
+            Use the current default.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.None">
+            <summary>
+            No border.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.Thin">
+            <summary>
+            Thin border.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.Medium">
+            <summary>
+            Medium border.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.Dashed">
+            <summary>
+            Dashed border.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.Dotted">
+            <summary>
+            Dotted border.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.Thick">
+            <summary>
+            Thick border.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.Double">
+            <summary>
+            Double-line border.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.Hair">
+            <summary>
+            Dotted border with small dots.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.MediumDashed">
+            <summary>
+            Dotted border with big dots.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.DashDot">
+            <summary>
+            Dash-dot border.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.MediumDashDot">
+            <summary>
+            Medium dash-dot border.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.DashDotDot">
+            <summary>
+            Dash-dot-dot border.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.MediumDashDotDot">
+            <summary>
+            Medium dash-dot-dot border.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.CellBorderLineStyle.SlantedDashDot">
+            <summary>
+            Slanted dash-dot border.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.FillPatternStyle">
+            <summary>
+            An enumerator for fill pattern styles. Default value is used in property override situations.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.Default">
+            <summary>
+            Use the current default.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.None">
+            <summary>
+            No fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.Solid">
+            <summary>
+            Solid fill pattern with fill pattern foreground color. 
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.Gray50percent">
+            <summary>
+            "50% gray" fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.Gray75percent">
+            <summary>
+            "75% gray" fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.Gray25percent">
+            <summary>
+            "25% gray" fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.HorizontalStripe">
+            <summary>
+            Horizontal stripe fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.VerticalStripe">
+            <summary>
+            Vertical stripe fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.ReverseDiagonalStripe">
+            <summary>
+            Reverse diagonal stripe fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.DiagonalStripe">
+            <summary>
+            Diagonal stripe fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.DiagonalCrosshatch">
+            <summary>
+            Diagonal crosshatch fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.ThickDiagonalCrosshatch">
+            <summary>
+            Thick diagonal crosshatch fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.ThinHorizontalStripe">
+            <summary>
+            Thin horizontal stripe fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.ThinVerticalStripe">
+            <summary>
+            Thin vertical stripe fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.ThinReverseDiagonalStripe">
+            <summary>
+            Thin reverse diagonal stripe fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.ThinDiagonalStripe">
+            <summary>
+            Thin diagonal stripe fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.ThinHorizontalCrosshatch">
+            <summary>
+            Thin horizontal crosshatch fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.ThinDiagonalCrosshatch">
+            <summary>
+            Thin diagonal crosshatch fill pattern.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.Gray12percent">
+            <summary>
+            "12.5% gray" fill pattern
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FillPatternStyle.Gray6percent">
+            <summary>
+            "6.25% gray" fill pattern
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.GenericCacheElementProxy">
+            <summary>
+            GenericCacheElementProxy
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.GenericCachedCollection">
+            <summary>
+            GenericCachedCollection
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.IWorkbookFont">
+            <summary>
+            Font formatting interface.
+            </summary>
+            <remarks>
+            <p class="body">Provides interface to font formatting. If some font property has default value, value of previous object in resolution chain is used. Resolution priority is: CELL (top priority), ROW, COLUMN, DEFAULT FONT FORMAT (lowest priority).
+            For example, if column font is set to blue and bold and row font is set to italic and not bold, resulting text at intersection of row and column will be italic and blue but not bold (because row font settings have higher priority than column font settings). Resolution process is done internally during exporting process, which means that some font property always has a default value if it is not explicitly set.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.IWorkbookFont.SetFontFormatting(Infragistics.Excel.IWorkbookFont)">
+            <summary>
+            Sets all font properties to specific font formatting.
+            </summary>
+            <param name="source">Source font format.</param>
+        </member>
+        <member name="P:Infragistics.Excel.IWorkbookFont.Name">
+            <summary>
+            Font name.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.IWorkbookFont.Height">
+            <summary>
+            Font height, in units of 1/20th of a point.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.IWorkbookFont.Color">
+            <summary>
+            Font color.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.IWorkbookFont.Bold">
+            <summary>
+            True if font is bold.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.IWorkbookFont.Italic">
+            <summary>
+            True is font is italic.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.IWorkbookFont.Strikeout">
+            <summary>
+            True if font is struck out.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.IWorkbookFont.SuperscriptSubscriptStyle">
+            <summary>
+            Font superscript or subscript style.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.IWorkbookFont.UnderlineStyle">
+            <summary>
+            Font underline style.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.FontSuperscriptSubscriptStyle">
+            <summary>
+            An enumerator for font superscript or subscript style. Default value is used in property override situations.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FontSuperscriptSubscriptStyle.Default">
+            <summary>
+            Use the current default.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FontSuperscriptSubscriptStyle.None">
+            <summary>
+            No superscript or subscript style.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FontSuperscriptSubscriptStyle.Superscript">
+            <summary>
+            Superscript style.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FontSuperscriptSubscriptStyle.Subscript">
+            <summary>
+            Subscript style.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.FontUnderlineStyle">
+            <summary>
+            An enumerator for font underline styles. Default value is used in property override situations.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FontUnderlineStyle.Default">
+            <summary>
+            Use the current default.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FontUnderlineStyle.None">
+            <summary>
+            No underline style.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FontUnderlineStyle.Single">
+            <summary>
+            Single underline style.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FontUnderlineStyle.Double">
+            <summary>
+            Double underline style.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FontUnderlineStyle.SingleAccounting">
+            <summary>
+            Single accounting underline style.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.FontUnderlineStyle.DoubleAccounting">
+            <summary>
+            Double accounting underline style.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.WorkbookBuiltInStyle">
+            <summary>
+            Built-in styles are currently not used.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.Header">
+            <summary>
+            Header block in OLE2 Structured Storage.
+            </summary>
+            <remarks>
+            <p class="body">The Header block is written out to the first big block in any OLE2 Structured Storage file system.
+            It is not actually a big block, though, since Big Block #0 gets serialized immediately after it (the Header block 
+            could therefore be thought of existing at index -1, from this perspective.)</p>
+            <p class="body">This block contains information on where the block allocation table is, its size, information about
+            alternate block allocation tables (the small BAT and xtra BAT, both unsupported in this implementation and only
+            needed for very small files less than 64 bytes long or for very large files several gigabytes long), and information
+            about the location of the property table.</p>
+            <p class="body">Calling the <see cref="M:Infragistics.Excel.Header.Write(System.IO.BinaryWriter)"/> method on this class serializes out the HEADER and BAT_BLOCK records
+            for an OLE2 Structured Storage device.  Prior to calling this method, the client is responsible for assigning a value
+            to the <see cref="F:Infragistics.Excel.Header.propertyCount">propertyCount</see> field.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.Header.CalculateFileBlocks(System.Int32)">
+            <summary>
+            Calculates the number of big blocks required to hold the file.
+            </summary>
+            <param name="fileSize">The size in bytes of the file.</param>
+            <returns>The number of big blocks required to hold the file.</returns>
+            <remarks>
+            <p class="body">When the file is not evenly divisible by the <i>blockSize</i>, the remainder of the file populates one additional big block allocated to handle overflow.  The <see cref="F:Infragistics.Excel.Property.actualSize">actualSize</see> of the file then must be set on the accompanying <b>Property</b>.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.Header.CalculatePropertyBlocks(System.Int32)">
+            <summary>
+            Calculates the number of big blocks required to hold the Property Table.
+            </summary>
+            <param name="blockSize">The size in bytes of one big block.</param>
+            <returns>The number of big blocks required to hold the Property Table.</returns>
+            <remarks>
+            <p class="body">When the property table is not evenly divisible by four, the remaining propertly blocks necessitate one additional big block be allocated to holding the Property Table.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.Header.CalculateBATBlocks(System.Int32)">
+            <summary>
+            Calculates the number of blocks consumed by the Block Allocation Table (BAT).
+            </summary>
+            <param name="blockSize">The size of a block in bytes.</param>
+            <returns>Number of <i>blockSize</i>-byte blocks consumed by the BAT.</returns>
+            <remarks>
+            <p class="body">The <see cref="M:Infragistics.Excel.PseudoFileSystem.AddFile(System.String,System.Int32)">AddFile</see> method needs the number of blocks consumed by the BAT to calculate an offset to the starting block index of a newly created File.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.Header.Write(System.IO.BinaryWriter)">
+            <summary>
+            Writes the HEADER and BAT_BLOCK for the OLE2 Structured Storage.
+            </summary>
+            <param name="sink">A binary writer stream to deposit the binary data into.</param>
+            <remarks>
+            <p class="body">This method does not yet support writing multiple BAT_BLOCK records.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.PropertyTable">
+            <summary>
+            Property Table block in OLE2 Structured Storage.
+            </summary>
+            <remarks>
+            <p class="body">The Property Table block is written out to the ending big blocks in this OLE2 Structured Storage file
+            system implementation, and these blocks are marked as ''special'' in the BAT.  Each Big Block dedicated to the storage
+            of the Property Table holds approximately four 128-byte <see cref="T:Infragistics.Excel.Property"/> records.  The Property Table comprises
+            the hierarchical directory structure of individual documents and folders within the Structured Storage system.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.PropertyTable.AddProperty(System.String,Infragistics.Excel.PropertyType,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adds a Property to the Property Table.
+            </summary>
+            <param name="name">The name of the Document or Folder.</param>
+            <param name="propType">The type of Property to write.</param>
+            <param name="parentID">The home Folder of the Document or Folder added.</param>
+            <param name="startBlock">The starting block where the Document's data is serialized.</param>
+            <param name="actualSize">The actual size (in bytes) of the Document's data, if not evenly divisible by 512.</param>
+            <returns>The ID number assigned to the newly added Property within the table.</returns>
+            <remarks>
+            <p class="body">This method is invoked by the <see cref="T:Infragistics.Excel.PseudoFileSystem"/> to create a Document (or Folder).</p>
+            <p class="body">The caller often requires the <i>id</i> assigned to the <see cref="T:Infragistics.Excel.Property"/> by the <b>PropertyTable</b> for subsequent processing (such as storing this index into the Block Allocation Table, or BAT.)</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.PropertyTable.Write(System.IO.BinaryWriter)">
+            <summary>
+            Writes the PROPERTYTAB blocks for the OLE2 Structured Storage.
+            </summary>
+            <param name="sink">A BinaryWriter to which property table data is to be serialized.</param>
+            <remarks>
+            <p class="body">The serialization is largely delegated to the <see cref="M:Infragistics.Excel.Property.Write(System.IO.BinaryWriter)">Write</see> method of the contained <see cref="T:Infragistics.Excel.Property"/> instances.  It pads out the big block written to the <i>sink</i> to make it evenly divisible by 512 bytes.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.PropertyType">
+            <summary>
+            Property type classifications.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.PropertyType.RootEntry">
+            <summary>
+            This Property is the root entry in the hierarchical tree.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.PropertyType.File">
+            <summary>
+            This Property is a leaf entry in the hierarchical tree.
+            </summary>
+            <remarks>
+            <p class="body">Properties of type <b>File</b> may have siblings but must not have children.</p>
+            </remarks>
+        </member>
+        <member name="F:Infragistics.Excel.PropertyType.Directory">
+            <summary>
+            This Property is a branch entry in the hierarchical tree.
+            </summary>
+            <remarks>
+            <p class="body">A directory may or may not be empty.  If it is empty, then it is called a dead branch.</p>
+            <p class="body">In addition to having children, directories may have siblings that are either <b>File</b> or <b>Directory</b> properties.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.NodeType">
+            <summary>
+            Color classification of a Property.
+            </summary>
+            <remarks>
+            <p class="body">OLE2 Structured Storage is formally designed to behave as a red-black tree data structure for self-balancing purposes.
+            This implementation does not support <b>Red</b> node functionality.</p>
+            </remarks>
+        </member>
+        <member name="F:Infragistics.Excel.NodeType.Red">
+            <summary>
+            The property is Red.
+            </summary>
+            <remarks>
+            <p class="body">No two adjacent properties may both be <b>Red</b>.</p>
+            <p class="body">The current implementation never sets properties to <b>Red</b>.</p>
+            </remarks>
+        </member>
+        <member name="F:Infragistics.Excel.NodeType.Black">
+            <summary>
+            The property is Black.
+            </summary>
+            <remarks>
+            <p class="body">The <b>RootEntry</b> is always <b>Black</b>.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.Property">
+            <summary>
+            Property records in OLE2 Structured Storage.
+            </summary>
+            <remarks>
+            <p class="body">The Property records appear, one per Folder or Document in Structured Storage, in the <see cref="T:Infragistics.Excel.PropertyTable"/>
+            as 128-byte long records.  Each property maintains information about its name, the length of its name, an assortment of timestamps,
+            the block index where its document's storage begins, and its relationship to one or more sibling and child properties in the
+            hierarchical property table.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.Property.Write(System.IO.BinaryWriter)">
+            <summary>
+            Writes the PROPERTY records within the PROPERTYTAB blocks of OLE2 Structured Storage.
+            </summary>
+            <param name="sink">A BinaryWriter to which property record data is to be serialized.</param>
+            <remarks>
+            <p class="body">This method is called by the <see cref="M:Infragistics.Excel.PropertyTable.Write(System.IO.BinaryWriter)">Write</see> method of <see cref="T:Infragistics.Excel.PropertyTable"/>. It is not generally advisable to call this outside of the context of the <b>PropertyTable</b>'s serialization.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.PseudoFileSystem">
+            <summary>
+            Encapsulates the underlying storage devices of OLE2 Structured Storage in a file system metaphor.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Excel.PseudoFileSystem.PreWrite(System.IO.BinaryWriter)">
+            <summary>
+            Writes out the beginning of the OLE2-compatible Structured Storage stream.
+            </summary>
+            <param name="writer">
+            A BinaryWriter into which to deposit the header and allocation table
+            of the Structured Storage stream.
+            </param>
+            <remarks>
+            <p class="body">The caller should then serialize any streams s/he has
+            a hold of in ascending order of their property ID's (that the caller
+            retained when calling <see cref="M:Infragistics.Excel.PseudoFileSystem.AddFile(System.String,System.Int32)"/>.)</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.PseudoFileSystem.PostWrite(System.IO.BinaryWriter)">
+            <summary>
+            Writes out the ending of the OLE2-compatible Structured Storage stream.
+            </summary>
+            <param name="writer">
+            A BinaryWriter into which to deposit the properties table of the Structured
+            Storage stream.
+            </param>
+            <remarks>
+            <p class="body">This method automatically flushes the output stream,
+            yet the caller may still wish to call <b>Close</b> on it separately to
+            recollect it's underlying handle and system resources.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.OLE2StructuredStorage">
+            <summary>
+            Abstract base class common to all OLE2-compatible Structured Storage implementations.
+            </summary>
+            <remarks>
+            <p class="body">Call the class method, <see cref="M:Infragistics.Excel.OLE2StructuredStorage.GetImplementation(Infragistics.Excel.OLE2StructuredStorage.StorageProviderType)"/>, to retrieve an appropriate subclass implementation.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.OLE2StructuredStorage.CreateFileWithStream(System.String,System.String,System.Byte[])">
+            <summary>
+            Create a new stream within the Structured Storage file system.
+            </summary>
+            <param name="fileName">The file name representing the Structured Storage file system.</param>
+            <param name="streamName">The stream name of a document that is to contain the contents of the <i>data</i>.</param>
+            <param name="data">A source array that provides the binary content to be streamed into this Structured Storage document.</param>
+        </member>
+        <member name="M:Infragistics.Excel.OLE2StructuredStorage.CreateFileWithStream(System.IO.Stream,System.String,System.Byte[])">
+            <summary>
+            Create a new stream within the Structured Storage file system and send the output to a .NET Stream.
+            </summary>
+            <param name="outStream">The output stream into which a Structured Storage file system is produced.</param>
+            <param name="streamName">The stream name of a document that is to contain the contents of the <i>data</i>.</param>
+            <param name="data">A source array that provides the binary content to be streamed into this Structured Storage document.</param>
+        </member>
+        <member name="M:Infragistics.Excel.OLE2StructuredStorage.ExportStreamFromFile(System.String,System.String,System.Byte[]@)">
+            <summary>
+            Import an existing stream within a Structured Storage file system present in the specified filename.
+            </summary>
+            <param name="fileName">The file name representing the Structured Storage file system.</param>
+            <param name="streamName">The stream name of a document contained within the Structured Storage file system.</param>
+            <param name="data">A destination array that will be re-dimensioned and populated based on the binary content of the requested stream, or have the value null (Nothing in Visual Basic) if the operation failed.</param>
+        </member>
+        <member name="M:Infragistics.Excel.OLE2StructuredStorage.GetImplementation(Infragistics.Excel.OLE2StructuredStorage.StorageProviderType)">
+            <summary>
+            Factory method to retrieve any appropriate OLE2-compatible Structured Storage Provider.
+            </summary>
+            <param name="type">The type of provider to retrieve (OLE2 or Managed).</param>
+            <returns>An instance of a subclass that provides the required services, or null (Nothing in Visual Basic) when no such instance could be created.</returns>
+            <remarks>
+            <p class="body">An object that may safely be typecast to <see cref="T:Infragistics.Excel.OLE2StorageFile"/> when an OLE2 Structured Storage Provider was requested, or alternately a <see cref="T:Infragistics.Excel.ManagedStorageFile"/> instance when a Managed Structured Storage Provider is requested.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.OLE2StructuredStorage.StorageProviderType">
+            <summary>
+            Defines the provider implementation used for OLE2 Structured Storage.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.OLE2StructuredStorage.StorageProviderType.Managed">
+            <summary>
+            Maui File System is a 100% Managed OLE2-compatible structured storage provider.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.OLE2StructuredStorage.StorageProviderType.Ole2">
+            <summary>
+            OLE2 uses P/Invoke to access the OLE2 structured storage provider.
+            </summary>
+            <remarks>
+            <p class="body">This <b>StorageProviderType</b> is intended for backwards-compatibility only.  It requires an unrestricted <b>SecurityPermission</b> to call unmanaged code.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.OLE2StructuredStorage.OLE_MODE">
+            <summary>
+            Defines OLE file access, sharing and capability flags utilized by the Ole2 Storage Provider.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.ManagedStorageFile">
+            <summary>
+            Managed provider of Structured Storage services.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Excel.ManagedStorageFile.#ctor">
+            <summary>
+            Default constructor for ManagedStorageFile.
+            </summary>
+            <remarks>
+            <p class="body">For greater portability in the future, use the <see cref="M:Infragistics.Excel.OLE2StructuredStorage.GetImplementation(Infragistics.Excel.OLE2StructuredStorage.StorageProviderType)">GetImplementation</see> class factory method on <b>OLE2StructuredStorage</b> to create an instance.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.ManagedStorageFile.CreateFileWithStream(System.String,System.String,System.Byte[])">
+            <summary>
+            Create a new stream within the Structured Storage file system and send the output to a file.
+            </summary>
+            <param name="fileName">The file name representing the Structured Storage file system.</param>
+            <param name="streamName">The stream name of a document that is to contain the contents of the <i>data</i>.</param>
+            <param name="data">A source array that provides the binary content to be streamed into this Structured Storage document.</param>
+            <remarks>
+            <p class="body">The implementation of this method involves 100% managed code.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.ManagedStorageFile.CreateFileWithStream(System.IO.Stream,System.String,System.Byte[])">
+            <summary>
+            Create a new stream within the Structured Storage file system and send the output to a .NET Stream.
+            </summary>
+            <param name="outStream">The output stream into which a Structured Storage file system is produced.</param>
+            <param name="streamName">The stream name of a document that is to contain the contents of the <i>data</i>.</param>
+            <param name="data">A source array that provides the binary content to be streamed into this Structured Storage document.</param>
+            <remarks>
+            <p class="body">The implementation of this method involves 100% managed code.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.ManagedStorageFile.ExportStreamFromFile(System.String,System.String,System.Byte[]@)">
+            <summary>
+            Import an existing stream within a Structured Storage file system present in the specified filename.
+            </summary>
+            <param name="fileName">The file name representing the Structured Storage file system.</param>
+            <param name="streamName">The stream name of a document contained within the Structured Storage file system.</param>
+            <param name="data">A destination array that will be re-dimensioned and populated based on the binary content of the requested stream.</param>
+            <remarks>
+            <p class="body">The implementation of this method involves 100% managed code.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.OLE2StorageFile">
+            <summary>
+            OLE2 provider of Structured Storage services.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Excel.OLE2StorageFile.#ctor">
+            <summary>
+            Default constructor for OLE2StorageFile.
+            </summary>
+            <remarks>
+            <p class="body">For greater portability in the future, use the <see cref="M:Infragistics.Excel.OLE2StructuredStorage.GetImplementation(Infragistics.Excel.OLE2StructuredStorage.StorageProviderType)">GetImplementation</see> class factory method on <b>OLE2StructuredStorage</b> to create an instance.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.OLE2StorageFile.CreateFileWithStream(System.String,System.String,System.Byte[])">
+            <summary>
+            Create a new stream within the Structured Storage file system.
+            </summary>
+            <param name="fileName">The file name representing the Structured Storage file system.</param>
+            <param name="streamName">The stream name of a document that is to contain the contents of the <i>data</i>.</param>
+            <param name="data">A source array that provides the binary content to be streamed into this Structured Storage document.</param>
+            <remarks>
+            <p class="body">The implementation of this method makes use of P/Invoke to call into unmanaged code.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.OLE2StorageFile.CreateFileWithStream(System.IO.Stream,System.String,System.Byte[])">
+            <summary>
+            Create a new stream within the Structured Storage file system and send the output to a .NET Stream.
+            </summary>
+            <param name="outStream">The output stream into which a Structured Storage file system is produced.</param>
+            <param name="streamName">The stream name of a document that is to contain the contents of the <i>data</i>.</param>
+            <param name="data">A source array that provides the binary content to be streamed into this Structured Storage document.</param>
+        </member>
+        <member name="M:Infragistics.Excel.OLE2StorageFile.ExportStreamFromFile(System.String,System.String,System.Byte[]@)">
+            <summary>
+            Import an existing stream within a Structured Storage file system present in the specified filename.
+            </summary>
+            <param name="fileName">The file name representing the Structured Storage file system.</param>
+            <param name="streamName">The stream name of a document contained within the Structured Storage file system.</param>
+            <param name="data">A destination array that will be re-dimensioned and populated based on the binary content of the requested stream.</param>
+            <remarks>
+            <p class="body">The implementation of this method makes use of P/Invoke to call into unmanaged code.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.ExcelResourceCustomizer">
+            <summary>
+            Class used to provide the ability to customize resource strings.
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.ExcelResourceCustomizer.GetCustomizedString(System.String)">
+            <summary>
+            Gets the customized string identified by the specified string resource name.
+            </summary>
+            <param name="name">Name of the string resource that was customized.</param>
+            <returns>The customized string or null if the resource wasn't customized.</returns>
+            <seealso cref="M:Infragistics.Excel.ExcelResourceCustomizer.ResetAllCustomizedStrings"/>
+            <seealso cref="M:Infragistics.Excel.ExcelResourceCustomizer.ResetCustomizedString(System.String)"/>
+            <seealso cref="M:Infragistics.Excel.ExcelResourceCustomizer.SetCustomizedString(System.String,System.String)"/>
+        </member>
+        <member name="M:Infragistics.Excel.ExcelResourceCustomizer.ResetAllCustomizedStrings">
+            <summary>
+            Clears all strings customized by calls to <see cref="M:Infragistics.Excel.ExcelResourceCustomizer.SetCustomizedString(System.String,System.String)"/> method.
+            </summary>
+            <seealso cref="M:Infragistics.Excel.ExcelResourceCustomizer.SetCustomizedString(System.String,System.String)"/>
+            <seealso cref="M:Infragistics.Excel.ExcelResourceCustomizer.ResetCustomizedString(System.String)"/>
+        </member>
+        <member name="M:Infragistics.Excel.ExcelResourceCustomizer.ResetCustomizedString(System.String)">
+            <summary>
+            Resets a customized string identified by the specified string resource name so that it will load from the resource file.
+            </summary>
+            <param name="name">Name of the string resource to customize.</param>
+            <seealso cref="M:Infragistics.Excel.ExcelResourceCustomizer.SetCustomizedString(System.String,System.String)"/>
+        </member>
+        <member name="M:Infragistics.Excel.ExcelResourceCustomizer.SetCustomizedString(System.String,System.String)">
+            <summary>
+            Sets a customized string identified by the specified string resource name.
+            </summary>
+            <param name="name">Name of the string resource to customize.</param>
+            <param name="customizedText">The customized string. If null this has the same effect as calling <see cref="M:Infragistics.Excel.ExcelResourceCustomizer.ResetCustomizedString(System.String)"/></param>
+            <seealso cref="M:Infragistics.Excel.ExcelResourceCustomizer.ResetAllCustomizedStrings"/>
+            <seealso cref="M:Infragistics.Excel.ExcelResourceCustomizer.ResetCustomizedString(System.String)"/>
+        </member>
+        <member name="T:Infragistics.Excel.Resources">
+            <summary>
+            Exposes a <see cref="T:Infragistics.Excel.ExcelResourceCustomizer"/> instance for this assembly. 
+            </summary>
+            <seealso cref="P:Infragistics.Excel.Resources.Customizer"/> 
+            <seealso cref="T:Infragistics.Excel.ExcelResourceCustomizer"/> 
+        </member>
+        <member name="P:Infragistics.Excel.Resources.Customizer">
+            <summary>
+            Returns the <see cref="T:Infragistics.Excel.ExcelResourceCustomizer"/> for this assembly.
+            </summary>
+            <seealso cref="T:Infragistics.Excel.ExcelResourceCustomizer"/> 
+        </member>
+        <member name="T:Infragistics.Excel.Workbook">
+            <summary>
+            Abstract representation of Microsoft Excel workbook.
+            </summary>
+            <remarks>
+            <p class="body">Represents Microsoft Excel workbook. Workbook itself doesn’t have any methods for writing its contents to binary or XLM files or streams. Use provided writer classes instead.</p>
+            <p class="body">Every workbook consists of one or more worksheets (<see cref="T:Infragistics.Excel.Worksheet"/>). Default constructor creates empty workbook.</p>
+            </remarks>
+        </member>
+        <member name="F:Infragistics.Excel.Workbook.MaxExcelRowCount">
+            <summary>
+            Maximum number of rows in the worksheet allowed by Excel.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.Workbook.MaxExcelColumnCount">
+            <summary>
+            Maximum number of columns in the worksheet allowed by Excel.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.Workbook.MaxExcelColorCount">
+            <summary>
+            Maximum number of colors in the workbook allowed by Excel.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.Workbook.MaxExcelCellFormatCount">
+            <summary>
+            Maximum number of distinct cell formats in the workbook allowed by Excel.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Excel.Workbook.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+            <remarks>
+            <p class="body">Creates empty workbook.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.Workbook.CreateNewWorksheetCellFormat">
+            <summary>
+            Creates new worksheet cell format.
+            </summary>
+            <returns>Created cell format.</returns>
+            <remarks>
+            <p class="body"><see cref="T:Infragistics.Excel.IWorksheetCellFormat"/> descibes cell specific formatting (font, number format, appearance etc.). Total number of different cell formats in excel workbook is limited to <see cref="F:Infragistics.Excel.Workbook.MaxExcelCellFormatCount"/>. 
+            If many parts of excel workbook have same and complex (more than one property incommon) cell formatting, use this method in following manner: 
+            <ol>
+            <li class="taskitem"><span class="taskitemtext">Create new cell format with <see cref="M:Infragistics.Excel.Workbook.CreateNewWorksheetCellFormat"/>,</span></li>
+            <li class="taskitem"><span class="taskitemtext">Set all neccessary properties on given cell format,</span></li>
+            <li class="taskitem"><span class="taskitemtext">Apply cell format to all excel objects which use it with <see cref="M:Infragistics.Excel.IWorksheetCellFormat.SetFormatting(Infragistics.Excel.IWorksheetCellFormat)"/> method.</span></li>
+            </ol></p>
+            <p class="body">Use of this procedure will simplify you code for complex cell formats and increase speed of resulting program. It will not reduce total number of cell formats in a workbook as cell formats are internally cached no mather which method is used.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Excel.Workbook.CreateNewWorkbookFont">
+            <summary>
+            Creates new workbook font.
+            </summary>
+            <returns>Created excel font object.</returns>
+            <remarks>
+            <p class="body"><see cref="T:Infragistics.Excel.IWorkbookFont"/> descibes font used in excel workbook.
+            If many parts of excel workbook have same and complex (more than one property incommon) font formatting, use this method in following manner: 
+            <ol>
+            <li class="taskitem"><span class="taskitemtext">Create new font format with <see cref="M:Infragistics.Excel.Workbook.CreateNewWorkbookFont"/>,</span></li>
+            <li class="taskitem"><span class="taskitemtext">Set all neccessary properties on given font format,</span></li>
+            <li class="taskitem"><span class="taskitemtext">Apply font format to all excel objects which use it with <see cref="M:Infragistics.Excel.IWorkbookFont.SetFontFormatting(Infragistics.Excel.IWorkbookFont)"/> method.</span></li>
+            </ol></p>
+            <p class="body">Use of this procedure will simplify you code for complex font formats and increase speed of resulting program. It will not reduce total number of font formats in a workbook as font formats are internally cached no mather which method is used.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.Workbook.Styles">
+            <summary>
+            Collection of workbook styles.
+            </summary>
+            <remarks>
+            <p class="body">Use this collection to add custom styles to excel workbook. User can apply that styles to different parts of excel workbook and thereby set complex formattings with ease.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.Workbook.Worksheets">
+            <summary>
+            Worksheets in the workbook.
+            </summary>
+            <remarks>
+            <p class="body">Number of worksheets in a workbook is not limited. Use <see cref="P:Infragistics.Excel.Workbook.ActiveWorksheet"/> to set active worksheet. Active worksheet is the one which is active upon opening of excel file.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.Workbook.ActiveWorksheet">
+            <summary>
+            Reference to active worksheet.
+            </summary>
+            <remarks>
+            <p class="body">Active worksheet is the one which is active upon opening of excel file. When first worksheet is added to an empty workbook, it is automatically set to be active worksheet.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.Workbook.Protected">
+            <summary>
+            Protection state of Excel workbook.
+            </summary>
+            <remarks>
+            <p class="body">Prevents changes to worksheet and to locked cells.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.Workbook.DefaultFontHeight">
+            <summary>
+            Default font height, in units of 1/20th of a point.
+            </summary>
+            <remarks>
+            <p class="body">Use this property to set resolved font height for created fonts which don't have height explicitly set. Unit of measure is twips (1/20th of a point).</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.Worksheet">
+            <summary>
+            Represents one worksheet in Microsoft Excel Workbook.
+            </summary>
+            <remarks>
+            <p class="body">Excel worksheet is essentially a table with fixed and limited number of rows and columns. Internally, worksheet is allocated with minimal size and is dynamically extended in width and height as requests are made. To create new worksheet, use <see cref="M:Infragistics.Excel.WorksheetCollection.Add(System.String)"/> method of <see cref="P:Infragistics.Excel.Workbook.Worksheets"/>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.Worksheet.Workbook">
+            <summary>
+            Parent workbook.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.Worksheet.Index">
+            <summary>
+            Zero-based index of this worksheet in parent collection.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.Worksheet.Name">
+            <summary>
+            Worksheet name (shown on the worksheet tab).
+            </summary>
+            <remarks>
+            <p class="body">Worksheet name should be unique in the workbook.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.Worksheet.Rows">
+            <summary>
+            Collection of rows.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.Worksheet.Columns">
+            <summary>
+            Collection of columns. 
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.Worksheet.MergedCellsRegions">
+            <summary>
+            Collection of all merged cell ranges in this worksheet.
+            </summary>
+            <remarks>
+            <p class="body">Use <see cref="M:Infragistics.Excel.WorksheetMergedCellsRegionCollection.Add(System.Int32,System.Int32,System.Int32,System.Int32)"/> method to add new merged cell ranges to the worksheet.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.Worksheet.Protected">
+            <summary>
+            Protection state of Excel worksheet.
+            </summary>
+            <remarks>
+            <p class="body">In protected worksheet cells which are locked can not be modified.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.Worksheet.DefaultRowHeight">
+            <summary>
+            Internal. Default row height MS documentation is incomplete, so if you use this
+            option not all rows will have correct height.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.Worksheet.DefaultColumnWidth">
+            <summary>
+            Default column width, in 1/256s of average character width.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.WorksheetRow">
+            <summary>
+            Represents one row in Microsoft Excel worksheet.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.RowColumnBase">
+            <summary>
+            Base class for worksheet row and worksheet column.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.RowColumnBase.Worksheet">
+            <summary>
+            Parent worksheet.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.RowColumnBase.CellFormat">
+            <summary>
+            Default cell format for specific row or column.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.RowColumnBase.OutlineLevel">
+            <summary>
+            Outline level (0-7) for specific row or column.
+            </summary>
+            <remarks>
+            <p class="body">Excel supports hierarchical grouping of rows and columns with maximum of 7 levels of hierarchy. To create a group, set all rows in a group to same outline level.</p>
+            </remarks>
+            <seealso cref="P:Infragistics.Excel.RowColumnBase.Expanded"/>
+            <exception cref="T:System.ArgumentOutOfRangeException">New value for outline level is out of the range.</exception>
+        </member>
+        <member name="P:Infragistics.Excel.RowColumnBase.Expanded">
+            <summary>
+            True if the row or column is expanded in outlining.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetRow.Cells">
+            <summary>
+            Collection of cells.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetRow.Height">
+            <summary>
+            Height of the row, in units of 1/20th of a point.
+            </summary>
+            <remarks>
+            <p class="body">Use this property to set height of the row. Unit of measure is twips (1/20th of a point). If not set, height of the row is default Excel row height.</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.WorksheetColumn">
+            <summary>
+            Represents one column in Microsoft Excel worksheet.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetColumn.Width">
+            <summary>
+            Column width, in 1/256s of average character width.
+            </summary>
+            <remarks>
+            <p class="body">Use this property to set width of the column. If not set, width of the column is equal to <see cref="P:Infragistics.Excel.Worksheet.DefaultColumnWidth"/>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetColumn.Hidden">
+            <summary>
+            True if the column is hidden.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.WorksheetCell">
+            <summary>
+            Represents one cell in Microsoft Excel worksheet.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Excel.WorksheetCell.IsCellTypeSupported(System.Type)">
+            <summary>
+            Returns true is particular type can be exported to excel.
+            </summary>
+            <param name="cellType">Tested type.</param>
+            <returns>True if the type is supported as a cell value, false otherwise.</returns>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetCell.CellFormat">
+            <summary>
+            Cell formatting specific for this cell.
+            </summary>
+            <remarks>
+            <p class="body">Use this property to set cell formatting specific to the cell. If you apply same complex cell format to numerous cells, see <see cref="M:Infragistics.Excel.Workbook.CreateNewWorksheetCellFormat"/> method.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetCell.Value">
+            <summary>
+            Value of the cell.
+            </summary>
+            <remarks>
+            <p class="body">Use this property to get or set actual value of the cell.</p>
+            <p class="body">Supported types are:</p>
+            <ul>
+            <li class="taskitem"><span class="taskitemtext">System.Byte</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.SByte</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.Int16</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.Int64</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.UInt16</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.UInt64</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.UInt32</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.Int32</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.Single</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.Double</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.Boolean</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.Char</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.Enum</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.Decimal</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.DateTime</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.String</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.Text.StringBuilder</span></li>
+            <li class="taskitem"><span class="taskitemtext">System.DBNull</span></li>
+            </ul>
+            </remarks>
+            <seealso cref="M:Infragistics.Excel.WorksheetCell.IsCellTypeSupported(System.Type)"/>
+            <exception cref="T:System.NotSupportedException">Type is not supported and can't be exported to Excel.</exception>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetCell.AssociatedMergedCellsRegion">
+            <summary>
+            Associated merged cells region.
+            </summary>
+            <remarks>
+            <p class="body">If cell is not a part of merged cells region, this property is null (Nothing in VB).</p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.Excel.WorksheetRegion">
+            <summary>
+            Worksheet region.
+            </summary>
+            <remarks>
+            <p class="body">Represents specific part of a worksheet. Serves as a base class for <seealso cref="T:Infragistics.Excel.WorksheetMergedCellsRegion"/>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetRegion.FirstRow">
+            <summary>
+            First row.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetRegion.LastRow">
+            <summary>
+            Last row.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetRegion.FirstColumn">
+            <summary>
+            First column.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetRegion.LastColumn">
+            <summary>
+            Last column.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Excel.WorksheetMergedCellsRegion">
+            <summary>
+            Merged cells region.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetMergedCellsRegion.CellFormat">
+            <summary>
+            Cell formatting specific for this merged region.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Excel.WorksheetMergedCellsRegion.Value">
+            <summary>
+            Value of the merged region.
+            </summary>
+            <remarks>
+            <p class="body">Use this property to get or set actual value of merged region.</p>
+            </remarks>
+            <seealso cref="P:Infragistics.Excel.WorksheetCell.Value"/>
+            <seealso cref="M:Infragistics.Excel.WorksheetCell.IsCellTypeSupported(System.Type)"/>
+            <exception cref="T:System.NotSupportedException">Type is not supported and can't be exported to Excel.</exception>
+        </member>
+        <member name="T:Infragistics.Excel.ExcelDefaultableBoolean">
+            <summary>
+            An enumerator for a boolean type property that allows for a
+            default setting. This is used in property override situations.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.ExcelDefaultableBoolean.Default">
+            <summary>
+            Use the current default
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.ExcelDefaultableBoolean.True">
+            <summary>
+            True 
+            </summary>
+        </member>
+        <member name="F:Infragistics.Excel.ExcelDefaultableBoolean.False">
+            <summary>
+            False
+            </summary>
+        </member>
+    </members>
+</doc>

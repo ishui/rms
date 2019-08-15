@@ -1,0 +1,191 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MarkerMasterPage.master.cs" Inherits="RmsOA_MarkerMasterPage" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>打分管理</title>
+    <link href="../Images/index.css" rel="stylesheet" type="text/css" />
+
+    <script language="javascript" type="text/javascript">
+    <!-- Hide 
+function killErrors() { 
+return true; 
+} 
+window.onerror = killErrors; 
+// --> 
+    var str;
+    var selectId;
+    function pagesload()
+    { 
+        var visable = false;
+        var string;
+        string = location.href.split("/");
+        str = string[string.length - 1];
+        if( str.search(/All/) != -1)
+        {
+            selectId = "all";
+            visable = true;
+        }
+        if(str.search(/Vice/) != -1)
+        {
+            selectId = "vice";
+            visable = true;
+        }
+        if(str.search(/Manage/) != -1)
+        {
+            selectId = "manage";
+            visable = true;
+        }
+        if(str.search(/PresdentScoreList/) != -1)
+        {
+           selectId = "president";
+           visable = true;
+        }
+         if(visable == true)
+         {
+            document.getElementById("Navigators").style.display = "block";
+            document.getElementById("TopicHead").style.display = "block";
+         }
+        document.getElementById(selectId).className = "td-over";   
+    }
+    function onmouseovers(id)
+    {
+        if( id != selectId)
+        {   
+            document.getElementById(selectId).className = "";
+            return document.getElementById(id).className="td-over";
+        }
+    }
+    
+    function onmouseouts(id)
+    {
+        return document.getElementById(id).className="";
+    }
+    
+    function wholeout()
+    {
+        return document.getElementById(selectId).className = "td-over";
+    }
+    
+    function onmouseclick(id)
+    {
+        if( id == selectId)
+        {
+            return;
+        }
+        switch(id)
+        {
+            case "manage":
+                location.href("RS_DeptManageMarkList.aspx");break;
+            case "vice":
+                location.href("RS_ViceScoreList.aspx");break;
+            case "president":
+                location.href("RS_PresdentScoreList.aspx");break;
+            case "all":
+                location.href("RS_AllScoreList.aspx");break;
+            default: break; 
+        }   
+    }   
+    </script>
+
+    <style type="text/css">
+    body 
+    {
+	    margin:0 0 0 0;
+    }
+
+    .head-eve-table
+    {
+	    border: solid 0px #90B7D4;
+	    border-bottom-color:#90B7D4;
+	    border-bottom-width:0px;
+	    background-color:#EAEAEA;
+	    font-size:15px;
+	    font-family:宋体;
+	    font-weight:bolder;
+	    color:Gray;
+    }
+    .head-eve-table td
+    {
+	     border:solid 0px #90B7D4;
+	     height:25px;
+    }
+
+    .td-over
+    {
+	    margin-left:15px;
+	    margin-right:15px;
+	    background:#90B7D4;
+	    border:solid 1px #90B7D4;
+	    border-bottom-width:0px;
+	    vertical-align:bottom;
+	    color:White;
+	    cursor:hand;
+	    filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#A4C9E4', endColorStr='#85ADCB', gradientType='0');
+	    vertical-align:middle;	    
+    }
+    .td-out
+    {
+	    border:solid 0px #ff0000;
+    }
+    .STYLE1 {
+	font-size: 12px;
+	font-weight: bold;
+	color: #666666;
+}
+.STYLE2 {color: #FAA210}
+    </style>
+</head>
+<body onload="pagesload()">
+    <form id="form1" runat="server">
+        <div>
+            <table id="TopicHead" border="0" cellpadding="0" cellspacing="0"
+                width="100%">
+                <tr>
+                    <td background="../images/topic_bg.gif" class="topic">
+                        <img align="absMiddle" height="25" src="../images/topic_li.jpg" width="35">人事办公>打分信息
+                    </td>
+                </tr>
+            </table>
+            <table id="Navigators" border="0" cellpadding="0" cellspacing="0" class="head-eve-table"
+                onmouseout="wholeout()" width="100%">
+                <tr>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0" class="head-eve-table">
+                            <tr>
+                                <td id="manage" align="center" onclick="onmouseclick('manage')" onmouseout="onmouseouts('Manage')"
+                                    onmouseover="onmouseovers('manage')">
+                                    <div runat="server" id="deptManager" style="width:100px; display:none;">
+                                        部门经理打分</div></td>
+                                <td>
+                                    &nbsp;</td>
+                                <td id="vice" align="center" onclick="onmouseclick('vice')" onmouseout="onmouseouts('vice')"
+                                    onmouseover="onmouseovers('vice')">
+                                    <div id="vicePresident" runat="server" style="width: 100px; display:none;">
+                                        公司副总打分</div>
+                                    </td>
+                                <td>
+                                    &nbsp;</td>
+                                <td id="president" align="center" onclick="onmouseclick('president')" onmouseout="onmouseouts('president')"
+                                    onmouseover="onmouseovers('president')">
+                                    <div id="presidents" runat="server" style="width: 100px; display:none;">
+                                        总经理打分</div>
+                                    </td>
+                                <td>
+                                    &nbsp;</td>
+                                <td id="all" align="center" onclick="onmouseclick('all')" onmouseout="onmouseouts('all')"
+                                    onmouseover="onmouseovers('all')">
+                                    <div id="monthState" runat="server" style="width: 100px; display:none;">
+                                        月度分数统计</div>
+                                    </td>
+                                <td>
+                                    &nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

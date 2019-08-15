@@ -1,0 +1,12 @@
+G:\源代码\工程项目管理系统源码\PhotoBrowserLibrary\bin\Debug\PhotoBrowserLibrary.dll
+G:\源代码\工程项目管理系统源码\PhotoBrowserLibrary\bin\Debug\PhotoBrowserLibrary.pdb
+G:\源代码\工程项目管理系统源码\PhotoBrowserLibrary\obj\Debug\PhotoBrowserLibrary.csprojAssemblyReference.cache
+G:\源代码\工程项目管理系统源码\PhotoBrowserLibrary\obj\Debug\PhotoBrowserLibrary.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码\PhotoBrowserLibrary\obj\Debug\PhotoBrowserLibrary.dll
+G:\源代码\工程项目管理系统源码\PhotoBrowserLibrary\obj\Debug\PhotoBrowserLibrary.pdb
+G:\源代码\工程项目管理系统源码_20190605\PhotoBrowserLibrary\bin\Debug\PhotoBrowserLibrary.dll
+G:\源代码\工程项目管理系统源码_20190605\PhotoBrowserLibrary\bin\Debug\PhotoBrowserLibrary.pdb
+G:\源代码\工程项目管理系统源码_20190605\PhotoBrowserLibrary\obj\Debug\PhotoBrowserLibrary.csprojAssemblyReference.cache
+G:\源代码\工程项目管理系统源码_20190605\PhotoBrowserLibrary\obj\Debug\PhotoBrowserLibrary.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码_20190605\PhotoBrowserLibrary\obj\Debug\PhotoBrowserLibrary.dll
+G:\源代码\工程项目管理系统源码_20190605\PhotoBrowserLibrary\obj\Debug\PhotoBrowserLibrary.pdb

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>V_BudgetCost</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>V_BudgetCost</Name>
+		<Column>
+			<Name>BudgetCostCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String>select * from V_BudgetCost</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+	</Table>
+</Entity>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>Standard_TaskExecute</Name>
+	<Type>Standard</Type>
+	<Table>
+		<Name>TaskExecute</Name>
+		<Type>Main</Type>
+	</Table>
+	<Table>
+		<Name>TaskExecuteRisk</Name>
+		<Type>Child</Type>
+		<ParentColumnName>TaskExecuteCode</ParentColumnName>
+		<ChildColumnName>TaskExecuteCode</ChildColumnName>
+	</Table>
+</Entity>

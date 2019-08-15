@@ -1,0 +1,1010 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DesignChange</name>
+    </assembly>
+    <members>
+        <member name="T:RmsPM.BFL.DesignChangeBFL">
+            ################################################################################################
+             <summary>
+             <para>摘要：外观规则类。</para>
+             <para>说明：</para>
+             <para>Programmer： </para>
+             <para>Email： </para>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.Insert(TiannuoPM.MODEL.DesignChangeModel)">
+            <summary>
+            <para>新增</para>
+            </summary>
+            <param name="ObjModel">模型对象</param>
+            <returns>产生主键值</returns>
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.Update(TiannuoPM.MODEL.DesignChangeModel)">
+            <summary>
+            <para>更新</para>
+            </summary>
+            <remarks>该方法可以完成局部更新</remarks>
+            <param name="ObjModel">模型对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.Delete(TiannuoPM.MODEL.DesignChangeModel)">
+            <summary>
+            <para>删除</para>
+            </summary>
+            <param name="ObjModel">模型对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.GetDesignChangeList(System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.DateTime,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            <para>查询</para>
+            <para>查询条件设定了约束，以参数形式提供查询条件的应用</para>
+            </summary>
+            <remarks>
+            该方法适用于页面应用。可以直接进行输入控件值的帮定应用。
+            </remarks>
+            <param name="SortColumns">排序表达式</param>
+            <param name="StartRecord">开始索引</param>
+            <param name="MaxRecords">结束索引</param>
+            <param name="NumberEqual">编号（完全匹配）</param>
+            <param name="PersonEqual">经办人（完全匹配）</param>
+            <param name="UnitEqual">经办部门（完全匹配）</param>
+            <param name="SupplierEqual">供应商（完全匹配）</param>
+            <param name="TypeEqual">变更类型（完全匹配）</param>
+            <param name="SolutionNameLike"></param>
+            <param name="ProjectCodeEqual"></param>
+            <param name="DateStart"></param>
+            <param name="DateEnd"></param>
+            <param name="StateInStr"></param>
+            <param name="ChangeType">变更类型</param>
+            <param name="ReferCode">相关内部变更Code</param>
+            <returns>结果列表</returns>
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.GetDesignChangeList(TiannuoPM.MODEL.DesignChangeQueryModel)">
+            <summary>
+            <para>查询</para>
+            <para>根据查询规则对象的规则进行查询。</para>
+            </summary>
+            <remarks>
+            适用于代码应用。可以根据业务需求创建查询规则对象进行应用。
+            </remarks>
+            <param name="QueryModel">查询模型对象</param>
+            <returns>结果列表</returns>
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.GetDesignChange(System.Int32)">
+            <summary>
+            <para>获取对象</para>
+            </summary>
+            <remarks>
+            适用于代码应用。
+            </remarks>
+            <param name="Code">代码</param>
+            <returns>结果对象</returns>
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.GetDesignChangeListOne(System.Int32)">
+            <summary>
+            <para>获取单个对象</para>
+            <para>返回 List 类型单元素集合</para>
+            </summary>
+            <remarks>适用于 FormView 帮定应用</remarks>
+            <param name="Code">代码</param>
+            <returns>结果列表（单元素）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.GetStateNameByCode(System.String)">
+            <summary>
+            获取状态名称
+            </summary>
+            <param name="StateCode">状态代码</param>
+            <returns>状态名称</returns>
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.GetDesignChangeName(System.Int32)">
+            <summary>
+            获取设计变更名称（根据代码）
+            </summary>
+            <param name="Code">设计变更代码</param>
+            <returns>设计变更名称</returns>
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.ReturnWait(System.Int32)">
+            <summary>
+            <para>修改状态为待审</para>
+            </summary>
+            <param name="Code">设计变更代码</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.StartAudit(System.Int32)">
+            <summary>
+            <para>修改状态为审核中</para>
+            </summary>
+            <param name="Code">设计变更代码</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.PassAudit(System.Int32)">
+            <summary>
+            <para>修改状态为已审</para>
+            </summary>
+            <param name="Code">设计变更代码</param>
+            <param name="ChangeMoneyDescription">审批金额描述</param>
+            <param name="TotalMoney">合计审批金额</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.UpdateAuditMoney(System.Int32,System.String,System.Decimal)">
+            <summary>
+            更新审批金额
+            </summary>
+            <param name="code"></param>
+            <param name="ChangeMoneyDescription"></param>
+            <param name="TotalMoney"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RmsPM.BFL.DesignChangeBFL.NoPass(System.Int32)">
+            <summary>
+            <para>修改状态为审核未通过</para>
+            </summary>
+            <param name="Code">设计变更代码</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="T:RmsPM.BLL.DesignChangeBLL">
+            ################################################################################################
+             <summary>
+             <para>摘要：业务规则类。</para>
+             <para>说明：</para>
+             <para>Programmer： </para>
+             <para>Email： </para>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="M:RmsPM.BLL.DesignChangeBLL.Insert(TiannuoPM.MODEL.DesignChangeModel,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            新增
+            </summary>
+            <param name="ObjModel">模型对象</param>
+            <param name="Transaction">事务对象</param>
+            <returns>产生主键值</returns>
+        </member>
+        <member name="M:RmsPM.BLL.DesignChangeBLL.Update(TiannuoPM.MODEL.DesignChangeModel,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            修改
+            </summary>
+            <param name="ObjModel">模型对象</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.BLL.DesignChangeBLL.Delete(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            删除
+            </summary>
+            <param name="Code">代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.BLL.DesignChangeBLL.GetModel(System.Int32,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            获取模型对象
+            </summary>
+            <param name="Code">代码</param>
+            <param name="Connection">数据库连接对象</param>
+            <returns>模型对象</returns>
+        </member>
+        <member name="M:RmsPM.BLL.DesignChangeBLL.GetModel(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            获取模型对象
+            </summary>
+            <param name="Code">代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>模型对象</returns>
+        </member>
+        <member name="M:RmsPM.BLL.DesignChangeBLL.GetModels(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            查询所有
+            </summary>
+            <param name="Connection">数据库连接对象</param> 
+            <returns>列表</returns>
+        </member>
+        <member name="M:RmsPM.BLL.DesignChangeBLL.GetModels(System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            查询所有
+            </summary>
+            <param name="Transaction">事务对象</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:RmsPM.BLL.DesignChangeBLL.GetModels(TiannuoPM.MODEL.DesignChangeQueryModel,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            查询（根据查询规则对象）
+            </summary>
+            <param name="ObjQueryModel">查询规则对象</param>
+            <param name="Connection">数据库连接对象</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:RmsPM.BLL.DesignChangeBLL.GetModels(TiannuoPM.MODEL.DesignChangeQueryModel,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            查询（根据查询规则对象）
+            </summary>
+            <param name="ObjQueryModel">查询规则对象</param>
+            <param name="Transaction">事务对象</param>
+            <returns>列表</returns>
+        </member>
+        <member name="T:RmsPM.BFL.FunctionRule">
+            ################################################################################################
+             <summary>
+             <para>摘要：外观层静态函数库文件</para>
+             <para>说明：该类文件包含外观层所有静态处理函数。为使用的方便以及查找的便利，将他们集中在该类文件中。</para>
+             <para>Programmer： clm</para>
+             <para>Email： nmgclm626@hotmail.com</para>
+             <remarks>
+             函数方法应在外观层中使用不应应用于其它层中。
+             </remarks>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="M:RmsPM.BFL.FunctionRule.GetConnectionString">
+            <summary>
+            <para>获取数据库连接字符串</para>
+            <para>该方法从网站的 web.confg 文件中的应用参数定义中查找项。</para>
+            <para>使用 AppSettings 方式取得应用程序参数,参数名称为 DBConnString。</para>
+            </summary>
+            <returns>
+            如果 web.confg 文件中不存在该项配置,函数将抛出异常。
+            <code><![CDATA[
+            ]]>
+            </code>
+            </returns>
+        </member>
+        <member name="T:TiannuoPM.MODEL.QueryBaseModel">
+            ################################################################################################
+             <summary>
+             <para>摘要：查询规则基类。</para>
+             <para>说明：所有查询规则类都继承于该类。</para>
+             <para>Programmer： clm</para>
+             <para>Email： nmgclm626@hotmail.com</para>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="F:TiannuoPM.MODEL.QueryBaseModel._SortColumns">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.QueryBaseModel._StartRecord">
+            <summary>
+            分页开始索引
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.QueryBaseModel._MaxRecords">
+            <summary>
+            分页结束索引
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.QueryBaseModel._QueryConditionStr">
+            <summary>
+            查询条件sql语句表达式
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.QueryBaseModel._Parameters">
+            <summary>
+            查询条件参数列表
+            </summary>
+        </member>
+        <member name="M:TiannuoPM.MODEL.QueryBaseModel.InsertParameter(System.String,System.Data.SqlDbType,System.Int32,System.Object)">
+            <summary>
+            添加参数
+            </summary>
+            <param name="ParameterName">参数名称</param>
+            <param name="ParameterType">类型</param>
+            <param name="Size">长度</param>
+            <param name="Value">值</param>
+            <returns>参数对象</returns>
+        </member>
+        <member name="M:TiannuoPM.MODEL.QueryBaseModel.QueryConditionStrAdd(System.String)">
+            <summary>
+            添加条件表达式
+            </summary>
+            <param name="ConditionStr">条件表达式</param>
+        </member>
+        <member name="P:TiannuoPM.MODEL.QueryBaseModel.SortColumns">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.QueryBaseModel.StartRecord">
+            <summary>
+            分页开始索引
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.QueryBaseModel.MaxRecords">
+            <summary>
+            分页结束索引
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.QueryBaseModel.QueryConditionStr">
+            <summary>
+            查询条件sql语句表达式
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.QueryBaseModel.Parameters">
+            <summary>
+            查询条件参数列表
+            </summary>
+        </member>
+        <member name="T:TiannuoPM.MODEL.DesignChangeModel">
+            ################################################################################################
+             <summary>
+             <para>摘要：DesignChangeModel 类，业务模型。</para>
+             <para>说明：</para>
+             <para>Programmer： </para>
+             <para>Email： </para>
+             <remarks>
+             对应数据库表：DesignChange
+             <table class="dtTABLE" cellspacing="0">
+             <tr valign="top"><th>序号</th><th>列名</th><th>数据类型</th><th>长度</th><th>小数位</th><th>标识</th><th>主键</th><th>允许空</th><th>默认值</th><th>字段说明</th></tr>
+             <tr valign="top"><td>1</td><td>Code</td><td>int</td><td>4</td><td></td><td>√</td><td>√</td><td></td><td></td><td>设计变更代码</td></tr>
+             <tr valign="top"><td>2</td><td>SolutionName</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td>工程名称</td></tr>
+             <tr valign="top"><td>3</td><td>ProjectName</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td>项目名称</td></tr>
+             <tr valign="top"><td>4</td><td>Number</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td>编号</td></tr>
+             <tr valign="top"><td>5</td><td>Person</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td>经办人</td></tr>
+             <tr valign="top"><td>6</td><td>Unit</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td>经办部门</td></tr>
+             <tr valign="top"><td>7</td><td>Supplier</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td>供应商</td></tr>
+             <tr valign="top"><td>8</td><td>Date</td><td>datetime</td><td>8</td><td></td><td></td><td></td><td>√</td><td></td><td>变更日期</td></tr>
+             <tr valign="top"><td>9</td><td>Type</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td>变更类型</td></tr>
+             <tr valign="top"><td>10</td><td>Remark</td><td>varchar</td><td>2000</td><td></td><td></td><td></td><td>√</td><td></td><td>备注</td></tr>
+             <tr valign="top"><td>11</td><td>Reason</td><td>varchar</td><td>2000</td><td></td><td></td><td></td><td>√</td><td></td><td>原因</td></tr>
+             <tr valign="top"><td>12</td><td>Designer</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td>设计院</td></tr>
+             <tr valign="top"><td>13</td><td>RelationNumber</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td>联系单编号</td></tr>
+             <tr valign="top"><td>14</td><td>TerminatingPerson</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td>收文人</td></tr>
+             <tr valign="top"><td>15</td><td>TerminatingDate</td><td>datetime</td><td>8</td><td></td><td></td><td></td><td>√</td><td></td><td>收文日期</td></tr>
+             <tr valign="top"><td>16</td><td>Specialty</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td>专业</td></tr>
+             <tr valign="top"><td>17</td><td>ChangeMoney</td><td>varchar</td><td>2000</td><td></td><td></td><td></td><td>√</td><td></td><td>变更费用描述</td></tr>
+             <tr valign="top"><td>18</td><td>TotalMoney</td><td>decimal</td><td>9</td><td>18,3</td><td></td><td></td><td>√</td><td></td><td>合计</td></tr>
+             <tr valign="top"><td>19</td><td>State</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td>状态</td></tr>
+             <tr valign="top"><td>20</td><td>Flag</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td>标识</td></tr>
+             <tr valign="top"><td>21</td><td>Contract</td><td>varchar</td><td>50</td><td></td><td></td><td></td><td>√</td><td></td><td></td></tr>
+             </table>
+             </remarks>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._Code">
+            <summary>
+            设计变更代码
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._SolutionName">
+            <summary>
+            工程名称
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._ProjectName">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._Number">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._Person">
+            <summary>
+            经办人
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._Unit">
+            <summary>
+            经办部门
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._Date">
+            <summary>
+            变更日期
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._Type">
+            <summary>
+            变更类型
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._Reason">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._Designer">
+            <summary>
+            设计院
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._RelationNumber">
+            <summary>
+            联系单编号
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._TerminatingPerson">
+            <summary>
+            收文人
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._TerminatingDate">
+            <summary>
+            收文日期
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._Specialty">
+            <summary>
+            专业
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._ChangeMoney">
+            <summary>
+            变更费用描述
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._TotalMoney">
+            <summary>
+            合计
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._Flag">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._Contract">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.DesignChangeModel._ReferCode">
+            <summary>
+            关联的设计变更代码
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.Code">
+            <summary>
+            设计变更代码
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.SolutionName">
+            <summary>
+            工程名称
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.ProjectName">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.Number">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.Person">
+            <summary>
+            经办人
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.Unit">
+            <summary>
+            经办部门
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.Date">
+            <summary>
+            变更日期
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.Type">
+            <summary>
+            变更类型
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.Reason">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.Designer">
+            <summary>
+            设计院
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.RelationNumber">
+            <summary>
+            联系单编号
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.TerminatingPerson">
+            <summary>
+            收文人
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.TerminatingDate">
+            <summary>
+            收文日期
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.Specialty">
+            <summary>
+            专业
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.ChangeMoney">
+            <summary>
+            变更费用描述
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.TotalMoney">
+            <summary>
+            合计
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.Flag">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.Contract">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.ChangeType">
+            <summary>
+            变更类型 2018-12-20 添加
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeModel.ReferCode">
+            <summary>
+            关联的设计变更代码
+            </summary>
+        </member>
+        <member name="T:TiannuoPM.MODEL.DesignChangeQueryModel">
+            ################################################################################################
+             <summary>
+             <para>摘要：DesignChangeModel 类,查询规则。</para>
+             <para>说明：</para>
+             <para>Programmer： clm</para>
+             <para>Email： nmgclm626@hotmail.com</para>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.CodeEqual">
+            <summary>
+            设计变更代码
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.ProjectNameEqual">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.NumberEqual">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.PersonEqual">
+            <summary>
+            经办人
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.UnitEqual">
+            <summary>
+            经办部门
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.SupplierEqual">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.DateEqual">
+            <summary>
+            变更日期
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.TypeEqual">
+            <summary>
+            变更类型
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.RemarkEqual">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.ReasonEqual">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.DesignerEqual">
+            <summary>
+            设计院
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.RelationNumberEqual">
+            <summary>
+            联系单编号
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.TerminatingPersonEqual">
+            <summary>
+            收文人
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.TerminatingDateEqual">
+            <summary>
+            收文日期
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.SpecialtyEqual">
+            <summary>
+            专业
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.ChangeMoneyEqual">
+            <summary>
+            变更费用描述
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.TotalMoneyEqual">
+            <summary>
+            合计
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.StateEqual">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.FlagEqual">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.ContractEqual">
+            <summary>
+            合同相关
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.StateIn">
+            <summary>
+            状态in 
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.SolutionNameLike">
+            <summary>
+            工程名称Like
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.DateStartCheck">
+            <summary>
+            变更日期大于判断
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.DateEndCheck">
+            <summary>
+            变更日期小于判断
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.ChangeType">
+            <summary>
+            变更类型
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.DesignChangeQueryModel.ReferCode">
+            <summary>
+            关联的设计变更代码
+            </summary>
+        </member>
+        <member name="T:RmsPM.DAL.DesignChangeDAL">
+            ################################################################################################
+             <summary>
+             <para>摘要：DesignChangeDAL 类，封装数据表基本应用。</para>
+             <para>说明：</para>
+             <para>Programmer： </para>
+             <para>Email： </para>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="F:RmsPM.DAL.DesignChangeDAL._DataProcess">
+            <summary>
+            数据库连接对象
+            </summary>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL._Insert(TiannuoPM.MODEL.DesignChangeModel)">
+            <summary>
+            添加
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>产生主键值</returns>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL._Update(TiannuoPM.MODEL.DesignChangeModel)">
+            <summary>
+            修改
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL._Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="Code">主键值</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL._Select(TiannuoPM.MODEL.DesignChangeQueryModel)">
+            <summary>
+            查询
+            </summary>
+            <param name="qmObj">查询规则对象</param>
+            <returns>查询结果集合</returns>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL._DataBind(System.Int32)">
+            <summary>
+            实例化对象
+            </summary>
+            <param name="Code">主键值</param>
+            <returns>实例化对象</returns>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL.Initialize(System.Data.SqlClient.SqlDataReader,TiannuoPM.MODEL.DesignChangeModel)">
+            <summary>
+            对象付值
+            </summary>
+            <param name="reader">数据源对象</param>
+            <param name="obj">需实例化对象</param>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL.#ctor(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            构造
+            </summary>
+            <param name="Connection">数据库连接对象</param>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL.#ctor(System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            构造
+            </summary>
+            <param name="Transaction">事务对象</param>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL.Insert(TiannuoPM.MODEL.DesignChangeModel)">
+            <summary>
+            添加
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>产生主键值</returns>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL.Update(TiannuoPM.MODEL.DesignChangeModel)">
+            <summary>
+            修改
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL.Delete(TiannuoPM.MODEL.DesignChangeModel)">
+            <summary>
+            删除
+            </summary>
+            <param name="mObj">模型对象</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="Code">主键值</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL.GetModel(System.Int32)">
+            <summary>
+            获取模型对象
+            </summary>
+            <param name="Code">主键值</param>
+            <returns>模型对象</returns>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL.Select">
+            <summary>
+            查询
+            </summary>
+            <returns>查询结果集合</returns>
+        </member>
+        <member name="M:RmsPM.DAL.DesignChangeDAL.Select(TiannuoPM.MODEL.DesignChangeQueryModel)">
+            <summary>
+            查询
+            </summary>
+            <param name="qmObj">查询规则对象</param>
+            <returns>查询结果集合</returns>
+        </member>
+        <member name="T:RmsPM.DAL.SqlDataProcess">
+            ################################################################################################
+             <summary>
+             SqlDataProcess 是针对sql应用而建立的，封装了常用的数据库应用。
+             Programmer:CLM; Email:nmgclm626@hotmail.com
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="F:RmsPM.DAL.SqlDataProcess._Command">
+            <summary>
+            数据库执行
+            </summary>
+        </member>
+        <member name="F:RmsPM.DAL.SqlDataProcess._SqlParameters">
+            <summary>
+            参数集合
+            </summary>
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess._GetDataSet">
+            ***************************************************************************************
+            <summary>
+            返回 DataSet 数据集合
+            </summary>
+            <returns>查询结果集</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess._GetSqlDataReader">
+            ***************************************************************************************
+            <summary>
+            返回 SqlDataReader 数据集合
+            </summary>
+            <returns>查询结果集</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess._RunSql">
+            ***************************************************************************************
+            <summary>
+            执行 sql 语句
+            </summary>
+            <returns>影响行数</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.#ctor">
+            ***************************************************************************************
+            <summary>
+            构造函数
+            </summary>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.#ctor(System.Data.SqlClient.SqlConnection)">
+            ***************************************************************************************
+            <summary>
+            构造函数
+            </summary>
+            <param name="Connection">数据库连接对象</param>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.#ctor(System.Data.SqlClient.SqlTransaction)">
+            ***************************************************************************************
+            <summary>
+            构造函数
+            </summary>
+            <param name="Transaction">事务对象</param>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.GetDataSet">
+            ***************************************************************************************
+            <summary>
+            返回 DataSet 数据集合
+            </summary>
+            <returns>查询结果集</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.GetDataSet(System.String)">
+            ***************************************************************************************
+            <summary>
+            返回 DataSet 数据集合
+            </summary>
+            <param name="CommandText">执行对象文本</param>
+            <returns>查询结果集</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.GetSqlDataReader">
+            ***************************************************************************************
+            <summary>
+            返回 SqlDataReader 数据集合
+            </summary>
+            <returns>查询结果集</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.GetSqlDataReader(System.String)">
+            ***************************************************************************************
+            <summary>
+            返回 SqlDataReader 数据集合
+            </summary>
+            <param name="CommandText">执行对象文本</param>
+            <returns>查询结果集</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.RunSql">
+            ***************************************************************************************
+            <summary>
+            执行 sql 语句
+            </summary>
+            <returns>影响行数</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.RunSql(System.String)">
+            ***************************************************************************************
+            <summary>
+            执行 sql 语句
+            </summary>
+            <param name="CommandText">执行对象文本</param>
+            <returns>影响行数</returns>
+            ***************************************************************************************
+        </member>
+        <member name="M:RmsPM.DAL.SqlDataProcess.ProcessParametersAdd(System.String,System.Data.SqlDbType,System.Int32,System.Object)">
+            ***************************************************************************************
+            <summary>
+            添加参数
+            </summary>
+            <param name="ParameterName">参数名称</param>
+            <param name="ParameterType">类型</param>
+            <param name="Size">长度</param>
+            <param name="Value">值</param>
+            <returns>参数对象</returns>
+            ***************************************************************************************
+        </member>
+        <member name="P:RmsPM.DAL.SqlDataProcess.CommandText">
+            ****************************************************************************************
+             <summary>
+             Transact-SQL 语句
+             </summary>
+            ****************************************************************************************
+        </member>
+        <member name="P:RmsPM.DAL.SqlDataProcess.IsProcess">
+            ****************************************************************************************
+             <summary>
+             是否为存储过程
+             </summary>
+            ****************************************************************************************
+        </member>
+        <member name="P:RmsPM.DAL.SqlDataProcess.Transaction">
+            ****************************************************************************************
+             <summary>
+             事务对象
+             </summary>
+            ****************************************************************************************
+        </member>
+        <member name="P:RmsPM.DAL.SqlDataProcess.Connection">
+            <summary>
+            数据库连接对象
+            </summary>
+        </member>
+        <member name="P:RmsPM.DAL.SqlDataProcess.SqlParameters">
+            ***************************************************************************************
+            <summary>
+            参数集合
+            </summary>
+            ***************************************************************************************
+        </member>
+    </members>
+</doc>

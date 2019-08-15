@@ -1,0 +1,198 @@
+.infra-input-nember {
+	border: 1px solid #B0C5E6;
+	font-family: "Tahoma";
+	font-size: 12px;
+}
+
+table.infra-input-nember td {
+	height: 16px;
+	padding: 0px;
+	border: 0px;
+}
+
+.infra-input-date {
+	border: 1px solid #B0C5E6;
+	font-family: "Tahoma";
+	font-size: 12px;
+	padding: 0px;
+	margin: 0px;
+}
+
+table.infra-input-date td {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+.infra-input-year {
+	border: 1px solid #B0C5E6;
+	font-family: "Tahoma";
+	font-size: 12px;
+	padding: 0px;
+	margin: 0px;
+}
+
+table.infra-input-year td {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	height:0px;
+}
+
+/*-------- class for grid --------*/
+.grid {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border-top:2px solid #A6C6DD;
+	border-bottom: 1px solid #A6C6DD;
+	border-right:1px solid #FFFFFF;
+	background-color: #FFFFFF;
+	border-collapse: collapse;
+	margin-bottom: 9px
+}
+
+.grid-row {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #DCDCDC;
+	border-right: 1px solid #A6C6DD;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 23px;
+}
+
+.grid-edit {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border: 1px solid #B0C5E6;
+	height: 23px;
+}
+
+.grid-header {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border-top:1px solid #A6C6DD;
+	border-bottom: 1px solid #DCDCDC;
+	border-right: 1px solid #A6C6DD;
+	background-color: #ECF4FA;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: #003366;
+	float: bold;
+}
+
+.grid-footer {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border-top: 1px solid #A6C6DD;
+	border-bottom: 1px solid #DCDCDC;
+	border-right: 1px solid #A6C6DD;
+	background-color: #ECF4FA;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: #003366;
+	float: bold;
+}
+
+.grid-select {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #DCDCDC;
+	border-right: 1px solid #A6C6DD;
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: #FFFFC0;
+}
+
+.grid-selector {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #DCDCDC;
+	border-right: 1px solid #A6C6DD;
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: #ECF4FA;
+}
+
+.grid-exp {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #DCDCDC;
+	border-right: 1px solid #A6C6DD;
+	background-color: #ECF4FA;
+}
+
+.grid-fix {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #DCDCDC;
+	border-right: 1px solid #A6C6DD;
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: #ECF4FA;
+}
+
+.grid-row-i {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #DCDCDC;
+	border-right: 1px solid #A6C6DD;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 23px;
+	background-color: #F7F7F7;
+}
+
+.grid-row-1 {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #DCDCDC;
+	border-right: 1px solid #A6C6DD;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 23px;
+	background-color: #F3F8EA;
+}
+
+.grid-row-2 {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #DCDCDC;
+	border-right: 1px solid #A6C6DD;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 23px;
+	background-color: #E5F0CE;
+}
+
+.grid-row-3 {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #DCDCDC;
+	border-right: 1px solid #A6C6DD;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 23px;
+	background-color: #D8E9B5;
+}
+
+.grid-row-c {
+	font-family: "Tahoma","宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #DCDCDC;
+	border-right: 1px solid #A6C6DD;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 23px;
+	background-color: #F0FFF0;
+}
+.noborderTable
+{
+	BORDER-TOP-STYLE: none;
+	BORDER-RIGHT-STYLE: none;
+	BORDER-LEFT-STYLE: none;
+	 BORDER-BOTTOM-STYLE: none
+}
+

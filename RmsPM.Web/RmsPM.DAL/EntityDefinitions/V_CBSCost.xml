@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>V_CBSCost</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>V_CBSCost</Name>
+		<Column>
+			<Name>CostCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String> SELECT * from V_CBSCost </String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>SelectSum</Name>
+			<String> SELECT isnull(Sum(TotalMoney),0) FROM V_CBSCost </String>
+			<CommandType>Text</CommandType>
+		</Sql>
+	</Table>
+</Entity>

@@ -1,0 +1,1397 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RadAjax.Net2</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.WebControls.AjaxRequestEventArgs">
+            <summary>
+            A class containing the AJAX event arguments during an AJAX request.
+            </summary>
+            <example>
+            	<code lang="CS">
+            	</code>
+            	<code lang="CS">
+            //ASPX
+             
+            &lt;INPUT type="button" value="Button" onclick="window['&lt;%= RadAjaxManager1.ClientID %&gt;'].AjaxRequest();"&gt;
+             
+             
+            //Server Side Code
+            private void RadAjaxManager1_AjaxRequest(object sender, Telerik.WebControls.AjaxRequestEventArgs e)
+            {
+                //Code Handler using AjaxRequestEventArgs....
+            }
+                </code>
+            	<code lang="VB">
+            'ASPX
+            &lt;Input Type="button" value="Button" onclick="window['&lt;%= RadAjaxManager1.ClientID %&gt;'].AjaxRequest();"&gt;
+             
+            'Server Side Code
+            Private  Sub RadAjaxManager1_AjaxRequest(ByVal sender As Object, ByVal e As Telerik.WebControls.AjaxRequestEventArgs)
+                'Code Handler using AjaxRequestEventArgs....
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxRequestEventArgs.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the AsyncRequestEventArgs class.
+            </summary>
+            <param name="AsyncRequestEvent"></param>
+            <param name="args"></param>
+        </member>
+        <member name="P:Telerik.WebControls.AjaxRequestEventArgs.Argument">
+            <summary>
+             Returns the name of the AJAX request event.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadAjaxManager">
+            <summary>
+            	<strong>RadAjaxManager</strong> is one of the two main controls that come with
+            the r.a.d.<strong>ajax</strong> suite. Using the <strong>AJAX Manager</strong> control
+            on your page, you can ajaxify all controls that normally work with postbacks. AJAX
+            Manager has a builder tool that allows you to set the AJAX relations in design-mode and
+            absolutely codeless. Using a single AJAX Manager on the page you can create complex web
+            applications like Microsoft Outlook ® Web Access portal.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadAjaxUtils.RadAJAXControl">
+            <summary>This control is intended for internal usage by other telerik controls.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxUtils.RadControl.Version">
+            <summary>Gets the component's current version.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxUtils.RadControl.UseEmbeddedScripts">
+            <summary>
+            Gets or sets a value indicating whether to use the embedded JavaScript files or not.
+            </summary>
+            <value>
+            	<strong>True</strong> if embedded JavaScript files are to be used; otherwise
+            <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            Use this property for debugging purposes or to apply any modifications to the
+            JavaScript files.
+            </remarks>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.GetPageUrl">
+            <exclude/>
+            <excludetoc/>
+            <summary>This method is intended only for internal usage.</summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.Redirect(System.String)">
+            <summary>Redirects the page to another location.</summary>
+            <returns>None.</returns>
+            <remarks>
+            This method is usually used in the AJAX event handler instead of
+            Response.Redirect(). It provides the only way to redirect to a page which does not
+            contain any AJAX control at all.
+            </remarks>
+            <example>
+                The following code redirects from a button's click event handler. Note the control
+                should be ajaxified in order redirection to work.
+                <code lang="CS" title="Redirect(C#)">
+            private void Button1_Click(object sender, System.EventArgs e)
+            {
+                RadAjaxManager1.Redirect("support.aspx");
+            }
+                </code>
+            	<code lang="VB" title="Redirect(VB)">
+            Private Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
+            RadAjaxManager1.Redirect("support.aspx")
+            End Sub 'Button1_Click
+                </code>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.FocusControl(System.Web.UI.Control)">
+            <summary>
+            Sets focus to the specified web control after the AJAX Request is
+            finished.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.FocusControl(System.String)">
+            <summary>
+            Sets focus to the specified web control after the AJAX Request is
+            finished.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.GetAjaxEventReference(System.String)">
+            <summary>
+            Gets client side code which raises an AjaxRequest event in either AJAX Manager or
+            AJAX Panel.
+            </summary>
+            <example>
+            	<code lang="CS" title="GetAjaxEventReference">
+            private void Page_Load(object sender, System.EventArgs e)
+            {
+                // Create a generic AJAX Request when the button is clicked.
+                // "return false" to prevent postbacks
+                Button1.Attributes["onclick"] = RadAjaxPanel1.GetAjaxEventReference("argument...") + " return false;"; 
+                // Generic requests can be fired on both AJAX Manager and AJAX Panel
+                Button1.Attributes["onclick"] = RadAjaxManager1.GetAjaxEventReference("argument...") + " return false;"; 
+            }
+                </code>
+            	<code lang="VB" title="GetAjaxRequestReference">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Page.Load
+                ' Create a generic AJAX Request When the button Is clicked.
+                ' "return false" To prevent postbacks
+                Button1.Attributes["onclick"] = RadAjaxPanel1.GetAjaxEventReference("argument...") &amp; " return false;"
+                ' Generic requests can be fired On both AJAX Manager And AJAX Panel
+                Button1.Attributes["onclick"] = RadAjaxManager1.GetAjaxEventReference("argument...") &amp; " return false;"
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.GetAjaxRequestReference(System.String)">
+            <summary>
+            OBSOLETE: Please, use GetAjaxEventReference instead.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.Alert(System.String)">
+            <summary>Displays an alert message at client-side.</summary>
+            <returns>None.</returns>
+            <remarks>
+            	<para>This is the easiest way to show a message, generated from the server, on the
+            client in a message box.</para>
+            	<para><strong>Note:</strong> Special characteres are not escaped.</para>
+            </remarks>
+            <example>
+                The following example illustrates a sample usage of the <strong>Alert</strong>
+                method. 
+                <code lang="CS" title="Alert(C#)">
+            private void Button1_Click(object sender, System.EventArgs e)
+            {
+            if (!UserAccessAllowed(UserProfile))
+            {
+            RadAjaxManager1.Alert("You are not allowed to access this user control!");
+            }
+            else
+            {
+            LoadSecretControl();
+            }
+            }
+                </code>
+            	<code lang="VB" title="Alert(VB)">
+            Private Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
+            If Not UserAccessAllowed(UserProfile) Then
+            RadAjaxManager1.Alert("You are not allowed to access this user control!")
+            Else
+            LoadSecretControl()
+            End If
+            End Sub 'Button1_Click
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.ResponseScripts">
+            <summary>
+            Gets or sets a string collection of JavaScripts that will be executed on
+            client-side when the response returns.
+            </summary>
+            <example>
+                The following example demonstrates a sample usage of the
+                <strong>ResponseScripts</strong> property: 
+                <code lang="CS" title="C#">
+            &lt;form id="Form1" method="post" runat="server"&gt;
+            &lt;script language="C#" runat="server"&gt;
+            private void Button1_Click(object sender, System.EventArgs e)
+            {
+            RadAjaxManager1.ResponseScripts.Add("alert('This can be any script!');");
+            }
+            &lt;/script&gt;
+            &lt;radA:RadAjaxManager id="RadAjaxManager1" runat="server" &gt;
+            &lt;AjaxSettings&gt;
+            &lt;radA:AjaxSetting AjaxControlID="Button1"&gt;
+            &lt;radA:AjaxSetting&gt;
+            &lt;/AjaxSettings&gt;
+            &lt;/radA:RadAjaxManager&gt;
+            &lt;/form&gt;
+                </code>
+            	<code lang="VB" title="VB">
+            &lt;form id="Form1" method="post" runat="server"&gt;
+            &lt;script language="VB" runat="server"&gt;
+            Private Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
+            RadAjaxManager.ResponseScripts.Add("alert('This can be any script!');")
+            End Sub 'RadAjaxManager1_AjaxRequest
+            &lt;/script&gt;
+            &lt;radA:RadAjaxManager id="RadAjaxManager1" runat="server" &gt;
+            &lt;AjaxSettings&gt;
+            &lt;radA:AjaxSetting AjaxControlID="Button1"&gt;
+            &lt;radA:AjaxSetting&gt;
+            &lt;/AjaxSettings&gt;
+            &lt;/radA:RadAjaxManager&gt;
+            &lt;/form&gt;
+                </code>
+            </example>
+            <isnew>July 11, 2018</isnew>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.EnableAJAX">
+            <summary>
+            Gets or sets a value indicating whether the control will work in AJAX or Postback
+            mode.
+            </summary>
+            <remarks>
+            Set to <strong>false</strong> to force using postbacks instead of AJAX
+            requests.
+            </remarks>
+            <value>Returns <strong>true</strong> by default.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.EnablePageHeadUpdate">
+            <summary>
+            Gets or sets a value indicating whether the control will update the page &lt;head&gt; element, so that changes to the title and stylesheets are applied.
+            </summary>
+            <remarks>
+            Set to <strong>false</strong> to disable header updates if you do not need them.
+            </remarks>
+            <value>Returns <strong>true</strong> by default.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.EnableOutsideScripts">
+            <summary>
+            Gets or sets a value indicating if the outside scripts for the AJAX-enabled
+            controls will be evaluated.
+            </summary>
+            <value>The default value is <strong>false</strong>.</value>
+            <remarks>
+            Outside scripts are scripts rendered from the code-behind and are usually not
+            executed if they are rendered outside of the currently updated control(s).
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.IsAsyncRequest">
+            <summary>
+            Gets a value indicating whether the current request is an AJAX request initiated
+            by the current control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.IsAjaxRequest">
+            <summary>
+            Gets a value indicating whether the current request is an AJAX request initiated
+            by the current control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxUtils.RadAJAXControl.AjaxUrl">
+            <summary>
+            Gets or sets a value containing the URL that will be used for AJAX
+            request.
+            </summary>
+            <value>
+            Returns a String containing the URL that will be used for AJAX request. The
+            default value is the URL of the current page.
+            </value>
+            <remarks>
+            	<strong>AJAX Panel</strong> and <strong>AJAX Manager</strong> automatically
+            resolve the current page URL when forming the request. However if you want to achieve
+            different scenario such as AJAX requests between two pages you can set the desired URL
+            for the request using this property.
+            </remarks>
+            <summary>Gets or sets a value the URL that the control will use for AJAX requests.</summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxManager.#ctor">
+            <summary>Initializes a new instance of the <strong>RadAjaxManager</strong> class.</summary>
+            <returns>
+            Returns a reference to the newly instatiated <strong>RadAjaxManager</strong>
+            object.
+            </returns>
+            <remarks>
+            	<para>Use this constructor to create and initialize a new instance of the
+                <strong>RadAjaxManager</strong> class.</para>
+            </remarks>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxManager.CreateChildControls">
+            <summary>
+            Notifies server controls that use composition-based implementation to create any child controls they contain in preparation for posting back or rendering.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxManager.GetClientEventsParamValue(System.String)">
+            <summary>Occurs when the <strong>Callback</strong> event is raised.</summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadAjaxManager.ResolveUpdatedControls">
+            <summary>
+                <para>Occurs when the RadAjaxManager resolves the UpdatedControls collection for the control that
+                initiated the Ajax request to the server.</para>
+                <para>Handling this event is the last place where you can modify the collection of controls 
+                that would be updated on the current Ajax request (note that you can add as well as remove controls).</para>
+            </summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadAjaxManager.AjaxRequest">
+            <summary>
+            	<para>Occurs whenever the client-side function <strong>AjaxRequest(arguments)</strong> is called. 
+                Alternatively the event is fired with <strong>AjaxRequestWithTarget(eventTarget, eventArgument)</strong> 
+                when the <strong>eventTarget</strong> is the <strong>UniqueID</strong> of the AJAX Manager
+                instance.</para>
+            	<para>When the manager ajaxifies itself it will perform an AJAX request, otherwise
+                it will postback to the server (this is the default behavior).</para>
+            </summary>
+            <example>
+                &lt;script type="text/javascript"&gt; 
+                <para>RadAjaxManager1.AjaxRequest(event_argument);</para>
+            	<para>&lt;/script&gt;</para>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.ClientEvents">
+            <summary>
+            	<para>
+                    Gets a reference to the
+                    <see cref="T:Telerik.WebControls.AjaxClientEvents">AjaxClientEvents</see> object
+                    which specifies the names of the JavaScript functions which are called at
+                    different stages of the AJAXrequest.
+                </para>
+            	<para>The following client events are available:</para>
+            	<list type="bullet">
+            		<item>OnRequestStart</item>
+            		<item>OnRequestSent</item>
+            		<item>OnResponseReceived</item>
+            		<item>OnResponseEnd</item>
+            	</list>
+            </summary>
+            <value>
+            	<strong>AjaxClientEvents</strong> object which specifies the names of the
+            JavaScript functions.
+            </value>
+            <remarks>This property is read-only.</remarks>
+            <example>
+                This example demonstrates a sample usage of the <strong>ClientEvents</strong>
+                property. 
+                <code lang="CS" title="ClientEvents(C#)">
+            &lt;form id="Form1" method="post" runat="server" &gt;
+            &lt;script Type="text/javascript"&gt;
+            function onRequestStart()
+            {
+            alert("Request has just started!");
+            }
+            function onRequestSent()
+            {
+            alert("Request has been just sent");
+            }
+            function onResponseReceived()
+            {
+            alert("Response has been received");
+            }
+            function onResponseEnd()
+            {
+            alert("Response is already handled");
+            }
+            &lt;/script&gt;
+            . . .
+            &lt;/form&gt;
+             
+            private void Page_Load(object sender, System.EventArgs e)
+            {
+            if (!Page.IsPostback) {
+            RadAjaxManager.ClientEvents.OnRequestStart = "onRequestStart";
+            RadAjaxManager.ClientEvents.OnRequestSent = "onRequestSent";
+            RadAjaxManager.ClientEvents.OnResponseReceived = "onResponseReceived";
+            RadAjaxManager.ClientEvents.OnResponseEnd = "onResponseEnd";
+            }
+            }
+                </code>
+            	<code lang="VB" title="ClientEvents(VB)">
+            &lt;form id="Form1" method="post" runat="server" &gt;
+            &lt;script Type="text/javascript"&gt;
+            Function onRequestStart()
+            {
+            alert("Request has just started!");
+            }
+            Function onRequestSent()
+            {
+            alert("Request has been just sent");
+            }
+            Function onResponseReceived()
+            {
+            alert("Response has been received");
+            }
+            Function onResponseEnd()
+            {
+            alert("Response is already handled");
+            }
+            &lt;/script&gt;
+            . . .
+            &lt;/form&gt;
+             
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs)
+            If Not Page.IsPostBack Then
+            RadAjaxManager.ClientEvents.OnRequestStart = "onRequestStart"
+            RadAjaxManager.ClientEvents.OnRequestSent = "onRequestSent"
+            RadAjaxManager.ClientEvents.OnResponseReceived = "onResponseReceived"
+            RadAjaxManager.ClientEvents.OnResponseEnd = "onResponseEnd"
+            End If
+             
+            End Sub 'Page_Load
+                </code>
+            </example>
+            <seealso cref="T:Telerik.WebControls.AjaxClientEvents">AjaxClientEvents Class</seealso>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.AjaxSettings">
+            <summary>
+            	<para>AjaxSettings provides a way to programmatically set or get the AjaxSettings
+            collection associated with the instance of the RadAjaxManager. It is usually
+            defined declaratively (as demonstrated below) or using the visual designer.</para>
+            </summary>
+            <value>
+            	<para>
+            		<font size="2"><see cref="T:Telerik.WebControls.AjaxSettingsCollection"><font size="2">AjaxSettingsCollection</font></see></font></para>
+            </value>
+            <example>
+            	<para>&lt;radA:RadAjaxManager id="RadAjaxManager1" runat="server"&gt;<br/>
+                &lt;AjaxSettings&gt;<br/>
+                &lt;rada:AjaxSetting AjaxControlID="Button1"&gt;<br/>
+                &lt;UpdatedControls&gt;<br/>
+                &lt;rada:AjaxUpdatedControl
+                ControlID="Label1"&gt;&lt;/rada:AjaxUpdatedControl&gt;<br/>
+                &lt;/UpdatedControls&gt;<br/>
+                &lt;/rada:AjaxSetting&gt;<br/>
+                &lt;/AjaxSettings&gt;<br/>
+                &lt;/radA:RadAjaxManager&gt;</para>
+            </example>
+            <seealso cref="P:Telerik.WebControls.RadAjaxManager.AjaxSettings">AjaxSettings Property</seealso>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.Visible">
+            <summary>
+            For RadAjaxManager, this properly is read-only.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.TabIndex">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.Enabled">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.AccessKey">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.BackColor">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.BorderColor">
+            <exclude/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.CssClass">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.BorderStyle">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.BorderWidth">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.Font">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.ForeColor">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.ToolTip">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.Width">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxManager.Height">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="T:Telerik.WebControls.RadAjaxManager.AsyncRequestDelegate">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="T:Telerik.WebControls.AjaxUpdatedControl">
+            <summary>
+            This class holds a reference to a single updated control and the loading panel to
+            display.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxUpdatedControl.#ctor(System.String,System.String)">
+            <summary>
+            A constructor of AjaxUpdatedControl which takes as parameters the control to be
+            updated and the id of the loading panel to display.
+            </summary>
+            <param name="ctrlID">The ID of the control that will be updated by RadAjax</param>
+            <param name="loadPID">The ID of the LoadingPanel to display during the update.</param>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxUpdatedControl.#ctor">
+            <summary>The default constructor of the AjaxUpdatedControl class.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.AjaxUpdatedControl.ControlID">
+            <summary>The ID of the web control that is to be updated.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.AjaxUpdatedControl.LoadingPanelID">
+            <summary>
+            The ID of the AjaxLoadingPanel to be displayed during the update of the
+            control.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.AjaxUpdatedControlsCollection">
+            <summary>A collection of the controls that are updated by the AjaxManager.</summary>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxUpdatedControlsCollection.Add(Telerik.WebControls.AjaxUpdatedControl)">
+            <summary>Adds an item to the collection</summary>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxUpdatedControlsCollection.Remove(Telerik.WebControls.AjaxUpdatedControl)">
+            <summary>Removes the specified item from the collection</summary>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxUpdatedControlsCollection.Contains(Telerik.WebControls.AjaxUpdatedControl)">
+            <summary>Checks wether the collection contains the specified item.</summary>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxUpdatedControlsCollection.IndexOf(Telerik.WebControls.AjaxUpdatedControl)">
+            <summary>Gets the index of the specified item in the collection.</summary>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxUpdatedControlsCollection.Insert(System.Int32,Telerik.WebControls.AjaxUpdatedControl)">
+            <summary>Inserts an item at the specified index in the collection.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.AjaxUpdatedControlsCollection.Item(System.Int32)">
+            <summary>The default indexer of the collection.</summary>
+        </member>
+        <member name="T:Telerik.WebControls.AjaxSetting">
+            <summary>
+            Represents a single AjaxManager setting - a mapping between a control that
+            initiates an AJAX request and a collection of controls to be updated by the
+            operation.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxSetting.#ctor">
+            <summary>Default constructor for the AjaxSetting class.</summary>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxSetting.#ctor(System.String)">
+            <summary>
+            A constructor for AjaxSetting taking the ClientID of the control initiating the
+            AJAX request.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.AjaxSetting.AjaxControlID">
+            <summary>
+            This field holds the control id of the control that can initiate an
+            AJAX request.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.AjaxSetting.UpdatedControls">
+            <summary>A collection of controls that will be updated by the AjaxManager</summary>
+        </member>
+        <member name="T:Telerik.WebControls.AjaxSettingsCollection">
+            <summary>
+            Summary description for ConfiguredControls.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxSettingsCollection.#ctor">
+            <summary>The default constructor for AjaxSettingsCollection class.</summary>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxSettingsCollection.AddAjaxSetting(System.Web.UI.Control,System.Web.UI.Control,Telerik.WebControls.AjaxLoadingPanel)">
+            <summary>
+            This method adds a new AjaxSetting to the collection by building one from its
+            parameters.
+            </summary>
+            <param name="ajaxifiedControl">The web control to be ajaxified (the initiator of the AJAX request)</param>
+            <param name="updatedControl">The web control that has to be updated.</param>
+            <param name="loadingPanel">The loading panel to be displayed during the update.</param>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxSettingsCollection.AddAjaxSetting(System.Web.UI.Control,System.Web.UI.Control)">
+            <summary>
+            This method adds a new AjaxSetting to the collection by building one from its
+            parameters.
+            </summary>
+            <param name="ajaxifiedControl">The web control to be ajaxified (the initiator of the AJAX request)</param>
+            <param name="updatedControl">The web control that has to be updated.</param>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxSettingsCollection.Add(Telerik.WebControls.AjaxSetting)">
+            <summary>Adds an item to the collection.</summary>
+            <param name="ajaxSetting">An instance of <see cref="T:Telerik.WebControls.AjaxSetting">AjaxSetting</see> to be added.</param>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxSettingsCollection.Remove(Telerik.WebControls.AjaxSetting)">
+            <summary>Removes an item from the collection.</summary>
+            <param name="ajaxSetting">An instance of <see cref="T:Telerik.WebControls.AjaxSetting">AjaxSetting</see> to be removed</param>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxSettingsCollection.Contains(Telerik.WebControls.AjaxSetting)">
+            <summary>Checks wether the item is present in the collection.</summary>
+            <param name="ajaxSetting">An instance of <see cref="T:Telerik.WebControls.AjaxSetting">AjaxSetting</see></param>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxSettingsCollection.IndexOf(Telerik.WebControls.AjaxSetting)">
+            <summary>Determines the index of the specified item.</summary>
+            <param name="ajaxSetting">An instance of <see cref="T:Telerik.WebControls.AjaxSetting">AjaxSetting</see></param>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxSettingsCollection.Insert(System.Int32,Telerik.WebControls.AjaxSetting)">
+            <summary>Inserts an item at the specificed index in the collection.</summary>
+            <param name="index">An instance of <see cref="T:Telerik.WebControls.AjaxSetting">AjaxSetting</see></param>
+        </member>
+        <member name="P:Telerik.WebControls.AjaxSettingsCollection.Item(System.Int32)">
+            <summary>Default indexer for the collection.</summary>
+        </member>
+        <member name="T:Telerik.WebControls.UpdatedControlsEventArgs">
+            <summary>
+            <para>Provides data for the <strong>ResolveUpdatedControls</strong> event of the RadAjaxManager control.</para>
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.UpdatedControlsEventArgs.UpdatedControls">
+            <summary>
+            Gets the collection of controls that would be updated on the current Ajax request.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.UpdatedControlsEventArgs.PostBackControlID">
+            <summary>
+            Gets the ID of the control that initiated the Ajax request.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.UpdatedControlsEventArgs.SuppressError">
+            <summary>
+            Gets or sets a value indicating whether an exception should be thrown if the collection of controls 
+            that should be updated is empty after handling the ResolveUpdatedControls event.
+            </summary>
+            <value>
+            The default value is <strong>false</strong>.
+            </value>
+        </member>
+        <member name="T:Telerik.WebControls.Design.RadAjaxTimerDesigner">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:Telerik.WebControls.Design.RadAjaxTimerDesigner.#ctor">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:Telerik.WebControls.Design.RadAjaxTimerDesigner.GetDesignTimeHtml">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="T:Telerik.WebControls.Design.Ajax.ControlBuilderForm">
+            <summary>
+            Summary description for ControlBuilderForm.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.Design.Ajax.ControlBuilderForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.Design.Ajax.ControlBuilderForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.Design.Ajax.RadAjaxManagerFormDesigner">
+            <summary>
+            Summary description for UpdatedConrolsDesigner.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.Design.Ajax.RadAjaxManagerFormDesigner.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.Design.Ajax.RadAjaxManagerFormDesigner.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.Design.Ajax.RadAjaxManagerFormDesigner.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadMultipleUpdateAjaxControl">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="T:Telerik.WebControls.MethodInfoCollection">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.WebServices">
+            <summary>
+                This property holds the collection of
+                <see cref="T:Telerik.WebControls.WebServiceReference">WebServicesReference</see> items. You can use this
+                property to add web service references programmatically.
+            </summary>
+            <example>
+            	<code lang="CS" title="Accessing the WebServices collection programmatically">
+            RadAjaxServiceManager1.WebServices.Add(new WebServiceReference("path-to-webservice"));
+                </code>
+            	<code lang="VB" title="Accessing the WebServices collection programmatically">
+            RadAjaxServiceManager1.WebServices.Add(New WebServiceReference("path-to-webservice"))
+                </code>
+            </example>
+            <value><see cref="T:Telerik.WebControls.WebServiceReferenceCollection">WebServiceReferenceCollection Class</see></value>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.TabIndex">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.Enabled">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.AccessKey">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.BackColor">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.BorderColor">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.CssClass">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.BorderStyle">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.BorderWidth">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.Font">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.ForeColor">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.ToolTip">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.Width">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxServiceManager.Height">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:Telerik.WebControls.Design.Ajax.RadAjaxServiceManagerDesigner.GetDesignTimeHtml">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="T:Telerik.WebControls.WebServiceData">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:Telerik.WebControls.WebServiceReference.#ctor(System.String)">
+            <summary>
+                This a constructor which you can use to set the
+                <paramref name="Path">Path</paramref> property of the WebServiceReference class.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.WebServiceReference.#ctor">
+            <summary>
+                This is the default constructor. You will need to set the
+                <see cref="P:Telerik.WebControls.WebServiceReference.Path">Path</see> property manually.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.WebServiceReference.Path">
+            <summary>
+            	<para>This property indicates the path to your web service. You can use both
+                relative or absolute values for the path to the webservice.</para>
+            	<para>
+                    If you use "~/WebService.asmx" as your service path,
+                    <see cref="T:Telerik.WebControls.RadAjaxServiceManager">RadAjaxServiceManager</see> will be looking
+                    for it in the root of your web application.
+                </para>
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.WebServiceReferenceCollection.Add(Telerik.WebControls.WebServiceReference)">
+            <summary>
+                This method allows you to add a <see cref="T:Telerik.WebControls.WebServiceReference">WebServiceReference
+                Class</see> to the collection.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.WebServiceReferenceCollection.IndexOf(Telerik.WebControls.WebServiceReference)">
+            <summary>
+                Returns the zero-based index of the first occurrence of a value in the
+                <see cref="T:Telerik.WebControls.WebServiceReferenceCollection">WebServiceReferenceCollection</see> or in
+                a portion of it.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.WebServiceReferenceCollection.Insert(System.Int32,Telerik.WebControls.WebServiceReference)">
+            <summary>
+                Inserts an element into the
+                <see cref="T:Telerik.WebControls.WebServiceReferenceCollection">WebServiceReferenceCollection</see> at
+                the specified index.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.WebServiceReferenceCollection.Remove(Telerik.WebControls.WebServiceReference)">
+            <summary>
+                Removes the first occurrence of a specific object from the
+                <see cref="T:Telerik.WebControls.WebServiceReferenceCollection">WebServiceReferenceCollection
+                Class</see>.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.WebServiceReferenceCollection.Contains(Telerik.WebControls.WebServiceReference)">
+            <summary>
+                Determines whether an element is in the
+                <see cref="T:Telerik.WebControls.WebServiceReferenceCollection">WebServiceReferenceCollection
+                Class</see>.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.WebServiceReferenceCollection.Item(System.Int32)">
+            <summary>
+            This indexer allows you to retrieve an item from the collection using its
+            index.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.Ide.Common.RadAjax.ProjectManagement">
+            <summary>
+            Utility class for Design - Time VisualStudio.NET project management.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadAjaxUtils.PropertyCategory">
+            <summary>
+            Defines the common property categories' names
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.AjaxClientEvents">
+            <summary>
+            	<para>The following client events are available:</para>
+            	<list type="bullet">
+            		<item>OnRequestStart</item>
+            		<item>OnRequestSent</item>
+            		<item>OnResponseReceived</item>
+            		<item>OnResponseEnd</item>
+            	</list>
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.AjaxObjectWithState">
+            <summary>
+            ObjectWithState
+            </summary>
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="T:Telerik.WebControls.AjaxStateBag">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="T:Telerik.WebControls.AjaxLoadingPanel">
+            <summary>
+            This class represents a panel that will be used as a progress indicator during an
+            AJAX request.
+            </summary>
+            <remarks>
+            The AjaxLoadingPanel's contents will be displayed instead the updated controls, so
+            that users are aware what controls will get updated. You can have the Loading Panel
+            shown on a predefined location if you set its <see cref="P:Telerik.WebControls.AjaxLoadingPanel.IsSticky">IsSticky</see>
+            property.
+            </remarks>
+            <example>
+            	<div class="LanguageSpecific" name="Code_VB">
+                    &lt;radA:AjaxLoadingPanel id="LoadingPanel1" runat="server"&gt;<br/>
+                     &lt;img id=Img1 alt="" src="~/Img/Loading.gif" runat="server" /&gt;<br/>
+                    &lt;/radA:AjaxLoadingPanel&gt;<!--DXMETADATA end -->
+            	</div>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.AjaxLoadingPanel.#ctor">
+            <summary>The default constructor for the AjaxLoadingPanel class.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.AjaxLoadingPanel.RadControlsDir">
+            <summary>
+            Relative path to RadControls folder.
+            </summary>				
+        </member>
+        <member name="P:Telerik.WebControls.AjaxLoadingPanel.IsSticky">
+            <summary>
+            	<para>The <strong>IsSticky</strong> property of the Loading Panel controls where
+                the panel will appear during the AJAX request. If this property is set to
+                <strong>true</strong>, the panel will appear where you have placed it on your
+                webform. If this property is set to <strong>false</strong>, the Loading panel will
+                appear on the place of the updated control(s).</para>
+            	<para>By default this property is set to <strong>false</strong>.</para>
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.AjaxLoadingPanel.InitialDelayTime">
+            <summary>
+            Gets or sets a value specifying the delay in milliseconds, after which the
+            <strong>AjaxLoadingPanel</strong> will be shown. If the request returns before this time,
+            the <strong>AjaxLoadingPanel</strong> will not be shown.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.AjaxLoadingPanel.MinDisplayTime">
+            <summary>
+            Gets or sets a value that specifies the minimum time that the
+            <strong>AjaxLoadingPanel</strong> will last. The control will not be updated before this
+            period has passed even if the request returns. This will ensure more smoother interface
+            for your page.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadAjaxPanel">
+            <summary>
+            	<strong>AJAX Panel</strong> is used as a placeholder for other controls. Once
+            placed in the panel, any ASP.NET control will start making AJAX requests instead of
+            traditional postbacks.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxPanel.#ctor">
+            <summary>Initializes a new instance of the <strong>AJAXPanel</strong> class.</summary>
+            <returns>
+            Returns a reference to the newly instatiated <strong>AJAXPanel</strong>
+            object.
+            </returns>
+            <remarks>
+            	<para>Use this constructor to create and initialize a new instance of the
+                <strong>AJAXPanel</strong> class.</para>
+            </remarks>
+            
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxPanel.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxPanel.RaisePostBackEvent(System.String)">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxPanel.RaisePostDataChangedEvent">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxPanel.GetSkinFolderName">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="E:Telerik.WebControls.RadAjaxPanel.AjaxRequest">
+            <example>
+            	<strong>[ASPX/ASCX]</strong><br/>
+                &lt;radA:RadAjaxPanel id="AJAXPanel1" runat="server"<br/>
+                EnableAJAX= "True"&gt;<br/>
+                &lt;/radA:RadAjaxPanel&gt;<br/>
+                &lt;br /&gt;<br/>
+                &lt;input type=button value="Change color"onclick='RadAjaxNamespace.AsyncRequest(
+                "&lt;%= AJAXPanel1.ClientID %&gt;", "ChangeColor" ,"&lt;%= AJAXPanel1.ClientID
+                %&gt;")' /&gt; 
+                <code lang="CS" title="[New Example]">
+            private void AJAXPanel1_Request(object source, Telerik.WebControls.AJAXPanel.AJAXPanelRequestEventArgs e)
+            {
+                if(e.RequestArgument == "ChangeColor")
+                {
+                    AJAXPanel1.BackColor = Color.Maroon;
+                }
+            }
+                </code>
+            	<code lang="VB" title="[New Example]">
+            Private Sub AJAXPanel1_Request(ByVal source As Object, ByVal e As Telerik.WebControls.AJAXPanel.AJAXPanelRequestEventArgs)
+                If (e.RequestArgument = "ChangeColor") Then
+                    AJAXPanel1.BackColor = Color.Maroon
+                End If
+            End Sub
+                </code>
+            </example>
+            <summary>
+            This event is fired when <strong>RaisePostbackEvent</strong> of the
+            <strong>AJAXPanel</strong> is fired.
+            </summary>
+            <remarks>
+            	<strong>e.RequestArgument</strong> is the <strong>eventArgument</strong> of the
+            <strong>RaisePostbackEvent.</strong>
+            </remarks>
+        </member>
+        <member name="E:Telerik.WebControls.RadAjaxPanel.Command">
+            <summary>
+            	<para>The <strong>Command</strong> event is raised when RaiseBuibble event is fired
+                in the <strong>AJAXPanel</strong> control.</para>
+            </summary>
+            <example>
+            	<para>&lt;radA:RadAjaxPanel ID="AJAXPanel1" runat="server"
+                OnCommand="AJAXPanel1_Command"&gt;<br/>
+                &lt;asp:Button ID="Button1" CommandName="MyCommand" runat="server" Text="My Text"
+                /&gt;</para>
+            	<para>...</para>
+            	<para>&lt;/radA:RadAjaxPanel&gt;</para>
+            	<code lang="CS" title="[New Example]">
+            private void AJAXPanel1_Command(object sender, System.Web.UI.WebControls.CommandEventArgs e)
+            {
+                if(e.CommandName == "MyCommand")
+                {
+                    // your code goes here
+                }
+            }
+                </code>
+            	<code lang="VB" title="[New Example]">
+            Private Sub AJAXPanel1_Command(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.CommandEventArgs)
+                If (e.CommandName = "MyCommand") Then
+                    ' your code goes here
+                End If
+            End Sub
+                </code>
+            </example>
+            <remarks>
+            This event is commonly used to handle button controls with a custom
+            <b>CommandName</b> value.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxPanel.LoadingPanelID">
+            <summary>
+            Gets or sets the ID of the AjaxLoadingPanel control that will be displayed over the
+            control during AJAX requests. If you leave this blank (string.Empty) there will be no
+            loading panel displayed. Note, if AjaxLoadingPanel is placed in a different naming container,
+            its UniqueID should be used instead its ID property. Otherwise the AjaxLoadingPanel won't be found.
+            </summary>
+            <value>
+            The ID of the loading panel. An empty string means that no panel will be
+            displayed while loading data.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxPanel.Skin">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxPanel.Wrap">
+            <summary>
+            This property specifies the layout of the AjaxPanel. When this is set to FALSE,
+            the AjaxPanel contents will not be wrapped to a new line no matter how wide the control
+            is.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxPanel.HorizontalAlign">
+            <summary>
+            This property specifies the horizontal alignment of the RadAjaxPanel
+            contents.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxPanel.BackImageUrl">
+            <summary>
+            This property specifies the image that should be displayed as background in the
+            AjaxPanel. If left blank, no background image is applied.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxPanel.ClientEvents">
+            <summary>
+            Set of options for panel's client-events
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadAjaxPanel.AjaxPanelRequestEventHandler">
+            <summary>Represents the method that will handle the <see cref="E:Telerik.WebControls.RadAjaxPanel.AjaxRequest">AjaxRequest</see> event.</summary>
+            <param name="source"><para>The source of the event.</para></param>
+            <param name="e">
+            	<para>
+                    An
+                    <see cref="T:Telerik.WebControls.RadAjaxPanel.AjaxPanelRequestEventHandler">AJAXPanelRequestEventArgs</see>
+                    object that contains event data.
+                </para>
+            </param>
+        </member>
+        <member name="T:Telerik.WebControls.PanelControlsToUpdate">
+            <summary>
+            	<para>
+                  A collection that stores <see cref="!:PanelControlsToUpdate.UpdatableControl"/> objects.
+               </para>
+            </summary>
+            <seealso cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/>
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:Telerik.WebControls.PanelControlsToUpdate.#ctor(Telerik.WebControls.AjaxUpdateGroup)">
+            <summary>
+                <para>
+                  Initializes a new instance of <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/>.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.PanelControlsToUpdate.#ctor(Telerik.WebControls.AjaxUpdateGroup,Telerik.WebControls.PanelControlsToUpdate)">
+            <summary>
+                <para>
+                  Initializes a new instance of <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> based on another <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/>.
+               </para>
+            </summary>
+            <param name="value">
+                  A <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> from which the contents are copied
+            </param>
+        </member>
+        <member name="M:Telerik.WebControls.PanelControlsToUpdate.#ctor(Telerik.WebControls.AjaxUpdateGroup,Telerik.WebControls.UpdatableControl[])">
+            <summary>
+                <para>
+                  Initializes a new instance of <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> containing any array of <see cref="!:PanelControlsToUpdate.UpdatableControl"/> objects.
+               </para>
+            </summary>
+            <param name="value">
+                  A array of <see cref="!:PanelControlsToUpdate.UpdatableControl"/> objects with which to intialize the collection
+            </param>
+        </member>
+        <member name="M:Telerik.WebControls.PanelControlsToUpdate.Add(Telerik.WebControls.UpdatableControl)">
+            <summary>
+               <para>Adds a <see cref="!:PanelControlsToUpdate.UpdatableControl"/> with the specified value to the 
+               <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> .</para>
+            </summary>
+            <param name="value">The <see cref="!:PanelControlsToUpdate.UpdatableControl"/> to add.</param>
+            <returns>
+               <para>The index at which the new element was inserted.</para>
+            </returns>
+            <seealso cref="!:PanelControlsToUpdate.PanelControlsToUpdate.AddRange"/>
+        </member>
+        <member name="M:Telerik.WebControls.PanelControlsToUpdate.AddRange(Telerik.WebControls.UpdatableControl[])">
+            <summary>
+            <para>Copies the elements of an array to the end of the <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/>.</para>
+            </summary>
+            <param name="value">
+               An array of type <see cref="!:PanelControlsToUpdate.UpdatableControl"/> containing the objects to add to the collection.
+            </param>
+            <returns>
+              <para>None.</para>
+            </returns>
+            <seealso cref="!:PanelControlsToUpdate.PanelControlsToUpdate.Add"/>
+        </member>
+        <member name="M:Telerik.WebControls.PanelControlsToUpdate.AddRange(Telerik.WebControls.PanelControlsToUpdate)">
+            <summary>
+                <para>
+                  Adds the contents of another <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> to the end of the collection.
+               </para>
+            </summary>
+            <param name="value">
+               A <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> containing the objects to add to the collection.
+            </param>
+            <returns>
+              <para>None.</para>
+            </returns>
+            <seealso cref="!:PanelControlsToUpdate.PanelControlsToUpdate.Add"/>
+        </member>
+        <member name="M:Telerik.WebControls.PanelControlsToUpdate.Contains(Telerik.WebControls.UpdatableControl)">
+            <summary>
+            <para>Gets a value indicating whether the 
+               <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> contains the specified <see cref="!:PanelControlsToUpdate.UpdatableControl"/>.</para>
+            </summary>
+            <param name="value">The <see cref="!:PanelControlsToUpdate.UpdatableControl"/> to locate.</param>
+            <returns>
+            <para><see langword="true"/> if the <see cref="!:PanelControlsToUpdate.UpdatableControl"/> is contained in the collection; 
+              otherwise, <see langword="false"/>.</para>
+            </returns>
+            <seealso cref="!:PanelControlsToUpdate.PanelControlsToUpdate.IndexOf"/>
+        </member>
+        <member name="M:Telerik.WebControls.PanelControlsToUpdate.CopyTo(Telerik.WebControls.UpdatableControl[],System.Int32)">
+            <summary>
+            <para>Copies the <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> values to a one-dimensional <see cref="T:System.Array"/> instance at the 
+               specified index.</para>
+            </summary>
+            <param name="array"><para>The one-dimensional <see cref="T:System.Array"/> that is the destination of the values copied from <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> .</para></param>
+            <param name="index">The index in <paramref name="array"/> where copying begins.</param>
+            <returns>
+              <para>None.</para>
+            </returns>
+            <exception cref="T:System.ArgumentException"><para><paramref name="array"/> is multidimensional.</para> <para>-or-</para> <para>The number of elements in the <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> is greater than the available space between <paramref name="arrayIndex"/> and the end of <paramref name="array"/>.</para></exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is <see langword="null"/>. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than <paramref name="array"/>'s lowbound. </exception>
+            <seealso cref="T:System.Array"/>
+        </member>
+        <member name="M:Telerik.WebControls.PanelControlsToUpdate.IndexOf(Telerik.WebControls.UpdatableControl)">
+            <summary>
+               <para>Returns the index of a <see cref="!:PanelControlsToUpdate.UpdatableControl"/> in 
+                  the <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> .</para>
+            </summary>
+            <param name="value">The <see cref="!:PanelControlsToUpdate.UpdatableControl"/> to locate.</param>
+            <returns>
+            <para>The index of the <see cref="!:PanelControlsToUpdate.UpdatableControl"/> of <paramref name="value"/> in the 
+            <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/>, if found; otherwise, -1.</para>
+            </returns>
+            <seealso cref="!:PanelControlsToUpdate.PanelControlsToUpdate.Contains"/>
+        </member>
+        <member name="M:Telerik.WebControls.PanelControlsToUpdate.Insert(System.Int32,Telerik.WebControls.UpdatableControl)">
+            <summary>
+            <para>Inserts a <see cref="!:PanelControlsToUpdate.UpdatableControl"/> into the <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> at the specified index.</para>
+            </summary>
+            <param name="index">The zero-based index where <paramref name="value"/> should be inserted.</param>
+            <param name=" value">The <see cref="!:PanelControlsToUpdate.UpdatableControl"/> to insert.</param>
+            <returns><para>None.</para></returns>
+            <seealso cref="!:PanelControlsToUpdate.PanelControlsToUpdate.Add"/>
+        </member>
+        <member name="M:Telerik.WebControls.PanelControlsToUpdate.GetEnumerator">
+            <summary>
+               <para>Returns an enumerator that can iterate through 
+                  the <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> .</para>
+            </summary>
+            <returns><para>None.</para></returns>
+            <seealso cref="T:System.Collections.IEnumerator"/>
+        </member>
+        <member name="M:Telerik.WebControls.PanelControlsToUpdate.Remove(Telerik.WebControls.UpdatableControl)">
+            <summary>
+               <para> Removes a specific <see cref="!:PanelControlsToUpdate.UpdatableControl"/> from the 
+               <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> .</para>
+            </summary>
+            <param name="value">The <see cref="!:PanelControlsToUpdate.UpdatableControl"/> to remove from the <see cref="!:PanelControlsToUpdate.PanelControlsToUpdate"/> .</param>
+            <returns><para>None.</para></returns>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> is not found in the Collection. </exception>
+        </member>
+        <member name="P:Telerik.WebControls.PanelControlsToUpdate.Item(System.Int32)">
+            <summary>
+            <para>Represents the entry at the specified index of the <see cref="!:PanelControlsToUpdate.UpdatableControl"/>.</para>
+            </summary>
+            <param name="index"><para>The zero-based index of the entry to locate in the collection.</para></param>
+            <value>
+               <para> The entry at the specified index of the collection.</para>
+            </value>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is outside the valid range of indexes for the collection.</exception>
+        </member>
+        <member name="T:Telerik.WebControls.RadAjaxTimer">
+            <summary>
+                The <strong>RadAjaxTimer</strong> class is a simple postback control that raises a
+                postback <see cref="E:Telerik.WebControls.RadAjaxTimer.Tick">Tick</see> event continuously with a specified
+                <see cref="P:Telerik.WebControls.RadAjaxTimer.Interval">Interval Property</see>. In order to make the timer control
+                perform AJAX requests, you need to ajaxify it with RadAjaxManager or by placing it
+                in RadAjaxPanel.
+            </summary>
+            <example>
+            If RadAjaxTimer is not ajaxified it will only perform postbacks.
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxTimer.Start">
+            <summary>Starts the instance of the timer.</summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxTimer.Stop">
+            <summary>Stops the instance of the timer.</summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxTimer.#ctor">
+            <summary>This is the default constructor for the RadAjaxTimer class.</summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxTimer.RaisePostDataChangedEvent">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxTimer.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:Telerik.WebControls.RadAjaxTimer.RaisePostBackEvent(System.String)">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.TabIndex">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.Enabled">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.AccessKey">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.BackColor">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.BorderColor">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.CssClass">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.BorderStyle">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.BorderWidth">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.Font">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.ForeColor">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.ToolTip">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.Width">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.Height">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.OnClientTick">
+            <summary>
+            Use this event on the client if you wish to prevent the server side Tick event from firing.
+            </summary>
+            <example>
+            	<para>&lt;script type="text/javascript" &gt;</para>
+            	<para>function MyTickHandler(eventArgument)<br/>
+                 {</para>
+            	<para>//Cancel Server Tick<br/>
+                 eventArgument.CancelServerClick = true;<br/>
+                 alert("I've been called!");<br/>
+                 };</para>
+            	<para>&lt;/script&gt;</para>
+            	<para>&lt;radA:RadAjaxTimer ID="RadAjaxTimer1"
+                <strong>OnClientTick="MyTickHandler"</strong> runat="server" /&gt;</para>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.AutoStart">
+            <summary>
+            This property determines wether the timer should begin ticking on the client
+            after a server response (either AJAX or postback)
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.InitialDelayTime">
+            <summary>
+            This property adds an additional delay to the timer interval after initial page load and regular postbacks.
+            The delay will not be added when the timer is updated by an AJAX request.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadAjaxTimer.Interval">
+            <summary>
+            	<para>
+                    This property specifies the interval in which the timer would raise the
+                    <see cref="E:Telerik.WebControls.RadAjaxTimer.Tick">Tick Event</see> event.
+                </para>
+            	<para>Default value is: 2000ms (2 seconds)</para>
+            	<para>Changing this value will restart the timer automatically so that the new value will be applied.</para>
+            </summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadAjaxTimer.Tick">
+            <summary>
+                This is the bread and butter event of the timer. It executes once during each
+                <see cref="P:Telerik.WebControls.RadAjaxTimer.Interval">Interval Property</see>. You may use this event to rebind your
+                controls or make other changes.
+            </summary>
+            <example>
+                If you no longer wish this event to execute you can call the <see cref="M:Telerik.WebControls.RadAjaxTimer.Stop">Stop
+                Method</see> method to stop the timer.
+                <code lang="CS" title="Tick event" description="Rebinding controls in the Tick event">
+            private void LoadData1()
+            {
+                //perform the actual control rebinding.
+            }
+             
+            private void RadAjaxTimer1_Tick(object sender, Telerik.WebControls.TickEventArgs e)
+            {
+                LoadData1();
+            }
+                </code>
+            	<code lang="VB" title="Tick event" description="Rebinding controls in the Tick event">
+            Private Sub LoadData1()
+                'Perform actual control rebinding.
+            End Sub
+             
+            Private Sub RadAjaxTimer1_Tick(sender As Object, e As Telerik.WebControls.TickEventArgs) Handles RadAjaxTimer1.Tick
+                LoadData1()
+            End Sub 'RadAjaxTimer1_Tick
+                </code>
+            </example>
+        </member>
+        <member name="T:Telerik.WebControls.TickEventArgs">
+            <summary>
+            Summary description for TickEventArgs.
+            </summary>
+        </member>
+    </members>
+</doc>

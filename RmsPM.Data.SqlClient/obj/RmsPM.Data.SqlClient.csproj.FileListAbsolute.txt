@@ -1,0 +1,6 @@
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.Data.SqlClient\bin\Debug\TiannuoPM.Data.SqlClient.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.Data.SqlClient\bin\Debug\TiannuoPM.Data.SqlClient.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.Data.SqlClient\obj\Debug\ResolveAssemblyReference.cache
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.Data.SqlClient\obj\Debug\TiannuoPM.Data.SqlClient.Procedures.xml
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.Data.SqlClient\obj\Debug\TiannuoPM.Data.SqlClient.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.Data.SqlClient\obj\Debug\TiannuoPM.Data.SqlClient.pdb

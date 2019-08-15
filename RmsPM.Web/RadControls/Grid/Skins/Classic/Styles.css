@@ -1,0 +1,149 @@
+.RadGrid_Classic
+{
+	color: WindowText;
+	border: 1px solid #97948a;
+	border-left: 1px solid #d2cfbe;
+	border-top: 1px solid #d2cfbe;
+	cursor: default;
+	background: ButtonFace;
+}
+
+.RadGrid_Classic a
+{
+	color: WindowText;
+	text-decoration: none;
+}
+
+.RadGrid_Classic a:hover
+{
+	text-decoration: underline;
+	color: #666;
+}
+
+.MasterTable_Classic
+{
+	background: transparent;
+	color: WindowText;
+	width: 100%;
+	border: 0;
+	border-collapse: separate !important;
+}
+
+.GroupPanel_Classic
+{
+	background: #97948a;
+	width: 100%;
+	color: white;
+	font-size: small;
+}
+
+th.GridHeader_Classic, th.ResizeHeader_Classic, td.GridHeader_Classic, td.ResizeHeader_Classic
+{
+	background: ButtonFace;
+	color: WindowText;
+	border: 0;
+	text-align: center;
+	padding: 4px 4px;
+	border-bottom: 3px solid #d2cfbe;
+	border-left: solid 1px white;
+	border-right: solid 1px #d2cfbe;
+}
+
+.GridHeader_Classic input
+{
+	font-size: 11px;
+	margin-right:2px;
+	vertical-align: middle;
+}
+
+.GridHeader_Classic img
+{
+	vertical-align: middle;
+}
+
+.GridPager_Classic td
+{
+	border: 0;
+	border-top: 1px solid #d2cfbe;
+	border-right: 1px solid #d2cfbe;
+	padding: 2px 4px;
+	background: #f3f1e7;
+	color: WindowText;
+}
+
+.GridFooter_Classic td
+{
+	border: 0;
+	border-right: 1px solid #d2cfbe;
+	padding: 2px 4px;
+	background: #f8f7ef;
+	color: WindowText;
+}
+
+.GridFooter_Classic A, .GridPager_Classic A
+{
+	text-decoration: underline;
+}
+
+.GroupPanelItems_Classic
+{
+	background: ButtonFace;
+	color: WindowText;
+	border-width: 1px;
+	border-style: outset;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+
+tr.GroupHeader_Classic td
+{
+	border: 0px;
+	border-bottom: 1px solid #d2cfbe;
+	background: ButtonFace;
+	color: WindowText;
+	font-weight: bold;
+}
+
+.GridRow_Classic td, .GridAltRow_Classic td
+{
+	border-bottom: solid 1px ButtonFace;
+	border-right: 1px solid #d2cfbe;
+	border-top: 0;
+	border-left: 0;
+	padding: 0px 4px;
+	color: WindowText;
+	height: 20px;
+	background-color: white;
+}
+
+.GridRow_Classic td input, .GridAltRow_Classic td input
+{
+	height: 100%;
+	width: 100%;
+}
+
+.SelectedRow_Classic td
+{
+	border-bottom: solid 1px ButtonFace;
+	border-right: 1px solid #d2cfbe;
+	border-top: 0;
+	border-left: 0;
+	padding: 0px 4px;
+	background: #ffffe1 none;
+}
+
+.ActiveRow_Classic td
+{
+	border-bottom: solid 1px ButtonFace;
+	border-right: 1px solid #d2cfbe;
+	border-top: 0;
+	border-left: 0;
+	padding: 0px 4px;
+	background: #f3f7f9 none;
+}
+
+.ResizeItem_Classic
+{
+	background: #f8f6f0 none !important;
+	border-top: solid 1px white;
+}

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config version="3" expired="false">
+<paths>
+<images rel="0">../Images/PicGroup/</images>
+<scripts rel="0">../Images/PicGroup/</scripts>
+<controlCodebase rel="0" />
+<upsell rel="0" />
+<error rel="0" />
+<userCheck rel="0" />
+<css rel="0">../Images/PicGroup/spaces.css</css>
+</paths>
+<trackingImageUrls />
+<locale>
+<stringsFile rel="0">./stringsFile.xml</stringsFile>
+</locale>
+<links>
+<print visible="False" />
+<download visible="False" />
+<orderPrints visible="False" />
+<orderGifts visible="False" />
+</links>
+</config>

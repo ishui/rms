@@ -1,0 +1,289 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <WorkFlowProcedure>
+    <ProcedureCode>100039</ProcedureCode>
+    <ProcedureName>人力资源需求审批</ProcedureName>
+    <Description>人力资源需求审批</Description>
+    <ApplicationPath>../WorkFlowPage/ZC_AssertAcount.aspx</ApplicationPath>
+    <ApplicationInfoPath>../WorkFlowPage/ZC_AssertAcount.aspx</ApplicationInfoPath>
+    <Type>1</Type>
+    <Remark />
+    <SysType>100089</SysType>
+    <VersionNumber>1.00</VersionNumber>
+    <ProjectCode />
+    <CreateUser>0</CreateUser>
+    <CreateDate>2007-01-29T16:29:31.217+08:00</CreateDate>
+    <ModifyUser>0</ModifyUser>
+    <ModifyDate>2008-03-28T15:28:23.813+08:00</ModifyDate>
+    <Activity>1</Activity>
+    <VersionDescription />
+    <ProcedureRemark />
+  </WorkFlowProcedure>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100243</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <ProcedurePropertyName>申请人</ProcedurePropertyName>
+    <ProcedurePropertyType>Porson</ProcedurePropertyType>
+    <Remak>A02</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100244</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <ProcedurePropertyName>业务类别</ProcedurePropertyName>
+    <ProcedurePropertyType>Other</ProcedurePropertyType>
+    <Remak>A05</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100245</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <ProcedurePropertyName>表单部门</ProcedurePropertyName>
+    <ProcedurePropertyType>Other</ProcedurePropertyType>
+    <Remak>C01</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100246</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <ProcedurePropertyName>业务部门</ProcedurePropertyName>
+    <ProcedurePropertyType>Unit</ProcedurePropertyType>
+    <Remak>A06</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100247</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <ProcedurePropertyName>主题</ProcedurePropertyName>
+    <ProcedurePropertyType>Other</ProcedurePropertyType>
+    <Remak>A01</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100248</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <ProcedurePropertyName>项目代码</ProcedurePropertyName>
+    <ProcedurePropertyType>Other</ProcedurePropertyType>
+    <Remak>A03</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100249</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <ProcedurePropertyName>项目部门</ProcedurePropertyName>
+    <ProcedurePropertyType>Unit</ProcedurePropertyType>
+    <Remak>A04</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowRouter>
+    <RouterCode>100209</RouterCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <FromTaskCode>100242</FromTaskCode>
+    <ToTaskCode>100245</ToTaskCode>
+    <Description>结束</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>5</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100210</RouterCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <FromTaskCode>100244</FromTaskCode>
+    <ToTaskCode>100241</ToTaskCode>
+    <Description>部门经理</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>2</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100211</RouterCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <FromTaskCode>100240</FromTaskCode>
+    <ToTaskCode>100242</ToTaskCode>
+    <Description>返回申请人</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>4</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100212</RouterCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <FromTaskCode>100243</FromTaskCode>
+    <ToTaskCode>100244</ToTaskCode>
+    <Description>开始</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>1</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100213</RouterCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <FromTaskCode>100241</FromTaskCode>
+    <ToTaskCode>100240</ToTaskCode>
+    <Description>总经理</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>3</SortID>
+  </WorkFlowRouter>
+  <WorkFlowCondition>
+    <ConditionCode>100208</ConditionCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <RouterCode>100209</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100209</ConditionCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <RouterCode>100210</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100210</ConditionCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <RouterCode>100211</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100211</ConditionCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <RouterCode>100212</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100212</ConditionCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <RouterCode>100213</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowTask>
+    <TaskCode>100240</TaskCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <TaskID>03</TaskID>
+    <TaskName>总经理</TaskName>
+    <Description />
+    <TaskType>0</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState>总经理,3|3;</ModuleState>
+    <TaskProperty />
+    <TaskRole>R100022</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType>总经理</OpinionType>
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100241</TaskCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <TaskID>02</TaskID>
+    <TaskName>部门经理</TaskName>
+    <Description />
+    <TaskType>0</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState>部门经理,3;</ModuleState>
+    <TaskProperty />
+    <TaskRole>R100029</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType>部门经理</OpinionType>
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100242</TaskCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <TaskID>04</TaskID>
+    <TaskName>返回申请人</TaskName>
+    <Description />
+    <TaskType>0</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState />
+    <TaskProperty>100243</TaskProperty>
+    <TaskRole>R100008</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType />
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100243</TaskCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <TaskID>00</TaskID>
+    <TaskName>开始</TaskName>
+    <Description />
+    <TaskType>1</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState />
+    <TaskProperty />
+    <TaskRole>R100008</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType />
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100244</TaskCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <TaskID>01</TaskID>
+    <TaskName>公章使用申请提交</TaskName>
+    <Description />
+    <TaskType>0</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState>申请表,3;</ModuleState>
+    <TaskProperty />
+    <TaskRole>R100008</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType />
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100245</TaskCode>
+    <ProcedureCode>100039</ProcedureCode>
+    <TaskID>05</TaskID>
+    <TaskName>结束</TaskName>
+    <Description />
+    <TaskType>2</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState />
+    <TaskProperty />
+    <TaskRole>R100008</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType />
+  </WorkFlowTask>
+</NewDataSet>

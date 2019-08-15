@@ -1,0 +1,10 @@
+G:\源代码\工程项目管理系统源码\Rms.WorkFlow\bin\Debug\Rms.WorkFlow.dll
+G:\源代码\工程项目管理系统源码\Rms.WorkFlow\bin\Debug\Rms.WorkFlow.pdb
+G:\源代码\工程项目管理系统源码\Rms.WorkFlow\obj\Debug\Rms.WorkFlow.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码\Rms.WorkFlow\obj\Debug\Rms.WorkFlow.dll
+G:\源代码\工程项目管理系统源码\Rms.WorkFlow\obj\Debug\Rms.WorkFlow.pdb
+G:\源代码\工程项目管理系统源码_20190605\Rms.WorkFlow\bin\Debug\Rms.WorkFlow.dll
+G:\源代码\工程项目管理系统源码_20190605\Rms.WorkFlow\bin\Debug\Rms.WorkFlow.pdb
+G:\源代码\工程项目管理系统源码_20190605\Rms.WorkFlow\obj\Debug\Rms.WorkFlow.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码_20190605\Rms.WorkFlow\obj\Debug\Rms.WorkFlow.dll
+G:\源代码\工程项目管理系统源码_20190605\Rms.WorkFlow\obj\Debug\Rms.WorkFlow.pdb

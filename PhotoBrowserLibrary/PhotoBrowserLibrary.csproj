@@ -1,0 +1,160 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5DB6859-FBFC-4EAF-9440-9B4F67EEBB59}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>PhotoBrowserLibrary</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\Collections\CommentComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\Collections\CommentKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\Collections\Comments.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\Collections\KeyBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\Collections\PhotoCollectionBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\Collections\PhotoComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\Collections\PhotoDirectories.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\Collections\PhotoDirectoryComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\Collections\PhotoDirectoryKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\Collections\PhotoKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\Collections\Photos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\Comment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\DataAccessLayer\CommentDB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\DataAccessLayer\DBBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\DataAccessLayer\PhotoDB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\DataAccessLayer\PhotoDirectoryDB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\DirectoryBrowser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\DirectoryUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\EXIFPropertyItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\EXIFPropertyTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\EXIFRational.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\KnownEXIFIDCodes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\Photo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\PhotoDirectory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\PhotoObjectBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\PhotoUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\SessionToken.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codefresh\PhotoBrowserLibrary\ThumbnailUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

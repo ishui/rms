@@ -1,0 +1,7 @@
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.DAL\bin\Debug\RmsPM.DAL.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.DAL\bin\Debug\RmsPM.DAL.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.DAL\bin\Debug\Rms.ORMap.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.DAL\bin\Debug\Rms.ORMap.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.DAL\obj\Debug\ResolveAssemblyReference.cache
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.DAL\obj\Debug\RmsPM.DAL.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.DAL\obj\Debug\RmsPM.DAL.pdb

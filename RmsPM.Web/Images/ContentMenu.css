@@ -1,0 +1,21 @@
+.ContentMenuPanel
+{
+	border: #2155bd 1px solid;
+	background-image: url(./MainMenuLeftBg.gif);
+	background-repeat: repeat-y;
+	background-color: transparent;
+}
+.ContentMenuItem
+{
+	font-size: 12px;
+	margin: 1px;
+	color:#00309C;
+}
+.ContentMenuItemMouseOver
+{
+	border: #2155bd 1px solid;
+	font-size: 12px;
+	margin: 0px;
+	background-color: #ffe794;
+	color:#00309C;
+}

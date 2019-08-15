@@ -1,0 +1,5 @@
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\Rms.WorkFlow\bin\Debug\Rms.WorkFlow.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\Rms.WorkFlow\bin\Debug\Rms.WorkFlow.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\Rms.WorkFlow\obj\Debug\ResolveAssemblyReference.cache
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\Rms.WorkFlow\obj\Debug\Rms.WorkFlow.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\Rms.WorkFlow\obj\Debug\Rms.WorkFlow.pdb

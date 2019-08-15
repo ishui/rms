@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>V_Payout</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>V_Payout</Name>
+		<Column>
+			<Name>PayoutCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String> select * from V_Payout Payout</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>SelectSum</Name>
+			<String> select  isnull(Sum( Money ),0) from V_Payout Payout  </String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>Select</Name>
+			<String> select * from V_Payout where  PayoutCode=@PayoutCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@PayoutCode</Name>
+				<Column>PayoutCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+	</Table>
+</Entity>

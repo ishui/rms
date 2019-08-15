@@ -1,0 +1,6 @@
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\Rms.ORMap\bin\Debug\Rms.ORMap.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\Rms.ORMap\bin\Debug\Rms.ORMap.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\Rms.ORMap\obj\Debug\ResolveAssemblyReference.cache
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\Rms.ORMap\obj\Debug\Rms.ORMap.EntityData.resources
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\Rms.ORMap\obj\Debug\Rms.ORMap.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\Rms.ORMap\obj\Debug\Rms.ORMap.pdb

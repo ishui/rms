@@ -1,0 +1,130 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{38969967-B97F-4800-BF4C-5BD0BF8CECFD}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>ControlLb</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infragistics.WebUI.Shared.v5.1, Version=5.1.20051.37, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Web\RmsPM.Web\bin\Infragistics.WebUI.Shared.v5.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.WebUI.WebDataInput.v5.1">
+      <Name>Infragistics.WebUI.WebDataInput.v5.1</Name>
+      <HintPath>..\Web\RmsPM.Web\bin\Infragistics.WebUI.WebDataInput.v5.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.WebUI.WebDataInput.vT1, Version=5.1.20051.37, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RmsPM.Web\bin\Infragistics.WebUI.WebDataInput.vT1.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControlLb\Class1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControlLb\InputSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControlLb\LinkControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControlLb\LinkControl2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControlLb\ManyCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControlLb\MoneyList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControlLb\MyDataGridControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControlLb\RmsManyCurrency.cs" />
+    <Compile Include="ControlLb\testContro.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControlLb\WebCustomControl1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RmsPM.BLL\RmsPM.BLL.csproj">
+      <Project>{76720118-3378-42AE-9131-CDBBF8B3CFC2}</Project>
+      <Name>RmsPM.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

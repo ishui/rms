@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>BiddingGradeType</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>BiddingGradeType</Name>
+		<Column>
+			<Name>BiddingGradeTypeCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>true</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Column>
+			<Name>ApplicationType</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>true</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>Select</Name>
+			<String> select  BiddingGradeTypeCode, ApplicationType from BiddingGradeType where  BiddingGradeTypeCode=@BiddingGradeTypeCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@BiddingGradeTypeCode</Name>
+				<Column>BiddingGradeTypeCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String> select  BiddingGradeTypeCode, ApplicationType from BiddingGradeType</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>Insert</Name>
+			<String> Insert into BiddingGradeType (  BiddingGradeTypeCode, ApplicationType ) values (  @BiddingGradeTypeCode, @ApplicationType )</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@BiddingGradeTypeCode</Name>
+				<Column>BiddingGradeTypeCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@ApplicationType</Name>
+				<Column>ApplicationType</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Update</Name>
+			<String> Update BiddingGradeType set ApplicationType=@ApplicationType where  BiddingGradeTypeCode=@BiddingGradeTypeCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@BiddingGradeTypeCode</Name>
+				<Column>BiddingGradeTypeCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@ApplicationType</Name>
+				<Column>ApplicationType</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Delete</Name>
+			<String> Delete from BiddingGradeType  where  BiddingGradeTypeCode=@BiddingGradeTypeCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@BiddingGradeTypeCode</Name>
+				<Column>BiddingGradeTypeCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+	</Table>
+</Entity>

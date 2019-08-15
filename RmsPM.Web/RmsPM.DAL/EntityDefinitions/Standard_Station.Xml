@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>Standard_Station</Name>
+	<Type>Standard</Type>
+	<Table>
+		<Name>Station</Name>
+		<Type>Main</Type>
+	</Table>
+	<Table>
+		<Name>UserRole</Name>
+		<Type>Child</Type>
+		<ParentColumnName>StationCode</ParentColumnName>
+		<ChildColumnName>StationCode</ChildColumnName>
+	</Table>
+</Entity>

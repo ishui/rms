@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+<Entity>
+	<Name>V_PBSUnit</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>V_PBSUnit</Name>
+		<Column>
+			<Name>PBSUnitCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>true</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String> select * from V_PBSUnit</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>Select</Name>
+			<String> select * from V_PBSUnit where  PBSUnitCode=@PBSUnitCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@PBSUnitCode</Name>
+				<Column>PBSUnitCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+	</Table>
+</Entity>

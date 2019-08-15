@@ -1,0 +1,905 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Infragistics.WebUI.WebCombo.v5.1</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "T:Infragistics.WebUI.WebCombo.ClientSideEvents" -->
+        <member name="M:Infragistics.WebUI.WebCombo.ClientSideEvents.#ctor">
+            <summary>
+             The default public constructor for the ClientSideEvents object.
+             This object is created automatically by the WebCombo control.		
+            </summary>
+            <remarks>
+             This class is used to provide an container for the controls client side events.		
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.ClientSideEvents.ToString">
+            <summary>
+            Returns an empty string.  
+            </summary>
+            <remarks>Returns an empty string</remarks>
+            <returns>An empty string</returns>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.ClientSideEvents.InitializeCombo">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            when the Combo has been initialized and is ready for display.
+            </summary>
+            <remarks>	
+            This is the first event fired during the WebCombo's client side life cycle.	
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.ClientSideEvents.BeforeDropDown">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            prior to the dropdown portion of the control being displayed.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.ClientSideEvents.AfterDropDown">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            immediately after the dropdown portion of the control has been displayed.
+            </summary>		
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.ClientSideEvents.BeforeCloseUp">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            prior to the dropdown portion of the control closing up.
+            </summary>		
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.ClientSideEvents.AfterCloseUp">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            immediately after the dropdown portion of the control has been closed up.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.ClientSideEvents.AfterSelectChange">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            immediately after the selected row in the dropdown portion of the control has changed.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.ClientSideEvents.EditKeyDown">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            when a key has been pressed down within the edit portion of the control.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.ClientSideEvents.EditKeyUp">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            when a key has been pressed down within the edit portion of the control.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.ClientSideEvents.BeforeSelectChange">
+            <summary>
+            Returns or sets a string of text that specifies the name of the JavaScript function to be called
+            prior to the selected row in the dropdown portion of the control being changed.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.ColumnsListEditor">
+            <summary>
+            General-purpose implementation of an Editor for choosing
+            a column name from the bound data source.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.ColumnsListEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+               <para>
+                    This is an override from UITypeEditor.  The property grid will call this when
+                    it wants to display the editor for the given value.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.ColumnsListEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+               <para>
+                    This is an override from UITypeEditor.  The editor style indicates what
+                    type of editor we are providing:  we can either display a dialog or a
+                    drop-down box.  Our editor always shows a drop-down box.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.ColumnsListEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+               <para>
+                    This is an override from UITypeEditor and indicates if we support 
+                    painting a small representation of our value in the property grid.
+               </para>
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.RendererBase">
+            <summary>
+            Summary description for RendererBase.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.ComboRendererBase.RenderGeneralJavaScript">
+            <summary>
+            Abstract method 
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.ComboRendererBase.RenderSpecificJavaScript">
+            <summary>
+            Abstract method 
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.ComboRendererBase.writeStyles(System.Web.UI.WebControls.Style)">
+            <summary>
+            Returns a string representing the CSS styles of the Styles
+            collection.
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.ComboRendererBase.writeStyles(System.Web.UI.WebControls.Style,System.String)">
+            <summary>
+            Returns a string representing the CSS styles of the Styles
+            collection.
+            </summary>
+            <param name="style">Style to convert to the string representaion</param>
+            <param name="newLine">String to put after each individual style. Can be used to pass the return character.</param>
+            <returns>string</returns>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.RenderDHTMLCombo">
+            <summary>
+               Implements all HTML rendering logic for the control
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.RenderDHTMLCombo.RenderClientSideEvents">
+            <summary>
+            Formats the ClientSideEvents set on the control for rendering down to the client.
+            </summary>
+            <returns>string - The ClientSideEvent handler ids for the WebCombo in a formatted string</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.RenderDHTMLCombo.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders all nodes using the Visitor pattern
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.RenderDownLevelCombo">
+            <summary>
+            	Summary description for DownLevelTree.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.DropDownLayout">
+            <summary>
+            <p class="body">The properties of the DropDownLayout object control the look and behavior of the drop-down area of the control.  Most of these properties are reflected directly down to the WebGrid control that is created as a child control of the WebCombo.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.DropdownWidth">
+            <summary>
+            <p class="body">Returns or sets a System.Web.UI.WebControls.Unit value that determines how wide the dropdown will be when the user clicks the dropdown button.</p>
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.DropdownHeight">
+            <summary>
+            <p class="body">Returns or sets a System.Web.UI.WebControls.Unit value that determines the height of the dropdown.</p>
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.AllowColSizing">
+            <summary>
+            Determines whether the user is allowed to change the width of columns in the dropdown.
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.AllowRowSizing">
+            <summary>
+            Specifies whether and how the user can change the height of the rows in the dropdown. 
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.AllowSorting">
+            <summary>
+            Specifies whether the user can sort columns.  
+            </summary>
+            <remarks>
+            This property determines whether the user can sort the data in the combo based on values present in a column.
+            The HeaderClickAction must also be set to HeaderClickAction.Sort in order for the columns to sort when the header is clicked.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.AutoGenerateColumns">
+            <summary>
+            Specifies whether the combo should generate any columns automatically when data binding occurs. 
+            </summary>
+            <remarks>
+            <p class="body">At design-time set this property to true and all of the bound columns will be generated. At run-time, if this property is true and there are no columns that were automatically generated (all the <see cref="P:Infragistics.WebUI.UltraWebGrid.UltraGridColumn.IsBound"/> properties are false) then all of the columns from the data source will be added to the existing columns in the grid.</p>
+            <p class="body">You can add your own columns to the grid in addition to the columns generated by the control. By default, any columns you add appear to the left of the columns generated automatically.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.HeaderClickAction">
+            <summary>
+            Specifies what action to take when column headers are clicked.  
+            </summary>
+            <remarks>
+            This property determines whether a column will be sorted or if multiple columns can be sorted.
+            Possible values are:
+            HeaderClickAction.NotSet - No action is taken when the header is clicked
+            HeaderClickAction.Select - The column is selected, (Not supported for WebCombo).
+            HeaderClickAction.SortSingle - The column is sorted, (AllowSorting must be set).
+            HeaderClickAction.SortMulti - The column is sorted in combination with other columns when the Ctrl or Shift key is down, (AllowSorting must be set).
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.WebUI.WebCombo.DropDownLayout.BorderCollapse" -->
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.CellPadding">
+            <summary>
+            The amount of cell padding to use when rendering the dropdown.
+            </summary>
+            <remarks>
+            Cell padding is the amount of white space between the borders of the cell and the cell's contents. To specify the amount of space separating cells from one another, use <b><see cref="P:Infragistics.WebUI.WebCombo.DropDownLayout.CellSpacing"/>.</b>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.CellSpacing">
+            <summary>
+            The amount of cell spacing to use when rendering the grid. 
+            </summary>
+            <remarks>
+            Cell spacing is the amount of space separating cells from one another. To specify the amount of white space between the borders of the cell and the cell's contents, use <b><see cref="P:Infragistics.WebUI.WebCombo.DropDownLayout.CellPadding"/>.</b>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.ColFootersVisible">
+            <summary>
+            Determines whether to show column footers for the dropdown.  
+            </summary>
+            <remarks>
+            <p class="body">Column footers can be enabled for the dropdown, providing a convenient way to display column-related information. For example, you can display the total  of a column of figures, or the number of items checked in a checkbox column.</p>
+            <p class="body">When you enable column footers, the footers will appear, but you must still specify what information they will contain. You can do this through the <b><see cref="P:Infragistics.WebUI.UltraWebGrid.UltraGridColumn.FooterText"/></b> property.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.ColHeadersVisible">
+            <summary>
+            Determines whether to show column headers in the dropdown. 
+            </summary>
+            <remarks>
+            <p class="body">Column headers can be enabled for the dropdown, providing labeling and additional functionality for coulmns. A column header typically contains the formatted name of the field to which the comlumn is bound. </p>
+            <p class="body">Column headers may be formatted through the <see cref="P:Infragistics.WebUI.UltraWebGrid.UltraGridColumn.HeaderStyle"/>, <see cref="P:Infragistics.WebUI.UltraWebGrid.UltraGridColumn.HeaderStyleMerged"/> and <see cref="P:Infragistics.WebUI.UltraWebGrid.UltraGridColumn.HeaderText"/> properties of the UltraGridColumn object.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.ColWidthDefault">
+            <summary>
+            The default width of columns in the dropdown, in Units.
+            </summary>
+            <remarks>
+            <p class="body">The default value for this property is 100 (pixels).</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.FooterStyle">
+            <summary>
+            The default style that will be applied to column footers. 
+            </summary>
+            <remarks>
+            <p class="body">This property specifies a default style that will be applied to all the column footers. The style may be overridden by the individual <see cref="T:Infragistics.WebUI.UltraWebGrid.UltraGridColumn"/> object.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.FrameStyle">
+            <summary>
+            An <b><see cref="!:Infragistics.WebUI.UltraWebGrid.UltraWebStyle"/></b> object that contains the style properties for the control's frame. 
+            </summary>
+            <remarks>
+            <p class="body">Use this property to provide a custom style for the frame of the dropdown. Common style attributes that can be adjusted include: forecolor, backcolor, font, and alignment. You can use different styles to provide a consistent look throughout your application, enhance the appearance of certain areas of the grid, or to call attention to important data.</p>
+            <p class="body">Some properties of this style are used as base properties for all other styles. They include: background color, font, foreground color, cursor, horizontal and vertical alignment, and word wrap.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.GridLines">
+            <summary>
+            Specifies which cell borders should be shown. The default is UltraGridLines.Both.
+            </summary>
+            <remarks>
+            Use this property to quickly format the display of the lines separating the cells in the dropdown. You can choose to show horizontal lines, vertical lines, both or neither.
+            Note: In order for the grid lines to appear at all, it is necessary to have the Border Style, Color and/or Width set in the RowStyleDefault property.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.HeaderStyle">
+            <summary>
+            The default style that will be applied to headers. This is the default value that may be overridden by individual columns.
+            </summary>
+            <remarks>
+            <p class="body">This property specifies a default style that will be applied to all column headers in the dropdown. The style may be overridden by the individual <see cref="T:Infragistics.WebUI.UltraWebGrid.UltraGridColumn"/> object.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.ImageUrls">
+            <summary>
+            Object holder for images used in the dropdown.  Use the properties of this object to customize the various images that are displayed within the dropdown area of WebCombo.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.JavaScriptFileName">
+            <summary>
+            The base name and path for the JavaScript files that are used for client side behavior. The root name of the file, (ig_WebGrid) is used as the base for determining the other files that are contain related functionality. If this root file name is changed, then all other file names must be changed as well.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.RowAlternateStyle">
+            <summary>
+            The default style that will be appplied to alternate (even numbered) rows in the dropdown. 
+            </summary>
+            <remarks>
+            <p class="body">This property specifies a style that will be applied to alternate rows. </p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.RowHeightDefault">
+            <summary>
+            The default height that will be appplied to all rows in the dropdown. 
+            </summary>
+            <remarks>
+            <p class="body">This property specifies a default height that will be applied to all rows. The style may be overridden by the band or by the individual <see cref="T:Infragistics.WebUI.UltraWebGrid.UltraGridRow"/> object.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.RowSelectors">
+            <summary>
+            Specifies whether row selectors will be displayed in the dropdown. 
+            </summary>
+            <remarks>
+            <p class="body">This property specifies the default visibility for row selectors. The default is RowSelectors.Yes</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.RowSelectorStyle">
+            <summary>
+            The default style that will be applied to row selectors in the dropdown. 
+            </summary>
+            <remarks>
+            <p class="body">This property specifies a default style that will be applied to all the row selectors.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.RowSizing">
+            <summary>
+            Specifies whether and how the user can change the height of the rows in the dropdown. The default is AllowSizing.Fixed.
+            </summary>
+            <remarks>
+            <p class="body">The <b>RowSizing</b> property specifies whether the user can resize rows using the mouse in the dropdown.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.RowStyle">
+            <summary>
+            The default style that will be applied to rows. 
+            </summary>
+            <remarks>
+            <p class="body">This property specifies a default style that will be applied to all the rows. The style may be overridden by the individual <see cref="T:Infragistics.WebUI.UltraWebGrid.UltraGridRow"/> object.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.SelectedRowStyle">
+            <summary>
+            The style that will be applied to the selected row in the dropdown. 
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.WebUI.WebCombo.DropDownLayout.StationaryMargins" -->
+        <member name="P:Infragistics.WebUI.WebCombo.DropDownLayout.TableLayout">
+            <summary>
+            The type of table layout in effect for the dropdown.  
+            If this value is set to Auto, the heights and widths of rows and columns are interpreted by the browser as a recommendation.  
+            The Browser will still make adjustments as needed to make as much information as possible visible.  
+            If this property value is set to Fixed, the Browser will treat row and column heights and widths literally and force them 
+            to the indicated values.  This option is only effective on up-level browsers.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.DropDownLayoutForm">
+            <summary>
+            Summary description for DropDownLayoutForm.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.WebCombo.DropDownLayoutForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.DropDownLayoutForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.DropDownLayoutForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.TextAlignment">
+            <summary>
+               Enumeration for control of CheckBoxes at a particular level.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.WebCombo.TextAlignment.Left">
+            <summary>
+            Left align text
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.WebCombo.TextAlignment.Center">
+            <summary>
+            Center align text
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.WebCombo.TextAlignment.Right">
+            <summary>
+            Right align text
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.TypeAhead">
+            <summary>
+            Enumeration that describes the typeahead capability being used by the control.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.WebCombo.TypeAhead.None">
+            <summary>
+            No typeahead in the control
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.WebCombo.TypeAhead.Simple">
+            <summary>
+            Single character type ahead in the control
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.WebCombo.TypeAhead.Extended">
+            <summary>
+            Full word typeahead 
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.SelectedRowChangedEventArgs">
+            <summary>
+             Class that contains information passed to SelectedRowChangedEvent handlers. 
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.SelectedRowChangedEventHandler">
+            <summary>
+            SelectedRowChangedEventHandler Delegate  
+            </summary>
+            <param name="sender">A reference to the grid that generated the event.</param>
+            <param name="e">A reference to a <see cref="T:Infragistics.WebUI.WebCombo.SelectedRowChangedEventArgs"/> SelectedRowChangedEventArgs object that holds a reference to the selected row.</param>
+            <remarks>
+            The <see cref="T:Infragistics.WebUI.WebCombo.SelectedRowChangedEventHandler"/> can fire a postback.
+            </remarks>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.InitializeRowEventHandler">
+            <summary>
+            Delegate that handles the <see cref="F:Infragistics.WebUI.UltraWebGrid.UltraWebGrid.InitializeRow"/> event, which is generated
+            when a row needs to be initialized during data binding.
+            </summary>
+            <remarks>
+            <p class="body">The <see cref="T:Infragistics.WebUI.UltraWebGrid.InitializeBandEventHandler"/> delegate handles the
+            <see cref="!:Infragistics.WebUI.UltraWebGrid.UltraWebGrid.UltraWebGrid.InitializeBand"/> event, which is generated
+            when a band needs to be initialized during data binding.</p>
+            </remarks>
+            <param name="sender">A reference to the grid that generated the event.</param>
+            <param name="e">A reference to the <see cref="T:Infragistics.WebUI.UltraWebGrid.RowEventArgs"/> object containing additional information associated with the event.</param>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.InitializeFooterEventHandler">
+            <summary>
+            Delegate that handles the <see cref="F:Infragistics.WebUI.UltraWebGrid.UltraWebGrid.InitializeFooter"/> event, which is generated
+            when footers need to be configured during data binding.
+            </summary>
+            <param name="sender">A reference to the grid that generated the event.</param>
+            <param name="e">A reference to a FooterEventArgs object that holds a reference to the footer row.</param>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.InitializeLayoutEventHandler">
+            <summary>
+            Delegate that handles the <see cref="F:Infragistics.WebUI.UltraWebGrid.UltraWebGrid.InitializeLayout"/> event, which is generated
+            when the grid's layout needs to be initialized during data binding.
+            </summary>
+            <param name="sender">A reference to the grid that generated the event.</param>
+            <param name="e">A reference to the <see cref="T:Infragistics.WebUI.UltraWebGrid.LayoutEventArgs"/> object containing additional information associated with the event.</param>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.ExpandEffects">
+            <summary>
+            <p class="body">This object encapsulates the Internet Explorer Transitions functionality that WebCombo exposes.</p>
+            </summary>
+            
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.ExpandEffects.ToString">
+            <summary>
+            Returns a string representation of the ExpandEffects object.
+            </summary>
+            <remarks>
+            <p class="body">Some objects do not have values that can be converted to a string. In these cases, an empty string is returned.</p>
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Infragistics.WebUI.WebCombo.ExpandEffects.Type" -->
+        <member name="P:Infragistics.WebUI.WebCombo.ExpandEffects.Duration">
+            <summary>
+            Specifies the amount of time elapsed in milliseconds between the beginning and the end of a transition effect.
+            </summary>
+            <remarks>
+            <p class="body">This is the amount of time it takes the expand effect to occur. If <see cref="P:Infragistics.WebUI.WebCombo.ExpandEffects.Type"/> is set to ExpandEffectsType.Notset, this setting has no effect.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.ExpandEffects.Opacity">
+            <summary>
+            Specifies the amount of transparency applied to the expandable object after the expand effect is complete.
+            </summary>
+            <remarks>
+            <p class="body">This property specifies the opacity of the expandable object as a percentage. A setting of 100 is completely opaque, a setting of 0 is completely transparent (invisible). A setting in between these values will produce a partially visisble expandable object through which the background may be seen.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.ExpandEffects.ShadowColor">
+            <summary>
+            Specifies the color of the drop shadow that will appear under the expandable object.
+            </summary>
+            <remarks>
+            <p class="body">Drop shadows provide an illusion of depth to expandable objects as they appear over the web page. You can specify the width of the drop shadow using the <see cref="P:Infragistics.WebUI.WebCombo.ExpandEffects.ShadowWidth"/> property.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.ExpandEffects.ShadowWidth">
+            <summary>
+            Specifies the width of the drop shadow that will appear under the expandable object.
+            </summary>
+            <remarks>
+            <p class="body">Drop shadows provide an illusion of depth to expandable objects as they appear over the web page. Set this property to 0 to eliminate the drop shadow. You can specify the color of the drop shadow using the <see cref="P:Infragistics.WebUI.WebCombo.ExpandEffects.ShadowColor"/> property.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.LocalizedCategoryAttribute.GetLocalizedString(System.String)">
+            <summary>
+            Returns the localized category name
+            </summary>
+            <param name="value">Name of the category to retreive</param>
+            <returns>The localized string value</returns>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.UltraLicenseAttribute.LicensedWithProducts">
+            <summary>
+            Return the list of products that this control can be licensed with
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.WebCombo.WebCombo">
+            <summary>
+            <p class="body">The WebCombo control is a multi-column, editable drop-down selection control. It allows users to choose values from a detailed list of items that is shown when the arrow in the control is clicked.</p>
+            <p class="body">The drop-down area of WebCombo is based on the WebGrid control and supports many of the same features. Column and row sizing, sorting and row selectors are all supported within the drop-down. Because the WebCombo is intended for the selection of data values, editing within the drop-sown is not supported.</p>
+            <p class="body">If a filed can contain values beyond those in the list, the WebCombo can be set to editable so that values can be typed directly into the control.</p>
+            <p class="body">The WebCombo can be used a stand-alone control anywhere on a web page that you would use a combobox control. WebCombo can also be used from within WebGrid to display ValueLists inside of grid cells.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.WebCombo.WebCombo.filterDoc">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.SavePreset(System.String,System.String,System.String,Infragistics.WebUI.PresetType)">
+            <summary>
+            Saves preset to file path.
+            </summary>
+            <param name="filePath">Path of file</param>
+            <param name="presetType">The type of properties (Appearance, Behavior, or Both) which should be saved in this preset.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.SavePreset(System.IO.TextWriter,System.String,System.String,Infragistics.WebUI.PresetType)">
+            <summary>
+            Save preset to text writer. This can be used to save preset to string using StringWriter.
+            </summary>
+            <param name="xtw">text writer</param>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.SavePreset(System.IO.Stream,System.String,System.String,Infragistics.WebUI.PresetType)">
+            <summary>
+            Save preset to the stream
+            </summary>
+            <param name="stream">reference to stream object</param>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.LoadPreset(System.String,System.Boolean)">
+            <summary>
+            Load a preset from a file.
+            </summary>
+            <param name="filePath">file path</param>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.LoadPreset(System.IO.Stream,System.Boolean)">
+            <summary>
+            Load a preset from a stream.
+            </summary>
+            <param name="xtw">stream object</param>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.LoadPreset(System.IO.TextReader,System.Boolean)">
+            <summary>
+            Load a preset from a text reader.
+            </summary>
+            <param name="xtw">text reader</param>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.#ctor">
+            <summary>
+            Constructor for the WebCombo control
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.CreateControlStyle">
+            <summary>
+            Creates the Style object for the control.  
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.RaisePostBackEvent(System.String)">
+            <summary>
+            Used by control authors. Overridden method of WebCombo that is used to handle event postbacks from the client.
+            </summary>
+            <param name="eventArgument"></param>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            <p class="body">Not for use; implemented exclusively for the control and the .NET framework.</p>
+            </summary>
+            <remarks>
+            <p class="body">This method should not be used.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.RaisePostDataChangedEvent">
+            <summary>
+            <p class="body">Not for use; implemented exclusively for the control and the .NET framework.</p>
+            </summary>
+            <remarks>
+            <p class="body">This method should not be used.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.OnSelectedRowChanged(Infragistics.WebUI.UltraWebGrid.UltraGridRow,Infragistics.WebUI.UltraWebGrid.UltraGridCell)">
+            <summary>
+            <p class="body">Raises the <b>NodeChanged</b> event.</p>
+            </summary>
+            <remarks>
+            <p class="body">Invoke this method to programmatically generate the <b>NodeChanged</b> event.</p>
+            <p class="body">Raising an event invokes the event handler through a delegate.</p>
+            <p class="body">This method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.</p>
+            <p class="body">When overriding <b>NodeChanged</b> in a derived class, be sure to call the base class' <b>OnNodeChanged</b> method so that registered delegates receive the event.</p>
+            </remarks>
+            <param name="row">
+            <p class="body">A reference to the <b>Row</b> object that was changed.</p>
+            </param>
+            <param name="cell">
+            <p class="body"></p>
+            </param>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.DataBind">
+            <summary>
+            The method used to invoke databinding for the WebCombo control
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.FindByText(System.String)">
+            <summary>
+            Locates the first Cell in the DataTextColumn of the WebCombo that matches the passed in value.
+            The Row containing the returned cell is available from the cell.Row property.
+            </summary>
+            
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.FindByValue(System.String)">
+            <summary>
+            Locates the first Cell in the DataValueColumn of the WebCombo that matches the passed in value.
+            The Row containing the returned cell is available from the cell.Row property.
+            </summary>
+            
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.CreateChildControls">
+            <summary>
+            Not to use.  Overridden by the WebCombo control to create the child control structure.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.AddAttributesToRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Not to use.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.OnPreRender(System.EventArgs)">
+            <summary>
+               Prepare the renderer and emit JavaScript 
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+               Render this control to the output parameter specified.
+            </summary>
+            <param name="output"> The HTML writer to write out to </param>
+        </member>
+        <member name="M:Infragistics.WebUI.WebCombo.WebCombo.getRenderer">
+            <summary>
+               Determine the correct rendering class to instantiate and do it
+            </summary>
+            
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.SelectedRow">
+            <summary>
+            <p class="body">Returns a reference to or sets the currently selected <b>Row</b> object.</p>
+            </summary>
+            <remarks>
+            <p class="body">The selected row is rendered using the CSS class specified by the <b>SelectedRowStyle</b> property.</p>
+            <p class="body">When a row is selected, either by user interaction or programmatically, the <b>SelectedRowChanged</b> event is generated.</p>
+            <p class="body">If no row is selected, this property returns Nothing or Null.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.SelectedIndex">
+            <summary>
+            <p class="body">Returns or sets the index of the currently selected <b>Row</b> in the drop-down.</p>
+            </summary>
+            <remarks>
+            <p class="body">The selected is rendered using the CSS class specified by the <b>SelectedRowStyle</b> property.</p>
+            <p class="body">When a row is selected, either by user interaction, or programmatically, the <b>SelectedRowChanged</b> event is generated.</p>
+            <p class="body">If no row is selected, this property returns Nothing or Null.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.SelectedCell">
+            <summary>
+            <p class="body">Returns a reference to the currently selected <b>Cell</b> object.</p>
+            <p class="body">The selected cell is determined by a combination of which row is currently selected, and which column 
+            within the row has been designated as the data column.</p>
+            <p class="body">The data column is designated by setting either the <b>DataTextField</b> property or the first cell in the row. 
+            The properties are examined in the order specified (Text then the first cell) to make the determination of which cell within the row is 
+            the Selected Cell.</p>
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.ComboTypeAhead">
+            <summary>
+            Determines what typeahead behavior the control will abide by
+            </summary>
+            <remarks class="body">
+            Used to provide the user with differing levels of type ahead ability
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.Editable">
+            <summary>
+            Determines if the WebCombo control allows values to be entered by the user.
+            </summary>
+            <remarks>
+            <p class="body">You can choose to provide the user with the ability to enter their own values in the text portion of the WebCombo. You do this by setting the <b>Editable</b> property to True. </p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.SelForeColor">
+            <summary>
+            Determines the Selected Foreground Color for the WebCombo when the input focus is in the top area of the control.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.SelBackColor">
+            <summary>
+            Determines the Selected Background Color for the WebCombo when the input focus is in the top area of the control.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.CompactRendering">
+            <summary>
+            <p class="body">Returns or sets a boolean value that determines whether or not the HTML is rendered in a compact format that is less readable but which optimizes page download time.</p>
+            <p class="body">When this property is set to true, extra spaces, tabs and line feed characters are not used in the rendered html.</p>
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.DropImage1">
+            <summary>
+               The Image used to represent the non-dropped state of the control 
+            </summary>
+            
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.DropImage2">
+            <summary>
+               The image used to indicate that the WebCombo drop down is being displayed.
+            </summary>
+            
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.DropImageXP1">
+            <summary>
+               The Image used to represent the non-dropped state of the control in the XP operating system environement.
+            </summary>
+            
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.DropImageXP2">
+            <summary>
+               The image used to indicate that the WebCombo drop down is being displayed in the XP operating system environement.
+            </summary>
+            
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.JavaScriptFileName">
+            <summary>
+               The path and name for the JavaScript file used for client-side dropdown behavior.
+            </summary>
+            		
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.JavaScriptFileNameCommon">
+            <summary>
+               The relative path to the common javascript file.
+            </summary>
+            
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.ExpandEffects">
+            <summary>
+            <p class="body">Returns the ExpandEffects object that determines the type of filters and transitions that will be used when displaying the dropdown under IE 5 and above.</p>
+            </summary>
+            <remarks>
+            <p class="body"></p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.Rows">
+            <summary>
+            Returns a reference to a <see cref="T:Infragistics.WebUI.UltraWebGrid.RowsCollection"/> collection that contains a collection of <see cref="T:Infragistics.WebUI.UltraWebGrid.UltraGridRow"/> objects.
+            </summary>
+            <remarks>
+            <p class="body">Each UltraGridRow in the collection represents a row or record of data in the grid.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.ClientSideEvents">
+            <summary>
+            <p class="body">The ClientSideEvents object maintains the names of JavaScript functions that are to be called on the client side in response to various events that can be processed without the need for a server post-back.</p>
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.Columns">
+            <summary>
+            Returns a reference to a <see cref="T:Infragistics.WebUI.UltraWebGrid.ColumnsCollection"/> collection that contains a collection of <see cref="T:Infragistics.WebUI.UltraWebGrid.UltraGridColumn"/> objects.
+            </summary>
+            <remarks>
+            <p class="body">Each UltraGridColumn in the collection represents a column or field of data in the grid.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.DropDownLayout">
+            <summary>
+            The UltraGridLayout object used to control the look and behavior of the dropdown portion of the WebCombo control.
+            </summary>
+            
+        </member>
+        <member name="E:Infragistics.WebUI.WebCombo.WebCombo.SelectedRowChanged">
+            <summary>
+            Fired when the selected Row in the dropdown has been changed on the client
+            </summary>
+        </member>
+        <member name="E:Infragistics.WebUI.WebCombo.WebCombo.InitializeRow">
+            <summary>
+            Manages delegates of the type <see cref="T:Infragistics.WebUI.UltraWebGrid.InitializeRowEventHandler"/>.
+            </summary>
+            <remarks>
+            <p class="body">Occurs when a row needs to be initialized during data binding. Called by <see cref="!:OnInitializeRow"/>.</p>
+            </remarks>
+        </member>
+        <member name="E:Infragistics.WebUI.WebCombo.WebCombo.InitializeFooter">
+            <summary>
+            Manages delegates of the type <see cref="T:Infragistics.WebUI.UltraWebGrid.InitializeRowEventHandler"/>.
+            </summary>
+            <remarks>
+            <p class="body">Occurs when a row needs to be initialized during data binding. Called by <see cref="!:OnInitializeRow"/>.</p>
+            </remarks>
+        </member>
+        <member name="E:Infragistics.WebUI.WebCombo.WebCombo.InitializeLayout">
+            <summary>
+            Manages delegates of the type <see cref="T:Infragistics.WebUI.UltraWebGrid.InitializeRowEventHandler"/>.
+            </summary>
+            <remarks>
+            <p class="body">Occurs when a row needs to be initialized during data binding. Called by <see cref="!:OnInitializeRow"/>.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.DataMember">
+            <summary>
+               DataMember is used as the starting table in the DataSet hierarchy for 
+               binding.
+            </summary>
+            
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.DataSource">
+            <summary>
+            Gets or sets the data source that populates the grid with data.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.DisplayValue">
+            <summary>
+               The text content string of the top portion of the WebCombo.  
+            </summary>
+            
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.DataValue">
+            <summary>
+               The text content string of the top portion of the WebCombo.  
+            </summary>
+            
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.DataTextField">
+            <summary>
+               Specifies the column name from the dropdown that will be used to display the text content of the top portion of the WebCombo. 
+            </summary>
+            
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.DataValueField">
+            <summary>
+               Specifies the column name from the dropdown that will be used as the source for the DataValue of the WebCombo control. 
+            </summary>
+            
+        </member>
+        <member name="P:Infragistics.WebUI.WebCombo.WebCombo.HideDropDowns">
+            <summary>
+            <p class="body">Returns or sets a boolean value that determines whether or not Select dropdown controls will be automatically hidden when submenus are being displayed.</p>
+            <p class="body">When this property is set to true, all select controls in the page document are hidden until the popup menus are dismissed.</p>
+            </summary>
+            <remarks>
+            <p class="body">This functionality is necessary due to the problematic way that Internet Explorer implements the Select DropDown control.  Netscape 6+ handles this situation properly and the hiding of dropdowns is not necessary.</p>
+            </remarks>
+        </member>
+    </members>
+</doc>

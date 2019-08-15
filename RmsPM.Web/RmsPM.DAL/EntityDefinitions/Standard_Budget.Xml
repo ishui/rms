@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>Standard_Budget</Name>
+	<Type>Standard</Type>
+	<Table>
+		<Name>Budget</Name>
+		<Type>Main</Type>
+	</Table>
+	<Table>
+		<Name>BudgetCost</Name>
+		<Type>Child</Type>
+		<ParentColumnName>BudgetCode</ParentColumnName>
+		<ChildColumnName>BudgetCode</ChildColumnName>
+	</Table>
+	<Table>
+		<Name>BudgetYear</Name>
+		<Type>Child</Type>
+		<ParentColumnName>BudgetCode</ParentColumnName>
+		<ChildColumnName>BudgetCode</ChildColumnName>
+	</Table>
+	<Table>
+		<Name>BudgetMonth</Name>
+		<Type>Child</Type>
+		<ParentColumnName>BudgetCode</ParentColumnName>
+		<ChildColumnName>BudgetCode</ChildColumnName>
+	</Table>
+</Entity>

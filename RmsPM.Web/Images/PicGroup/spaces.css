@@ -1,0 +1,138 @@
+body, div,span,p,td,th,input,select,textarea,button,h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-family:Tahoma,Helvetica,Sans-Serif, Simsun;}
+.cellstyle, .whiteBody{padding:8px;}
+td.ZigZagSpanFirst, td.TopToBottom {padding:8px}
+table, td, .pm0{margin:0px;padding:0px;}
+td, th{font-size:9pt}
+a{text-decoration:none}
+a:hover {text-decoration:underline}
+h1 {font-size:13.5pt;margin:0 0 18 0}
+h2 {font-size:10.5pt;font-weight:bold;margin:16 0 0 0;}
+h3 {font-size:9pt;font-weight:bold;margin:16 0 0 0}
+h4 {font-size:9pt;font-weight:normal;margin:8 0 0 0}
+h5 {font-size:9pt;font-weight:normal;margin:3 0 0 0}
+h6 {font-size:9pt;font-weight:normal;margin:3 0 0 0}
+p {margin:6 0 0 0}
+.backtotop {font-size:9pt;margin-top:15;margin-bottom:30}
+.backtotop a {padding-left:10}
+.helptitle {font-size:12pt;font-weight:bold;}
+.xsmallFont{font-size:9pt;}
+.smallFont{font-size:9pt;}
+.helpNormal {text-decoration: none; cursor: hand;}
+.helpHover {text-decoration: underline; cursor: hand;}
+/* MSN Sharkfin styles begin */
+.sfl {padding-bottom:1px; font-size:20pt; /*font for "Blog" next to the MSN logo in the header*/ white-space:nowrap}
+.sfl a, .sfi a{text-decoration:none;}
+.sfr {font-size:9pt; /*don't localize. a nbsp only*/}
+.sfi{padding:0px 0px 5px 0px; font-size:9pt; /*the text in the header: "Help | FAQ"*/}
+.sfi a{padding: 0 11;}
+/* MSN Sharkfin styles end */
+/*Spaces Header*/
+.shdr table{padding:2 0;}
+.slogo{padding-left:10px;padding-right:6px;vertical-align:top}
+.stitle{font:bold 13.5pt tahoma, Simsun;padding-top:3px;}
+.slinks,.shelp{padding-top:7px;}
+.shelp{font-weight:bold;}
+.pplogo{padding:4px 10px 0 10px;}
+#AdsSecction{height:31px}
+/* MSN Header/Footer styles begin */
+.big7, .big7 a{font:9pt tahoma, Simsun}
+.nsb7, .nsla,.nsb7l, .nsch, .nsc, .nscl, .nsfl, .nss, .nsft, .nssg, .nsf, .nsft, .search{text-decoration:none;}
+.fhelp a {font-weight:normal}
+.adbar{margin-bottom:5px}
+/* MSN Header/Footer Styles end */
+/* Navigation */
+.mainnav, .mainnav a, .mainnav a:hover, .mainnav a:visited, .previewnav{font:bold 9pt tahoma, Simsun;text-decoration:none;}
+.secondarynav, .secondarynav a, .secondarynav a:hover,.seoncarynav a:visited{font:9pt tahoma, Simsun;text-decoration:none;}
+.preview, .preview a, .preview a:hover, .preview a:visited{font-size:9pt;padding-bottom:4px;vertical-align:bottom;font-weight:normal;}
+.maindiv{padding-bottom:2px;}
+.mainsel, .seltab, .mainseltab, .mainseltab2, .secondarysel, .secondaryseltab, .previewnav{padding:0 8 0 8;}
+.mainseltab, .mainseltab2{padding-bottom:2px;}
+.secondarysel, .secondaryseltab{height:18;vertical-align:bottom;padding-bottom:3px;}
+.previewnav{font-size:9pt;cursor:hand;}
+/*End Navigation*/
+/* Space Title and Tag Line*/
+.spaceTitle{font:normal 13.5pt tahoma,arial,Simsun;}
+.spaceTag{font:bold 9pt tahoma, Simsun;}
+.settingsHead{font:bold 9pt tahoma,Simsun;padding:5 10 5 10;}
+.bvTitle{font:bold 10.5pt Tahoma,Verdana,Arial,Simsun;}
+/* End Visitor View*/
+/*HomePage*/
+.hp{background-color:#ffffff;}
+.hp td, .hplink{color:#ffffff;}
+.hptopbg{font:13.5pt Franklin Gothic Medium,Simsun;background:url(../../editorial/default/images/head_back.gif);}
+.hporangetbl{background:url(../../editorial/default/images/main_top_back.gif);color:#ffffff;}
+.hplorangetbl{background-color:#ec6e20;}
+.htitle{font-size:13.5pt;}
+.hporangehdr,.hpbluehdr{font-size:10.5pt;font-weight:bold}
+.hpbluebg{background-color:#88b2cf;}
+.hpbbg{background:url(../../editorial/default/images/main_top_back.gif);}
+.hppartnersec{background-color:#ec6e20;font-weight:bold;font-size:10.5pt;}
+.hpbluesection td, .hppartnertbl td{color:#000000;}
+.hpbullet li{color:#004377;}
+.fixedTable{table-layout:fixed}
+.ellipse{text-overflow:ellipsis;overflow:hidden;}
+/*ThemePreview*/
+.tpphoto, .tpcontentheading, .tpmyspace, .tpblogheading,.tptitle,.tpmoduleheader {font-weight:bold;}
+.tpcontentheading { font-size: 10.5pt;}
+.tpblogheading,.tpblogcontent,.tpmoduleheader {font-size: 9pt; }
+/*Button*/
+.midbutton {font-weight:bold;color:#ffffff;font-size:10.5pt;}
+.midbuttonbg {background:url(../../editorial/default/images/but_str.gif);}
+.midbuttonbg a:hover{text-decoration:none}
+.bold, strong{font-weight:bold;}
+input.button{padding:0 4;}
+.gptop .bline{width:780px;}
+.gptop div{padding:3px 0 3px;}
+.sep, .graysep{font-size:9pt;}
+.modhead{font-weight:bold;padding:2px 3px 2px 3px;}
+hr{height:1px;}
+.subnav tr td{padding:0 8px 0 8px;font-size:9pt}
+.bluebox{font-size:10.5pt}
+.beNormalTab,.beborderleft,.beSelectedTab,.bePreviewSelectedTab,.beBlogNormalTab{font-size:9pt}
+.topline, .shdrbg{width:779px;}
+.red {color: Red}
+/* Layout CSS */
+#layoutManager {width:778px;}
+spaces\:layout #LayoutManager {table-layout:fixed;}
+.OneCol #MainFocus {width:778px}
+.ClassicThreeCol #MainFocus {width:418px}
+.RightHeavyThreeCol #MainFocus {width:299px}
+.RightHeavyThreeCol #SupplementalE {width:299px}
+.BackwardsTwoCol #MainFocus, .ClassicTwoCol #MainFocus {width:500px}
+.ZigZagSpanFirst spaces\:widget {width: 50%;display: inline;vertical-align: top;padding:0px 3px 8px}
+.ZigZagSpanFirst spaces\:widget.FullRegionWidth, .TopToBottom spaces\:widget {width: 100%;display:block;padding-bottom:8px}
+#SupplementalE, #SupplementalW {width: 180px}
+.SymmetricTwoCol #MainFocus, .SymmetricTwoCol #SupplementalE {width: 50%}
+input.editButtons {color: black;height: 20px; font-size: 9pt}
+.partDetail {width:100%}
+/* Show allow list CSS */
+.AllowListBody { width:100%; height:350px; padding:0px; border-collapse: collapse; }
+.AllowListHeaderPanel { padding:10px 10px 10px 10px; background: #e0edf9; }
+.AllowListFooterPanel { padding:0px 10px 0px 0px; text-align: right; background: #e0edf9; }
+.Divider { background:#c4dcf2; }
+.AllowListContent { padding:10px 10px 10px 10px; }
+.AllowListBuddyList { width:240px; text-overflow:ellipsis; white-space:nowrap; overflow:auto;overflow-x:hidden;overflow-y:scroll;height:190px;border:solid 1px #4f8cb9; }
+.paddedALC { padding: 0px 10px; }
+/* CSS for theme settings page */
+.themePageCurrent {font-weight:bold; text-decoration:underline}
+/* CSS for popup */
+table#partPopup td {padding: 3px}
+div#popupContainer {font-size: 9pt;}
+.beRTEDL, #previewbox{font-size:9pt;}
+.beBtn input {font-size:9pt;padding:0 2 2 2;height:24;}
+.bold, a.entryttl{font-weight:bold}
+.searchtitle{font-weight:bold;padding-bottom:3px;}
+.bvTitle{font:bold 10.5pt;}
+a.belink, a.belink:hover {text-decoration:none;font-weight:bold;cursor:hand;cursor:pointer}
+.ElementFrame{border:0px none;width:9pt;font-size: 9pt;font-family: Verdana,Simsun;}
+.ElementFrameD{border:0px none;width:100%;font-size: 10.5pt;font-family: Verdana,Simsun;height:100%;}
+.LayoutContainer{WIDTH: 100%; HEIGHT: 100;font-size: 10.5pt;font-family: Verdana,Simsun;}
+.LayoutContainer .ElementFrame{font-size:10.5pt;}
+.Part {cursor:hand; font-weight:bold;}
+.SUHead{padding:2px; padding-left:10px; font-size:10.5pt; color:#ffffff;}
+.SUWiz .step {width:20px; vertical-align: top; font: Bold 10.5pt Tahoma,Helvetica,Sans-Serif,Simsun;color: #004377}
+.ImgTD{font-size:10.5pt; background-repeat:no-repeat; color: white; padding:0 0 5 7;}
+.settingsHead{font-size:9pt}
+.editBox{height:17px;font-family:Tahoma,Helvetica,Sans-Serif,Simsun;font-size:9pt;width:180px}
+.ErrorActionText { font-weight: bold; color: Red; }
+.NormalActionText { font-weight: bold; }

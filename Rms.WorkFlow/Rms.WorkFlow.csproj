@@ -1,0 +1,155 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0CC4AC3A-80B3-4EE6-83D0-3C6DE54DBF67}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>Rms.WorkFlow</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\Act.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\Actor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\ActStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\ActUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\CaseProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\Condition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\DataPackage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\DefinitionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\IActorIO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\IDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\InterfaceManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\ISystemCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\IWorkCase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\logHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\Opinion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\Procedure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\Property.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\Role.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\RoleComprise.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\RoleType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\RoleTypeManage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\Router.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\Task.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\TaskActor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\WorkCase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\WorkCaseManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\WorkFlow\WorkCaseStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

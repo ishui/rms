@@ -1,0 +1,14 @@
+G:\源代码\工程项目管理系统源码\RmsPM.Entities\bin\Debug\TiannuoPM.Entities.dll
+G:\源代码\工程项目管理系统源码\RmsPM.Entities\bin\Debug\TiannuoPM.Entities.pdb
+G:\源代码\工程项目管理系统源码\RmsPM.Entities\obj\Debug\RmsPM.Entities.csprojAssemblyReference.cache
+G:\源代码\工程项目管理系统源码\RmsPM.Entities\obj\Debug\RmsPM.Entities.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码\RmsPM.Entities\obj\Debug\RmsPM.Entities.csproj.CopyComplete
+G:\源代码\工程项目管理系统源码\RmsPM.Entities\obj\Debug\TiannuoPM.Entities.dll
+G:\源代码\工程项目管理系统源码\RmsPM.Entities\obj\Debug\TiannuoPM.Entities.pdb
+G:\源代码\工程项目管理系统源码_20190605\RmsPM.Entities\bin\Debug\TiannuoPM.Entities.dll
+G:\源代码\工程项目管理系统源码_20190605\RmsPM.Entities\bin\Debug\TiannuoPM.Entities.pdb
+G:\源代码\工程项目管理系统源码_20190605\RmsPM.Entities\obj\Debug\RmsPM.Entities.csprojAssemblyReference.cache
+G:\源代码\工程项目管理系统源码_20190605\RmsPM.Entities\obj\Debug\RmsPM.Entities.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码_20190605\RmsPM.Entities\obj\Debug\RmsPM.Entities.csproj.CopyComplete
+G:\源代码\工程项目管理系统源码_20190605\RmsPM.Entities\obj\Debug\TiannuoPM.Entities.dll
+G:\源代码\工程项目管理系统源码_20190605\RmsPM.Entities\obj\Debug\TiannuoPM.Entities.pdb

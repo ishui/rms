@@ -1,0 +1,731 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76720118-3378-42AE-9131-CDBBF8B3CFC2}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>RmsPM.BLL</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspWebControl, Version=1.0.1644.15918, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\RmsPM.Web_1\bin\AspWebControl.dll</HintPath>
+    </Reference>
+    <Reference Include="LocaleViseBLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LocaleViseBLL\obj\Debug\LocaleViseBLL.dll</HintPath>
+    </Reference>
+    <Reference Include="LocaleViseMODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LocaleViseMODEL\obj\Debug\LocaleViseMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.Check, Version=1.0.1805.26744, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Rms.Check\obj\Debug\Rms.Check.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.Interface, Version=1.0.2211.31890, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Rms.Interface\obj\Debug\Rms.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.LogHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Rms.LogHelper\obj\Debug\Rms.LogHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.ORMap, Version=1.0.2574.19512, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Rms.ORMap\bin\Debug\Rms.ORMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.WorkFlow, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Rms.WorkFlow\obj\Debug\Rms.WorkFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="RmsPM.DAL, Version=1.0.2629.27769, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RmsPM.DAL\obj\Debug\RmsPM.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.Xml</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\AccessRange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\AttachmentSaveMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\AttachmentSavePathMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\Bidding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingAuditing.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingConditionFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingCost.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingDtl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingDtlAuditing.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingEmit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingGrade.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingGradeConsiderDiathesis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingGradeMainDefine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingGradeMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingManage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingMoney.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingPrejudication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingReturn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingReturnCost.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingSupplier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\BiddingSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\Bidding_SupplierDepartmentIdea.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CashFlowRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CashFlowSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CashMoney.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CashRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\Cash_Detail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\Cash_Message.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CBSRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\Class1.cs" />
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\ContractBillBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\ContractBillBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\FlowUseSealBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\FlowUseSealBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\FunctionRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\InquirePriceBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\InquirePriceBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TCheckPaymentBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TCheckPaymentBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TCheckPaymentSumBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TCheckPaymentSumBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_BigGoodsBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_BigGoodsBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_BigGoodsDetailBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_BigGoodsDetailBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_DocumentBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_DocumentBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_LingYongMenonyBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_LingYongMenonyBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_LingYongMenonySumBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_LingYongMenonySumBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_LingYongMoneyDetailBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_LingYongMoneyDetailBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_PaymentSumBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_PaymentSumBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_PurchasePriceBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_PurchasePriceBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_PurchasePriceDetailBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_PurchasePriceDetailBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_SmallGoodsBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_SmallGoodsBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_SmallGoodsDetailBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_SmallGoodsDetailBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_UnusualBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_UnusualBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_WorkConcertBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_OA_WorkConcertBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_PaymentSumBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TC_PaymentSumBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TY_ReferendumReportBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CommomWorkFlowBLL\TY_ReferendumReportBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ComSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ConstructProgRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ConstructReportRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ConstructRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ContractDefaultValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ContractPaySchedule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ContractPayScheduleBySubject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ContractRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ControlsLB\ExchangeMoney.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ControlsLB\ExchangeRate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ControlsLB\ExchangeTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ControlsLB\SelectBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ConvertRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CostApportion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CostBudgetDynamic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CostBudgetGroupDynamic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CostBudgetPageRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CostBudgetRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CostBudgetTarget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CostBudgetTargetView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CostPlan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\CostRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\DesignDocument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\Design_Message.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\Design_MessageSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\DocumentRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\DtsPayRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\EmailHistory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\EmailTimer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ExchangeRateRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\FileIO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\FinanceRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\Grade.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\GradeConsiderDepartment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\GradeConsiderDiathesis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\GradeConsiderPercentage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\GradeDepartment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\GradeDepartmentPercentage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\GradeList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\GradeMainDefine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\GradeMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\GridSort.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ImportRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\IncomeBugetFacade.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\IncomeBugetModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\Leave.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\LinkManage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\MailRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\MaterialCostImport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\MaterialRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\MathRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\MonthPayList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\NoticeRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\OACachet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\OAComputerMaintenance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\OAContact.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\OARule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\PageFacade.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\PageHelpDisplay.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\PaymentRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\PayRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\PBSRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ProductRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ProgChartRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ProjectRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\PurchaseFlow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\PurchaseFlowSelSupplyHistory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\QuarterMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\ClearSalImpFlagCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\ClearSalImpFlagCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\GetSalDataByClientCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\GetSalDataByClientCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\GetSalDataHeadClientByClientNameCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\GetSalDataHeadClientByClientNameCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\GetSalDataHeadClientByProjectCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\GetSalDataHeadClientByProjectCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\GetSalProjectByCodeCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\GetSalProjectByCodeCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\GetSalProjectCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\GetSalProjectCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\SalService.cs" />
+    <Compile Include="RmsPM\BLL\RefSal\SetSalAccountImpFlagCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\SetSalAccountImpFlagCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\SetSalContractImpFlagCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RefSal\SetSalContractImpFlagCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\RemindRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ReportCostByPBS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ResourceRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\SalBudgetRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\SalCostClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\SalRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\SendMsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\StampDuty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\StringRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\StyleOperation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\SubjectRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\SupplierImport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\SupplierLinkman.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\SupplierMaterialImport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\SupplierRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\SupplierSurveyOpinion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\SupplierTitle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\SystemGroupRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\SystemRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\TaskRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\TCheckPayment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\TC_OA_BiddingContract.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\TemplateOpinion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\TSignin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\UserSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\ViseSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\VoucherRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\V_BiddingSupplier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\WBSRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\WorkFlowActUserSelect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\WorkFlowApplicationRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\WorkFlowCaseIO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\WorkFlowDefine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\WorkFlowInOut.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\WorkFlowRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\WorkFlowSystemCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\XmlTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ControlLb\Calendar_LB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ControlLb\InputSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ControlLb\ManyCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ControlLb\MoneyInput.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ControlLb\MoneyList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ControlLb\SelectContract.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ControlLb\TextBox_Lable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

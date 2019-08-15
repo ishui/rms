@@ -1,0 +1,5 @@
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\DesignChange\bin\Debug\DesignChange.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\DesignChange\bin\Debug\DesignChange.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\DesignChange\obj\Debug\ResolveAssemblyReference.cache
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\DesignChange\obj\Debug\DesignChange.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\DesignChange\obj\Debug\DesignChange.pdb

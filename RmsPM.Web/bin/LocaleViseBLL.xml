@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LocaleViseBLL</name>
+    </assembly>
+    <members>
+        <member name="T:RmsPM.BLL.LocaleViseBLL">
+            ################################################################################################
+             <summary>
+             <para>摘要：现场签证业务规则类。</para>
+             <para>说明：封装现场签证业务规则。</para>
+             <para>Programmer： clm</para>
+             <para>Email： nmgclm626@hotmail.com</para>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.#ctor">
+            <summary>
+            <para>构造</para>
+            <para>无外部传入事务，应用将自己创建事务完成操作。</para>
+            </summary>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.Insert(TiannuoPM.MODEL.LocaleViseModel,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>新增签证</para>
+            <para>增加签证单主体信息，其中不包含费用信息。</para>
+            </summary>
+            <param name="ViseModel">签证模型对象</param>
+            <param name="Transaction">事务对象</param>
+            <returns>签证代码（产生主键值）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.Update(TiannuoPM.MODEL.LocaleViseModel,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>修改签证内容</para>
+            <para>修改签证主体内容，不包含费用信息。</para>
+            </summary>
+            <remarks>该方法可以完成局部更新</remarks>
+            <param name="ViseModel">签证模型对象</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（更新成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.Delete(TiannuoPM.MODEL.LocaleViseModel,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>删除签证</para>
+            <para>删除签证所有相关内容，包括费用信息</para>
+            </summary>
+            <param name="ViseModel">签证模型对象</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（删除成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.Delete(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>删除签证</para>
+            <para>删除签证所有相关内容，包括费用信息</para>
+            </summary>
+            <param name="Code">签证代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（删除成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.GetModel(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>获取签证模型对象（根据签证代码）</para>
+            <para>获取的签证模型对象中包括签证主体所有信息，但不包括费用明细信息</para>
+            </summary>
+            <param name="Code">签证代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>签证模型对象</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.GetModel(System.Int32,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            <para>获取签证模型对象（根据签证代码）</para>
+            <para>获取的签证模型对象中包括签证主体所有信息，但不包括费用明细信息</para>
+            </summary>
+            <param name="Code">签证代码</param>
+            <param name="Connection">数据库连接对象</param>
+            <returns>签证模型对象</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.Select(System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            查询所有签证
+            </summary>
+            <param name="Transaction">事务对象</param>
+            <returns>签证列表</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.Select(TiannuoPM.MODEL.LocaleViseQueryModel,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            查询签证（根据查询规则对象）
+            </summary>
+            <param name="ViseQueryModel">查询规则对象</param>
+            <param name="Transaction">事务对象</param>
+            <returns>签证列表</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.Select(TiannuoPM.MODEL.LocaleViseQueryModel,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            查询签证（根据查询规则对象）
+            </summary>
+            <param name="ViseQueryModel">查询规则对象</param>
+            <param name="Connection">数据库连接对象</param>
+            <returns>签证列表</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.SelectCost(TiannuoPM.MODEL.LocaleViseCostQueryModel,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            查询费用明细（根据查询规则对象）
+            </summary>
+            <param name="ViseCostQueryModel">签证费用明细查询规则</param>
+            <param name="Transaction">事务对象</param>
+            <returns>签证费用明细列表</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.SelectCost(TiannuoPM.MODEL.LocaleViseCostQueryModel,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            查询费用明细（根据查询规则对象）
+            </summary>
+            <param name="ViseCostQueryModel">签证费用明细查询规则</param>
+            <param name="Connection">事务对象</param>
+            <returns>签证费用明细列表</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.InsertCost(TiannuoPM.MODEL.LocaleViseCostModel,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>添加费用明细</para>
+            <para>费用明细所属签证取决于参数模型对象中的签证代码</para>
+            </summary>
+            <param name="ViseCostModel">签证费用明细模型对象</param>
+            <param name="Transaction">事务对象</param>
+            <returns>签证费用明细代码（产生主键值）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.UpdateCost(TiannuoPM.MODEL.LocaleViseCostModel,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            修改费用明细
+            </summary>
+            <param name="ViseCostModel">签证费用明细模型对象</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.DeleteCost(TiannuoPM.MODEL.LocaleViseCostModel,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            删除费用明细
+            </summary>
+            <param name="ViseCostModel">签证费用明细模型对象</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.DeleteCost(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            删除费用明细
+            </summary>
+            <param name="Code">签证费用明细代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.Balance(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>结算</para>
+            <para>结算表示签证单的应用完成，结算后签证单不可进行任何修改或其他操作</para>
+            </summary>
+            <param name="ViseCode">签证代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（结算成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.waitBalance(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>等待结算</para>
+            <para>等待结算表示签证单的状态正处于结算过程中，结算后签证单不可进行任何修改或其他操作</para>
+            </summary>
+            <param name="ViseCode">签证代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（结算成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.noBalance(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>取消结算</para>
+            <para>取消结算表示签证单的状态改为未结算状态，结算后签证单不可进行任何修改或其他操作</para>
+            </summary>
+            <param name="ViseCode">签证代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（结算成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.ReturnWait(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>修改状态为待审</para>
+            <para>更改签证状态是为能够进行更改后状态的应用。</para>
+            </summary>
+            <remarks>
+            修改为待审状态后便可以对签证单进行修改和删除操作。也可进行费用明细的增加、修改和删除。
+            </remarks>
+            <param name="ViseCode">签证代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.StartAudit(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>修改状态为审核中</para>
+            <para>更改签证状态是为能够进行更改后状态的应用。</para>
+            </summary>
+            <remarks>
+            修改为审核中状态后可进行签证单的审核、审批表打印操作。不可以再进行修改和删除操作。
+            </remarks>
+            <param name="ViseCode">签证代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.PassAudit(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>修改状态为已审</para>
+            <para>更改签证状态是为能够进行更改后状态的应用。</para>
+            </summary>
+            <remarks>
+            已审表示当前签证已经通过审核
+            </remarks>
+            <param name="ViseCode">签证代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.NoPassAudit(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>作废</para>
+            <para>更改签证状态是为能够进行更改后状态的应用。</para>
+            </summary>
+            <remarks>作废表示当前签证没有通过审核并已经失效</remarks>
+            <param name="ViseCode">签证代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.GetViseSumMoney(System.Int32,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            <para>获取签证总金额</para>
+            <para>计算费用明细之合</para>
+            </summary>
+            <param name="ViseCode">签证代码</param>
+            <param name="Connection">数据库连接对象</param>
+            <returns>签证总金额</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.GetViseSumMoney(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>获取签证总金额</para>
+            <para>计算费用明细之合</para>
+            </summary>
+            <param name="ViseCode">签证代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>签证总金额</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.GetViseSumCheckMoney(System.Int32,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            <para>获取签证审批总金额</para>
+            <para>计算费用明细之合</para>
+            </summary>
+            <param name="ViseCode">签证代码</param>
+            <param name="Connection">数据库连接对象</param>
+            <returns>签证审批总金额</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.GetViseSumCheckMoney(System.Int32,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>获取签证审批总金额</para>
+            <para>计算费用明细之合</para>
+            </summary>
+            <param name="ViseCode">签证代码</param>
+            <param name="Transaction">事务对象</param>
+            <returns>签证审批总金额</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.BatchBalance(System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>批量结算</para>
+            <para>结算表示签证单的应用完成，结算后签证单不可进行任何修改或其他操作</para>
+            </summary>
+            <param name="ViseCodes">签证代码集合(格式为 [签证代码],[签证代码]...)</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（结算成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.BatchWaitBalance(System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>批量待结算</para>
+            <para>待结算表示签证单的状态为正在结算过程中，结算后签证单不可进行任何修改或其他操作</para>
+            </summary>
+            <param name="ViseCodes">签证代码集合(格式为 [签证代码],[签证代码]...)</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（结算成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.BatchNoBalance(System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            <para>批量取消结算</para>
+            <para>取消结算表示签证单的状态改为未结算，结算后签证单不可进行任何修改或其他操作</para>
+            </summary>
+            <param name="ViseCodes">签证代码集合(格式为 [签证代码],[签证代码]...)</param>
+            <param name="Transaction">事务对象</param>
+            <returns>影响行数（结算成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.GetVisesMoneyByCostGroup(System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            获取根据签证代码列表获取费用项分组金额信息
+            </summary>
+            <param name="ViseCodes">签证代码列表（签证代码 in 查询）</param>
+            <param name="Transaction">事务对象</param>
+            <returns>
+            <para>根据签证代码列表获取费用项分组金额信息</para>
+            <para>返回DataSet中数据表格式：</para>
+            <para>CostCode string 费用项代码</para>
+            <para>CostBudgetSetCode string 费用项所属预算表代码</para>
+            <para>Money Decmail 当前费用项合计金额</para>
+            </returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.GetVisesMoneyByCostGroup(System.String,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            获取根据签证代码列表获取费用项分组金额信息
+            </summary>
+            <param name="ViseCodes">签证代码列表（签证代码 in 查询）</param>
+            <param name="Connection">数据库连接对象</param>
+            <returns>
+            <para>根据签证代码列表获取费用项分组金额信息</para>
+            <para>返回DataSet中数据表格式：</para>
+            <para>CostCode string 费用项代码</para>
+            <para>CostBudgetSetCode string 费用项所属预算表代码</para>
+            <para>Money Decmail 当前费用项合计金额</para>
+            </returns>
+        </member>
+        <member name="M:RmsPM.BLL.LocaleViseBLL.GetSumCheckMoneyByContract(System.String,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            获取合同相关累计已审签证金额
+            </summary>
+            <param name="ContractCode">合同代码</param>
+            <param name="Connection">数据库联接对象</param>
+            <returns>合同相关累计已审签证金额</returns>
+        </member>
+    </members>
+</doc>

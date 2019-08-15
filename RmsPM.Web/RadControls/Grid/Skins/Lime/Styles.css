@@ -1,0 +1,145 @@
+/* r.a.d.grid lime skin */
+
+.MasterTable_Lime
+{
+	background: #97bd25 url('Img/RadGridBg.gif') repeat-x;
+	cursor: default;
+	border-left: 1px solid #778e19 !important;
+	border-right: 1px solid #778e19;
+	border-collapse: separate !important;
+	width: 100%;
+}                                  
+
+.RadGrid_Lime
+{
+	font: normal 11px Arial, Verdana;
+	background: #97bd25;
+}
+
+.RadGrid_Lime_Lime table,
+.RadGrid_Lime_Lime table td
+{
+	font: normal 11px Arial, Verdana;
+	border: 0px;
+}
+
+th.GridHeader_Lime
+{
+	font-weight: bold;
+	color: white;
+	background: transparent url('Img/headerBg.gif') no-repeat right 5px;
+	padding-left: 6px;
+	height: 41px;
+	padding:0;
+	margin:0;
+	border:0;
+}
+
+th.GridHeader_Lime,
+th.ResizeHeader_Lime
+{
+	font-weight: bold;
+	color: white;
+	padding-left: 6px;
+}
+
+td.GridHeader_Lime input
+{
+	width: 50px;
+	float: left;
+	border: solid 1px #474b38;
+}
+
+.GroupPanel_Lime
+{
+	background: #778e19 url('Img/groupPanelBg.gif') repeat-x;
+	width: 100%;
+	color: white;
+}
+
+.GroupPanel_Lime table table
+{ 
+     border-collapse: collapse; 
+}
+
+.GridHeader_Lime a
+{
+	color: white;
+	text-decoration: none;
+}
+
+.GridRow_Lime td
+{
+	border-bottom: solid 1px #ced3be;
+	background: #edefe7;
+	padding-left: 6px;
+	height: 24px;
+}
+
+.GridAltRow_Lime td
+{
+	border-bottom: solid 1px #ced3be;
+	background: #e5e8dc url('Img/GridAltRowBg.gif') repeat-x;
+	padding-left: 5px;
+	height: 24px;
+}
+
+.SelectedRow_Lime td
+{
+	border-bottom: solid 1px #ced3be;
+	background: #fcfcfc none;
+	color: #6e9100;
+	padding-left: 5px;
+	height: 24px;
+}
+
+.ActiveRow_Lime td
+{
+	border-bottom: solid 1px #ced3be;
+	background: #b5baa5 none;
+	color: #fff;
+	padding-left: 5px;
+	height: 24px;
+}
+
+.GridPager_Lime td
+{
+	background: #b7bca7 url('Img/pagerBg.gif') repeat-y;
+	color: #edefe7;
+	padding-left: 6px;
+	height: 20px;
+	border-bottom: 5px solid #4c503c;
+}
+
+.GridPager_Lime a
+{
+	color: #edefe7;
+}
+
+/* filtering button */
+.GroupPanelItems_Lime
+{
+	background: #a3c82a url('Img/groupPanelItem.gif') repeat-x;
+	color: #fff;
+	padding-left: 3px;
+	border-right: solid 1px #515d23;
+	border-bottom: solid 1px #515d23;
+	white-space:  nowrap;
+	font-size: 11px;
+	font-weight: bold;
+	color: white;
+}
+
+/* filtering direction input[image] */
+.GroupPanelItems_Lime input
+{
+	vertical-align: middle;
+}
+/* filtering table row */
+
+tr.GroupHeader_Lime
+{
+	background: #cacdb5 url('Img/groupHeader.gif') repeat-y;
+	color: #5b6048;
+	font-weight: bold;
+}

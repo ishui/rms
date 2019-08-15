@@ -1,0 +1,57 @@
+.Over_Outlook
+{
+	width: 179px;
+	color: #000000;
+	font-family: Arial, Verdana, Tahoma, Sans-Serif;
+	font-size: 12px;
+	font-weight: normal;
+	border: solid 1px #000080;
+}
+
+.Focus_Outlook
+{
+	width: 179px;
+	color: #000000;
+	font-family: Arial, Verdana, Tahoma, Sans-Serif;
+	font-size: 12px;
+	font-weight: normal;
+	background-color: #fff;
+	border: solid 1px #000080;
+}
+
+.Default_Outlook
+{
+	width: 179px;
+	font-family: Arial, Verdana, Tahoma, Sans-Serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	border: solid 1px #c4dbf9;
+}
+
+.Error_Outlook
+{
+	width: 179px;
+	color: red;
+	font-family: Arial, Verdana, Tahoma, Sans-Serif;
+	font-size: 12px;
+	font-weight: normal;
+	border: solid 1px #ffad55;
+	background-color: #ffffff;
+}
+.Hint_Outlook
+{
+	background-color: #ccff00;
+	margin-top: 5px;
+	border: 1px solid black;
+	text-align: left;
+	overflow: auto;
+}
+
+.Hint_Outlook a, Hint_Outlook a:visited, .Hint_Outlook a:hover
+{
+	margin: 2px;
+	color: black;
+	text-decoration: none;
+	font-size: small;
+}

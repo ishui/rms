@@ -1,0 +1,294 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LocaleViseBFL</name>
+    </assembly>
+    <members>
+        <member name="T:RmsPM.BFL.LocaleViseBFL">
+            ################################################################################################
+             <summary>
+             <para>摘要：现场签证外观层类文件</para>
+             <para>说明：该类为现场签证所有外观应用的封装类文件。</para>
+             <para>Programmer： clm</para>
+             <para>Email： nmgclm626@hotmail.com</para>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.#ctor">
+            <summary>
+            <para>构造</para>
+            <para>无外部传入事务，应用将自己创建事务完成操作。</para>
+            </summary>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.Insert(TiannuoPM.MODEL.LocaleViseModel)">
+            <summary>
+            <para>新增签证</para>
+            <para>增加签证单主体信息，其中不包含费用信息。</para>
+            </summary>
+            <param name="ViseModel">签证模型对象</param>
+            <returns>签证代码（产生主键值）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.Update(TiannuoPM.MODEL.LocaleViseModel)">
+            <summary>
+            <para>修改签证内容</para>
+            <para>修改签证主体内容，不包含费用信息。</para>
+            </summary>
+            <remarks>该方法可以完成局部更新</remarks>
+            <param name="ViseModel">签证模型对象</param>
+            <returns>影响行数（更新成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.Delete(TiannuoPM.MODEL.LocaleViseModel)">
+            <summary>
+            <para>删除签证</para>
+            <para>删除签证所有相关内容，包括费用信息</para>
+            </summary>
+            <param name="ViseModel">签证模型对象</param>
+            <returns>影响行数（删除成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.GetLocalVises(System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.DateTime,System.DateTime,System.DateTime,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            <para>查询签证</para>
+            <para>查询条件设定了约束，以参数形式提供查询条件的应用</para>
+            </summary>
+            <remarks>
+            该方法适用于页面应用。可以直接进行输入控件值的帮定应用。
+            </remarks>
+            <param name="SortColumns">排序表达式</param>
+            <param name="StartRecord">开始索引</param>
+            <param name="MaxRecords">结束索引</param>
+            <param name="ViseId">签证编号（完全匹配）</param>
+            <param name="ViseName">签证名称（模糊匹配）</param>
+            <param name="VisePerson">签证经办人（完全匹配用户代码）</param>
+            <param name="ViseSupplier">签证承包商（完全匹配供应商代码）</param>
+            <param name="ViseContractCode">签证相关合同（完全匹配合同代码）</param>
+            <param name="ViseUnit">签证部门（完全匹配部门代码）</param>
+            <param name="ViseDateStart">签证日期下限</param>
+            <param name="ViseDateEnd">签证日期上限</param>
+            <param name="ViseEndDateStart">签证期限下限</param>
+            <param name="ViseEndDateEnd">签证期限上限</param>
+            <param name="ViseProject">签证所属项目（完全匹配项目代码）</param>
+            <param name="ViseType">签证类型（完全匹配系统类别）</param>
+            <param name="ViseBalanceStatusInStr">
+            <para>签证结算状态（In 查询 ，如：[1,2]）</para>
+            <para>结算状态：1为未结算，2为已结算</para>
+            </param>
+            <param name="ViseStatusInStr">
+            <para>签证审核状态（In 查询，如：[1,2,3,4]）</para>
+            <para>签证状态也为审核状态：1为待审，2为审核中，3为审核通过，4为作废</para>
+            </param>
+            <returns>签证列表</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.GetLocalVises(TiannuoPM.MODEL.LocaleViseQueryModel)">
+            <summary>
+            <para>查询签证</para>
+            <para>根据查询规则对象的规则进行查询。</para>
+            </summary>
+            <remarks>
+            适用于代码应用。可以根据业务需求创建查询规则对象进行应用。
+            </remarks>
+            <param name="QueryModel">查询模型文件</param>
+            <returns>签证列表</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.GetLocalVise(System.Int32)">
+            <summary>
+            <para>获取签证单</para>
+            <para>返回List类型单元素集合</para>
+            </summary>
+            <remarks>适用于 FormView 帮定应用</remarks>
+            <param name="Code">签证代码</param>
+            <returns>签证列表（单元素）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.GetLocalViseCosts(System.Int32)">
+            <summary>
+            检索签证费用明细列表
+            </summary>
+            <param name="Code">签证单代码</param>
+            <returns>费用明细列表</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.GetLocalViseCost(System.Int32)">
+            <summary>
+            获取费用明细
+            </summary>
+            <remarks>适用于 FormView 帮定应用</remarks>
+            <param name="Code">签证单费用明细代码</param>
+            <returns>费用明细</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.InsertCost(TiannuoPM.MODEL.LocaleViseCostModel)">
+            <summary>
+            <para>添加费用明细</para>
+            <para>费用明细所属签证取决于参数模型对象中的签证代码</para>
+            </summary>
+            <param name="ViseCostModel">签证费用模型对象</param>
+            <returns>签证费用明细代码</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.UpdateCost(TiannuoPM.MODEL.LocaleViseCostModel)">
+            <summary>
+            修改费用明细
+            </summary>
+            <param name="ViseCostModel">签证费用模型对象</param>
+            <returns>影响行数（更新成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.DeleteCost(TiannuoPM.MODEL.LocaleViseCostModel)">
+            <summary>
+            删除费用明细
+            </summary>
+            <param name="ViseCostModel">签证费用模型对象</param>
+            <returns>影响行数（删除成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.Balance(System.Int32)">
+            <summary>
+            <para>结算</para>
+            <para>结算表示签证单的应用完成，结算后签证单不可进行任何修改或其他操作</para>
+            </summary>
+            <param name="ViseCode">签证代码</param>
+            <returns>影响行数（结算成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.ReturnWait(System.Int32)">
+            <summary>
+            <para>修改状态为待审</para>
+            <para>更改签证状态是为能够进行更改后状态的应用。</para>
+            </summary>
+            <remarks>
+            修改为待审状态后便可以对签证单进行修改和删除操作。也可进行费用明细的增加、修改和删除。
+            </remarks>
+            <param name="ViseCode">签证代码</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.StartAudit(System.Int32)">
+            <summary>
+            <para>修改状态为审核中</para>
+            <para>更改签证状态是为能够进行更改后状态的应用。</para>
+            </summary>
+            <remarks>
+            修改为审核中状态后可进行签证单的审核、审批表打印操作。不可以再进行修改和删除操作。
+            </remarks>
+            <param name="ViseCode">签证代码</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.PassAudit(System.Int32,System.Collections.Generic.List{TiannuoPM.MODEL.LocaleViseCostModel})">
+            <summary>
+            <para>修改状态为已审</para>
+            <para>更改签证状态是为能够进行更改后状态的应用。</para>
+            </summary>
+            <remarks>
+            已审表示当前签证已经通过审核
+            </remarks>
+            <param name="ViseCode">签证代码</param>
+            <param name="CostList">（存在审批金额的）明细列表</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.UpdateComeToMoney(System.Int32,System.Decimal)">
+            <summary>
+            更新累计签证金额
+            </summary>
+            <param name="ViseCode">签证代码</param>
+            <param name="ComeToMoney">累计签证金额</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.NoPassAudit(System.Int32)">
+            <summary>
+            <para>作废</para>
+            <para>更改签证状态是为能够进行更改后状态的应用。</para>
+            </summary>
+            <remarks>作废表示当前签证没有通过审核并失效</remarks>
+            <param name="ViseCode">签证代码</param>
+            <returns>影响行数（修改成功的记录数）</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.GetViseName(System.Int32)">
+            <summary>
+            获取签证名称（根据签证代码）
+            </summary>
+            <param name="Code">签证代码</param>
+            <returns>签证名称</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.GetViseContractCode(System.Int32)">
+            <summary>
+            获取合同code（根据签证代码）
+            </summary>
+            <param name="Code">签证代码</param>
+            <returns>合同code</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.GetViseStatusName(System.Int32)">
+            <summary>
+            <para>获取签证状态描述</para>
+            <para>根据签证状态代码获取相对应的描述性文本</para>
+            </summary>
+            <param name="Status">状态代码</param>
+            <returns>状态描述</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.GetViseSumMoney(System.Int32)">
+            <summary>
+            <para>获取签证总金额</para>
+            <para>计算费用明细之合</para>
+            </summary>
+            <param name="ViseCode">签证代码</param>
+            <returns>签证总金额</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.GetViseSumCheckMoney(System.Int32)">
+            <summary>
+            <para>获取签证审批总金额</para>
+            <para>计算费用明细之合</para>
+            </summary>
+            <param name="ViseCode">签证代码</param>
+            <returns>签证审批总金额</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.GetViseSumCheckMoneyByContract(System.String)">
+            <summary>
+            获取合同相关累计已审签证金额
+            </summary>
+            <param name="ContractCode">合同代码</param>
+            <returns>合同相关累计已审签证金额</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.GetStatus(System.Int32)">
+            <summary>
+            <para>获取审核状态</para>
+            <para>根据签证代码获取审核状态枚举表达式</para>
+            </summary>
+            <param name="ViseCode">签证代码</param>
+            <returns>状态描述枚举</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.GetBalanceStatus(System.Int32)">
+            <summary>
+            <para>获取结算状态</para>
+            <para>根据签证代码获取结算状态枚举表达式</para>
+            </summary>
+            <param name="ViseCode">签证代码</param>
+            <returns>状态描述枚举表达式</returns>
+        </member>
+        <member name="M:RmsPM.BFL.LocaleViseBFL.ViseAuditForCreateContractChange(System.Int32,System.String,System.Collections.Generic.List{TiannuoPM.MODEL.LocaleViseCostModel})">
+            <summary>
+            审核签证单，生成合同变更并且将签证单结算
+            </summary>
+            <param name="Code">签证单代码</param>
+            <param name="UserCode">当前用户</param>
+            <param name="CostList">带有审批金额的签证费用明细列表</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="T:RmsPM.BFL.FunctionRule">
+            ################################################################################################
+             <summary>
+             <para>摘要：外观层静态函数库文件</para>
+             <para>说明：该类文件包含外观层所有静态处理函数。为使用的方便以及查找的便利，将他们集中在该类文件中。</para>
+             <para>Programmer： clm</para>
+             <para>Email： nmgclm626@hotmail.com</para>
+             <remarks>
+             函数方法应在外观层中使用不应应用于其它层中。
+             </remarks>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="M:RmsPM.BFL.FunctionRule.GetConnectionString">
+            <summary>
+            <para>获取数据库连接字符串</para>
+            <para>该方法从网站的 web.confg 文件中的应用参数定义中查找项。</para>
+            <para>使用 AppSettings 方式取得应用程序参数,参数名称为 DBConnString。</para>
+            </summary>
+            <returns>
+            如果 web.confg 文件中不存在该项配置,函数将抛出异常。
+            <code><![CDATA[
+            ]]>
+            </code>
+            </returns>
+        </member>
+    </members>
+</doc>

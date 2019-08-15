@@ -1,0 +1,870 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Infragistics.WebUI.Misc.v5.1</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.WebUI.Misc.DefaultConstants">
+            <summary>
+            This Class is for Infragistics Internal Use Only.
+            The DefaultConstants class is used to provide default values for the Control.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.WebGroupBox">
+            <summary>
+            The GroupBox is a Web version of the Windows Forms GroupBox control.  It provides a container for grouping controls visually.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.WebGroupBox.#ctor">
+            <summary>
+            Default Constructor.  Creates a new instance of the GroupBox control.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.WebGroupBox.CreateControlStyle">
+            <summary>
+            Creates the Style object which will be used to control the GroupBox's appearance.
+            </summary>
+            <returns>An instance of an Infragistics.WebUI.Shared.Style class</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.WebGroupBox.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Writes the HTML representation of this control, to the HtmlTextWriter provided.
+            </summary>
+            <param name="writer">An instance of an HtmlTextWriter</param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.WebGroupBox.OnPreRender(System.EventArgs)">
+            <summary>
+            This method is the last thing to be called, before the control is actually rendered.  
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebGroupBox.Text">
+            <summary>
+            Gets or sets the Text which will be displayed for this control.  The text will appear vertically centered with respect to the Top border.  The horizontal alignment is controlled through the TextAlignment property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebGroupBox.TitleAlignment">
+            <summary>
+            Controls the horizontal alignment of the Text.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebGroupBox.PresetMaskResourcePath">
+            <summary>
+            Supports the Infragistics Preset architecture.  For Infragistics Internal Use.
+            </summary>
+            <returns>The resource path of the xml file, used as the Preset Mask (Filter).</returns>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.GroupBoxRenderBase">
+            <summary>
+            Provides a base implementation of a Renderer.  The renderer is responsible for turning a Control into HTML.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.MiscRenderBase">
+            <summary>
+            Provides base functionality for rendering a control in the Misc namespace.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.MiscRenderBase.#ctor(System.Web.UI.WebControls.WebControl,System.Boolean)">
+            <summary>
+            Creates a new instance of the Renderer.  This constructor will throw an ArgumentException if owner is null.
+            </summary>
+            <param name="owner">A valid instance of a GroupBox control.</param>
+            <param name="isDesignMode">A flag indicating whether this renderer will be used for Design-Time functionality</param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.MiscRenderBase.#ctor(System.Web.UI.WebControls.WebControl)">
+            <summary>
+            Creates a new instance of the Renderer, to be used for the Runtime rendering.  If you need the Renderer to provide DesignTime data, use the overloaded constuctor - specifiying "true" for the isDesignMode parameter.
+            </summary>
+            <param name="owner">A valid instance of a GroupBox control.  This ctor will throw an ArgumentException if owner is null.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.MiscRenderBase.PrepareStyleDefaults">
+            <summary>
+            PrepareStyleDefaults is called from Control.OnPreRender().  It is your last chance to modify any of the styles, or CssStyleClass objects, before they are written to the page.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.MiscRenderBase.RegisterAllCssClasses">
+            <summary>
+            Registers all Css classes needed by the owner control, with the page.  
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.MiscRenderBase.RegisterGeneralJavaScript">
+            <summary>
+            Registers any JavaScript files needed.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.MiscRenderBase.GetAllClassesAndRegisterGenerics">
+            <summary>
+            Returns the Style element that contains all CSS classes needed for the owner control.  This method will also register any "Generic" css classes (classes containing default style information, needed for every control of the owners type.
+            </summary>
+            <returns>The style tag which will be added to the Page which contains the owner control.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.MiscRenderBase.WriteCssClassesAndRegisterGenerics(System.IO.TextWriter)">
+            <summary>
+            This method will write all required css classes to support the owner control.
+            It also registers any Generic classes, so that they only have to be rendered one time.
+            This cuts down on the size of the HTML output.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.MiscRenderBase.GetResolvedClassNameString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="regionKey"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.MiscRenderBase.IsDesignMode">
+            <summary>
+            Indicates whether this renderer will be used to provide DesignTime html.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.GroupBoxRenderBase.#ctor(Infragistics.WebUI.Misc.WebGroupBox,System.Boolean)">
+            <summary>
+            Creates a new instance of the Renderer.  This constructor will throw an ArgumentException if owner is null.
+            </summary>
+            <param name="owner">A valid instance of a GroupBox control.</param>
+            <param name="isDesignMode">A flag indicating whether this renderer will be used for Design-Time functionality</param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.GroupBoxRenderBase.#ctor(Infragistics.WebUI.Misc.WebGroupBox)">
+            <summary>
+            Creates a new instance of the Renderer, to be used for the Runtime rendering.  If you need the Renderer to provide DesignTime data, use the overloaded constuctor - specifiying "true" for the isDesignMode parameter.
+            </summary>
+            <param name="owner">A valid instance of a GroupBox control.  This ctor will throw an ArgumentException if owner is null.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.GroupBoxRenderBase.RenderBeginTag(System.Web.UI.HtmlTextWriter,System.String)">
+            <summary>
+            Writes the BeginTag for the GroupBox being rendered, to the specified writer.
+            </summary>
+            <param name="writer">A valid instance of an HtmlTextWriter.</param>
+            <param name="tagName">The tag which will be used as the outer most element for this control.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.GroupBoxRenderBase.CreateCssRegionMappings">
+            <summary>
+            For Infragistics Internal Use.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.GroupBoxRenderBase.CreateDefaultCssRegionMappings">
+            <summary>
+            For Infragistics Internal Use.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.GroupBoxRenderBase.OwnerGroupBox">
+            <summary>
+            Returns the GroupBox which was passed into the constructor (the control which is being rendered)
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.RenderDownLevelGroupBox">
+            <summary>
+            This renderer is responsible for rendering the control in a cross browser compatible way, which is supported by all browsers.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.RenderDownLevelGroupBox.VisitObjects(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Goes through the control, rendering out each logical region.
+            </summary>
+            <param name="writer">An instance of an HtmlTextWriter</param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.RenderDownLevelGroupBox.PrepareStyleDefaults">
+            <summary>
+            For Infragistics Internal Use.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.RenderUpLevelGroupBox">
+            <summary>
+            This renderer is responsible for creating the most feature rich possible representation of the control.  Features provided by this renderer are not available on some older browsers.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.RenderUpLevelGroupBox.VisitObjects(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Walks through the control, renders out each logical region.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.RenderUpLevelGroupBox.PrepareStyleDefaults">
+            <summary>
+            For Infragistics Internal Use.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.RenderUpLevelGroupBox.GetResolvedClassNameString(System.String)">
+            <summary>
+            For Infragistics Internal Use.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.WebPanelClientSideEvents">
+            <summary>
+            This class provides a list of "ClientSideEvents", and allows you to specify the name of a javascript function, or "Handler" which should be called when the so named event occurs.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.WebPanelClientSideEvents.#ctor">
+            <summary>
+            Creates a new WebPanelClientSideEvents object, initializing it as NOT tracking viewstate.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.WebPanelClientSideEvents.#ctor(System.Boolean)">
+            <summary>
+            Creates a new WebPanelClientSideEvents object, and will start tracking changes in ViewState accordingly.
+            </summary>
+            <param name="trackViewState">A boolean value indicating whether this object should immediately start tracking changes made, and enter them into ViewState.</param>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanelClientSideEvents.ExpandedStateChanging">
+            <summary>
+            The ExpandedStateChanging event will be fired on the client, before the Panel is expanded or collapsed.  You can use oWebPanel.getExpanded() to determine the Panel's current state.
+            </summary>
+            <remarks>This event can be cancelled by setting oEvent.cancel=true;  If the event is cancelled, no action will occur, and the control would continue to function as if the expand/collapse action was never started.  If this event is cancelled, the ExpandedStateChanged event will NOT fire.  This event will fire when the ExpansionIndicator is clicked, the Header is DoubleClicked, or the oWebPanel.setExpanded() function is called.</remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanelClientSideEvents.ExpandedStateChanged">
+            <summary>
+            The ExpandedStateChanged event will fire on the client, after the Expanded state of the control has been changed.  This event will fire when the ExpansionIndicator is clicked, the Header is DoubleClicked, or the oWebPanel.setExpanded() function is called.
+            </summary>
+            <remarks>This event can not be cancelled, as it is fired after the action has taken place.</remarks>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.WebPanelAutoPostBack">
+            <summary>
+            This class is used to provide a way to set how the control responds to an action which could fire a ServerSide event.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.WebPanelAutoPostBack.#ctor">
+            <summary>
+            Creates a new instance of this class, initially not tracking ViewState.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.WebPanelAutoPostBack.#ctor(System.Boolean)">
+            <summary>
+            Creates a new instance of this class, tracking viewstate as specified.
+            </summary>
+            <param name="trackViewState">Defines whether this object should start tracking any changes made to it, and enter those changes into ViewState.</param>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanelAutoPostBack.ExpandedStateChanged">
+            <summary>
+            Determines whether the ExpandedStateChanged event will force a postback to occur.  If true, the control will post back to the server each time the Expanded state is changed on the client.  If false, the control will not initiate the postback itself.  It instead, will wait for the page to be posted by some other means.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanelAutoPostBack.ExpandedStateChanging">
+            <summary>
+            Determines whether the ExpandedStateChanging event will force a postback to occur.  If true, the control will post back to the server each time the Expanded state is changing on the client.  If false, the control will not initiate the postback itself.  It instead, will wait for the page to be posted by some other means.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.HeaderAppearance">
+            <summary>
+            This class provides all properties which can be used to control the Header portion of the panel.  The header portion is the top most rectangle, which contains the Control's Text and an ExpansionIndicator (used to collapse/expand the panel).
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.HeaderAppearance.#ctor(System.Web.UI.WebControls.WebControl)">
+            <summary>
+            Creates a new HeaderAppearance object; not initially tracking ViewState
+            changes.
+            </summary>
+            <param name="parentControl">A valid instance of the control which will 'own' this instance.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.HeaderAppearance.#ctor(System.Web.UI.WebControls.WebControl,System.Boolean)">
+            <summary>
+            Creates a new HeaderAppearance, which is set to track ViewState changes
+            accordingly.
+            </summary>
+            <param name="parentControl">An instance of a control which will 'own' this instance.</param>
+            <param name="isTrackingViewState">
+            Indicates whether this objet should immediately start tracking all changes made
+            to it, and save those changes into ViewState.
+            </param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.HeaderAppearance.SaveViewState">
+            <summary>
+            This method is responsible for saving all changes made to this object from the
+            moment it started tracking Viewstate.
+            </summary>
+            <seealso cref="M:Infragistics.WebUI.Misc.HeaderAppearance.TrackViewState">TrackViewState Method</seealso>
+            <seealso cref="M:Infragistics.WebUI.Misc.HeaderAppearance.LoadViewState(System.Object)">LoadViewState Method</seealso>
+            <returns>
+            Returns an object which can be passed into the LoadViewState method, returning
+            the control to the state it was in when this method was called.
+            </returns>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.HeaderAppearance.LoadViewState(System.Object)">
+            <summary>
+            Retuns this object back to the state it was in, when the SaveViewState method was
+            called.
+            </summary>
+            <seealso cref="M:Infragistics.WebUI.Misc.HeaderAppearance.SaveViewState">SaveViewState Method</seealso>
+            <seealso cref="M:Infragistics.WebUI.Misc.HeaderAppearance.TrackViewState">TrackViewState Method</seealso>
+            <param name="state">
+            The state object holds all information needed to return the control to the state
+            it was in when "SaveViewState" was called, in turn creating this state object.
+            </param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.HeaderAppearance.TrackViewState">
+            <summary>
+            Lets this object know that it must start tracking all changes being made to
+            itslef, so that those changes can be save into ViewState.
+            </summary>
+            <seealso cref="M:Infragistics.WebUI.Misc.HeaderAppearance.LoadViewState(System.Object)">LoadViewState Method</seealso>
+            <seealso cref="M:Infragistics.WebUI.Misc.HeaderAppearance.SaveViewState">SaveViewState Method</seealso>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.HeaderAppearance.Style">
+            <summary>
+            If the Url begins with "~/", the url will be resolved to the Application root at
+            runtime. Otherwise, the Url provided here will be appended to the ImageDirectory value.
+            If you have specified the image Directory through a config file (such as the
+            Web.Config), this url will be appended to the config specified value.The Style property
+            returns a Style object which can be used to modify the appearance of the Header.
+            </summary>
+            <remarks>
+            This property can be used to customize the appearance of the Header rectangle.
+            <see cref="P:Infragistics.WebUI.Misc.WebPanel.Expanded">Expanded Property
+            (Infragistics.WebUI.Misc.WebPanel)</see><a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel.html">
+            WebPanel
+            Class</a><a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~CollapsedAppearance.html">
+            CollapsedAppearance</a><a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~ExpandedAppearance.html">
+            ExpandedAppearance</a><a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">
+            Expanded Property (Infragistics.WebUI.Misc.WebPanel)</a>The set of properties used to
+            control the appearance of the Header, when the Panel is
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Expanded</a>
+            (default state). The set of properties used to control the appearance of the Header,
+            when the Panel is
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Expanded</a>
+            (default state).
+            </remarks>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.PanelHeader">
+            <summary>
+            The PanelHeader class is the logical collection of properties which control the
+            Header region of the control. The Header region is the top most rectangle, and contains
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~Text.html">Text</a>
+            and an
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~ExpansionIndicator.html">
+            ExpansionIndicator</a>.
+            </summary>
+            <remarks>
+            This class contains all properties which can be used to customize the Header
+            region.
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.PanelHeader.#ctor(System.Web.UI.WebControls.WebControl)">
+            <summary>Creates a new PanelHeader object, initially not tracking changes to its ViewState.</summary>
+            <param name="parentControl">A valid reference to the control which owns this header.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.PanelHeader.#ctor(System.Web.UI.WebControls.WebControl,System.Boolean)">
+            <summary>Creates a new PanelHeader object.</summary>
+            <param name="parentControl">A valid reference to the control which owns this header.</param>
+            <param name="isTrackingViewState">A boolean value indicating whether this object should immediately start tracking changes to its ViewState.</param>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.Text">
+            <summary>
+            A String which will be be displayed inside of the Header, horizontally positioned according to the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~TextAlignment.html">
+            TextAlignment Property</a>.
+            </summary>
+            <seealso cref="P:Infragistics.WebUI.Misc.PanelHeader.TextAlignment">TextAlignment Property</seealso>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.TextAlignment">
+            <summary>
+            The horizontal alignment of the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~Text.html">Text</a>
+            inside of the Header.
+            </summary>
+            <seealso cref="P:Infragistics.WebUI.Misc.PanelHeader.Text">Text Property</seealso>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.ExpandedAppearance">
+            <summary>
+            Controls the Default Appearance of the Header region. Contains the set of
+            properties used to control the appearance of the Header, when the Panel is
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Expanded</a>
+            (default state).
+            </summary>
+            <remarks>
+            The ExpandedAppearance is used as the base (deafult) appearance for the
+            PanelHeader. The
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~CollapsedAppearance.html">
+            CollapsedAppearance</a> will use the values set in this appearance by default. The
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~HoverAppearance.html">
+            HoverAppearance</a> will also use this appearance as the base (default)
+            appearance.
+            </remarks>
+            <seealso cref="P:Infragistics.WebUI.Misc.PanelHeader.CollapsedAppearance">CollapsedAppearance Property</seealso>
+            <seealso cref="P:Infragistics.WebUI.Misc.PanelHeader.HoverAppearance">HoverAppearance Property</seealso>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.HoverAppearance">
+            <summary>
+            The HoverAppearance contains all properties which can be used to customize the
+            appearance of the Header, when the mouse is positionied over the Header region.
+            </summary>
+            <remarks>
+            The HoverAppearance is used to override values on the currently applied
+            appearance, when the Header is moused over. If the WebPanel is currently
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Expanded</a>,
+            this appearance will override values of the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~ExpandedAppearance.html">
+            ExpandedAppearance</a>, otherwise it will override values of the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~CollapsedAppearance.html">
+            CollapsedAppearance</a>. If a value has not been defined in this appearance, it will
+            use the value from the currently applied appearance.
+            </remarks>
+            <seealso cref="P:Infragistics.WebUI.Misc.PanelHeader.ExpandedAppearance">ExpandedAppearance Property</seealso>
+            <seealso cref="P:Infragistics.WebUI.Misc.PanelHeader.CollapsedAppearance">CollapsedAppearance Property</seealso>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.CollapsedAppearance">
+            <summary>
+            The set of properties used to control the appearance of the Header, when the
+            Panel is
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Collapsed</a>.
+            </summary>
+            <remarks>
+            The CollapsedAppearance uses the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~ExpandedAppearance.html">
+            ExpandedAppearance</a> as its base (default). If a value is not defined in the
+            CollapsedAppearance, the value will be take from the ExpandedAppearance. When the
+            Header is moused over, the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~HoverAppearance.html">
+            HoverAppearance</a> will be applied.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.BackColor">
+            <summary>
+            Gets or sets the background color used for the Panel's Header. This property is
+            mapped to the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~ExpandedAppearance.html">
+            ExpandedAppearance</a>.<a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.HeaderAppearance~Style.html">
+            Style</a>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.ForeColor">
+            <summary>
+            Gets or sets the foreground color used for the Panel's Header.  This property comes from the Panel's Header.ExpandedAppearance.Style.ForeColor
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.Font">
+            <summary>
+            Gets or sets the font used for the Panel's Header.  This property comes from the Panel's Header.ExpandedAppearance.Style.Font
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.BackgroundImage">
+            <summary>
+            Gets or sets the background image used for the Panel's Header.  This property comes from the Panel's Header.ExpandedAppearance.Style.BackgroundImage
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.BorderStyle">
+            <summary>
+            Gets or sets the BorderStyle used for the Panel's Header.  This property comes from the Panel's Header.ExpandedAppearance.Style.BorderStyle
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.BorderColor">
+            <summary>
+            Gets or sets the border color used for the Panel's Header.  This property comes from the Panel's HeaderExpandedAppearance.Style.BorderColor
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.BorderWidth">
+            <summary>
+            Gets or sets the border width used for the Panel's Header.  This property comes from the Panel's Header.ExpandedAppearance.Style.BorderWidth
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.Cursor">
+            <summary>
+            Gets or sets the cursor used for the Panel's Header.  This property comes from the Panel's Header.ExpandedAppearance.Style.Cursor
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.Padding">
+            <summary>
+            Gets or sets the padding used for the Panel's Header.  This property comes from the Panel's Header.ExpandedAppearance.Style.Padding
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.Height">
+            <summary>
+            Gets or sets the Height used for the Panel's Header.  This property comes from the Panel's Header.ExpandedAppearance.Style.Height
+            </summary>
+            <remarks>This value is automatically calculated based on the height of the contents displayed inside of the Header.  This value may be ignored if the contents of the header require more space than this value allows.</remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.Visible">
+            <summary>
+            Gets or sets the visibility of the PanelHeader. This property can be used to hide
+            the Header, and make the Panel look identical to the built in Panel.
+            </summary>
+            <remarks>
+            This property toggles the "Display" value of the Header. When the PanelHeader is
+            set to Visible=false, the entire height of the control will be used to display the
+            Content of the WebPanel.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.PanelHeader.ExpansionIndicator">
+            <summary>
+            Gets the ExpansionIndicator object. The ExpansionIndicator contains all
+            properties related to the 'ImageButton' located at the right edge of the
+            PanelHeader.
+            </summary>
+            <remarks>
+            The ExpansionIndicator is used to show the current expanded state of the panel,
+            as well as allow you to change the current state by clicking on the image shown. If you
+            wish to hide the Inidcator, you can set it's width and height to 0, or supply a
+            transparent image.
+            </remarks>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.RenderUpLevelPanel">
+            <summary>
+            The RenderUPLevelPanel class is used to provide Rendering support for the Panel,
+            and is not intended to be used directly.
+            </summary>
+            <remarks>
+            This class provides Rendering support, and is not intended to be used
+            directly.
+            </remarks>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.TwoStateImageButton">
+            <summary>
+            Provides an image which can be toggled between two states, each state having its
+            own Url.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.TwoStateImageButton.#ctor(Infragistics.WebUI.WebControls.IProvideImageDirectoryResolution,System.Boolean)">
+            <summary>
+            Creates a new TwoStateImageButton, using the parameters specified. The
+            IProvideImageDirectoryResolution object is not required, but is recommended for
+            providing Url resolution and accounting for Web.Config settings.
+            </summary>
+            <param name="provider">
+            An instance of an object which implements the IProvideImageDirectoryResolution
+            interface. While not required, this parameter should be specified in order for the
+            TwoStateImageButton to accurately determine the full path of the Image Url
+            provided.
+            </param>
+            <param name="trackViewState">
+            A boolean value indicating whether this control should immediately start tracking
+            any ViewState changes.
+            </param>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.TwoStateImageButton.#ctor">
+            <summary>
+            Creates a new TwoStateImageButton, initially not tracking changes to its
+            ViewState.
+            </summary>
+            <remarks>
+            When using this constructor, the TwoStateImageButton created will not be able to
+            provide any ImageDirectoryResolution. It will simply render the Image Url as it was
+            set.
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.TwoStateImageButton.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>Writes the object out as an HTML Image.</summary>
+            <param name="writer">A valid instance of an HtmlTextWriter.</param>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.TwoStateImageButton.Url">
+            <summary>
+            The URL of the image to be displayed. This property is the same as the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.TwoStateImageButton~ExpandedImageUrl.html">
+            ExpandedImageUrl Property</a>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.TwoStateImageButton.ExpandedImageUrl">
+            <summary>
+            The Url of an image to be displayed when the control is in the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Expanded
+            state</a>
+            </summary>
+            <remarks>
+            If the Url begins with "~/", the url will be resolved to the Application root at
+            runtime. Otherwise, the Url provided here will be appended to the ImageDirectory value.
+            If you have specified the image Directory through a config file (such as the
+            Web.Config), this url will be appended to the config specified value.
+            </remarks>
+            <seealso cref="!:ms-help://INFRAGISTICS_HELP/Infragistics.Introduction/Infragistics.Introduction/deployment-web.htm">Images and Deployment</seealso>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.TwoStateImageButton.CollapsedImageUrl">
+            <remarks>
+            If the Url begins with "~/", the url will be resolved to the Application root at
+            runtime. Otherwise, the Url provided here will be appended to the ImageDirectory value.
+            If you have specified the image Directory through a config file (such as the
+            Web.Config), this url will be appended to the config specified value.
+            </remarks>
+            <summary>
+            The Url of an image to be displayed when the control is in the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Collapsed
+            state</a>
+            </summary>
+            <seealso cref="!:ms-help://INFRAGISTICS_HELP/Infragistics.Introduction/Infragistics.Introduction/deployment-web.htm">Images and Deployment</seealso>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.WebPanel">
+            <summary>
+            The WebPanel is a container control, which can be used to group content at
+            design-time or run-time. The WebPanel is also used to control the display of that
+            content at runtime. The WebPanel consists of two major regions. The top region
+            (PanelHeader), is mainly provided as a means to expand or collapse the panel. When a
+            panel is Expanded, its contents are visible. When the panel is collapsed, its contents
+            are completely hidden, and the panel shrinks to show only its Header.
+            </summary>
+            <remarks>
+            The WebPanel acts as a container control, displaying all controls contained in
+            it's Controls collection. It also allows it's contents to be easily hidden, or
+            re-displayed on the client by means of the PanelHeader.
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.WebPanel.#ctor">
+            <summary>Creates a new instance of a WebPanel</summary>
+            <remarks>
+            This is the Default Constructor, used to create a new instance of a WebPanel. If
+            you wish to create a WebPanel dynamically, be sure to add it to the Page's Form
+            control, and not just directly to the Page.Controls collection.
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.Misc.WebPanel.System#Web#UI#IPostBackEventHandler#RaisePostBackEvent(System.String)">
+            <summary>
+            The RaisePostBackEvent will be used for downlevel browsers only.
+            </summary>
+            <param name="eventArgument"></param>
+        </member>
+        <member name="E:Infragistics.WebUI.Misc.WebPanel.ExpandedStateChanged">
+            <summary>
+            The ExpandedStateChangedEvent can be used to handle Expand events for the
+            WebPanel. An ExpandedStateChangedEvent will fire when the panel is expanded or
+            collapsed. Use the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~AutoPostBack.html">AutoPostBack</a>
+            property to control whether the WebPanel postsback in response to a change in the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Expanded</a>
+            state.
+            </summary>
+            <seealso cref="F:Infragistics.WebUI.Misc.WebPanel.ExpandedStateChanging">ExpandedStateChanging Event</seealso>
+            <seealso cref="T:Infragistics.WebUI.Misc.WebPanel.ExpandedStateChangedEventHandler">ExpandedStateChangedEventHandler Delegate</seealso>
+            <seealso cref="P:Infragistics.WebUI.Misc.WebPanel.Expanded">Expanded Property</seealso>
+            <seealso cref="P:Infragistics.WebUI.Misc.WebPanel.AutoPostBack">AutoPostBack Property</seealso>
+            <remarks>
+            You can determine the current state of the control, by checking the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Expanded</a>
+            property. Its previous state would be the opposite of its current state.
+            </remarks>
+        </member>
+        <member name="E:Infragistics.WebUI.Misc.WebPanel.ExpandedStateChanging">
+            <summary>
+            The ExpandedStateChangingEvent can be used to handle Expanding events for the
+            WebPanel. An ExpandedStateChangingEvent will fire when the panel is about to expand or
+            collapse. Use the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~AutoPostBack.html">AutoPostBack</a>
+            property to control whether the WebPanel will postsback in response to this event
+            (before the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Expanded</a>
+            state has actually changed).
+            </summary>
+            <remarks>
+            You can determine the current state of the control, by checking the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Expanded
+            Property</a>. The state the control will be in after this event fires (unless the event
+            is cancelled) is the opposite of the current state.
+            </remarks>
+            <seealso cref="F:Infragistics.WebUI.Misc.WebPanel.ExpandedStateChanged">ExpandedStateChanged Event</seealso>
+            <seealso cref="P:Infragistics.WebUI.Misc.WebPanel.Expanded">Expanded Property</seealso>
+            <seealso cref="P:Infragistics.WebUI.Misc.WebPanel.AutoPostBack">AutoPostBack Property</seealso>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanel.Text">
+            <summary>
+            The Text displayed in the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Header.html">Header</a>.
+            This property is the same as the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~Text.html">Text
+            Property (Infragistics.WebUI.Misc.PanelHeader)</a>
+            </summary>
+            <remarks>
+            The Text's Horizontal alignment can be set by the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.PanelHeader~TextAlignment.html">
+            TextAlignment Property (Infragistics.WebUI.Misc.PanelHeader)</a>
+            </remarks>
+            <seealso cref="P:Infragistics.WebUI.Misc.PanelHeader.TextAlignment">TextAlignment Property (Infragistics.WebUI.Misc.PanelHeader)</seealso>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanel.PanelStyle">
+            <summary>
+            The PanelStyle controls the appearance of the area below the PanelHeader.
+            </summary>
+            <remarks>
+            The PanelStyle can be used to customize the appearance of the Conten-Area region
+            of this control. Use the Header Appearances to customize the appearance of the Header
+            region.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanel.Header">
+            <summary>
+            Gets the object which holds all settings for the header, or "Title Bar" portion of this panel.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanel.AutoPostBack">
+            <summary>
+            The AutoPostBack property controls the behavior of ServerSide event handlers. Use
+            these properties to determine if a ServerSideEvent should force a postback to occur,
+            the instant the event is fired.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanel.ClientSideEvents">
+            <summary>
+            ClientSideEvents can be used to add dynamic behavior to the control, which exists
+            only on the Client (using JavaScript functions)
+            </summary>
+            <remarks>
+            Use the properties of this object, to set the name of the function which can be
+            used to handle events which occur on the client. These events can be used to create
+            dynamic behavior with out costly postbacks to the Server.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanel.Expanded">
+            <summary>
+            The Expanded property controls the display of the Contents which this control
+            owns. The WebPanel will display any control added to its Controls collection, inside of
+            a Content-Area. This is the lower region of the control, displayed below the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Header.html">Header</a>.
+            </summary>
+            <remarks>
+            The Expanded property can be used to control the display of the content which
+            this WebPanel contains. When Expanded=false, the contents of the control are completely
+            hidden. The height of the control will simply be the height of the Header (if visible).
+            Use the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~ExpandEffect.html">ExpandEffect</a>
+            to control custom behaviors associated with the expand action. The
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Header.html">Header</a>
+            appearance can also be customized for the different states (expanded or
+            collapsed).
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanel.ExpandEffect">
+            <summary>
+            The ExpandEffect provides special behavior for showing/hiding the content
+            associated with this control.
+            </summary>
+            <remarks>
+            The ExpandEffect can be used to create graphical effects during the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Expaned</a>
+            state transitions.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanel.JavaScriptFileName">
+            <summary>
+            The JavaScriptFileName is used to customize the path which is used to locate the
+            JavaScriptFile necessary for this control to function on the Client-Side.
+            </summary>
+            <remarks>
+            In general you do not need to modify this property value. However, if you wish to
+            change the path which the JavaScriptFiles are located, you will need to modify this
+            value accordingly. You can also use a Config file to specify a different value. For
+            more information on using a config file, see the Deployment guide section of the help -
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Images
+            and Deployment</a>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanel.BrowserTarget">
+            <summary>
+            The BrowserTarget is used to force the control to render its contents tailored to
+            specific browser, or category of browsers.
+            </summary>
+            <remarks>
+            Use this property to force the control to render its contents tailored for a
+            specific browser, regardless of the actual target browser which is requesting the
+            page.
+            </remarks>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.WebPanel.ExpandedStateChangedEventHandler">
+            <summary>
+            The ExpandedStateChangedEventHandler can be used to handle Expand events for the WebPanel.  An ExpandedStateChangedEvent will fire when the panel is expanded or collapsed.  Use the AutoPostBack property to control whether the WebPanel postsback in response to a change in the Expanded state.
+            </summary>
+            <param name="sender">The object responsible for firing the event.</param>
+            <param name="e">The EventArgs associated with this event.</param>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.WebPanel.ExpandedStateChangedEventArgs">
+            <summary>
+            This class is used to provide information regarding the ExpandedStateChanged
+            event, to any handlers.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.WebPanel.ExpandedStateChangingEventHandler">
+            <summary>
+            The ExpandedStateChangingEventHandler can be used to handle Expanding events for
+            the WebPanel. An ExpandedStateChangingEvent will fire when the panel is about to expand
+            or collapse. Use the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~AutoPostBack.html">AutoPostBack</a>
+            property to control whether the WebPanel will postsback in response to this event
+            (before the expanded state has actually changed).
+            </summary>
+            <remarks>
+            This event can be cancelled by setting the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel.ExpandedStateChangingEventArgs~Cancel.html">
+            Cancel</a> property off of the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel.ExpandedStateChangingEventArgs.html">
+            EventArgs</a>.
+            </remarks>
+            <seealso cref="T:Infragistics.WebUI.Misc.WebPanel.ExpandedStateChangingEventArgs">ExpandedStateChangingEventArgs Class</seealso>
+            <seealso cref="T:Infragistics.WebUI.Misc.WebPanel.ExpandedStateChangedEventHandler">ExpandedStateChangedEventHandler Delegate</seealso>
+            <param name="sender">The object responsible for firing this event.</param>
+            <param name="e">The event arguments which are associated with this event.</param>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.WebPanel.ExpandedStateChangingEventArgs">
+            <summary>
+            The ExpandedStatechangingEventArgs are used to provide information to handlers
+            for the ExpandedStateChanging event.
+            </summary>
+            <remarks>
+            Use the Cancel property to cancel the event, and keep the ExpandingState from
+            changing. You can determine the current state of the control by checking the
+            <a href="Infragistics.WebUI.Misc~Infragistics.WebUI.Misc.WebPanel~Expanded.html">Expanded
+            Property (Infragistics.WebUI.Misc.WebPanel)</a>
+            </remarks>
+            <seealso cref="T:Infragistics.WebUI.Misc.WebPanel.ExpandedStateChangingEventHandler">ExpandedStateChangingEventHandler Delegate</seealso>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.WebPanel.ExpandedStateChangingEventArgs.Cancel">
+            <summary>
+            Used to cancel the Expanded state change, about to be performed on the WebPanel.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.WebPanelDefaultConstants">
+            <summary>
+            Summary description for WebPanelDefaultConstants.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.Util.ClientStateXmlParser">
+            <summary>
+            Summary description for ClientStateXmlParser.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.TextAlignment">
+            <summary>
+            The TextAlignment Enumeration describes the different horizontal alignment values that can be used to display text.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.Misc.TextAlignment.Left">
+            <summary>
+            The Text is Left-Aligned, appearing closest to the left-most edge.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.Misc.TextAlignment.Center">
+            <summary>
+            The Text is centered between the left and right edge of the container.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.Misc.TextAlignment.Right">
+            <summary>
+            The text is Right-Aligned, appearing closest to the right-most edge.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.Misc.ExpandEffect">
+            <summary>
+            The ExpandEffect values can be used to describe how the Panel will expand and
+            collapse. When set to None, the panel content will simply appear or disappear. All
+            other values describe special effects.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.Misc.ExpandEffect.None">
+            <summary>
+            The content will simply appear or disappear. No special effect will be
+            used.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.Misc.ExpandEffect.Slide">
+            <summary>
+            The content will roll-up, or unroll based on whether it is collapsing or
+            expanding. On supported browsers (Currently only Internet Exploerer), the content will
+            also slowly fade to and from transparent while also rolling up or down.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.Shared.LocalizedCategoryAttribute.GetLocalizedString(System.String)">
+            <summary>
+            Returns the localized category name.
+            </summary>
+            <param name="value">Name of the category to retreive.</param>
+            <returns>The localized string value.</returns>
+        </member>
+        <member name="P:Infragistics.WebUI.Misc.UltraLicenseAttribute.LicensedWithProducts">
+            <summary>
+            Return the list of products that this control can be licensed with
+            </summary>
+        </member>
+    </members>
+</doc>

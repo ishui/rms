@@ -1,0 +1,686 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A1A4C23-6138-4A52-9975-73B30CC8DAE8}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>TiannuoPM.Entities</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching">
+      <Name>Microsoft.Practices.EnterpriseLibrary.Caching</Name>
+      <HintPath>..\..\RmsPM.Web_1\bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography">
+      <Name>Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography</Name>
+      <HintPath>..\..\RmsPM.Web_1\bin\Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder">
+      <Name>Microsoft.Practices.ObjectBuilder</Name>
+      <HintPath>..\..\RmsPM.Web_1\bin\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.Xml</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\BindableAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ColumnEnumAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Contract.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractAccount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractAccountBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractAccountColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractAccountComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractAccountEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractAccountEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractAccountKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractBill.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractBillBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractBillColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractBillComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractBillEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractBillEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractBillKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractChange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractChangeBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractChangeColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractChangeComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractChangeEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractChangeEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractChangeKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCost.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostChange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostChangeBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostChangeColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostChangeComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostChangeEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostChangeEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostChangeKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostPlan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostPlanBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostPlanColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostPlanComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostPlanEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostPlanEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractCostPlanKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterialBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterialColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterialComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterialEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterialEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterialKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterialPlan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterialPlanBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterialPlanColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterialPlanComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterialPlanEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterialPlanEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractMaterialPlanKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractNexus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractNexusBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractNexusColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractNexusComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractNexusEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractNexusEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ContractNexusKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryItemBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryItemColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryItemComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryItemEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryItemEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryItemKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryNameBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryNameColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryNameComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryNameEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryNameEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\DictionaryNameKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityFactoryBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityKeyBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityKeyBaseCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityLocator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityNotValidException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityPropertyComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EntityUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\EnumTextValueAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Expression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Expressions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Filter!2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\GenericStateChangedEventArgs!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\GenericTypeConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\IEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\IEntityCacheItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\IEntityFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\IEntityId!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\IEntityKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\InspectSituation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\InspectSituationBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\InspectSituationColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\InspectSituationComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\InspectSituationEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\InspectSituationEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\InspectSituationKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\IWorkflowable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ListBase!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Material.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchas.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchasBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchasColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchasComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchasDtl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchasDtlBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchasDtlColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchasDtlComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchasDtlEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchasDtlEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchasDtlKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchasEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchasEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\MaterialPurchasKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Payment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PaymentBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PaymentColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PaymentComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PaymentEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PaymentEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PaymentItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PaymentItemBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PaymentItemColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PaymentItemComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PaymentItemEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PaymentItemEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PaymentItemKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PaymentKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Payout.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PayoutBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PayoutColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PayoutComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PayoutEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PayoutEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PayoutItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PayoutItemBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PayoutItemColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PayoutItemComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PayoutItemEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PayoutItemEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PayoutItemKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\PayoutKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Project.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ProjectBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ProjectColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ProjectComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ProjectEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ProjectEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\ProjectKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\SortComparer!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\SystemUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\SystemUserBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\SystemUserColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\SystemUserComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\SystemUserEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\SystemUserEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\SystemUserKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\TList!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Trouble.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\TroubleBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\TroubleColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\TroubleComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\TroubleEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\TroubleEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\TroubleKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Validation\BrokenRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Validation\BrokenRulesList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Validation\CommonRules.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Validation\ValidationRuleArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Validation\ValidationRuleHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Validation\ValidationRuleInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\Validation\ValidationRules.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TiannuoPM\Entities\VList!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

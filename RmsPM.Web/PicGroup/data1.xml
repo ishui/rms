@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data localMode="False">
+	<player play="True" startIndex="0" loop="False">
+		<speed min="1" max="30" default="5" />
+		<size fullScreen="True" />
+	</player>
+	<slideData>
+		<slides start="0" end="1">
+			<slide>
+				<images>
+				<image size="2436" width="96" height="72">http://Rms.com/src/50912-4.jpg</image>
+				<image size="35859" width="600" height="450">http://Rms.com/src/50912-1.jpg</image>
+				</images>
+				<title>eqweqwe</title>
+				<details>和重庆PLMM</details>
+			</slide>
+			<slide>
+				<images>
+					<image size="2384" width="96" height="72">http://Rms.com/src/50912-1.jpg</image>
+					<image size="33354" width="1024" height="768">http://Rms.com/src/50912-4.jpg</image>
+					</images>
+				<title></title>
+				<details>无聊的飞机上自拍</details>
+			</slide>
+		</slides>
+	</slideData>
+</data>

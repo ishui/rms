@@ -1,0 +1,705 @@
+<!-- ---------------------------------------------------------------------
+//
+//  Copyright 2000 Microsoft Corporation.  All Rights Reserved.
+//
+//  File:         mask_js.htc
+//
+//  Description:  This behavior allows the web author to format user input
+//                into the correct date, monetary, phone number, or 
+//                percentage formats. 
+//
+//-------------------------------------------------------------------- -->
+
+<PROPERTY NAME="preset"  />
+<PROPERTY NAME="realValue" />
+<EVENT    NAME="onerror"  ID="error"  />
+<ATTACH   EVENT="ondocumentready"  HANDLER="DoInit"       />
+<ATTACH   EVENT="onpropertychange" HANDLER="DoPropChange" />
+
+
+<script language="jscript">
+
+
+//+----------------------------------------------------------------------------
+//
+//  Global Variables
+//
+//-----------------------------------------------------------------------------
+
+realValue = "";  
+var idlength;
+                      // Property that tracks the value
+                                        //   entered by the user
+
+var zMonth = new Array                  // Array of months (for date mask)
+    ('January','February','March',
+     'April','May','June','July',
+     'August','September','October',
+     'November','December');
+
+
+
+
+//+----------------------------------------------------------------------------
+//
+//  Function:       DoInit
+//
+//  Description:    Attaches the proper formatting and events, depending on
+//                  the type of tag the behavior is attached to.
+//
+//  Arguments:      none
+//
+//  Returns:        nothing
+//
+//-----------------------------------------------------------------------------
+
+function DoInit()
+{
+    var sTag = tagName.toLowerCase();
+	idlength = id.length
+    //
+    //  For these types of tags, call the FormatValue() function to format
+    //  the innerText
+    //
+    
+    if (sTag == "span" || sTag == "div" || sTag == "a" || sTag == "p"
+        || sTag == "td" || sTag == "th" || sTag == "button"
+        || sTag.charAt(0) == "h") 
+    {
+        FormatValue();
+    }
+    //
+    //  For the INPUT tag, attach the InputBlur() and InputFocus() to
+    //  apply formatting to the value
+    //
+    else if (sTag == "input") 
+    {
+        attachEvent("onreadystatechange", InputBlur);
+        attachEvent("onfocus", InputFocus);
+        attachEvent("onblur", InputBlur);       
+        attachEvent("onkeypress",DoJHshNumberText);
+        SetDefalultValue();
+        //document.this;
+        //outid = parent.document.all(id+"CV");
+        //outid.onchange();
+    }
+    else if(sTag=="select")
+    {
+        attachEvent("onchange",InputChange);     	
+    }    
+    else ReturnError("Cannot format this tag with the Mask Behavior");
+}
+//+----------------------------------------------------------------------------
+//
+// 设置显示默认值时,把隐藏的值赋给 显示控件,并转成千位分割形式
+//+--------------------------------------------------------------------------
+function SetDefalultValue()
+{
+	 switch(preset)
+     {
+		case "currency"            :            
+			vid = parent.document.all(id+"V"); 
+			value = vid.value;
+			value = MaskMoney(vid.value); 
+			
+			//sumtem在服务端变化值,sum初始的和值
+			sumtemid = parent.document.all("txttemMoney");
+			if(sumtemid!=null)
+			{
+			   sumid = parent.document.all("txtMoney");
+			   if(sumid!=null)
+			   {
+			      sumtemid.value = sumid.value;
+			   }
+			   //alert(sumid.value);
+			}
+			
+		break;
+     }	
+	
+	
+}
+//+----------------------------------------------------------------------------
+//
+//  Function:       DoPropChange
+//
+//  Description:    Handles property changes on CSS and regular property/
+//                  attributes.
+//
+//  Arguments:      none
+//
+//  Returns:        nothing
+//
+//-----------------------------------------------------------------------------
+
+function DoPropChange()
+{
+    propertyName = window.event.propertyName;
+    
+    if (propertyName == "preset")
+    {
+        if (tagName.toLowerCase() == "input") InputBlur();
+        else FormatValue();
+    }
+}
+
+
+//+----------------------------------------------------------------------------
+//
+//  Function:       FormatValue
+//
+//  Description:    Called by tags which have an innerText attribute (as versus
+//                  a value attribute).  Calls formatting functions, depending
+//                  on the preset property, and formats the innerText of the tag.
+//
+//  Arguments:      none
+//
+//  Returns:        nothing
+//
+//-----------------------------------------------------------------------------
+
+function FormatValue()
+{
+    switch(preset)
+    {
+         case "currency"             :
+            innerText = MaskMoney(innerText);
+            break;
+            
+        case "percent"              :
+            innerText = MaskPercent(innerText);
+            break;
+    }
+}
+
+
+//+----------------------------------------------------------------------------
+//
+//  Function:       InputFocus
+//
+//  Description:    Called by tags which have a value attribute (as versus an
+//                  innerText attribute).  Replaces the formatted value of the 
+//                  tag with the actual value previously entered by the user
+//                  (before formatting was applied).
+//
+//  Arguments:      none
+//
+//  Returns:        nothing
+//
+//-----------------------------------------------------------------------------
+
+function InputFocus() 
+{
+	 switch(preset)
+    {
+		case "currency"            :            
+			vid = parent.document.all(id+"V"); 
+			value=vid.value;    //得到焦点时,把隐藏的值赋给 id
+			if (value=='0')value='';
+			
+			
+			//exchangeratecontrol only 得到改变前的值
+			previd = parent.document.all(id.substring(0,idlength-2) + "_PreV");
+			
+			idc=parent.document.all(id.substring(0,idlength-2)+"_CV");
+			ide=parent.document.all(id.substring(0,idlength-2)+"_EV");
+			if(previd!=null)
+			{
+			   
+			   previd.value = idc.value*ide.value;
+			   //alert(previd.value);
+			}
+			
+		break;
+    }	
+}
+
+
+//+----------------------------------------------------------------------------
+//
+//  Function:       InputBlur
+//
+//  Description:    Called by tags which have a value attribute (as versus an
+//                  innerText attribute).  Calls formatting functions, depending
+//                  on the preset property, and formats the value of the tag.
+//
+//  Arguments:      none
+//
+//  Returns:        nothing
+//
+//-----------------------------------------------------------------------------
+
+function InputBlur() 
+{
+      if(value=='')value='0';
+   switch(preset)
+    {
+        case "currency"          :
+            value = MaskMoney(value);
+            ResetRMB();
+            ResetSumRMB()
+			idc=parent.document.all(id.substring(0,idlength-2)+"_CV");
+			idc.onblur();
+			
+
+			
+            break;
+            
+        case "percent"              :
+            value = MaskPercent(value);
+            break;
+    }
+}
+//+------------------------------------------------------------------------
+//
+//当值改变时
+//+------------------------------------------------------------------------
+function InputChange()
+{
+	switch(preset)
+    {
+          
+        case "MoneyType"             :
+            MoneyTypeChanged();//改变币种
+            idc=parent.document.all(id.substring(0,idlength-2)+"_CV");
+			idc.onblur();
+            break;
+    }
+}
+
+
+//+----------------------------------------------------------------------------
+//
+//  Function:       MaskMoney
+//
+//  Description:    Takes the innerText or value of the tag (depending on the
+//                  type of tag), and formats it as US$ currency.
+//
+//  Arguments:      sValue - innerText or value of the tag
+//
+//  Returns:        "" (empty string) if sValue is an empty string
+//                  "$" + sValue - parsed and formatted currency       
+//
+//-----------------------------------------------------------------------------
+
+function MaskMoney(sValue) 
+{
+    vid = parent.document.all(id+"V");
+    vid.value=value;
+   return FormartMoney(sValue);
+}
+function FormartMoney(sValue) 
+{
+/*
+    if (sValue.length == 0) return "";
+
+  //  if (sValue.charAt(0) == "$")
+    //{
+	//	sValue = sValue.substring(1,sValue.length);
+    //}
+
+    //  Parse the value into a float number
+	var iValue = parseFloat(sValue);
+	iValue = (Math.round(iValue * 100)) / 100;
+	
+	//  If the value is not a number, return an error
+	if (isNaN(iValue))
+	{
+	    ReturnError("Not a valid amount");
+	    return "";
+    }
+    
+    //  Return the value to a string to apply formatting
+    sValue = iValue.toString();
+    
+    //
+    //  Fill in zeros (if necessary) to show two digits to the right 
+    //  of the decimal
+    //
+    if (sValue.indexOf(".") == -1)
+    {
+        sValue = sValue + ".00";
+    }
+    else
+    {
+        if (sValue.indexOf(".") == sValue.length - 1)
+        {
+            sValue = sValue + "00";
+        }
+        else if (sValue.indexOf(".") == sValue.length - 2)
+        {
+            sValue = sValue + "0";
+        }
+    }
+    
+    //  Add commas if necessary
+    if (sValue.indexOf(".") > 3)
+    {
+        sValue = sValue.substring(0,sValue.indexOf(".") - 3) + ","
+            + sValue.substring(sValue.indexOf(".") - 3,sValue.length);
+    }
+	
+	return sValue;
+	*/
+	var pattern = "#,###.00";
+	var number = sValue;
+	
+	var str			= number.toString();
+	var number2 = number;
+	var strInt;
+	var strFloat;
+	var formatInt;
+	var formatFloat;
+	
+	//负数去掉“-”  2005.9.28
+	var neg = "";
+	if (str.substring(0, 1) == "-")
+	{
+		neg = "-";
+		str = str.substring(1, str.length);
+		number2 = str;
+	}
+	
+	if(/\./g.test(pattern))
+	{
+		formatInt		= pattern.split('.')[0];
+		formatFloat		= pattern.split('.')[1];
+	}
+	else
+	{
+		formatInt		= pattern;
+		formatFloat		= null;
+	}
+
+	if(/\./g.test(str))
+	{
+		if(formatFloat!=null)
+		{
+			var tempFloat	= Math.round(parseFloat('0.'+str.split('.')[1])*Math.pow(10,formatFloat.length))/Math.pow(10,formatFloat.length);
+			strInt		= (Math.floor(number2)+Math.floor(tempFloat)).toString();				
+			strFloat	= /\./g.test(tempFloat.toString())?tempFloat.toString().split('.')[1]:'0';			
+		}
+		else
+		{
+			strInt		= Math.round(number2).toString();
+			strFloat	= '0';
+		}
+	}
+	else
+	{
+		strInt		= str;
+		strFloat	= '0';
+	}
+	
+	if(formatInt!=null)
+	{
+		var outputInt	= '';
+		var zero		= formatInt.match(/0*$/)[0].length;
+		var comma		= null;
+		if(/,/g.test(formatInt))
+		{
+			comma		= formatInt.match(/,[^,]*/)[0].length-1;
+		}
+		var newReg		= new RegExp('(\\d{'+comma+'})','g');
+
+		if(strInt.length<zero)
+		{
+			outputInt		= new Array(zero+1).join('0')+strInt;
+			outputInt		= outputInt.substr(outputInt.length-zero,zero)
+		}
+		else
+		{
+			outputInt		= strInt;
+		}
+
+		var 
+		outputInt			= outputInt.substr(0,outputInt.length%comma)+outputInt.substring(outputInt.length%comma).replace(newReg,(comma!=null?',':'')+'$1')
+		outputInt			= outputInt.replace(/^,/,'');
+
+		strInt	= outputInt;
+	}
+
+	if(formatFloat!=null)
+	{
+		var outputFloat	= '';
+		var zero		= formatFloat.match(/^0*/)[0].length;
+
+		if(strFloat.length<zero)
+		{
+			outputFloat		= strFloat+new Array(zero+1).join('0');
+			//outputFloat		= outputFloat.substring(0,formatFloat.length);
+			var outputFloat1	= outputFloat.substring(0,zero);
+			var outputFloat2	= outputFloat.substring(zero,formatFloat.length);
+			outputFloat		= outputFloat1+outputFloat2.replace(/0*$/,'');
+		}
+		else
+		{
+			outputFloat		= strFloat.substring(0,formatFloat.length);
+		}
+
+		strFloat	= outputFloat;
+
+		//num"0", format".#" -> ""    xyq 2005.9.28
+		if ((strFloat == "0") && (zero == 0))
+		{
+			strFloat = "";
+		}
+		
+	}
+	else
+	{
+		if(pattern!='' || (pattern=='' && strFloat=='0'))
+		{
+			strFloat	= '';
+		}
+	}
+
+	//负数加上“-”  2005.9.28
+	if (neg == "-")
+	{
+		strInt = neg + strInt;
+	}
+
+	return strInt+(strFloat==''?'':'.'+strFloat);
+}
+
+function DoJHshNumberText()
+{
+     if ( !(((window.event.keyCode >= 48) && (window.event.keyCode <= 57)) 
+    || (window.event.keyCode == 13) || (window.event.keyCode == 46) 
+    || (window.event.keyCode == 45)))
+    {
+        window.event.keyCode = 0 ;
+    }    
+}
+
+//+----------------------------------------------------------------------------
+//
+//  Function:       MaskPercent
+//
+//  Description:    Takes the innerText or value of the tag (depending on the
+//                  type of tag), and formats it as a percentage.
+//
+//  Arguments:      sValue - innerText or value of the tag
+//
+//  Returns:        "" (empty string) if sValue is an empty string
+//                  iValue + "%" - parsed and formatted percentage
+//
+//-----------------------------------------------------------------------------
+
+function MaskPercent(sValue)
+{
+    if (sValue.length == 0) return "";
+
+    if (sValue.charAt(0) == "%")
+    {
+		sValue = sValue.substring(1,sValue.length);
+    }
+
+    iValue = parseFloat(sValue);
+    
+    if (iValue < 1 && sValue.charAt(sValue.indexOf(".")-1) != "0")
+    {
+        iValue *= 100;
+    }
+    
+    //  If the value is not a number, return an error
+    if (isNaN(iValue))
+	{
+	    ReturnError("Not a valid amount");
+	    return "";
+    }
+    
+    return iValue + "%";
+}
+
+//+----------------------------------------------------------------------------
+//
+//  Function:       ParseChar
+//
+//  Description:    This function takes a string and parses out certain
+//                  characters.  The characters to be parsed out are passed in
+//                  as a string or as a array.
+//
+//  Arguments:      sStr - The string intended to be parsed
+//                  sChar - A string or array of characters to be parsed out
+//                      of sStr
+//
+//  Returns:        sNewStr - The rebuilt (parsed) string
+//
+//-----------------------------------------------------------------------------
+
+function ParseChar(sStr, sChar)
+{
+    //  If sChar is a string, create an array to hold it
+    if (sChar.length == null) 
+    {
+        zChar = new Array(sChar);
+    }
+    else zChar = sChar;
+    
+    //  Iterate through the array, removing each character from the string
+    for (i=0; i<zChar.length; i++)
+    {
+        sNewStr = "";
+    
+        var iStart = 0;
+        var iEnd = sStr.indexOf(sChar[i]);
+    
+        while (iEnd != -1)
+        {
+            sNewStr += sStr.substring(iStart, iEnd);
+            iStart = iEnd + 1;
+            iEnd = sStr.indexOf(sChar[i], iStart);
+        }
+        sNewStr += sStr.substring(sStr.lastIndexOf(sChar[i]) + 1, sStr.length);
+        
+        sStr = sNewStr;
+    }
+    
+    return sNewStr;
+}
+
+
+//+----------------------------------------------------------------------------
+//
+//  Function:       ReturnError
+//
+//  Description:    Fires the error event, along with a descriptive text
+//                  message.
+//
+//  Arguments:      sMsg - descriptive text message
+//
+//  Returns:        nothing
+//
+//-----------------------------------------------------------------------------
+
+function ReturnError(sMsg)
+{
+    var oEvent = createEventObject();
+    oEvent.setAttribute("error", sMsg);
+    error.fire(oEvent);
+}
+//+------------------------------------------------------------------------------
+//
+//
+//
+//
+//+------------------------------------------------------------------------------
+//显示默认汇率信息
+function MoneyTypeChanged()
+{
+        //alert("id");
+        try
+        {
+			var myid= parent.document.all(id.substring(0,idlength-2)+"_E");
+			var myidv= parent.document.all(id.substring(0,idlength-2)+"_EV");
+			var thisid=parent.document.all(id)
+			var moneyType=thisid.options[thisid.selectedIndex].text;
+			var moneyTypeID=thisid.value  
+    		var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+			xmlDoc.async="false";
+			var name = "ExchangeRate.xml";					
+			xmlDoc.load(name);
+			xmlObj=xmlDoc.documentElement;
+			nodes = xmlDoc.documentElement.childNodes;
+			lenght = xmlObj.childNodes.length;
+			
+			for (var i=0;i<lenght;i++)
+			{
+				if(moneyType==xmlObj.childNodes(i).selectSingleNode("MoneyType").nodeTypedValue)
+				{
+					myid.value = xmlObj.childNodes(i).selectSingleNode("RemittanceAverage").nodeTypedValue;
+					myidv.value= myid.value;			    
+					if(moneyTypeID=="DI69157")
+					{
+						myid.disabled=true;
+					}
+					else
+					{
+						myid.disabled=false;
+					}		     
+					break;
+				}						
+				else if(i==lenght-1)
+				{
+					myidv.value=myid.value = "1.00";	
+					myid.disabled=false;
+				}						
+			}
+			ResetRMB();
+			ResetSumRMB()
+		}
+		catch(ex)
+		{
+		}
+		
+}
+  //重设人民币金额
+  function ResetRMB()
+  {
+	try
+    {
+		idc=parent.document.all(id.substring(0,idlength-2)+"_CV");
+		ide=parent.document.all(id.substring(0,idlength-2)+"_EV");
+		//alert(idc.realValue	+"pp"+ide.realValue);
+		var myvalue=idc.value*ide.value;
+		var formatValule = FormartMoney(myvalue);//formatNumber(myvalue, "#,###.00");
+		parent.document.getElementById(id.substring(0,idlength-2)+"_O").value=parent.document.getElementById(id.substring(0,idlength-2)+"_R").value;		
+		parent.document.getElementById(id.substring(0,idlength-2)+"_R").value=(Math.round(myvalue * 100)) / 100;	
+		parent.document.getElementById(id.substring(0,idlength-2)+"_V").innerHTML=formatValule;
+		//alert(id);
+	}
+	catch(ex)
+	{
+	}
+}
+
+  //重设总金额
+  function ResetSumRMB()
+  {
+	try
+    {
+		idc=parent.document.all(id.substring(0,idlength-2)+"_CV");
+		ide=parent.document.all(id.substring(0,idlength-2)+"_EV");
+		//alert(idc.realValue	+"pp"+ide.realValue);
+		var myvalue = idc.value*ide.value;
+		myvalue = Math.floor((myvalue * 100) / 100);
+		
+		var changevalue;
+		previd = parent.document.all(id.substring(0,idlength-2) + "_PreV");
+		//alert(previd);
+		var afterchangedvalue;
+		if(previd!=null)
+		{
+		   sumtemid = parent.document.all("txttemMoney");
+		   
+		   //alert(sumtemid.value);
+		   afterchangedvalue = (parseFloat(sumtemid.value) + parseFloat (myvalue) - parseFloat (previd.value));
+		   sumtemid.value = afterchangedvalue;
+		   var summoneyid;
+		   var summoneyob;
+		   for(var i=0;i<15;i++)
+		   {
+		       summoneyid="dgList__ctl"+i+"_lblSumItemMoney0";
+		       if(parent.document.all(summoneyid)!=null)
+		      {
+		         summoneyob = parent.document.all(summoneyid);
+		         break;
+		      }
+		   }
+		   
+		   if(summoneyob!=null)
+		   {
+		      
+		      var formatValule = FormartMoney(afterchangedvalue);
+		      summoneyob.innerHTML = formatValule;
+		   }
+		}
+	}
+	catch(ex)
+	{
+	}
+}
+</script>
+

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>V_WBSTask</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>V_WBSTask</Name>
+		<Column>
+			<Name>WBSCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Column>
+			<Name>ProjectCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>true</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Column>
+			<Name>TaskName</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>true</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Column>
+			<Name>TaskCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String> select  * from V_WBSTask</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+	</Table>
+</Entity>

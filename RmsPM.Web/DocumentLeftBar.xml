@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<Bar>
+	<Module>
+		<Name>DocumentManagement</Name>
+		<Text>文档管理</Text>
+		<URL></URL>
+		<Child>DocumentManagement</Child>
+		<Right></Right>
+		<SubModule>
+			<Name>DocumentList</Name>
+			<Text>文档信息</Text>
+			<URL>\Document\\Document.aspx</URL>
+			<Child></Child>
+			<Right>1001</Right>
+		</SubModule>
+		<SubModule>
+			<Name>DocumentType</Name>
+			<Text>文档类型</Text>
+			<URL>\Document\\DocumentType.aspx</URL>
+			<Child></Child>
+			<Right>-1</Right>
+		</SubModule>
+	</Module>
+</Bar>

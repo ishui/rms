@@ -1,0 +1,699 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LocaleViseMODEL</name>
+    </assembly>
+    <members>
+        <member name="T:TiannuoPM.MODEL.LocaleViseCostModel">
+            ################################################################################################
+             <summary>
+             <para>摘要：签证费用明细模型类。</para>
+             <para>说明：签证费用明细字段描述模型</para>
+             <para>Programmer： clm</para>
+             <para>Email： nmgclm626@hotmail.com</para>
+             <remarks>
+             对应数据库表：LocaleViseCost
+             <table class="dtTABLE" cellspacing="0">
+             <tr valign="top"><th>序号</th><th>列名</th><th>数据类型</th><th>长度</th><th>小数位</th><th>标识</th><th>主键</th><th>允许空</th><th>默认值</th><th>字段说明</th></tr>
+             <tr valign="top"><td>1</td><td>ViseCostCode</td><td>int</td><td>4</td><td>0</td><td>√</td><td>√</td><td></td><td></td><td>签证费用明细代码</td></tr>
+             <tr valign="top"><td>2</td><td>CostCode</td><td>varchar</td><td>50</td><td>0</td><td></td><td></td><td>√</td><td></td><td>费用项代码</td></tr>
+             <tr valign="top"><td>3</td><td>CostBudgetSetCode</td><td>varchar</td><td>50</td><td>0</td><td></td><td></td><td>√</td><td></td><td>预算设置表代码</td></tr>
+             <tr valign="top"><td>4</td><td>PBSCode</td><td>varchar</td><td>50</td><td>0</td><td></td><td></td><td>√</td><td></td><td>单位工程代码</td></tr>
+             <tr valign="top"><td>5</td><td>PBSType</td><td>varchar</td><td>50</td><td>0</td><td></td><td></td><td>√</td><td></td><td>单位工程类型</td></tr>
+             <tr valign="top"><td>6</td><td>Money</td><td>decimal</td><td>9</td><td>3</td><td></td><td></td><td>√</td><td></td><td>人民币金额</td></tr>
+             <tr valign="top"><td>7</td><td>OtherMoney</td><td>decimal</td><td>9</td><td>3</td><td></td><td></td><td></td><td></td><td>币种金额</td></tr>
+             <tr valign="top"><td>8</td><td>OtherMoneyType</td><td>varchar</td><td>50</td><td>0</td><td></td><td></td><td></td><td></td><td>币种</td></tr>
+             <tr valign="top"><td>9</td><td>OtherMoneyRate</td><td>decimal</td><td>9</td><td>3</td><td></td><td></td><td></td><td></td><td>汇率</td></tr>
+             <tr valign="top"><td>10</td><td>Remark</td><td>varchar</td><td>2000</td><td>0</td><td></td><td></td><td></td><td></td><td>备注</td></tr>
+             <tr valign="top"><td>11</td><td>State</td><td>int</td><td>4</td><td>0</td><td></td><td></td><td></td><td></td><td>状态</td></tr>
+             <tr valign="top"><td>12</td><td>Flag</td><td>int</td><td>4</td><td>0</td><td></td><td></td><td></td><td></td><td>标识</td></tr>
+             <tr valign="top"><td>13</td><td>ViseCode</td><td>int</td><td>4</td><td>0</td><td></td><td></td><td></td><td></td><td>签证代码</td></tr>
+             <tr valign="top"><td>14</td><td>CheckMoney</td><td>decimal</td><td>9</td><td>3</td><td></td><td></td><td></td><td></td><td>签证审批金额</td></tr>
+             </table>
+             </remarks>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._ViseCostCode">
+            <summary>
+            代码（SqlServer自动生成）
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._CostCode">
+            <summary>
+            费用项代码
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._CostBudgetSetCode">
+            <summary>
+            预算设置表代码
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._PBSCode">
+            <summary>
+            单位工程代码
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._PBSType">
+            <summary>
+            单位工程类型
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._Money">
+            <summary>
+            人民币金额
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._CheckMoney">
+            <summary>
+            审批金额
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._OtherMoney">
+            <summary>
+            币种金额
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._OtherMoneyType">
+            <summary>
+            金额币种
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._OtherMoneyRate">
+            <summary>
+            汇率
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._Flag">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseCostModel._ViseCode">
+            <summary>
+            签证代码
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.ViseCostCode">
+            <summary>
+            代码（SqlServer自动生成）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.CostCode">
+            <summary>
+            费用项代码
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.CostBudgetSetCode">
+            <summary>
+            预算设置表代码
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.PBSCode">
+            <summary>
+            单位工程代码
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.PBSType">
+            <summary>
+            单位工程类型
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.Money">
+            <summary>
+            人民币金额
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.CheckMoney">
+            <summary>
+            审批金额
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.OtherMoney">
+            <summary>
+            币种金额
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.OtherMoneyType">
+            <summary>
+            金额币种
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.OtherMoneyRate">
+            <summary>
+            汇率
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.Flag">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostModel.ViseCode">
+            <summary>
+            签证代码
+            </summary>
+        </member>
+        <member name="T:TiannuoPM.MODEL.LocaleViseCostQueryModel">
+            ################################################################################################
+             <summary>
+             <para>摘要：签证费用明细查询规则类。</para>
+             <para>说明：签证费用明细查询规则封装</para>
+             <para>Programmer： clm</para>
+             <para>Email： nmgclm626@hotmail.com</para>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="T:TiannuoPM.MODEL.QueryBaseModel">
+            ################################################################################################
+             <summary>
+             <para>摘要：查询规则基类。</para>
+             <para>说明：所有查询规则类都继承于该类。</para>
+             <para>Programmer： clm</para>
+             <para>Email： nmgclm626@hotmail.com</para>
+             </summary>
+            ################################################################################################
+        </member>
+        <member name="F:TiannuoPM.MODEL.QueryBaseModel._SortColumns">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.QueryBaseModel._StartRecord">
+            <summary>
+            分页开始索引
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.QueryBaseModel._MaxRecords">
+            <summary>
+            分页结束索引
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.QueryBaseModel._QueryConditionStr">
+            <summary>
+            查询条件sql语句表达式
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.QueryBaseModel._Parameters">
+            <summary>
+            查询条件参数列表
+            </summary>
+        </member>
+        <member name="M:TiannuoPM.MODEL.QueryBaseModel.InsertParameter(System.String,System.Data.SqlDbType,System.Int32,System.Object)">
+            <summary>
+            添加参数
+            </summary>
+            <param name="ParameterName">参数名称</param>
+            <param name="ParameterType">类型</param>
+            <param name="Size">长度</param>
+            <param name="Value">值</param>
+            <returns>参数对象</returns>
+        </member>
+        <member name="M:TiannuoPM.MODEL.QueryBaseModel.QueryConditionStrAdd(System.String)">
+            <summary>
+            添加条件表达式
+            </summary>
+            <param name="ConditionStr">条件表达式</param>
+        </member>
+        <member name="P:TiannuoPM.MODEL.QueryBaseModel.SortColumns">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.QueryBaseModel.StartRecord">
+            <summary>
+            分页开始索引
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.QueryBaseModel.MaxRecords">
+            <summary>
+            分页结束索引
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.QueryBaseModel.QueryConditionStr">
+            <summary>
+            查询条件sql语句表达式
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.QueryBaseModel.Parameters">
+            <summary>
+            查询条件参数列表
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostQueryModel.ViseCostCode">
+            <summary>
+            签证费用明细主键（完全匹配）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseCostQueryModel.ViseCode">
+            <summary>
+            签证主键（签证代码完全匹配）
+            </summary>
+        </member>
+        <member name="T:TiannuoPM.MODEL.LocaleViseModel">
+            ################################################################################################
+            <summary>
+            <para>摘要：签证模型类。</para>
+            <para>说明：签证字段描述模型</para>
+            <para>Programmer： clm</para>
+            <para>Email： nmgclm626@hotmail.com</para>
+            <remarks>
+            对应数据库表：LocaleVise
+            <table class="dtTABLE" cellspacing="0">
+            <tr valign="top"><th>序号</th><th>列名</th><th>数据类型</th><th>长度</th><th>小数位</th><th>标识</th><th>主键</th><th>允许空</th><th>默认值</th><th>字段说明</th></tr>
+            <tr valign="top"><td>1</td><td>ViseCode</td><td>int</td><td>4</td><td>0</td><td>√</td><td>√</td><td></td><td></td><td>签证代码</td></tr>
+            <tr valign="top"><td>2</td><td>ViseId</td><td>varchar</td><td>50</td><td>0</td><td></td><td></td><td>√</td><td></td><td>签证编号</td></tr>
+            <tr valign="top"><td>3</td><td>ViseName</td><td>varchar</td><td>50</td><td>0</td><td></td><td></td><td>√</td><td></td><td>签证名称</td></tr>
+            <tr valign="top"><td>4</td><td>ViseDate</td><td>datetime</td><td>8</td><td>3</td><td></td><td></td><td>√</td><td></td><td>签证日期</td></tr>
+            <tr valign="top"><td>5</td><td>ViseType</td><td>varchar</td><td>50</td><td>0</td><td></td><td></td><td>√</td><td></td><td>签证类别(isContract为合同类型，noContract为非合同类型)</td></tr>
+            <tr valign="top"><td>6</td><td>VisePerson</td><td>varchar</td><td>50</td><td>0</td><td></td><td></td><td>√</td><td></td><td>签证经办人</td></tr>
+            <tr valign="top"><td>7</td><td>ViseSupplier</td><td>varchar</td><td>50</td><td>0</td><td></td><td></td><td>√</td><td></td><td>签证承包商</td></tr>
+            <tr valign="top"><td>8</td><td>ViseUnit</td><td>varchar</td><td>50</td><td>0</td><td></td><td></td><td>√</td><td></td><td>签证部门</td></tr>
+            <tr valign="top"><td>9</td><td>ViseEndDate</td><td>datetime</td><td>8</td><td>3</td><td></td><td></td><td>√</td><td></td><td>签证期限</td></tr>
+            <tr valign="top"><td>10</td><td>ViseRemark</td><td>varchar</td><td>2000</td><td>0</td><td></td><td></td><td>√</td><td></td><td>签证备注</td></tr>
+            <tr valign="top"><td>11</td><td>ViseScrutiny</td><td>varchar</td><td>2000</td><td>0</td><td></td><td></td><td>√</td><td></td><td>签证监理</td></tr>
+            <tr valign="top"><td>12</td><td>ViseReason</td><td>varchar</td><td>2000</td><td>0</td><td></td><td></td><td>√</td><td></td><td>签证事由</td></tr>
+            <tr valign="top"><td>13</td><td>ViseStatus</td><td>int</td><td>4</td><td>0</td><td></td><td></td><td>√</td><td></td><td>签证状态（审核状态：1为待审，2为审核中，3为审核通过，4为审核未通过）</td></tr>
+            <tr valign="top"><td>14</td><td>ViseBalanceStatus</td><td>int</td><td>4</td><td>0</td><td></td><td></td><td>√</td><td></td><td>结算状态（1为未结算，2为已结算，3为待结算）</td></tr>
+            <tr valign="top"><td>15</td><td>ViseProject</td><td>varchar</td><td>50</td><td>0</td><td></td><td></td><td>√</td><td></td><td>签证所属项目（项目代码）</td></tr>
+            <tr valign="top"><td>16</td><td>ViseContractCode</td><td>varchar</td><td>50</td><td>0</td><td></td><td></td><td>√</td><td></td><td>签证相关合同（合同代码）</td></tr>
+            <tr valign="top"><td>17</td><td>ViseReasonItem</td><td>varchar</td><td>8000</td><td>0</td><td></td><td></td><td>√</td><td></td><td>签证原因子项</td></tr>
+            <tr valign="top"><td>17</td><td>ViseComeToMoney</td><td>decamil</td><td>18</td><td>3</td><td></td><td></td><td>√</td><td></td><td>同一合同累计签证</td></tr>
+            <tr valign="top"><td>20</td><td>ViseReferCode</td><td>int</td><td>4</td><td>0</td><td></td><td></td><td>√</td><td></td><td>事件缘由</td></tr>
+            </table>
+            </remarks>
+            </summary>
+            ################################################################################################
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseCode">
+            <summary>
+            代码（SqlServer自动生成）
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseId">
+            <summary>
+            签证编号
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseName">
+            <summary>
+            签证名称
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseDate">
+            <summary>
+            签证日期
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseType">
+            <summary>
+            签证类别(系统类别)
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._VisePerson">
+            <summary>
+            签证经办人（用户代码）
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseSupplier">
+            <summary>
+            签证承包商（供应商代码）
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseUnit">
+            <summary>
+            签证部门（部门代码）
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseEndDate">
+            <summary>
+            签证期限
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseRemark">
+            <summary>
+            签证备注
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseScrutiny">
+            <summary>
+            签证监理
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseReason">
+            <summary>
+            签证事由
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseStatus">
+            <summary>
+            签证状态（审核状态：1为待审，2为审核中，3为审核通过，4为作废）
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseBalanceStatus">
+            <summary>
+            结算状态（1为未结算，2为已结算,3为待结算）
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseProject">
+            <summary>
+            签证所属项目（项目代码）
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseContractCode">
+            <summary>
+            签证相关合同（合同代码）
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseReasonItem">
+            <summary>
+            签证原因子项
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseComeToMoney">
+            <summary>
+            同一合同累计签证
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseID2">
+            <summary>
+            施工单位编号
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.LocaleViseModel._ViseReferCode">
+            <summary>
+            事件缘由
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseCode">
+            <summary>
+            代码（SqlServer自动生成）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseId">
+            <summary>
+            签证编号
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseName">
+            <summary>
+            签证名称
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseDate">
+            <summary>
+            签证日期
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseType">
+            <summary>
+            签证类别(系统类别)
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.VisePerson">
+            <summary>
+            签证经办人（用户代码）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseSupplier">
+            <summary>
+            签证承包商（供应商代码）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseUnit">
+            <summary>
+            签证部门（部门代码）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseEndDate">
+            <summary>
+            签证期限
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseRemark">
+            <summary>
+            签证备注
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseScrutiny">
+            <summary>
+            签证监理
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseReason">
+            <summary>
+            签证事由
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseStatus">
+            <summary>
+            签证状态（审核状态：1为待审，2为审核中，3为审核通过，4为作废）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseBalanceStatus">
+            <summary>
+            结算状态（1为未结算，2为已结算,3为待结算）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseProject">
+            <summary>
+            签证所属项目（项目代码）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseContractCode">
+            <summary>
+            签证相关合同（合同代码）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseReasonItem">
+            <summary>
+            签证原因子项
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseComeToMoney">
+            <summary>
+            同一合同累计签证
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseID2">
+            <summary>
+            施工单位编号
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseModel.ViseReferCode">
+            <summary>
+            事件缘由
+            </summary>
+        </member>
+        <member name="T:TiannuoPM.MODEL.LocaleViseQueryModel">
+            ################################################################################################
+            <summary>
+            <para>摘要：签证查询规则类。</para>
+            <para>说明：签证查询规则的封装</para>
+            <para>Programmer： clm</para>
+            <para>Email： nmgclm626@hotmail.com</para>
+            </summary>
+            ################################################################################################
+        </member>
+        <member name="M:TiannuoPM.MODEL.LocaleViseQueryModel.GetStatusDataByEnum(TiannuoPM.MODEL.ViseStatusEnum)">
+            <summary>
+            根据签证审核状态枚举值取得数据表达式
+            </summary>
+            <param name="Value">枚举值</param>
+            <returns>数据表达式</returns>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseCode">
+            <summary>
+            签证代码（签证代码完全匹配）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseCodeInStr">
+            <summary>
+            签证代码（签证代码 in 查询）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseId">
+            <summary>
+            签证编号（签证ID完全匹配）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseName">
+            <summary>
+            签证名称（模糊查询）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseDateStart">
+            <summary>
+            签证日期下限
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseDateEnd">
+            <summary>
+            签证日期上限
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseEndDateStart">
+            <summary>
+            签证期限下限
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseEndDateEnd">
+            <summary>
+            签证期限上限
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseContractCode">
+            <summary>
+            合同相关签证查询（合同代码完全匹配）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseProject">
+            <summary>
+            所属项目(项目代码完全匹配)
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseUnit">
+            <summary>
+            签证部门(签证部门代码完全匹配)
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseSupplier">
+            <summary>
+            承包商(承包商代码完全匹配)
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.VisePerson">
+            <summary>
+            经办人(经办人代码完全匹配)
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseType">
+            <summary>
+            签证类别（完全匹配查询）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseID2">
+            <summary>
+            施工单位编号
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseReferCode">
+            <summary>
+            事件缘由
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseStatus">
+            <summary>
+            审核状态（审核状态代码完全匹配）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseBalanceStatus">
+            <summary>
+            结算状态（完全匹配查询）
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseStatusIn">
+            <summary>
+            <para>签证审核状态（In 查询）</para>
+            <para>签证状态也为审核状态，值为签证审核状态枚举 List 列表</para>
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseStatusInStr">
+            <summary>
+            <para>签证审核状态（In 查询，如：[1,2,3,4]）</para>
+            <para>签证状态也为审核状态：1为待审，2为审核中，3为审核通过，4为作废</para>
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseBalanceStatusIn">
+            <summary>
+            <para>签证结算状态（In 查询 ）</para>
+            <para>结算状态：值为签证结算枚举类型 List 列表</para>
+            </summary>
+        </member>
+        <member name="P:TiannuoPM.MODEL.LocaleViseQueryModel.ViseBalanceStatusInStr">
+            <summary>
+            <para>签证结算状态（In 查询 ，如：[1,2]）</para>
+            <para>结算状态：1为未结算，2为已结算</para>
+            </summary>
+        </member>
+        <member name="T:TiannuoPM.MODEL.ViseStatusEnum">
+            ----------------------------------------------------------
+            <summary>
+            签证审核状态
+            </summary>
+            ----------------------------------------------------------
+        </member>
+        <member name="F:TiannuoPM.MODEL.ViseStatusEnum.unknown">
+            <summary>
+            初始值
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.ViseStatusEnum.wait">
+            <summary>
+            待审
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.ViseStatusEnum.process">
+            <summary>
+            审核中
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.ViseStatusEnum.ispass">
+            <summary>
+            审核已通过
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.ViseStatusEnum.nopass">
+            <summary>
+            作废
+            </summary>
+        </member>
+        <member name="T:TiannuoPM.MODEL.ViseBalanceStatusEnum">
+            ----------------------------------------------------------
+            <summary>
+            签证结算状态
+            </summary>
+            ----------------------------------------------------------
+        </member>
+        <member name="F:TiannuoPM.MODEL.ViseBalanceStatusEnum.unknown">
+            <summary>
+            初始值
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.ViseBalanceStatusEnum.nobalance">
+            <summary>
+            未结算
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.ViseBalanceStatusEnum.waitbalance">
+            <summary>
+            待结算
+            </summary>
+        </member>
+        <member name="F:TiannuoPM.MODEL.ViseBalanceStatusEnum.isbalance">
+            <summary>
+            已结算
+            </summary>
+        </member>
+    </members>
+</doc>

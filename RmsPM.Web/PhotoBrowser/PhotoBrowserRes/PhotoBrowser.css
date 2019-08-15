@@ -1,0 +1,211 @@
+
+
+
+/* Style for all bodies. */
+body {
+  font-size: 10pt;
+  background-color: #FFFFFF;
+  color: #333333;
+  margin: 5;
+  font-family: Tahoma, Arial, sans-serif;
+
+}
+
+.headerRow
+{
+  background-color: #999999;
+  margin-top: 8;
+  margin-bottom: 8;
+  margin-left: 20;
+}
+
+.titleRow
+{
+  background-color: #CCCCCC;
+}
+
+/* Style for all table cells. */
+td {
+  font-size: 12px;
+}
+
+/* Put a border on all generated images */
+.image {
+  border:2px outset #333333; margin:5;
+}
+
+
+.thumbTable{
+  margin: 20;
+}
+
+.thumbLabel
+{
+	font-size: x-small;
+	text-transform: lowercase;
+	color: #0b0b49;
+}
+
+.thumbDetails{
+  font-size: 10px;
+  color: #333333;
+}
+
+.thumbComment{
+  color: #0B0B49;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 10px;
+  }
+
+
+
+/* Align the content of the cells on the index pages to the left and top. */
+.indexThumbCell {
+  text-align: left;
+  vertical-align: top;
+}
+
+/* Remove the margin under the images on the index pages. */
+#index .image {
+  margin-left: 2;
+  margin-right: 2;
+  margin-bottom: 0;
+}
+
+/* Don't have margins on the slide pages. */
+body#slide {
+  margin: 0;
+}
+
+/* Highlight the image name on the slide pages. */
+#slide .name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+/* Custom link styles */
+a:active {
+  text-decoration: underline;
+  color: #0B0B49
+}
+
+a:visited {
+  text-decoration: underline;
+  color: #0B0B49
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #0B0B49
+}
+
+a:link {
+  text-decoration: underline;
+  color: #333333
+}
+
+#imageinfo {
+  visibility: hidden;
+}
+
+.navImg {
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #000000;
+  border-right-color: #000000;
+  border-bottom-color: #000000;
+  border-left-color: #000000;
+  margin-top: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+}
+
+.smallText
+{
+  font-size: 10px;
+}
+
+
+.comments {
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 10pt;
+  color: #333333;
+}
+
+.tdNav {
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #0B0B49;
+  border-right-color: #0B0B49;
+  border-bottom-color: #0B0B49;
+  border-left-color: #0B0B49;
+}
+.mainImage {
+  border-top-width: #000000;
+  border-right-width: #000000;
+  border-bottom-width: #000000;
+  border-left-width: #000000;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #000000;
+  border-right-color: #000000;
+  border-bottom-color: #000000;
+  border-left-color: #000000;
+}
+.indexTitle {
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0B0B49;
+}
+
+.subtitle {
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  margin-top: 4;
+  margin-bottom: 8;
+}
+
+.pageNavCell {
+  font-family: Tahoma, Arial, sans-serif;
+  text-align: center;
+  vertical-align: middle;
+}
+.darkText {
+  color: #0B0B49;
+}
+.pageNumLink {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  text-decoration: underline;
+}
+.currentPageNum {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bolder;
+  color: #0B0B49;
+}
+
+
+input.text
+{
+	font-family: Tahoma, Arial;
+}

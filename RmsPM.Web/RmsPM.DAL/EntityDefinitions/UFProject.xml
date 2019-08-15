@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>UFProject</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>UFProject</Name>
+		<Column>
+			<Name>UFProjectCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>true</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Column>
+			<Name>UFProjectName</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>true</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>Select</Name>
+			<String> select  UFProjectCode, UFProjectName from UFProject where  UFProjectCode=@UFProjectCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@UFProjectCode</Name>
+				<Column>UFProjectCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String> select  UFProjectCode, UFProjectName from UFProject</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>Insert</Name>
+			<String> Insert into UFProject (  UFProjectCode, UFProjectName ) values (  @UFProjectCode, @UFProjectName )</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@UFProjectCode</Name>
+				<Column>UFProjectCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@UFProjectName</Name>
+				<Column>UFProjectName</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Update</Name>
+			<String> Update UFProject set UFProjectName=@UFProjectName where  UFProjectCode=@UFProjectCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@UFProjectCode</Name>
+				<Column>UFProjectCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@UFProjectName</Name>
+				<Column>UFProjectName</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Delete</Name>
+			<String> Delete from UFProject  where  UFProjectCode=@UFProjectCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@UFProjectCode</Name>
+				<Column>UFProjectCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+	</Table>
+</Entity>

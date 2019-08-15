@@ -1,0 +1,3552 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RadEditor.Net2</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.WebControls.RadEditorUtils.InternalDialogParametersSerializer">
+            <summary>
+            Summary description for DialogParametersSerializer.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider">
+            <summary>
+            Provides storage independent mechanism for uploading files and 
+            populating the content of the FileBrowser dialog controls.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.#ctor(System.Web.HttpContext,System.String[],System.String[],System.String[],System.String[],System.String,System.String)">
+            <summary>
+            Creates a new instance of the class. Used internally by RadEditor to create instances of the content provider
+            in its dialog windows.
+            </summary>
+            <param name="context">The current HttpContext.</param>
+            <param name="searchPatterns">Search patterns for files. Allows wildcards.</param>
+            <param name="viewPaths">The paths which will be displayed in the dialog. This is passed by RadEditor and is 
+            one of the values of ImagesPaths, DocumentsPaths, MediaPaths, FlashPaths, TemplatesPaths properties. You can disregard
+            this value if you have custom mechanism for determining the rights for directory / file displaying.</param>
+            <param name="uploadPaths">The paths which will allow uploading in the dialog. This is passed by RadEditor and is 
+            one of the values of UploadImagesPaths, UploadDocumentsPaths, UploadMediaPaths, UploadFlashPaths, 
+            UploadTemplatesPaths properties. You can disregard this value if you have custom mechanism for determining the rights
+            for uploading.</param>
+            <param name="deletePaths">The paths which will allow deleting in the dialog. This is passed by RadEditor and is 
+            one of the values of DeleteImagesPaths, DeleteDocumentsPaths, DeleteMediaPaths, DeleteFlashPaths, 
+            DeleteTemplatesPaths properties. You can disregard this value if you have custom mechanism for determining the rights
+            for deleting.</param>
+            <param name="selectedUrl">The selected url in the file browser. The file browser will navigate to the item
+            which has this url.</param>
+            <param name="selectedItemTag">The selected tag in the file browser. The file browser will navigate to the
+            item which has this tag.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.ResolveRootDirectoryAsList(System.String)">
+            <summary>
+            Resolves a root directory with the given path in list mode.
+            </summary>
+            <param name="path">The virtual path of the directory.</param>
+            <returns>A DirectoryItem array, containing the root directory and all child directories.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.ResolveRootDirectoryAsTree(System.String)">
+            <summary>
+            Resolves a root directory with the given path in tree mode.
+            </summary>
+            <param name="path">The virtual path of the directory.</param>
+            <returns>A DirectoryItem, containing the root directory.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.ResolveDirectory(System.String)">
+            <summary>
+            Resolves a directory with the given path.
+            </summary>
+            <param name="path">The virtual path of the directory.</param>
+            <returns>A DirectoryItem, containing the directory.</returns>
+            <remarks>
+            Used mainly in the Ajax calls.
+            </remarks>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.GetFileName(System.String)">
+            <summary>
+            Get the name of the file with the given url.
+            </summary>
+            <param name="url">The url of the file.</param>
+            <returns>String containing the file name.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.GetPath(System.String)">
+            <summary>
+            Gets the virtual path of the item with the given url.
+            </summary>
+            <param name="url">The url of the item.</param>
+            <returns>String containing the path of the item.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.GetFile(System.String)">
+            <summary>
+            Gets a read only Stream for accessing the file item with the given url.
+            </summary>
+            <param name="url">The url of the file.</param>
+            <returns>Stream for accessing the contents of the file item with the given url.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.StoreBitmap(System.Drawing.Bitmap,System.String,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Stores an image with the given url and image format.
+            </summary>
+            <param name="bitmap">The Bitmap object to be stored.</param>
+            <param name="url">The url of the bitmap.</param>
+            <param name="format">The image format of the bitmap.</param>
+            <returns>string.Empty when the operation was successful; otherwise an error message token.</returns>
+            <remarks>
+            Used when creating thumbnails in the ImageManager dialog.
+            </remarks>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.StoreFile(System.Web.HttpPostedFile,System.String,System.String,System.String[])">
+            <summary>
+            Creates a file item from a HttpPostedFile to the given path with the given name.
+            </summary>
+            <param name="file">The uploaded HttpPostedFile to store.</param>
+            <param name="path">The virtual path where the file item should be created.</param>
+            <param name="name">The name of the file item.</param>
+            <param name="arguments">Additional values to be stored such as Description, DisplayName, etc.</param>
+            <returns>String containing the full virtual path (including the file name) of the file item.</returns>
+            <remarks>
+            The default FileUploader control does not include the arguments parameter. If you need additional arguments
+            you should create your own FileUploader control.
+            </remarks>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.DeleteFile(System.String)">
+            <summary>
+            Deletes the file item with the given virtual path.
+            </summary>
+            <param name="path">The virtual path of the file item.</param>
+            <returns>string.Empty when the operation was successful; otherwise an error message token.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.DeleteDirectory(System.String)">
+            <summary>
+            Deletes the directory item with the given virtual path.
+            </summary>
+            <param name="path">The virtual path of the directory item.</param>
+            <returns>string.Empty when the operation was successful; otherwise an error message token.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.CreateDirectory(System.String,System.String)">
+            <summary>
+            Creates a directory item in the given path with the given name.
+            </summary>
+            <param name="path">The path where the directory item should be created.</param>
+            <param name="name">The name of the new directory item.</param>
+            <returns>string.Empty when the operation was successful; otherwise an error message token.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.RemoveProtocolNameAndServerName(System.String)">
+            <summary>
+            Removes the protocol and the server names from the given url.
+            </summary>
+            <param name="url">Fully qualified url to a file or directory item.</param>
+            <returns>The root based absolute path.</returns>
+            <remarks>
+            <p>
+            Url: http://www.myserver.com/myapp/mydirectory/myfile
+            Result: /myapp/mydirectory/myfile
+            </p>
+            <p>
+            Url: www.myserver.com/myapp/mydirectory/myfile
+            Result: /myapp/mydirectory/myfile
+            </p>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.DisplayMode">
+            <summary>
+            The current display mode of the content provider. Can be FileBrowserDisplayMode.Tree or FileBrowserDisplayMode.List. 
+            The value of this property is set by the FileBrowser control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.CanCreateDirectory">
+            <summary>
+            Gets a value indicating whether the ContentProvider can create directory items or not. The visibility of the 
+            Create New Folder icon is controlled by the value of this property.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.Context">
+            <summary>
+            The HttpContext object, set in the constructor of the class.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.SelectedUrl">
+            <summary>
+            Gets or sets the url of the selected item. The file browser will navigate to the item
+            which has this url.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.SelectedItemTag">
+            <summary>
+            Gets or sets the tag of the selected item. The file browser will navigate to the item
+            which has this tag. Used mainly in Database content providers, where the file items have
+            special url for accessing.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.SearchPatterns">
+            <summary>
+            Gets the search patterns for the file items to be displayed in the FileBrowser control. This property
+            is set in the constructor of the class. Supports wildcards.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.ViewPaths">
+            <summary>
+            Gets the paths which will be displayed in the dialog. This is passed by RadEditor and is 
+            one of the values of ImagesPaths, DocumentsPaths, MediaPaths, FlashPaths, TemplatesPaths properties. 
+            You can disregard this value if you have custom mechanism for determining the rights for 
+            directory / file displaying.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.UploadPaths">
+            <summary>
+            Gets the paths which will allow uploading in the dialog. This is passed by RadEditor and is 
+            one of the values of UploadImagesPaths, UploadDocumentsPaths, UploadMediaPaths, UploadFlashPaths, 
+            UploadTemplatesPaths properties. You can disregard this value if you have custom mechanism for determining the rights
+            for uploading.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileBrowserContentProvider.DeletePaths">
+            <summary>
+            The paths which will allow deleting in the dialog. This is passed by RadEditor and is 
+            one of the values of DeleteImagesPaths, DeleteDocumentsPaths, DeleteMediaPaths, DeleteFlashPaths, 
+            DeleteTemplatesPaths properties. You can disregard this value if you have custom mechanism for determining the rights
+            for deleting.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.DirectoryItem">
+            <summary>
+            Represents a directory item in the FileBrowser control.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.FileBrowserItem">
+            <summary>
+            The base class of the FileItem and DirectoryItem classes. Contains the common functionality.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserItem.Serialize(System.IO.StringWriter)">
+            <summary>
+            Serializes the item into a javascript array. This method should be overriden only when developing 
+            a custom FileBrowser control.
+            </summary>
+            <param name="writer">a StringWriter used as a target for the serialization.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserItem.WriteJavascriptString(System.IO.StringWriter,System.String)">
+            <summary>
+            Utility method used when serializing. Escapes a string for javascript.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserItem.WriteSeparator(System.IO.StringWriter)">
+            <summary>
+            Utility method used when serializing. Writes a javascript array separator.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserItem.RemoveLastSeparator(System.IO.StringWriter)">
+            <summary>
+            Utility method used when serializing. Removes the last javascript array separator from the underlying
+            StringBuilder of writer.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileBrowserItem.SerializeAttributes(System.IO.StringWriter)">
+            <summary>
+            Serializes the Attributes array.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileBrowserItem.Attributes">
+            <summary>
+            Gets or sets a string array containing custom values which can be used on the client when 
+            customizing the FileBrowser control.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.DirectoryItem.ClearDirectories">
+            <summary>
+            Clears the Directories array. Can be used when building the directory list in List mode.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.DirectoryItem.Serialize(System.IO.StringWriter)">
+            <summary>
+            Serializes the directory item into a javascript array. This method should be overriden only when developing 
+            a custom FileBrowser control.
+            </summary>
+            <param name="writer">a StringWriter used as a target for the serialization.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.DirectoryItem.SerializeContent(System.IO.StringWriter)">
+            <summary>
+            Serializes the children of the directory item as a javascript array. 
+            Recursively calls the Serialize methods of all child objects.
+            </summary>
+            <param name="writer">a StringWriter used as a target for the serialization.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.DirectoryItem.#ctor(System.String,System.String,System.String,System.String,Telerik.WebControls.RadEditorUtils.PathPermissions,Telerik.WebControls.RadEditorUtils.FileItem[],Telerik.WebControls.RadEditorUtils.DirectoryItem[])">
+            <summary>
+            Creates an instance of the DirectoryItem class.
+            </summary>
+            <param name="name">The name of the directory item.</param>
+            <param name="location">The location of the directory item. To let the FileBrowser control 
+            automatically build its path you should set this parameter to string.Empty. If the DirectoryItem is a
+            root item, this parameter must contain the virtual location of the item.</param>
+            <param name="fullPath">The full virtual path of the directory item. Used by the ContentProvider for 
+            populating the Directories and Files properties.</param>
+            <param name="tag">The tag of the directory item. Used when the virtual path must be different than the url of the item. 
+            When the value of this property is set, the FileBrowser control uses it instead of the combined virtual path.</param>
+            <param name="permissions">The permissions for this directory item.</param>
+            <param name="files">A FileItem array containing all child file items.</param>
+            <param name="directories">A DirectoryItem array containing all child directory items.</param>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.DirectoryItem.FullPath">
+            <summary>
+            Gets the full virtual path to the directory item.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.DirectoryItem.Location">
+            <summary>
+            Gets the virtual location of the directory item. When the item is not root, the value
+            of this property should be string.Empty. The FileBrowser control recursively combines the names 
+            of all parent directory items in order to get the full virtual path of the item.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.DirectoryItem.Name">
+            <summary>
+            Gets the name of the directory item. The value of this property is displayed in the FileBrowser control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.DirectoryItem.Permissions">
+            <summary>
+            Gets the permissions for this directory item.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.DirectoryItem.Tag">
+            <summary>
+            Gets the tag of the directory item. Used when the virtual path must be different than the url of the item. 
+            When the value of this property is set, the FileBrowser control uses it instead of the combined virtual path.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.DirectoryItem.Directories">
+            <summary>
+            Gets a DirectoryItem array containing all child directory items.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.DirectoryItem.Files">
+            <summary>
+            Gets a FileItem array containing all child file items.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.Ide.Common.RadEditor.ProjectManagement">
+            <summary>
+            Utility class for Design - Time VisualStudio.NET project management.
+            </summary>
+        </member>
+        <member name="T:Telerik.RadEditorUtils.PropertyCategory">
+            <summary>
+            Defines the common property categories' names
+            </summary>
+        </member>
+        <member name="P:Telerik.RadEditorUtils.RadControl.Version">
+            <summary>Gets the component's current version.</summary>
+        </member>
+        <member name="P:Telerik.RadEditorUtils.RadControl.UseEmbeddedScripts">
+            <summary>
+            Gets or sets a value indicating whether to use the embedded JavaScript files or not.
+            </summary>
+            <value>
+            	<strong>True</strong> if embedded JavaScript files are to be used; otherwise
+            <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            Use this property for debugging purposes or to apply any modifications to the
+            JavaScript files.
+            </remarks>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.IncludeScriptsBuilder">
+            <summary>
+            Create include script tag for every .js file form a given start directory and below
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.CaseFolding">
+            <summary>
+            SGML is case insensitive, so here you can choose between converting
+            to lower case or upper case tags.  "None" means that the case is left
+            alone, except that end tags will be folded to match the start tags.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.HWStack">
+            <summary>
+            This stack maintains a high water mark for allocated objects so the client
+            can reuse the objects in the stack to reduce memory allocations, this is
+            used to maintain current state of the parser for element stack, and attributes
+            in each element.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.Attribute">
+            <summary>
+            This class represents an attribute.  The AttDef is assigned
+            from a validation process, and is used to provide default values.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.Attribute.Reset(System.String,System.String,System.Char)">
+            <summary>
+            Attribute objects are reused during parsing to reduce memory allocations,
+            hence the Reset method.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.Node">
+            <summary>
+            This class models an XML node, an array of elements in scope is maintained while parsing
+            for validation purposes, and these Node objects are reused to reduce object allocation,
+            hence the reset method.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.Node.Reset(System.String,System.Xml.XmlNodeType,System.String)">
+            <summary>
+            Attribute objects are reused during parsing to reduce memory allocations,
+            hence the Reset method.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.SgmlReader">
+            <summary>
+            SgmlReader is an XmlReader API over any SGML document (including built in
+            support for HTML).
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.SgmlReader.SetBaseUri(System.String)">
+            <summary>
+            The base Uri is used to resolve relative Uri's like the SystemLiteral and
+            Href properties.  This is a method because BaseURI is a read-only
+            property on the base XmlReader class.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.SgmlReader.Dtd">
+            <summary>
+            Specify the SgmlDtd object directly.  This allows you to cache the Dtd and share
+            it across multipl SgmlReaders.  To load a DTD from a URL use the SystemLiteral property.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.SgmlReader.DocType">
+            <summary>
+            The name of root element specified in the DOCTYPE tag.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.SgmlReader.PublicIdentifier">
+            <summary>
+            The PUBLIC identifier in the DOCTYPE tag
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.SgmlReader.SystemLiteral">
+            <summary>
+            The SYSTEM literal in the DOCTYPE tag identifying the location of the DTD.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.SgmlReader.InternalSubset">
+            <summary>
+            The DTD internal subset in the DOCTYPE tag
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.SgmlReader.InputStream">
+            <summary>
+            The input stream containing SGML data to parse.
+            You must specify this property or the Href property before calling Read().
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.SgmlReader.WebProxy">
+            <summary>
+            Sometimes you need to specify a proxy server in order to load data via HTTP
+            from outside the firewall.  For example: "itgproxy:80".
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.SgmlReader.Href">
+            <summary>
+            Specify the location of the input SGML document as a URL.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.SgmlReader.StripDocType">
+            <summary>
+            Whether to strip out the DOCTYPE tag from the output (default true)
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.SgmlReader.ErrorLog">
+            <summary>
+            DTD validation errors are written to this stream.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.SgmlReader.ErrorLogFile">
+            <summary>
+            DTD validation errors are written to this log file.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.ContextMenu">
+            <summary>
+            Specifies a context menu for an HTML element.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.ContextMenu.#ctor">
+            <summary>
+            Creates a new instance of a context menu for the default element.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.ContextMenu.#ctor(System.String)">
+            <summary>
+            Creates a new instance of a context menu for an element with the specified tag name
+            </summary>
+            <param name="forElement">The tag name of the element the context menu will be for.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.ContextMenu.#ctor(System.String,System.Boolean)">
+            <summary>
+            Creates a new instance of a context menu for an element with the specified tag name
+            </summary>
+            <param name="forElement">The tag name of the element the context menu will be for.</param>
+            <param name="isEnabled">Indicates if the context menu is enabled.</param>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.ContextMenu.IsEnabled">
+            <summary>
+            Gets or sets a value indicating if the context menu is enabled.
+            </summary>
+            <value>A boolean indicating if the context menu is enabled. The default 
+            is <strong>true</strong>.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.ContextMenu.ForElement">
+            <summary>
+            Gets or sets the tag name of the element the context menu is for.
+            </summary>
+            <value>
+            A string, representing the tag name of the element the context menu is for. The default 
+            value is <strong>*</strong>, representing the default element (includes all elements not 
+            having context menus specified).
+            </value>
+            <example>
+                This example will create a Context menu for images.
+                <code lang="CS" title="AddContextMenuCS">
+            ContextMenu imageContextMenu = new ContextMenu();
+            imageContextMenu.ForElement = "IMG";
+            imageContextMenu.Tools.Add(new ToolbarButton("SetImageProperties"));
+            RadEditor1.ContextMenus.Add(imageContextMenu);
+                </code>
+            	<code lang="VB" title="AddContextMenuVB">
+            Dim imageContextMenu As ContextMenu = New ContextMenu()
+            imageContextMenu.ForElement = "IMG"
+            imageContextMenu.Tools.Add(New ToolbarButton("SetImageProperties"))
+            RadEditor1.ContextMenus.Add(imageContextMenu)
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.ContextMenu.Tools">
+            <summary>
+            Gets or sets the collection of tools the context menu will contain.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.DialogParametersDictionary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.DialogParametersMode">
+            <summary>
+            Provides enumerated values specifying how the editor will pass the
+            <see cref="P:Telerik.WebControls.RadEditor.DialogParametersMode">parameters</see> to its
+            dialogs.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.DialogParametersMode.Javascript">
+            <summary>
+            The dialog parameters are serialized and rendered between 
+            the editor tags. This increases the control's html size a bit, but 
+            makes posible the usage of the control in a web farm and eliminates the 
+            problems when the session or the cookie expires.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.DialogParametersMode.Session">
+            <summary>
+            The dialog parameters are stored in the Session. This mode minimizes
+            the size of the control html. It cannot be used when the SessionState is disabled and is 
+            prone to problems when the Session expires before the dialog is opened.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.DialogParametersMode.Cookie">
+            <summary>
+            The dialog parameters are stored in the application Cache; à cookie 
+            is used to transport the Cache object key. This mode also 
+            minimizes the size of the control html. It cannot be used on web farms and is 
+            prone to problems when the cookie expires before the dialog is opened.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.JavaScriptSerializer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.Link.Add(Telerik.WebControls.RadEditorUtils.Link)">
+            <summary>
+            
+            </summary>
+            <param name="link"></param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.Link.Remove(Telerik.WebControls.RadEditorUtils.Link)">
+            <summary>
+            
+            </summary>
+            <param name="link"></param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.Link.RemoveAt(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.Link.Clear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.Link.GetChildLink(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="linkName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Telerik.WebControls.EditorFileOptions">
+            <summary>
+            Provides enumerated values to be used to set image/flash/media/document files
+            permissions.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorFileOptions.Browse">
+            <summary>
+            Appoints that the user will be able to browse the specified server
+            path(s).
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorFileOptions.Delete">
+            <summary>
+            Appoints that the user will be able to delete files from the specified server
+            path(s).
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorFileOptions.Upload">
+            <summary>
+            Appoints that the user will be able to upload files to the specified server
+            path(s).
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorFileOptions.All">
+            <summary>
+            Appoints that the user will be able to browse/delete/upload files to the
+            specified server path(s).
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.EditorFileTypes">
+            <summary>Provides enumerated values to be used to set file(s) types.</summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorFileTypes.Images">
+            <summary>
+            	Specifies an image file type.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorFileTypes.Flash">
+            <summary>
+            	Specifies a flash file type.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorFileTypes.Media">
+            <summary>
+            	Specifies a media file type.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorFileTypes.Template">
+            <summary>
+            	Specifies a document file type.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorFileTypes.Documents">
+            <summary>
+            	Specifies a document file type.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorFileTypes.All">
+            <summary>
+            	Specifies a general file type.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.EditorStripFormattingOptions">
+            <summary>
+            	<para>Provides enumerated values to be used to set format cleaning options on
+                paste.</para>
+            	<para>This enumeration has a <strong>FlagsAttribute</strong> attribute that allows
+                a bitwise combination of its member values.</para>
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorStripFormattingOptions.None">
+            <summary>Doesn't strip anything on paste, asks a question when MS Word formatting detected.</summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorStripFormattingOptions.NoneSupressCleanMessage">
+            <summary>Doesn't strip anything on paste and does not ask a question.</summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorStripFormattingOptions.MSWord">
+            <summary>Strips only MSWord related attributes and tags on paste.</summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorStripFormattingOptions.MSWordNoFonts">
+            <summary>Strips the MSWord related attributes and tags and font tags on paste.</summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorStripFormattingOptions.MSWordRemoveAll">
+            <summary>
+            Strips MSWord related attributes and tags, font tags and font size attributes on
+            paste.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorStripFormattingOptions.Css">
+            <summary>Removes style attributes on paste.</summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorStripFormattingOptions.Font">
+            <summary>Removes Font tags on paste.</summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorStripFormattingOptions.Span">
+            <summary>Clears Span tags on paste.</summary>
+        </member>
+        <member name="F:Telerik.WebControls.EditorStripFormattingOptions.All">
+            <summary>Remove all HTML formatting on paste.</summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditor">
+            <summary>
+            <strong>t</strong>elerik r.a.d.editor is the leading WYSIWYG rich-text editor for ASP.NET.
+            It can replace any TextBox with an intuitive Word®-like editor, which enables even
+            non-technical users to author and manage HTML content as easily as writing a document.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadEditor.BASE_LOCALIZATION_SCRIPT_LABEL">
+            <summary>
+            Used as a base for the RegisterStartupScript method when localization script will be put to the page
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadEditor.DEFAULT_IMAGE_FILTERS">
+            <summary>
+            The relative location of the localization files in relation to the RadControlsDir
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditor.SetPaths(System.String[],Telerik.WebControls.EditorFileTypes,Telerik.WebControls.EditorFileOptions)">
+            <summary>
+            Sets image/flash/media/document file paths in accordance to the fileTypes and
+            fileOptions parameters.
+            </summary>
+            <param name="paths">The paths that have to be set.</param>
+            <param name="fileTypes">A bitwise OR combination of EditorFileTypes enumeration values.</param>
+            <param name="fileOptions">A bitwise OR combination of EditorFileOptions enumeration values.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditor.LoadToolsFile(System.Xml.XmlDocument)">
+            <summary>
+            RadEditor can use a dynamically generated <strong>ToolsFile.xml</strong> instead
+            of the physical one which is located at
+            <strong><em>~/RadControls/Editor/ToolsFile.xml</em></strong>. You can pass it to the
+            editor as a parameter of the <strong>LoadToolsFile</strong>(System.Xml.XmlDocument)
+            method.
+            </summary>
+            <param name="xmlDocument">
+            The <strong>ToolsFile.xml</strong> file, which was dynamically generated in
+            codebehind.
+            </param>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.AllowThumbGeneration">
+            <summary>
+            Gets or sets the value indicating whether the user who accesses the page can
+            create thumbnails.
+            </summary>
+            <value>
+            	<strong>true</strong> when the uses who accesses the page can create thumbnail;
+            otherwise <strong>false</strong>. The default value is <strong>false</strong>.
+            </value>
+            <remarks>
+            	<para>RadEditor allows the users to generate thumbnails of existing images on the
+                web-server. The operation can be conducted from the Image Manager dialog.</para>
+            	<para>Use this property to limit the users who do not have proper permissions from
+                generating thumbnails.</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.CopyCssToFormatBlockTool">
+            <summary>
+            Gets or sets the value indicating whether RadEditor will insert the CSS classes
+            defined in the page into the [Format Block] dropdown.
+            </summary>
+            <value>
+            	<strong>true</strong> when the page's CSS classes are inserted into the
+            [Format Block] dropdown; otherwise <strong>false</strong>. The default
+            value is <strong>false</strong>.
+            </value>
+            <remarks>
+            <para>
+            	This functionality is useful when global styles are applied to H1, H2 and other
+            	elements.
+            </para>
+            <para>
+            	The RadEditor loading time can increase if the page contains lots of CSS classes.
+            </para>
+            </remarks>
+            
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Scheme">
+            <summary>
+            Gets or sets the name of the skin that is used by all editor components -
+            toolbars, dialogs, etc.
+            </summary>
+            <value>
+            A string containing the name of the currently used skin. The default value is
+            <strong>Default</strong>.
+            </value>
+            <remarks>
+            	<para>This property is obsolete. Please, use the Skin property
+            	instead.</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ToolsOnPage">
+            <summary>
+            Gets or sets a value indicating whether the RadEditor toolbar should appear on
+            the same page as the edited HTML or float over the page.
+            </summary>
+            <value>
+            	<strong>true</strong> if the RadEditor toolbar should appear on the same page as
+            	the edited HTML; otherwise <b>false</b>. The default is <b>true</b>.
+            </value>
+            <remarks>
+            <para>
+            	The system modules like the Tag Inspector, Properties Inspector, XHTML Validation
+            	Module, etc. cannot float.
+            </para>
+            <para>
+            	<strong>Note</strong>: The value of this property will override the value of
+            	<see cref="P:Telerik.WebControls.RadEditor.UseFixedToolbar">UseFixedToolbar</see>. If they are set with oposite values
+            	ToolsOnPage will be used.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.UseFixedToolbar">
+            <summary>
+            Gets or sets the value indicating whether the RadEditor toolbar will be docked at
+            the top of the page.
+            </summary>
+            <value>
+            	<strong>true</strong> when the RadEditor toolbar will be docked at the top of the
+            	page; otherwise <strong>false</strong>. The default value is <strong>false</strong>.
+            </value>
+            <remarks>
+            <para>
+            	Several editors can simulate usage of the same top toolbar if this property is
+            	set to <strong>true</strong>.
+            </para>
+            <para>
+            	<strong>Note</strong>: The value of this property will be overriden by the
+            	<see cref="P:Telerik.WebControls.RadEditor.ToolsOnPage">ToolsOnPage</see> value. If they are set with oposite values
+            	ToolsOnPage will be used.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.UseSession">
+            <summary>
+            Gets or sets the value indicating whether RadEditor should use session variables
+            or cookies to store its dialog related data.
+            </summary>
+            <value>
+            	<strong>true</strong> when session variables are used; <strong>false</strong>
+            	when cookies are used. The default value is <strong>false</strong>.
+            </value>
+            <remarks>
+            	<para>Both RadEditor and RadSpell can use the ASP.NET session and cookies to store
+                their dialog related data. The default method is a client-side cookie. The cookie
+                storage is limited and many controls on one form might use it completely. The Forms
+                authentication and ASP.NET session might use cookies as well, so cookie storage
+                depletion might affect them as well.</para>
+            	<para>Unless the web application's session state is disabled it is recommended to
+                set the value of the UseSession property to <strong>true</strong>.</para>
+            	<para>
+                    If the value of the UseSession property is set to <strong>false</strong>, the
+                    expiration period of the cookie can be controlled by using the
+                    <see cref="P:Telerik.WebControls.RadEditor.CookieExpirationTime">CookieExpirationTime</see> property.
+                </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.UseDiv">
+            <summary>
+            By using this property you switch between the DIV and IFRAME interpretation of r.a.d.editor.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ThumbSuffix">
+            <summary>
+            Gets or sets the suffix, which is added to the original file name of the image to
+            form the file name of its thumbnail.
+            </summary>
+            <value>
+            The filename suffix for the thumbnail images. The default value is
+            <strong>Thumbnail</strong>.
+            </value>
+            <example>
+            	<code lang="CS" title="[New Example]">
+            	</code>
+            </example>
+            <remarks>The suffix is used to separate the thumbnails from the real images.</remarks>
+            <seealso cref="P:Telerik.WebControls.RadEditor.AllowThumbGeneration">AllowThumbGeneration Property</seealso>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ToolsFile">
+            <summary>
+            Gets or sets a string containing the path to the XML toolbar configuration file.
+            </summary>
+            <value>The default is <strong>~/RadControls/Editor/ToolsFile.xml</strong>.</value>
+            <remarks>
+            	<para>Use "~" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para>You can also provide this property with an URL which returns a valid XML
+                toolbar configuration file, e.g. ~/Tools/MyToolsFile.aspx</para>
+            </remarks>
+            <requirements>RadEditor 5.0 and above.</requirements>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.AllowCustomColors">
+            <summary>
+            Gets or sets the value indicating whether the user should be allowed to add custom colors to any color picker palette.
+            </summary>
+            <value>
+            	<strong>true</strong> when the user can add custom colors to color pickers;
+            otherwise <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.AllowScripts">
+            <summary>
+            Gets or sets the value indicating whether script tags will be allowed in the
+            RadEditor content.
+            </summary>
+            <value>
+            	<strong>true</strong> when the script tags are allowed in the RadEditor content;
+            otherwise <strong>false</strong>. The default value is <strong>false</strong>.
+            </value>
+            <remarks>
+            Setting it to <strong>false</strong> can reduce the possibility of cross-site
+            scripting and other script-related problems.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.AnchorPathToStrip">
+            <summary>
+            Gets or sets the part of the absolute anchor URLs which will be removed when
+            StripAbsoluteAnchorPaths is set to true.
+            </summary>
+            <value>
+            A string containing the part of the absolute anchor URLs which will be removed
+            when StripAbsoluteAnchorPaths is set to <strong>true</strong>. The default value is
+            <strong>string.Empty</strong>.
+            </value>
+            <remarks>
+            	<para>
+                    This property works along with the
+                    <see cref="P:Telerik.WebControls.RadEditor.StripAbsoluteAnchorPaths">StripAbsoluteAnchorPaths</see> property.
+                </para>
+            	<para><strong>Note</strong>: this functionality is intended for Internet Explorer
+                <strong>only</strong>. Gecko based browsers like Mozilla do not change the absolute
+                URLs.</para>
+            </remarks>
+            <example>
+                This example demonstrates the URL changing mechnanisms of Internet Explorer and
+                		///     RadEditor.
+                <para>
+            		<para>If the RadEditor is placed in a page with URL
+                    http://www.telerik.com/management/default.aspx
+                    and an anchor with URL "pages/radeditor.aspx" is put on the page using the
+                    RadEditor, Internet Explorer will change anchor's URL to
+                    http://www.telerik.com/management/pages/radeditor.aspx .</para>
+            		<para>
+                        If the <see cref="P:Telerik.WebControls.RadEditor.StripAbsoluteAnchorPaths">StripAbsoluteAnchorPaths</see>
+                        property is set to <strong>true</strong>, the RadEditor will change the
+                        anchor's URL to:
+                    </para>
+            		<list type="table">
+            			<item>
+            				<term><strong>AnchorPathToStrip value</strong></term>
+            				<description><strong>Result URL</strong></description>
+            			</item>
+            			<item>
+            				<term><strong>string.Empty</strong> (default)</term>
+            				<description>/management/pages/radeditor.aspx</description>
+            			</item>
+            			<item>
+            				<term>http://www.tel</term>
+            				<description>erik.com/management/pages/radeditor.aspx</description>
+            			</item>
+            			<item>
+            				<term>
+            					http://www.telerik.com</term>
+            				<description>/management/pages/radeditor.aspx</description>
+            			</item>
+            			<item>
+            				<term>
+            					http://www.telerik.com/</term>
+            				<description>management/pages/radeditor.aspx</description>
+            			</item>
+            			<item>
+            				<term>
+            					http://www.telerik.com/management</term>
+            				<description>/pages/radeditor.aspx</description>
+            			</item>
+            			<item>
+            				<term>
+            					http://www.telerik.com/management/</term>
+            				<description>pages/radeditor.aspx</description>
+            			</item>
+            			<item>
+            				<term>
+            					http://www.telerik.com/management/pages</term>
+            				<description>/radeditor.aspx</description>
+            			</item>
+            			<item>
+            				<term>
+            					http://www.telerik.com/management/pages/</term>
+            				<description>radeditor.aspx</description>
+            			</item>
+            		</list>
+            	</para>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.CacheLocalization">
+            <summary>
+            Gets or sets the value indicating whether the RadEditor's localization data will be created
+            into a separate file or will be embedded into the page.
+            </summary>
+            <value>
+            	<strong>true</strong> when the localization is created into a separate file;
+            otherwise <strong>false</strong>. The default value is <strong>false</strong>.
+            </value>
+            <remarks>
+            <para>
+            	In order to enable the browsers to cache the localization data set this property
+            to <strong>true</strong>.
+            </para>
+            <para>
+            	This feature may not work if in the application are installed HTTP Modules for URL rewriting or URL authentication.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.CausesValidation">
+            <summary>
+            Gets or sets the value indicating whether the [Update] button
+            should perform validation when clicked.
+            </summary>
+            <value>
+            	<strong>true</strong> when the [Update] button should perform
+            validation; otherwise <strong>false</strong>. The default value is
+            <strong>true</strong>.
+            </value>
+            <remarks>
+                This property is valid only when the <see cref="P:Telerik.WebControls.RadEditor.SaveInFile">SaveInFile</see>
+                property is set to <strong>true</strong>.
+            </remarks>
+            <seealso cref="P:Telerik.WebControls.RadEditor.ShowSubmitCancelButtons">ShowSubmitCancelButtons Property</seealso>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ConfigFile">
+            <summary>Gets or sets a string containing the path to a valid XML configuration file.</summary>
+            <value>
+            The path to a valid XML configuration file. The default value is
+            <strong>string.Empty</strong>.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ConvertFontToSpan">
+            <summary>
+            Gets or sets the value indicating whether the client-side filter that converts the FONT tags
+            to SPAN tags is enabled.
+            </summary>
+            <value>
+            	<strong>true</strong> when the FONT tags should be converted to SPAN tags;
+            	otherwise <strong>false</strong>. The default value is <strong>false</strong>.
+            </value>
+            <remarks>
+            <para>
+            	The filter is activated when the form is submitted or when the editor is
+                switched between normal and HTML mode.
+            </para>
+            <para>
+            	See <see cref="P:Telerik.WebControls.RadEditor.ConvertToXhtml">ConvertToXhtml</see> for more information.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ConvertTagsToLower">
+            <summary>
+            Gets or sets the value indicating whether the client-side filter that converts the RadEditor content
+            enclosing tags to lower case is enabled.
+            </summary>
+            <value>
+            	<strong>true</strong> when the tag names are converted to lower case; otherwise
+            <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            <para>
+            	The filter is activated when the form is submitted or when the editor is
+                switched between normal and HTML mode.
+            </para>
+            <para>
+            	IE makes the names of the RadEditor content enclosing tags upper case, which is
+            	not XHTML compliant. See <see cref="P:Telerik.WebControls.RadEditor.ConvertToXhtml">ConvertToXhtml</see> for more information.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ConvertToXhtml">
+            <summary>
+            Gets or sets the value indicating whether the client-side filter that converts
+            the RadEditor content to XHTML is enabled.
+            </summary>
+            <value>
+            	<strong>true</strong> when the client-side XHTML filter is enabled; otherwise
+            <strong>false</strong>. The default value is <strong>false</strong>.
+            </value>
+            <remarks>
+            	<para>The filter is activated when the form is submitted or when the editor is
+                switched between normal and HTML mode.</para>
+            	<para>
+            		<strong>Note</strong>: this filter does not convert the FONT tags to SPAN tags.
+                    In order to do this the <see cref="P:Telerik.WebControls.RadEditor.ConvertFontToSpan">ConvertFontToSpan</see>
+                    property must be set to <strong>true</strong>.
+                </para>
+            	<para>
+            		<strong>Note</strong>: this filter does not convert the RadEditor content enclosing tags to lower case.
+                    In order to do this the <see cref="P:Telerik.WebControls.RadEditor.ConvertTagsToLower">ConvertTagsToLower</see>
+                    property must be set to <strong>true</strong>.
+                </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.CookieExpirationTime">
+            <summary>
+            Gets or sets the time-out period (in minutes) allowed between requests before the
+            expiration of the cookie, used for storage of the RadEditor's dialog related
+            data.
+            </summary>
+            <value>Time-out period in minutes. The default value is <strong>40</strong>.</value>
+            <example>
+                This example demonstrates how to set the RadEditor to use cookies for storing its
+                dialog related data and to set the cookie expiration time-out to 60 minutes.
+                <para class="sourcecode">&lt;rade:radeditor<br/>
+                runat="server"<br/>
+                id="RadEditor1"<br/>
+                usesession="false"<br/>
+                cookieexpirationtime="60"&gt;<br/>
+                &lt;rade:radeditor&gt;</para>
+            </example>
+            <remarks>
+                The value of this property is used when the value of the
+                <see cref="P:Telerik.WebControls.RadEditor.UseSession">UseSession</see> property is <strong>false</strong>.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.CssFiles">
+            <summary>
+            Gets or sets the list of external CSS files that should be made available in the
+            editor's content area.
+            </summary>
+            <remarks>
+            	<para>By default, RadEditor uses the CSS classes available in the current page.
+                However, it can be configured to load external CSS files instead. This scenario is
+                very common for editors integrated in back-end administration areas, which have one
+                set of CSS classes, while the content is being saved in a database and displayed on
+                the public area, which has a different set of CSS classes.</para>
+            	<para>If this property is set the RadEditor loads <strong>only</strong> the styles
+                defined in these files. The styles defined in the current page are not loaded in
+                the dropdown.</para>
+            	<para>
+                    If you want to load only a subset of the defined classes you can use the
+                    <see cref="P:Telerik.WebControls.RadEditor.CssClasses">CssClasses</see> property.
+                </para>
+            </remarks>
+            <example>
+            	<para>This example demonstrates how to set the CssFiles property from the
+                code-behind.</para>
+            	<para>If you want to set it in the ASPX/ASCX use the following syntax</para>
+            	<para class="sourcecode">&lt;rade:radeditor
+                cssfiles="~/styles/1.css,~/styles/2.css" ... &gt;&lt;rade:radeditor&gt;</para>
+            	<code lang="VB">
+            RadEditor1.CssFiles = New String(2) {"~/styles/1.css", "~/styles/2.css"}
+                </code>
+            	<code lang="CS">
+            RadEditor1.CssFiles = new string[2] {"~/styles/1.css", "~/styles/2.css"};
+                </code>
+            </example>
+            <requirements>RadEditor 5.0 and above.</requirements>
+            <value>
+            A string array containing the names of the external CSS files that should be
+            available in the editor's content area.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.DialogParametersMode">
+            <summary>
+            Gets or sets the value indicating how the editor will pass the parameters to its dialogs.
+            </summary>
+            <value>
+            	The default value is <strong>DialogParametersMode.Javascript</strong>.
+            </value>
+            <remarks>
+            	<para>
+            		The dialog parameters are the values of the following properties: 
+            		<see cref="P:Telerik.WebControls.RadEditor.ImagesPaths">ImagesPaths</see>, <see cref="P:Telerik.WebControls.RadEditor.UploadImagesPaths">UploadImagesPaths</see>, <see cref="P:Telerik.WebControls.RadEditor.DeleteImagesPaths">DeleteImagesPaths</see>, <see cref="P:Telerik.WebControls.RadEditor.MaxImageSize">MaxImageSize</see>, <see cref="P:Telerik.WebControls.RadEditor.ThumbSuffix">ThumbSuffix</see>, <see cref="P:Telerik.WebControls.RadEditor.AllowThumbGeneration">AllowThumbGeneration</see>, 
+            		<see cref="P:Telerik.WebControls.RadEditor.DocumentsPaths">DocumentsPaths</see>, <see cref="P:Telerik.WebControls.RadEditor.UploadDocumentsPaths">UploadDocumentsPaths</see>, <see cref="P:Telerik.WebControls.RadEditor.DeleteDocumentsPaths">DeleteDocumentsPaths</see>, <see cref="P:Telerik.WebControls.RadEditor.MaxDocumentSize">MaxDocumentSize</see>, 
+            		<see cref="P:Telerik.WebControls.RadEditor.FlashPaths">FlashPaths</see>, <see cref="P:Telerik.WebControls.RadEditor.UploadFlashPaths">UploadFlashPaths</see>, <see cref="P:Telerik.WebControls.RadEditor.DeleteFlashPaths">DeleteFlashPaths</see>, <see cref="P:Telerik.WebControls.RadEditor.MaxFlashSize">MaxFlashSize</see>, 
+            		<see cref="P:Telerik.WebControls.RadEditor.MediaPaths">MediaPaths</see>, <see cref="P:Telerik.WebControls.RadEditor.UploadMediaPaths">UploadMediaPaths</see>, <see cref="P:Telerik.WebControls.RadEditor.DeleteMediaPaths">DeleteMediaPaths</see>, <see cref="P:Telerik.WebControls.RadEditor.MaxMediaSize">MaxMediaSize</see>, 
+            		<see cref="P:Telerik.WebControls.RadEditor.TemplatePaths">TemplatePaths</see>, <see cref="P:Telerik.WebControls.RadEditor.UploadTemplatePaths">UploadTemplatePaths</see>, <see cref="P:Telerik.WebControls.RadEditor.DeleteTemplatePaths">DeleteTemplatePaths</see>, <see cref="P:Telerik.WebControls.RadEditor.MaxTemplateSize">MaxTemplateSize</see>.
+            	</para>
+            	<para>
+            		<see cref="P:Telerik.WebControls.RadEditor.DialogParametersMode">DialogParametersMode</see> enum members
+                    <list type="table">
+            			<listheader>
+            				<term>Member</term>
+            				<description>Description</description>
+            			</listheader>
+            			<item>
+            				<term><strong>Javascript</strong></term>
+            				<description>The dialog parameters are serialized and rendered between 
+            				the editor tags. This increases the control's html size a bit, but 
+            				makes posible the usage of the control in a web farm and eliminates the 
+            				problems when the session or the cookie expires.
+            				</description>
+            			</item>
+            			<item>
+            				<term><strong>Session</strong></term>
+            				<description>The dialog parameters are stored in the Session. This mode minimizes
+            				the size of the control html. It cannot be used when the SessionState is disabled and is 
+            				prone to problems when the Session expires before the dialog is opened.
+            				</description>
+            			</item>
+            			<item>
+            				<term><strong>Cookie</strong></term>
+            				<description>The dialog parameters are stored in the application Cache; à cookie 
+            				is used to transport the Cache object key. This mode also 
+            				minimizes the size of the control html. It cannot be used on web farms and is 
+            				prone to problems when the cookie expires before the dialog is opened.
+            				</description>
+            			</item>
+            		</list>
+            	</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.FileBrowserContentProviderTypeName">
+            <summary>
+            Gets or sets the fully qualified type name of the FileBrowserContentProvider used in the FileBrowser dialogs,
+            including the assembly name, version, culture, public key token.
+            </summary>
+            <value>
+            	The default value is <strong>string.Empty</strong>
+            </value>
+            <remarks>
+            When the value of this property is string.Empty (default), the FileBrowser dialogs 
+            will use the integrated FileSystemContentProvider.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Editable">
+            <summary>Gets or sets the value indicating whether the RadEditor is in edit mode.</summary>
+            <value>
+            	<strong>true</strong> when the RadEditor is in edit mode; otherwise
+            <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            	<para>Use this property if you want to load a page with the content editor set in
+                edit mode. Otherwise, the [pencil] button will be displayed and
+                the content will not be editable until this button is pressed.</para>
+            	<para>
+                    <strong>Note</strong>: The [pencil] button will be displayed only when the <see cref="P:Telerik.WebControls.RadEditor.HasPermission">HasPermission</see>
+                    property is set to <strong>true</strong>.
+                </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.EnableClientSerialize">
+            <summary>
+            Gets or sets the value indicating whether RadEditor will save the state and
+            positions of its toolbars and modules into a cookie.
+            </summary>
+            <value>
+            	<strong>true</strong> when the RadEditor will save the state and position of its
+            toolbars and modules into a cookie; otherwise <strong>false</strong>. The default value
+            is <strong>true</strong>.
+            </value>
+            <remarks>
+            The loading speed of the RadEditor is affected by the state saving ability. It
+            can be increased if this property is set to <strong>false</strong>.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.EnableContextMenus">
+            <summary>
+            Gets or sets the value indicating whether the RadEditor context menus are
+            enabled.
+            </summary>
+            <value>
+            	<strong>true</strong> when the RadEditor context menus are enabled; otherwise
+            <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            When the RadEditor context menus are disabled, the browser will display its
+            default context menus.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.EnableDocking">
+            <summary>
+            Gets or sets the value indicating whether the RadEditor toolbars and modules are
+            able to dock.
+            </summary>
+            <value>
+            	<strong>true</strong> when the RadEditor toolbars and modules are able to dock;
+            otherwise <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            The loading speed of the RadEditor is affected by the docking ability. It can be
+            increased if this property is set to <strong>false</strong>.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.EnableEnhancedEdit">
+            <summary>
+            Gets or sets the value indicating whether the RadEditor will display the HTML
+            tables with dashed borders, will mark the form elements, etc.
+            </summary>
+            <value>
+            	<strong>true</strong> when the HTML tables are displayed with dashed borders;
+            otherwise <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            This property works by setting special CSS styles to the tables and the form
+            elements in order to change their appearance. There is a probability to get strange
+            behaviour when it is used in conjunction with the CssClass property.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.EnableHtmlIndentation">
+            <summary>
+            Gets or sets the value indicating whether the RadEditor should display the
+            [Indent HTML] checkbox.
+            </summary>
+            <value>
+            	<strong>true</strong> when the [Indent HTML] checkbox is
+            	displayed; otherwise <strong>false</strong>. The default value is
+            	<strong>true</strong>.
+            </value>
+            <remarks>
+            Since version 4.0 the HTML mode has been enhanced to display nicely indented
+            code, which is easier to read and modify. You can turn on or off the indentation by
+            using the [Indent HTML] checkbox.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.EnableServerSideRendering">
+            <summary>
+            Gets or sets the value indicating whether the RadEditor will render its toolbars on the server.
+            </summary>
+            <value>
+            	<strong>true</strong> when the RadEditor will will render its toolbars on the server; 
+            	otherwise <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            This property must be set to <strong>false</strong> if the toolbars must be rendered on the client, as in version 5.x.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.EnableTab">
+            <summary>
+            Gets or sets the value indicating whether the RadEditor will insert four empty
+            spaces when the user presses the [Tab] key.
+            </summary>
+            <value>
+            	<strong>true</strong> when the RadEditor will insert four empty spaces when the
+            	user presses the [Tab] key; otherwise <strong>false</strong>. The
+            	default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            This property must be set to <strong>false</strong> if the [Tab] key is needed for navigation between the controls on the page.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.FileEncoding">
+            <summary>
+            Gets or sets the code page number used to encode the RadEditor content when
+            saving it into ASCX or ASPX file.
+            </summary>
+            <value>
+            The code page number used to encode the RadEditor content when saving it into
+            ASCX or ASPX file. The default value is <b>65001</b> (UTF-8).
+            </value>
+            <example>
+            	<code lang="CS" title="[New Example]">
+            	</code>
+            </example>
+            <seealso cref="P:Telerik.WebControls.RadEditor.SaveInFile">SaveInFile Property</seealso>
+            <remarks>
+                The value of this property is used only if the
+                <see cref="P:Telerik.WebControls.RadEditor.SaveInFile">SaveInFile</see> property is set to <strong>true</strong>.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.FocusOnLoad">
+            <summary>
+            Gets or sets the value indicating whether RadEditor content area should get
+            the focus on itself on load.
+            </summary>
+            <value>
+            	<strong>true</strong> when the RadEditor content area should get the focus;
+            	otherwise <strong>false</strong>. The default value is <strong>false</strong>.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.HasPermission">
+            <summary>
+            Gets or sets the value indicating whether the RadEditor can be switched to edit mode.
+            </summary>
+            <value>
+            	<strong>true</strong> when the RadEditor can be switched to edit mode; otherwise
+            <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            <para>
+                The edit mode of the RadEditor can be turned on or off by using the
+                <see cref="P:Telerik.WebControls.RadEditor.Editable">Editable</see> property.
+            </para>
+            <para>
+            	This property is useful in scenarios where some users are prohibited from editing the
+            	content of the page.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Height">
+            <summary>Gets or sets the height of the RadEditor box.</summary>
+            <value>
+            A Unit that represents the height of the control. The default value is
+            <strong>400px</strong>.
+            </value>
+            <remarks>
+            	<para>By default moving toolbars and modules around editors docking zones are
+                allowed. Such re-arrangements can alter the editor's size.</para>
+            	<para>The page's DOCTYPE can also have effect on the editors size in IE. For
+                example the following two doctypes set Internet Explorer in strict mode.</para>
+            	<para>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" &gt;<br/>
+                &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+                "http://www.w3.org/TR/html4/strict.dtd"&gt;</para>
+            	<para>Due to a bug in the rendering implementation of Internet Explorer, the Height
+                of the whole editor (toolbars, content area and modules) is assigned to the editor
+                ContentArea - in effect making the editor "taller" than expected. The developers
+                that want to use DOCTYPES other that the default quirks mode should have this fact
+                in mind and set the editors Height to a smaller value.</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Html">
+            <summary>
+            	Gets or sets the text content of the RadEditor control inlcuding the HTML
+            	markup.
+            </summary>
+            <value>
+            	The text content of the RadEditor control including the HTML markup. The default is
+            	<strong>string.Empty</strong>.
+            </value>
+            <remarks>
+            	<para>
+                    The text returned by this property contains HTML markup. If only the text is
+                    needed use the <see cref="P:Telerik.WebControls.RadEditor.Text">Text</see> property.
+                </para>
+            	<para>
+                    It is not guaranteed that the HTML markup from this property will be XHTML
+                    compliant. If a valid XHTML is needed, use the <see cref="P:Telerik.WebControls.RadEditor.Xhtml">Xhtml</see>
+                    property.
+                </para>
+            	<para>You can also set the text content of the RadEditor inline between its opening
+                and closing tags. In this case setting this property in the code behind will
+                override the inline content.</para>
+            </remarks>
+            <example>
+                This example demonstrates how to set the content of the RadEditor inline and the
+                differences between the Html, <see cref="P:Telerik.WebControls.RadEditor.Text">Text</see> and the
+                <see cref="P:Telerik.WebControls.RadEditor.Xhtml">Xhtml</see> properties.
+                <para>
+            		<para class="sourcecode">&lt;rade:radeditor id="RadEditor1" runat="server"
+                    saveinfile="false" editable="true"&gt;<br/>
+                    &lt;b&gt;t&lt;/b&gt;elerik r.a.d.editor&lt;br&gt;<br/>
+                    the best &lt;span style="COLOR: red"&gt;html editor&lt;/span&gt; in the
+                    world<br/>
+                    &lt;/rade:radeditor&gt;<br/>
+                    &lt;asp:button id="btnSave" runat="server" text="Submit"
+                    onclick="btnSave_Click" /&gt;&lt;br /&gt;<br/>
+                    Html:&lt;asp:label runat="server" id="LabelHtml"&gt;&lt;/asp:label&gt;&lt;br
+                    /&gt;<br/>
+                    Text:&lt;asp:label runat="server" id="LabelText"&gt;&lt;/asp:label&gt;&lt;br
+                    /&gt;<br/>
+                    Xhtml:&lt;asp:label runat="server" id="LabelXhtml"&gt;&lt;/asp:label&gt;</para>
+            	</para>
+            	<code lang="VB" title="[New Example]">
+            Private Sub btnSave_Click(sender As Object, e As System.EventArgs)
+                'HtmlEncode the content of the editor to display the HTML tags
+                LabelHtml.Text = Server.HtmlEncode(RadEditor1.Html);
+                LabelText.Text = Server.HtmlEncode(RadEditor1.Text);
+                LabelXhtml.Text = Server.HtmlEncode(RadEditor1.Xhtml);
+            End Sub
+                </code>
+            	<code lang="CS" title="[New Example]">
+            private void btnSave_Click(object sender, System.EventArgs e)
+            {
+                //HtmlEncode the content of the editor to display the HTML tags
+                LabelHtml.Text = Server.HtmlEncode(RadEditor1.Html);
+                LabelText.Text = Server.HtmlEncode(RadEditor1.Text);
+                LabelXhtml.Text = Server.HtmlEncode(RadEditor1.Xhtml);
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ImagesPathToStrip">
+            <summary>
+            Gets or sets the part of the absolute IMG URLs which will be removed when
+            StripAbsoluteImagesPaths is set to true.
+            </summary>
+            <value>
+            A string containing the part of the absolute IMG URLs which will be removed when
+            StripAbsoluteImagesPaths is set to <strong>true</strong>. The default value is
+            <strong>string.Empty</strong>.
+            </value>
+            <remarks>
+            	<para>
+                    This property works along with the
+                    <see cref="P:Telerik.WebControls.RadEditor.StripAbsoluteImagesPaths">StripAbsoluteImagesPaths</see> property.
+                </para>
+            	<para><strong>Note</strong>: this functionality is intended for Internet Explorer
+                <strong>only</strong>. Gecko-based browsers like Mozilla do not change the absolute
+                URLs.</para>
+            </remarks>
+            <example>
+                This example demonstrates the URL changing mechnanisms of Internet Explorer and
+                RadEditor.
+                <para>
+            		<para>If the RadEditor is placed in a page with URL
+                    http://www.telerik.com/management/default.aspx
+                    and an image with URL "img/radeditor.jpg" is put on the page using the
+                    RadEditor, Internet Explorer will change image's URL to
+                    http://www.telerik.com/management/img/radeditor.jpg .</para>
+            		<para>
+                        If the <see cref="P:Telerik.WebControls.RadEditor.StripAbsoluteImagesPaths">StripAbsoluteImagesPaths</see>
+                        property is set to <strong>true</strong>, the RadEditor will change the
+                        image's URL to:
+                    </para>
+            		<list type="table">
+            			<item>
+            				<term><strong>ImagesPathToStrip value</strong></term>
+            				<description><strong>Result URL</strong></description>
+            			</item>
+            			<item>
+            				<term><strong>string.Empty</strong> (default)</term>
+            				<description>/management/img/radeditor.jpg</description>
+            			</item>
+            			<item>
+            				<term>http://www.tel</term>
+            				<description>erik.com/management/img/radeditor.jpg</description>
+            			</item>
+            			<item>
+            				<term>http://www.telerik.com</term>
+            				<description>/management/img/radeditor.jpg</description>
+            			</item>
+            			<item>
+            				<term>http://www.telerik.com/</term>
+            				<description>management/img/radeditor.jpg</description>
+            			</item>
+            			<item>
+            				<term>http://www.telerik.com/management</term>
+            				<description>/img/radeditor.jpg</description>
+            			</item>
+            			<item>
+            				<term>http://www.telerik.com/management/</term>
+            				<description>img/radeditor.jpg</description>
+            			</item>
+            			<item>
+            				<term>http://www.telerik.com/management/img</term>
+            				<description>/radeditor.jpg</description>
+            			</item>
+            			<item>
+            				<term>http://www.telerik.com/management/img/</term>
+            				<description>radeditor.jpg</description>
+            			</item>
+            		</list>
+            	</para>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Language">
+            <summary>Gets or sets the localization language for the RadEditor user interface.</summary>
+            <value>
+            The localization language for the RadEditor user interface. The default value is
+            <strong>en-US</strong>.
+            </value>
+            <remarks>
+                The localization language will be used by the integrated spellchecker as default
+                spellchecking language. If you want to use different language for spellchecking,
+                you should set the <see cref="!:DictionaryLanguage">DictionaryLanguage</see>
+                property of RadSpell.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.NewLineBr">
+            <summary>
+            Gets or sets the value indicating whether the RadEditor will insert a new line or
+            a paragraph when the [Enter] key is pressed.
+            </summary>
+            <value>
+            	<strong>true</strong> when the RadEditor will insert &lt;br&gt; tag when the
+            [Enter] key is pressed; otherwise <strong>false</strong>. The default
+            value is <strong>true</strong>.
+            </value>
+            <remarks>
+            	<para>When the value of this property is set to <strong>true</strong> the RadEditor
+                will insert <font face="Courier New">&lt;BR&gt;</font> tags; otherwise it will
+                insert <font face="Courier New">&lt;P&gt;&lt;/P&gt;</font> tags.</para>
+            	<para><strong>Note</strong>: this property is intended for use only in Internet Explorer.
+            	The gecko-based browsers always insert &lt;BR&gt; tags.</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.RadSpell">
+             <summary>Gets the RadSpell object that RadEditor uses for spellchecking.</summary>
+             <example>
+             	<code lang="CS" title="[New Example]">
+             RadSpell theSpellChecker = (RadSpell) editor1.RadSpell;
+            
+             //Check if the editor does not have a spellchecker
+            
+             if (theSpellChecker != null) { ... }
+                 </code>
+             </example>
+             <value>RadSpell object which is used for spellchecking by the RadEditor.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.RadSpellTypeName">
+            <summary>
+            Gets or sets the fully qualified RadSpell type name, including the assembly name,
+            version, culture, public key token.
+            </summary>
+            <value>
+            A string containing the fully qualified RadSpell type name. The default is
+            <strong>"Telerik.WebControls.RadSpell, RadSpell"</strong>.
+            </value>
+            <remarks>
+            This property is useful when radspell.dll has been deployed in
+            the Global Assembly Cache (GAC).
+            </remarks>
+            <example>
+                This example demonstrates how to use RadSpell if radspell.dll is deployed in the
+                Global Assembly Cache
+                <para class="sourcecode">
+            		<para class="sourcecode">&lt;rade:radeditor<br/>
+                    id="RadEditor1"<br/>
+                    runat="server"<br/>
+                    radspelltypename="Telerik.WebControls.RadSpell, RadSpell, Version=2.0.2.0,
+                    Culture=neutral, PublicKeyToken=b5dad7bf2bf594c2"&gt;<br/>
+                    &lt;/rade:radeditor&gt;</para>
+            	</para>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.RenderAsTextArea">
+            <summary>
+            Gets or sets the value indicating whether the RadEditor will render as TextArea.
+            </summary>
+            <value>
+            	<strong>true</strong> when the RadEditor will will render as TextArea; 
+            	otherwise <strong>false</strong>. The default value is <strong>false</strong>.
+            </value>
+            <remarks>
+            This property must be set to <strong>true</strong> if you need to force the editor in low-level browser mode.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.SaveAsXhtml">
+            <summary>
+            Gets or sets the value indicating whether the HTML content should be converted to
+            XHTML before it is saved to the ascx/aspx file.
+            </summary>
+            <value>
+            	<strong>true</strong> when the HTML content should be converted to XHTML;
+            otherwise <strong>false</strong>. The default value is <strong>false</strong>.
+            </value>
+            <remarks>
+                This property is used in conjunction with the
+                <see cref="P:Telerik.WebControls.RadEditor.SaveInFile">SaveInFile</see> property. If the value of the
+                <see cref="P:Telerik.WebControls.RadEditor.SaveInFile">SaveInFile</see> property is <strong>false</strong>, the
+                SaveAsXhtml property is ignored.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.SaveInFile">
+            <summary>
+            Gets or sets the value indicating whether the HTML content of the RadEditor will
+            be saved into the ASCX/ASPX file.
+            </summary>
+            <value>
+            	<strong>true</strong> when the HTML content will be saved into the ASCX/ASPX
+            file; otherwise <strong>false</strong>. The default value is
+            <strong>false</strong>.
+            </value>
+            <remarks>
+            	<para>
+                    RadEditor have the ability to save its content directly into the ASCX/ASPX file
+                    where it is located. This behaviour is useful in simple content management
+                    systems. RadEditor can make its content XHTML compliant before saving if the
+                    <see cref="P:Telerik.WebControls.RadEditor.SaveAsXhtml">SaveAsXhtml</see> property is set to
+                    <strong>true</strong>.
+                </para>
+            	<para>
+                    To avoid errors when saving the RadEditor content into a file you should set
+                    the <see cref="P:Telerik.WebControls.RadEditor.AllowScripts">AllowScripts</see> property to
+                    <strong>false</strong>.
+                </para>
+            	<para>
+                    The character encoding of the target files can be controlled by using the
+                    <see cref="P:Telerik.WebControls.RadEditor.FileEncoding">FileEncoding</see> property.
+                </para>
+            	<para><strong>Note</strong>: The ASP.NET process must have write permissions for
+                the file where the RadEditor is located.</para>
+            	<para>
+                    In more advanced scenarios where the content will be saved into a database or
+                    other storage system the content of the RadEditor can be accessed using the
+                    <see cref="P:Telerik.WebControls.RadEditor.Html">Html</see>, <see cref="P:Telerik.WebControls.RadEditor.Text">Text</see> and
+                    <see cref="P:Telerik.WebControls.RadEditor.Xhtml">Xhtml</see> properties.
+                </para>
+            </remarks>
+            <seealso cref="P:Telerik.WebControls.RadEditor.CausesValidation">CausesValidation Property</seealso>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Skin">
+            <summary>
+            Gets or sets the name of the skin that is used by all editor components -
+            toolbars, dialogs, etc.
+            </summary>
+            <value>
+            A string containing the name of the currently used skin. The default value is
+            <strong>Default</strong>.
+            </value>
+            <remarks>
+            	<para>The RadSpell control will use the value of this property for its own dialogs.
+                If you want to specify different skin for RadSpell you should set its
+                Skin property.</para>
+            </remarks>
+            <requirements>RadEditor 6.0 or above.</requirements>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.SkinsPath">
+            <summary>
+            Gets or sets the relative path of the folder containing the skins.
+            </summary>
+            <example>
+            If the skin folder is located in the project root and is named "Skins" the
+            SkinsPath property should be set to: "~/Skins". Then you can create subfolders for
+            individual skins e.g. Skins/Gold, Skins/Default etc.
+            </example>
+            <value>
+            A string specifying the relative path to the folder which contains
+            r.a.d.<strong>editor</strong> skins. The default value is
+            "~/RadControls/Editor/Skins".
+            </value>
+            <remarks>
+            r.a.d.<strong>editor</strong> ships with a set of predefined skins which are ready
+            to use. They are located in RadControls/Editor/Skins.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ShowHtmlMode">
+            <summary>
+            Gets or sets the value indicating whether the [Html Mode] icon
+            will be displayed.
+            </summary>
+            <value>
+            	<strong>true</strong> when the [Html Mode] icon is displayed;
+            otherwise <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ShowPreviewMode">
+            <summary>
+            Gets or sets the value indicating whether the [Preview Mode] icon
+            will be displayed.
+            </summary>
+            <value>
+            	<strong>true</strong> when the [Preview Mode] icon is displayed;
+            otherwise <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ShowSubmitCancelButtons">
+            <summary>
+            Gets or sets the value indicating whether the [Submit] and [Cancel] buttons
+            will be displayed.
+            </summary>
+            <value>
+            	<strong>true</strong> when the [Submit] and [Cancel] buttons are displayed;
+            otherwise <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <seealso cref="P:Telerik.WebControls.RadEditor.CausesValidation">CausesValidation Property</seealso>
+            <seealso cref="P:Telerik.WebControls.RadEditor.SaveInFile">SaveInFile Property</seealso>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.StripAbsoluteImagesPaths">
+            <summary>
+            Gets or sets the value indicating whether RadEditor should make the absolute
+            images paths relative.
+            </summary>
+            <value>
+            	<strong>true</strong> when the absolute image URLs will be changed to relative;
+            otherwise <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            	<para>Internet Explorer changes all image and anchor URLs to absolute when
+                switching between the modes of RadEditor. RadEditor includes functionality which
+                changes back the absolute URLs to relative.</para>
+            	<para><strong>Note</strong>: this functionality is intended for Internet Explorer
+                <strong>only</strong>. Gecko-based browsers like Mozilla do not change the absolute
+                URLs.</para>
+            </remarks>
+            <example>
+                For more information and an example see <see cref="P:Telerik.WebControls.RadEditor.ImagesPathToStrip">ImagesPathToStrip</see>.
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.StripAbsoluteAnchorPaths">
+            <summary>
+            Gets or sets the value indicating whether RadEditor should make the absolute
+            anchor paths relative.
+            </summary>
+            <value>
+            	<strong>true</strong> when the absolute anchor URLs will be changed to relative;
+            otherwise <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            	<para>Internet Explorer changes all image and anchor URLs to absolute when
+                switching between the modes of RadEditor. RadEditor includes functionality which
+                changes back the absolute URLs to relative.</para>
+            	<para><strong>Note</strong>: this functionality is intended for Internet Explorer
+                <strong>only</strong>. Gecko-based browsers like Mozilla do not change the absolute
+                URLs.</para>
+            </remarks>
+            <example>
+                For more information and an example see <see cref="P:Telerik.WebControls.RadEditor.AnchorPathToStrip">AnchorPathToStrip</see>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.StripFormattingOnPaste">
+            <summary>
+            Gets or sets the value indicating how the editor should clear the HTML formatting
+            when the user pastes data into the content area.
+            </summary>
+            <value>
+            	The default value is <strong>EditorStripFormattingOptions.None</strong>.
+            </value>
+            <remarks>
+            	<para>
+            		<see cref="T:Telerik.WebControls.EditorStripFormattingOptions">EditorStripFormattingOptions</see>
+                    enum members
+                    <list type="table">
+            			<listheader>
+            				<term>Member</term>
+            				<description>Description</description>
+            			</listheader>
+            			<item>
+            				<term><strong>None</strong></term>
+            				<description>Doesn't strip anything, asks a question when MS Word
+                            formatting was detected.</description>
+            			</item>
+            			<item>
+            				<term><strong>NoneSupressCleanMessage</strong></term>
+            				<description>Doesn't strip anything and does not ask a
+                            question.</description>
+            			</item>
+            			<item>
+            				<term><strong>MSWord</strong></term>
+            				<description>Strips only MSWord related attributes and
+                            tags.</description>
+            			</item>
+            			<item>
+            				<term><strong>MSWordNoFonts</strong></term>
+            				<description>Strips the MSWord related attributes and tags and font
+                            tags.</description>
+            			</item>
+            			<item>
+            				<term><strong>MSWordRemoveAll</strong></term>
+            				<description>Strips MSWord related attributes and tags, font tags and
+                            font size attributes.</description>
+            			</item>
+            			<item>
+            				<term><strong>Css</strong></term>
+            				<description>Removes style attributes.</description>
+            			</item>
+            			<item>
+            				<term><strong>Font</strong></term>
+            				<description>Removes Font tags.</description>
+            			</item>
+            			<item>
+            				<term><strong>Span</strong></term>
+            				<description>Clears Span tags.</description>
+            			</item>
+            			<item>
+            				<term><strong>All</strong></term>
+            				<description>Remove all HTML formatting.</description>
+            			</item>
+            		</list>
+            	</para>
+            	<para><strong>Note:</strong> In Gecko-based browsers you will see the mandatory
+                dialog box where you need to paste the content.</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Text">
+            <summary>Gets the text content of the RadEditor control without the HTML markup.</summary>
+            <value>
+            The text displayed in the RadEditor without the HTML markup. The default is
+            <strong>string.Empty</strong>.
+            </value>
+            <remarks>
+            	<para>
+                    The text returned by this property contains no HTML markup. If only the HTML
+                    markup in the text is needed use the <a href="RadEditor~Telerik.WebControls.RadEditor~Html.html">Html</a> property.
+                </para>
+            	<para>
+                    You can set the text content of the RadEditor by using the
+                    <a href="RadEditor~Telerik.WebControls.RadEditor~Html.html">Html</a> property or inline between its opening and closing
+                    tags. In this case setting the <a href="RadEditor~Telerik.WebControls.RadEditor~Html.html">Html</a> property in the code
+                    behind will override the inline content.
+                </para>
+            </remarks>
+            <example>
+                For an example see the <a href="r.a.d.editor~Telerik.WebControls.RadEditor~Html.html">Html</a> property.
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ToolbarMode">
+            <summary>
+            Gets or sets the value indicating how the editor toolbar will be rendered and will act on the client
+            </summary>
+            <value>
+            	<strong>Default</strong> Toolbars are rendered around the editor content area.<br/>
+            	<strong>Floating</strong> Toolbars are rendered in a moveable window.<br/>
+            	<strong>PageTop</strong> Toolbars appear on top of page when editor gets focus.<br/>
+            	<strong>ShowOnFocus</strong> Toolbars appear right above the editor when it focus.
+            </value>
+            <remarks>
+            <para>
+            	Several editors can simulate usage of the same toolbar if this property has the same value everywhere
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ToolsHeight">
+            <summary>Gets or sets the height of the RadEditor toolbar.</summary>
+            <value>
+            A Unit that represents the height of the toolbar. The default value is
+            <strong>130px</strong>.
+            </value>
+            <remarks>
+            If the
+            <a href="r.a.d.editor~Telerik.WebControls.RadEditor~ToolsOnPage.html">ToolsOnPage</a>
+            property is set to <strong>false</strong> and you have more than two rows of tools on
+            the toolbar, increase the ToolHeight property value to get all of the tools
+            displayed.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ToolsWidth">
+            <summary>Gets or sets the width of the RadEditor toolbar.</summary>
+            <value>
+                A Unit that represents the width of the toolbar. The default is
+                <see cref="P:Telerik.WebControls.RadEditor.Width">RadEditor.Width</see>.
+            </value>
+            <remarks>
+            	<para>
+                    When the <see cref="P:Telerik.WebControls.RadEditor.ToolsOnPage">ToolsOnPage</see> property is set to
+                    <strong>false</strong> and the editable area is too narrow for all buttons to
+                    fit you can set the value of the ToolsWidth property.
+                </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.UseClassicDialogs">
+            <summary>
+            Gets or sets the value indicating whether the RadEditor will use RadWindow
+            windows or popup windows for its toolbars and dialogs.
+            </summary>
+            <value>
+            	<strong>true</strong> when the RadEditor's toolbars and dialogs use popup
+            windows; otherwise <strong>false</strong>. The default value is
+            <strong>false</strong>.
+            </value>
+            <remarks>
+            	<para>The advantage of the RadWindow windows is that they will not be blocked by
+                the browser's pop-up blockers.</para>
+            	<para>Moreover, the status bar, which is mandatory for all Internet Explorer
+                browser windows in SP2, will not be displayed, preserving the proper graphic design
+                of the dialogs.</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Width">
+            <summary>Gets or sets the width of the RadEditor box.</summary>
+            <value>
+            A Unit that represents the width of the control. The default value is
+            <strong>630px</strong>.
+            </value>
+            <remarks>
+            	<para>By default moving toolbars and modules around editors docking zones are
+                allowed. Such re-arrangements can alter the editor's size.</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Xhtml">
+            <summary>Gets the text content of the RadEditor control including the XHTML markup.</summary>
+            <remarks>
+            	<para>
+                    The text returned by this property contains XHTML compliant HTML markup. If
+                    only the text is needed use the <see cref="P:Telerik.WebControls.RadEditor.Text">Text</see> property.
+                </para>
+            	<para>You can set the text content of the RadEditor by using the
+                <a href="RadEditor~Telerik.WebControls.RadEditor~Html.html">Html</a> property or
+                inline between its opening and closing tags. In this case setting the
+                <a href="RadEditor~Telerik.WebControls.RadEditor~Html.html">Html</a> property in
+                the code behind will override the inline content.</para>
+            </remarks>
+            <value>
+            The text displayed in the RadEditor including the XHTML markup. The default is
+            string.Empty.
+            </value>
+            <example>
+            For an example see the
+            <a href="RadEditor~Telerik.WebControls.RadEditor~Html.html">Html</a> property.
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.DeleteDocumentsPaths">
+            <summary>Gets or sets the paths where the RadEditor will be able to delete images.</summary>
+            <value>
+            A string array which contains the paths where the RadEditor will be able to
+            delete documents. The default value is empty string array.
+            </value>
+            <remarks>
+            	<para>
+                    If a folder is present in DeleteDocumentsPaths, but is missing from
+                    <see cref="P:Telerik.WebControls.RadEditor.DocumentsPaths">DocumentsPaths</see> it will not be visible in the Document
+                    Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                For example see the <see cref="P:Telerik.WebControls.RadEditor.DocumentsPaths">DocumentsPaths</see>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.DeleteFlashPaths">
+            <summary>Gets or sets the paths where the RadEditor will be able to delete flash animations.</summary>
+            <value>
+            A string array which contains the paths where the RadEditor be able to delete
+            flash animations. The default value is empty string array.
+            </value>
+            <remarks>
+            	<para>
+                    If a folder is present in DeleteFlashPaths, but is missing from
+                    <see cref="P:Telerik.WebControls.RadEditor.FlashPaths">FlashPaths</see> it will not be visible in the Flash
+                    Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                For example see the <see cref="P:Telerik.WebControls.RadEditor.FlashPaths">FlashPaths</see> property.
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.DeleteImagesPaths">
+            <summary>Gets or sets the paths where the RadEditor will be able to delete images.</summary>
+            <value>
+            A string array which contains the paths where the RadEditor will be able to
+            delete images. The default value is empty string array.
+            </value>
+            <remarks>
+            	<para>
+                    If a folder is present in DeleteImagesPaths, but is missing from
+                    <see cref="P:Telerik.WebControls.RadEditor.ImagesPaths">ImagesPaths</see> it will not be visible in the Image
+                    Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                For example see the <see cref="P:Telerik.WebControls.RadEditor.ImagesPaths">ImagesPaths</see> property.
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.DeleteMediaPaths">
+            <summary>Gets or sets the paths where the RadEditor will be able to delete media files.</summary>
+            <value>
+            A string array which contains the paths where the RadEditor be able to delete
+            media files. The default value is empty string array.
+            </value>
+            <remarks>
+            	<para>
+                    If a folder is present in DeleteMediaPaths, but is missing from
+                    <see cref="P:Telerik.WebControls.RadEditor.MediaPaths">MediaPaths</see> it will not be visible in the Media
+                    Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                For example see the <see cref="P:Telerik.WebControls.RadEditor.MediaPaths">MediaPaths</see> property.
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.DeleteTemplatePaths">
+            <summary>Gets or sets the paths where the RadEditor will be able to delete templates.</summary>
+            <value>
+            A string array which contains the paths where the RadEditor will be able to
+            delete templates. The default value is empty string array.
+            </value>
+            <remarks>
+            	<para>
+                    If a folder is present in DeleteTemplatePaths, but is missing from
+                    <see cref="P:Telerik.WebControls.RadEditor.TemplatePaths">TemplatePaths</see> it will not be visible in the Template
+                    Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                For example see the <see cref="P:Telerik.WebControls.RadEditor.TemplatePaths">TemplatePaths</see> property.
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.DocumentsFilters">
+            <summary>
+            Gets or sets the file extension filters that control which files are shown in the
+            Document Manager dialog.
+            </summary>
+            <value>
+            	<para>A string array which contains the file extension filters that control which files
+                are shown in the Document Manager dialog.</para>
+            	<para>The default filters are <strong>*.*</strong>.</para>
+            </value>
+            <remarks>
+            	<para>The following wildcard characters are permitted in a filter string:<br/>
+                * - Zero or more characters.<br/>
+                ? - Exactly one character.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the filters are comma
+                separated string; in the code behind they are string array.</para>
+            	<para><font color="red"><strong>Note:</strong> From version 6.0 the default value is
+                changed from *.doc;*.txt to *.*</font></para>
+            </remarks>
+            <example>
+                This example demonstrates how to set the Document Manager dialog to display only
+                *.doc and *.xls files using ASPX declaration or code-behind.
+                <para class="sourcecode">
+            		<para class="sourcecode"></para>
+            		<para class="sourcecode">&lt;rade:radeditor<br/>
+                    runat="server"<br/>
+                    id="RadEditor1"<br/>
+                    documentsfilters="*.doc,*.xls"<br/>
+                    /&gt;</para>
+            	</para>
+            	<code lang="VB">
+            RadEditor1.DocumentsFilters = New String(2) {"*.doc", "*.xls"}
+                </code>
+            	<code lang="CS">
+            RadEditor1.DocumentsFilters = New String[2] {"*.doc", "*.xls"};
+                </code>
+            </example>
+            <seealso cref="P:Telerik.WebControls.RadEditor.DocumentsPaths">DocumentsPaths Property</seealso>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.DocumentsPaths">
+            <summary>Gets or sets the paths where the RadEditor will look for documents.</summary>
+            <remarks>
+            	<para>
+                    If a folder is present in <see cref="P:Telerik.WebControls.RadEditor.UploadDocumentsPaths">UploadDocumentsPaths</see> or
+                    <see cref="P:Telerik.WebControls.RadEditor.DeleteDocumentsPaths">DeleteDocumentsPaths</see>, but is missing from
+                    DocumentsPaths it will not be visible in the Document Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <value>
+            A string array which contains the paths where the RadEditor will look for documents.
+            The default value is empty string array.
+            </value>
+            <example>
+                This example demonstrates how to set the DocumentsPaths
+                , <see cref="P:Telerik.WebControls.RadEditor.UploadDocumentsPaths">UploadDocumentsPaths</see> and
+                <see cref="P:Telerik.WebControls.RadEditor.DeleteDocumentsPaths">DeleteDocumentsPaths</see> properties in the
+                ASPX or in the code-behind:
+                <para class="example">
+            		<para class="sourcecode">&lt;rade:radeditor<br/>
+                    runat="server"<br/>
+                    id="RadEditor1"<br/>
+                    documentspaths="~/UploadDocuments,/Documents/Temp,/Documents/Default"<br/>
+                    uploaddocumentspaths="~/UploadDocuments,/Documents/Temp"<br/>
+                    deletedocumentspaths="/Documents/Temp"&gt;<br/>
+                    &lt;/rade:radeditor&gt;</para>
+            		<para>In this specific example the users of the application will see three
+                    folders in the Document Manager dialog:
+                    <font face="Courier New">UploadDocuments</font>,
+                    <font face="Courier New">Default</font> and
+                    <font face="Courier New">Temp</font>. When browsing the
+                    <font face="Courier New">UploadDocuments</font> and
+                    <font face="Courier New">Temp</font> folders, the Upload Document tab will be
+                    enabled; otherwise it will be disabled. When browsing the
+                    <font face="Courier New">Temp</font> folder, the Delete button in the Browse
+                    Files tab will be enabled; otherwise it will be disabled. The
+                    <font face="Courier New">Documents</font> folder will not be browsable. If you
+                    want to allow the users to browse it you should add
+                    "<font face="Courier New">/Documents</font>" to the DocumntsPaths list.</para>
+            	</para>
+            	<code lang="VB">
+            RadEditor1.DocumentsPaths = New String(3) {"~/UploadDocuments", "/Documents/Temp", "/Documents/Default"}
+            RadEditor1.UploadDocumentsPaths = New String(2) {"~/UploadDocuments", "/Documents/Temp"}
+            RadEditor1.DeleteDocumentsPaths = New String(1) {"/Documents/Temp"}
+                </code>
+            	<code lang="CS">
+            RadEditor1.DocumentsPaths = new string[3] {"~/UploadDocuments", "/Documents/Temp", "/Documents/Default"};
+            RadEditor1.UploadDocumentsPaths = new string[2] {"~/UploadDocuments", "/Documents/Temp"};
+            RadEditor1.DeleteDocumentsPaths = new string[1] {"/Documents/Temp"};
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.FlashPaths">
+            <summary>Gets or sets the paths where the RadEditor will look for flash animations.</summary>
+            <value>
+            A string array which contains the paths where the RadEditor will look for
+            flash animations. The default value is empty string array.
+            </value>
+            <remarks>
+            	<para>
+                    If a folder is present in <see cref="P:Telerik.WebControls.RadEditor.UploadFlashPaths">UploadFlashPaths</see> or
+                    <see cref="P:Telerik.WebControls.RadEditor.DeleteFlashPaths">DeleteFlashPaths</see>, but is missing from
+                    FlashPaths it will not be visible in the Flash Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                This example demonstrates how to set the FlashPaths,
+                <see cref="P:Telerik.WebControls.RadEditor.UploadFlashPaths">UploadFlashPaths</see> and
+                <see cref="P:Telerik.WebControls.RadEditor.DeleteFlashPaths">DeleteFlashPaths</see> properties in the ASPX or in
+                the code-behind:
+                <para class="example">
+            		<para class="sourcecode">&lt;rade:radeditor<br/>
+                    runat="server"<br/>
+                    id="RadEditor1"<br/>
+                    flashpaths="~/UploadFlash,/Flash/Temp,/Flash/Default"<br/>
+                    uploadflashpaths="~/UploadFlash,/Flash/Temp"<br/>
+                    deleteflashpaths="/Flash/Temp"&gt;<br/>
+                    &lt;/rade:radeditor&gt;</para>
+            		<para>In this specific example the users of the application will see three
+                    folders in the Flash Manager dialog:
+                    <font face="Courier New">UploadFlash</font>,
+                    <font face="Courier New">Default</font> and
+                    <font face="Courier New">Temp</font>.</para>
+            		<para>When browsing the <font face="Courier New">UploadFlash</font> and
+                    <font face="Courier New">Temp</font> folders, the Upload Flash tab will be
+                    enabled; otherwise it will be disabled.</para>
+            		<para>When browsing the <font face="Courier New">Temp</font> folder, the Delete
+                    button in the Browse Files tab will be enabled; otherwise it will be
+                    disabled.</para>
+            		<para>The <font face="Courier New">Flash</font> folder will not be browsable.
+                    If you want to allow the users to browse it you should add
+                    "<font face="Courier New">/Flash</font>" to the FlashPaths list.</para>
+            	</para>
+            	<code lang="VB">
+            RadEditor1.FlashPaths = New String(3) {"~/UploadFlash", "/Flash/Temp", "/Flash/Default"}
+            RadEditor1.UploadFlashPaths = New String(2) {"~/UploadFlash", "/Flash/Temp"}
+            RadEditor1.DeleteFlashPaths = New String(1) {"/Flash/Temp"}
+                </code>
+            	<code lang="CS">
+            RadEditor1.FlashPaths = new string[3] {"~/UploadFlash", "/Flash/Temp", "/Flash/Default"};
+            RadEditor1.UploadFlashPaths = new string[2] {"~/UploadFlash", "/Flash/Temp"};
+            RadEditor1.DeleteFlashPaths = new string[1] {"/Flash/Temp"};
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ImagesFilters">
+            <summary>
+            Gets or sets the file extension filters that control which files are shown in the
+            Image Manager dialog.
+            </summary>
+            <value>
+            	<para>A string array which contains the file extension filters that control which files
+                are shown in the Image Manager dialog.</para>
+            	<para>The default filters are <strong>*.gif, *.jpg, *.png, *.bmp</strong>.</para>
+            </value>
+            <remarks>
+            	<para>The following wildcard characters are permitted in a filter string:<br/>
+                * - Zero or more characters.<br/>
+                ? - Exactly one character.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the filters are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+            	<para>This example demonstrates how to set the Image Manager dialog to display only
+                *.gif and *.jpg files using ASPX declaration or code-behind.</para>
+            	<para class="sourcecode">
+            		<para class="sourcecode"></para>
+            		<para class="sourcecode">&lt;rade:radeditor<br/>
+                    runat="server"<br/>
+                    id="RadEditor1"<br/>
+                    imagesfilters="*.gif,*.jpg"<br/>
+                    /&gt;</para>
+            	</para>
+            	<code lang="VB">
+            RadEditor1.ImagesFilters = New String(2) {"*.gif", "*.jpg"}
+                </code>
+            	<code lang="CS">
+            RadEditor1.ImagesFilters = New String[2] {"*.gif", "*.jpg"};
+                </code>
+            </example>
+            <seealso cref="P:Telerik.WebControls.RadEditor.ImagesPaths">ImagesPaths Property</seealso>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ImagesPaths">
+            <summary>Gets or sets the paths where the RadEditor will look for images.</summary>
+            <value>
+            A string array which contains the paths where the RadEditor will look for images.
+            The default value is empty string array.
+            </value>
+            <remarks>
+            	<para>
+                    If a folder is present in <see cref="P:Telerik.WebControls.RadEditor.UploadImagesPaths">UploadImagesPaths</see> or
+                    <see cref="P:Telerik.WebControls.RadEditor.DeleteImagesPaths">DeleteImagesPaths</see>, but is missing from
+                    ImagesPaths it will not be visible in the Image Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                This example demonstrates how to set the ImagesPaths ,
+                <see cref="P:Telerik.WebControls.RadEditor.UploadImagesPaths">UploadImagesPaths</see> and
+                <see cref="P:Telerik.WebControls.RadEditor.DeleteImagesPaths">DeleteImagesPaths</see> properties in the ASPX or in
+                the code-behind:
+                <para class="example">
+            		<para class="sourcecode">&lt;rade:radeditor<br/>
+                    runat="server"<br/>
+                    id="RadEditor1"<br/>
+                    imagespaths="~/UploadImages,/Images/Temp,/Images/Default"<br/>
+                    uploadimagespaths="~/UploadImages,/Images/Temp"<br/>
+                    deleteimagespaths="/Images/Temp"&gt;<br/>
+                    &lt;/rade:radeditor&gt;</para>
+            		<para>In this specific example the users of the application will see three
+                    folders in the Image Manager dialog:
+                    <font face="Courier New">UploadImages</font>,
+                    <font face="Courier New">Default</font> and
+                    <font face="Courier New">Temp</font>.</para>
+            		<para>When browsing the <font face="Courier New">UploadImages</font> and
+                    <font face="Courier New">Temp</font> folders, the Upload Image tab will be
+                    enabled; otherwise it will be disabled.</para>
+            		<para>When browsing the <font face="Courier New">Temp</font> folder, the Delete
+                    button in the Browse Files tab will be enabled; otherwise it will be
+                    disabled.</para>
+            		<para>The <font face="Courier New">Images</font> folder will not be browsable.
+                    If you want to allow the users to browse it you should add
+                    "<font face="Courier New">/Images</font>" to the ImagesPaths.</para>
+            	</para>
+            	<code lang="VB">
+            RadEditor1.ImagesPaths = New String(3) {"~/UploadImages", "/Images/Temp", "/Images/Default"}
+            RadEditor1.UploadImagesPaths = New String(2) {"~/UploadImages", "/Images/Temp"}
+            RadEditor1.DeleteImagesPaths = New String(1) {"/Images/Temp"}
+                </code>
+            	<code lang="CS">
+            RadEditor1.ImagesPaths = new string[3] {"~/UploadImages", "/Images/Temp", "/Images/Default"};
+            RadEditor1.UploadImagesPaths = new string[2] {"~/UploadImages", "/Images/Temp"};
+            RadEditor1.DeleteImagesPaths = new string[1] {"/Images/Temp"};
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.MaxDocumentSize">
+            <summary>
+            Gets or sets the maximum file size in bytes allowed for uploading with the Document
+            Manager dialog.
+            </summary>
+            <value>
+            The maximum file size in bytes allowed for uploading with the Document Manager
+            dialog. The default value is <strong>512000</strong> bytes.
+            </value>
+            <remarks>
+            This value must be less than the <strong>maxRequestLength</strong> setting in the
+            application's web.config or machine.config files. The default
+            <strong>maxRequestLength</strong> is 4096kB.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.MaxFlashSize">
+            <summary>
+            Gets or sets the maximum file size in bytes allowed for uploading with the Flash
+            Manager dialog.
+            </summary>
+            <value>
+            The maximum file size in bytes allowed for uploading with the Flash Manager
+            dialog. The default value is <strong>102400</strong> bytes.
+            </value>
+            <remarks>
+            This value must be less than the <strong>maxRequestLength</strong> setting in the
+            application's web.config or machine.config files. The default
+            <strong>maxRequestLength</strong> is 4096kB.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.MaxImageSize">
+            <summary>
+            Gets or sets the maximum file size in bytes allowed for uploading with the Image
+            Manager dialog.
+            </summary>
+            <value>
+            The maximum file size in bytes allowed for uploading with the Image Manager
+            dialog. The default value is <strong>204800</strong> bytes.
+            </value>
+            <remarks>
+            This value must be less than the <strong>maxRequestLength</strong> setting in the
+            application's web.config or machine.config files. The default
+            <strong>maxRequestLength</strong> is 4096kB.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.MaxMediaSize">
+            <summary>
+            Gets or sets the maximum file size in bytes allowed for uploading with the Media
+            Manager dialog.
+            </summary>
+            <value>
+            The maximum file size in bytes allowed for uploading with the Media Manager
+            dialog. The default value is <strong>5242880</strong> bytes.
+            </value>
+            <remarks>
+            This value must be less than the <strong>maxRequestLength</strong> setting in the
+            application's web.config or machine.config files. The default
+            <strong>maxRequestLength</strong> is 4096kB.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.MaxTemplateSize">
+            <summary>
+            Gets or sets the maximum file size in bytes allowed for uploading with the Template
+            Manager dialog.
+            </summary>
+            <value>
+            The maximum file size in bytes allowed for uploading with the Template Manager
+            dialog. The default value is <strong>204800</strong> bytes.
+            </value>
+            <remarks>
+            This value must be less than the <strong>maxRequestLength</strong> setting in the
+            application's web.config or machine.config files. The default
+            <strong>maxRequestLength</strong> is 4096kB.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.MediaFilters">
+            <summary>
+            Gets or sets the file extension filters that control which files are shown in the
+            Media Manager dialog.
+            </summary>
+            <value>
+            	<para>A string array which contains the file extension filters that control which files
+                are shown in the Media Manager dialog.</para>
+            	<para>The default filters are <strong>*.asf, *.asx, *.wm, *.wmx, *.wmp, *.wma, *.wax, *.wmv,
+            *.wvx, *.avi, *.wav, *.mpeg, *.mpg, *.mpe, *.m1v, *.mp2, *.mpv2, *.mp2v, *.mpa, *.mp3,
+            *.m3u, *.mid, *.midi, *.rmi, *.aif, *.aifc, *.aiff, *.au, *.snd</strong>.</para>
+            </value>
+            <remarks>
+            	<para>The following wildcard characters are permitted in a filter string:<br/>
+                * - Zero or more characters.<br/>
+                ? - Exactly one character.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the filters are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+            	<para>This example demonstrates how to set the Media Manager dialog to display only
+                *.mp3 and *.wma files using ASPX declaration or code-behind.</para>
+            	<para class="sourcecode">
+            		<para class="sourcecode"></para>
+            		<para class="sourcecode">&lt;rade:radeditor<br/>
+                    runat="server"<br/>
+                    id="RadEditor1"<br/>
+                    mediafilters="*.mp3,*.wma"<br/>
+                    /&gt;</para>
+            	</para>
+            	<code lang="VB">
+            RadEditor1.MediaFilters = New String(2) {"*.mp3", "*.wma"}
+                </code>
+            	<code lang="CS">
+            RadEditor1.MediaFilters = New String[2] {"*.mp3", "*.wma"};
+                </code>
+            </example>
+            <seealso cref="P:Telerik.WebControls.RadEditor.MediaPaths">MediaPaths Property</seealso>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.MediaPaths">
+            <summary>Gets or sets the paths where the RadEditor will look for media files.</summary>
+            <value>
+            A string array which contains the paths where the RadEditor will look for
+            media files. The default value is empty string array.
+            </value>
+            <remarks>
+            	<para>
+                    If a folder is present in <see cref="P:Telerik.WebControls.RadEditor.UploadMediaPaths">UploadMediaPaths</see> or
+                    <see cref="P:Telerik.WebControls.RadEditor.DeleteMediaPaths">DeleteMediaPaths</see>, but is missing from
+                    MediaPaths it will not be visible in the Media Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                This example demonstrates how to set the MediaPaths,
+                <see cref="P:Telerik.WebControls.RadEditor.UploadMediaPaths">UploadMediaPaths</see> and
+                <see cref="P:Telerik.WebControls.RadEditor.DeleteMediaPaths">DeleteMediaPaths</see> properties in the ASPX or in
+                the code-behind:
+                <para class="example">
+            		<para class="sourcecode">&lt;rade:radeditor<br/>
+                    runat="server"<br/>
+                    id="RadEditor1"<br/>
+                    mediapaths="~/UploadMedia,/Media/Temp,/Media/Default"<br/>
+                    uploadmediapaths="~/UploadMedia,/Media/Temp"<br/>
+                    deletemediapaths="/Media/Temp"&gt;<br/>
+                    &lt;/rade:radeditor&gt;</para>
+            		<para>In this specific example the users of the application will see three
+                    folders in the Media Manager dialog:
+                    <font face="Courier New">UploadMedia</font>,
+                    <font face="Courier New">Default</font> and
+                    <font face="Courier New">Temp</font>.</para>
+            		<para>When browsing the <font face="Courier New">UploadMedia</font> and
+                    <font face="Courier New">Temp</font> folders, the Upload Media tab will be
+                    enabled; otherwise it will be disabled.</para>
+            		<para>When browsing the <font face="Courier New">Temp</font> folder, the Delete
+                    button in the Browse Media tab will be enabled; otherwise it will be
+                    disabled.</para>
+            		<para>The <font face="Courier New">Media</font> folder will not be browsable.
+                    If you want to allow the users to browse it you should add
+                    "<font face="Courier New">/Media</font>" to the MediaPaths list.</para>
+            	</para>
+            	<code lang="VB">
+            RadEditor1.MediaPaths = New String(3) {"~/UploadMedia", "/Media/Temp", "/Media/Default"}
+            RadEditor1.UploadMediaPaths = New String(2) {"~/UploadMedia", "/Media/Temp"}
+            RadEditor1.DeleteMediaPaths = New String(1) {"/Media/Temp"}
+                </code>
+            	<code lang="CS">
+            RadEditor1.MediaPaths = new string[3] {"~/UploadMedia", "/Media/Temp", "/Media/Default"};
+            RadEditor1.UploadMediaPaths = new string[2] {"~/UploadMedia", "/Media/Temp"};
+            RadEditor1.DeleteMediaPaths = new string[1] {"/Media/Temp"};
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.TemplateFilters">
+            <summary>
+            Gets or sets the file extension filters that control which files are shown in the
+            Template Manager dialog.
+            </summary>
+            <value>
+            	<para>A string array which contains the file extension filters that control which files
+                are shown in the Template Manager dialog.</para>
+            	<para>The default filters are <strong>*.html, *.htm</strong>.</para>
+            </value>
+            <remarks>
+            	<para>The following wildcard characters are permitted in a filter string:<br/>
+                * - Zero or more characters.<br/>
+                ? - Exactly one character.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the filters are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                This example demonstrates how to set the Template Manager dialog to display only
+                *.xhtml files using ASPX declaration or code-behind.
+                <para class="sourcecode">
+            		<para class="sourcecode">&lt;rade:radeditor<br/>
+                    runat="server"<br/>
+                    id="RadEditor1"<br/>
+                    templatefilters="*.xhtml"<br/>
+                    /&gt;</para>
+            	</para>
+            	<code lang="VB">
+            RadEditor1.TemplateFilters = New String(1) {"*.xhtml"}
+                </code>
+            	<code lang="CS">
+            RadEditor1.TemplateFilters = New String[1] {"*.xhtml"};
+                </code>
+            </example>
+            <seealso cref="P:Telerik.WebControls.RadEditor.TemplatePaths">TemplatePaths Property</seealso>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.TemplatePaths">
+            <summary>Gets or sets the paths where the RadEditor will look for templates.</summary>
+            <value>
+            A string array which contains the paths where the RadEditor will look for templates.
+            The default value is empty string array.
+            </value>
+            <remarks>
+            	<para>
+                    If a folder is present in <see cref="P:Telerik.WebControls.RadEditor.UploadTemplatePaths">UploadTemplatePaths</see> or
+                    <see cref="P:Telerik.WebControls.RadEditor.DeleteTemplatePaths">DeleteTemplatePaths</see>, but is missing from
+                    TemplatePaths it will not be visible in the Template Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                This example demonstrates how to set the TemplatePaths ,
+                <see cref="P:Telerik.WebControls.RadEditor.UploadTemplatePaths">UploadTemplatePaths</see> and
+                <see cref="P:Telerik.WebControls.RadEditor.DeleteTemplatePaths">DeleteTemplatePaths</see> properties in the ASPX or
+                in the code-behind:
+                <para class="example">
+            		<para class="sourcecode">&lt;rade:radeditor<br/>
+                    runat="server"<br/>
+                    id="RadEditor1"<br/>
+                    templatepaths="~/UploadTemplates,/Templates/Temp,/Templates/Default"<br/>
+                    uploadtemplatepaths="~/UploadTemplates,/Templates/Temp"<br/>
+                    deletetemplatepaths="/Templates/Temp"&gt;<br/>
+                    &lt;/rade:radeditor&gt;</para>
+            		<para>In this specific example the users of the application will see three
+                    folders in the Image Manager dialog:
+                    <font face="Courier New">UploadTemplates</font>,
+                    <font face="Courier New">Default</font> and
+                    <font face="Courier New">Temp</font>.</para>
+            		<para>When browsing the <font face="Courier New">UploadTemplates</font> and
+                    <font face="Courier New">Temp</font> folders, the Upload Template tab will be
+                    enabled; otherwise it will be disabled.</para>
+            		<para>When browsing the <font face="Courier New">Temp</font> folder, the Delete
+                    button in the Choose Template tab will be enabled; otherwise it will be
+                    disabled.</para>
+            		<para>The <font face="Courier New">Templates</font> folder will not be
+                    browsable. If you want to allow the users to browse it you should add
+                    "<font face="Courier New">/Templates</font>" to the list.</para>
+            	</para>
+            	<code lang="VB">
+            RadEditor1.TemplatePaths = New String(3) {"~/UploadTemplates", "/Templates/Temp", "/Templates/Default"}
+            RadEditor1.UploadTemplatePaths = New String(2) {"~/UploadTemplates", "/Templates/Temp"}
+            RadEditor1.DeleteTemplatePaths = New String(1) {"/Templates/Temp"}
+                </code>
+            	<code lang="CS">
+            RadEditor1.TemplatePaths = new string[3] {"~/UploadTemplates", "/Templates/Temp", "/Templates/Default"};
+            RadEditor1.UploadTemplatePaths = new string[2] {"~/UploadTemplates", "/Templates/Temp"};
+            RadEditor1.DeleteTemplatePaths = new string[1] {"/Templates/Temp"};
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.UploadDocumentsPaths">
+            <summary>Gets or sets the paths where the RadEditor will be able to upload documents.</summary>
+            <remarks>
+            	<para>
+                    If a folder is present in UploadDocumentsPaths, but is missing from
+                    <see cref="P:Telerik.WebControls.RadEditor.DocumentsPaths">DocumentsPaths</see> it will not be visible in the Document
+                    Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <value>
+            A string array which contains the paths where the RadEditor will look for documents.
+            The default value is empty string array.
+            </value>
+            <example>
+                For example see the <see cref="P:Telerik.WebControls.RadEditor.DocumentsPaths">DocumentsPaths</see> property.
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.UploadFlashPaths">
+            <summary>Gets or sets the paths where the RadEditor will be able to upload flash animations.</summary>
+            <value>
+            A string array which contains the paths where the RadEditor be able to upload
+            flash animations. The default value is empty string array.
+            </value>
+            <remarks>
+            	<para>
+                    If a folder is present in UploadFlashPaths, but is missing from
+                    <see cref="P:Telerik.WebControls.RadEditor.FlashPaths">FlashPaths</see> it will not be visible in the Flash
+                    Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                For example see the <see cref="P:Telerik.WebControls.RadEditor.FlashPaths">FlashPaths</see> property.
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.UploadImagesPaths">
+            <summary>Gets or sets the paths where the RadEditor will be able to upload images.</summary>
+            <value>
+            A string array which contains the paths where the RadEditor will be able to upload images.
+            The default value is empty string array.
+            </value>
+            <remarks>
+            	<para>
+                    If a folder is present in UploadImagesPaths, but is missing from
+                    <see cref="P:Telerik.WebControls.RadEditor.ImagesPaths">ImagesPaths</see> it will not be visible in the Image
+                    Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                For example see the <see cref="P:Telerik.WebControls.RadEditor.ImagesPaths">ImagesPaths</see> property
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.UploadMediaPaths">
+            <summary>Gets or sets the paths where the RadEditor will be able to upload media files.</summary>
+            <value>
+            A string array which contains the paths where the RadEditor be able to upload
+            media files. The default value is empty string array.
+            </value>
+            <remarks>
+            	<para>
+                    If a folder is present in UploadMediaPaths, but is missing from
+                    <see cref="P:Telerik.WebControls.RadEditor.MediaPaths">MediaPaths</see> it will not be visible in the Media
+                    Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                For example see the <see cref="P:Telerik.WebControls.RadEditor.MediaPaths">MediaPaths</see> property.
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.UploadTemplatePaths">
+            <summary>Gets or sets the paths where the RadEditor will be able to upload templates.</summary>
+            <value>
+            A string array which contains the paths where the RadEditor will be able to upload templates.
+            The default value is empty string array.
+            </value>
+            <remarks>
+            	<para>
+                    If a folder is present in UploadTemplatePaths, but is missing from
+                    <see cref="P:Telerik.WebControls.RadEditor.TemplatePaths">TemplatePaths</see> it will not be visible in the Template
+                    Manager dialog.
+                </para>
+            	<para>Use "~/" (tilde) as a substitution of the web-application's root
+                directory.</para>
+            	<para><strong>Note:</strong> in the ASPX declaration the folders are comma
+                separated string; in the code behind they are string array.</para>
+            </remarks>
+            <example>
+                For example see the <see cref="P:Telerik.WebControls.RadEditor.TemplatePaths">TemplatePaths</see> property
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ValidationGroup">
+             <summary>
+              <para><font color="red">Note: This property is new in the .NET Framework version
+                 2.0.</font></para>
+              <para>Gets or sets the name of the validation group to which this validation
+                 control belongs.</para>
+             </summary>
+             <value>
+             The name of the validation group to which this validation control belongs. The
+             default is an empty string (""), which indicates that this property is not set.
+             </value>
+             <remarks>
+                 This property works only when <see cref="P:Telerik.WebControls.RadEditor.CausesValidation">CausesValidation</see>
+                 is set to true.
+             </remarks>
+            
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Colors">
+            <summary>
+            Gets the collection containing the colors to put in the Foreground and Background color dropdowns.
+            </summary>
+            <value>
+            A StringCollection containing the colors to put in the Foreground and Background
+            color dropdowns. Default is an <strong>empty</strong> StringCollection.
+            </value>
+            <remarks>
+            	<para>The contents of this collection will override the default colors available in
+                the Foreground and Background color dropdowns. In order to extend the default set
+                you should add the default colors and the new colors.</para>
+            	<para><strong>Note</strong>: Setting this property will affect all color pickers of
+                the RadEditor, including those in the table proprties dialogs.</para>
+            </remarks>
+            <example>
+                This example demonstrates how to put only Red, Green and Blue into the Foreground
+                and Background dropdowns.
+                <code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+                RadEditor1.Colors.Add("Red")
+                RadEditor1.Colors.Add("Green")
+                RadEditor1.Colors.Add("Blue")
+            End Sub
+                </code>
+            	<code lang="CS">
+            private void Page_Load(object sender, EventArgs e)
+            {
+                RadEditor1.Colors.Add("Red");
+                RadEditor1.Colors.Add("Green");
+                RadEditor1.Colors.Add("Blue");
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.ContextMenus">
+            <summary>ContextMenus collection.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.CssClasses">
+            <summary>
+            Gets the collection containing the CSS classes to put in the [Apply CSS Class] dropdown.
+            </summary>
+            <value>
+            A KeyValueCollection containing the CSS classes to put in the [Apply CSS Class]
+            dropdown. Default is an <strong>empty</strong> KeyValueCollection .
+            </value>
+            <remarks>
+            	<para>The contents of this collection will override the default CSS classes
+                available in the Apply CSS Class dropdown.</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.DialogParameters">
+            <summary>DialogParameters collection.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.FontNames">
+            <summary>
+            Gets the collection containing the custom font names to put in the Font dropdown.
+            </summary>
+            <value>
+            A string collection containing the custom font names to put in the Font dropdown.
+            Default is an <strong>empty</strong> StringCollection.
+            </value>
+            <remarks>
+            	<para>The contents of this collection will override the default fonts available in
+                the Font dropdown. In order to extend the default set you should add the default
+                font names and the new font names. The default font names are: Arial, Comic Sans
+                MS, Courier New, Tahoma, Times New Roman, Verdana.</para>
+            	<para><strong>Note</strong>: the fonts must exist on the client computer.</para>
+            </remarks>
+            <example>
+                This example demonstrates how to add Arial Narrow font to the Font dropdown.
+                <code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+                RadEditor1.FontNames.Add("Arial")
+                RadEditor1.FontNames.Add("Arial Narrow")
+                RadEditor1.FontNames.Add("Comic Sans MS")
+                RadEditor1.FontNames.Add("Courier New")
+                RadEditor1.FontNames.Add("Tahoma")
+                RadEditor1.FontNames.Add("Times New Roman")
+                RadEditor1.FontNames.Add("Verdana")
+            End Sub
+                </code>
+            	<code lang="CS">
+            private void Page_Load(object sender, EventArgs e)
+            {
+                RadEditor1.FontNames.Add("Arial");
+                RadEditor1.FontNames.Add("Arial Narrow");
+                RadEditor1.FontNames.Add("Comic Sans MS");
+                RadEditor1.FontNames.Add("Courier New");
+                RadEditor1.FontNames.Add("Tahoma");
+                RadEditor1.FontNames.Add("Times New Roman");
+                RadEditor1.FontNames.Add("Verdana");
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.FontSizes">
+            <summary>
+            Gets the collection containing the custom font sizes to put in the [Size] dropdown.
+            </summary>
+            <value>
+            A string collection containing the custom font sizes to put in the Size dropdown.
+            Default is an <strong>empty</strong> StringCollection.
+            </value>
+            <remarks>
+            	<para>The contents of this collection will override the default font sizes
+                available in the [Size] dropdown. In order to extend the default set you should add
+                the default font sizes and the new font sizes. The default font sizes are: 1, 2, 3,
+                4, 5, 6 and 7.</para>
+            	<para><strong>Note</strong>: the minimum font size is 1, the maximum is 7.</para>
+            </remarks>
+            <example>
+                This example demonstrates how to remove the font size 1 from the Size dropdown.
+                <code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+                RadEditor1.FontSizes.Add("2")
+                RadEditor1.FontSizes.Add("3")
+                RadEditor1.FontSizes.Add("4")
+                RadEditor1.FontSizes.Add("5")
+                RadEditor1.FontSizes.Add("6")
+                RadEditor1.FontSizes.Add("7")
+            End Sub
+                </code>
+            	<code lang="CS">
+            private void Page_Load(object sender, EventArgs e)
+            {
+                RadEditor1.FontSizes.Add("2");
+                RadEditor1.FontSizes.Add("3");
+                RadEditor1.FontSizes.Add("4");
+                RadEditor1.FontSizes.Add("5");
+                RadEditor1.FontSizes.Add("6");
+                RadEditor1.FontSizes.Add("7");
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Languages">
+            <summary>Gets the collection containing the available languages for spellchecking.</summary>
+            <remarks>
+            RadEditor has integrated support for the multi-language mode of RadSpell. When
+            working with content in different languages you can select the proper spellchecking
+            dictionary from a dropdown button on the RadEditor toolbar.
+            </remarks>
+            <value>
+            A KeyValueCollection containing the available languages for spellchecking.
+            Default value is <strong>empty</strong> KeyValueCollection.
+            </value>
+            <example>
+                This example demonstrates how to enable spellchecking for English, French and German languages
+                in RadEditor spellchecker.
+                <code lang="VB">
+            Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                RadEditor1.Languages.Add("en-US", "English");
+                RadEditor1.Languages.Add("fr-FR", "French");
+                RadEditor1.Languages.Add("de-DE", "German");
+            End Sub
+                </code>
+            	<code lang="CS">
+            private void Page_Load(object sender, EventArgs e)
+            {
+                RadEditor1.Languages.Add("en-US", "English");
+                RadEditor1.Languages.Add("fr-FR", "French");
+                RadEditor1.Languages.Add("de-DE", "German");
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Links">
+            <summary>
+            Gets the collection containing the links to put in the Custom Links dropdown.
+            </summary>
+            <value>A Link object containing the links to put in the Custom Links dropdown.</value>
+            <remarks>
+            	<para>The Custom Links dropdown of the RadEditor is a very convenient tool for
+                inserting predefined hyperlinks.</para>
+            	<para><strong>Note</strong>: the links can be organized in a tree like
+                structure.</para>
+            </remarks>
+            <example>
+                This example demonstrates how to create a tree like structure of custom links.
+                <code lang="VB">
+            Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                'Add the root
+                RadEditor1.Links.Add("telerik", "http://www.telerik.com")
+                'Add the Products node And its children
+                RadEditor1.Links["telerik"].Add("Products", "http://www.telerik.com/products")
+                RadEditor1.Links["telerik"]["Products"].Add("r.a.d.controls", "http://www.telerik.com/radcontrols")
+                RadEditor1.Links["telerik"]["Products"].Add("r.a.d.editor", "http://www.telerik.com/radeditor")
+                RadEditor1.Links["telerik"]["Products"]["r.a.d.editor"].Add("QSF", "http://www.telerik.com/r.a.d.controls/Editor/Examples/Default/DefaultCS.aspx")
+                'Add Purchase, Support And Client.Net nodes
+                RadEditor1.Links["telerik"].Add("Purchase", "http://www.telerik.com/purchase")
+                RadEditor1.Links["telerik"].Add("Support", "http://www.telerik.com/support")
+                RadEditor1.Links["telerik"].Add("Client.Net", "http://www.telerik.com/clientnet")
+            End Sub
+                </code>
+            	<code lang="CS">
+            private void Page_Load(object sender, EventArgs e)
+            {
+                //Add the root
+                RadEditor1.Links.Add("telerik", "http://www.telerik.com");
+                //Add the Products node and its children
+                RadEditor1.Links["telerik"].Add("Products", "http://www.telerik.com/products");
+                RadEditor1.Links["telerik"]["Products"].Add("r.a.d.controls", "http://www.telerik.com/radcontrols");
+                RadEditor1.Links["telerik"]["Products"].Add("r.a.d.editor", "http://www.telerik.com/radeditor");
+                RadEditor1.Links["telerik"]["Products"]["r.a.d.editor"].Add("QSF", "http://www.telerik.com/r.a.d.controls/Editor/Examples/Default/DefaultCS.aspx");
+                //Add Purchase, Support and Client.Net nodes
+                RadEditor1.Links["telerik"].Add("Purchase", "http://www.telerik.com/purchase");
+                RadEditor1.Links["telerik"].Add("Support", "http://www.telerik.com/support");
+                RadEditor1.Links["telerik"].Add("Client.Net", "http://www.telerik.com/clientnet");
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Modules">
+            <summary>Modules collection.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Paragraphs">
+            <summary>
+            Gets the collection containing the paragraph styles to put in the Paragraph Style
+            dropdown.
+            </summary>
+            <value>
+            A KeyValueCollection containing the paragraph styles to put in the Paragraph
+            Style dropdown. Default is an <strong>empty</strong> KeyValueCollection.
+            </value>
+            <remarks>
+            	<para>The contents of this collection will override the default paragraph styles
+                available in the Paragraph Style dropdown.</para>
+            	<para><strong>Note</strong>: RadEditor supports also block format with css class
+                set. See the example below.</para>
+            </remarks>
+            <example>
+                This example demonstrates how to put several paragraph styles in the Paragraph
+                Style dropdown.
+                <code lang="VB">
+            Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                'Add clear formatting
+                RadEditor1.Paragraphs.Add("Clear Formatting", "body")
+                'Add the standard paragraph styles
+                RadEditor1.Paragraphs.Add("Heading 1", "&lt;h1&gt;")
+                RadEditor1.Paragraphs.Add("Heading 2", "&lt;h2&gt;")
+                RadEditor1.Paragraphs.Add("Heading 3", "&lt;h3&gt;")
+                'Add paragraph style With block Format And css Class
+                RadEditor1.Paragraphs.Add("Heading 2 Bordered", "&lt;h2 class=\"bordered\"&gt;")
+            End Sub
+                </code>
+            	<code lang="CS">
+            private void Page_Load(object sender, EventArgs e)
+            {
+                //Add clear formatting
+                RadEditor1.Paragraphs.Add("Clear Formatting", "body");
+                //Add the standard paragraph styles
+                RadEditor1.Paragraphs.Add("Heading 1", "&lt;h1&gt;");
+                RadEditor1.Paragraphs.Add("Heading 2", "&lt;h2&gt;");
+                RadEditor1.Paragraphs.Add("Heading 3", "&lt;h3&gt;");
+                //Add paragraph style with block format and css class
+                RadEditor1.Paragraphs.Add("Heading 2 Bordered", "&lt;h2 class=\"bordered\"&gt;");
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Snippets">
+            <summary>
+            Gets the collection containing the snippets to put in the Code Snippet
+            dropdown.
+            </summary>
+            <value>
+            A KeyValueCollection containing the snippets to put in the Code Snippet dropdown.
+            Default is an <strong>empty</strong> KeyValueCollection.
+            </value>
+            <remarks>
+            	<para>The Code Snippet dropdown is a very convenient tool for inserting predefined
+                chunks of HTML content like signatures, product description templates, custom
+                tables, etc.</para>
+            	<para>The contents of this collection will override the default snippets available
+                in the Code Snippet dropdown.</para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Symbols">
+            <summary>Gets the collection containing the symbols to put in the Symbols dropdown.</summary>
+            <value>
+            A SymbolCollection containing the symbols to put in the Symbols dropdown. Default
+            is an <strong>empty</strong> SymbolCollection.
+            </value>
+            <remarks>
+            	<para>The contents of this collection will override the default symbols available
+                in the Symbols dropdown.</para>
+            	<para><strong>Note</strong>: multiple symbols can be added at once by using the
+                SymbolCollection.Add() method.</para>
+            </remarks>
+            <example>
+                This example demonstrates how to put only the english alphabet symbols to the
+                Symbols dropdown.
+                <code lang="VB">
+            Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                For i As Integer = 65 To 90
+                    RadEditor1.Symbols.Add(Convert.ToChar(i))
+                Next
+            End Sub
+                </code>
+            	<code lang="CS">
+            private void Page_Load(object sender, EventArgs e)
+            {
+                for (int i=65; i&lt;=90; i++)
+                {
+                    RadEditor1.Symbols.Add(Convert.ToChar(i));
+                }
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.Toolbars">
+            <summary>Toolbars collection.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.OnClientInit">
+            <summary>
+            Gets or sets the name of the client-side function which will be executed after
+            the RadEditor is created.
+            </summary>
+            <value>
+            A string containing the name of the client-side function which will be executed
+            after the RadEditor is created. The default value is
+            <strong>string.Empty</strong>.
+            </value>
+            <remarks>
+            	<para>The function should have the following syntax:</para>
+            	<para>[JavaScript]</para>
+            	<para class="sourcecode">function onClientInit(editor)<br/>
+                {<br/>
+                }</para>
+            <para>
+            	The parameters are:<br/>
+            	editor - the RadEditor instance which is firing the event.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.OnClientLoad">
+            <summary>
+            Gets or sets the name of the client-side function which will be executed after
+            the RadEditor is loaded.
+            </summary>
+            <value>
+            A string containing the name of the client-side function which will be executed
+            after the RadEditor is loaded. The default value is
+            <strong>string.Empty</strong>.
+            </value>
+            <remarks>
+            	<para>The function should have the following syntax:</para>
+            	<para>[JavaScript]</para>
+            	<para class="sourcecode">function onClientLoad(editor)<br/>
+                {<br/>
+                }</para>
+            <para>
+            	The parameters are:<br/>
+            	editor - the RadEditor instance which is firing the event.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.OnClientCommandExecuting">
+            <summary>
+            Gets or sets the name of the client-side function which will be executed before a
+            command is processed.
+            </summary>
+            <value>
+            A string containing the name of the client-side function which will be executed
+            before a command is processed. The default value is
+            <strong>string.Empty</strong>.
+            </value>
+            <remarks>
+            	<para><strong>Note</strong>: The command processing can be cancelled if the
+                function returns <strong>false</strong>.</para>
+            	<para>The function should have the following syntax:</para>
+            	<para>[JavaScript]</para>
+            	<para class="sourcecode">function onClientCommandExecuting(editor, commandName, tool)<br/>
+                {<br/>
+                }</para>
+            <para>
+            	The parameters are:<br/>
+            	editor - the RadEditor instance which is firing the event<br/>
+            	commandName - the name of the command which is being executed. It is set in the <see cref="P:Telerik.WebControls.RadEditor.ToolsFile">toolbar configuration file</see><br/>
+            	tool - the instance of the custom tool object which is activated by the command commandName
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.OnClientCommandExecuted">
+            <summary>
+            Gets or sets the name of the client-side function which will be executed after a
+            command is processed.
+            </summary>
+            <value>
+            A string containing the name of the client-side function which will be executed
+            after a command is processed. The default value is
+            <strong>string.Empty</strong>.
+            </value>
+            <remarks>
+            	<para>The function should have the following syntax:</para>
+            	<para>[JavaScript]</para>
+            	<para class="sourcecode">function onClientCommandExecuted(editor, commandName, tool)<br/>
+                {<br/>
+                }</para>
+            <para>
+            	The parameters are:<br/>
+            	editor - the RadEditor instance which is firing the event<br/>
+            	commandName - the name of the command which is being executed. It is set in the <see cref="P:Telerik.WebControls.RadEditor.ToolsFile">toolbar configuration file</see><br/>
+            	tool - the instance of the custom tool object which is activated by the command commandName
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.OnClientModeChange">
+            <summary>
+            Gets or sets the name of the client-side function which will be executed before
+            the RadEditor mode (Design, Html, Preview) is changed.
+            </summary>
+            <value>
+            A string containing the name of the client-side function which will be executed
+            before the RadEditor mode (Design, Html, Preview) is changed. The default value is
+            <strong>string.Empty</strong>.
+            </value>
+            <remarks>
+            	<para><strong>Note</strong>: The RadEditor mode change can be cancelled if the
+                function returns <strong>false</strong>.</para>
+            	<para>The function should have the following syntax:</para>
+            	<para>[JavaScript]</para>
+            	<para class="sourcecode">function onClientModeChange(editor)<br/>
+                {<br/>
+                }</para>
+            <para>
+            	The parameters are:<br/>
+            	editor - the RadEditor instance which is firing the event.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.OnClientSubmit">
+            <summary>
+            Gets or sets the name of the client-side function which will be executed before
+            the RadEditor submit is initiated.
+            </summary>
+            <value>
+            A string containing the name of the client-side function which will be executed
+            before the RadEditor submit is initiated. The default value is
+            <strong>string.Empty</strong>.
+            </value>
+            <remarks>
+            	<para><strong>Note</strong>: The RadEditor submission can be cancelled if the
+                function returns <strong>false</strong>.</para>
+            	<para>The function should have the following syntax:</para>
+            	<para>[JavaScript]</para>
+            	<para class="sourcecode">function onClientSubmit(editor)<br/>
+                {<br/>
+                }</para>
+            <para>
+            	The parameters are:<br/>
+            	editor - the RadEditor instance which is firing the event.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditor.OnClientCancel">
+            <summary>
+            Gets or sets the name of the client-side function which will be executed when the
+            RadEditor [Cancel] button is clicked.
+            </summary>
+            <value>
+            A string containing the name of the client-side function which will be executed
+            when the RadEditor [Cancel] button is clicked. The default value is
+            <strong>string.Empty</strong>.
+            </value>
+            <remarks>
+            	<para><strong>Note</strong>: The command can be cancelled if the function returns
+                <strong>false</strong>.</para>
+            	<para>The function should have the following syntax:</para>
+            	<para>[JavaScript]</para>
+            	<para class="sourcecode">function onClientCancel(editor)<br/>
+                {<br/>
+                }</para>
+            <para>
+            	The parameters are:<br/>
+            	editor - the RadEditor instance which is firing the event.
+            </para>
+            </remarks>
+        </member>
+        <member name="E:Telerik.WebControls.RadEditor.EditableChanged">
+            <summary>Raised only when passing from a non-editable to an editable mode.</summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadEditor.TextChanged">
+            <summary>
+            Raised when the content of the editor has been changed since the previous
+            postback.
+            </summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadEditor.CancelClicked">
+            <summary>
+            Raised when an event handler is attached and the [Cancel] button
+            is clicked.
+            </summary>
+        </member>
+        <member name="E:Telerik.WebControls.RadEditor.SubmitClicked">
+            <summary>
+            Raised when an event handler is attached and the [Update] button
+            is clicked.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.ToolsFileReader">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.FileItem">
+            <summary>
+            Represents a file item in the FileBrowser control.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileItem.Serialize(System.IO.StringWriter)">
+            <summary>
+            Serializes the file item into a javascript array. This method should be overriden only when developing 
+            a custom FileBrowser control.
+            </summary>
+            <param name="writer">a StringWriter used as a target for the serialization.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.FileItem.#ctor(System.String,System.String,System.Int64,System.String,System.String,System.String,Telerik.WebControls.RadEditorUtils.PathPermissions)">
+            <summary>
+            Creates an instance of the FileItem class.
+            </summary>
+            <param name="name">The name of the file item. The value of this property will be displayed in the FileBrowser control.</param>
+            <param name="extension">The file extension of the file item.</param>
+            <param name="length">The size of the file item in bytes.</param>
+            <param name="location">The virtual path of the parent directory item. When the value is string.Empty, the location is the
+            parent's full path.</param>
+            <param name="url">The url which will be inserted into the RadEditor content area.</param>
+            <param name="tag">The tag of the file item. Used when the virtual path must be different than the url of the item. 
+            When the value of this property is set, the FileBrowser control uses it instead of the combined virtual path.</param>
+            <param name="permissions">The permissions on the file item.</param>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileItem.Extension">
+            <summary>
+            Gets the file extension of the file item.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileItem.Length">
+            <summary>
+            Gets the size of the file item in bytes.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileItem.Location">
+            <summary>
+            Gets the virtual path of the parent directory item. When the value is string.Empty, the location is got
+            from the item's parent.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileItem.Url">
+            <summary>
+            Gets the url which will be inserted into the RadEditor content area.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileItem.Name">
+            <summary>
+            Gets the name of the file item. The value of this property will be displayed in the FileBrowser control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileItem.Permissions">
+            <summary>
+            Gets the permissions on the file item.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.FileItem.Tag">
+            <summary>
+            Gets the tag of the file item. Used when the virtual path must be different than the url of the item. 
+            When the value of this property is set, the FileBrowser control uses it instead of the combined virtual path.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Telerik.WebControls.EditorControls.CssClassSelector.InitializeComponent" -->
+        <member name="T:Telerik.WebControls.EditorControls.FileUploader">
+            <summary>
+            	Summary description for FileUploader.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.PathPermissions">
+            <summary>
+            Represents the actions which will be allowed on the FileBrowserItem.
+            </summary>
+            <remarks>
+            <p>
+            If you want to specify multiple permissions, use the following syntax:
+            </p>
+            <pre>
+            Dim permissions As PathPermissions = PathPermissions.Read Or PathPermissions.Upload Or PathPermissions.Delete
+            </pre>
+            </remarks>
+        </member>
+        <member name="F:Telerik.WebControls.RadEditorUtils.PathPermissions.Read">
+            <summary>
+            The default permission. The FileBrowserItem can only be displayed.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadEditorUtils.PathPermissions.Upload">
+            <summary>
+            Used for DirectoryItems. If enabled, the Upload tab of the dialog will be enabled when
+            the DirectoryItem is opened.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadEditorUtils.PathPermissions.Delete">
+            <summary>
+            If enabled, the DirectoryItem or the FileItem can be deleted.
+            </summary>
+        </member>
+        <member name="T:EditorTestApp.ImageMapDialog">
+            <summary>
+            	Summary description for ImageMapDialog.
+            </summary>
+        </member>
+        <member name="M:EditorTestApp.ImageMapDialog.InitializeComponent">
+            <summary>
+            	Required method for Designer support - do not modify
+            	the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.XhtmlValidator">
+            <summary>
+            Summary description for XhtmlValidator.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.XhtmlValidator.OnInit(System.EventArgs)">
+            <summary>
+            Allow the transfer of data files using the W3C's 
+            specification for HTTP multipart form data. 
+            Microsoft's version has a bug where it does not 
+            format the ending boundary correctly.
+            </summary>    
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.XhtmlValidator.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadEditorUtils.HTTPSend">
+            <summary>
+            Allow the transfer of data files using the W3C's 
+            specification for HTTP multipart form data. 
+            Microsoft's version has a bug where it does not 
+            format the ending boundary correctly.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.HTTPSend.SendTextAsFile(System.String,System.String)">
+            <summary>
+            Transmits a file to the web server stated 
+            in the URL property. 
+            You may call this several times and it will 
+            use the values previously set for fields and URL.
+            </summary>
+            <param name="Filename">The local path of 
+            the file to send.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.HTTPSend.#ctor(System.String)">
+            <summary>
+            Initialize our class for use to 
+            send data files.
+            </summary>
+            <param name="URL">The URL of the 
+            destination server.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.HTTPSend.SetFilename(System.String)">
+            <summary>
+            Used to signal we want the output to go to a 
+            text file verses being transfered to a URL.
+            </summary>
+            <param name="Path">The local path to the 
+            output file.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.HTTPSend.SetField(System.String,System.String)">
+            <summary>
+            Allows you to add some additional field data 
+            to be sent along with the transfer. 
+            This is usually used for things like userid 
+            and password to validate the transfer.
+            </summary>
+            <param name="Name">The name of the 
+            custom field.</param>
+            <param name="Value">The value of the 
+            custom field.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.HTTPSend.SetHeader(System.String,System.String)">
+            <summary>
+            Allows you to add some additional header data 
+            to be sent along with the transfer. 
+            </summary>
+            <param name="Name">The name of the custom header.</param>
+            <param name="Value">The value of the custom header.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.HTTPSend.GetStream">
+            <summary>
+            Determines if we have a file stream set, and 
+            returns either the HttpWebRequest stream or 
+            the file.
+            </summary>
+            <returns>Either the HttpWebRequest stream or 
+            the local output file.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.HTTPSend.GetResponse">
+            <summary>
+            Make the request to the web server and 
+            retrieve it's response into a text buffer.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.HTTPSend.GetFormFields">
+            <summary>
+            Builds the proper format of the multipart 
+            data that contains the form fields and 
+            their respective values.
+            </summary>
+            <returns>All form fields, properly formatted 
+            in a string.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.HTTPSend.GetFileHeader(System.String)">
+            <summary>
+            Returns the proper content information for 
+            the file we are sending.
+            </summary>
+            <param name="Filename">The local path to 
+            the file that should be sent.</param>
+            <returns>All file headers, properly formatted 
+            in a string.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.HTTPSend.GetFileTrailer">
+            <summary>
+            Creates the proper ending boundary for the 
+            multipart upload.
+            </summary>
+            <returns>The ending boundary.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.HTTPSend.WriteString(System.IO.Stream,System.String)">
+            <summary>
+            Mainly used to turn the string into a byte 
+            buffer and then write it to our IO stream.
+            </summary>
+            <param name="Output">The stream to write to.</param>
+            <param name="Data">The data to place into the stream.</param>
+        </member>
+        <member name="M:Telerik.WebControls.RadEditorUtils.HTTPSend.WriteFile(System.IO.Stream,System.String)">
+            <summary>
+            Reads in the file a chunck at a time then 
+            sends it to the output stream.
+            </summary>
+            <param name="Output">The stream to write to.</param>
+            <param name="Filename">The local path of the file to send.</param>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.TransferHttpVersion">
+            <summary>
+            Allows you to specify the specific version 
+            of HTTP to use for uploads.
+            The dot NET stuff currently does not allow 
+            you to remove the continue-100 header
+            from 1.1 and 1.0 currently has a bug in it 
+            where it adds the continue-100. 
+            MS has sent a patch to remove the 
+            continue-100 in HTTP 1.0.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.FileContentType">
+            <summary>
+            Used to change the content type of the file 
+            being sent.
+            Currently defaults to: text/xml. Other options 
+            are text/plain or binary.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.BeginBoundary">
+            <summary>
+            The string that defines the begining boundary 
+            of our multipart transfer as defined in the 
+            w3c specs.
+            This method also sets the Content and Ending 
+            boundaries as defined by the w3c specs.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.ContentBoundary">
+            <summary>
+            The string that defines the content boundary 
+            of our multipart transfer as defined in the 
+            w3c specs.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.EndingBoundary">
+            <summary>
+            The string that defines the ending boundary 
+            of our multipart transfer as defined in the 
+            w3c specs.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.ResponseText">
+            <summary>
+            The data returned to us after the transfer 
+            is completed.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.URL">
+            <summary>
+            The web address of the recipient of the 
+            transfer.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.BufferSize">
+            <summary>
+            Allows us to determine the size of the buffer 
+            used to send a piece of the file at a time 
+            out the IO stream. 
+            Defaults to 1024 * 10.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.Credentials">
+            <summary>
+            Allows us to specified the credentials used 
+            for the transfer.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.Certificate">
+            <summary>
+            Allows us to specifiy the certificate to use 
+            for secure communications.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.KeepAlive">
+            <summary>
+            Gets or sets a value indicating whether to 
+            make a persistent connection to the 
+            Internet resource.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.Expect100">
+            <summary>
+            Gets or sets a value indicating whether the 
+            Expect100-Continue header should be sent.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.Pipelined">
+            <summary>
+            Gets or sets a value indicating whether to 
+            pipeline the request to the Internet resource.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadEditorUtils.HTTPSend.Chunked">
+            <summary>
+            Gets or sets a value indicating whether the 
+            file can be sent in smaller packets.
+            </summary>
+        </member>
+    </members>
+</doc>

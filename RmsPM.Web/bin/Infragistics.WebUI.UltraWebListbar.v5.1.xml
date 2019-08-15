@@ -1,0 +1,1859 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Infragistics.WebUI.UltraWebListbar.v5.1</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.AutoPostBack">
+            <summary>
+            Object that keeps the list of events that trigger post back.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.AutoPostBack.ToString">
+            <summary>String formatted for visual designer.</summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.AutoPostBack.Reset">
+            <summary>
+            Reset all properties to their defaults.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.AutoPostBack.GroupExpanded">
+            <summary>
+            Automatically post back to the server when group was expanded and corresponding event handler was attached to UltraWebListBar.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.AutoPostBack.GroupCollapsed">
+            <summary>
+            Automatically post back to the server when group was collapsed and corresponding event handler was attached to UltraWebListBar.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.AutoPostBack.GroupClicked">
+            <summary>
+            Automatically post back to the server when group was clicked and corresponding event handler was attached to UltraWebListBar.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.AutoPostBack.ItemClicked">
+            <summary>
+            Automatically post back to the server when item was clicked and corresponding event handler was attached to UltraWebListBar.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.ClientSideEvents">
+            <summary>
+            Use the following properties to specify a javascript event handler for trapping client side events.  These events can be used instead of costly postbacks, which require round-tripping data to the server.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.BeforeItemSelected">
+            <summary>
+            <p class="body">Called Before an Item is selected.  This can be used to cancel selection.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.AfterItemSelected">
+            <summary>
+            <p class="body">Called After an Item has been selected.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.BeforeGroupSelected">
+            <summary>
+            <p class="body">Called before a Group is selected.  This event can be used to cancel selection.</p>
+            </summary>
+            <remarks><p class="note">Note:  This event will only be fired if the UltraWebListbar's ViewType is set to Listbar.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.AfterGroupSelected">
+            <summary>
+            <p class="body">Called after a Group has been selected.</p>
+            </summary>
+            <remarks><p class="note">Note:  This event will only be fired if the UltraWebListbar's ViewType is set to Listbar.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.InitializeListbar">
+            <summary>
+            <p class="body">Called after the client-side Listbar object has been initialized, and is ready for processing.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.BeforeGroupExpanded">
+            <summary>
+            <p class="body">Called before an ExplorerBar's group is expanded.</p>
+            </summary>
+            <remarks><p class="notes">Note:  This event will only be fired if the UltraWebListbar's ViewType is set to ExplorerBar.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.AfterGroupExpanded">
+            <summary>
+            <p class="body">Called after an ExplorerBar's group has been expanded.</p>
+            </summary>
+            <remarks><p class="notes">Note:  This event will only be fired if the UltraWebListbar's ViewType is set to ExplorerBar.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.BeforeGroupCollapsed">
+            <summary>
+            <p class="body">Called before an ExplorerBar's group is collapsed.</p>
+            </summary>
+            <remarks><p class="notes">Note:  This event will only be fired if the UltraWebListbar's ViewType is set to ExplorerBar.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.AfterGroupCollapsed">
+            <summary>
+            <p class="body">Called after an ExplorerBar's group has been collapsed.</p>
+            </summary>
+            <remarks><p class="notes">Note:  This event will only be fired if the UltraWebListbar's ViewType is set to ExplorerBar.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.MouseOver">
+            <summary>
+            <p class="body">Called when the user mouses over a Group or Item.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.MouseOut">
+            <summary>
+            <p class="body">Called when the user mouses out of a Group or Item.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.BeforeGroupMove">
+            <summary>
+            <p class="body">Called before a GroupDrag starts.  This event can be used to cancel the GroupMove.</p>
+            </summary>
+            <remarks><p class="body">This event will only be fired if the UltraWebListbar's AllowGroupMoving property is set to GroupSwapping.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.AfterGroupMove">
+            <summary>
+            <p class="body">Called after a GroupDrag completes.</p>
+            </summary>
+            <remarks><p class="body">This event will only be fired if the UltraWebListbar's AllowGroupMoving property is set to GroupSwapping.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.GroupDrag">
+            <summary>
+            <p class="body">Called while the user drags a group.</p>
+            </summary>
+            <remarks><p class="body">This event will only be fired if the UltraWebListbar's AllowGroupMoving property is set to GroupSwapping.</p></remarks>		
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.HeaderClick">
+            <summary>
+            <p class="body">Called when the user clicks on an ExplorerBar group's header.</p>
+            </summary>
+            <remarks><p class="body">This event will only be fired if the UltraWebListbar's ViewType property is set to ExplorerBar.</p></remarks>		
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.ClientSideEvents.HeaderDoubleClick">
+            <summary>
+            <p class="body">Called when the user double clicks on an ExplorerBar group's header.</p>
+            </summary>
+            <remarks><p class="body">This event will only be fired if the UltraWebListbar's ViewType property is set to ExplorerBar.</p></remarks>		
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.CursorUIEditor">
+            <summary>
+               <para>
+                  A custom Type Editor for class styles.  This editor allows the style class
+                  names to be added to a list from which the user can select.  
+                  This is possible because
+                  the property grid is signed with a "reflection" permission that
+                  allows for private reflection.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.CursorUIEditor.#ctor">
+            <summary>
+            Default no parameter constructor.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.CursorUIEditor.CreateListBox(System.ComponentModel.ITypeDescriptorContext,System.Object)">
+            <summary>
+               <para>
+                    Creates a list box to show in the property grid.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.CursorUIEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+               <para>
+                    This is an override from UITypeEditor.  The property grid will call this when
+                    it wants to display the editor for the given value.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.CursorUIEditor.FillValues(System.Windows.Forms.ListBox,System.ComponentModel.ITypeDescriptorContext,System.String)">
+            <summary>
+               <para>
+                    Private function to fill the contents of our list box.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.CursorUIEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+               <para>
+                    This is an override from UITypeEditor.  The editor style indicates what
+                    type of editor we are providing:  we can either display a dialog or a
+                    drop-down box.  Our editor always shows a drop-down box.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.CursorUIEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+               <para>
+                    This is an override from UITypeEditor and indicates if we support 
+                    painting a small representation of our value in the property grid.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.CursorUIEditor.OnListClick(System.Object,System.EventArgs)">
+            <summary>
+               <para>
+                    Called when the user clicks something in the list box.  We close
+                    the drop down at this time.
+               </para>
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.CursorUIEditor.CursorEditorListBox">
+            <summary>
+               <para>
+                    Owner draw list box displays classess in the list box
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.CursorUIEditor.CursorEditorListBox.IsInputKey(System.Windows.Forms.Keys)">
+            <summary>
+               <para>
+                    We override this from Control so we can designate
+                    that the return key should be used for input.  In
+                    other words, we want return to come to us, not be
+                    treated as the "OK" to dismiss a dialog.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.CursorUIEditor.CursorEditorListBox.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+               <para>
+                    We handle keyboard processing here for the return
+                    key.  We treat this key like a click on the list
+                    box.
+               </para>
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.Group">
+            <summary>
+              Represents a Group in the Listbar. Acts as a parent for Items. 
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Group.#ctor">
+            <summary>
+            Default constructor, to create a new Group object.
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Group.#ctor(System.String)"/>
+            </summary>
+            <remarks>
+            <p class="body">This constructor will create a new Group object, and give it an empty <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Items"/> collection.  It will assign the value "Group" to the Text property.</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Group.#ctor(System.String)">
+             <summary><p class="body">One parameter constructor to create a Group object.</p>
+             <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Group.#ctor"/><seealso cref="M:Infragistics.WebUI.UltraWebListbar.Group.#ctor(System.String,Infragistics.WebUI.Shared.Style)"/>
+             </summary>
+            <remarks>
+            <p class="body">This constructor will create a new Group object, and give it an empty <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Items"/>Items collection.  It will assign the value passed in the text parameter to the <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/> property.</p>
+            </remarks>
+             <param name="text">A string which will be assigned to the <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/> property.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Group.#ctor(System.String,System.String)">
+            <summary>
+            <p class="body">Creates a new Group with the specified Text and Key values.</p>
+            </summary>
+            <param name="text">The Text used for this group.</param>
+            <param name="key">A unique Key used to identify this Group.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Group.#ctor(System.String,Infragistics.WebUI.Shared.Style)">
+            <summary>
+            Two parameter constructor used for creating a new Group object.
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Group.#ctor"/><seealso cref="M:Infragistics.WebUI.UltraWebListbar.Group.#ctor(System.String)"/>
+            </summary>
+            <param name="text">A string which will be assigned to the <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/> property.</param>
+            <param name="style">An <see cref="T:Infragistics.WebUI.Shared.Style"/> object, used for this groups <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonStyle"/>, <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonHoverStyle"/>, and <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonSelectedStyle"/> properties.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Group.FindControl(System.String)">
+            <summary>
+            <p class="body">Searches this Group's template or UserControl to find a control with the specified id.</p>
+            </summary>
+            <remarks><p class="body">This method will recursively search all children of this group.  If no match is found, null will be returned.</p></remarks>
+            <param name="id">The id of the child control to find.</param>
+            <returns>A reference to the control, or null if no match was found.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Group.ToString">
+            <summary>
+            A short description of the Group.
+            </summary>
+            <returns>The group's <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/>.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Group.Reset">
+            <summary>
+            <p class="body">Resets all properties set on this group.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.UserControl">
+            <summary>
+            <p class="body">Returns an instance of the userControl specified in the <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.UserControlUrl"/> property.  This will be null if the UserControlUrl property is not set.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.ToolTip">
+            <summary>
+            <p class="body">The text to be used as a tooltip for this group.</p>
+            </summary>		
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.Enabled">
+            <summary>
+            <p class="body">Determines whether this group will respond to user interaction.  When this group is not enabled, none of its items will be enabled either.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.UserControlUrl">
+             <summary>
+            <p class="body">The UserControlUrl allows you to host a UserControl inside of a Group, insted of Items.</p> 
+             </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.Expanded">
+            <summary>
+            <p class="body">The Expanded property controls whether the Items area is visible for this Group.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.TargetUrl">
+            <summary>
+            A URL which will be navigated to when this Item is clicked on.
+            </summary>
+            <remarks><p class="body">When set, the TargetUrl will be displayed in the frame specified by the <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.TargetFrame"/> property.  The TargetUrl should be fully qualifyied, for example "http://www.infragistics.com".  You can also use this property to execute a scripting call.  For example:</p>
+            <p class="code">javascript:myFunction();</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.TargetFrame"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.TargetFrame">
+            <summary>
+            Used to determine what frame the <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.TargetUrl"/> should be displayed in.
+            </summary>
+            <remarks><p class="body">You can specify a frame in a frameset, an IFrame, "_blank" for a new window, or leave the value blank to use the UltraWebListbar's internal Frame.</p>
+            <p class="note">Note: The internal fram will only appear when the UltraWebListbar's <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.BarWidth"/> is set to a value other than it's default value of 100%.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.TargetUrl"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.Key">
+            <summary>
+            Returns or sets a unique string identifier for this Group within the Groups collection
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.Text">
+            <summary>
+            The text that will be displayed when this Group is rendered.
+            </summary>
+            <remarks>
+            <p class="body">You can control text wrapping by setting the <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.NoWrap"/> property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.TextAlign"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.NoWrap"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.ItemSelectionStyle">
+            <summary>
+            Determines how items should be selected in this group.  
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ItemSelectionStyle"/>
+            </summary>
+            <remarks><p class="body">This property determines how an item will be selected.  If set to <see cref="F:Infragistics.WebUI.UltraWebListbar.ItemSelectionStyle.FullRowSelection"/>, the selected style will be applied to the item's image and text, as a whole unit.  Use <see cref="F:Infragistics.WebUI.UltraWebListbar.ItemIconStyle.NotSet"/> to inherit the value from the UltraWebListbar object.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.ItemIconStyle">
+            <summary>
+            Determines how an Item's image should be displayed.
+            </summary>
+            <remarks><p class="body">This property determines how an Item's image will be displayed in relation to it's text.  Specify <see cref="F:Infragistics.WebUI.UltraWebListbar.ItemIconStyle.NotSet"/> to inherit the value from the UltraWebListbar object.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.Tag">
+            <summary>
+            Used to hold any extra data for specific development needs.
+            </summary>
+            <remarks><p class="body">By default, this is set to null.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.TextAlign">
+            <summary>
+            Determines how the <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/> of this group should be aligned inside of the button it is rendered in.  
+            </summary>
+            <remarks><p class="body">This property is used to set whether the <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/> is Left, Right, or Center aligned.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.ImageTextAlign">
+            <summary>
+            <p class="body">Used to determine how an Item's text should be aligned with relation to its image.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.ItemAlign">
+            <summary>
+            The horizontal alignment of Items in this Group.
+            </summary>
+            <remarks><p class="body">Determines whether the items in this group will be Left, Center, or Right aligned.  This can be overriden by each Item individually, by setting the Item's Align property.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.ID">
+            <summary>
+            The ID that is used to identify this Group object inside of the HTML.  
+            </summary>
+            <remarks><p class="body">It consists of "Group_" and this groups index in the <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.Groups"/> collection.</p>
+            <p class="note">Note: This property is Read only.  The value is created dynamically, and changes according to the Group's index.  This ID is only unique inside of the Groups collection.  The final ID used when rendering this group will consist of the UltraWebListbar.ID and the value of this ID.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.AccessKey">
+            <summary>
+            Keyboard access key for this group.
+            </summary>
+            <remarks>
+            <p class="note">The action that occurs is equivalent to the mouse click/doubleclick on this group depending on the value of the HeaderClickAction property.</p>
+            <p class="note">The access-key is the feature of a browser, which is triggered by the keyboard entry of Alt+key.</p>
+            <p class="note">This property is supported only for InternetExplorer, which allows to set focus to the &lt;DIV&gt; and &lt;TD&gt; html elements.</p>
+            <p class="note">If the &lt;u&gt; string is not found in the Text of this group and the value of AccessKey is set as the UPPER-case-letter, then the first found access-character in the Text is rendered with underscore.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.Index">
+            <summary>
+            Returns the zero based index of this item, it it's owning Items Collection.
+            </summary>
+            <remarks>Returns -1 if this item is not part of an Items Collection.</remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.VisibleIndex">
+             <summary>
+             <p class="body">The position this ExplorerBar group will be displayed at.</p>
+             </summary>
+            <remarks><p class="body">This property can be used to move a group up or down with out changing its index in the Groups collection.  This value will also reflect where the group is currently located.  This can change if AllowGroupMoving is set to GroupSwapping.</p>
+            <p class="notes">Note: This property is only available for the ExplorerBar style.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.Template">
+             <summary>
+             Templates are used as a means for the a Group to host controls, instead of just Items.
+             </summary>
+            <remarks>Setting the template content of any Group can be done at DesignTime by right clicking the UltraWebListbar, and selecting "Edit Template" menu item.  You can also use the <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.UserControlUrl"/> property, to host a UserControl inside of the Group.</remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.HeaderAppearance">
+             <summary>
+            <p class="body"> The collection of appearance properties that will be applied to an ExplorerBar's Header.</p>
+             </summary>
+            <remarks><p class="body">  When <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.MergeStyles"/> is set to <code>true</code>, the values here will be merged with the values defined on the UltrawebListbar's DefaultHeaderAppearance.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonStyle">
+            <summary>
+            The style that will be used when rendering this Group as a button in the Listbar.
+            </summary>
+            <remarks>
+            <p class="body">The <b>ButtonStyle</b> is applied to a group button when not selected, or moused over.  When set, <b>ButtonStyle</b> overrides <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultGroupButtonStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultGroupButtonStyle"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonSelectedStyle">
+            <summary>
+            The style that will be used when rendering this Group as button in the Listbar, if it is the currently selected group.
+            </summary>
+            <remarks>
+            <p class="body">The ButtonSelectedStyle is applied to a group button when selected, even if moused over.  When set, <b>ButtonSelectedStyle</b> overrides <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultGroupButtonSelectedStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultGroupButtonSelectedStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedGroup"/>	
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonHoverStyle">
+            <summary>
+            The style that will be applied when this Group button is moused over.
+            </summary>
+            <remarks>
+            <p class="body">The ButtonHoverStyle is the style which is applied to a group button when moused over.  When set, <b>ButtonHoverStyle</b> overrides <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultGroupButtonHoverStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your style class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <p class="note">Note: If this group is the <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedGroup"/> the <b>ButtonHoverStyle</b> will not be applied.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultGroupButtonHoverStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedGroup"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemStyle">
+            <summary>
+            The style used when rendering an <see cref="T:Infragistics.WebUI.UltraWebListbar.Item"/> for this group.
+            </summary>
+            <remarks><p class="body">When set, this style will be used for any <see cref="T:Infragistics.WebUI.UltraWebListbar.Item"/> in this group.  It overrides <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemStyle"/>, and is overridden by <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.DefaultStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Item.DefaultStyle"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemSelectedStyle">
+            <summary>
+            The style used when an <see cref="T:Infragistics.WebUI.UltraWebListbar.Item"/> in this group is selected.
+            </summary>
+            <remarks><p class="body">When set, this style will be applied to any <see cref="T:Infragistics.WebUI.UltraWebListbar.Item"/> in this group when selected.  It overrides <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemSelectedStyle"/>, and is overridden by <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.SelectedStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemSelectedStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Item.SelectedStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedItem"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.ItemSelectionStyle"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemHoverStyle">
+            <summary>
+            This style is applied when an <see cref="T:Infragistics.WebUI.UltraWebListbar.Item"/> in this group is moused over.
+            </summary>
+            <remarks><p class="body">When set, this style will be applied to any <see cref="T:Infragistics.WebUI.UltraWebListbar.Item"/> in this group, when moused over.  It overrides <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemHoverStyle"/>, and is overridden by <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.HoverStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemHoverStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Item.HoverStyle"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.GroupStyle">
+            <summary>
+            The style used for the area that contains the <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Items"/> in this group.
+            </summary>
+            <remarks><p class="body">This is the area between the set of group buttons which appear at the top of the listbar, and set of group buttons which appear at the bottom.  When set, this value will override <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultGroupStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            </remarks>		
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.Control">
+            <summary>
+            A reference to the UltraWebListbar that this Group belongs to.
+            </summary>
+            <remarks>
+            <p class="body">A Group must be added to the <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.Groups"/> collection before this property can be used.</p>
+            <p class="note">Note: This property is ReadOnly</p> 
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Group.Items">
+            <summary>
+            A reference to the <see cref="T:Infragistics.WebUI.UltraWebListbar.Items"/> collection that belongs to this group.  
+            </summary>
+            <remarks><p class="body">This should never be null, but may be empty.</p>
+            <seealso cref="T:Infragistics.WebUI.UltraWebListbar.Items"/>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.TemplateGroup">
+            <summary>
+            <p class="body">The TemplateGroup is used to wrap an Infragistics.WebUI.UltraWebListbar.Group object, so that it can host templates.  This class is not intended to be used directly.</p>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.TemplateGroup.#ctor(Infragistics.WebUI.UltraWebListbar.Group)">
+            <summary>
+            Infragistics Internal Use.
+            </summary>
+            <param name="group"></param>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.Groups">
+            <summary>
+            This class is used to hold each <see cref="T:Infragistics.WebUI.UltraWebListbar.Group"/>.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Groups.#ctor(Infragistics.WebUI.UltraWebListbar.UltraWebListbar)">
+            <summary>
+            Constructor which creates a new Groups collection,
+            and links it to an UltraWebListbar object.
+            </summary>
+            <param name="owner">The UltraWebListbar which parents this collection.  This value should not be null.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Groups.OnInsertComplete(System.Int32,System.Object)">
+            <summary>
+            Overridden to link a newly inserted Group to this Groups object.
+            </summary>
+            <remarks><p class="body">If you need to override this method for any reason, base.OnInsertComplete, must be called in order for the UltraWebListbar to function properly.</p></remarks>
+            <param name="i">The index at which to insert this item.</param>
+            <param name="val">The object being inserted.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Groups.FromKey(System.String)">
+            <summary>
+            Property indexer for the collection. Uses the Key string to return a Group object.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Groups.Add(Infragistics.WebUI.UltraWebListbar.Group)">
+            <summary>
+            Adds the specified group to this collection.
+            </summary>
+            <remarks><p class="body">Adds a Group to the end of the current list of Groups.</p>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Groups.Add(System.String)"/><seealso cref="M:Infragistics.WebUI.UltraWebListbar.Groups.Add(System.String,Infragistics.WebUI.Shared.Style)"/>
+            </remarks>
+            <param name="group">A non-null <see cref="T:Infragistics.WebUI.UltraWebListbar.Group"/> object.</param>
+            <returns>The group which was added.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Groups.Insert(System.Int32,Infragistics.WebUI.UltraWebListbar.Group)">
+            <summary>
+            Inserts the group into the collection at the specified index.
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Groups.Insert(System.Int32,System.String)"/><seealso cref="M:Infragistics.WebUI.UltraWebListbar.Groups.Insert(System.Int32,System.String,Infragistics.WebUI.Shared.Style)"/>
+            </summary>
+            <param name="index">The index to insert the group at</param>
+            <param name="group">The non-null group to be inserted</param>
+            <returns>The group which was just inserted.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Groups.Add(System.String)">
+            <summary>
+            Creates a new <see cref="T:Infragistics.WebUI.UltraWebListbar.Group"/> with the specified <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/> value, and adds it to this collection.
+            </summary>
+            <remarks><p class="body">This is the same as calling:</p>
+            <p class="code">this.Add(new Group(text));</p>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Groups.Add(Infragistics.WebUI.UltraWebListbar.Group)"/>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Group.#ctor(System.String)"/>
+            </remarks>
+            <param name="text">The Text for the new group</param>
+            <returns>A new group with Text text</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Groups.Add(System.String,System.String)">
+            <summary>
+            Creates a new <see cref="T:Infragistics.WebUI.UltraWebListbar.Group"/> with the specified <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/> and <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Key"/> values, and adds it to this collection.
+            </summary>
+            <remarks><p class="body">This is the same as calling:</p>
+            <p class="code">this.Add(new Group(text,key));</p>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Groups.Add(Infragistics.WebUI.UltraWebListbar.Group)"/>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Group.#ctor(System.String)"/>
+            </remarks>
+            <param name="text">The Text for the new group</param>
+            <param name="key">A key value, used to identify the new group.</param>
+            <returns>A new group with Text text</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Groups.Add(System.String,Infragistics.WebUI.Shared.Style)">
+            <summary>
+            Creates a new <see cref="T:Infragistics.WebUI.UltraWebListbar.Group"/>, sets its <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/> and <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonStyle"/> properties, and adds it to this collection.
+            </summary>
+            <remarks><p class="body">This is the same as calling:</p>
+            <p class="code">this.Add(new Group(text,style));</p>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Groups.Add(Infragistics.WebUI.UltraWebListbar.Group)"/>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Groups.Add(System.String)"/>
+            </remarks>
+            <param name="text">The Text for the new group</param>
+            <param name="style">The ButtonStyle for the group</param>
+            <returns>A new Group with the specified <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonStyle"/> and <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/>.</returns>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Group.#ctor(System.String,Infragistics.WebUI.Shared.Style)"/>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Groups.Insert(System.Int32,System.String)">
+            <summary>
+            Inserts a new Group with the specified <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/> into the collection at the specified index.
+            </summary>
+            <remarks><p class="body">This is the same as calling:</p>
+            <p class="code">this.Insert(index,new Group(text));</p>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Groups.Insert(System.Int32,Infragistics.WebUI.UltraWebListbar.Group)"/>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Groups.Insert(System.Int32,System.String,Infragistics.WebUI.Shared.Style)"/>
+            </remarks>
+            <param name="index">The index where the group should be inserted.</param>
+            <param name="text">A string to be used for the group's <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/> property.</param>
+            <returns>A new Group with specified text</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Groups.Insert(System.Int32,System.String,Infragistics.WebUI.Shared.Style)">
+            <summary>
+            Inserts a new group into the collection at the specified index, and sets it's ButtonStyle and Text properties.
+            </summary>
+            <remarks><p class="body">This is the same as calling:</p>
+            <p class="code">this.Insert(index,new Group(text,style));</p>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Groups.Insert(System.Int32,Infragistics.WebUI.UltraWebListbar.Group)"/>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Groups.Insert(System.Int32,System.String)"/>
+            </remarks>
+            <param name="index">The index where the group should be inserted.</param>
+            <param name="text">A string to be used for the group's <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/> property.</param>
+            <param name="style">The style which will be used when creating this group.</param>
+            <returns>A new Group with the specified <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonStyle"/>, and <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/>.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Groups.Remove(Infragistics.WebUI.UltraWebListbar.Group)">
+            <summary>
+            Removes the group from this collection.
+            </summary>
+            <param name="group">The group to be removed.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Groups.Clear">
+            <summary>
+            <p class="body">Removes all Groups from this collection.</p>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Groups.GetEnumerator">
+            <summary>
+            Returns an enumerator object for the collection.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Groups.Control">
+            <summary>
+            A reference to the UltraWebListbar object which this collection belongs to.
+            </summary>
+            <remarks><p class="body">This value should never be null.  This property is ReadOnly.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Groups.Item(System.Int32)">
+            <summary>
+            Indexer for this collection
+            </summary>
+            <remarks><p class="body">If the index is out of range, null will be returned.  Otherwise, the group which is located at the specified index is returned.</p>
+            <p class="note">Note: Indexes start at 0, and can not be negative.</p> 
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Groups.IsReadOnly">
+            <summary>
+            Returns a Boolean value indicating whether the collection is read-only.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.HeaderAppearance">
+            <summary>
+            Summary description for HeaderAppearance.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.HeaderAppearance.#ctor">
+            <summary>
+            Default Constructor. 
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.HeaderAppearance.Reset">
+            <summary>
+            <p class="body">Resets all properties on this object.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.HeaderAppearance.ExpandedAppearance">
+            <summary>
+            <p class="body">The set of appearance properties that should be applied to a group header when it is in its expanded state.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.HeaderAppearance.CollapsedAppearance">
+            <summary>
+            <p class="body">The set of appearance properties that should be applied to a group header when it is in its collapsed state.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.HeaderAppearance.HoverAppearance">
+            <summary>
+            <p class="body">The set of appearance properties that should be applied to a group header when it is moused over.</p>
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.HeaderStyle">
+            <summary>
+            Summary description for HeaderStyle.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.HeaderStyle.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.HeaderStyle.Style">
+            <summary>
+            <p class="body">All CssStyle related properties.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.HeaderStyle.Image">
+            <summary>
+            <p class="body">A relative path to an Image file, which should be used as this Header's Icon.</p>
+            </summary>
+            <remarks><p class="notes">The image specified here will be relative to path defined in the UltraWebListbar's ImageDirectory property.  If you want the path to be relative to the current directory, you should prefix the path with "./"</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.HeaderStyle.ExpansionIndicatorImage">
+            <summary>
+            <p class="body">A relative path to an Image file, which should be used as this Header's Expansion Button.</p>
+            </summary>
+            <remarks><p class="notes">The image specified here will be relative to path defined in the UltraWebListbar's ImageDirectory property.  If you want the path to be relative to the current directory, you should prefix the path with "./"</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.HeaderStyle.LeftCornerImage">
+            <summary>
+            <p class="body">A relative path to an Image file, which should be used as this Header's left edge.  This image will shown as the left 5 pixels of the header.  For the XPExplorerBar look, you would want to specify an image with it's top left corner rounded off.</p>
+            </summary>
+            <remarks><p class="notes">The image specified here will be relative to path defined in the UltraWebListbar's ImageDirectory property.  If you want the path to be relative to the current directory, you should prefix the path with "./"</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.HeaderStyle.RightCornerImage">
+            <summary>
+            <p class="body">A relative path to an Image file, which should be used as this Header's right edge.  This image will shown as the right 5 pixels of the header.  For the XPExplorerBar look, you would want to specify an image with it's top right corner rounded off.</p>
+            </summary>
+            <remarks><p class="notes">The image specified here will be relative to path defined in the UltraWebListbar's ImageDirectory property.  If you want the path to be relative to the current directory, you should prefix the path with "./"</p></remarks>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.Item">
+            <summary>
+               The Item object is the last object in the UltraWebListbar object hierarchy.  Visually, an Item is composed of Text and an Image. 
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Item.#ctor">
+            <summary>
+            Creates a new Item with text "Item" and empty styles.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Item.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new Item with the specified text, and sets its image.
+            </summary>
+            <param name="text">The value to be used for this Item's Text property.</param>
+            <param name="image">The value to be used for this Items's Image property.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Item.#ctor(System.String,System.String,System.String)">
+            <summary>
+            <p class="body">Creates a new Item with the specified Text, Image, and Key values.</p>
+            </summary>
+            <param name="text">The Text for this item.</param>
+            <param name="image">This Item's Image.</param>
+            <param name="key">A unique key used to identify this item in the Items collection.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Item.#ctor(System.String,System.String,Infragistics.WebUI.Shared.Style)">
+            <summary>
+            Creates a new Item and sets it's Text, Image, and DefaultStyle properties.
+            </summary>
+            <param name="text">Value for this Item's Text property.</param>
+            <param name="img">Value for this Item's Image property.</param>
+            <param name="style">Value for this Item's Default Style.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Item.ToString">
+            <summary>
+            A description of this Item.
+            </summary>
+            <returns>A text description of this Item, including it's <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/> value.</returns>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.ToolTip">
+            <summary>
+            <p class="body">The Tooltip text that will be displayed when this Item is moused over.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.Enabled">
+            <summary>
+            <p class="body">Determines whether this Item will respond to user interaction.  If the Group, or Listbar this item belongs to is not enabled, this item will also be disabled.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.Align">
+            <summary>
+            The horizontal alignment of this Item.
+            </summary>
+            <remarks><p class="body">Determines whether the item will be Left, Center, or Right aligned.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.Image">
+            <summary>
+            A relative path to the Image which should be displayed for this item.
+            </summary>
+            <remarks><p class="body">When set, this image will be displayed along with the Items's <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/>.  If the Item is the <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedItem"/>, the <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.SelectedImage"/> will be displayed, if set.</p>
+            <p class="note">Note: If the <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ImageDirectory"/> property is set, this path should be relative to the ImageDirectory.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ImageDirectory"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Item.SelectedImage"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.SelectedImage">
+            <summary>
+            A relative path to the Image which should be displayed for this item, when selected.
+            </summary>
+            <remarks><p class="body">When set, and this Item is the <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedItem"/>, this image will be displayed along with the Items's <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/>.  If not set, the image asigned to the <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Image"/> property will be used.</p>
+            <p class="note">Note: If the <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ImageDirectory"/> property is set, this path should be relative to the ImageDirectory.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ImageDirectory"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Item.Image"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.TargetUrl">
+            <summary>
+            A URL which will be navigated to when this Item is clicked on.
+            </summary>
+            <remarks><p class="body">When set, the TargetUrl will be displayed in the frame specified by the <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.TargetFrame"/> property.  The TargetUrl should be fully qualifyied, for example "http://www.infragistics.com".  You can also use this property to execute a scripting call.  For example:</p>
+            <p class="code">javascript:myFunction();</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Item.TargetFrame"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.TargetFrame">
+            <summary>
+            Used to determine what frame the <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.TargetUrl"/> should be displayed in.
+            </summary>
+            <remarks><p class="body">You can specify a frame in a frameset, an IFrame, "_blank" for a new window, or leave the value blank to use the UltraWebListbar's internal Frame.</p>
+            <p class="note">Note: The internal fram will only appear when the UltraWebListbar's <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.BarWidth"/> is set to a value other than it's default value of 100%.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Item.TargetUrl"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.Text">
+            <summary>
+            The Text displayed when this Item is rendered.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.Tag">
+            <summary>
+            Used to hold any extra data for specific development needs.
+            </summary>
+            <remarks><p class="body">By default, this is set to null.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.AccessKey">
+            <summary>
+            Keyboard access key for this item.
+            </summary>
+            <remarks>
+            <p class="note">The action that occurs is equivalent to the mouse click on this item.</p>
+            <p class="note">The access-key is the feature of a browser, which is triggered by the keyboard entry of Alt+key.</p>
+            <p class="note">This property is supported only for InternetExplorer, which allows to set focus to the &lt;DIV&gt; and &lt;TD&gt; html elements.</p>
+            <p class="note">If the &lt;u&gt; string is not found in the Text of this item and the value of AccessKey is set as the UPPER-case-letter, then the first found access-character in the Text is rendered with underscore.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.Index">
+            <summary>
+            Returns the zero based index of this item, it it's owning Items Collection.
+            </summary>
+            <remarks>Returns -1 if this item is not part of an Items Collection.</remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.ID">
+            <summary>
+            The ID which is used to identify this Item object inside of the rendered HTML.  
+            </summary>
+            <remarks><p class="body">It consists of "Item_" and this groups index in the <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Items"/> collection.</p>
+            <p class="note">Note: This property is Read only.  The value is created dynamically, and changes according to the Item's index.  This ID is only unique inside of the Items collection.  The final ID used when rendering this group will consist of the UltraWebListbar.ID, the index of the Group which owns this Item, and the value of this ID.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.Control">
+            <summary>
+            A reference to the UltraWebListbar which this Item belongs to.
+            </summary>
+            <remarks>
+            <p class="body">An Item must be added to the <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Items"/> collection before this property can be used. </p>
+            <p class="note">Note: This property is ReadOnly</p> 
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.SelectedStyle">
+            <summary>
+            The style which will be used when rendering this Item, if it is the <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedItem"/>.
+            </summary>
+            <remarks>
+            <p class="body">The SelectedStyle is the style which is applied to an Item when selected, even if moused over.  When set, SelectedStyle overrides <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemSelectedStyle"/>, and <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemSelectedStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemSelectedStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemSelectedStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedItem"/>	
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.DefaultStyle">
+            <summary>
+            The style which will be used when rendering this Item in the Listbar if this Item is not the <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedItem"/>.
+            </summary>
+            <remarks>
+            <p class="body">The DefaultStyle is the style which is applied to an Item when not selected, or moused over.  When set, DefaultStyle overrides <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemStyle"/>, and <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedItem"/>	
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Item.HoverStyle">
+            <summary>
+            The style which will be applied when this Item is moused over, if this is not the <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedItem"/>.
+            </summary>
+            <remarks>
+            <p class="body">The HoverStyle is the style which is applied to an Item when moused over, if the item is not selected.  When set, HoverStyle overrides <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemHoverStyle"/>, and <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemHoverStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemHoverStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemHoverStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedItem"/>	
+            </remarks>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.Items">
+            <summary>
+              Collection of a Group's items.
+            </summary>
+            
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Items.#ctor(Infragistics.WebUI.UltraWebListbar.Group)">
+            <summary>
+            Constructor which creates a new Items collection,
+            and links it to a Group.
+            </summary>
+            <param name="owner">The Group to link this collection to</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Items.Add(Infragistics.WebUI.UltraWebListbar.Item)">
+            <summary>
+            Adds the specified item to this collection.
+            </summary>
+            <remarks><p class="body">Adds an <see cref="T:Infragistics.WebUI.UltraWebListbar.Item"/> to the end of the current list of Items.</p>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Items.Add(System.String)"/><seealso cref="M:Infragistics.WebUI.UltraWebListbar.Items.Add(System.String,Infragistics.WebUI.Shared.Style)"/>
+            </remarks>
+            <param name="item">A non-null <see cref="T:Infragistics.WebUI.UltraWebListbar.Item"/> object.</param>
+            <returns>The item which was added.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Items.Insert(System.Int32,Infragistics.WebUI.UltraWebListbar.Item)">
+            <summary>
+            Inserts the specified item into the collection at the specified index.
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Items.Insert(System.Int32,System.String)"/><seealso cref="M:Infragistics.WebUI.UltraWebListbar.Items.Insert(System.Int32,System.String,Infragistics.WebUI.Shared.Style)"/>
+            </summary>
+            <param name="index">The index to insert the Item at.</param>
+            <param name="item">The non-null <see cref="T:Infragistics.WebUI.UltraWebListbar.Item"/> to be inserted</param>
+            <returns>The item which was just inserted.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Items.Add(System.String)">
+            <summary>
+            Creates a new Item with the specified <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/> value, and adds it to this collection.
+            </summary>
+            <remarks><p class="body">This is the same as calling:</p>
+            <p class="code">this.Add(new Item(text));</p>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Items.Add(Infragistics.WebUI.UltraWebListbar.Item)"/>
+            </remarks>
+            <param name="text">The Text for the new Item.</param>
+            <returns>A new Item with <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/> text.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Items.Add(System.String,System.String)">
+            <summary>
+            Creates a new Item with the specified <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Text"/> and <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.Key"/> values, and adds it to this collection.
+            </summary>
+            <remarks><p class="body">This is the same as calling:</p>
+            <p class="code">this.Add(new Item(text,"",key));</p>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Items.Add(Infragistics.WebUI.UltraWebListbar.Item)"/>
+            </remarks>
+            <param name="text">The Text for the new Item.</param>
+            <param name="key">A unique Key used to identify the new Item in this collection.</param>
+            <returns>A new Item with <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/> text.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Items.Add(System.String,Infragistics.WebUI.Shared.Style)">
+            <summary>
+            Creates a new Item, sets its <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/> and <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.DefaultStyle"/> properties, and adds it to this collection.
+            </summary>
+            <remarks><p class="body">This is the same as calling:</p>
+            <p class="code">this.Add(new Item(text,null,style));</p>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Items.Add(Infragistics.WebUI.UltraWebListbar.Item)"/>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Items.Add(System.String,Infragistics.WebUI.Shared.Style)"/>
+            </remarks>
+            <param name="text">The Text for the new Item.</param>
+            <param name="style">The DefaultStyle for the Item.</param>
+            <returns>A new Group with <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.DefaultStyle"/> style, and <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/> text.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Items.Insert(System.Int32,System.String)">
+            <summary>
+            Inserts a new Item with the specified <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/> into the collection at the specified index.
+            </summary>
+            <remarks><p class="body">This is the same as calling:</p>
+            <p class="code">this.Insert(index,new Item(text,null));</p>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Items.Insert(System.Int32,Infragistics.WebUI.UltraWebListbar.Item)"/>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Items.Insert(System.Int32,System.String,Infragistics.WebUI.Shared.Style)"/>
+            </remarks>
+            <param name="index">The index where the item should be inserted.</param>
+            <param name="text">A string to be used for the item's <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/> property.</param>
+            <returns>A new Item with specified text</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Items.Insert(System.Int32,System.String,Infragistics.WebUI.Shared.Style)">
+            <summary>
+            Inserts a new Item into the collection at the specified index, and sets it's <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.DefaultStyle"/> and <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/> properties.
+            </summary>
+            <remarks><p class="body">This is the same as calling:</p>
+            <p class="code">this.Insert(index,new Item(text,null,style));</p>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Items.Insert(System.Int32,Infragistics.WebUI.UltraWebListbar.Item)"/>
+            <seealso cref="M:Infragistics.WebUI.UltraWebListbar.Items.Insert(System.Int32,System.String)"/>
+            </remarks>
+            <param name="index">The index where the Item should be inserted.</param>
+            <param name="text">A string to be used for the Item's <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/> property.</param>
+            <param name="style">The style which will be used when creating this Item.</param>
+            <returns>A new Item with <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.DefaultStyle"/> style, and <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/> text.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Items.Remove(Infragistics.WebUI.UltraWebListbar.Item)">
+            <summary>
+            Removes an item from this collection
+            </summary>
+            <param name="item">The item to be removed</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Items.Clear">
+            <summary>
+            <p class="body">Removes all Items from this collection.</p>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Items.OnInsertComplete(System.Int32,System.Object)">
+            <summary>
+            Overridden to set the newly added item's Parent to this.
+            </summary>
+            <param name="i"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Items.FromKey(System.String)">
+            <summary>
+            Property indexer for the collection. Uses the Key string to return a Group object.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.Items.GetEnumerator">
+            <summary>
+            Returns an enumerator object for the collection.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Items.Item(System.Int32)">
+            <summary>
+            Indexer for this collection
+            </summary>
+            <remarks><p class="body">If the index is out of range, null will be returned.  Otherwise the item which is located at the specified index, is returned.</p>
+            <p class="note">Note: Indexes start at 0, and can not be negative.</p> 
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.Items.IsReadOnly">
+            <summary>
+            Returns a Boolean value indicating whether the collection is read-only.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.RenderProps">
+             <summary>
+            <p class="body">Class that encapsulates the majority of rendering attributes for the listbar.  This class is instantiated by the listbar and is passed to the renderer whenever the listbar needs to be rendered.</p>
+             </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.RenderProps.#ctor(Infragistics.WebUI.UltraWebListbar.UltraWebListbar)">
+            <summary>
+            Creates a new RenderProps object. The RenderProps object is used to hold the values of all properties set on the UltraWebListbar object.
+            </summary>
+            <param name="lbar">The UltraWebListbar object which this RenderProps object is responsible for.</param>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.LbarRendererBase">
+            <summary>
+            Provides all information necessary to render an UltraWebListbar.  This class is for Infragistics Internal Use only.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.RendererBase">
+            <summary>
+            Summary description for RendererBase.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.LbarRendererBase.FilterText(System.String,System.String)">
+            <summary>Render underscore for AccessKey</summary>
+            <param name="txt">Value of Text</param>
+            <param name="key">Value of AccessKey</param>
+            <returns>Fixed text</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.RenderDownLevelExplorerBar.RenderGroups">
+            <summary>
+            Renders all nodes using the Visitor pattern
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.RenderDownLevelListbarIE">
+            <summary>
+               Implements all HTML rendering logic for the control
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.RenderDownLevelListbarNS">
+            <summary>
+               Implements all HTML rendering logic for the control
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.RenderUpLevelExplorerBar.RenderGroups">
+            <summary>
+            Renders all nodes using the Visitor pattern
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.RenderUpLevelListbar">
+            <summary>
+               Implements all HTML rendering logic for the control
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.RenderUpLevelListbar.RenderGroups">
+            <summary>
+            Renders all nodes using the Visitor pattern
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.LocalizedCategoryAttribute.GetLocalizedString(System.String)">
+            <summary>
+            Returns the localized category name
+            </summary>
+            <param name="value">Name of the category to retreive</param>
+            <returns>The localized string value</returns>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.TextAlignEditor">
+            <summary>
+               <para>
+                  A custom Type Editor for class styles.  This editor allows the style class
+                  names to be added to a list from which the user can select.  
+                  This is possible because
+                  the property grid is signed with a "reflection" permission that
+                  allows for private reflection.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.TextAlignEditor.CreateListBox(System.ComponentModel.ITypeDescriptorContext,System.Object)">
+            <summary>
+               <para>
+                    Creates a list box to show in the property grid.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.TextAlignEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+               <para>
+                    This is an override from UITypeEditor.  The property grid will call this when
+                    it wants to display the editor for the given value.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.TextAlignEditor.FillValues(System.Windows.Forms.ListBox,System.ComponentModel.ITypeDescriptorContext,System.String)">
+            <summary>
+               <para>
+                    Private function to fill the contents of our list box.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.TextAlignEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+               <para>
+                    This is an override from UITypeEditor.  The editor style indicates what
+                    type of editor we are providing:  we can either display a dialog or a
+                    drop-down box.  Our editor always shows a drop-down box.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.TextAlignEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+               <para>
+                    This is an override from UITypeEditor and indicates if we support 
+                    painting a small representation of our value in the property grid.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.TextAlignEditor.OnListClick(System.Object,System.EventArgs)">
+            <summary>
+               <para>
+                    Called when the user clicks something in the list box.  We close
+                    the drop down at this time.
+               </para>
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.TextAlignEditor.TextAlignEditorListBox">
+            <summary>
+               <para>
+                    Owner draw list box displays classess in the list box
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.TextAlignEditor.TextAlignEditorListBox.IsInputKey(System.Windows.Forms.Keys)">
+            <summary>
+               <para>
+                    We override this from Control so we can designate
+                    that the return key should be used for input.  In
+                    other words, we want return to come to us, not be
+                    treated as the "OK" to dismiss a dialog.
+               </para>
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.TextAlignEditor.TextAlignEditorListBox.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+               <para>
+                    We handle keyboard processing here for the return
+                    key.  We treat this key like a click on the list
+                    box.
+               </para>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbarLicenseAttribute.LicensedWithProducts">
+            <summary>
+            Return the list of products that this control can be licensed with
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.GroupExpandedEventHandler">
+            <summary>
+            <p class="body">The delegate to be used for GroupExpanded events.</p>
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.GroupCollapsedEventHandler">
+            <summary>
+            <p class="body">The delegate to be used for GroupCollapsed events.</p>
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.ItemClickedEventHandler">
+            <summary>
+            <p class="body">The delegate to be used for ItemClick events.</p>
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.GroupClickedEventHandler">
+            <summary>
+            <p class="body">The delegate to be used for GroupClick events.</p>
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.KeepInView">
+            <summary>
+            The possible values for the UltraWebListbar's KeepInView property.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.KeepInView.AutoScroll">
+            <summary>
+            Automatically reposition the UltraWebListbar vertically when the page is scrolled, keeping it in view at all times.  This advanced feature is only available for uplevel browsers.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.KeepInView.No">
+            <summary>
+            Do not position the UltraWebListbar dynamically.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.HeaderClickAction">
+            <summary>
+            The possible values for the UltraWebListbar's HeaderClickAction property.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.HeaderClickAction.ExpandOnClick">
+            <summary>
+            Expand or collapse the ExplorerBar style's Group when the Header is clicked.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.HeaderClickAction.ExpandOnDoubleClick">
+            <summary>
+            Expand or collapse the ExplorerBar style's Group when the Header is double clicked.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.HeaderClickAction.None">
+            <summary>
+            Do not expand or collapse the ExplorerBar style's Group when the Header is clicked or double clicked.  The only way to expand or collapse a group when using this setting, is to click directly on the Expansion Indicator.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.AllowGroupMoving">
+            <summary>
+            All possible values related to the UltraWebListbar's AllowGroupMoving property.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.AllowGroupMoving.GroupSwapping">
+            <summary>
+            Allow Groups to be repositioned on the client when using the ExplorerBar style.  This advanced feature will only work on IE5+ and NS7+.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.AllowGroupMoving.None">
+            <summary>
+            Do not allow groups to be moved on the client.
+            </summary>		
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.ViewType">
+            <summary>
+            The ViewType determines both behavior and appearance for the UltraWebListbar.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ViewType.Listbar">
+            <summary>
+            The default style, seen in Microsoft's Outlook Bar.  
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ViewType.ExplorerBar">
+            <summary>
+            The visual appearance and behavior of the Windows XP Explorer Bar.  This style will allow multiple groups to be expanded at one time.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.BrowserTarget">
+             <summary>
+            <p class="body"> Used to determine what type of HTML should be rendered.</p>
+             </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.BrowserTarget.Auto">
+            <summary>
+            <p class="body">Determine what type of HTML to render, by finding out the browser type and version.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.BrowserTarget.DownLevel">
+             <summary>
+            <p class="body"> Render HTML that can be seen in a DownLevel browser only.  This setting is useful to determine what a downlevel browser will see, without having one installed on your machine.</p>
+             </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.BrowserTarget.UpLevel">
+            <summary>
+            <p class="body">Render HTML that will only display properly in an UpLevel browser, which supports DHTML.</p>
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.ExpandEffect">
+            <summary>
+            <p class="body">Expand effects can be used to animate the ExplorerBar's group expansion.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ExpandEffect.Slide">
+            <summary>
+            This effect will slide the Items into or out of view.  This effect will only work on Internet Explorer 5 and up, and Netscape 7 and up.  In Internet Explorer the slide effect is also accompanied by a fade effect.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ExpandEffect.None">
+            <summary>
+            No animation.
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.ImageTextAlign">
+            <summary>
+            <p class="body">Used to determine how an Item's Text should be aligned to it's Image.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ImageTextAlign.Middle">
+            <summary>
+            <p class="body">Align the Text top to the middle of the Image.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ImageTextAlign.Top">
+            <summary>
+            <p class="body">Align the Text top to the Top of the Image. </p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ImageTextAlign.Bottom">
+            <summary>
+            <p class="body">Align the Text bottom to the bottom of the Image.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ImageTextAlign.AbsMiddle">
+            <summary>
+            <p class="body">Align the middle of the Text to the middle of the Image.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ImageTextAlign.AbsBottom">
+            <summary>
+            <p class="body">Align the top of the Text to the Bottom of the Image.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ImageTextAlign.NotSet">
+            <summary>
+            <p class="body">Use parent's setting, if any.</p>
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.ItemIconStyle">
+            <summary>
+            <p class="body">Used to determine how an Item's Image should be displayed.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ItemIconStyle.NotSet">
+            <summary>
+            <p class="body">Use value set on parent object.</p>
+            <p class="note">Note: This is not an acceptable value for <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ItemIconStyle"/> on the UltraWebListbar object, since there is no parent object to inherit the value from.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ItemIconStyle.Large">
+            <summary>
+            <p class="body">Display the <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Image"/> above the <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/>.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ItemIconStyle.Small">
+            <summary>
+            <p class="body">Display the <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Image"/> to the left of the <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/>.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ItemIconStyle.SmallWithInsetText">
+            <summary>
+            <p class="body">Display the image to the left of any text.  This differs from the Small setting by wrapping all text to the right of the image, instead of around and under the image.  If you use this setting, the Align property for the item will be ignored.  Each item will be aligned to the Left.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ItemIconStyle.Disk">
+            <summary>
+            <p class="body">Displays a solid Disk to the left of each item.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ItemIconStyle.Circle">
+            <summary>
+            <p class="body">Displays a circle to the left of each item.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ItemIconStyle.Square">
+            <summary>
+            <p class="body">Displays a square to the left of each item.</p>
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.ItemSelectionStyle">
+            <summary>
+            <p class="body">Used to determine how an Item should be selected.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ItemSelectionStyle.FullRowSelection">
+            <summary>
+            <p class="body">Apply the SelectedStyle to the area containing the <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Image"/>, and <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Text"/>.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ItemSelectionStyle.IconOnlySelection">
+            <summary>
+            <p class="body">Apply the SelectedStyle to the <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.Image"/> only.</p>
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.ItemSelectionStyle.NotSet">
+            <summary>
+            <p class="body">Use value set on parent object.</p>
+            <p class="note">Note: This is not an acceptable value for <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ItemSelectionStyle"/> since there is no parent object to inherit the value from.</p>
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.UltraWebListbar">
+            <summary>
+            The UltraWebListbar object consists of a <see cref="T:Infragistics.WebUI.UltraWebListbar.Groups"/> collection, and properties used for rendering.
+            </summary>
+        </member>
+        <member name="F:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.filterDoc">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SavePreset(System.String,System.String,System.String,Infragistics.WebUI.PresetType)">
+            <summary>
+            Saves preset to file path.
+            </summary>
+            <param name="filePath">Path of file</param>
+            <param name="presetType">The type of properties (Appearance, Behavior, or Both) which should be saved in this preset.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SavePreset(System.IO.TextWriter,System.String,System.String,Infragistics.WebUI.PresetType)">
+            <summary>
+            Save preset to text writer. This can be used to save preset to string using StringWriter.
+            </summary>
+            <param name="xtw">text writer</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SavePreset(System.IO.Stream,System.String,System.String,Infragistics.WebUI.PresetType)">
+            <summary>
+            Save preset to the stream
+            </summary>
+            <param name="stream">reference to stream object</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.LoadPreset(System.String,System.Boolean)">
+            <summary>
+            Load a preset from a file.
+            </summary>
+            <param name="filePath">file path</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.LoadPreset(System.IO.Stream,System.Boolean)">
+            <summary>
+            Load a preset from a stream.
+            </summary>
+            <param name="xtw">stream object</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.LoadPreset(System.IO.TextReader,System.Boolean)">
+            <summary>
+            Load a preset from a text reader.
+            </summary>
+            <param name="xtw">text reader</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.#ctor">
+            <summary>
+            Creates a new UltraWebListbar object.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ShouldSerializeBorderWidth">
+            <summary>
+            Denotes if the BorderWidth is serializable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ShouldSerializeBorderStyle">
+            <summary>
+            Denotes if the BorderStyle is serializable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SetDefaultListbarStyles">
+            <summary>
+            This method can be used to create a Listbar that looks like the MS Outlookbar.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SetDefaultExplorerBarStyles">
+            <summary>
+            This Method can be used to create an ExplorerBar that looks like the XP Explorer bar.  
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ShouldSerializeAutoPostBack">
+            <summary>
+            Check if AutoPostBack has data.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ResetAutoPostBack">
+            <summary>Clears the AutoPostBack</summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.FindControl(System.String)">
+            <summary>
+            Get reference to a child aspx-control.  This method can be used to find controls added to a Group's Template. 
+            </summary>
+            <param name="id">The id of child control.</param>
+            <remarks><p class="body">This method will call the <see cref="M:Infragistics.WebUI.UltraWebListbar.Group.FindControl(System.String)"/> method of each Group.  If a control is found that matches the id specified it will be returned, otherwise this method will return null.</p></remarks> 
+            <returns>Reference to <code>Control</code> or <code>null</code>.</returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.CreateSingleChildControl(Infragistics.WebUI.UltraWebListbar.Group)">
+            <summary>
+            This method should only be called during the Ensure Child control method should the needChildControl flag be true
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.RaisePostDataChangedEvent">
+            <summary>
+            Changes the SelectedGroup and SelectedItem to sync up the server-side object with the client side object when posting back.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Called when ViewState is enabled, to create the ServerSide object from the ClientSide data.
+            </summary>
+            <param name="postDataKey"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.RaisePostBackEvent(System.String)">
+            <summary>
+            Used to fire events on the Server, when an action occurs on the Client.
+            </summary>
+            <param name="eventArgument"></param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SaveViewState">
+            <summary>
+               Called by the framework to load round-trip data from the listbar into the html ViewState variable.
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.OnGroupExpanded(Infragistics.WebUI.UltraWebListbar.Group)">
+            <summary>
+            Creates a new WebListbarGroupEvent, and fires GroupExpanded.
+            </summary>
+            <param name="group">The group which was clicked.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.OnGroupCollapsed(Infragistics.WebUI.UltraWebListbar.Group)">
+            <summary>
+            Creates a new WebListbarGroupEvent, and fires GroupCollapsed.
+            </summary>
+            <param name="group">The group which was clicked.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.OnItemClicked(Infragistics.WebUI.UltraWebListbar.Item)">
+            <summary>
+            Creates a new WebListbarItemEvent and fires ItemClicked.
+            </summary>
+            <param name="item1">The item which was clicked.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.OnGroupClicked(Infragistics.WebUI.UltraWebListbar.Group)">
+            <summary>
+            Creates a new WebListbarGroupEvent, and fires GroupClicked.
+            </summary>
+            <param name="grp">The group which was clicked.</param>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.PreRenderLBar(System.Object,System.EventArgs)">
+            <summary>
+               Prepare the renderer and emit JavaScript 
+            </summary>
+        </member>
+        <member name="M:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+               Render this control to the output parameter specified.
+            </summary>
+            <param name="output"> The HTML writer to write out to </param>
+        </member>
+        <member name="E:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.GroupExpanded">
+            <summary>
+            <p class="body">This event occurs when an <see cref="T:Infragistics.WebUI.UltraWebListbar.Group"/> is expanded.  This even will only fire when the <see cref="T:Infragistics.WebUI.UltraWebListbar.ViewType"/> is set to ExplorerBar. </p>
+            </summary>
+        </member>
+        <member name="E:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.GroupCollapsed">
+            <summary>
+            <p class="body">This event occurs when an <see cref="T:Infragistics.WebUI.UltraWebListbar.Group"/> is collapsed.  This even will only fire when the <see cref="T:Infragistics.WebUI.UltraWebListbar.ViewType"/> is set to ExplorerBar. </p>
+            </summary>
+        </member>
+        <member name="E:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ItemClicked">
+            <summary>
+            <p class="body">This event occurs when an <see cref="T:Infragistics.WebUI.UltraWebListbar.Item"/> is clicked.</p>
+            </summary>
+        </member>
+        <member name="E:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.GroupClicked">
+            <summary>
+            <p class="body">This event occurs when a <see cref="T:Infragistics.WebUI.UltraWebListbar.Group"/> is clicked.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.BorderStyle">
+            <summary>
+            The BorderSytle for the WebListBar
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.BorderWidth">
+            <summary>
+            The border width for the WebListBar
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedItem">
+            <summary>
+            <p class="body">A reference to the currently selected item.</p>
+            </summary>
+            <remarks><p class="body">This is a reference to the actual Item object.  You can use this property to get or set the currently selected item.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultGroupStyle">
+            <summary>
+            The style used for the area which contains the Items of this group.
+            </summary>
+            <remarks><p class="body">This is the area between the set of group buttons which appear at the top of the listbar, and set of group buttons which appear at the bottom.  This value is overridden by a Group's <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.GroupStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            </remarks>		
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ImageDirectory">
+            <summary>
+            <p class="body">A directory where images can be found.</p>
+            </summary>
+            <remarks><p class="body">When this property is set, any image used in the UltraWebListbar will be relative to this directory.  For special case, you can use "./" to prefix an image to specify NOT to use the ImageDirectory specified here, and use the project directory instead.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.KeepInView">
+            <summary>
+            <p class="body">This property will automatically reposition the listbar on the client when the page is scrolled, to keep it in the viewable area.</p>
+            </summary>	
+            <remarks>This property can only be set for one UltraWebListbar on a page.  Also, in order to function properly, your PageLayout must be set to Absolute or GridLayout.  
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.GroupExpandEffect">
+            <summary>
+            <p class="body">Gets or sets the effect used when an ExplorerBar group is expanded or collapsed.</p>
+            </summary>	
+            <remarks>This property only applies to the ExplorerBar style.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.HeaderClickAction">
+             <summary>
+            <p class="body">Controls how a Group header in the ExplorerBar style, should respond to mouse clicks.  Use this property to set whether a group can be expanded by clicking or double clicking the group's header.</p>
+             </summary>
+             <remarks>This property is only available when <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ViewType"/> is set to ExplorerBar.</remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ViewType">
+             <summary>
+             <p class="body">Controls the appearance and behavior of the control.  Use this property to choose between common styles such as the MS Outlookbar, or the XP Explorer Bar.</p>
+             </summary>
+            <remarks><p clas="notes">Note: Some properties of the UltraWebListbar will be unavailable depending on the value of this property.  For example, when the ViewType is set to Listbar, there will be no DefaultGroupHeaderAppearance.  Conversely, when the ViewType is set to ExplorerBar, there will be no DefaultGroupButtonStyle.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultGroupHeaderAppearance">
+             <summary>
+            <p class="body">The collection of styles which apply to an ExplorerBar header.  This property is only available when the ViewType is set to ExplorerBar.</p>
+             </summary>
+            <remarks><p class="note">This collection of appearance information can be overridden by setting a particular Group's HeaderAppearance.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.GroupSpacing">
+            <summary>
+            <p class="body">The empty space left between the bottom of one group, and the top of another.  This property is only available for the ExplorerBar ViewType.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.AllowGroupMoving">
+            <summary>
+            <p class="body">Controls how a Group can be repositioned on the Client browser.  If set to <see cref="F:Infragistics.WebUI.UltraWebListbar.AllowGroupMoving.GroupSwapping"/>,ExplorerBar groups can be repositioned within the control, by dragging up or down.  </p>
+            </summary>
+            <remarks>GroupSwapping is only available for IE5 and up, and Netscape 7 and up.</remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.MergeStyles">
+            <summary>
+            <p class="body">This property controls how an object in the listbar resolves its style properties.</p>  
+            </summary>
+            <remarks><p class="body">By setting this property to <code>true</code>, you can force the UltraWebListbar to merge individual properties of each style, instead of only using one style object exclusively.  This results in a more intuitive style hierarchy.  For each style set, the DefaultStyle will be used as the base for the Hover and Selected Styles.  In the case of the ExplorerBar, the ExpandedStyle is used as the base for the Hover and Collapsed styles.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.NoWrap">
+            <summary><p class="body">Where supported this property will force text not to wrap when the width is smaller than the length of the text.</p>  
+            </summary>
+            <remarks>
+            <p class="note">Note: Setting this property will have no effect in Netscape.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.JavaScriptFileNameCommon">
+            <summary>
+            <p class="body"> A relative path to the Infragistics Common JavaScript file.</p>
+            </summary>
+            <remarks><p class="body">The common JavaScript file is shared by all Infragistics WebControls.  By default it is located at ig_common/scripts/ig_csom.js</p>
+            <p class="note">Note: This JavaScript file is required for the UltraWebListbar to function properly at runtime.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.JavaScriptFilename">
+            <summary>
+            <p class="body"> A relative path to the JavaScript file.</p>
+            </summary>
+            <remarks><p class="body">The default JavaScript file is located at /ig_common/20043/Scripts/ig_weblistbar.js  Other javascript files are also located in the same directory, and are required for the UltraWebListbar to function. These files (ig_weblistbarIE4.js, ig_weblistbarNS4.js, ig_weblistbarASC.js) must all be in the same directory as the file specified here.  In addition, the UltraWebListbar uses a Common JavaScript file.  This file location is set using the <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.JavaScriptFileNameCommon"/> property.</p>
+            <p class="note">Note: The JavaScript file is required for the UltraWebListbar to function properly at runtime.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.BrowserTarget">
+            <summary>
+            Sets which type of browser the html should be rendered for.  This property can be used to force the UltraWebListbar to Render the same, no matter what browser the request came from.  This may be useful during development, to get an idea of how clients using downlevel browsers will see the page, with out having to use a downlevel browser yourself.  
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ClientSideEvents">
+            <summary>
+            <p class="body">The list of Events that can fire in the client browser.  These events will only fire on UpLevel browsers.  Each event is listed as a property with at text value indicating the function to call to handle the event.</p>
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.RenderAnchors">
+            <summary>
+            <p class="body">Render all Text as HyperLinks.</p> 
+            </summary>
+            <remarks><p class="body">When true, the text for a Group or Item will be rendered inside of an anchor tag.</p>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ImageTextAlign">
+            <summary>
+            <p class="body">Used to determine how an Item's text should be aligned with relation to its image.</p>
+            </summary>
+            <remarks><p class="notes">This property can be overriden by setting the ImageTextAlign property on a particular Group.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemStyle">
+            <summary>
+            The style used when rendering an Item.
+            </summary>
+            <remarks><p class="body">When set, this style will be used for any Item in this UltraWebListbar.  It is overridden by a Group's <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemStyle"/>, and by an Item's <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.DefaultStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Item.DefaultStyle"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemSelectedStyle">
+            <summary>
+            The style used when an Item is selected.
+            </summary>
+            <remarks><p class="body">When set, this style will be applied to any Item when selected.  It is overridden by a Group's <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemSelectedStyle"/>, and by an Item's <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.SelectedStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemSelectedStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Item.SelectedStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedItem"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ItemSelectionStyle"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultItemHoverStyle">
+            <summary>
+            This style is applied when an Item is moused over.
+            </summary>
+            <remarks><p class="body">When set, this style will be applied to any Item when moused over.  It is overridden by a Group's <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemHoverStyle"/>, and by an Item's <see cref="P:Infragistics.WebUI.UltraWebListbar.Item.HoverStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.DefaultItemHoverStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Item.HoverStyle"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultGroupButtonStyle">
+            <summary>
+            The style which will be used when rendering a Group as a button in the Listbar.
+            </summary>
+            <remarks>
+            <p class="body">The <b>DefaultGroupButtonStyle</b> is the style which is applied to a group button when not selected, or moused over.  <b>DefaultGroupButtonStyle</b> is overridden by a Group's <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonStyle"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultGroupButtonSelectedStyle">
+            <summary>
+            The style which will be used when rendering a Group as button in the Listbar, if it is the currently <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedGroup"/>.
+            </summary>
+            <remarks>
+            <p class="body">The <b>DefaultGroupButtonSelectedStyle</b> is the style which is applied to a group button when selected, even if moused over.  <b>DefaultGroupButtonSelectedStyle</b> is overridden by a Group's <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonSelectedStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonSelectedStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedGroup"/>	
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.DefaultGroupButtonHoverStyle">
+            <summary>
+            The style which will be applied when a Group button is moused over.
+            </summary>
+            <remarks>
+            <p class="body">The <b>DefaultGroupButtonHoverStyle</b> is the style which is applied to a group button when moused over.  <b>DefaultGroupButtonHoverStyle</b> is overridden by a Group's <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonHoverStyle"/>.  To force the UltraWebListbar to use your own style, specify the name of your class in the CssClass property.  To force the use of no style, specify "none" for the CssClass property.</p>
+            <p class="note">Note: If this group is the <see cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedGroup"/> the hover style will not be applied.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.ButtonHoverStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedGroup"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedGroup">
+            <summary>
+            <p class="body">The currently selected group's index.</p> 
+            </summary>
+            <remarks><p class="body">Use this propert to get or set the currently SelectedGroup.</p>
+            <p class="notes">Note: This property is not available for the ExplorerBar style.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.BarWidth">
+            <summary>
+            <p class="body">The width of the listbar portion of the UltraWebListbar.</p>
+            </summary>
+            <remarks><p class="body">This width is subtracted from the control's width to calculate the display area's width.  If 100%(default) is used, no display area will be shown.  
+            </p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ItemSelectionStyle">
+            <summary>
+            <p class="body">Determines how an Item's SelectedStyle is applied.  Use this property to specify whether an Item's Hover and Selected style are applied to the entire Item (Image and Text), or just the Item's Image.</p>
+            </summary>
+            <remarks><p class="body">This property is overridden by the Group's <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.ItemSelectionStyle"/>.</p>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.ItemSelectionStyle"/>
+            <seealso cref="T:Infragistics.WebUI.UltraWebListbar.ItemSelectionStyle"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.ItemIconStyle">
+            <summary>
+            Determines how an Item's image should be displayed.  Use this property to specify whether an Item's image should appear above the Item's text, or to the Left.  You can also use this property to display Bullets to the left of an Item's text, instead of an image.
+            </summary>
+            <remarks><p class="body">This property determines how an Item's image will be displayed in relation to it's text.  This property is overridden by the Group's <see cref="P:Infragistics.WebUI.UltraWebListbar.Group.ItemIconStyle"/></p>
+            <seealso cref="T:Infragistics.WebUI.UltraWebListbar.ItemIconStyle"/>
+            <seealso cref="P:Infragistics.WebUI.UltraWebListbar.Group.ItemIconStyle"/>
+            </remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.Groups">
+            <summary>
+            <p class="body">A reference to the <see cref="T:Infragistics.WebUI.UltraWebListbar.Groups"/> collection. The groups collection contains each group that will be displayed.  Groups will be displayed in the order that they appear in this collection.  When using the ExplroerBar style, you will be able to change a groups visible position, without changing its position in this collection by setting the group's <see cref="!:Infragistics.Web.UI.UltraWebListbar.Group.VisibleIndex"/>.</p> 
+            </summary>
+            <remarks><p class="note">This property is read-only.</p></remarks>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.TabIndex">
+            <summary>The tab order of control.</summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.AccessKey">
+            <summary>Keyboard shortcut used by control.</summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.AutoPostBack">
+            <summary>
+            List of events that will trigger automatic post back when corresponding event handler is attached.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.GroupOrder">
+            <summary>Internal use only. The get method is dummy. The set method is fired by LoadLostData method with value which was set by the function update(..) of ig_weblistbar.js.</summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.UltraWebListbar.SelectedIndex">
+            <summary>Internal use only. The get method is dummy. The set method is fired by LoadLostData method with value which was set by the function update(..) of ig_weblistbar.js.</summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.WebListbarItemEvent">
+            <summary>
+            Class used for Events fired when an Item is clicked.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.WebListbarItemEvent.Item">
+            <summary>
+            Returns the Item object associated with the event
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.WebListbarItemEvent.Data">
+            <summary>
+            Returns the Data object associated with the event
+            </summary>
+        </member>
+        <member name="T:Infragistics.WebUI.UltraWebListbar.WebListbarGroupEvent">
+            <summary>
+            Class used for Events fired when a Group is clicked.
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.WebListbarGroupEvent.Group">
+            <summary>
+            Returns the Group object associated with the event
+            </summary>
+        </member>
+        <member name="P:Infragistics.WebUI.UltraWebListbar.WebListbarGroupEvent.Data">
+            <summary>
+            Returns the Data object associated with the event
+            </summary>
+        </member>
+    </members>
+</doc>

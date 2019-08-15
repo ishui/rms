@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>V_PaymentItem</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>V_PaymentItem</Name>
+		<Column>
+			<Name>PaymentItemCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>Select</Name>
+			<String> select * from V_PaymentItem where PaymentItemCode=@PaymentItemCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@PaymentItemCode</Name>
+				<Column>PaymentItemCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String> select  * from V_PaymentItem</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+	</Table>
+</Entity>

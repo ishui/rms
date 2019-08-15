@@ -1,0 +1,68 @@
+.Default_Inox
+{
+	border: 0px;
+	background: transparent url(Img/default.gif) no-repeat;
+	_background-attachment: fixed; /* IE */
+	font: normal 12px Verdana, Arial, Sans-serif;
+	height: 20px;
+	width: 163px;
+	color: #b7b7b7;
+	padding-top: 3px;
+	vertical-align: middle;
+}
+
+.Over_Inox
+{
+	border: 0px;
+	background: transparent url(Img/hover.gif) no-repeat;
+	_background-attachment: fixed; /* IE */
+	height: 20px;
+	width: 163px;
+	color: #333;
+	font: normal 12px Verdana, Arial, Sans-serif;
+	padding-top: 3px;
+	vertical-align: middle;
+}
+
+.Focus_Inox
+{
+	border: 0px;
+	background: transparent url(Img/focus.gif) no-repeat;
+	_background-attachment: fixed; /* IE */
+	height: 20px;
+	width: 163px;
+	color: #333;
+	font: normal 12px Verdana, Arial, Sans-serif;
+	padding-top: 3px;
+	vertical-align: middle;
+}
+
+.Error_Inox
+{
+	border: 0px;
+	background: transparent url(Img/error.gif) no-repeat;
+	_background-attachment: fixed; /* IE */
+	height: 21px;
+	width: 163px;
+	color: red;
+	font: normal 12px Verdana, Arial, Sans-serif;
+	padding-top: 3px;
+	vertical-align: middle;
+}
+
+.Hint_Inox
+{
+	background-color: #e1e1e1;
+	margin-top: 5px;
+	border: solid 1px #000;
+	text-align: left;
+	overflow: auto;
+}
+
+.Hint_Inox a, Hint_Inox a:visited, .Hint_Inox a:hover
+{
+	margin: 2px;
+	color: #000;
+	text-decoration: none;
+	font-size: small;
+}

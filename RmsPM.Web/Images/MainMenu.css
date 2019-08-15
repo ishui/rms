@@ -1,0 +1,53 @@
+.MainMenuPanel
+{
+	text-decoration: none;
+}
+.MenuPanel
+{
+	border: #2155bd 1px solid;
+	background-image: url(./MainMenuLeftBg.gif);
+	background-repeat: repeat-y;
+	background-color: #fffbff;
+}
+
+.MainItem
+{
+	font-size: 12px;
+	color:#00309C;
+	height: 26px;
+	width: 73px;
+	
+}
+
+.MainItemMouseOver
+{
+	background-image: url(./bg_topbn.gif);
+	font-size: 12px;
+	color:#00309C;
+	height: 26px;
+	width: 73px;
+}
+
+.MenuItem
+{
+	margin:1px;
+	font-size: 12px;
+	color:#00309C;
+	width:100%;
+}
+
+.MenuItemMouseOver
+{
+	border: #2155bd 1px solid;
+	font-size: 12px;
+	background-color: #ffe794;
+	color:#00309C;
+	width:100%;
+}
+
+
+.MenuItemTable
+{
+	font-size: 12px;
+	color:#00309C;
+}

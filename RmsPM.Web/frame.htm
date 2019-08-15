@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<html>
+	<head>
+        <TITLE>鼎耀工程咨询全过程管理系统</TITLE>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+		<script id="clientEventHandlersJS" language="javascript">
+<!--
+            //xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+            var xmlhttp = null;
+            try {
+                xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+}
+            if (xmlhttp == null) {
+                xmlhttp = new XMLHttpRequest();
+            }
+    function window_onunload() {
+	    onchangebuild();
+    }
+    function onchangebuild(){		
+		//var xmlDom = new ActiveXObject("Msxml2.DOMDocument");  
+		//var strURL = "Blank.aspx?Flag=1";
+		//xmlhttp.Open("POST",strURL , false);
+  //      xmlhttp.Send(xmlDom);
+
+        //-----------------------
+
+        var xmlDoc = "";
+        var strURL = "Blank.aspx?Flag=1";
+        try { //Internet Explorer  
+		    var xmlDom = new ActiveXObject("Msxml2.DOMDocument");  
+		    xmlhttp.Open("POST",strURL , false);
+            xmlhttp.Send(xmlDom);
+        } catch (e) {
+            try { //Firefox, Mozilla, Opera, etc.  
+                xmlDoc = document.implementation.createDocument("", "", null);
+                xmlDoc.async = false;
+                xmlDoc.load(strURL);
+            } catch (e) {
+                try { //Google Chrome  
+                    var xmlhttp = new window.XMLHttpRequest();
+                    xmlhttp.open("GET", strURL, false);
+                    xmlhttp.send(null);
+                    xmlDoc = xmlhttp.responseXML.documentElement;
+                } catch (e) {
+                    error = e.message;
+                }
+            }
+        }  
+
+
+	}
+
+	function ShowLeftBarforMain()
+    {
+		window.document.all.framesetMain.cols = "160,10,*";
+    }
+
+    function HideLeftBarforMain()
+    {
+		window.document.all.framesetMain.cols = "0,10,*";
+//		window.parent.document.all.contents.style.display = "none";
+    }
+//-->
+		</script>
+	</head>
+	<frameset rows="92,*,27" frameborder="NO" border="0" framespacing="0" onUnload="return window_onunload()">
+		<frame name="header" src="Header.aspx" scrolling="no" noresize>
+		<frameset id="framesetMain" cols="170,10,*" frameborder="NO" border="0" framespacing="0"
+			onunload="return window_onunload()">
+			<frame name="contents" id="contents" src="" scrolling="auto" noresize>
+			<frame name="button" src="framebutton.htm" scrolling="no">
+			<frame name="main" src="DeskTop.aspx?DesktopType=OA" scrolling="auto">
+		</frameset>
+		<frame name="footer" src="" scrolling="no" noresize>
+	</frameset><noframes></noframes>
+</html>

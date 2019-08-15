@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>V_PayoutItem</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>V_PayoutItem</Name>
+		<Column>
+			<Name>PayoutItemCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String> select * from V_PayoutItem a</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>SelectSum</Name>
+			<String> select  Sum(isnull(PayoutMoney, 0)) as PayoutMoney,Sum(isnull(ItemMoney, 0)) as ItemMoney from V_PayoutItem  </String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>SelectSumMoney</Name>
+			<String> select  isnull( sum(PayoutMoney) ,0) from V_PayoutItem</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+    <Sql>
+      <Name>SelectSumCash</Name>
+      <String> select  isnull( sum(PayoutCash) ,0) from V_PayoutItem</String>
+      <CommandType>Text</CommandType>
+    </Sql>
+	</Table>
+</Entity>

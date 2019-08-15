@@ -1,0 +1,2876 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atlas.SyntaxHighlighter</name>
+    </assembly>
+    <members>
+        <member name="T:Atlas.SyntaxHighlighting.IScanner">
+            <summary>
+            Represents an interface to enable scanners to scan source code.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.IScanner.Create(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <returns>A new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.IScanner.LoadState(System.Object)">
+            <summary>
+            Loads the state of the scanner.
+            </summary>
+            <param name="o">An <see cref="T:System.Object"/> that contains the state of the scanner.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.IScanner.SaveState(System.Object)">
+            <summary>
+            Saves the current state of the scanner.
+            </summary>
+            <param name="container">The container which will contain the state.</param>
+            <returns>An <see cref="T:System.Object"/> that contains the state of the scanner.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.IScanner.Scan(System.String)">
+            <summary>
+            Scans a token.
+            </summary>
+            <remarks>
+            An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation will generally have a reference to a 
+            <see cref="T:Atlas.SyntaxHighlighting.NodeCollection"/> which will be used to store results of a scan.
+            </remarks>
+            <param name="token">A token from the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.IScanner.Reset">
+            <summary>
+            Resets the scanner.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.IScanner.Child">
+            <summary>
+            Gets or sets the child scanner.
+            </summary>
+            <remarks>
+            The child scanner is part of the chain of responsibility. In case a scanner did not find occurrences of the node(s) it 
+            represents, this scanner may pass the responsibility on to its child.
+            </remarks>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.IScanner.Dependencies">
+            <summary>
+            Gets a collection of dependant <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> objects.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.IScanner.Enabled">
+            <summary>
+            Gets or sets whether the scanner is enabled or not.
+            </summary>
+            <remarks>
+            An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation might want to disable dependant scanners to make sure 
+            the syntax highlighting will remain valid.
+            </remarks>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.IScanner.ID">
+            <summary>
+            Gets the identification of a scanner.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.MatchType">
+            <summary>
+            Enumeration of match types.
+            </summary>
+        </member>
+        <member name="F:Atlas.SyntaxHighlighting.MatchType.StartTag">
+            <summary>
+            The start tag.
+            </summary>
+            <example>
+            &lt;label&gt;
+            </example>
+        </member>
+        <member name="F:Atlas.SyntaxHighlighting.MatchType.EndTag">
+            <summary>
+            The end tag.
+            </summary>
+            <example>
+            &lt;/label&gt;
+            </example>
+        </member>
+        <member name="F:Atlas.SyntaxHighlighting.MatchType.StandaloneTag">
+            <summary>
+            A single tag.
+            </summary>
+            <example>
+            &lt;label /&gt;
+            </example>
+        </member>
+        <member name="F:Atlas.SyntaxHighlighting.MatchType.Comments">
+            <summary>
+            Comments.
+            </summary>
+            <example>
+            &lt;!-- Comments here --&gt;
+            </example>
+        </member>
+        <member name="F:Atlas.SyntaxHighlighting.MatchType.StartIdentifier">
+            <summary>
+            The start identifier.
+            </summary>
+            <example>
+            &lt;?
+            </example>
+        </member>
+        <member name="F:Atlas.SyntaxHighlighting.MatchType.EndIdentifier">
+            <summary>
+            The end identifier.
+            </summary>
+            <example>
+            ?&gt;
+            </example>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.MatchEventHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Atlas.SyntaxHighlighting.XmlScanner.Match"/> event of the 
+            <see cref="T:Atlas.SyntaxHighlighting.XmlScanner"/> class.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.MatchEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Atlas.SyntaxHighlighting.XmlScanner.Match"/> event.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.MatchEventArgs.#ctor(System.Int32,System.Int32,System.String,System.String,System.Collections.Specialized.NameValueCollection,Atlas.SyntaxHighlighting.MatchType)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.MatchEventArgs"/> class.
+            </summary>
+            <param name="start">The start of the tag to store in this event.</param>
+            <param name="length">The length of the tag to store in the event.</param>
+            <param name="ns">The namespace to store in the event.</param>
+            <param name="tag">The tag to store in the event.</param>
+            <param name="attributes">The attributes to store in the event.</param>
+            <param name="type">The type of token to store in this event.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.MatchEventArgs.Start">
+            <summary>
+            Gets the start of the match.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.MatchEventArgs.Length">
+            <summary>
+            Gets the length of the match.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.MatchEventArgs.Namespace">
+            <summary>
+            Gets the namespace.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.MatchEventArgs.Tag">
+            <summary>
+            Gets the tag.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.MatchEventArgs.Attributes">
+            <summary>
+            Gets the attributes.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.MatchEventArgs.Type">
+            <summary>
+            Gets the type of match.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.TokenizerBase">
+            <summary>
+            Represents the abstract base class for a tokenizer.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.TokenizerBase.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.TokenizerBase.Reset">
+            <summary>
+            Resets the tokenizer.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.TokenizerBase.Tokenize(System.String)">
+            <summary>
+            Tokenizes the source code.
+            </summary>
+            <param name="source">The source code to tokenize.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.TokenizerBase.MoveNext">
+            <summary>
+            Moves to the next token.
+            </summary>
+            <returns>Whether the iterator could be moved or not.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.TokenizerBase.MoveTo(System.Int32)">
+            <summary>
+            Moves the iterator to the specified position.
+            </summary>
+            <param name="position">The new position of the iterator.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.TokenizerBase.GetNextTokens(System.Int32)">
+            <summary>
+            Gets the next token(s) without moving from position.
+            </summary>
+            <param name="count">The number of tokens which should be returned.</param>
+            <returns>The tokens.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.TokenizerBase.SetPosition(System.Int32)">
+            <summary>
+            Sets the position of the iterator.
+            </summary>
+            <param name="position">The new position of the iterator.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.TokenizerBase.Position">
+            <summary>
+            Gets the current position of the iterator.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.TokenizerBase.Source">
+            <summary>
+            Gets or sets the source code which the tokenizer represents.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.TokenizerBase.Tokens">
+            <summary>
+            Gets or sets the tokens.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.WordScanner">
+            <summary>
+            Represents a word scanner.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.ScannerBase">
+            <summary>
+            Provides an abstract base class for scanners.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ScannerBase.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.ScannerBase"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ScannerBase.Create(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <returns>A new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ScannerBase.LoadState(System.Object)">
+            <summary>
+            Loads the state of the scanner.
+            </summary>
+            <param name="state">An <see cref="T:System.Object"/> that contains the state of the scanner.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ScannerBase.SaveState(System.Object)">
+            <summary>
+            Saves the current state of the scanner.
+            </summary>
+            <param name="container">The container which will contain the state.</param>
+            <returns>An <see cref="T:System.Object"/> that contains the state of the scanner.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ScannerBase.SetID(System.String)">
+            <summary>
+            Sets the ID of the scanner.
+            </summary>
+            <param name="id">The ID of the scanner.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ScannerBase.Scan(System.String)">
+            <summary>
+            Scans a token.
+            </summary>
+            <remarks>
+            An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation will generally have a reference to a 
+            <see cref="T:Atlas.SyntaxHighlighting.NodeCollection"/> which will be used to store results of a scan.
+            </remarks>
+            <param name="token">A token from the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ScannerBase.Reset">
+            <summary>
+            Resets the scanner.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.ScannerBase.Child">
+            <summary>
+            Gets or sets the child scanner.
+            </summary>
+            <remarks>
+            The child scanner is part of the chain of responsibility. In case a scanner did not find occurrences of the node(s) it 
+            represents, this scanner may pass the responsibility on to its child.
+            </remarks>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.ScannerBase.Dependencies">
+            <summary>
+            Gets a collection of dependant <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> objects.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.ScannerBase.Enabled">
+            <summary>
+            Gets or sets whether the scanner is enabled or not.
+            </summary>
+            <remarks>
+            An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation might want to disable dependant scanners to make sure 
+            the syntax highlighting will remain valid.
+            </remarks>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.ScannerBase.ID">
+            <summary>
+            Gets the identification of a scanner.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.ScannerBase.Tokenizer">
+            <summary>
+            Gets or sets the <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.ScannerBase.ScannerResult">
+            <summary>
+            Gets or sets the scanner result.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.WordScanner.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.WordScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.WordScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection,Atlas.SyntaxHighlighting.WordNode[])">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <param name="wordNodes">An array of <see cref="T:Atlas.SyntaxHighlighting.WordNode"/> objects.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.WordScanner.Create(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <returns>A new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.WordScanner.LoadState(System.Object)">
+            <summary>
+            Loads the state of the scanner.
+            </summary>
+            <param name="state">An <see cref="T:System.Object"/> that contains the state of the scanner.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.WordScanner.SaveState(System.Object)">
+            <summary>
+            Saves the current state of the scanner.
+            </summary>
+            <param name="container">The container which will contain the state.</param>
+            <returns>An <see cref="T:System.Object"/> that contains the state of the scanner.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.WordScanner.CreateSetting(System.Xml.XmlDocument,System.String,System.String)">
+            <summary>
+            Creates a steting.
+            </summary>
+            <param name="document">The document which will contain the setting.</param>
+            <param name="name">The name of the setting.</param>
+            <param name="value">The value of the setting.</param>
+            <returns>The <see cref="T:System.Xml.XmlElement"/> which represents the setting.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.WordScanner.Scan(System.String)">
+            <summary>
+            Scans a token.
+            </summary>
+            <remarks>
+            An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation will generally have a reference to a 
+            <see cref="T:Atlas.SyntaxHighlighting.NodeCollection"/> which will be used to store results of a scan.
+            </remarks>
+            <param name="token">A token from the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.WordScanner.IsValidChar(System.Char)">
+            <summary>
+            Checks whether the valid is a valid char in the sense that it can be placed in front or after a word.
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.WordScanner.Reset">
+            <summary>
+            Resets the scanner.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.WordScanner.WordNodes">
+            <summary>
+            Gets or sets the word nodes.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.StringBlockScanner">
+            <summary>
+            Represents a string block scanner.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringBlockScanner.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.StringBlockScanner"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringBlockScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.StringBlockScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringBlockScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection,Atlas.SyntaxHighlighting.StringNode)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.StringBlockScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <param name="stringNode">A <see cref="T:Atlas.SyntaxHighlighting.StringNode"/> object.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringBlockScanner.Create(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <returns>A new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringBlockScanner.LoadState(System.Object)">
+            <summary>
+            Loads the state of the scanner.
+            </summary>
+            <param name="state">An <see cref="T:System.Object"/> that contains the state of the scanner.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringBlockScanner.SaveState(System.Object)">
+            <summary>
+            Saves the current state of the scanner.
+            </summary>
+            <param name="container">The container which will contain the state.</param>
+            <returns>An <see cref="T:System.Object"/> that contains the state of the scanner.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringBlockScanner.CreateSetting(System.Xml.XmlDocument,System.String,System.String)">
+            <summary>
+            Creates a steting.
+            </summary>
+            <param name="document">The document which will contain the setting.</param>
+            <param name="name">The name of the setting.</param>
+            <param name="value">The value of the setting.</param>
+            <returns>The <see cref="T:System.Xml.XmlElement"/> which represents the setting.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringBlockScanner.Scan(System.String)">
+            <summary>
+            Scans a token.
+            </summary>
+            <remarks>
+            An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation will generally have a reference to a 
+            <see cref="T:Atlas.SyntaxHighlighting.NodeCollection"/> which will be used to store results of a scan.
+            </remarks>
+            <param name="token">A token from the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringBlockScanner.Reset">
+            <summary>
+            Resets the scanner.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.StringBlockScanner.StringNode">
+            <summary>
+            Gets or sets the string node.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.WordNode">
+            <summary>
+            Represents a word node.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.NodeBase">
+            <summary>
+            Provides an abstract node class.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.INode">
+            <summary>
+            Represents an interface for nodes.
+            </summary>
+        </member>
+        <member name="E:Atlas.SyntaxHighlighting.INode.OccurrenceAdded">
+            <summary>
+            Occurs when a new occurrence is added to the <see cref="P:Atlas.SyntaxHighlighting.INode.Occurrences"/>.
+            </summary>
+        </member>
+        <member name="E:Atlas.SyntaxHighlighting.INode.OccurrenceRemoved">
+            <summary>
+            Occurs when an occurrence is removed from the <see cref="P:Atlas.SyntaxHighlighting.INode.Occurrences"/>.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.INode.BackColor">
+            <summary>
+            Gets or sets the foreground color of the node.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.INode.Font">
+            <summary>
+            Gets or sets the font of the text represented by the occurrences of the node.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.INode.ForeColor">
+            <summary>
+            Gets or sets the foreground color of the node.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.INode.NavigateUrl">
+            <summary>
+            Gets or sets the navigate Url.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.INode.Occurrences">
+            <summary>
+            Gets a collection of occurrences of the <see cref="T:Atlas.SyntaxHighlighting.INode"/> implementation.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.NodeBase.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.NodeBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.NodeBase.occurrences_OccurrenceAdded(System.Object,Atlas.SyntaxHighlighting.OccurrenceEventArgs)">
+            <summary>
+            Handles the occurrence added event.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.NodeBase.occurrences_OccurrenceRemoved(System.Object,Atlas.SyntaxHighlighting.OccurrenceEventArgs)">
+            <summary>
+            Handles the occurrence removed event.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.NodeBase.OnOccurrenceAdded(Atlas.SyntaxHighlighting.OccurrenceEventArgs)">
+            <summary>
+            Raises the <see cref="E:Atlas.SyntaxHighlighting.NodeBase.OccurrenceAdded"/> event.
+            </summary>
+            <param name="e">An <see cref="T:Atlas.SyntaxHighlighting.OccurrenceEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.NodeBase.OnOccurrenceRemoved(Atlas.SyntaxHighlighting.OccurrenceEventArgs)">
+            <summary>
+            Raises the <see cref="E:Atlas.SyntaxHighlighting.NodeBase.OccurrenceRemoved"/> event.
+            </summary>
+            <param name="e">An <see cref="T:Atlas.SyntaxHighlighting.OccurrenceEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="E:Atlas.SyntaxHighlighting.NodeBase.OccurrenceAdded">
+            <summary>
+            Occurs when a new occurrence is added to the <see cref="P:Atlas.SyntaxHighlighting.INode.Occurrences"/>.
+            </summary>
+        </member>
+        <member name="E:Atlas.SyntaxHighlighting.NodeBase.OccurrenceRemoved">
+            <summary>
+            Occurs when an occurrence is removed from the <see cref="P:Atlas.SyntaxHighlighting.INode.Occurrences"/>.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.NodeBase.BackColor">
+            <summary>
+            Gets or sets the foreground color of the node.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.NodeBase.Font">
+            <summary>
+            Gets or sets the font of the text represented by the occurrences of the node.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.NodeBase.ForeColor">
+            <summary>
+            Gets or sets the foreground color of the node.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.NodeBase.NavigateUrl">
+            <summary>
+            Gets or sets the navigate Url.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.NodeBase.Occurrences">
+            <summary>
+            Gets a collection of occurrences of the <see cref="T:Atlas.SyntaxHighlighting.INode"/> implementation.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.WordNode.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.WordNode"/> class.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.WordNode.Entities">
+            <summary>
+            Gets the collection of entities which represent words.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.WordNode.IgnoreCase">
+            <summary>
+            Gets or sets whether case should be ignored.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.StringLineScanner">
+            <summary>
+            Represents a string line scanner.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringLineScanner.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.StringLineScanner"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringLineScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.StringLineScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringLineScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection,Atlas.SyntaxHighlighting.StringNode)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.StringLineScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <param name="stringNode">A <see cref="T:Atlas.SyntaxHighlighting.StringNode"/> object.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringLineScanner.Create(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <returns>A new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringLineScanner.LoadState(System.Object)">
+            <summary>
+            Loads the state of the scanner.
+            </summary>
+            <param name="state">An <see cref="T:System.Object"/> that contains the state of the scanner.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringLineScanner.SaveState(System.Object)">
+            <summary>
+            Saves the current state of the scanner.
+            </summary>
+            <param name="container">The container which will contain the state.</param>
+            <returns>An <see cref="T:System.Object"/> that contains the state of the scanner.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringLineScanner.CreateSetting(System.Xml.XmlDocument,System.String,System.String)">
+            <summary>
+            Creates a steting.
+            </summary>
+            <param name="document">The document which will contain the setting.</param>
+            <param name="name">The name of the setting.</param>
+            <param name="value">The value of the setting.</param>
+            <returns>The <see cref="T:System.Xml.XmlElement"/> which represents the setting.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringLineScanner.Scan(System.String)">
+            <summary>
+            Scans a token.
+            </summary>
+            <remarks>
+            An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation will generally have a reference to a 
+            <see cref="T:Atlas.SyntaxHighlighting.NodeCollection"/> which will be used to store results of a scan.
+            </remarks>
+            <param name="token">A token from the source code.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.StringLineScanner.StringNode">
+            <summary>
+            Gets or sets the string node.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.XmlCommentNode">
+            <summary>
+            Represents an Xml comment node.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlCommentNode.#ctor">
+            <summary>
+            Initializes a new instance of an <see cref="T:Atlas.SyntaxHighlighting.XmlCommentNode"/> class.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.MercuryHighlighter">
+            <summary>
+            Represents a Mercury syntax highlighter.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.HighlighterBase">
+            <summary>
+            Represents an abstract base class for a syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HighlighterBase.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.HighlighterBase"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HighlighterBase.ForceReset">
+            <summary>
+            Forces the highlighter to be reset.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HighlighterBase.BuildEntryPointScanner(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Builds a new chain of scanners.
+            </summary>
+            <param name="tokenizer">The tokenizer used by the scanners.</param>
+            <param name="scannerResult">The scanner result.</param>
+            <returns>
+            The scanner at the start of the chain.
+            </returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HighlighterBase.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HighlighterBase.BuildStringScanner">
+            <summary>
+            Builds a string scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.StringLineScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HighlighterBase.BuildCommentLineScanner">
+            <summary>
+            Builds a comment line scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.CommentLineScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HighlighterBase.BuildCommentBlockScanner">
+            <summary>
+            Builds a comment line scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.CommentBlockScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HighlighterBase.Parse(System.String)">
+            <summary>
+            Parses the source code.
+            </summary>
+            <param name="source">The source code to parse.</param>
+            <returns>The parsed source code.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HighlighterBase.ResetScanner(Atlas.SyntaxHighlighting.IScanner)">
+            <summary>
+            Resets a chain of scanners.
+            </summary>
+            <param name="scanner">The <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation scanner which should be resetted.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.HighlighterBase.Name">
+            <summary>
+            Gets or sets the unique name for this highlighter.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.HighlighterBase.FullName">
+            <summary>
+            Gets or sets the full name for this highlighter.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.HighlighterBase.TagValues">
+            <summary>
+            Gets the values which can be used to specify this language.
+            </summary>
+            <remarks>
+            This property can be used in different contexts such as ASP.NET context. In that case this property could 
+            contain the possible values in order to use this highlighter.
+            </remarks>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.HighlighterBase.FileExtensions">
+            <summary>
+            Gets the file extensions registered for the language this highlighter represents.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.HighlighterBase.Parser">
+            <summary>
+            Gets or sets the parser.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.HighlighterBase.Scanners">
+            <summary>
+            Gets the scanners which will be used to scan the source code.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.HighlighterBase.ScannerResult">
+            <summary>
+            Gets or sets the scanner result.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.HighlighterBase.Tokenizer">
+            <summary>
+            Gets or sets the tokenizer.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.MercuryHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.MercuryHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.MercuryHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.MercuryHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.MercuryHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.MercuryHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.FortranHighlighter">
+            <summary>
+            Represents a Fortran syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.FortranHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.FortranHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.FortranHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.FortranHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.FortranHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.FortranHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.CHighlighter">
+            <summary>
+            Represents a C syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.Highlighter">
+            <summary>
+            Represents a highlighter which provides common functionality.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.Highlighter.FromFile(System.String,System.String,Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Creates a new instance of a <see cref="T:Atlas.SyntaxHighlighting.ConfiguredHighlighter"/> class.
+            </summary>
+            <param name="fileName">The name of the file which contains information about the highlighter.</param>
+            <param name="language">The name of the language.</param>
+            <param name="parser">An <see cref="T:Atlas.SyntaxHighlighting.IParser"/> object.</param>
+            <returns>An <see cref="T:Atlas.SyntaxHighlighting.ConfiguredHighlighter"/> which can be used to highlight source code.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.Highlighter.ToFile(System.String,Atlas.SyntaxHighlighting.HighlighterBase)">
+            <summary>
+            Saves a highlighter's configuration in the specified file.
+            </summary>
+            <param name="fileName">The name of the file which will store the information about the highlighter.</param>
+            <param name="highlighter">An <see cref="T:Atlas.SyntaxHighlighting.HighlighterBase"/> object.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.Highlighter.SaveScanner(System.Xml.XmlDocument,System.Xml.XmlElement,Atlas.SyntaxHighlighting.IScanner,System.Int32,System.Boolean)">
+            <summary>
+            Saves a chain of scanners recursively.
+            </summary>
+            <param name="document">The document in which the state will be saved.</param>
+            <param name="element">The <see cref="T:System.Xml.XmlElement"/> which will hold the chain of scanners.</param>
+            <param name="scanner">The scanner which should be stored.</param>
+            <param name="id">The unique ID of the to be saved scanner.</param>
+            <param name="isEntryScanner">Whether the scanner is the entry point of the chain.</param>
+            <returns>The ID of the saved scanner.</returns>
+        </member>
+        <member name="T:Atlas.Web.SyntaxHighlighting.TokenCollection">
+            <summary>
+            Represents a collection of tokens.
+            </summary>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.TokenCollection.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.Web.SyntaxHighlighting.TokenCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.TokenCollection.Add(Atlas.Web.SyntaxHighlighting.Token)">
+            <summary>
+            Adds an item.
+            </summary>
+            <param name="t">The item to add.</param>
+            <returns>Index of the added item.</returns>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.TokenCollection.Item(System.Int32)">
+            <summary>
+            Gets the token at the specified index.
+            </summary>
+        </member>
+        <member name="T:Atlas.Web.SyntaxHighlighting.SourceItem">
+            <summary>
+            Represents a source item.
+            </summary>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SourceItem.#ctor(System.Int32,System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.Web.SyntaxHighlighting.SourceItem"/> class.
+            </summary>
+            <param name="lineNumber">The line number.</param>
+            <param name="totalLines">The total number of lines.</param>
+            <param name="sourceLine">The line of source code.</param>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.SourceItem.LineNumber">
+            <summary>
+            Gets the line number.
+            </summary>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.SourceItem.TotalLines">
+            <summary>
+            Gets the total number of lines.
+            </summary>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.SourceItem.SourceLine">
+            <summary>
+            Gets the line of source code.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.PascalHighlighter">
+            <summary>
+            Represents a Pascal syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PascalHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.PascalHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PascalHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.PascalHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PascalHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PascalHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.EiffelHighlighter">
+            <summary>
+            Represents an Eiffel syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.EiffelHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.EiffelHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.EiffelHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.EiffelHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.EiffelHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.EiffelHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.Web.SyntaxHighlighting.TokenType">
+            <summary>
+            Enumeration of token types.
+            </summary>
+        </member>
+        <member name="F:Atlas.Web.SyntaxHighlighting.TokenType.Literal">
+            <summary>
+            Literal text.
+            </summary>
+        </member>
+        <member name="F:Atlas.Web.SyntaxHighlighting.TokenType.Code">
+            <summary>
+            Source code.
+            </summary>
+        </member>
+        <member name="T:Atlas.Web.SyntaxHighlighting.Token">
+            <summary>
+            Represents a token.
+            </summary>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.Token.#ctor(System.String,Atlas.Web.SyntaxHighlighting.TokenType)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.Web.SyntaxHighlighting.Token"/> class.
+            </summary>
+            <param name="value">The actual token.</param>
+            <param name="type">Type of token.</param>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.Token.#ctor(System.String,System.String,Atlas.Web.SyntaxHighlighting.TokenType)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.Web.SyntaxHighlighting.Token"/> class.
+            </summary>
+            <param name="value">The actual token.</param>
+            <param name="language">The language in which the source code is written.</param>
+            <param name="type">Type of token.</param>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.Token.Value">
+            <summary>
+            Gets the actual token.
+            </summary>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.Token.Language">
+            <summary>
+            Gets the actual token.
+            </summary>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.Token.Type">
+            <summary>
+            Gets the type of token.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.CommentLineScanner">
+            <summary>
+            Represents a comment line scanner.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentLineScanner.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CommentLineScanner"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentLineScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CommentLineScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentLineScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection,Atlas.SyntaxHighlighting.CommentLineNode)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CommentLineScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <param name="commentLineNode">A <see cref="T:Atlas.SyntaxHighlighting.CommentLineNode"/> object.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentLineScanner.Create(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <returns>A new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentLineScanner.LoadState(System.Object)">
+            <summary>
+            Loads the state of the scanner.
+            </summary>
+            <param name="state">An <see cref="T:System.Object"/> that contains the state of the scanner.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentLineScanner.SaveState(System.Object)">
+            <summary>
+            Saves the current state of the scanner.
+            </summary>
+            <param name="container">The container which will contain the state.</param>
+            <returns>An <see cref="T:System.Object"/> that contains the state of the scanner.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentLineScanner.CreateSetting(System.Xml.XmlDocument,System.String,System.String)">
+            <summary>
+            Creates a steting.
+            </summary>
+            <param name="document">The document which will contain the setting.</param>
+            <param name="name">The name of the setting.</param>
+            <param name="value">The value of the setting.</param>
+            <returns>The <see cref="T:System.Xml.XmlElement"/> which represents the setting.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentLineScanner.Scan(System.String)">
+            <summary>
+            Scans a token.
+            </summary>
+            <remarks>
+            An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation will generally have a reference to a 
+            <see cref="T:Atlas.SyntaxHighlighting.NodeCollection"/> which will be used to store results of a scan.
+            </remarks>
+            <param name="token">A token from the source code.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.CommentLineScanner.CommentLineNode">
+            <summary>
+            Gets or sets the comment line node.
+            </summary>
+        </member>
+        <member name="T:Atlas.Windows.SyntaxHighlighting.RtfParser">
+            <summary>
+            Represents a Rtf parser.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.ParserBase">
+            <summary>
+            Provides the abstract base class for a parser.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.IParser">
+            <summary>
+            Represents an interface to enable parsers to parse source code.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.IParser.Parse(System.String,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Parses source code.
+            </summary>
+            <param name="source">The source code which will be parsed.</param>
+            <param name="scannerResult">The result returned by the scanners after scanning the source code.</param>
+            <returns>The highlighted source code.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ParserBase.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.ParserBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ParserBase.Parse(System.String,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Parses source code.
+            </summary>
+            <param name="source">The source code which will be parsed.</param>
+            <param name="scannerResult">The result returned by the scanners after scanning the source code.</param>
+            <returns>The highlighted source code.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ParserBase.ParseToken(System.String,Atlas.SyntaxHighlighting.INode)">
+            <summary>
+            Parses a token.
+            </summary>
+            <param name="token">The token which the node matched.</param>
+            <param name="node">The node which matched the token.</param>
+            <returns>The highlighted token.</returns>
+        </member>
+        <member name="M:Atlas.Windows.SyntaxHighlighting.RtfParser.#ctor(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.Windows.SyntaxHighlighting.RtfParser"/> class.
+            </summary>
+            <param name="targetControl">The target control which contains the to be highlighted text.</param>
+        </member>
+        <member name="M:Atlas.Windows.SyntaxHighlighting.RtfParser.Parse(System.String,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Parses source code.
+            </summary>
+            <param name="source">The source code which will be parsed.</param>
+            <param name="scannerResult">The result returned by the scanners after scanning the source code.</param>
+            <returns>The highlighted source code.</returns>
+        </member>
+        <member name="M:Atlas.Windows.SyntaxHighlighting.RtfParser.ParseToken(System.String,Atlas.SyntaxHighlighting.INode)">
+            <summary>
+            Parses a token.
+            </summary>
+            <param name="token">The token which the node matched.</param>
+            <param name="node">The node which matched the token.</param>
+            <returns>The highlighted token.</returns>
+        </member>
+        <member name="M:Atlas.Windows.SyntaxHighlighting.RtfParser.ParseRtf(System.String)">
+            <summary>
+            Parses a string as a string which can be used within Rtf documents.
+            </summary>
+            <param name="token">The <see cref="T:System.String"/> which should be displayed within Rtf documents.</param>
+            <returns>An Rtf formatted string.</returns>
+        </member>
+        <member name="P:Atlas.Windows.SyntaxHighlighting.RtfParser.Target">
+            <summary>
+            Gets or sets the target control.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.HtmlParser">
+            <summary>
+            Represents an Html parser.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HtmlParser.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.HtmlParser"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HtmlParser.Parse(System.String,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Parses source code.
+            </summary>
+            <param name="source">The source code which will be parsed.</param>
+            <param name="scannerResult">The result returned by the scanners after scanning the source code.</param>
+            <returns>The highlighted source code.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HtmlParser.ParseToken(System.String,Atlas.SyntaxHighlighting.INode)">
+            <summary>
+            Parses a token.
+            </summary>
+            <param name="token">The token which the node matched.</param>
+            <param name="node">The node which matched the token.</param>
+            <returns>The highlighted token.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.OccurrenceEventHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Atlas.SyntaxHighlighting.INode.OccurrenceAdded"/> and 
+            <see cref="E:Atlas.SyntaxHighlighting.INode.OccurrenceRemoved"/> events of the 
+            <see cref="T:Atlas.SyntaxHighlighting.INode"/> implementation classes.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.OccurrenceEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Atlas.SyntaxHighlighting.INode.OccurrenceAdded"/> and
+            <see cref="E:Atlas.SyntaxHighlighting.INode.OccurrenceRemoved"/> events.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.OccurrenceEventArgs.#ctor(Atlas.SyntaxHighlighting.Occurrence)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.OccurrenceEventArgs"/> class.
+            </summary>
+            <param name="occ">The occurrence to store in this event.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.OccurrenceEventArgs.Occurrence">
+            <summary>
+            Gets the occurrence used by this event.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.CommentLineNode">
+            <summary>
+            Represents a comment line node.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentLineNode.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CommentLineNode"/> class.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.CommentLineNode.Entities">
+            <summary>
+            Gets the collection of entities which indicate the start of a comment line.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.CommentBlockNode">
+            <summary>
+            Represents a comment block node.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentBlockNode.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CommentBlockNode"/> class.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.CommentBlockNode.Entities">
+            <summary>
+            Gets the collection of entities which contains information about the start and end strings of comment blocks.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.ConfiguredHighlighter">
+            <summary>
+            Provides a highlighter which can represent different languages at run-time.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ConfiguredHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.ConfiguredHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ConfiguredHighlighter.GetTokenizer">
+            <summary>
+            Gets the associated tokenizer.
+            </summary>
+            <returns>An <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> implementation class.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ConfiguredHighlighter.GetScannerResult">
+            <summary>
+            Gets the scanner result.
+            </summary>
+            <returns>An <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> class.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ConfiguredHighlighter.BuildEntryPointScanner(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Builds a new chain of scanners.
+            </summary>
+            <param name="tokenizer">The tokenizer used by the scanners.</param>
+            <param name="scannerResult">The scanner result.</param>
+            <returns>
+            The scanner at the start of the chain.
+            </returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.XmlTagNode">
+            <summary>
+            Represents an Xml tag node.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlTagNode.#ctor">
+            <summary>
+            Initializes a new instance of an <see cref="T:Atlas.SyntaxHighlighting.XmlTagNode"/> class.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.StringNode">
+            <summary>
+            Represents a string node.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringNode.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.StringNode"/> class.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.StringNode.Entities">
+            <summary>
+            Gets the collection of entities which contains information about the start, end and escape strings of strings.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.ASPXNode">
+            <summary>
+            Represents an ASPX node.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXNode.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.ASPXNode"/> class.
+            </summary>
+        </member>
+        <member name="T:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter">
+            <summary>
+            Represents a syntax highligher.
+            </summary>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.OnInit(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Web.UI.Control.Init"/> event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.GetParser">
+            <summary>
+            Gets the parser which will be used to parse the source.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.GetHighlighter(System.String)">
+            <summary>
+            Parses source code.
+            </summary>
+            <param name="language">The language used to highlight the text.</param>
+            <returns>The highlighter.</returns>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.Tokenize(System.String)">
+            <summary>
+            Scans the text and splits code snippets from actual text.
+            </summary>
+            <param name="text">The text to tokenize.</param>
+            <returns>A collection of tokens of text and/or code snippets.</returns>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the contents of the control into the specified writer. This method is used primarily by control developers.
+            </summary>
+            <param name="writer">A <see cref="T:System.Web.UI.HtmlTextWriter"/> that represents the output stream to render HTML content on the client.</param>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.RenderBody">
+            <summary>
+            Renders the text.
+            </summary>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.RenderText(System.String)">
+            <summary>
+            Renders literal text.
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.RenderCode(System.String,System.String)">
+            <summary>
+            Adds the controls which form the code snippet.
+            </summary>
+            <param name="source">The source code.</param>
+            <param name="language">The language in which the source code is written.</param>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.FindLineNumberPlaceHolder(System.Web.UI.Control)">
+            <summary>
+            Finds the line number placeholder.
+            </summary>
+            <param name="templatedOutLineControl">The control which should contain the placeholder.</param>
+            <returns>Either the first line number placeholder or null in case no line number placeholder could be found.</returns>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.FindSourceLinePlaceHolder(System.Web.UI.Control)">
+            <summary>
+            Finds the source line placeholder.
+            </summary>
+            <param name="templatedOutLineControl">The control which should contain the placeholder.</param>
+            <returns>Either the first source line placeholder or null in case no source line placeholder could be found.</returns>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.GetTokenValue(Atlas.Web.SyntaxHighlighting.Token)">
+            <summary>
+            Gets the value of the token.
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.Mode">
+            <summary>
+            Gets or sets the highlight mode.
+            </summary>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.Language">
+            <summary>
+            Gets or sets the default language in which the source code is written.
+            </summary>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.Text">
+            <summary>
+            Gets or sets text.
+            </summary>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.CodeLayoutTemplate">
+            <summary>
+            Gets or sets the layout template of a code snippet.
+            </summary>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.LineNumberTemplate">
+            <summary>
+            Gets or sets the line number template.
+            </summary>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.SourceLineTemplate">
+            <summary>
+            Gets or sets the source line template.
+            </summary>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.SeparatorTemplate">
+            <summary>
+            Gets or sets the separator template.
+            </summary>
+        </member>
+        <member name="E:Atlas.Web.SyntaxHighlighting.SyntaxHighlighter.ParseToken">
+            <summary>
+            Occurs when a token is parsed.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.NodeCollection">
+            <summary>
+            Represents a collection of nodes.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.NodeCollection.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.NodeCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.NodeCollection.Add(Atlas.SyntaxHighlighting.INode)">
+            <summary>
+            Adds a node.
+            </summary>
+            <param name="node">An <see cref="T:Atlas.SyntaxHighlighting.INode"/> object.</param>
+            <returns>Index of the added object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.NodeCollection.Remove(Atlas.SyntaxHighlighting.INode)">
+            <summary>
+            Removes a node.
+            </summary>
+            <param name="node">An <see cref="T:Atlas.SyntaxHighlighting.INode"/> object.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.NodeCollection.Item(System.Int32)">
+            <summary>
+            Gets an <see cref="T:Atlas.SyntaxHighlighting.INode"/> object at the specified index.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.XMLHighlighter">
+            <summary>
+            Represents an XML syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XMLHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.XMLHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XMLHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.XMLHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XMLHighlighter.BuildEntryPointScanner(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Builds a new chain of scanners.
+            </summary>
+            <param name="tokenizer">The tokenizer used by the scanners.</param>
+            <param name="scannerResult">The scanner result.</param>
+            <returns>
+            The scanner at the start of the chain.
+            </returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.JScriptHighlighter">
+            <summary>
+            Represents a JScript syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.JScriptHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.JScriptHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.JScriptHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.JScriptHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.JScriptHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.JScriptHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.HighlighterCollection">
+            <summary>
+            Represents a collection of highlighters.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HighlighterCollection.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.HighlighterCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HighlighterCollection.Add(Atlas.SyntaxHighlighting.HighlighterBase)">
+            <summary>
+            Adds an highlighter.
+            </summary>
+            <param name="highlighter">The highlighter to add.</param>
+            <returns>Index of the added highlighter.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HighlighterCollection.Remove(Atlas.SyntaxHighlighting.HighlighterBase)">
+            <summary>
+            Removes an highlighter.
+            </summary>
+            <param name="highlighter">The highlighter to remove.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.HighlighterCollection.Item(System.Int32)">
+            <summary>
+            Gets the highlighter at the specified index.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.HighlighterCollection.Item(System.String)">
+            <summary>
+            Gets the highlighter with the specified name.
+            </summary>
+        </member>
+        <member name="T:Atlas.Web.SyntaxHighlighting.LineNumberPlaceHolder">
+            <summary>
+            Represents a line number placeholder.
+            </summary>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.LineNumberPlaceHolder.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.Web.SyntaxHighlighting.LineNumberPlaceHolder"/> class.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.ASPXScanner">
+            <summary>
+            Represents an ASPX scanner.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXScanner.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.ASPXScanner"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.ASPXScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection,Atlas.SyntaxHighlighting.ASPXNode)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.ASPXScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <param name="aspxNode">A <see cref="T:Atlas.SyntaxHighlighting.ASPXNode"/> object.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXScanner.Create(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <returns>A new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXScanner.LoadState(System.Object)">
+            <summary>
+            Loads the state of the scanner.
+            </summary>
+            <param name="state">An <see cref="T:System.Object"/> that contains the state of the scanner.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXScanner.SaveState(System.Object)">
+            <summary>
+            Saves the current state of the scanner.
+            </summary>
+            <param name="container">The container which will contain the state.</param>
+            <returns>An <see cref="T:System.Object"/> that contains the state of the scanner.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXScanner.CreateSetting(System.Xml.XmlDocument,System.String,System.String)">
+            <summary>
+            Creates a steting.
+            </summary>
+            <param name="document">The document which will contain the setting.</param>
+            <param name="name">The name of the setting.</param>
+            <param name="value">The value of the setting.</param>
+            <returns>The <see cref="T:System.Xml.XmlElement"/> which represents the setting.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXScanner.Scan(System.String)">
+            <summary>
+            Scans a token.
+            </summary>
+            <remarks>
+            An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation will generally have a reference to a 
+            <see cref="T:Atlas.SyntaxHighlighting.NodeCollection"/> which will be used to store results of a scan.
+            </remarks>
+            <param name="token">A token from the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXScanner.xmlScanner_Match(System.Object,Atlas.SyntaxHighlighting.MatchEventArgs)">
+            <summary>
+            Handles the match event.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXScanner.Reset">
+            <summary>
+            Resets the scanner.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.ASPXScanner.ASPXNode">
+            <summary>
+            Gets or sets the script node.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.CSharpHighlighter">
+            <summary>
+            Represents a C# syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CSharpHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CSharpHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CSharpHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CSharpHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CSharpHighlighter.BuildEntryPointScanner(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Builds a new chain of scanners.
+            </summary>
+            <param name="tokenizer">The tokenizer used by the scanners.</param>
+            <param name="scannerResult">The scanner result.</param>
+            <returns>
+            The scanner at the start of the chain.
+            </returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CSharpHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CSharpHighlighter.BuildStringBlockScanner">
+            <summary>
+            Builds a string block scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.StringBlockScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CSharpHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.RubyHighlighter">
+            <summary>
+            Represents a Ruby syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.RubyHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.RubyHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.RubyHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.RubyHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.RubyHighlighter.BuildCommentLineScanner">
+            <summary>
+            Builds a comment line scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.CommentLineScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.RubyHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.RubyHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.RubyHighlighter.GetKeywords2">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.RubyHighlighter.GetKeywords3">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.MSILHighlighter">
+            <summary>
+            Represents a MSIL syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.MSILHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.MSILHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.MSILHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.MSILHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.MSILHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.MSILHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.JavaHighlighter">
+            <summary>
+            Represents a Java syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.JavaHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.JavaHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.JavaHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.JavaHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.JavaHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.JavaHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.Web.SyntaxHighlighting.SourceHeaderItem">
+            <summary>
+            Represents a source header item.
+            </summary>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SourceHeaderItem.#ctor(System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.Web.SyntaxHighlighting.SourceHeaderItem"/> class.
+            </summary>
+            <param name="language">The language in which the source code is written.</param>
+            <param name="totalLines">The total number of lines.</param>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.SourceHeaderItem.Language">
+            <summary>
+            Gets the language in which the source code is written.
+            </summary>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.SourceHeaderItem.TotalLines">
+            <summary>
+            Gets the total number of lines.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.OccurrenceCollection">
+            <summary>
+            Represents a collection of occurrences.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.OccurrenceCollection.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.OccurrenceCollection.Add(Atlas.SyntaxHighlighting.Occurrence)">
+            <summary>
+            Adds an occurrence.
+            </summary>
+            <param name="occ">An <see cref="T:Atlas.SyntaxHighlighting.Occurrence"/> object.</param>
+            <returns>Index of the added object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.OccurrenceCollection.Remove(Atlas.SyntaxHighlighting.Occurrence)">
+            <summary>
+            Removes an occurrence.
+            </summary>
+            <param name="occ">An <see cref="T:Atlas.SyntaxHighlighting.Occurrence"/> object.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.OccurrenceCollection.OnOccurrenceAdded(Atlas.SyntaxHighlighting.OccurrenceEventArgs)">
+            <summary>
+            Raises the <see cref="E:Atlas.SyntaxHighlighting.OccurrenceCollection.OccurrenceAdded"/> event.
+            </summary>
+            <param name="e">An <see cref="T:Atlas.SyntaxHighlighting.OccurrenceEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.OccurrenceCollection.OnOccurrenceRemoved(Atlas.SyntaxHighlighting.OccurrenceEventArgs)">
+            <summary>
+            Raises the <see cref="E:Atlas.SyntaxHighlighting.OccurrenceCollection.OccurrenceRemoved"/> event.
+            </summary>
+            <param name="e">An <see cref="T:Atlas.SyntaxHighlighting.OccurrenceEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="E:Atlas.SyntaxHighlighting.OccurrenceCollection.OccurrenceAdded">
+            <summary>
+            Occurs when a new occurrence is added to the <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/>.
+            </summary>
+        </member>
+        <member name="E:Atlas.SyntaxHighlighting.OccurrenceCollection.OccurrenceRemoved">
+            <summary>
+            Occurs when an occurrence is removed from the <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/>.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.OccurrenceCollection.Item(System.Int32)">
+            <summary>
+            Gets an <see cref="T:Atlas.SyntaxHighlighting.Occurrence"/> object at the specified index.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.HaskellHighlighter">
+            <summary>
+            Represents a Haskell syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HaskellHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.HaskellHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HaskellHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.HaskellHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HaskellHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.HaskellHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.ColdFusionHighlighter">
+            <summary>
+            Represents a Cold Fusion syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ColdFusionHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.ColdFusionHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ColdFusionHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.ColdFusionHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ColdFusionHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ColdFusionHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.CharTokenizer">
+            <summary>
+            Represents a character tokenizer.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CharTokenizer.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CharTokenizer"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CharTokenizer.Tokenize(System.String)">
+            <summary>
+            Tokenizes the source code.
+            </summary>
+            <param name="source">The source code to tokenize.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CharTokenizer.MoveNext">
+            <summary>
+            Moves to the next token.
+            </summary>
+            <returns>Whether the iterator could be moved or not.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CharTokenizer.GetNextTokens(System.Int32)">
+            <summary>
+            Gets the next token(s) without moving from position.
+            </summary>
+            <param name="count">The number of tokens which should be returned.</param>
+            <returns>The tokens.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.PHPScanner">
+            <summary>
+            Represents a php scanner.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PHPScanner.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.PHPScanner"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PHPScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.PHPScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PHPScanner.Create(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <returns>A new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PHPScanner.Scan(System.String)">
+            <summary>
+            Scans a token.
+            </summary>
+            <remarks>
+            An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation will generally have a reference to a 
+            <see cref="T:Atlas.SyntaxHighlighting.NodeCollection"/> which will be used to store results of a scan.
+            </remarks>
+            <param name="token">A token from the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PHPScanner.xmlScanner_Match(System.Object,Atlas.SyntaxHighlighting.MatchEventArgs)">
+            <summary>
+            Handles the match event.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PHPScanner.Reset">
+            <summary>
+            Resets the scanner.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.CommentBlockScanner">
+            <summary>
+            Represents a comment block scanner.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentBlockScanner.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CommentBlockScanner"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentBlockScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CommentBlockScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentBlockScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection,Atlas.SyntaxHighlighting.CommentBlockNode)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CommentBlockScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <param name="commentBlockNode">A <see cref="T:Atlas.SyntaxHighlighting.CommentBlockNode"/> object.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentBlockScanner.Create(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <returns>A new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentBlockScanner.LoadState(System.Object)">
+            <summary>
+            Loads the state of the scanner.
+            </summary>
+            <param name="state">An <see cref="T:System.Object"/> that contains the state of the scanner.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentBlockScanner.SaveState(System.Object)">
+            <summary>
+            Saves the current state of the scanner.
+            </summary>
+            <param name="container">The container which will contain the state.</param>
+            <returns>An <see cref="T:System.Object"/> that contains the state of the scanner.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentBlockScanner.CreateSetting(System.Xml.XmlDocument,System.String,System.String)">
+            <summary>
+            Creates a steting.
+            </summary>
+            <param name="document">The document which will contain the setting.</param>
+            <param name="name">The name of the setting.</param>
+            <param name="value">The value of the setting.</param>
+            <returns>The <see cref="T:System.Xml.XmlElement"/> which represents the setting.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CommentBlockScanner.Scan(System.String)">
+            <summary>
+            Scans a token.
+            </summary>
+            <remarks>
+            An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation will generally have a reference to a 
+            <see cref="T:Atlas.SyntaxHighlighting.NodeCollection"/> which will be used to store results of a scan.
+            </remarks>
+            <param name="token">A token from the source code.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.CommentBlockScanner.CommentBlockNode">
+            <summary>
+            Gets or sets the comment block node.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.XmlNamespaceNode">
+            <summary>
+            Represents an Xml namespace node.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlNamespaceNode.#ctor">
+            <summary>
+            Initializes a new instance of an <see cref="T:Atlas.SyntaxHighlighting.XmlNamespaceNode"/> class.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.Entity">
+            <summary>
+            Represents an entity.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.Entity.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.Entity"/> struct.
+            </summary>
+            <param name="start">The string which indicates the start of a comment block.</param>
+            <param name="end">The string which indicates the end of a comment block.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.Entity.Start">
+            <summary>
+            Gets the string which indicates the start of a comment block.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.Entity.End">
+            <summary>
+            Gets the string which indicates the end of a comment block.
+            </summary>
+        </member>
+        <member name="T:Atlas.Web.SyntaxHighlighting.SeparatorItem">
+            <summary>
+            Represents a separator item.
+            </summary>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SeparatorItem.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.Web.SyntaxHighlighting.SeparatorItem"/> class.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.XmlAttributeNameNode">
+            <summary>
+            Represents an Xml attribute name node.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlAttributeNameNode.#ctor">
+            <summary>
+            Initializes a new instance of an <see cref="T:Atlas.SyntaxHighlighting.XmlAttributeNameNode"/> class.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.EntityCollection">
+            <summary>
+            Represents a collection of entities.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.EntityCollection.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.EntityCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.EntityCollection.Add(Atlas.SyntaxHighlighting.Entity)">
+            <summary>
+            Adds an entity.
+            </summary>
+            <param name="entity">An <see cref="T:Atlas.SyntaxHighlighting.Entity"/> object.</param>
+            <returns>Index of the added object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.EntityCollection.Remove(Atlas.SyntaxHighlighting.Entity)">
+            <summary>
+            Removes a entity.
+            </summary>
+            <param name="entity">An <see cref="T:Atlas.SyntaxHighlighting.Entity"/> object.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.EntityCollection.Item(System.Int32)">
+            <summary>
+            Gets an <see cref="T:Atlas.SyntaxHighlighting.Entity"/> object at the specified index.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.XmlScanner">
+            <summary>
+            Represents an Xml scanner.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.#ctor">
+            <summary>
+            Initializes a new instance of an <see cref="T:Atlas.SyntaxHighlighting.XmlScanner"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.#ctor(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of an <see cref="T:Atlas.SyntaxHighlighting.XmlScanner"/> class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.Create(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.
+            </summary>
+            <param name="tokenizer">The <see cref="T:Atlas.SyntaxHighlighting.TokenizerBase"/> which is used to tokenize the source code.</param>
+            <param name="scannerResult">The <see cref="T:Atlas.SyntaxHighlighting.OccurrenceCollection"/> which will contain the scanner result.</param>
+            <returns>A new instance of a <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation class.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.LoadState(System.Object)">
+            <summary>
+            Loads the state of the scanner.
+            </summary>
+            <param name="state">An <see cref="T:System.Object"/> that contains the state of the scanner.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.LoadNode(System.Xml.XmlElement,Atlas.SyntaxHighlighting.INode,System.String)">
+            <summary>
+            Loads the information for a node.
+            </summary>
+            <param name="element">The <see cref="T:System.Xml.XmlElement"/> which contains the information about the node.</param>
+            <param name="node">The <see cref="T:Atlas.SyntaxHighlighting.INode"/> implementation class for which the information will be set.</param>
+            <param name="name">The name of the node.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.SaveState(System.Object)">
+            <summary>
+            Saves the current state of the scanner.
+            </summary>
+            <param name="container">The container which will contain the state.</param>
+            <returns>An <see cref="T:System.Object"/> that contains the state of the scanner.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.StoreNode(System.Xml.XmlDocument,System.Xml.XmlElement,Atlas.SyntaxHighlighting.INode,System.String)">
+            <summary>
+            Stores a node.
+            </summary>
+            <param name="document">The document which will contain the settings for this node.</param>
+            <param name="nodeRootElement">The element which will hold the node's settings.</param>
+            <param name="node">The node which should be represented.</param>
+            <param name="name">The name of the node.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.CreateSetting(System.Xml.XmlDocument,System.String,System.String)">
+            <summary>
+            Creates a steting.
+            </summary>
+            <param name="document">The document which will contain the setting.</param>
+            <param name="name">The name of the setting.</param>
+            <param name="value">The value of the setting.</param>
+            <returns>The <see cref="T:System.Xml.XmlElement"/> which represents the setting.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.Scan(System.String)">
+            <summary>
+            Scans a token.
+            </summary>
+            <remarks>
+            An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> implementation will generally have a reference to a 
+            <see cref="T:Atlas.SyntaxHighlighting.NodeCollection"/> which will be used to store results of a scan.
+            </remarks>
+            <param name="token">A token from the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.MatchNamespace(System.Int32)">
+            <summary>
+            Matches a namespace.
+            </summary>
+            <param name="offset">The offset from which the search can begin.</param>
+            <returns>The matched namespace.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.MatchTag(System.Int32)">
+            <summary>
+            Matches a tag.
+            </summary>
+            <param name="offset">The offset from which the search can begin.</param>
+            <returns>The matched tag.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.MatchAttributes(System.Int32,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Matches an attributes.
+            </summary>
+            <param name="offset">The offset from which the search can begin.</param>
+            <param name="attributes">The matched attributes.</param>
+            <returns>The length of the matched attribute value.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.OnMatch(Atlas.SyntaxHighlighting.MatchEventArgs)">
+            <summary>
+            Raises the <see cref="E:Atlas.SyntaxHighlighting.XmlScanner.Match"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> object that contains the event data.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlScanner.Reset">
+            <summary>
+            Resets the scanner.
+            </summary>
+        </member>
+        <member name="E:Atlas.SyntaxHighlighting.XmlScanner.Match">
+            <summary>
+            Occurs when XML was matched.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.XmlScanner.XmlSpecialCharNode">
+            <summary>
+            Gets or sets the Xml special char node.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.XmlScanner.XmlNamespaceNode">
+            <summary>
+            Gets or sets the Xml namespace node.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.XmlScanner.XmlTagNode">
+            <summary>
+            Gets or sets the Xml tag node.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.XmlScanner.XmlCommentNode">
+            <summary>
+            Gets or sets the Xml comment node.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.XmlScanner.XmlAttributeNameNode">
+            <summary>
+            Gets or sets the Xml attribute name node.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.XmlScanner.XmlAttributeValueNode">
+            <summary>
+            Gets or sets the Xml attribute value node.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.Register">
+            <summary>
+            Represents a register.
+            </summary>
+        </member>
+        <member name="F:Atlas.SyntaxHighlighting.Register.Instance">
+            <summary>
+            Gets an instance of the register as a singleton.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.Register.#cctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.Register"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.Register.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.Register"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.Register.InitializeHighlighters">
+            <summary>
+            Registers the highlighters.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.Register.InitializeScanners(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Registers the scanners.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.Register.AddHighlighter(Atlas.SyntaxHighlighting.HighlighterBase)">
+            <summary>
+            Adds a highlighter to the register.
+            </summary>
+            <param name="highlighter">The highlighter to add.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.Register.Highlighters">
+            <summary>
+            Gets the registered highlighters.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.Register.Scanners">
+            <summary>
+            Gets the registered scanners.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.XmlSpecialCharNode">
+            <summary>
+            Represents an Xml special char node.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlSpecialCharNode.#ctor">
+            <summary>
+            Initializes a new instance of an <see cref="T:Atlas.SyntaxHighlighting.XmlSpecialCharNode"/> class.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.VBHighlighter">
+            <summary>
+            Represents a Visual Basic syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.VBHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.VBHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.VBHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.VBHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.VBHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.VBHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.PerlHighlighter">
+            <summary>
+            Represents a Perl syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PerlHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.PerlHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PerlHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.PerlHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PerlHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PerlHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.JavaScriptHighlighter">
+            <summary>
+            Represents a JavaScript syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.JavaScriptHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.JavaScriptHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.JavaScriptHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.JavaScriptHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.JavaScriptHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.JavaScriptHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.Web.SyntaxHighlighting.SourceLinePlaceHolder">
+            <summary>
+            Represents a source line placeholder.
+            </summary>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.SourceLinePlaceHolder.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.Web.SyntaxHighlighting.SourceLinePlaceHolder"/> class.
+            </summary>
+        </member>
+        <member name="T:Atlas.Web.SyntaxHighlighting.ParseEventHandler">
+            <summary>
+            Represents the parse method.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Atlas.Web.SyntaxHighlighting.ParseEventArgs">
+            <summary>
+            Represents a parse eventargs object.
+            </summary>
+        </member>
+        <member name="M:Atlas.Web.SyntaxHighlighting.ParseEventArgs.#ctor(Atlas.Web.SyntaxHighlighting.Token)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.Web.SyntaxHighlighting.Token"/> class.
+            </summary>
+            <param name="token">The actual token.</param>
+        </member>
+        <member name="P:Atlas.Web.SyntaxHighlighting.ParseEventArgs.Token">
+            <summary>
+            Gets the token.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.XmlAttributeValueNode">
+            <summary>
+            Represents an Xml attribute value node.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.XmlAttributeValueNode.#ctor">
+            <summary>
+            Initializes a new instance of an <see cref="T:Atlas.SyntaxHighlighting.XmlAttributeValueNode"/> class.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.StringEntity">
+            <summary>
+            Represents a string entity.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.StringEntity.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.StringEntity"/> struct.
+            </summary>
+            <param name="start">The string which indicates the start of a string.</param>
+            <param name="end">The string which indicates the end of a string.</param>
+            <param name="escape">The string which is used to escape the end.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.StringEntity.Escape">
+            <summary>
+            Gets the string which is used to escape the end.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.PHPHighlighter">
+            <summary>
+            Represents a PHP syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PHPHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.PHPHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PHPHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.PHPHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PHPHighlighter.BuildEntryPointScanner(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Builds a new chain of scanners.
+            </summary>
+            <param name="tokenizer">The tokenizer used by the scanners.</param>
+            <param name="scannerResult">The scanner result.</param>
+            <returns>
+            The scanner at the start of the chain.
+            </returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PHPHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PHPHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PHPHighlighter.GetFunctions">
+            <summary>
+            Gets an array of registered functions.
+            </summary>
+            <returns>An array of functions.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.CobolHighlighter">
+            <summary>
+            Represents a COBOL syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CobolHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CobolHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CobolHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CobolHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CobolHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CobolHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.ASPXHighlighter">
+            <summary>
+            Represents a PHP syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.ASPXHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.ASPXHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ASPXHighlighter.BuildEntryPointScanner(Atlas.SyntaxHighlighting.TokenizerBase,Atlas.SyntaxHighlighting.OccurrenceCollection)">
+            <summary>
+            Builds a new chain of scanners.
+            </summary>
+            <param name="tokenizer">The tokenizer used by the scanners.</param>
+            <param name="scannerResult">The scanner result.</param>
+            <returns>
+            The scanner at the start of the chain.
+            </returns>
+        </member>
+        <member name="T:Atlas.Web.SyntaxHighlighting.HighlightMode">
+            <summary>
+            Provides an enumeration of highlight modes.
+            </summary>
+        </member>
+        <member name="F:Atlas.Web.SyntaxHighlighting.HighlightMode.Source">
+            <summary>
+            Highlight all text as source code.
+            </summary>
+        </member>
+        <member name="F:Atlas.Web.SyntaxHighlighting.HighlightMode.Inline">
+            <summary>
+            Highlight in-line source code only.
+            </summary>
+        </member>
+        <member name="F:Atlas.Web.SyntaxHighlighting.HighlightMode.Literal">
+            <summary>
+            Display text literally.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.ScannerCollection">
+            <summary>
+            Represents a collection of scanners.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ScannerCollection.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.ScannerCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ScannerCollection.Add(Atlas.SyntaxHighlighting.IScanner)">
+            <summary>
+            Adds a scanner.
+            </summary>
+            <param name="scanner">An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> object.</param>
+            <returns>Index of the added object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.ScannerCollection.Remove(Atlas.SyntaxHighlighting.IScanner)">
+            <summary>
+            Removes a scanner.
+            </summary>
+            <param name="scanner">An <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> object.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.ScannerCollection.Item(System.Int32)">
+            <summary>
+            Gets an <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> object at the specified index.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.ScannerCollection.Item(System.String)">
+            <summary>
+            Gets an <see cref="T:Atlas.SyntaxHighlighting.IScanner"/> object at the specified index.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.SortedOccurrenceCollection">
+            <summary>
+            Represents a collection of occurrences which sorts the occurrences by their start index.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.SortedOccurrenceCollection.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.SortedOccurrenceCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.SortedOccurrenceCollection.Add(Atlas.SyntaxHighlighting.Occurrence)">
+            <summary>
+            Adds an occurrence.
+            </summary>
+            <param name="occ">An <see cref="T:Atlas.SyntaxHighlighting.Occurrence"/> object.</param>
+            <returns>Index of the added object.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.Occurrence">
+            <summary>
+            Represents an occurrence.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.Occurrence.#ctor(System.Int32,System.Int32,Atlas.SyntaxHighlighting.INode)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.Occurrence"/> struct.
+            </summary>
+            <param name="start">The start index of the occurrence.</param>
+            <param name="length">The length of the occurrence.</param>
+            <param name="node">The node the occurrence represents.</param>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.Occurrence.Start">
+            <summary>
+            Gets or sets the start index of the occurrence.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.Occurrence.Length">
+            <summary>
+            Gets or sets the length of the occurrence.
+            </summary>
+        </member>
+        <member name="P:Atlas.SyntaxHighlighting.Occurrence.Node">
+            <summary>
+            Gets the node the occurrence represents.
+            </summary>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.VBSHighlighter">
+            <summary>
+            Represents a Visual Basic Script syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.VBSHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.VBSHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.VBSHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.VBSHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.VBSHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.VBSHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.SQLHighlighter">
+            <summary>
+            Represents a SQL syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.SQLHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.SQLHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.SQLHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.SQLHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.SQLHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.SQLHighlighter.BuildCommentLineScanner">
+            <summary>
+            Builds a comment line scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.CommentLineScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.SQLHighlighter.BuildStringScanner">
+            <summary>
+            Builds a string scanner.
+            </summary>
+            <returns>The string scanner.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.SQLHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.SQLHighlighter.GetStoredProcedures">
+            <summary>
+            Gets an array of registered stored procedures.
+            </summary>
+            <returns>An array of stored procedures.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.PythonHighlighter">
+            <summary>
+            Represents a Python syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PythonHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.PythonHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PythonHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.PythonHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PythonHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.PythonHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+        <member name="T:Atlas.SyntaxHighlighting.CPPHighlighter">
+            <summary>
+            Represents a Cold Fusion syntax highlighter.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CPPHighlighter.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CPPHighlighter"/> class.
+            </summary>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CPPHighlighter.#ctor(Atlas.SyntaxHighlighting.IParser)">
+            <summary>
+            Initializes a new instance of a <see cref="T:Atlas.SyntaxHighlighting.CPPHighlighter"/> class.
+            </summary>
+            <param name="parser">The parser which will be used to parse the source code.</param>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CPPHighlighter.BuildWordScanner">
+            <summary>
+            Builds a word scanner.
+            </summary>
+            <returns>A <see cref="T:Atlas.SyntaxHighlighting.WordScanner"/> object.</returns>
+        </member>
+        <member name="M:Atlas.SyntaxHighlighting.CPPHighlighter.GetKeywords">
+            <summary>
+            Gets an array of registered keywords.
+            </summary>
+            <returns>An array of keywords.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,140 @@
+/* r.a.d.grid grey skin */
+
+div.RadGrid_Grey
+{
+	font: normal 11px Arial, Verdana, Sans-serif;
+	padding: 0px 8px;
+	background: white url('Img/RadGridBg.gif') repeat-x;
+}
+
+div.RadGrid_Grey table
+{
+	font-size: 11px;
+	font-family: Arial, Verdana;
+	width: 100%;
+	cursor: default;
+}
+
+.MasterTable_Grey
+{
+	background: white url('Img/RadGridBg.gif') repeat-x;
+	width: 100%;
+}    
+
+th.GridHeader_Grey
+{
+	font-weight: bold;
+	color: #887803;
+	height: 36px;
+	background: 0px 7px url('Img/headerBg.gif') no-repeat;
+	padding-left: 6px;
+}
+
+
+th.GridHeader_Grey input
+{
+	width: 60px;
+	border: solid 1px #616968;
+	float: left;
+}
+
+.GroupPanel_Grey
+{
+	background: #cc883b url('Img/groupPanel.gif') repeat-x;
+	width: 100%;
+}
+
+.GroupPanelItems_Grey
+{
+	font-weight: bold;
+	color: white;
+	white-space:nowrap;
+}
+
+.GridHeader_Grey A
+{
+	color: #887803;
+	text-decoration: none;
+}
+
+.GridRow_Grey td
+{
+	background: #616968 url('Img/GridRowBg.gif') repeat-y;
+	padding-left: 5px;
+	color: #e2e2e2;
+	height: 24px;
+}
+
+.GridAltRow_Grey td
+{
+	background: #494f4f url('Img/GridAltRowBg.gif') repeat-y;
+	padding-left: 5px;
+	color: #e2e2e2;
+	height: 24px;
+}
+
+.GridPager_Grey td
+{
+	padding-left: 6px;
+	background: #edece9 url('Img/footerBg.gif') repeat-x left bottom;
+	color: #616968;
+	height: 24px;
+	border-left: 1px solid #c9c6c2;
+	border-top: 2px solid #c8c5a1;
+	border-right: 1px solid #c9c6c2;
+}
+
+.GridPager_Grey a
+{
+	color: #333;
+}
+
+.GridRow_Grey td
+{
+	border-bottom: solid 1px #757676;
+}
+
+.SelectedRow_Grey td
+{
+	border-bottom: solid 1px #757676;
+	background: #333 url('Img/GridAltRowBg.gif') repeat-y;
+	color: white;
+}
+
+.ActiveRow_Grey td
+{
+	border-bottom: solid 1px #757676;
+	background: #9a5f01;
+	color: #fff;
+}
+
+.GridAltRow_Grey td
+{
+	border-bottom: solid 1px #757676;
+}
+
+/* filtering button */
+
+.GroupPanelItems_Grey
+{
+	background: #e3ba4f url('Img/filteringBg.gif') repeat-x;
+	color: #887803;
+	border: solid 1px #be9944;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+
+/* filtering direction input[image] */
+
+.GroupPanelItems_Grey input
+{
+	vertical-align: middle;
+}
+
+/* filtering table row */
+
+tr.GroupHeader_Grey
+{
+	background: #9a5f01;
+	color: #fff;
+}

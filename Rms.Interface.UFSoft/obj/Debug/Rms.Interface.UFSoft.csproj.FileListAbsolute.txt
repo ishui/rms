@@ -1,0 +1,10 @@
+G:\源代码\工程项目管理系统源码\Rms.Interface.UFSoft\bin\Debug\Rms.Interface.UFSoft.dll
+G:\源代码\工程项目管理系统源码\Rms.Interface.UFSoft\bin\Debug\Rms.Interface.UFSoft.pdb
+G:\源代码\工程项目管理系统源码\Rms.Interface.UFSoft\obj\Debug\Rms.Interface.UFSoft.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码\Rms.Interface.UFSoft\obj\Debug\Rms.Interface.UFSoft.dll
+G:\源代码\工程项目管理系统源码\Rms.Interface.UFSoft\obj\Debug\Rms.Interface.UFSoft.pdb
+G:\源代码\工程项目管理系统源码_20190605\Rms.Interface.UFSoft\bin\Debug\Rms.Interface.UFSoft.dll
+G:\源代码\工程项目管理系统源码_20190605\Rms.Interface.UFSoft\bin\Debug\Rms.Interface.UFSoft.pdb
+G:\源代码\工程项目管理系统源码_20190605\Rms.Interface.UFSoft\obj\Debug\Rms.Interface.UFSoft.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码_20190605\Rms.Interface.UFSoft\obj\Debug\Rms.Interface.UFSoft.dll
+G:\源代码\工程项目管理系统源码_20190605\Rms.Interface.UFSoft\obj\Debug\Rms.Interface.UFSoft.pdb

@@ -1,0 +1,10 @@
+G:\源代码\工程项目管理系统源码\RmsDM\bin\Debug\RmsDM.dll
+G:\源代码\工程项目管理系统源码\RmsDM\bin\Debug\RmsDM.pdb
+G:\源代码\工程项目管理系统源码\RmsDM\obj\Debug\RmsDM.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码\RmsDM\obj\Debug\RmsDM.dll
+G:\源代码\工程项目管理系统源码\RmsDM\obj\Debug\RmsDM.pdb
+G:\源代码\工程项目管理系统源码_20190605\RmsDM\bin\Debug\RmsDM.dll
+G:\源代码\工程项目管理系统源码_20190605\RmsDM\bin\Debug\RmsDM.pdb
+G:\源代码\工程项目管理系统源码_20190605\RmsDM\obj\Debug\RmsDM.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码_20190605\RmsDM\obj\Debug\RmsDM.dll
+G:\源代码\工程项目管理系统源码_20190605\RmsDM\obj\Debug\RmsDM.pdb

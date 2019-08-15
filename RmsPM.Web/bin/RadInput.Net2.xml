@@ -1,0 +1,1546 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RadInput.Net2</name>
+    </assembly>
+    <members>
+        <member name="M:Telerik.WebControls.Design.DateFormatEditorDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.Design.MaskEditorDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.DigitMaskPart">
+            <summary>Represents a single character, digit only mask part.</summary>
+            <example>
+                This example demonstrates how to add a <strong>DigitMaskPart</strong> object in the
+                <strong>MaskParts</strong> property of RadMaskedTextBox.
+                <code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e)
+            { 
+                DigitMaskPart digitPart = new DigitMaskPart();
+                RadMaskedTextBox1.MaskParts.Add(digitPart);
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                Dim digitPart As New DigitMaskPart()
+                RadMaskedTextBox1.MaskParts.Add(digitPart)
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="T:Telerik.WebControls.MaskPart">
+            <summary>The abstract base class of all mask parts.</summary>
+            <remarks>This class is not intended to be used directly.</remarks>
+        </member>
+        <member name="P:Telerik.WebControls.MaskPart.Value">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:Telerik.WebControls.DigitMaskPart.ToString">
+            <summary>
+            Returns the friendly name of the part.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.DigitMaskPart.Value">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="T:Telerik.WebControls.EnumerationMaskPart">
+            <summary>
+            Represents a MaskPart object which accepts only a predefined set of
+            options.
+            </summary>
+            <example>
+                This example demonstrates how to add an <strong>EnumerationMaskPart</strong> object
+                in the <strong>MaskParts</strong> property of RadMaskedTextBox. 
+                <code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e)
+            { 
+                EnumerationMaskPart enumPart = new EnumerationMaskPart();
+                enumPart.Items.Add("Mon");
+                enumPart.Items.Add("Two");
+                enumPart.Items.Add("Wed");
+                enumPart.Items.Add("Thu");
+                enumPart.Items.Add("Fri");
+                enumPart.Items.Add("Sat");
+                enumPart.Items.Add("Sun");
+                
+                RadMaskedTextBox1.MaskParts.Add(enumPart);
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                Dim  enumPart As New EnumerationMaskPart
+                enumPart.Items.Add("Mon")
+                enumPart.Items.Add("Two")
+                enumPart.Items.Add("Wed")
+                enumPart.Items.Add("Thu")
+                enumPart.Items.Add("Fri")
+                enumPart.Items.Add("Sat")
+                enumPart.Items.Add("Sun")
+                
+                RadMaskedTextBox1.MaskParts.Add(enumPart)
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.EnumerationMaskPart.ToString">
+            <summary>Returns the friendly name of the part.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.EnumerationMaskPart.Items">
+            <summary>
+            Gets the options collection of the part.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.EnumerationMaskPart.Value">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="T:Telerik.WebControls.FreeMaskPart">
+            <summary>
+            Represents a single character MaskPart object which accepting any
+            character.
+            </summary>
+            <example>
+                This example demonstrates how to add a <strong>FreeMaskPart</strong> object in the
+                <strong>MaskParts</strong> property of RadMaskedTextBox. 
+                <code lang="CS" title=" ">
+            private void Page_Load(object sender, System.EventArgs e)
+            { 
+                FreeMaskPart freePart = new FreeMaskPart();
+                RadMaskedTextBox1.MaskParts.Add(freePart);
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                Dim fixedPart As New FreeMaskPart()
+                RadMaskedTextBox1.MaskParts.Add(fixedPart)
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.FreeMaskPart.ToString">
+            <summary>
+            Returns the friendly name of the part.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.LiteralMaskPart">
+            <summary>Represents a multi character MaskPart whose content cannot be modified.</summary>
+            <example>
+                This example demonstrates how to add a <strong>LiteralMaskPart</strong> object in
+                the <strong>MaskParts</strong> property of RadMaskedTextBox.
+                <code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e)
+            { 
+                LiteralMaskPart literalPart = new LiteralMaskPart();
+                literalPart.Text = "(";
+                RadMaskedTextBox1.MaskParts.Add(literalPart);
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                Dim literalPart As New LiteralMaskPart()
+                RadMaskedTextBox1.MaskParts.Add(literalPart)
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.LiteralMaskPart.ToString">
+            <summary>
+            Returns the friendly name of the part.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.LiteralMaskPart.Value">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.LiteralMaskPart.Text">
+            <summary>Gets or sets the string that the LiteralMaskPart will render.</summary>
+        </member>
+        <member name="T:Telerik.WebControls.LowerMaskPart">
+            <summary>
+            Represents a single character MaskPart. The character is converted to lower upon
+            input.
+            </summary>
+            <example>
+                This example demonstrates how to add a <strong>LowerMaskPart</strong> object in the
+                <strong>MaskParts</strong> property of RadMaskedTextBox. 
+                <code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e)
+            { 
+                LowerMaskPart lowerPart = new LowerMaskPart();
+                RadMaskedTextBox1.MaskParts.Add(lowerPart);
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                Dim lowerPart As New LowerMaskPart()
+                RadMaskedTextBox1.MaskParts.Add(lowerPart)
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.LowerMaskPart.ToString">
+            <summary>
+            Returns the friendly name of the part.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.LowerMaskPart.Value">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="T:Telerik.WebControls.MaskPartCollection">
+            <summary>Represents the collection of mask parts in a RadMaskedTextBox.</summary>
+        </member>
+        <member name="M:Telerik.WebControls.MaskPartCollection.Add(Telerik.WebControls.MaskPart)">
+            <summary>
+                Appends the specified <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see> to
+                the end of the collection.
+            </summary>
+            <param name="part">
+                The <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see> to append to the
+                collection.
+            </param>
+        </member>
+        <member name="M:Telerik.WebControls.MaskPartCollection.Insert(System.Int32,Telerik.WebControls.MaskPart)">
+            <summary>
+                Inserts the specified <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see> in
+                the collection at the specified index location.
+            </summary>
+            <param name="index">
+                The location in the collection to insert the
+                <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see>.
+            </param>
+            <param name="part">
+                The <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see> to add to the
+                collection.
+            </param>
+        </member>
+        <member name="M:Telerik.WebControls.MaskPartCollection.Contains(Telerik.WebControls.MaskPart)">
+            <summary>Determines whether the collection contains the specified item</summary>
+            <returns>
+            	<strong>true</strong> if the collection contains the specified
+                <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see>; otherwise
+                <strong>false</strong>.
+            </returns>
+            <param name="part">
+                The <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see> to search for in the
+                collection.
+            </param>
+        </member>
+        <member name="M:Telerik.WebControls.MaskPartCollection.Remove(Telerik.WebControls.MaskPart)">
+            <summary>
+            	<para>
+                    Removes the specified <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see>
+                    from the collection.
+                </para>
+            </summary>
+            <param name="part">
+                The <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see> to remove from the
+                collection.
+            </param>
+        </member>
+        <member name="M:Telerik.WebControls.MaskPartCollection.IndexOf(Telerik.WebControls.MaskPart)">
+            <summary>
+                Determines the index value that represents the position of the specified
+                <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see> in the collection.
+            </summary>
+            <returns>
+                The zero-based index position of the specified
+                <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see> in the collection.
+            </returns>
+            <param name="part">
+                A <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see> to search for in the
+                collection.
+            </param>
+        </member>
+        <member name="P:Telerik.WebControls.MaskPartCollection.Owner">
+            <summary>
+            Gets or sets the <strong>RadMaskedInputControl</strong>, which uses the
+            collection.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.MaskPartCollection.Item(System.Int32)">
+            <summary>
+                Gets a <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see> at the specified
+                index in the collection.
+            </summary>
+            <value>
+                Use this indexer to get a <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see>
+                from the
+                <see cref="T:Telerik.WebControls.MaskPartCollection">MaskPartCollection</see> at the
+                specified index, using array notation.
+            </value>
+            <param name="index">
+                The zero-based index of the <see cref="T:Telerik.WebControls.MaskPart">MaskPart</see>
+                to retrieve from the collection.
+            </param>
+        </member>
+        <member name="T:Telerik.WebControls.NumericRangeMaskPart">
+            <summary>Represents a MaskPart which accepts numbers in a specified range.</summary>
+            <example>
+                This example demonstrates how to add a <strong>NumericRangeMaskPart</strong> object
+                in the <strong>MaskParts</strong> collection of RadMaskedTextBox. 
+                <code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e)
+            { 
+                NumericRangeMaskPart rangePart = new NumericRangeMaskPart();
+                rangePart.LowerLimit = 0;
+                rangePart.UpperLimit = 255;
+                RadMaskedTextBox1.MaskParts.Add(rangePart);
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                Dim rangePart As New NumericRangeMaskPart()
+                rangePart.LowerLimit = 0
+                rangePart.UpperLimit = 255
+                RadMaskedTextBox1.MaskParts.Add(rangePart)
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.NumericRangeMaskPart.ToString">
+            <summary>Returns the friendly name of the part.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.NumericRangeMaskPart.Value">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.NumericRangeMaskPart.LowerLimit">
+            <summary>Gets or sets the smallest possible value the part can accept.</summary>
+            <value>
+            An integer representing the smallest acceptable number that the
+            NumericRangeMaskPart can accept. The default value is 0.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.NumericRangeMaskPart.UpperLimit">
+            <summary>Gets or sets the largest possible value the part can accept.</summary>
+            <value>
+            An integer representing the largest acceptable number that the
+            NumericRangeMaskPart can accept. The default value is 0.
+            </value>
+        </member>
+        <member name="T:Telerik.WebControls.UpperMaskPart">
+            <summary>
+            Represents a single character MaskPart. The character is converted to upper upon
+            input. .
+            </summary>
+            <example>
+                This example demonstrates how to add an <strong>UpperMaskPart</strong> object in
+                the <strong>MaskParts</strong> collection of RadMaskedTextBox. 
+                <code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e)
+            { 
+                UpperMaskPart upperPart = new UpperMaskPart();
+                RadMaskedTextBox1.MaskParts.Add(upperPart);
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                Dim upperPart As New UpperMaskPart()
+                RadMaskedTextBox1.MaskParts.Add(upperPart)
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.UpperMaskPart.ToString">
+            <summary>Returns the friendly name of the part.</summary>
+        </member>
+        <member name="T:Telerik.WebControls.Ide.Common.RadInput.ProjectManagement">
+            <summary>
+            Utility class for Design - Time VisualStudio.NET project management.
+            </summary>
+        </member>
+        <member name="T:Telerik.RadInputUtils.PropertyCategory">
+            <summary>
+            Defines the common property categories' names
+            </summary>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadControl.Version">
+            <summary>Gets the component's current version.</summary>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadControl.UseEmbeddedScripts">
+            <summary>
+            Gets or sets a value indicating whether to use the embedded JavaScript files or not.
+            </summary>
+            <value>
+            	<strong>True</strong> if embedded JavaScript files are to be used; otherwise
+            <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            Use this property for debugging purposes or to apply any modifications to the
+            JavaScript files.
+            </remarks>
+        </member>
+        <member name="T:Telerik.WebControls.DateFormatParser">
+            <summary>
+            Summary description for DateFormatParser.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.DateRangeValidation">
+            <summary>
+            DateInputRangeValidation describes the method used when enforcing that the
+            selected date is within the MinDate-MaxDate bounds.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.DateRangeValidation.Immediate">
+            <summary>
+            The constraints are applied immediately. The control will not allow the user to
+            enter a date that is outside the preset range.
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.DateRangeValidation.OnBlur">
+            <summary>
+            The constraints are applied when the control loses focus. It will be possible to
+            enter a date outside the range, but it will be truncated later.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.DisplayFormatPosition">
+            <summary>
+            Summary description for DisplayFormatPosition.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.NumericRangeAlign">
+            <summary>
+            Numeric range alignment options
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.NumericRangeAlign.Left">
+            <summary>
+            The numbers are aligned left
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.NumericRangeAlign.Right">
+            <summary>
+            The numbers are aligned right
+            </summary>
+        </member>
+        <member name="T:Telerik.WebControls.RadDateInput">
+            <summary>
+            A control which ensures the date entered by the user is verified and
+            accurate.
+            </summary>
+            <example>
+                The following example demonstrates how to dynamically add
+                <see cref="T:Telerik.WebControls.RadDateInput">RadDateInput</see> to the page. 
+                <code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e) 
+            { 
+                RadDateInput dateInput = new RadDateInput();
+                dateInput.ID = "dateInput";
+                dateInput.Format = "d"; //Short date format
+                dateInput.Culture = new CultureInfo("en-US");
+                dateInput.SelectedDate = DateTime.Now;
+                
+                DateInputPlaceholder.Controls.Add(dateInput);
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                Dim dateInput As New RadDateInput()
+                dateInput.ID = "dateInput"
+                dateInput.Format = "d" 'Short Date Format
+                dateInput.Culture = New CultureInfo("en-US")
+                dateInput.SelectedDate = DateTime.Now
+                
+                DateInputPlaceholder.Controls.Add(dateInput)
+            End Sub
+                </code>
+            </example>
+            <remarks>
+                You need to set the <see cref="P:Telerik.WebControls.RadDateInput.DateFormat">DateFormat Property</see> to specify the
+                relevant format for the date. You can also specify the culture information by
+                setting the <see cref="P:Telerik.WebControls.RadDateInput.Culture">Culture Property</see>.
+            </remarks>
+        </member>
+        <member name="T:Telerik.RadInputUtils.RadMaskedInputControl">
+            <summary>Abstract base class of RadMaskedTextBox and RadDateInput</summary>
+            <remarks>This class is not intended for direct use.</remarks>
+        </member>
+        <member name="M:Telerik.RadInputUtils.RadMaskedInputControl.#ctor">
+            <summary>This is not intended for direct use.</summary>
+        </member>
+        <member name="M:Telerik.RadInputUtils.RadMaskedInputControl.System#Web#UI#IPostBackDataHandler#LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            IPostBackDataHandler implementation
+        </member>
+        <member name="M:Telerik.RadInputUtils.RadMaskedInputControl.Render(System.Web.UI.HtmlTextWriter)">
+            Overriden methods from WebControl
+        </member>
+        <member name="M:Telerik.RadInputUtils.RadMaskedInputControl.AddParsedSubObject(System.Object)">
+            Overridden from WebControl
+            
+        </member>
+        <member name="M:Telerik.RadInputUtils.RadMaskedInputControl.Focus">
+            <summary>Causes the control to obtain focus on page load.</summary>
+        </member>
+        <member name="F:Telerik.RadInputUtils.RadMaskedInputControl._focused">
+            Private methods
+        </member>
+        <member name="M:Telerik.RadInputUtils.RadMaskedInputControl.GetPostBackEventReference">
+            <summary>
+            This method is for internal use only, 
+            and is related to integrating r.a.d.input in composite controls. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.RadInputUtils.RadMaskedInputControl.CreateClientObject(System.Web.UI.HtmlTextWriter)">
+            Internal properties
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.Skin">
+            <summary>
+            Gets or sets the skin used by RadMaskedInputControl derived classes
+            (RadMaskedTextBox and RadDateInput).
+            </summary>
+            <value>
+                A <see cref="T:System.String">String</see> specifying the skin. The default value is
+                empty string ("").
+            </value>
+            <remarks>If the value is empty string ("") no skin is used.</remarks>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.Label">
+            <summary>
+            Gets or sets the text of the &lt;label&gt; tag rendered along with
+            RadMaskedTextBox and RadDateInput.
+            </summary>
+            <value>
+            A string used as a label for the control. The default value is empty string
+            ("").
+            </value>
+            <remarks>
+            If the value of this property has not been set, a &lt;label&gt; tag will not be
+            rendered. Keep in mind that accessibility standards require labels for all input
+            controls.
+            </remarks>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.LabelCssClass">
+            <summary>
+            Gets or sets the CSS class applied to the &lt;label&gt; tag rendered along with
+            r.a.d.<strong>input</strong> components.
+            </summary>
+            <value>
+            A string used specifying the CSS class of the label of the control. The default
+            value is empty string (""). Keep in mind you should omit the "." from the name of the
+            class.
+            </value>
+            <remarks>
+                This property is applicable only if the <see cref="P:Telerik.RadInputUtils.RadMaskedInputControl.Label">Label Property</see> has
+                been set.
+            </remarks>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.TextMode">
+            <summary>
+            Gets or sets the behavior mode (single-line or multiline) of the control.
+            </summary>
+            <value>
+                One of the <see cref="T:Telerik.WebControls.RadInputTextBoxMode">RadInputTextBoxMode
+                Enumeration</see> values. The default value is <b>SingleLine</b>.
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.HideOnBlur">
+            <summary>
+            Determines wether the control should hide its prompt when losing focus, if
+            its value is not set.
+            </summary>
+            <value>
+            	<strong>true</strong> if the prompt should be hidden; otherwise returns
+            <strong>false</strong>. The default value is <strong>false</strong>.
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.EmptyMessage">
+            <summary>
+            Specifies the message shown when the control is empty.
+            </summary>
+            <remarks>Shown if <see cref="P:Telerik.RadInputUtils.RadMaskedInputControl.HideOnBlur">HideOnBlur Property</see> is <strong>true</strong> and the control loses focus.</remarks>
+            <value>
+            A string specifying the empty message. The default value is empty string.
+            ("").
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.SkinsPath">
+            <summary>
+            Gets or sets the relative path of the folder containing the skins.
+            </summary>
+            <example>
+            If the skin folder is located in the project root and is named "Skins" the
+            SkinsPath property should be set to: "~/Skins". Then you can create subfolders for
+            individual skins e.g. Skins/Gold, Skins/Default etc.
+            </example>
+            <value>
+            A string specifying the relative path to the folder which contains
+            r.a.d.<strong>input</strong> skins. The default value is
+            "~/RadControls/Input/Skins".
+            </value>
+            <remarks>
+            r.a.d.<strong>input</strong> ships with a set of predefined skins which are ready
+            to use. They are located in RadControls/Input/Skins.
+            </remarks>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.PromptChar">
+            <summary>Gets or sets the prompt character.</summary>
+            <value>
+            A string representing the prompt character. The default value is underscore
+            ("_").
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.DisplayPromptChar">
+            <summary>
+                Gets or sets the prompt character used by the
+                <see cref="!:DisplayMask">DisplayMask</see>.
+            </summary>
+            <value>
+            A string representing the prompt character used in the display mask. The default value is underscore
+            ("_").
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.ShowHint">
+            <summary>
+            Enables or disables visual hints.
+            </summary>
+            <value>
+            	<strong>true</strong> if visual hints are enabled; otherwise
+            <strong>false</strong>. The default value is <strong>false</strong>.
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.ZeroPadNumericRanges">
+            <summary>
+                Enables or disables zero padding of empty digit placeholders in
+                <see cref="T:Telerik.WebControls.NumericRangeMaskPart">NumericRangeMaskParts</see>.
+            </summary>
+            <value>
+            	<strong>true</strong> if zero padding is enabled; otherwise
+            <strong>false</strong>. <strong>The</strong> default value is
+            <strong>false</strong>.
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.RoundNumericRanges">
+            <summary>Enables rounding in <see cref="T:Telerik.WebControls.NumericRangeMaskPart">NumericRangeMaskParts</see>.</summary>
+            <value>
+            	<strong>true</strong> if rounding is enabled; otherwise <strong>false</strong>.
+            The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            If rounding is enabled any invalid input will be rounded to the closest value.
+            For example if rounding is enabled and the maximum allowed value is "255", typing "9"
+            will set the value of the NumericRangePart to 255. Otherwise the value will be set to
+            "99".
+            </remarks>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.AllowEmptyEnumerations">
+            <summary>
+                Determines whether
+                <see cref="T:Telerik.WebControls.EnumerationMaskPart">EnumerationMaskParts</see> can
+                be empty.
+            </summary>
+            <value>
+            	<strong>true</strong> if enumeration mask parts can be empty; otherwise
+            <strong>false.</strong> The default value is <strong>false</strong>.
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.Text">
+            <summary>
+            Gets or sets the text of r.a.d.<strong>input</strong> components.
+            </summary>
+            <value>
+            A string which is the raw text of the control. This is the text excluding any
+            prompt characters and literals. However you can set any value to it - even including
+            prompt characters or literals.
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.ReadOnly">
+            <summary>
+            Gets or sets a value indicating whether the contents of the control can be changed.
+            </summary>
+            <value>
+            	<strong>true</strong> if the control is read-only; otherwise
+            <strong>false</strong>. The default value is <strong>false</strong>.
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.NumericRangeAlign">
+            <summary>
+            Gets or sets the alignment of numeric range mask parts.
+            </summary>
+            <value>
+                One of the <see cref="T:Telerik.WebControls.NumericRangeAlign">NumericRangeAlign
+                Enumeration</see> values. The default value is <b>Right</b>.
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.Rows">
+            <summary>
+            Gets or sets the number of rows displayed in a multiline control.
+            </summary>
+            <remarks>
+            Applicable if the <strong>TextMode</strong> property is set to
+            <strong>Multiline</strong>.
+            </remarks>
+            <value>
+            The number of rows in a multiline control. The default is 0, which displays a
+            one-line text box.
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.Columns">
+            <summary>
+            Gets or sets the display width of the control in characters.
+            </summary>
+            <remarks>
+            Applicable if the <strong>TextMode</strong> property is set to
+            <strong>Multiline</strong>.
+            </remarks>
+            <value>
+            	<para>The display width, in characters, of the control. The default is 0, which
+                indicates that the property is not set.</para>
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.Wrap">
+            <summary>
+            Gets or sets a value indicating whether the text content wraps in a multiline mode.
+            </summary>
+            <remarks>
+            Applicable if the <strong>TextMode</strong> property is set to
+            <strong>Multiline</strong>.
+            </remarks>
+            <value>
+            	<para><b>true</b> if the text content wraps within a multiline control; otherwise,
+                <b>false</b>. The default is <b>true</b>.</para>
+            </value>
+        </member>
+        <member name="P:Telerik.RadInputUtils.RadMaskedInputControl.AutoPostBack">
+            <summary>
+            Gets or sets a value indicating whether an automatic postback to the server will
+            occur whenever the user modifies the text in the control and then tabs out.
+            </summary>
+            <value>
+            	<para><b>true</b> if an automatic postback to the server will occur whenever the
+                user changes the text in the text box and then tabs out of the control; otherwise,
+                <b>false</b>. The default is <b>false</b>.</para>
+            </value>
+            <remarks>
+            	<para>Use the <b>AutoPostBack</b> property to specify whether an automatic postback
+                to the server will occur whenever the user modifies the text in the control and
+                then tabs out.</para>
+            	<blockquote class="dtBlock">
+            		<b class="le">Note</b> Postback only occurs when the control loses focus after
+                    the contents are changed.
+                </blockquote>
+            </remarks>
+        </member>
+        <member name="E:Telerik.RadInputUtils.RadMaskedInputControl.TextChanged">
+            <summary>
+            Occurs when the content of the control changes between posts to the
+            server.
+            </summary>
+            <remarks>
+            	<para>The <b>TextChanged</b> event is raised when the content of the control
+                changes between posts to the server.</para>
+            	<blockquote class="dtBlock">
+            		<b class="le">Note</b> The control must persist some values between posts to
+                    the server for this event to work correctly. Be sure that view state is enabled
+                    for this control.
+                </blockquote>
+            </remarks>
+        </member>
+        <member name="M:Telerik.WebControls.RadDateInput.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Telerik.WebControls.RadDateInput">RadDateInput
+                Class</see>.
+            </summary>
+            <example>
+                The following example demonstrates how to dynamically add
+                <see cref="T:Telerik.WebControls.RadDateInput"><strong>RadDateInput</strong></see> to
+                the page.
+                <code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e) 
+            { 
+                RadDateInput dateInput = new RadDateInput();
+                dateInput.ID = "dateInput";
+                dateInput.Format = "d"; //Short date format
+                dateInput.Culture = new CultureInfo("en-US");
+                dateInput.SelectedDate = DateTime.Now;
+                
+                DateInputPlaceholder.Controls.Add(dateInput);
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                Dim dateInput As New RadDateInput()
+                dateInput.ID = "dateInput"
+                dateInput.Format = "d" 'Short Date Format
+                dateInput.Culture = New CultureInfo("en-US")
+                dateInput.SelectedDate = DateTime.Now
+                
+                DateInputPlaceholder.Controls.Add(dateInput)
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.DateFormat">
+            <summary>Gets or sets the date format used by <strong>RadDateInput</strong>.</summary>
+            <remarks>
+            You can examine <see cref="T:System.Globalization.DateTimeFormatInfo">DateTimeFormatInfo</see> class for a list of all
+            available format characters and patterns.
+            </remarks>
+            <example>
+            	<code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e)
+            {
+                RadDateInput1.DateFormat = "M/d/yyyy"; //Short date pattern. The same as "d".
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                RadDateInput1.DateFormat = "M/d/yyyy" 'Short date pattern. The same as "d".
+            End Sub
+                </code>
+            </example>
+            <value>
+            A string specifying the date format used by <strong>RadDateInput</strong>. The
+            default value is "d" (short date format).
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.DisplayDateFormat">
+            <summary>
+            Gets or sets the display date format used by <strong>RadDateInput</strong>.
+            (Visible when the control is not on focus.)
+            </summary>
+            <value>
+            A string specifying the display date format used by RadDateInput. The default
+            value is "" (short date format). If the <strong>DisplayDateFormat</strong> is left
+            blank, the <strong>DateFormat</strong> will be used both for editing and
+            display.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.RadCalendarID">
+            <summary>
+            Gets or sets the server ID of <strong>RadCalendar</strong> with which
+            <strong>RadDateInput</strong> will be synchronized.
+            </summary>
+            <value>
+            A string specifying the ID of a <strong>RadCalendar</strong> control. The default
+            value is an empty string ("").
+            </value>
+            <remarks>
+            	<strong>RadDateInput</strong> is searching for a <strong>RadCalendar</strong>
+                control with the specified ID in its
+                <see cref="P:System.Web.UI.Control.NamingContainer">NamingContainer</see>.
+            </remarks>
+            <example>
+                This example demonstrates integration between <strong>RadDateInput</strong> and
+                <strong>RadCalendar</strong>.
+                <code lang="CS">
+            &lt;radCln:RadCalendar 
+                id="RadCalendar1" 
+                runat="server"&gt;
+            &lt;/radCln:RadCalendar&gt;
+             
+            &lt;radI:RadDateInput 
+                id="RadDateInput1" 
+                runat="server"
+                RadCalendarID="RadCalendar1"&gt;
+            &lt;/radI:RadDateInput&gt;
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.SelectedDate">
+            <summary>Gets or sets the date content of <strong>RadDateInput</strong>.</summary>
+            <value>
+                A <see cref="T:System.DateTime">DateTime</see> object that represents the selected
+                date. The default value is <see cref="P:Telerik.WebControls.RadDateInput.MinDate">MinDate</see>.
+            </value>
+            <example>
+                The following example demonstrates how to use the <strong>SelectedDate</strong>
+                property to set the content of <strong>RadDateInput</strong>.
+                <code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e)
+            {
+                RadDateInput1.SelectedDate = DateTime.Now;
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                RadDateInput1.SelectedDate = DateTime.Now
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.DbSelectedDate">
+            <summary>
+            Gets or sets the date content of <strong>RadDateInput</strong> in a
+            database-friendly way.
+            </summary>
+            <value>
+                A <see cref="T:System.DateTime">DateTime</see> object that represents the selected
+                date. The default value is <see cref="P:Telerik.WebControls.RadDateInput.MinDate">MinDate</see>.
+            </value>
+            <example>
+                The following example demonstrates how to use the <strong>SelectedDate</strong>
+                property to set the content of RadDateInput. 
+                <code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e)
+            {
+                RadDateInput1.DbSelectedDate = tableRow["BirthDate"];
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                RadDateInput1.DbSelectedDate = tableRow("BirthDate")
+            End Sub
+                </code>
+            </example>
+            <remarks>
+            This property behaves exactly like the <strong>SelectedDate</strong> property.
+            The only difference is that it will not throw an exception if the new value is null or
+            DBNull. Setting a null value will revert the selected date to the MinDate value.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.Culture">
+            <summary>
+            Gets or sets the culture used by <strong>RadDateInput</strong> to format the
+            date.
+            </summary>
+            <value>
+                A <see cref="T:System.Globalization.CultureInfo">CultureInfo</see> object that
+                represents the current culture used. The default value is
+                <strong>System.Threading.Thread.CurrentThread.CurrentUICulture</strong>.
+            </value>
+            <example>
+                The following example demonstrates how to use the <strong>Culture</strong>
+                property. 
+                <code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e)
+            {
+                RadDateInput1.Culture = new CultureInfo("en-US");
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                RadDateInput1.Culture = New CultureInfo("en-US")
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.OnClientDateChanged">
+            <summary>
+            Gets or sets the JavaScript event handler fired whenever the date of
+            <strong>RadDateInput</strong> changes.
+            </summary>
+            <value>
+            A string specifying the name of the JavaScript event handling routine. The
+            default value is empty string ("").
+            </value>
+            <remarks>
+                The event handler function is called with 2 parameters: 
+                <list type="bullet">
+            		<item>A reference to the <strong>RadDateInput</strong> object, which triggered
+                    the event;</item>
+            		<item>
+                        An event arguments object that contains the following properties: 
+                        <ul>
+            				<li><strong>OldDate</strong> - The old date of the
+                            <strong>RadDateInput</strong></li>
+            				<li><strong>NewDate</strong> - The new date of the
+                            <strong>RadDateInput</strong></li>
+            			</ul>
+            		</item>
+            	</list>
+            </remarks>
+            <example>
+                This example demonstrates the usage of the <strong>OnClientDateChanged</strong>
+                property. 
+                <code lang="CS">
+            &lt;script type="text/javascript&amp;quot&gt;
+            function onDateChange(dateInput, args)
+            {
+                 alert("New date:" + args.NewDate);
+            } 
+            &lt;/script&gt;
+             
+            &lt;radI:RadDateInput
+                  ID="RadDateInput1"
+                  runat="server"
+                  OnClientDateChanged="onDateChange"&gt;
+            &lt;/radI:RadDateInput&gt;
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.AllowEmpty">
+            <summary>Enables the user to delete the date in <strong>RadDateInput</strong>.</summary>
+            <value>
+            	<strong>true</strong> if the user should be able to delete the date; otherwise
+            <strong>false</strong>. The default value is <strong>false</strong>.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.RangeValidation">
+            <summary>Determines when and how the MinDate/MaxDate constraints are applied.</summary>
+            <value>
+            	<para>
+                    A <see cref="T:Telerik.WebControls.DateRangeValidation">DateRangeValidation</see> Enumeration.
+                </para>
+            	<para>The default is
+                <font size="2"><font size="1"><strong>DateRangeValidation.OnBlur</strong></font>.</font></para>
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.ValidationDate">
+            <summary>
+            This property is used by the <strong>RadDateInput</strong>'s internals only. It
+            is subject to change in the future versions. Please do not use.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.EmptyMessage">
+            <summary>
+            Specifies the message shown when the date is empty.
+            </summary>
+            <remarks>Shown if <see cref="P:Telerik.WebControls.RadDateInput.AllowEmpty">AllowEmpty</see> and <see cref="!:HideOnBlur">HideOnBlur</see> are <strong>true</strong>.</remarks>
+            <value>
+            A string specifying the empty date message. The default value is empty string
+            ("").
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.Text">
+            <summary>Gets or sets the text of r.a.d.<strong>input</strong> components.</summary>
+            <value>
+            A string which is the raw text of the control. This is the text excluding any
+            prompt characters and literals. However you can set any value to it - even including
+            prompt characters or literals.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.MinDate">
+            <summary>
+            Gets or sets the smallest date value allowed by
+            <strong>RadDateInput</strong>.
+            </summary>
+            <value>
+                A <see cref="T:System.DateTime">DateTime</see> object that represents the smallest
+                date value by <strong>RadDateInput</strong>. The default value is 1/1/1980.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.MaxDate">
+            <summary>
+            Gets or sets the largest date value allowed by
+            <strong>RadDateInput</strong>.
+            </summary>
+            <value>
+                A <see cref="T:System.DateTime">DateTime</see> object that represents the largest
+                date value allowed by <strong>RadDateInput</strong>. The default value is
+                <em>12/31/2099</em>.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.IsEmpty">
+            <summary>Used to determine if <strong>RadDateInput</strong> is empty.</summary>
+            <value>
+            	<strong>true</strong> if the date is empty (equal to
+                <see cref="P:Telerik.WebControls.RadDateInput.MinDate">MinDate</see>); otherwise <strong>false</strong>.
+            </value>
+            <remarks>
+                If <see cref="P:Telerik.WebControls.RadDateInput.AllowEmpty">AllowEmpty Property</see> is <strong>false</strong>, this
+                property will always return <strong>false</strong>.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadDateInput.PromptChar">
+            <summary>Gets or sets the prompt character.</summary>
+            <value>
+            A string representing the prompt character. The default value is underscore
+            ("_").
+            </value>
+        </member>
+        <member name="T:Telerik.WebControls.RadMaskedTextBox">
+            <summary>
+            A text box with a mask, used to distinguish between proper and improper user input.
+            </summary>
+            <example>
+                The following example demonstrates how to dynamically add
+                <see cref="T:Telerik.WebControls.RadDateInput">RadMaskedTextBox to the page.</see>
+            	<code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e) 
+            { 
+                RadMaskedTextBox maskedTextBox = new RadMaskedTextBox();
+                maskedTextBox.ID = "maskedTextBox";
+                maskedTextBox.Mask = "#####-####"; //zip code
+                
+                MaskedTextBoxPlaceholder.Controls.Add(maskedTextBox);
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                Dim maskedTextBox As New RadMaskedTextBox()
+                maskedTextBox.ID = "maskedTextBox"
+                maskedTextBox.Mask = "#####-####" 'zip code
+                
+                MaskedTextBoxPlaceholder.Controls.Add(maskedTextBox)
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="M:Telerik.WebControls.RadMaskedTextBox.#ctor">
+            <summary>
+                Initializes a new instance of the
+                <see cref="T:Telerik.WebControls.RadMaskedTextBox">RadMaskedTextBox</see> class.
+            </summary>
+            <example>
+                The following example demonstrates how to dynamically add
+                <see cref="T:Telerik.WebControls.RadDateInput">RadMaskedTextBox to the page.</see>
+            	<code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e) 
+            { 
+                RadMaskedTextBox maskedTextBox = new RadMaskedTextBox();
+                maskedTextBox.ID = "maskedTextBox";
+                maskedTextBox.Mask = "#####-####"; //zip code
+                
+                MaskedTextBoxPlaceholder.Controls.Add(maskedTextBox);
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                Dim maskedTextBox As New RadMaskedTextBox()
+                maskedTextBox.ID = "maskedTextBox"
+                maskedTextBox.Mask = "#####-####" 'zip code
+                
+                MaskedTextBoxPlaceholder.Controls.Add(maskedTextBox)
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.Mask">
+            <summary>Gets or sets the mask format of <strong>RadMaskedTextBox</strong>.</summary>
+            <value>
+            A string specifying the mask of <strong>RadMaskedTextBox</strong>. The default
+            value is an empty string ("").
+            </value>
+            <remarks>
+                When the <strong>Mask</strong> property is set the corresponding
+                <strong>MaskPart</strong> objects are filled in the
+                <see cref="P:Telerik.WebControls.RadMaskedTextBox.MaskParts">MaskParts</see> collection of RadMaskedTextBox object. For
+                example if you set the <strong>Mask</strong> to "#####-####" the
+                <strong>MaskParts</strong> collection will contain 9 <strong>DigitMaskPart</strong>
+                objects and one <strong>LiteralMaskPart</strong> object.
+            </remarks>
+            <example>
+                This example demonstrates how to set programmatically the <strong>Mask</strong> of
+                a <strong>RadMaskedTextBox</strong> object.
+                <code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e) 
+            { 
+                RadMaskedTextBox1.Mask = "#####-####"; //zip code
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                RadMaskedTextBox1.Mask = "#####-####" 'zip code
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.DisplayMask">
+            <summary>Gets or sets the mask display format of <strong>RadMaskedTextBox</strong>.</summary>
+            <value>
+            A string specifying the display mask of <strong>RadMaskedTextBox</strong>. The
+            default value is an empty string ("").
+            </value>
+            <remarks>
+                If the display mask is not specified, the <see cref="P:Telerik.WebControls.RadMaskedTextBox.Mask">Mask</see> property will
+                be used both for display and edit format.
+            </remarks>
+            <example>
+                The example below demonstrates how to set programatically the
+                <strong>DisplayMask</strong> of a <strong>RadMaskedTextBox</strong> object.
+                <code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                RadMaskedTextBox1.DisplayMask = "(###) ###-####"
+            End Sub
+                </code>
+            	<code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e)  
+            {  
+                RadMaskedTextBox1.DisplayMask = "(###) ###-####"; 
+            }
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.DisplayFormatPosition">
+            <value>
+            The display format position of <strong>RadMaskedTextBox</strong>. The default
+            value is <strong>Left</strong>
+            </value>
+            <summary>
+            Determines how the value is presented when <strong>DisplayMask</strong> is
+            Applied. <strong>Left</strong> means that the value will be shown at the left side of
+            the mask, <strong>Right</strong> means that the value will be shown at the rightmost
+            possible.
+            </summary>
+            <remarks>
+            	<para>If you have a <strong>MaskedTextBox</strong> control instance with Mask set
+                to <strong>######</strong> and <strong>DisplayMask</strong> set to ####.##, and you
+                type <strong>567</strong> inside the textbox, DisplayFormatPosition set to
+                <strong>Left</strong> will result in <strong>5670.00</strong> display after the
+                textbox loses focus, while with <strong>Right</strong> the textbox will display
+                <strong>5.67.</strong></para>
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.TextWithPrompt">
+            <summary>
+            Returns the text of the control including any prompt characters.
+            </summary>
+            <remarks>
+                This property is read-only. To set the text of the control use the
+                <see cref="!:Telerik.WebControls.RadInputUtils.RadMaskedInputControl.Text">Text
+                Property</see>.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.TextWithLiterals">
+            <summary>
+            Returns the text of the control including any literals.
+            </summary>
+            <remarks>
+                This property is read-only. To set the text of the control use the
+                <see cref="!:Telerik.WebControls.RadInputUtils.RadMaskedInputControl.Text">Text
+                Property</see>.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.TextWithPromptAndLiterals">
+            <summary>
+            Returns the text of the control including any literals and promt characters.
+            </summary>
+            <remarks>
+                This property is read-only. To set the text of the control use the
+                <see cref="!:Telerik.WebControls.RadInputUtils.RadMaskedInputControl.Text">Text
+                Property</see>.
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.ValidationText">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.MaskParts">
+            <summary>
+            Gets the collection of the mask parts, which compose the mask of the
+            <strong>RadMaskedTextBox</strong>.
+            </summary>
+            <value>
+                A <see cref="T:Telerik.WebControls.MaskPartCollection">MaskPartCollection</see> containing all
+                <strong>MaskPart</strong> objects composing the mask of RadMaskedTextBox.
+            </value>
+            <remarks>
+            When adding or removing items to the <strong>MaskParts</strong> property, the
+            <strong>Mask</strong> property updates accordingly. For example if you add two
+            <strong>DigitMaskPart</strong> objects in the <strong>MaskParts</strong> collection the
+            <strong>Mask</strong> will be "##".
+            </remarks>
+            <example>
+                This example demonstrates how to build the mask of
+                <strong>RadMaskedTextBox</strong> programmatically by adding
+                <strong>MaskPart</strong> objects in the <strong>MaskParts</strong> collection.
+                <code lang="CS">
+            private void Page_Load(object sender, System.EventArgs e)
+            { 
+                NumericRangeMaskPart rangePart = new NumericRangeMaskPart();
+                rangePart.LowerLimit = 0;
+                rangePart.UpperLimit = 255;
+                RadMaskedTextBox1.MaskParts.Add(rangePart);
+                LiteralMaskPart literalPart = new LiteralMaskPart();
+                literalPart.Text =  ".";
+                RadMaskedTextBox1.MaskParts.Add(literalPart);
+            }
+                </code>
+            	<code lang="VB">
+            Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+                Dim rangePart As New NumericRangeMaskPart
+                rangePart.LowerLimit = 0
+                rangePart.UpperLimit = 255
+                RadMaskedTextBox1.MaskParts.Add(rangePart)
+                Dim literalPart As New LiteralMaskPart
+                literalPart.Text = "."
+                RadMaskedTextBox1.MaskParts.Add(literalPart)
+            End Sub
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.DisplayMaskParts">
+            <summary>
+                Gets the collection of the mask parts that compose the
+                <see cref="P:Telerik.WebControls.RadMaskedTextBox.DisplayMask">DisplayMask</see> of <strong>RadMaskedTextBox</strong>.
+            </summary>
+            <value>
+                A <see cref="T:Telerik.WebControls.MaskPartCollection">MaskPartCollection</see> containing all
+                <strong>DisplayMaskPart</strong> objects composing the display mask of
+                <strong>RadMaskedTextBox</strong>.
+            </value>
+            <remarks>
+            When adding or removing items to the <strong>DisplayMaskParts</strong> property,
+            the <strong>DisplayMask</strong> property updates accordingly. For example if you add
+            two <strong>DigitMaskPart</strong> objects in the <strong>DisplayMaskParts</strong>
+            collection the <strong>DisplayMask</strong> will be "##".
+            </remarks>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.OnClientEnumerationChanged">
+            <summary>
+            Gets or sets the JavaScript event handler fired when the value of any enumeration
+            mask part has changed.
+            </summary>
+            <remarks>
+                The event handler function is called with 2 parameters: 
+                <list type="bullet">
+            		<item>A reference to the <strong>RadMaskedTextBox</strong> object that
+                    triggered the event;</item>
+            		<item>
+                        An event arguments object that contains the following properties: 
+                        <ul>
+            				<li>OldValue - The old value of the mask part;</li>
+            				<li>NewValue - The new value of the mask part.</li>
+            			</ul>
+            		</item>
+            	</list>
+            </remarks>
+            <value>
+            A string specifying the name of the JavaScript event handling routine. The
+            default value is empty string ("").
+            </value>
+            <example>
+                This example demonstrates the usage of the
+                <strong>OnClientEnumerationChanged</strong> property. 
+                <code lang="CS">
+            &lt;script&gt;
+            function onEnumChange (input, args)
+            {
+               alert("Enumeration is changed to:" + args.NewValue);
+            }
+            &lt;/script&gt;
+             
+            &lt;radI:RadMaskedTextBox
+                  ID="RadMaskedTextBox1"
+                  runat="server"
+                  Mask="&lt;Mon|Tue|Wed|Thu|Fri|Sat|Sun&gt;"
+                  OnClientEnumerationChanged="onEnumChange"&gt;
+            &lt;/radI:RadMaskedTextBox&gt;
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.OnClientMoveUp">
+            <summary>
+            Gets or sets the JavaScript event handler fired when the user moves to the next
+            value of an enumeration mask part or numeric range mask part with either keyboard arrow
+            keys or mouse wheel.
+            </summary>
+            <remarks>
+                The event handler function is called with 2 parameters: 
+                <list type="bullet">
+            		<item>A reference to the <strong>RadMaskedTextBox</strong> object that
+                    triggered the event;</item>
+            		<item>
+                        An event arguments object which contains the following properties: 
+                        <ul>
+            				<li>OldValue - The old value of the mask part;</li>
+            				<li>NewValue - The new value of the mask part.</li>
+            			</ul>
+            		</item>
+            	</list>
+            </remarks>
+            <value>
+            A string specifying the name of the JavaScript event handling routine. The
+            default value is an empty string ("").
+            </value>
+            <example>
+                This example demonstrates the usage of the <strong>OnClientMoveUp</strong>
+                property. 
+                <code lang="CS">
+            &lt;script&gt;
+            function onMoveUp(input, args)
+            {
+               alert("New value is:" + args.NewValue);
+            }
+            &lt;/script&gt;
+             
+            &lt;radI:RadMaskedTextBox
+                  ID="RadMaskedTextBox1"
+                  runat="server"
+                  Mask="&lt;0..255&gt;.&lt;0..255&gt;.&lt;0..255&gt;.&lt;0..255&gt;"
+                  OnClientMoveUp="onMoveUp"&gt;
+            &lt;/radI:RadMaskedTextBox&gt;
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.OnClientMoveDown">
+            <summary>
+            Gets or sets the JavaScript event handler fired when the user moves to the
+            previous value of an enumeration mask part or numeric range mask part with either
+            keyboard arrow keys or mouse wheel.
+            </summary>
+            <remarks>
+                The event handler function is called with 2 parameters: 
+                <list type="bullet">
+            		<item>A reference to the <strong>RadMaskedTextBox</strong> object which
+                    triggered the event;</item>
+            		<item>
+                        An event arguments object which contains the following properties: 
+                        <ul>
+            				<li>OldValue - The old value of the mask part;</li>
+            				<li>NewValue - The new value of the mask part.</li>
+            			</ul>
+            		</item>
+            	</list>
+            </remarks>
+            <example>
+                This example demonstrates the usage of the <strong>OnClientMoveDown</strong>
+                property. 
+                <code lang="CS">
+            &lt;script&gt;
+            function onMoveDown(input, args)
+            {
+               alert("New value is:" + args.NewValue);
+            }
+            &lt;/script&gt;
+             
+            &lt;radI:RadMaskedTextBox
+                  ID="RadMaskedTextBox1"
+                  runat="server"
+                  Mask="&lt;0..255&gt;.&lt;0..255&gt;.&lt;0..255&gt;.&lt;0..255&gt;"
+                  OnClientMoveDown="onMoveDown"&gt;
+            &lt;/radI:RadMaskedTextBox&gt;
+                </code>
+            </example>
+            <value>
+            A string specifying the name of the JavaScript event handling routine. The
+            default value is an empty string ("").
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.OnClientError">
+            <summary>
+            Gets or sets the JavaScript event handler fired when the user attempts to type
+            unacceptable symbol into <strong>RadMaskedTextBox</strong>.
+            </summary>
+            <remarks>
+                The event handler function is called with 2 parameters: 
+                <list type="bullet">
+            		<item>A reference to the <strong>RadMaskedTextBox</strong> object that
+                    triggered the event;</item>
+            		<item>
+                        An event arguments object which contains the following properties: 
+                        <ul>
+            				<li>CurrentPart - A reference to the mask part that triggered the
+                            event;</li>
+            				<li>OldValue - The old value of the mask part;</li>
+            				<li>NewValue - The new value of the mask part.</li>
+            			</ul>
+            		</item>
+            	</list>
+            </remarks>
+            <example>
+                This example demonstrates the usage of the <strong>OnClientDown</strong> property. 
+                <code lang="CS">
+            &lt;script&gt;
+            function onError(input, args)
+            {
+               alert("Invalid character:" + args.NewValue);
+            }
+            &lt;/script&gt;
+             
+            &lt;radI:RadMaskedTextBox
+                  ID="RadMaskedTextBox1"
+                  runat="server"
+                  Mask="&lt;0..255&gt;.&lt;0..255&gt;.&lt;0..255&gt;.&lt;0..255&gt;"
+                  OnClientError="onError"&gt;
+            &lt;/radI:RadMaskedTextBox&gt;
+                </code>
+            </example>
+            <value>
+            A string specifying the name of the JavaScript event handling routine. The
+            default value is empty string ("").
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.OnClientValueChanged">
+            <summary>
+            Gets or sets the JavaScript event handler fired whenever the value of
+            <strong>RadMaskedTextBox</strong> changes.
+            </summary>
+            <remarks>
+                The event handler function is called with 2 parameters: 
+                <list type="bullet">
+            		<item>A reference to the <strong>RadMaskedTextBox</strong> object that
+                    triggered the event;</item>
+            		<item>
+                        An event arguments object that contains the following properties: 
+                        <ul>
+            				<li>OldValue - The old value of the MaskedTextBox;</li>
+            				<li>NewValue - The new value of the MaskedTextBox.</li>
+            			</ul>
+            		</item>
+            	</list>
+            </remarks>
+            <value>
+            A string specifying the name of the JavaScript event handling routine. The
+            default value is an empty string ("").
+            </value>
+            <example>
+                This example demonstrates the use of the <strong>OnClientValueChanged</strong>
+                property.
+                <code lang="CS">
+            &lt;script&gt;
+            function onChange (input, args)
+            {
+                 alert("Value changed from:" + args.OldValue + " to:" + args.NewValue);
+            } 
+            &lt;/script&gt;
+             
+            &lt;radI:RadMaskedTextBox
+                  ID="RadMaskedTextBox1"
+                  runat="server"
+                  Mask="&lt;0..255&gt;.&lt;0..255&gt;.&lt;0..255&gt;.&lt;0..255&gt;"
+                  OnClientValueChanged="onChange"&gt;
+            &lt;/radI:RadMaskedTextBox&gt;
+                </code>
+            </example>
+        </member>
+        <member name="P:Telerik.WebControls.RadMaskedTextBox.OnClientShowHint">
+            <summary>
+            Gets or sets the JavaScript event handler fired after the visual hint is
+            shown.
+            </summary>
+            <value>
+            A string specifying the name of the JavaScript event handling routine. The
+            default value is an empty string ("").
+            </value>
+            <remarks>
+                The event handler function is called with 2 parameters: 
+                <list type="bullet">
+            		<item>A reference to the RadMaskedTextBox object that triggered the
+                    event;</item>
+            		<item>
+                        An event arguments object tha contains the following properties: 
+                        <ul>
+            				<li>OldValue - The value of the mask part;</li>
+            				<li>NewValue - The value of the mask part.</li>
+            			</ul>
+            		</item>
+            	</list>
+            </remarks>
+            <example>
+                This example demonstrates the use of the <strong>OnClientShowHint</strong>
+                property.
+                <code lang="CS">
+            &lt;script&gt;
+            function onShowHint(input, args)
+            {
+              var container = input.Hint.Container; 
+              var customText = document.createElement("span"); 
+              customText.innerHTML = "&lt;i&gt;Custom text&lt;/i&gt;; 
+              container.appendChild(customText);
+            }
+            &lt;/script&gt;
+             
+            &lt;radI:RadMaskedTextBox
+                  ID="RadMaskedTextBox1"
+                  runat="server"
+                  Mask="&lt;Mon|Tue|Wed|Thu|Fri|Sat|Sun&gt;"
+                  OnClientShowHint="onShowHint"&gt;
+            &lt;/radI:RadMaskedTextBox&gt;
+                </code>
+            </example>
+        </member>
+    </members>
+</doc>

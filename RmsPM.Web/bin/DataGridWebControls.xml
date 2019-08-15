@@ -1,0 +1,359 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DataGridWebControls</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.Web.Controls.GridPagination">
+            ################################################################################################
+             <summary>
+             <see cref="T:Rms.Web.Controls.GridPagination"/> -- <see cref="T:System.Web.UI.WebControls.DataGrid"/> 分页控件，封装 <see cref="T:System.Web.UI.WebControls.DataGrid"/> 分页操作。
+
+             Programmer:CLM; Email:nmgclm626@hotmail.com
+             </summary>
+             <remarks>
+             该控件为试用版本，如有问题或发现 bug 请与 Programmer 联系！
+
+             </remarks>
+             <example>
+             以下示例过程说明如何用 <see cref="T:Rms.Web.Controls.GridPagination"/> 对 <see cref="T:System.Web.UI.WebControls.DataGrid"/> 进行分页。
+
+             <p>1.将控件托放至页面后 <see cref="P:Rms.Web.Controls.GridPagination.DataGridId"/> 属性设置为将要进行分页的 <see cref="T:System.Web.UI.WebControls.DataGrid"/> 控件 ID 属性</p>
+             <p>2.在帮定 <see cref="T:System.Web.UI.WebControls.DataGrid"/> 数据的同时对 <see cref="T:Rms.Web.Controls.GridPagination"/> 的 <see cref="P:Rms.Web.Controls.GridPagination.RowsCount"/> 属性进行付值。如下：</p>
+             <code><![CDATA[
+             private void GridDataBound()
+             {
+                 string ConnString = "server=localhost;uid=sa;pwd=;database=Northwind;Connect Timeout=300;";
+                 SqlConnection conn= new SqlConnection(ConnString);
+             
+                 SqlCommand comm= new SqlCommand("select * from Customers",conn);
+                 comm.Connection.Open();
+             
+                 SqlDataAdapter adapter=new SqlDataAdapter();
+                 adapter.SelectCommand=comm;
+             
+                 DataSet ds=new DataSet();
+                 adapter.Fill(ds,"table");
+             
+                 DataGrid1.DataSource = ds;
+                 DataGrid1.DataBind();
+             
+                 GridPagination1.RowsCount = ds.Tables[0].Rows.Count.ToString();
+             
+                 comm.Connection.Close();
+                 comm.Dispose();
+                 conn.Dispose();
+             }
+             ]]>
+             </code>
+             <p>3.在 <see cref="T:Rms.Web.Controls.GridPagination"/> 的 <see cref="E:Rms.Web.Controls.GridPagination.PageIndexChange"/> 事件中添加 <see cref="T:System.Web.UI.WebControls.DataGrid"/> 帮定过程。如下：</p>
+             <code>
+             <![CDATA[
+             private void GridPagination1_PageIndexChange(object sender, System.EventArgs e)
+             {
+                 GridDataBound();
+             }
+             ]]>
+             </code>
+             </example>
+            ################################################################################################
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination._PageInfo">
+            <summary>
+            非公开属性，记录分页相关信息字符串
+
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination._DataGridId">
+            <summary>
+            非公开属性，记录 DataGrid ID 属性值
+
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination._RowsCount">
+            <summary>
+            非公开属性，记录项目总数
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination._ControlSourceUrl">
+            <summary>
+            非公开属性，资源文件夹路径
+
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.Table">
+            <summary>
+            非公开属性，封装表示逻辑 table 标签
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.Tr">
+            <summary>
+            非公开属性，封装表示逻辑 tr 标签
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.TdLeft">
+            <summary>
+            非公开属性，封装表示逻辑 tdleft 标签
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.TdCenter">
+            <summary>
+            非公开属性，封装表示逻辑 tdcenter 标签
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.TdRight">
+            <summary>
+            非公开属性，封装表示逻辑 tdright 标签
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.PageFirst">
+            <summary>
+            非公开属性，分页控件的首页按钮对象
+
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.PageFront">
+            <summary>
+            非公开属性，分页控件的上页按钮对象
+
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.PageBack">
+            <summary>
+            非公开属性，分页控件的下页按钮对象
+
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.PageLast">
+            <summary>
+            非公开属性，分页控件的末页按钮对象
+
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.PageIndex">
+            <summary>
+            非公开属性，分页控件的页码输入框对象
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.PageGoto">
+            <summary>
+            非公开属性，分页控件的转到按钮对象
+
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.PageIndexLabel">
+            <summary>
+            非公开属性，分页控件的页码输入标签
+
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.PageInfoLabel">
+            <summary>
+            非公开属性，分页基本信息标签
+            </summary>
+        </member>
+        <member name="F:Rms.Web.Controls.GridPagination.RowsCountLabel">
+            <summary>
+            非公开属性，项目总数信息标签
+            </summary>
+        </member>
+        <member name="M:Rms.Web.Controls.GridPagination.CreateChildControls">
+            ****************************************************************************************
+             <summary>
+             非公开内部实现逻辑。增加子控件过程
+             </summary>
+            ****************************************************************************************
+        </member>
+        <member name="M:Rms.Web.Controls.GridPagination.FormatPageInfoString">
+            ****************************************************************************************
+             <summary>
+             非公开内部函数，格式化分页信息
+             </summary>
+             <returns>分页信息</returns>
+            ****************************************************************************************
+        </member>
+        <member name="M:Rms.Web.Controls.GridPagination.FormatColorRGB(System.Drawing.Color)">
+            ****************************************************************************************
+             <summary>
+             非公开内部函数，格式化颜色值为 RGB 格式
+             </summary>
+             <param name="color">需要转换的颜色值</param>
+             <returns>RGB 格式的字符串</returns>
+            ****************************************************************************************
+        </member>
+        <member name="M:Rms.Web.Controls.GridPagination.PageFirst_Click(System.Object,System.EventArgs)">
+            ****************************************************************************************
+             <summary>
+             非公开内部函数，首页按钮事件
+
+             </summary>
+             <param name="sender"></param>
+             <param name="e"></param>
+            ****************************************************************************************
+        </member>
+        <member name="M:Rms.Web.Controls.GridPagination.PageFront_Click(System.Object,System.EventArgs)">
+            ****************************************************************************************
+             <summary>
+             非公开内部函数，上页按钮事件
+
+             </summary>
+             <param name="sender"></param>
+             <param name="e"></param>
+            ****************************************************************************************
+        </member>
+        <member name="M:Rms.Web.Controls.GridPagination.PageBack_Click(System.Object,System.EventArgs)">
+            ****************************************************************************************
+             <summary>
+             非公开内部函数，下页按钮事件
+
+             </summary>
+             <param name="sender"></param>
+             <param name="e"></param>
+            ****************************************************************************************
+        </member>
+        <member name="M:Rms.Web.Controls.GridPagination.PageLast_Click(System.Object,System.EventArgs)">
+            ****************************************************************************************
+             <summary>
+             非公开内部函数，末页按钮事件
+
+             </summary>
+             <param name="sender"></param>
+             <param name="e"></param>
+            ****************************************************************************************
+        </member>
+        <member name="M:Rms.Web.Controls.GridPagination.PageGoto_Click(System.Object,System.EventArgs)">
+            ****************************************************************************************
+             <summary>
+             非公开内部函数，转到按钮事件
+
+             </summary>
+             <param name="sender"></param>
+             <param name="e"></param>
+            ****************************************************************************************
+        </member>
+        <member name="M:Rms.Web.Controls.GridPagination.OnChange(System.EventArgs)">
+            ****************************************************************************************
+             <summary>
+             非公开内部函数，调用控件 PageIndexChange 事件，完成事件回传
+
+             </summary>
+             <param name="e"></param>
+            ****************************************************************************************
+        </member>
+        <member name="M:Rms.Web.Controls.GridPagination.AddAttributesToRender(System.Web.UI.HtmlTextWriter)">
+            ****************************************************************************************
+             <summary>
+             非公开内部函数，将此控件呈现给指定的输出参数。
+
+             </summary>
+             <param name="output"> 要写出到的 HTML 编写器 </param>
+            ****************************************************************************************
+        </member>
+        <member name="E:Rms.Web.Controls.GridPagination.PageIndexChange">
+            <summary>
+            页面内容变化时触发该事件。
+
+            </summary>
+            <remarks>
+            该事件用来重新帮定数据。
+
+            <p><b>注意：</b> 每次数据变动都将触发该事件。</p>
+            </remarks>
+        </member>
+        <member name="P:Rms.Web.Controls.GridPagination.DataGridId">
+            ****************************************************************************************
+             <summary>
+             列表索引标识
+             </summary>
+             <remarks>
+             该属性为分页控件对于分页列表的索引。
+
+             <p><b>注意：</b> 分页控件与分页列表必须存在于同一 UI 标示层内。</p>
+             </remarks>
+            ****************************************************************************************
+        </member>
+        <member name="P:Rms.Web.Controls.GridPagination.CurrentPageIndex">
+            ****************************************************************************************
+             <summary>
+             当前页码
+             </summary>
+             <remarks>
+             控件要根据该属性进行数据显示。
+
+             <p><b>注意：</b> 概述性应符合分页逻辑。</p>
+             </remarks>
+            ****************************************************************************************
+        </member>
+        <member name="P:Rms.Web.Controls.GridPagination.PageCount">
+            ****************************************************************************************
+             <summary>
+             页面总数
+             </summary>
+             <remarks>
+             说明总共有多少页。控件将根据其它信息自动计算该属性值。
+
+             <p><b>注意：</b> 该属性为只读。</p>
+             </remarks>
+            ****************************************************************************************
+        </member>
+        <member name="P:Rms.Web.Controls.GridPagination.PageSize">
+            ****************************************************************************************
+             <summary>
+             每页项目数
+
+             </summary>
+             <remarks>
+             说明每页显示的项目多少。该属性是与分页列表同意属性相帮定的。
+
+             <p><b>注意：</b> 修改该项目帮定了列表同意属性也将改变。修改列表同意属性，该属性也将改变。</p>
+             </remarks>
+            ****************************************************************************************
+        </member>
+        <member name="P:Rms.Web.Controls.GridPagination.RowsCount">
+            ****************************************************************************************
+             <summary>
+             项目总数
+             </summary>
+             <remarks>
+             说明总共有多少项目。
+
+             </remarks>
+            ****************************************************************************************
+        </member>
+        <member name="P:Rms.Web.Controls.GridPagination.ControlSourceUrl">
+            ****************************************************************************************
+             <summary>
+             资源文件夹路径
+
+             </summary>
+             <remarks>
+             样式表和图片文件存放文件夹路径
+
+             </remarks>
+            ****************************************************************************************
+        </member>
+        <member name="P:Rms.Web.Controls.GridPagination.BackColor">
+            ****************************************************************************************
+             <summary>
+             背景色
+
+             </summary>
+            ****************************************************************************************
+        </member>
+        <member name="P:Rms.Web.Controls.GridPagination.ForeColor">
+            ****************************************************************************************
+             <summary>
+             前景色
+
+             </summary>
+            ****************************************************************************************
+        </member>
+        <member name="P:Rms.Web.Controls.GridPagination.FontSize">
+            ****************************************************************************************
+             <summary>
+             字体
+             </summary>
+            ****************************************************************************************
+        </member>
+    </members>
+</doc>

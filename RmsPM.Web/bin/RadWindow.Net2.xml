@@ -1,0 +1,518 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RadWindow.Net2</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.WebControls.Ide.Common.RadWindow.ProjectManagement">
+            <summary>
+            Utility class for Design - Time VisualStudio.NET project management.
+            </summary>
+        </member>
+        <member name="T:Telerik.RadWindowUtils.PropertyCategory">
+            <summary>
+            Defines the common property categories' names
+            </summary>
+        </member>
+        <member name="P:Telerik.RadWindowUtils.RadControl.Version">
+            <summary>Gets the component's current version.</summary>
+        </member>
+        <member name="P:Telerik.RadWindowUtils.RadControl.UseEmbeddedScripts">
+            <summary>
+            Gets or sets a value indicating whether to use the embedded JavaScript files or not.
+            </summary>
+            <value>
+            	<strong>True</strong> if embedded JavaScript files are to be used; otherwise
+            <strong>false</strong>. The default value is <strong>true</strong>.
+            </value>
+            <remarks>
+            Use this property for debugging purposes or to apply any modifications to the
+            JavaScript files.
+            </remarks>
+        </member>
+        <member name="T:Telerik.WebControls.RadWindowMinimizeModes">
+            <summary>
+            Specifies the minimize options for the radWindow object
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadWindowMinimizeModes.SameLocation">
+            <summary>
+            Window is minimized but stays at the same left/top position
+            </summary>
+            <value>1</value>
+        </member>
+        <member name="F:Telerik.WebControls.RadWindowMinimizeModes.MinimizeZone">
+            <summary>
+            Window is minimized to a toolbar object that controls its minimization behavior
+            </summary>
+            <value>8</value>
+        </member>
+        <member name="F:Telerik.WebControls.RadWindowMinimizeModes.Default">
+            <summary>
+            Default 
+            </summary>
+            <value>1</value>
+        </member>
+        <member name="T:Telerik.WebControls.RadWindowBehaviorFlags">
+            <summary>
+            Specifies the behaviors of the radWindow object
+            </summary>
+        </member>
+        <member name="F:Telerik.WebControls.RadWindowBehaviorFlags.None">
+            <summary>
+            No behavior is specified.
+            </summary>
+            <value>0</value>
+        </member>
+        <member name="F:Telerik.WebControls.RadWindowBehaviorFlags.Resize">
+            <summary>
+            The object can be resized.
+            </summary>
+            <value>1</value>
+        </member>
+        <member name="F:Telerik.WebControls.RadWindowBehaviorFlags.Minimize">
+            <summary>
+            The object can be minimized.
+            </summary>
+            <value>2</value>
+        </member>
+        <member name="F:Telerik.WebControls.RadWindowBehaviorFlags.Close">
+            <summary>
+            The object can be closed.
+            </summary>
+            <value>4</value>
+        </member>
+        <member name="F:Telerik.WebControls.RadWindowBehaviorFlags.Pin">
+            <summary>
+            The objct can be pinned.
+            </summary>
+            <value>8</value>
+        </member>
+        <member name="F:Telerik.WebControls.RadWindowBehaviorFlags.Maximize">
+            <summary>
+            The object can be maximized.
+            </summary>
+            <value>16</value>
+        </member>
+        <member name="F:Telerik.WebControls.RadWindowBehaviorFlags.Move">
+            <summary>
+            The object can be moved.
+            </summary>
+            <value>32</value>
+        </member>
+        <member name="F:Telerik.WebControls.RadWindowBehaviorFlags.Reload">
+            <summary>
+            The object will have a reload button.
+            </summary>
+            <value>64</value>
+        </member>
+        <member name="F:Telerik.WebControls.RadWindowBehaviorFlags.Default">
+            <summary>
+            Default object behavior: all together.
+            </summary>
+            <value>(Minimize | Maximize | Close | Pin | Resize | Move | Reload)</value>
+        </member>
+        <member name="T:Telerik.RadWindowUtils.LocalizationBuilder">
+            <summary>
+            Summary description for LocalizationBuilder.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.OnClientShow">
+            <summary>
+            Get or sets the client function to be called when a window dialog is being
+            opened.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.OnClientClose">
+            <summary>
+            Gets or sets the client function to be called when a window dialog is being
+            closed.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.OnClientPageLoad">
+            <summary>
+            Gets or sets the client function to be called when a page is loaded in a r.a.d.window dialog.		
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.ClientCallBackFunction">
+            <summary>
+            Gets or sets the client callback function that will be called when a window
+            dialog is being closed.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.OpenerElementId">
+            <summary>
+            Gets or sets the id (ClientID if a runat=server is used) of a html element,
+            which, when clicked, will automatically open/show the
+            r.a.d.<strong>window</strong>.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.OffsetElementId">
+            <summary>
+            Gets or sets the id (ClientID if a runat=server is used) of a html element, whose
+            left and top position will be used as 0,0 of the r.a.d.window object when it is first
+            shown.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.MinimizeZoneId">
+            <summary>
+            Gets or sets the id (ClientID if a runat=server is used) of a html element where
+            the windows will be "docked" when minimized.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.IconUrl">
+            <summary>
+            Gets or sets the url of the icon in the upper left corner of the
+            r.a.d.<strong>window</strong> titlebar.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.MinimizeIconUrl">
+            <summary>
+            Gets or sets the url of the minimized icon of the
+            r.a.d.<strong>window</strong>.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.MinimizeMode">
+            <summary>
+            Gets or sets the minimize options for the RadWindow object. SameLocation,
+            MinimizeZone.
+            </summary>
+            <value>
+            The default value is <strong>not set</strong>. Other possible values are the
+            <strong>SameLocation</strong> or <strong>MinimizeZone</strong> which are members
+            of<br/>
+            	<strong>RadWindowMinimizeModes Enumeration</strong>.
+            </value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.Behavior">
+            <summary>
+            Gets or sets a value indicating the behavior of this object - if can be resized, has expand/collapse commands, closed command, etc.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.InitialBehavior">
+            <summary>
+            Gets or sets a value indicating the initial behavior of this object - most useful to specify an initially minimized, maximized or pinned window.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.NavigateUrl">
+            <summary>
+            Specifies the URL that will originally be loaded in the
+            r.a.d.<strong>window</strong> (can be changed on the client).
+            </summary>
+            <value>The default is <strong>Default</strong>.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.Title">
+            <summary>
+            Gets or sets the URL that will originally be loaded in the r.a.d.window (can be
+            changed on the client)
+            </summary>
+            <value>The default is <strong>Default</strong>.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.Top">
+            <summary>Gets or sets the vertical distance from the browser top.</summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.Left">
+            <summary>Gets or sets the horizontal offset from the browser left side.</summary>
+            <value>The default value is <strong>0</strong>.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.DestroyOnClose">
+            <summary>
+            Gets or sets a value indicating whether the window will be made inaccessible once
+            it is closed.
+            </summary>
+            <value>The default value is <strong>false</strong>.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.ReloadOnShow">
+            <summary>
+            Gets or sets a value indicating whether the page that is loaded
+            in the window should be loaded everytime from the server or 
+            will leave the browser default behaviour
+            </summary>
+            <value>The default value is <strong>false</strong>.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.ShowContentDuringLoad">
+            <summary>
+            Gets or sets a value indicating whether the page that is loaded
+            in the window should be shown during the loading process, or when it has finished loading.
+            </summary>
+            <value>The default value is <strong>false</strong>.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.VisibleOnPageLoad">
+            <summary>
+            Gets or sets a value indicating whether the window will open automatically when
+            the aspx page is loaded on the client.
+            </summary>
+            <value>The default value is <strong>false</strong>.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.VisibleTitlebar">
+            <summary>Gets or sets a value indicating whether the window has a titlebar visible.</summary>
+            <value>The default value is <strong>true</strong>.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.VisibleStatusbar">
+            <summary>
+            Gets or sets a value indicating whether the window has a visible status bar or
+            not.
+            </summary>
+            <value>The default value is <strong>true</strong>.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowBase.Modal">
+            <summary>Gets or sets a value indicating whether a dialog is modal or not.</summary>
+            <value>The default value is <strong>false</strong>.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindow.Splash">
+            <summary>
+            Gets or sets a value indicating whether the window is used as a splash screen
+            that is hidden at page load.
+            </summary>
+            <value>The default value is <strong>false</strong>.</value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowManager.AlertTemplate">
+            <summary>
+            This property allows to specify the HTML for the alert popup, which will override
+            the alerttemplate defined in the
+            <em>RadControls/Window/Skins/CURRENT_SKIN/CoreTemplate.xml file</em>.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowManager.ConfirmTemplate">
+            <summary>
+            This property allows to specify the HTML for the confirm popup, which will
+            override the alerttemplate defined in the
+            <em>RadControls/Window/Skins/CURRENT_SKIN/CoreTemplate.xml file</em>.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowManager.PromptTemplate">
+            <summary>
+            This property allows to specify the HTML for the prompt popup, which will
+            override the alerttemplate defined in the
+            <em>RadControls/Window/Skins/CURRENT_SKIN/CoreTemplate.xml file</em>.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowManager.MinimizeTemplate">
+            <summary>
+            This property allows to specify the HTML for the minimize popup, which will
+            override the alerttemplate defined in the
+            <em>RadControls/Window/Skins/CURRENT_SKIN/CoreTemplate.xml file</em>.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowManager.SplashTemplate">
+            <summary>
+            This property allows to specify the HTML for the splash popup, which will
+            override the alerttemplate defined in the
+            <em>RadControls/Window/Skins/CURRENT_SKIN/CoreTemplate.xml file</em>.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowManager.PreserveClientState">
+            <summary>
+            Gets or sets a value indicating whether window objects' state (size, location, behavior) will be
+            persisted in a client cookie to restore state over page postbacks.		
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowManager.EnableStandardPopups">
+            <summary>
+            Gets or sets a value indicating whether r.a.d.<strong>window</strong> versions of
+            the standard the browser popups (alert, prompt and confirm) will be sent to the client
+            (optimizes rendering size if they will not be used).
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowManager.Overlay">
+            <summary>
+            	Gets or sets a value indicating whether on IE a transparent IFrame will be set behind each client window, so as to avoid dropdowns and list elements on the page to 'show through' the window's titlebar.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowManager.Shortcuts">
+            <summary>
+            This property is used to allow associating keyboard shortcuts with
+            RadWindowManager client commands.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowManager.UseClassicWindows">
+            <summary>
+            Gets or sets a value indicating whether default browser windows should be used,
+            instead of the RadWindow object on the client
+            </summary>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowManager.Language">
+            <summary>Gets or sets the localization (language) to be used for a RadWindow.</summary>
+            <value>The default is <b>en-US</b></value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowManager.Skin">
+            <summary>Gets or sets the r.a.d.<strong>window</strong> skin used.</summary>
+            <value>The default is <b>Default</b></value>
+        </member>
+        <member name="P:Telerik.WebControls.RadWindowManager.SingleNonMinimizedWindow">
+            <summary>
+            Gets or sets a value indicating whether the window manager allows only a single
+            active non-minimized window and all other windows are automatically minimized.
+            </summary>
+            <value>The default valie is <strong>false</strong>.</value>
+        </member>
+        <member name="T:Telerik.WebControls.WindowCollection">
+            <summary>
+            Summary description for WindowCollection.
+            </summary> 
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.Add(Telerik.WebControls.RadWindow)">
+            <summary>
+            Adds a RadWindow object to the collection of Windows.
+            </summary>
+            <param name="inputItem">The RadWindow object to add to the collection.</param>
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.IndexOf(System.Object)">
+            <summary>
+            Returns a zero based index of a RadWindow object depending on the passed index.
+            Only int and string indexes are valid.
+            </summary>
+            <param name="inputItem">The zero-based index or the ID of the searched RadWindow object.</param>
+            <returns>A zero based index of the RadWindow object in the collection, or -1 if the RadWindow object is not found.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.Insert(System.Int32,Telerik.WebControls.RadWindow)">
+            <summary>
+            Adds a Tab object in the collection at the specified index.
+            </summary>
+            <param name="insertIndex">The index after which the RadWindow object is inserted.</param>
+            <param name="inputItem">The RadWindow object to insert.</param>
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.Remove(Telerik.WebControls.RadWindow)">
+            <summary>
+            Deletes a RadWindow object from the collection.
+            </summary>
+            <param name="inputItem">The RadWindow object to remove.</param>
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.RemoveAt(System.Int32)">
+            <summary>
+            Deletes the RadWindow object from the collection at the specified index.
+            </summary>
+            <param name="index">The index in collection at which the RadWindow object will be deleted.</param>
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.Clear">
+            <summary>
+            Removes all RadWindow objects in the collection of Windows.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.Contains(Telerik.WebControls.RadWindow)">
+            <summary>
+            Checks whether a specific RadWindow object is in the collection of Windows.
+            </summary>
+            <param name="inputItem">The RadWindow object to search.</param>
+            <returns>True if the RadWindow is found, false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.Reverse">
+            <overloads>
+            Reverses the order of the elements in the 
+            <see cref="!:MenuGroup"/> or a portion of it.
+            </overloads>
+            <summary>
+            Reverses the order of the elements in the entire <see cref="!:MenuGroup"/>.
+            </summary>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="!:MenuGroup"/> is read-only.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Reverse"/> for details.</remarks>
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.ToArray">
+            <summary>
+            Copies the elements of the <see cref="!:MenuGroup"/> to a new
+            <see cref="T:System.Array"/> of <see cref="T:Telerik.WebControls.RadWindow"/> elements.
+            </summary>
+            <returns>A one-dimensional <see cref="T:System.Array"/> of <see cref="T:Telerik.WebControls.RadWindow"/>
+            elements containing copies of the elements of the <see cref="!:MenuGroup"/>.</returns>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.ToArray"/> for details.</remarks>
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.RemoveRange(System.Int32,System.Int32)">
+            <summary>
+            Removes the specified range of elements from the <see cref="!:MenuGroup"/>.
+            </summary>
+            <param name="index">The zero-based starting index of the range
+            of elements to remove.</param>
+            <param name="count">The number of elements to remove.</param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="index"/> and <paramref name="count"/> do not denote a
+            valid range of elements in the <see cref="!:MenuGroup"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <para><paramref name="index"/> is less than zero.</para>
+            <para>-or-</para>
+            <para><paramref name="count"/> is less than zero.</para>
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="!:MenuGroup"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MenuGroup</b> has a fixed size.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.RemoveRange(System.Int32,System.Int32)"/> for details.</remarks>
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.AddRange(Telerik.WebControls.RadWindow[])">
+            <summary>
+            Adds the elements of a <see cref="T:Telerik.WebControls.RadWindow"/> array
+            to the end of the <see cref="!:MenuGroup"/>.
+            </summary>
+            <param name="array">An <see cref="T:System.Array"/> of <see cref="T:Telerik.WebControls.RadWindow"/> elements
+            that should be added to the end of the <see cref="!:MenuGroup"/>.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="array"/> is a null reference.</exception>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="!:MenuGroup"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MenuGroup</b> has a fixed size.</para>
+            <para>-or-</para>
+            <para>The <b>MenuGroup</b> already contains one or more elements
+            in the specified <paramref name="array"/>, and the <b>MenuGroup</b>
+            ensures that all elements are unique.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.AddRange(System.Collections.ICollection)"/> for details.</remarks>
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.Sort">
+            <overloads>
+            Sorts the elements in the <see cref="!:MenuGroup"/> or a portion of it.
+            </overloads>
+            <summary>
+            Sorts the elements in the entire <see cref="!:MenuGroup"/>
+            using the <see cref="T:System.IComparable"/> implementation of each element.
+            </summary>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="!:MenuGroup"/> is read-only.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Sort"/> for details.</remarks>
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.Sort(System.Collections.IComparer)">
+            <summary>
+            Sorts the elements in the entire <see cref="!:MenuGroup"/>
+            using the specified <see cref="T:System.Collections.IComparer"/> interface.
+            </summary>
+            <param name="comparer">
+            <para>The <see cref="T:System.Collections.IComparer"/> implementation to use when comparing elements.</para>
+            <para>-or-</para>
+            <para>A null reference to use the <see cref="T:System.IComparable"/> implementation 
+            of each element.</para></param>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="!:MenuGroup"/> is read-only.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Sort"/> for details.</remarks>
+        </member>
+        <member name="M:Telerik.WebControls.WindowCollection.Sort(System.Int32,System.Int32,System.Collections.IComparer)">
+            <summary>
+            Sorts the elements in the specified range 
+            using the specified <see cref="T:System.Collections.IComparer"/> interface.
+            </summary>
+            <param name="index">The zero-based starting index of the range
+            of elements to sort.</param>
+            <param name="count">The number of elements to sort.</param>
+            <param name="comparer">
+            <para>The <see cref="T:System.Collections.IComparer"/> implementation to use when comparing elements.</para>
+            <para>-or-</para>
+            <para>A null reference to use the <see cref="T:System.IComparable"/> implementation 
+            of each element.</para></param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="index"/> and <paramref name="count"/> do not denote a
+            valid range of elements in the <see cref="!:MenuGroup"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <para><paramref name="index"/> is less than zero.</para>
+            <para>-or-</para>
+            <para><paramref name="count"/> is less than zero.</para>
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="!:MenuGroup"/> is read-only.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Sort"/> for details.</remarks>
+        </member>
+        <member name="P:Telerik.WebControls.WindowCollection.Item(System.Object)">
+            <summary>
+            Returns a RadWindow object depending on the passed index.
+            Only integer and string indexes are valid.
+            </summary>
+        </member>
+    </members>
+</doc>

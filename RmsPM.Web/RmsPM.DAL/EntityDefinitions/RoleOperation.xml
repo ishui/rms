@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>RoleOperation</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>RoleOperation</Name>
+		<Column>
+			<Name>RoleCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>true</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Column>
+			<Name>OperationCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>true</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>Select</Name>
+			<String>select * from RoleOperation where  RoleCode=@RoleCode and OperationCode=@OperationCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@RoleCode</Name>
+				<Column>RoleCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@OperationCode</Name>
+				<Column>OperationCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		
+		<Sql>
+			<Name>SelectAll</Name>
+			<String>select * from RoleOperation</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>Insert</Name>
+			<String> Insert into RoleOperation (  RoleCode, OperationCode ) values (  @RoleCode, @OperationCode )</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@RoleCode</Name>
+				<Column>RoleCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@OperationCode</Name>
+				<Column>OperationCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Update</Name>
+			<String> Update RoleOperation set RoleCode=@RoleCode,OperationCode=@OperationCode where  RoleCode=@RoleCode and OperationCode=@OperationCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@RoleCode</Name>
+				<Column>RoleCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@OperationCode</Name>
+				<Column>OperationCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Delete</Name>
+			<String> Delete from RoleOperation  where  RoleCode=@RoleCode and OperationCode=@OperationCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@RoleCode</Name>
+				<Column>RoleCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@OperationCode</Name>
+				<Column>OperationCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>SelectByRoleCode</Name>
+			<String>select * from RoleOperation where RoleCode=@RoleCode  </String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@RoleCode</Name>
+				<Column>RoleCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>SelectByOperationCode</Name>
+			<String>select * from RoleOperation where OperationCode=@OperationCode </String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@OperationCode</Name>
+				<Column>OperationCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+	</Table>
+</Entity>

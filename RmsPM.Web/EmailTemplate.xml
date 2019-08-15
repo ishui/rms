@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<EmailTemplate>
+	<BiddingEmitTo>
+		<Title>AAA#BiddingTitle#</Title>
+		<MailBody>bbb#BiddingTitle#ccc#Password#ddd#GID#</MailBody>
+	</BiddingEmitTo>
+	<BiddingEmitTo1>
+		<Title>AAA#BiddingTitle#1111</Title>
+		<MailBody>bbb#BiddingTitle#ccc#Password#ddd#GID#22</MailBody>
+	</BiddingEmitTo1>
+</EmailTemplate>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsPM.Data", "RmsPM.Data.csproj", "{907F5C74-4813-4E21-BF31-514B148FDA16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsPM.Entities", "..\TiannuoPM.Entities\RmsPM.Entities.csproj", "{4A1A4C23-6138-4A52-9975-73B30CC8DAE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RmsPM.Data.SqlClient", "..\TiannuoPM.Data.SqlClient\RmsPM.Data.SqlClient.csproj", "{8D3C2FBE-9C25-46AD-B780-A67312179C22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{907F5C74-4813-4E21-BF31-514B148FDA16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{907F5C74-4813-4E21-BF31-514B148FDA16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{907F5C74-4813-4E21-BF31-514B148FDA16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{907F5C74-4813-4E21-BF31-514B148FDA16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A1A4C23-6138-4A52-9975-73B30CC8DAE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A1A4C23-6138-4A52-9975-73B30CC8DAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A1A4C23-6138-4A52-9975-73B30CC8DAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A1A4C23-6138-4A52-9975-73B30CC8DAE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D3C2FBE-9C25-46AD-B780-A67312179C22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D3C2FBE-9C25-46AD-B780-A67312179C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D3C2FBE-9C25-46AD-B780-A67312179C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D3C2FBE-9C25-46AD-B780-A67312179C22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

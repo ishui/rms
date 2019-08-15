@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration xmlnms="http://schemas.Rms.com/RealMisConfiguration/V2.5">
+<RealMis Name="房产信息管理系统" CompanyName="TN">
+  <SubSystem>
+    <Name>RmsOA</Name>
+    <Text>办公管理</Text>
+    <ToolTip>日常办公事务管理</ToolTip>
+    <Command></Command>
+    <NavigateURL>OALeftBar.aspx</NavigateURL>
+    <TargetFrame>contents</TargetFrame>
+    <IsDefault>true</IsDefault>
+    <Right></Right>
+  </SubSystem>
+  <SubSystem>
+    <Name>RmsPM</Name>
+    <Text>项目管理</Text>
+    <ToolTip>项目管理</ToolTip>
+    <Command></Command>
+    <NavigateURL>ProjectLeftBar.aspx</NavigateURL>
+    <TargetFrame>contents</TargetFrame>
+    <IsDefault>true</IsDefault>
+    <Right></Right>
+  </SubSystem>
+ <!--
+  <SubSystem>
+    <Name>RmsSM</Name>
+    <Text>营销管理</Text>
+    <ToolTip>营销管理</ToolTip>
+    <Command>window.open('/YX25/menu/SM_Transfer.asp?UserName=@UserName','contents');return false;</Command>
+    <NavigateURL></NavigateURL>
+    <TargetFrame></TargetFrame>
+    <Right></Right>
+  </SubSystem>-->
+
+  <SubSystem>
+    <Name>RmsPM</Name>
+    <Text>数据资料</Text>
+    <ToolTip>供应商信息、材料信息等</ToolTip>
+    <Command></Command>
+    <NavigateURL>SupplierLeftBar.aspx</NavigateURL>
+    <TargetFrame>contents</TargetFrame>
+    <IsDefault>true</IsDefault>
+    <Right></Right>
+  </SubSystem>
+<!--
+  <SubSystem>
+    <Name>RmsDM</Name>
+    <Text>文档管理</Text>
+    <ToolTip>ISO质量文件管理</ToolTip>
+    <Command></Command>
+    <NavigateURL>RmsDM/DocumentManage.aspx</NavigateURL>
+    <TargetFrame>contents</TargetFrame>
+    <Right>10</Right>
+  </SubSystem>  
+-->
+  <SubSystem>
+    <Name>Report</Name>
+    <Text>项目汇总</Text>
+    <ToolTip>各类项目汇总</ToolTip>
+    <Command></Command>
+    <NavigateURL>GroupLeftBar.aspx</NavigateURL>
+    <TargetFrame>contents</TargetFrame>
+    <Right></Right>
+  </SubSystem>  
+  <SubSystem>
+    <Name>Administration</Name>
+    <Text>系统管理</Text>
+    <ToolTip>系统维护</ToolTip>
+    <Command></Command>
+    <NavigateURL>SystemLeftBar.aspx</NavigateURL>
+    <TargetFrame>contents</TargetFrame>
+    <Right>11</Right>
+  </SubSystem>
+</RealMis>
+</configuration>
+<!--  XML中定义的5种转义符号
+
+&lt;    <   小于号 
+&gt;    >   大于号
+
+&amp;   &
+&apos;  '   单引号
+
+&quot;  "   双引号
+
+实体必须以符号"&"开头，以符号";"结尾。
+
+注意: 只有"<" 字符和"&"字符对于XML来说是严格禁止使用的。剩下的都是合法的，为了减少出错，使用实体是一个好习惯。
+
+-->

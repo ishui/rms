@@ -1,0 +1,1624 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30D8CA3F-46F9-4D17-BB95-CB43EB31CBAB}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>RmsPM.DAL</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\ContractBillDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\ContractBillModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\ContractBillQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\FlowUseSealDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\FlowUseSealModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\FlowUseSealQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\InquirePriceDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\InquirePriceModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\InquirePriceQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\QueryBaseModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\SqlDataProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TCheckPaymentDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TCheckPaymentModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TCheckPaymentQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TCheckPaymentSumDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TCheckPaymentSumModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TCheckPaymentSumQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_BigGoodsDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_BigGoodsDetailDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_BigGoodsDetailModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_BigGoodsDetailQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_BigGoodsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_BigGoodsQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_DocumentDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_DocumentModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_DocumentQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_LingYongMenonyDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_LingYongMenonyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_LingYongMenonyQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_LingYongMenonySumDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_LingYongMenonySumModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_LingYongMenonySumQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_LingYongMoneyDetailDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_LingYongMoneyDetailModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_LingYongMoneyDetailQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_PaymentSumDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_PaymentSumModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_PaymentSumQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_PurchasePriceDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_PurchasePriceDetailDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_PurchasePriceDetailModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_PurchasePriceDetailQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_PurchasePriceModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_PurchasePriceQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_SmallGoodsDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_SmallGoodsDetailDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_SmallGoodsDetailModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_SmallGoodsDetailQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_SmallGoodsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_SmallGoodsQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_UnusualDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_UnusualModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_UnusualQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_WorkConcertDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_WorkConcertModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_OA_WorkConcertQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_PaymentSumDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_PaymentSumModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TC_PaymentSumQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TY_ReferendumReportDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TY_ReferendumReportModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\CommonWorkFlowDAL\TY_ReferendumReportQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\AttachmentDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\BiddingDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\CBSDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\ClaimsExpressionsDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\ConstructDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\ContractDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\CostBudgetDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\DAOFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\DocumentDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\ExchangeRateDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\GradeDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\IAttachmentDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\IDAOFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\LeaveDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\MaterialDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\OADAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\OBSDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\PaymentDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\PBSDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\ProductDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\ProjectDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\PurchaseFlowDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\RemindDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\ResourceDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\SalDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\StampDutyDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\SubjectDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\SupplierGradeTypeDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\SystemManageDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\WBSDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\WorkFlowApplicatioDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\EntityDAO\WorkFlowDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\AccessRangeStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\AccessRangeStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\AccessRanggeQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\AttentionStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\AttentionStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\AttrSetFrameItemStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\AttrSetFrameItemStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\AttrSetFrameStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\AttrSetFrameStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\AttrSetItemStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\AttrSetItemStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\AttrSetStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\AttrSetStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingAuditingStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingAuditingStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingConditionFileStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingConditionFileStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingCostStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingCostStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingDtlAuditingStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingDtlAuditingStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingDtlStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingDtlStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingEmitStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingEmitStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingFileStrategyBuider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingFileStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingGradeConsiderDiathesisStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingGradeConsiderDiathesisStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingGradeMainDefineStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingGradeMainDefineStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingGradeMessageStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingGradeMessageStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingGradeStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingGradeStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingLogStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingLogStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingMessageStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingMessageStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingPrejudicationStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingPrejudicationStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingReturnCostStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingReturnCostStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingReturnStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingReturnStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingSupplierStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BiddingSupplierStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\Bidding_SupplierDepartmentIdeaStratebyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\Bidding_SupplierDepartmentIdeaStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BudgetStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BudgetStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingFloorProgressStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingFloorProgressStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingFloorStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingFloorStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingFunctionStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingFunctionStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingModelStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingModelStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingStationStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingStationStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingSubjectSetStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuildingSubjectSetStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\BuliderOrSelect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CAPStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CAPStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\Cash_DetailStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\Cash_DetailStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\Cash_MessageStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\Cash_MessageStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CBSStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CBSStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ChamberStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ChamberStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CheckPriceStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CheckPriceStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ColumnMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ConstructAnnualPlanStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ConstructAnnualPlanStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ConstructPlanStepStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ConstructPlanStepStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ConstructProgressRiskStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ConstructProgressRiskStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ConstructProgressStepStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ConstructProgressStepStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ConstructProgressStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ConstructProgressStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ContractAllocationStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ContractAllocationStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ContractPayConditionStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ContractPayConditionStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ContractPaymentPlanStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ContractPaymentPlanStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ContractStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ContractStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetBackupDtlStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetBackupDtlStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetBackupMonthStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetBackupMonthStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetBackupSetStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetBackupSetStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetBackupStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetBackupStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetContractStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetContractStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetDtlHisStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetDtlHisStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetDtlStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetDtlStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetMonthStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetMonthStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetSetStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetSetStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostBudgetStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostPlanStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostPlanStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CostStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CPPStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\CPPStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\DesignDocumentStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\DesignDocumentStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\Design_MessageStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\Design_MessageStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\DictionaryItemStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\DictionaryItemStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\DIStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\DIStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\DocumentStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\DocumentStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\DynamicCostStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\DynamicCostStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\EmailHistoryStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\EmailHistoryStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\EnquiryStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\EnquiryStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ExchangeRateStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ExchangeRateStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\FunctionStructureStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\FunctionStructureStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeConsiderDepartmentStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeConsiderDepartmentStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeConsiderDiathesisStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeConsiderDiathesisStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeConsiderPercentageStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeConsiderPercentageStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeDepartmentPercentageStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeDepartmentPercentageStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeDepartmentStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeDepartmentStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeMainDefineStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeMainDefineStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeMessageStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeMessageStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GradeStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GroundWorkStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GroundWorkStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GsdtStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\GuidStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\InvestmentStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\InvestmentStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\LeaveStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\LeaveStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\LinkManageStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\LinkManageStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\MaterialCostStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\MaterialCostStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\MaterialPurchaseStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\MaterialPurchaseStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ModelStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ModelStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\NoticeStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\NoticeStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OACachetStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OACachetStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAComputerMaintenanceStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAComputerMaintenanceStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAContactStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAContactStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADIARYStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADIARYStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADocumentActCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADocumentBorrowStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADocumentBorrowStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADocumentCaseCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADocumentClassStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADocumentClassStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADocumentStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADocumentStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADocumentViewStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADocumentViewStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADocumentWorkFlowActStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OADocumentWorkFlowCaseStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAEquipmentReqStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAEquipmentReqStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAEquipmentStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAEquipmentStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAEquipmentUseStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAEquipmentUseStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAFilePageViewStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAFilePageViewStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAGsdtSB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OALINKMANStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OALINKMANStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAMailAdviceName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAMailAdviceStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAMailLeadsName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAMailLeadsStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAPersonContractName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAPersonContractStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAPersonInfoChangeName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAPersonInfoChangeStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAPersonStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAPersonStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAREGULATIONStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAREGULATIONStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OASalaryStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OASalaryStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAVehicleApplyStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAVehicleApplyStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAVehicleInfoStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAVehicleInfoStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAVehicleStateStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAWaitTaskStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\OAWaitTaskStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PaymentBuildingStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PaymentBuildingStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PaymentItemBuildingStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PaymentItemBuildingStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PaymentItemStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PaymentItemStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PaymentPlanStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PaymentPlanStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PaymentStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PaymentStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PayoutItemStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PayoutItemStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PayoutStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PayoutStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PBSAttrItemStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PBSAttrItemStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PBSAttrStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PBSAttrStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PBSPicGroupStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PBSPicGroupStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PBSPicStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PBSPicStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PBSUnitStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PBSUnitStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ProjectConfigStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ProjectConfigStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ProjectStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ProjectStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ProjectSubjectSetStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ProjectSubjectSetStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseBiddingBookStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseBiddingBookStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseBiddingStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseBiddingStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowAccessoryStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowAccessoryStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowCheckListStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowCheckListStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowDetailStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowDetailStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowInviteStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowInviteStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowOpinionStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowOpinionStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowSelSupplyHistoryStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowSelSupplyHistoryStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowSelSupplyStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowSelSupplyStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\PurchaseFlowStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ReceivingStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ReceivingStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RemindObjectName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RemindObjectStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RemindStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RemindStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ResourceStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\ResourceStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RiskIndexStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RiskIndexStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RiskTypeStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RiskTypeStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RoleOperation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RoleOperationName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RoleStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RoleStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RoomStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\RoomStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SalBudgetDtlStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SalBudgetDtlStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SalBudgetStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SalBudgetStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SalContractStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SalContractStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SalPayPlanStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SalPayPlanStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SalPayStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SalPayStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SalSuplStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SalSuplStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SendMsgStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SendMsgStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\StationDesktop.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\StationDesktopStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\StationDesktopStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\StrategyConvert.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\StyleInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\StyleInfoStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\StyleInfoStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\StyleList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\StyleListStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\StyleListStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SubjectStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SubjectStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierLinkmanStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierLinkmanStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierMaterialStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierMaterialStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierSubjectSetStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierSubjectSetStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierSurveyOpinionStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierSurveyOpinionStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierTitleStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierTitleStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierTypeStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SupplierTypeStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SystemClassDescription.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SystemClassItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SystemGroupStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SystemGroupStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SystemUserSubjectSetStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\SystemUserSubjectSetStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TaskActorStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TaskBudgetStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TaskBudgetStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TaskExecuteRiskStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TaskExecuteRiskStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TaskExecuteStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TaskExecuteStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TaskGuidStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TaskStatusStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TCheckPaymentStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TCheckPaymentStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TC_OA_BiddingContractStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TC_OA_BiddingContractStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TemplateOpinionStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TemplateOpinionStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TempRoomOutStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TempRoomOutStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TreeNodeSearchType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TSigninStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\TSigninStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UFProjectStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UFProjectStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UFUnitStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UFUnitStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UnitStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UnitStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UnitSubjectSetStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UnitSubjectSetStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UserDesktopStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UserDesktopStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UserRoleStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UserRoleStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UserStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\UserStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\VisualProgressStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\VisualProgressStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\VoucherDetailStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\VoucherDetailStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\VoucherStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\VoucherStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_BiddingSupplierStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_BiddingSupplierStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_BudgetCostStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_BudgetCostStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_CBSCostStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_CBSCostStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_Desktop.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_DesktopStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_DesktopStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_StyleInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_StyleInfoStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_StyleInfoStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_WBSTaskStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\V_WBSTaskStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WBSStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WBSStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowActStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowActStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowActUserStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowActUserStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowCasePropertyStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowCasePropertyStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowCaseStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowCaseStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowCommonStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowCommonStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowHistory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowHistoryStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowOpinionControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowOpinionStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowProcedurePropertyStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowProcedurePropertyStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowProcedureStrategyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\QueryStrategy\WorkFlowProcedureStrategyName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rms.ORMap\Rms.ORMap.csproj">
+      <Project>{E3710C81-98CB-4C5C-849E-836DE7990949}</Project>
+      <Name>Rms.ORMap</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,15 @@
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\bin\Debug\RmsPM.BLL.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\bin\Debug\RmsPM.BLL.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\bin\Debug\Rms.LogHelper.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\bin\Debug\Rms.ORMap.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\bin\Debug\Rms.ORMap.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\bin\Debug\Rms.LogHelper.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\obj\Debug\ResolveAssemblyReference.cache
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\obj\Debug\RmsPM.BLL.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\obj\Debug\RmsPM.BLL.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\bin\Debug\RmsPM.DAL.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\bin\Debug\RmsPM.DAL.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\bin\Debug\LocaleViseBLL.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\bin\Debug\LocaleViseMODEL.dll
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\bin\Debug\LocaleViseBLL.pdb
+F:\淘宝图片\程序可发送\房地产工程项目管理系统源码\RmsPM.BLL\bin\Debug\LocaleViseMODEL.pdb

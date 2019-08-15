@@ -1,0 +1,117 @@
+/* r.a.d.grid Orange skin */
+
+.RadGrid_Orange
+{
+	background: #cc9b00;
+	border: solid 1px #d3d2a8;
+	font: normal 11px Arial, Verdana, Sans-serif;
+	text-align: left;
+	cursor: default;
+}
+
+.RadGrid_Orange th, .RadGrid_Orange th a
+{ 
+	font: bold 11px Tahoma;
+	color: white;
+}
+
+.RadGrid_Orange td,
+.RadGrid_Orange td a
+{ 
+	font: 11px tahoma;
+	color: #000000;
+}
+
+.MasterTable_Orange
+{
+	border: 0px !important;
+	border-collapse: separate !important;
+	width: 100%;
+}
+
+.GridHeader_Orange
+{
+	color: white;
+	height: 34px;
+	background: #cc9b00;
+}
+
+.GridHeader_Orange a
+{
+	color: white;
+}
+
+.GridRow_Orange td
+{
+	background-color: #fefce8;
+	height:20px;
+	border-bottom:1px solid #d3d2a8;
+}
+
+.SelectedRow_Orange td
+{
+	background-color: #ffffff !important;
+	height:20px;
+	border-bottom:1px solid #d3d2a8;
+}
+
+.ActiveRow_Orange td
+{
+	background-color: #e2dbb9 !important;
+	height:20px;
+	border-bottom:1px solid #d3d2a8;
+}
+
+.GridAltRow_Orange td
+{
+	background-color: #fdf6d8;
+	height:20px;
+	border-bottom:1px solid #d3d2a8;
+}
+
+.GridPager_Orange TD
+{
+	background: #e2dbb9;
+	border-top: 1px solid #d3d2a8;
+	height: 17px;
+	padding-left: 11px;
+}
+
+.GridPager_Orange a
+{
+	color: #333;	
+}
+
+.GridHeader_Orange img,
+.GroupPanelItems_Orange input
+{
+	vertical-align: middle;
+}
+
+/* grouping button */
+.GroupPanelItems_Orange
+{
+	background: #cc9b00;
+	color: white !important;
+	border: solid 1px #e4e3ca;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+
+tr.GroupHeader_Orange td
+{
+	background: #9b7500;
+	height:20px;
+	COLOR: WHITE;
+	border-bottom:1px solid #e2dbb9;
+}
+
+.GroupPanel_Orange
+{
+	height: 30px;
+	width: 100%;
+	text-align: left;
+	background: #9b7500;
+	border-bottom: 1px solid #d3d2a8;
+	border-collapse: collapse;
+}

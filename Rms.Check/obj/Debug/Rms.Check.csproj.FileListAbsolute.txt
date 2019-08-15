@@ -1,0 +1,10 @@
+G:\源代码\工程项目管理系统源码\Rms.Check\bin\Debug\Rms.Check.dll
+G:\源代码\工程项目管理系统源码\Rms.Check\bin\Debug\Rms.Check.pdb
+G:\源代码\工程项目管理系统源码\Rms.Check\obj\Debug\Rms.Check.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码\Rms.Check\obj\Debug\Rms.Check.dll
+G:\源代码\工程项目管理系统源码\Rms.Check\obj\Debug\Rms.Check.pdb
+G:\源代码\工程项目管理系统源码_20190605\Rms.Check\bin\Debug\Rms.Check.dll
+G:\源代码\工程项目管理系统源码_20190605\Rms.Check\bin\Debug\Rms.Check.pdb
+G:\源代码\工程项目管理系统源码_20190605\Rms.Check\obj\Debug\Rms.Check.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码_20190605\Rms.Check\obj\Debug\Rms.Check.dll
+G:\源代码\工程项目管理系统源码_20190605\Rms.Check\obj\Debug\Rms.Check.pdb

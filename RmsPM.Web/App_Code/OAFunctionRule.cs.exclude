@@ -1,0 +1,120 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+
+using RmsOA.MODEL;
+using RmsOA.DAL;
+using RmsOA.BFL;
+
+/// <summary>
+/// Summary description for OAFunctionRule
+/// </summary>
+public class OAFunctionRule
+{
+    public OAFunctionRule()
+    {
+    }
+
+    public static int DayOfWeekToInt(DateTime dtTime)
+    {
+        int num;
+        DayOfWeek dayOfWeek = dtTime.DayOfWeek;
+        switch (dayOfWeek)
+        {
+            case DayOfWeek.Monday:
+                num = 0; return num;
+            case DayOfWeek.Tuesday:
+                num = 1; return num;
+            case DayOfWeek.Wednesday:
+                num = 2; return num;
+            case DayOfWeek.Thursday:
+                num = 3; return num;
+            case DayOfWeek.Friday:
+                num = 4; return num;
+            case DayOfWeek.Saturday:
+                num = 5; return num;
+            case DayOfWeek.Sunday:
+                num = 6; return num;
+            default:
+                return -1;
+        }
+    }
+
+    public static Hashtable GetWeekBeginAndEndDate(DateTime dtTime)
+    {
+        int index;
+        index = OAFunctionRule.DayOfWeekToInt(dtTime);
+        DateTime dtWeekBegin = dtTime.AddDays(-index);
+        DateTime dtWeekEnd = dtTime.AddDays(6 - index);
+        Hashtable hashTable = new Hashtable();
+        hashTable.Add("WeekBegin", dtWeekBegin);
+        hashTable.Add("WeekEnd", dtWeekEnd);
+        return hashTable;
+    }
+
+    public List<ConferenceManageModel> GetConferenceManageList(string commandText)
+    {
+        List<ConferenceManageModel> listConferenceManage = new List<ConferenceManageModel>();
+        ConferenceManageModel oModel = new ConferenceManageModel();
+        DataSet ds = this.GetConferenceManageDataSet(commandText);
+        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+        {
+            oModel.ChaterMember = ds.Tables[0].Rows[i]["ChaterMember"].ToString();
+            oModel.Code = Convert.ToInt32(ds.Tables[0].Rows[i]["Code"]);
+            oModel.Dept = ds.Tables[0].Rows[i]["Dept"].ToString();
+            oModel.EndTime = Convert.ToDateTime(ds.Tables[0].Rows[i]["EndTime"]);
+            oModel.Place = ds.Tables[0].Rows[i]["Place"].ToString();
+            oModel.Remark = ds.Tables[0].Rows[i]["Remark"].ToString();
+            oModel.StartTime = Convert.ToDateTime(ds.Tables[0].Rows[i]["StartTime"]);
+            oModel.State = ds.Tables[0].Rows[i]["State"].ToString();
+            oModel.Topic = ds.Tables[0].Rows[i]["Topic"].ToString();
+            oModel.Type = ds.Tables[0].Rows[i]["Type"].ToString();
+            listConferenceManage.Add(oModel);
+        }
+        return listConferenceManage;
+    }
+
+    public DataSet GetConferenceManageDataSet(string commandText)
+    {
+        DataSet ds = new DataSet();
+        string connectionString = FunctionRule.GetConnectionString();
+        SqlConnection sqlConn = new SqlConnection(connectionString);
+        SqlDataAdapter sqlAdap = new SqlDataAdapter(commandText, sqlConn);
+        try
+        {
+            sqlConn.Open();
+            sqlAdap.Fill(ds);
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+        finally
+        {
+            sqlConn.Close();
+            sqlConn.Dispose();
+        }
+        return ds;
+    }
+
+    public struct CachetTypeName
+    {
+        public static string CachetName
+        {
+            get { return "公章类型"; }
+        }
+        public static string LicenceName
+        {
+            get { return "证照类型"; }
+        }
+    }
+}

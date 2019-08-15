@@ -1,0 +1,136 @@
+/* r.a.d.grid Default skin */
+
+div.RadGrid_Default
+{
+	border: solid 1px #3b5a82;
+	font: normal 11px Arial, Verdana, Sans-serif;
+	text-align: left;
+	cursor: default;
+	background: white;
+}
+
+.RadGrid_Default a
+{ 
+
+	color: #000000;
+}
+
+.MasterTable_Default
+{
+	border-collapse: separate !important;
+	width: 100%;
+	color: #27413e;
+	font: 11px tahoma;
+}
+
+.MasterTable_Default td,
+.MasterTable_Default th
+{
+	padding-left: 4px;
+}
+
+th.GridHeader_Default,
+th.ResizeHeader_Default
+{
+	font: bold 10px Verdana, Arial, Sans-serif;
+	background: #d3dbe9 url('Img/GridHeaderBg.gif') repeat-x;
+	padding-left: 6px; /*more than items to compensate for item borders!*/
+	height: 19px;
+	color: #27413e;
+	border-bottom: solid 1px #9eb6ce;
+}
+
+.GridHeader_Default a
+{
+	color: #27413e;
+	font: bold 11px  Arial, Verdana, Sans-serif;
+	text-decoration: none;
+}
+
+.GridRow_Default td,
+.GridAltRow_Default td
+{
+	background: transparent;
+	line-height: 19px;
+	border-bottom: 1px solid #d0d7e5;
+	border-right: 1px solid #d0d7e5;
+}
+
+.SelectedRow_Default td,
+.ActiveRow_Default td
+{
+	background: #f1c15f url('Img/gridSelectedRowBg.gif') repeat-x !important;
+	line-height: 19px;
+	border-bottom: 1px solid #f29536;
+	border-right: 1px solid #f29536;
+}
+
+.GridPager_Default td
+{
+	background: #9ab5db url('Img/GriPagerBg.gif') repeat-x;
+	height: 15px;
+	color: white;
+}
+
+.GridFooter_Default td
+{
+	background: #fbfbfb;
+	border: solid 1px #fbfbfb;
+	border-top: 1px solid #637783;
+	height: 19px;
+	color: #666;
+}
+
+.GridFooter_Default td a
+{
+	color: #666;
+}
+
+.GridPager_Default td a
+{
+	color: white;
+}
+
+.GridPager_Default td a:hover,
+.GridFooter_Default td a:hover
+{
+	color: black;
+}
+
+
+tr.GroupHeader_Default td
+{
+	background: #e4ecf7;
+	height: 22px;
+}
+
+.GroupPanel_Default
+{
+	background: #9ebde5 url('Img/GridGroupPanelBg.gif') repeat-x;
+	width: 100%;
+	height: 23px;
+	border-bottom: solid 1px #688caf;
+	border-collapse: collapse;
+}
+
+.GroupPanelItems_Default
+{
+	background: white;
+	color: black;
+	border: solid 1px #325373;
+	white-space:  nowrap;
+	padding-left: 2px;
+	font-size: 11px;
+	height: 15px;
+}
+td.GridHeader_Default input
+{
+	width: auto;
+	float: left;
+	border: solid 1px #3b5a82;
+	background: #fafafa;
+	font: bold 10px Verdana, Arial, Sans-serif;
+	color: #989cb0;
+	height: 14px;
+	vertical-align:middle;
+}

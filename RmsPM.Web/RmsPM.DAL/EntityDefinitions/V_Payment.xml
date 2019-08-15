@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>V_Payment</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>V_Payment</Name>
+		<Column>
+			<Name>PaymentCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String> select * from V_Payment Payment</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>SelectSum</Name>
+			<String> select  isnull(Sum( Money ),0) from V_Payment Payment  </String>
+			<CommandType>Text</CommandType>
+		</Sql>
+	</Table>
+</Entity>

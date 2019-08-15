@@ -1,0 +1,250 @@
+.calendar{ 
+		font-family : Tahoma; 
+		font-size : 12 ;
+		border-left:1px solid cccccc;
+		border-top:1px solid cccccc;
+		border-right:1px solid #888888;
+		border-bottom:1px solid #888888;
+		width:200px;
+		
+	}
+TD.lastMonth{ color:bbbbbb; } 
+TD.nextMonth{ color:bbbbbb; } 
+TD.normal{color:black;width:33}
+TD.smallFont{font-size:10px;}
+TD.tdCurDate{
+	color: #FFFFFF;
+	background: #9ACD32;
+}
+TD.tdToday{
+	color: black;
+	background: #f1f1f1;
+}
+TD.tdTodayCurDate{
+	color: #000000;
+	background: #9ACD32;
+}
+TD.tdHoliday{ color:darkred; }
+TD.Day_MouseOver{
+	background-color: #87CEFA;
+	color: #3D709C;
+} 
+TD.Month_MouseOver{ background-color:#444444; color:Red;}
+TD.Month_MouseOut{ background-color:White ; color:Red;}
+.dropItem{ background-color:Gray ;}
+
+.DPFrame
+{  font: 12px;
+	height: 19px;
+	background-color: white;
+	margin:0 0 0 0;
+	padding:1 0 0 0;
+	overflow:hidden ;
+	position:relative ;
+	border: 1px solid #E2E8F1; 
+}
+
+
+ 
+.DPSpan
+{
+	position:relative ;
+	top:-3px;
+	font-weight:bold;
+	 
+}
+
+.DPimg
+{
+	left: 0px;
+	overflow: hidden;
+	cursor: hand;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	position:relative ;
+	border-bottom-style: none;
+}
+.DPTitle
+{
+	font-weight: normal;
+	font-size: 11pt;
+	border-left-color: #ffff00;
+	border-bottom-color: #ffff00;
+	color: black;
+	border-top-style: double;
+	border-top-color: #ffff00;
+	line-height: normal;
+	font-style: normal;
+	border-right-style: double;
+	border-left-style: double;
+	background-color: ghostwhite;
+	text-align: center;
+	font-variant: normal;
+	border-right-color: #ffff00;
+	border-bottom-style: double;
+}
+.DPWeekName
+{
+	font-weight: normal;
+	font-size: 9pt;
+	color: white;
+	line-height: normal;
+	border-bottom: black 1px solid;
+	font-style: normal;
+	background-color: #929100;
+	text-align: center;
+	font-variant: normal;
+}
+
+.DPWeekend
+{
+	color:Red;
+}
+.DPCellOther
+{
+	border-right: mintcream 1px solid;
+	border-top: mintcream 1px solid;
+	font-weight: normal;
+	font-size: 10pt;
+	border-left: mintcream 1px solid;
+	color: #9db9de;
+	line-height: normal;
+	border-bottom: mintcream 1px solid;
+	font-style: normal;
+	background-color: #e0ded1;
+	text-align: center;
+	font-variant: normal;
+}
+.DPCell
+{
+	border-right: ghostwhite 1px solid;
+	padding-right: 6px;
+	border-top: ghostwhite 1px solid;
+	padding-left: 6px;
+	font-weight: normal;
+	font-size: 10pt;
+	padding-bottom: 1px;
+	border-left: ghostwhite 1px solid;
+	cursor: hand;
+	color: #000000;
+	line-height: normal;
+	padding-top: 1px;
+	border-bottom: ghostwhite 1px solid;
+	font-style: normal;
+	background-color: #d4dfc6;
+	text-align: center;
+	font-variant: normal;
+}
+.DPCellSelect
+{
+	border-right: #ccccff 1px double;
+	border-top: #ccccff 1px double;
+	font-weight: bold;
+	font-size: 10pt;
+	border-left: #ccccff 1px double;
+	cursor: hand;
+	color: #000000;
+	line-height: normal;
+	border-bottom: #ccccff 1px double;
+	font-style: normal;
+	background-color: #ccffd9;
+	text-align: center;
+	font-variant: normal;
+}
+.DPYear
+{
+    BACKGROUND-COLOR: transparent;
+    BORDER-BOTTOM: 0px;
+    BORDER-LEFT: 0px;
+    BORDER-RIGHT: 0px;
+    BORDER-TOP: 0px;
+    COLOR:Black ;
+    FONT-SIZE: 9pt;
+    FONT-STYLE: normal;
+    FONT-VARIANT: normal;
+    FONT-WEIGHT: normal;
+    LINE-HEIGHT: normal;
+    TEXT-ALIGN: right;
+   	width:32px;
+    height:16px;
+    padding:0,0,0,0;
+    margin:0,0,0,0;
+    position:relative;
+    top :-3px;
+     font-weight:bold;
+
+}
+.DPYearDes
+{
+    BACKGROUND-COLOR: transparent;
+    margin:0,0,0,0;
+    WIDTH: 1px;
+    height:16px;
+}
+.DPMonth
+{
+    position:relative;
+    top :-3px;
+	border-right: 0px;
+	border-top: 0px;	
+	font-weight: normal;
+	font-size: 9pt;
+	border-left: 0px;
+	color: Black ;
+	line-height: normal;
+	border-bottom: 0px;
+	font-style: normal;
+	background-color: transparent;
+	text-align: right;
+    margin:0,0,0,0;
+    padding:0,0,0,0;
+	font-variant: normal;
+	width:16px;
+    height:16px;
+    font-weight:bold;
+}
+.DPMonthDes
+{
+    BACKGROUND-COLOR: transparent;
+    margin:0,0,0,0;
+    padding:0,0,0,0;
+	WIDTH: 1px;	
+    height:16px;
+}
+.DPDay
+{
+    position:relative;
+    top :-3px;
+    BACKGROUND-COLOR: transparent;
+    BORDER-BOTTOM: 0px;
+    BORDER-LEFT: 0px;
+    BORDER-RIGHT: 0px;
+    BORDER-TOP: 0px;
+    COLOR: Black ;
+    FONT-SIZE: 9pt;
+    FONT-STYLE: normal;
+    FONT-VARIANT: normal;
+    FONT-WEIGHT: normal;
+    LINE-HEIGHT: normal;
+    height:16px;
+    margin:0,0,0,0;
+    padding:0,0,0,0;
+    TEXT-ALIGN: right;
+    width:16px;
+    font-weight:bold;
+}
+.DPDayDes
+{
+    BACKGROUND-COLOR: transparent;
+    height:16px;
+    WIDTH: 1px
+}
+.DPSep
+{
+    BACKGROUND-COLOR: transparent;
+    height:16px;
+    WIDTH: 8px
+}
+
+

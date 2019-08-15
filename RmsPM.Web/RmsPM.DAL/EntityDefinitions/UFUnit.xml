@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>UFUnit</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>UFUnit</Name>
+		<Column>
+			<Name>UFUnitCode</Name>
+			<DataType>System.String</DataType>
+			<IsKey>true</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Column>
+			<Name>UFUnitName</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>true</IsAllowNull>
+			<ColumnSize>50</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>Select</Name>
+			<String> select  UFUnitCode, UFUnitName from UFUnit where  UFUnitCode=@UFUnitCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@UFUnitCode</Name>
+				<Column>UFUnitCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String> select  UFUnitCode, UFUnitName from UFUnit</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>Insert</Name>
+			<String> Insert into UFUnit (  UFUnitCode, UFUnitName ) values (  @UFUnitCode, @UFUnitName )</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@UFUnitCode</Name>
+				<Column>UFUnitCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@UFUnitName</Name>
+				<Column>UFUnitName</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Update</Name>
+			<String> Update UFUnit set UFUnitName=@UFUnitName where  UFUnitCode=@UFUnitCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@UFUnitCode</Name>
+				<Column>UFUnitCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@UFUnitName</Name>
+				<Column>UFUnitName</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Delete</Name>
+			<String> Delete from UFUnit  where  UFUnitCode=@UFUnitCode</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@UFUnitCode</Name>
+				<Column>UFUnitCode</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+	</Table>
+</Entity>

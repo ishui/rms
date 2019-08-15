@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<localization>
+	<string id="Add">添加上传</string>
+	<string id="Delete">删除选中</string>
+	<string id="Select">选择文件</string>
+	<string id="Remove">移除文件</string>
+	<string id="Clear">清除</string>
+</localization>

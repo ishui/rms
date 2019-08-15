@@ -1,0 +1,123 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
+using log4net;
+using log4net.Appender;
+using log4net.Repository;
+using log4net.Repository.Hierarchy;
+using log4net.Util;
+using log4net.Core;
+
+
+/// <summary>
+/// LogHelper 的摘要说明
+
+
+
+/// </summary>
+namespace RmsPM.Web
+{
+    public class LogHelper
+    {
+        static int style = 0;
+        public static readonly log4net.ILog loginfo = log4net.LogManager.GetLogger("loginfo");
+        public static readonly log4net.ILog logerror = log4net.LogManager.GetLogger("logerror");
+        public static readonly log4net.ILog logadoerror = log4net.LogManager.GetLogger("logAdoError");
+        public static readonly log4net.ILog logadoinfo = log4net.LogManager.GetLogger("logAdoInfo");
+       
+        private LogHelper()
+        {            
+        }
+        private static void SetStyle(string connectionstring)
+        {
+            switch (System.Configuration.ConfigurationSettings.AppSettings["Log4netDefaultStyle"])
+            {
+                case "text": 
+                    style = 1; 
+                   
+                    
+                    break;
+                case "database": 
+                    style = 2; 
+                    Logger L=logadoerror.Logger as Logger;
+                    log4net.Appender.AdoNetAppender adoappender= L.GetAppender("AdoNetAppender") as AdoNetAppender;
+                    if (adoappender != null)
+                    {
+                        adoappender.ConnectionString = connectionstring;
+                        adoappender.ActivateOptions();
+                    }         
+                    
+                    break;
+                default: style = 0; break;
+            }
+        }
+
+        
+        
+
+        public static void SetConfig(string connectionstring)
+        {
+            log4net.Config.DOMConfigurator.Configure();
+            SetStyle(connectionstring);
+            //log4net.Repository.Hierarchy.Hierarchy hier = log4net.LogManager.GetLoggerRepository() as log4net.Repository.Hierarchy;
+            //if(hier!=null)
+            //{
+             //   log4net.Appender.AdoNetAppender adoAppender=(log4net.Appender.AdoNetAppender)hier.GetLogger("AdoNetAppender").g
+            
+        //public log4net.Appender.AdoNetAppender 
+        }
+
+        public static void SetConfig(FileInfo configFile,string connectionstring)
+        {
+            log4net.Config.DOMConfigurator.Configure(configFile);
+            SetStyle(connectionstring);
+        }
+
+        public static void WriteLog(string info)
+        {
+            log4net.ILog log;
+            switch (style)
+            {
+                case 1:
+                    log=loginfo;                    
+                    break;
+                case 2:
+                    log = logadoinfo;
+                    break;
+                default: log = null; break;
+            }
+            if (style!=0&&log.IsInfoEnabled)
+                    {
+                        log.Info(info);
+                    }
+                   
+        }
+        public static void WriteLog(string info, Exception se)
+        {
+            log4net.ILog log;
+            switch (style)
+            {
+                case 1:
+                    log = logerror;
+                    break;
+                case 2:
+                    log = logadoerror;
+                    break;
+                default: log = null; break;
+            }
+            if (style!=0&&log.IsErrorEnabled)
+            {
+                log.Error(info, se);
+            }
+        }
+    }
+}

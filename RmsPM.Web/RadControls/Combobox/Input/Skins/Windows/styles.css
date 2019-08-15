@@ -1,0 +1,54 @@
+.Over_Windows
+{
+	width: 179px;
+	color: #242424;
+	font-family: Arial, Verdana, Tahoma, Sans-Serif;
+	font-size: 12px;
+	font-weight: normal;
+	background-color: #fafafa;
+}
+
+.Focus_Windows
+{
+	width: 179px;
+	color: #000000;
+	font-family: Arial, Verdana, Tahoma, Sans-Serif;
+	font-size: 12px;
+	font-weight: normal;
+	background-color: #f5f5f5;
+}
+
+.Default_Windows
+{
+	width: 179px;
+	font-family: Arial, Verdana, Tahoma, Sans-Serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #424242;
+}
+
+.Error_Windows
+{
+	width: 179px;
+	color: red;
+	font-family: Arial, Verdana, Tahoma, Sans-Serif;
+	font-size: 12px;
+	font-weight: normal;
+	background-color: #f5f5f5;
+}
+.Hint_Windows
+{
+	background-color: infobackground;
+	margin-top: 5px;
+	border: 1px solid black;
+	text-align: left;
+	overflow: auto;
+}
+
+.Hint_Windows a, Hint_Windows a:visited, .Hint_Windows a:hover
+{
+	margin: 2px;
+	color: black;
+	text-decoration: none;
+	font-size: small;
+}

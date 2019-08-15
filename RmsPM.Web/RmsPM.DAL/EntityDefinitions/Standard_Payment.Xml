@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>Standard_Payment</Name>
+	<Type>Standard</Type>
+	<Table>
+		<Name>Payment</Name>
+		<Type>Main</Type>
+	</Table>
+	<Table>
+		<Name>PaymentItem</Name>
+		<Type>Child</Type>
+		<ParentColumnName>PaymentCode</ParentColumnName>
+		<ChildColumnName>PaymentCode</ChildColumnName>
+	</Table>
+	<Table>
+		<Name>PaymentItemBuilding</Name>
+		<Type>Child</Type>
+		<ParentColumnName>PaymentCode</ParentColumnName>
+		<ChildColumnName>PaymentCode</ChildColumnName>
+	</Table>
+</Entity>

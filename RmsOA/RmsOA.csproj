@@ -1,0 +1,1069 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C2CAE5AD-C022-4D33-AD63-81756F7F8B4D}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>RmsOA</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Rms.ORMap, Version=1.0.2574.19512, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Rms.ORMap\bin\Debug\Rms.ORMap.dll</HintPath>
+    </Reference>
+    <Reference Include="RmsPM.BLL, Version=1.0.2629.27779, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RmsPM.BLL\bin\Debug\RmsPM.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="RmsPM.DAL, Version=1.0.2629.27769, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RmsPM.DAL\bin\Debug\RmsPM.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.Xml</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\AssetModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\AssetViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\AuditTimeType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\CachetManageBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\CachetTypeManageBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\CheckTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\CheckTimeType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\ConferenceManageBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\ConferenceUserListBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\ConferenceUserListBFLFacade.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\Describe.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\DesktopType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\DeskTopTypeBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\EmployViewModel.cs" />
+    <Compile Include="RmsOA\BFL\EnumFiledDescribeAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\FileHelpMethod.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\FileStreamOP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\FunctionRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OAPersonPolityBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OAPersonWorkBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_ArchivesCopyBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_AssetTransferBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_CapitalAssertAcountBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_CarBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_CardsFolderBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_CarMaintenanceBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_ChangeStationBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_ChangeStationNoticeBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_ComBookBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_EquipmentMaintainApplyBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_EvectionApplyBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_FileChangeBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_GoodsBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_InFileAuditingMainBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_InFileRegisterBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_InFileRegisterMainBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_MakeMarksBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_ManpowerNeedBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_MaterialTransferBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_MeetSummaryBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_OfficialSealOutBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_OfficialSealRegiesterBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_OilBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_OutFileRegiesterBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_OutFileSignBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_SubmitAccountDtlBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_SubmitAccountMainBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_WorkEvaluationBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\GK_OA_WorkLogBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\LastMonthCheck.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\LoadType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\MeetRoomBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\MeetRoomBOX.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\MeetStateType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\MeetUserType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\OAPersonBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\OAPersonContractBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\OAPersonHomeBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\OAPersonRewardBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\OAPersonStudyBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\OAPersonTrainBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\OperateRightType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\OperRightCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\RoomModelQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\RS_EmployScore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\RS_EmployScoreBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\RS_ScoreExtend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\RS_ScoreManageBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\ScoreRight.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\ScoreType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\SearchType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\ThisMonthCheck.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\TimeExtend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\TY_OA_MgrTaskBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\TY_OA_MgrTaskDtlBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\UnitHelp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\UserHelpGroupBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\UserHelpSelcect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\UserHelpSelcectModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\UserHelpUserBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\WeekDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\WorkFlowStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\WrongModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\YDictionaryExpand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\YF_AssetDrawBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\YF_AssetDrawRight.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\YF_AssetFacade.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\YF_AssetMainApplyBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\YF_AssetMainApplyRight.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\YF_AssetMainRecordBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\YF_AssetMainRecordRight.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\YF_AssetManageBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\YF_AssetRight.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\YF_AssetTransferBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\YF_AssetTransRight.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\YF_UseCarFlowBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BFL\ZC_AssertExtend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\CachetManageBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\CachetTypeManageBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\ConferenceManageBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\ConferenceUserListBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\DeskTopTypeBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OAPersonPolityBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OAPersonWorkBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_ArchivesCopyBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_AssetTransferBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_CapitalAssertAcountBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_CarBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_CardsFolderBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_CarMaintenanceBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_ChangeStationBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_ChangeStationNoticeBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_ComBookBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_EquipmentMaintainApplyBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_EvectionApplyBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_FileChangeBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_GoodsBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_InFileAuditingMainBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_InFileRegisterBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_InFileRegisterMainBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_MakeMarksBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_ManpowerNeedBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_MaterialTransferBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_MeetSummaryBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_OfficialSealOutBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_OfficialSealRegiesterBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_OilBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_OutFileRegiesterBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_OutFileSignBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_SubmitAccountDtlBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_SubmitAccountMainBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_WorkEvaluationBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\GK_OA_WorkLogBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\MeetRoomBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\OAPersonBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\OAPersonContractBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\OAPersonHomeBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\OAPersonRewardBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\OAPersonStudyBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\OAPersonTrainBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\RS_EmployScoreBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\RS_ScoreManageBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\TY_OA_MgrTaskBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\TY_OA_MgrTaskDtlBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\UserHelpGroupBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\UserHelpUserBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\YF_AssetDrawBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\YF_AssetMainApplyBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\YF_AssetMainRecordBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\YF_AssetManageBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\YF_AssetTransferBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\BLL\YF_UseCarFlowBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\CachetManageDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\CachetTypeManageDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\ConferenceManageDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\ConferenceUserListDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\DeskTopTypeDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OAPersonPolityDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OAPersonWorkDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_ArchivesCopyDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_AssetTransferDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_CapitalAssertAcountDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_CarDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_CardsFolderDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_CarMaintenanceDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_ChangeStationDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_ChangeStationNoticeDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_ComBookDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_EquipmentMaintainApplyDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_EvectionApplyDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_FileChangeDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_GoodsDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_InFileAuditingMainDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_InFileRegisterDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_InFileRegisterMainDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_MakeMarksDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_ManpowerNeedDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_MaterialTransferDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_MeetSummaryDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_OfficialSealOutDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_OfficialSealRegiesterDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_OilDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_OutFileRegiesterDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_OutFileSignDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_SubmitAccountDtlDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_SubmitAccountMainDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_WorkEvaluationDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\GK_OA_WorkLogDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\MeetRoomDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\OAPersonContractDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\OAPersonDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\OAPersonHomeDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\OAPersonRewardDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\OAPersonStudyDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\OAPersonTrainDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\RS_EmployScoreDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\RS_ScoreExpandDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\RS_ScoreManageDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\SqlDataProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\TY_OA_MgrTaskDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\TY_OA_MgrTaskDtlDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\UserHelpGroupDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\UserHelpUserDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\YF_AssetDrawDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\YF_AssetMainApplyDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\YF_AssetMainRecordDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\YF_AssetManageDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\YF_AssetTransferDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\DAL\YF_UseCarFlowDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\CachetManageModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\CachetManageQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\CachetTypeManageModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\CachetTypeManageQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\ConferenceManageModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\ConferenceManageQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\ConferenceUserListModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\ConferenceUserListQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\DeptSupplyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\DeskTopTypeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\DeskTopTypeQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\EmployScoreMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OAPersonPolityModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OAPersonPolityQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OAPersonWorkModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OAPersonWorkQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_ArchivesCopyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_ArchivesCopyQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_AssetTransferModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_AssetTransferQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_CapitalAssertAcountModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_CapitalAssertAcountQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_CardsFolderModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_CardsFolderQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_CarMaintenanceModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_CarMaintenanceQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_CarModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_CarQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_ChangeStationModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_ChangeStationNoticeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_ChangeStationNoticeQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_ChangeStationQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_ComBookModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_ComBookQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_EquipmentMaintainApplyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_EquipmentMaintainApplyQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_EvectionApplyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_EvectionApplyQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_FileChangeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_FileChangeQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_GoodsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_GoodsQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_InFileAuditingMainModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_InFileAuditingMainQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_InFileRegisterMainModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_InFileRegisterMainQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_InFileRegisterModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_InFileRegisterQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_MakeMarksModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_MakeMarksQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_ManpowerNeedModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_ManpowerNeedQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_MaterialTransferModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_MaterialTransferQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_MeetSummaryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_MeetSummaryQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_OfficialSealOutModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_OfficialSealOutQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_OfficialSealRegiesterModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_OfficialSealRegiesterQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_OilModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_OilQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_OutFileRegiesterModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_OutFileRegiesterQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_OutFileSignModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_OutFileSignQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_SubmitAccountDtlModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_SubmitAccountDtlQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_SubmitAccountMainModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_SubmitAccountMainQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_WorkEvaluationModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_WorkEvaluationQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_WorkLogModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\GK_OA_WorkLogQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\MeetRoomModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\MeetRoomQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\OAPersonContractModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\OAPersonContractQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\OAPersonHomeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\OAPersonHomeQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\OAPersonModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\OAPersonQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\OAPersonRewardModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\OAPersonRewardQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\OAPersonStudyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\OAPersonStudyQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\OAPersonTrainModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\OAPersonTrainQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\QueryBaseModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\RS_EmployScoreModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\RS_EmployScoreQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\RS_ScoreManageModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\RS_ScoreManageQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\TY_OA_MgrTaskDtlModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\TY_OA_MgrTaskDtlQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\TY_OA_MgrTaskModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\TY_OA_MgrTaskQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\UnitModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\UnitModelExpand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\UnitScoreModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\UserHelpGroupModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\UserHelpGroupQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\UserHelpUserModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\UserHelpUserQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\UserModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\YF_AssetDrawModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\YF_AssetDrawQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\YF_AssetMainApplyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\YF_AssetMainApplyQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\YF_AssetMainRecordModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\YF_AssetMainRecordQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\YF_AssetManageModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\YF_AssetManageQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\YF_AssetTransferModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\YF_AssetTransferQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\YF_UseCarFlowModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsOA\MODEL\YF_UseCarFlowQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

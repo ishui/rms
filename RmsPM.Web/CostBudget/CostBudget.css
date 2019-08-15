@@ -1,0 +1,60 @@
+.cont
+{
+	color:#0000FF;
+	white-space:nowrap;
+}
+
+.cont-r
+{
+	color:#0000FF;
+	text-align: right;
+	white-space:nowrap;
+}
+
+.bal
+{
+	color:#FF0000;
+	white-space:nowrap;
+}
+
+.bal-r
+{
+	color:#FF0000;
+	text-align: right;
+	white-space:nowrap;
+}
+
+.cbs
+{
+	white-space:nowrap;
+}
+
+.cbs-r
+{
+	text-align: right;
+	white-space:nowrap;
+}
+
+.list-highlight {
+	background-color: #FFFF89;
+}
+
+.tree-tr-highlight {/*sign highlight*/
+	border-bottom: 1px solid #EDEDED;
+	border-left: 1px solid #EAEFF4;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 24px;
+	background-color: #FFFF89;
+	border-collapse:collapse;
+}
+
+.imgTn
+{
+	cursor:hand;
+}
+
+.spanTn
+{
+	width:15px;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>Standard_Role</Name>
+	<Type>Standard</Type>
+	<Table>
+		<Name>Role</Name>
+		<Type>Main</Type>
+	</Table>
+	<Table>
+		<Name>RoleOperation</Name>
+		<Type>Child</Type>
+		<ParentColumnName>RoleCode</ParentColumnName>
+		<ChildColumnName>RoleCode</ChildColumnName>
+	</Table>
+</Entity>

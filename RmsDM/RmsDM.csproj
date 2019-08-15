@@ -1,0 +1,183 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5F7B5466-2CF2-4458-983E-3F3E75C5A336}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>RmsDM</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.Xml</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\BFL\DocumentDirectoryBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\BFL\DocumentFileBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\BFL\FileTemplateBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\BFL\FileTemplateTypeBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\BFL\FileTemplateVersionBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\BFL\FunctionRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\BFL\WorkFlowProcedureBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\BLL\DocumentDirectoryBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\BLL\DocumentFileBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\BLL\FileTemplateBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\BLL\FileTemplateTypeBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\BLL\FileTemplateVersionBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\BLL\WorkFlowProcedureBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\DAL\DocumentDirectoryDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\DAL\DocumentFileDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\DAL\FileTemplateDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\DAL\FileTemplateTypeDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\DAL\FileTemplateVersionDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\DAL\HandMadeDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\DAL\SqlDataProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\DAL\WorkFlowProcedureDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\MODEL\DocumentDirectoryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\MODEL\DocumentDirectoryQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\MODEL\DocumentFileModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\MODEL\DocumentFileQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\MODEL\FileTemplateModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\MODEL\FileTemplateQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\MODEL\FileTemplateTypeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\MODEL\FileTemplateTypeQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\MODEL\FileTemplateVersionModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\MODEL\FileTemplateVersionQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\MODEL\QueryBaseModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\MODEL\WorkFlowProcedureModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsDM\MODEL\WorkFlowProcedureQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

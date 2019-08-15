@@ -1,0 +1,91 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <ExchangeRateCode>100006</ExchangeRateCode>
+    <MoneyType>美元 (USD)</MoneyType>
+    <CashBuy>799.000000000</CashBuy>
+    <CashSell>808.000000000</CashSell>
+    <RemittanceBuy>805.000000000</RemittanceBuy>
+    <RemittanceSell>808.000000000</RemittanceSell>
+    <RemittanceAverage>8.070000000</RemittanceAverage>
+    <CreateDate>2006-01-17T00:00:00+08:00</CreateDate>
+    <Status>0</Status>
+  </Table>
+  <Table>
+    <ExchangeRateCode>100007</ExchangeRateCode>
+    <MoneyType>港币 (HKD)</MoneyType>
+    <CashBuy>103.000000000</CashBuy>
+    <CashSell>104.000000000</CashSell>
+    <RemittanceBuy>104.000000000</RemittanceBuy>
+    <RemittanceSell>104.000000000</RemittanceSell>
+    <RemittanceAverage>1.040000000</RemittanceAverage>
+    <CreateDate>2006-01-17T00:00:00+08:00</CreateDate>
+    <Status>0</Status>
+  </Table>
+  <Table>
+    <ExchangeRateCode>100008</ExchangeRateCode>
+    <MoneyType>欧元 (EUR)</MoneyType>
+    <CashBuy>739.000000000</CashBuy>
+    <CashSell>778.000000000</CashSell>
+    <RemittanceBuy>771.000000000</RemittanceBuy>
+    <RemittanceSell>778.000000000</RemittanceSell>
+    <RemittanceAverage>7.750000000</RemittanceAverage>
+    <CreateDate>2006-01-17T00:00:00+08:00</CreateDate>
+    <Status>0</Status>
+  </Table>
+  <Table>
+    <ExchangeRateCode>100009</ExchangeRateCode>
+    <MoneyType>英镑 (GBP)</MoneyType>
+    <CashBuy>1372.000000000</CashBuy>
+    <CashSell>1429.000000000</CashSell>
+    <RemittanceBuy>1417.000000000</RemittanceBuy>
+    <RemittanceSell>1429.000000000</RemittanceSell>
+    <RemittanceAverage>14.230000000</RemittanceAverage>
+    <CreateDate>2006-01-17T00:00:00+08:00</CreateDate>
+    <Status>0</Status>
+  </Table>
+  <Table>
+    <ExchangeRateCode>100010</ExchangeRateCode>
+    <MoneyType>美元 (USD)</MoneyType>
+    <CashBuy>800.000000000</CashBuy>
+    <CashSell>800.000000000</CashSell>
+    <RemittanceBuy>800.000000000</RemittanceBuy>
+    <RemittanceSell>800.000000000</RemittanceSell>
+    <RemittanceAverage>8.000000000</RemittanceAverage>
+    <CreateDate>2006-08-25T00:00:00+08:00</CreateDate>
+    <Status>0</Status>
+  </Table>
+  <Table>
+    <ExchangeRateCode>100011</ExchangeRateCode>
+    <MoneyType>美元 (USD)</MoneyType>
+    <CashBuy>789.180000000</CashBuy>
+    <CashSell>798.740000000</CashSell>
+    <RemittanceBuy>795.560000000</RemittanceBuy>
+    <RemittanceSell>798.740000000</RemittanceSell>
+    <RemittanceAverage>7.971500000</RemittanceAverage>
+    <CreateDate>2006-08-25T00:00:00+08:00</CreateDate>
+    <Status>0</Status>
+  </Table>
+  <Table>
+    <ExchangeRateCode>100181</ExchangeRateCode>
+    <MoneyType>美元 (USD)</MoneyType>
+    <CashBuy>120.444440000</CashBuy>
+    <CashSell>100.444440000</CashSell>
+    <RemittanceBuy>100.444440000</RemittanceBuy>
+    <RemittanceSell>100.444440000</RemittanceSell>
+    <RemittanceAverage>1.004444400</RemittanceAverage>
+    <CreateDate>2006-10-10T00:00:00+08:00</CreateDate>
+    <Status>0</Status>
+  </Table>
+  <Table>
+    <ExchangeRateCode>E100000</ExchangeRateCode>
+    <MoneyType>人民币 (RMB)</MoneyType>
+    <CashBuy>100.000000000</CashBuy>
+    <CashSell>100.000000000</CashSell>
+    <RemittanceBuy>100.000000000</RemittanceBuy>
+    <RemittanceSell>100.000000000</RemittanceSell>
+    <RemittanceAverage>1.000000000</RemittanceAverage>
+    <CreateDate>1905-06-28T00:00:00+08:00</CreateDate>
+    <Status>1</Status>
+  </Table>
+</NewDataSet>

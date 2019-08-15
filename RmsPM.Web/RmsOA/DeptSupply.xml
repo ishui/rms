@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Depts>
+  <Dept>
+    <DeptName>销售分公司</DeptName>
+    <DeptCode>100008</DeptCode>
+    <Supply>
+      <Name>经营指标</Name>
+      <Name>管理指标</Name>
+    </Supply>
+  </Dept>
+</Depts>

@@ -1,0 +1,14 @@
+G:\源代码\工程项目管理系统源码\Rms.LogHelper\bin\Debug\Rms.LogHelper.dll
+G:\源代码\工程项目管理系统源码\Rms.LogHelper\bin\Debug\Rms.LogHelper.pdb
+G:\源代码\工程项目管理系统源码\Rms.LogHelper\obj\Debug\Rms.LogHelper.csprojAssemblyReference.cache
+G:\源代码\工程项目管理系统源码\Rms.LogHelper\obj\Debug\Rms.LogHelper.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码\Rms.LogHelper\obj\Debug\Rms.LogHelper.csproj.CopyComplete
+G:\源代码\工程项目管理系统源码\Rms.LogHelper\obj\Debug\Rms.LogHelper.dll
+G:\源代码\工程项目管理系统源码\Rms.LogHelper\obj\Debug\Rms.LogHelper.pdb
+G:\源代码\工程项目管理系统源码_20190605\Rms.LogHelper\bin\Debug\Rms.LogHelper.dll
+G:\源代码\工程项目管理系统源码_20190605\Rms.LogHelper\bin\Debug\Rms.LogHelper.pdb
+G:\源代码\工程项目管理系统源码_20190605\Rms.LogHelper\obj\Debug\Rms.LogHelper.csprojAssemblyReference.cache
+G:\源代码\工程项目管理系统源码_20190605\Rms.LogHelper\obj\Debug\Rms.LogHelper.csproj.CoreCompileInputs.cache
+G:\源代码\工程项目管理系统源码_20190605\Rms.LogHelper\obj\Debug\Rms.LogHelper.csproj.CopyComplete
+G:\源代码\工程项目管理系统源码_20190605\Rms.LogHelper\obj\Debug\Rms.LogHelper.dll
+G:\源代码\工程项目管理系统源码_20190605\Rms.LogHelper\obj\Debug\Rms.LogHelper.pdb

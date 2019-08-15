@@ -1,0 +1,2342 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.WorkFlow</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.WorkFlow.Act">
+            <summary>
+            流程行动
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.Act.GetActUser(System.String)">
+            <summary>
+            获取动作的执行者
+
+            </summary>
+            <param name="ActUserCode">编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Act.AddNewActUser(Rms.WorkFlow.ActUser)">
+            <summary>
+            添加动作执行者
+
+            </summary>
+            <param name="actUser"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Act.RemoveActUser(System.String,System.Boolean)">
+            <summary>
+            移除动作执行者
+
+            </summary>
+            <param name="actUserCode"></param>
+            <param name="isMarkDelete"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Act.GetActUserEnumerator">
+            <summary>
+            获取动作执行者的枚举对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Act.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.IsNew">
+            <summary>
+            新对象
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.IsMarkDelete">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.ActCode">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.CaseCode">
+            <summary>
+            流程实例编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.ProjectCode">
+            <summary>
+            项目编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.ProcedureCode">
+            <summary>
+            流程定义编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.ProcedureName">
+            <summary>
+            流程定义名称
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.ActUnitCode">
+            <summary>
+            该动作的单位
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.ActUserCode">
+            <summary>
+            该动作的执行者
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.FromTaskCode">
+            <summary>
+            动作来源节点
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.FromTaskName">
+            <summary>
+            动作来源节点名称
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.FromDate">
+            <summary>
+            动作开始日期
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.FromUserCode">
+            <summary>
+            动作来源用户编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.FromUnitCode">
+            <summary>
+            动作来源单位编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.ToTaskCode">
+            <summary>
+            目标任务编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.ToTaskName">
+            <summary>
+            目标任务名称
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.Status">
+            <summary>
+            动作状态
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.SignDate">
+            <summary>
+            签收日期
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.FinishDate">
+            <summary>
+            结束日期
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.ActType">
+            <summary>
+            动作类型,暂时没有用
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.IsSleep">
+            <summary>
+            是否暂停
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.PlanDate">
+            <summary>
+            计划完成时间
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.ApplicationCode">
+            <summary>
+            应用表单编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.ApplicationSubject">
+            <summary>
+            暂时没用
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.RouterCode">
+            <summary>
+            该动作得流程编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.TaskActorID">
+            <summary>
+            会签时不同的会签者的会签ID
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.TaskActorName">
+            <summary>
+            会签时不同的会签者的会签名称
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.CopyFromActCode">
+            <summary>
+            会签时不同的会签者的会签名称
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Act.Copy">
+            <summary>
+            是否为抄送
+
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.Actor">
+            <summary>
+            人员、角色、岗位； 可以作为流程执行人的对象。
+
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.Actor.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Actor.ActorCode">
+            <summary>
+            执行者编号
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Actor.ActorType">
+            <summary>
+            执行者类型
+
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.ActUser">
+            <summary>
+            执行流程某行动的候选人
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.ActUser.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.ActUser.IsNew">
+            <summary>
+            新对象
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.ActUser.IsMarkDelete">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.ActUser.ActUserCode">
+            <summary>
+            动作执行者
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.ActUser.CaseCode">
+            <summary>
+            流程实例编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.ActUser.ActCode">
+            <summary>
+            流程动作编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.ActUser.UserCode">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.CaseProperty">
+            <summary>
+            流程实体控制属性类
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.CaseProperty._WorkFlowCasePropertyCode">
+            <summary>
+            流程控制属性代码
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.CaseProperty._CaseCode">
+            <summary>
+            流程控制属性所属工作流实体代码
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.CaseProperty._ProcedurePropertyCode">
+            <summary>
+            流程控制属性代码
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.CaseProperty._ProcedurePropertyValue">
+            <summary>
+            流程控制属性值
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.CaseProperty._Remak">
+            <summary>
+            流程实体控制属性备注
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.CaseProperty._Propertys">
+            <summary>
+            数据存储哈希表
+
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.CaseProperty.AddNewCaseProperty(Rms.WorkFlow.CaseProperty)">
+            <summary>
+            增加流程实体控制属性
+
+            </summary>
+            <param name="CaseCaseProperty">创建的流程属性控制类</param>
+        </member>
+        <member name="M:Rms.WorkFlow.CaseProperty.GetCasePropertyEnumerator(System.String)">
+            <summary>
+            返回属于某个工作流的控制属性枚举
+
+            </summary>
+            <param name="ProcedureCode">工作流代码</param>
+            <returns>流程控制属性枚举</returns>
+        </member>
+        <member name="M:Rms.WorkFlow.CaseProperty.GetCaseProperty(System.String)">
+            <summary>
+            返回某个流程控制属性
+
+            </summary>
+            <param name="WorkFlowCasePropertyCode">流程控制属性代码</param>
+            <returns>流程控制属性</returns>
+        </member>
+        <member name="M:Rms.WorkFlow.CaseProperty.RemoveCaseProperty(System.String)">
+            <summary>
+            移出流程控制属性
+
+            </summary>
+            <param name="WorkFlowCasePropertyCode">流程控制属性代码</param>
+        </member>
+        <member name="M:Rms.WorkFlow.CaseProperty.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.CaseProperty.IsNew">
+            <summary>
+            新对象
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.CaseProperty.IsMarkDelete">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.CaseProperty.WorkFlowCasePropertyCode">
+            <summary>
+            流程控制属性代码
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.CaseProperty.CaseCode">
+            <summary>
+            流程控制属性所属工作流实体代码
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.CaseProperty.ProcedurePropertyCode">
+            <summary>
+            流程控制属性代码
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.CaseProperty.ProcedurePropertyValue">
+            <summary>
+            流程控制属性值
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.CaseProperty.Remak">
+            <summary>
+            流程实体控制属性备注
+
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.Condition">
+            <summary>
+            流程定义：流向执行的条件
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.Condition.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Condition.IsNew">
+            <summary>
+            新对象
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Condition.IsMarkDelete">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Condition.ConditionCode">
+            <summary>
+            条件编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Condition.RouterCode">
+            <summary>
+            路由编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Condition.ProcedureCode">
+            <summary>
+            流程定义编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Condition.ConditionType">
+            <summary>
+            条件类型
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Condition.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.DataPackage">
+            <summary>
+            流程实例中夹带的数据包
+
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.DataPackage.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.DataPackage.IsNew">
+            <summary>
+            新对象
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.DataPackage.IsMarkDelete">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.DataPackage.DataPackageCode">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.DataPackage.ProcedureCode">
+            <summary>
+            流程定义编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.DataPackage.CaseCode">
+            <summary>
+            流程实例编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.DataPackage.ActCode">
+            <summary>
+            动作编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.DataPackage.DataKey">
+            <summary>
+            数据的关键字
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.DataPackage.DataValue">
+            <summary>
+            数据值
+
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.DefinitionManager">
+            <summary>
+            流程定义管理器
+
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.GetTaskRouter(Rms.WorkFlow.Procedure,System.String)">
+            <summary> 
+            获取某个任务的可能路由
+
+            </summary>
+            <param name="procedure">流程定义</param>
+            <param name="taskCode">任务编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.GetEndTask(Rms.WorkFlow.Procedure)">
+            <summary>
+            获取流程定义中 End 任务
+            </summary>
+            <param name="procedure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.GetFirstTask(Rms.WorkFlow.Procedure)">
+            <summary>
+            在流程定义中Begin 后的任务
+            </summary>
+            <param name="procedure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.GetBeginTask(Rms.WorkFlow.Procedure)">
+            <summary>
+            流程定义中的 Begin 任务
+            </summary>
+            <param name="procedure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.NewProcedure">
+            <summary>
+            新流程定义
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.NewTask">
+            <summary>
+            新Task
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.NewRouter">
+            <summary>
+            新路由
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.NewRole">
+            <summary>
+            新角色
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.NewRoleComprise">
+            <summary>
+            新角色成员
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.NewProperty">
+            <summary>
+            新属性
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.NewTaskActor">
+            <summary>
+            新任务参与者列表
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.NewCondition">
+            <summary>
+            条件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.CheckProcedureDinition(Rms.WorkFlow.Procedure,System.String@)">
+            <summary>
+            对流程定义做检查（未完成）
+            </summary>
+            <param name="procedure"></param>
+            <param name="Message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.GetProcedureDifinition(System.String,System.Boolean)">
+            <summary>
+            获取流程定义
+            </summary>
+            <param name="procedureCode"></param>
+            <param name="isStock">是否从持久对象中获取</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.SaveProcedureDifinition(Rms.WorkFlow.Procedure)">
+            <summary>
+            保存流程定义，保存到数据接口，同时在缓存中更新流程定义
+
+            </summary>
+            <param name="procedure"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.SaveAsProcedureDifinition(Rms.WorkFlow.Procedure)">
+            <summary>
+            另存流程定义，保存到数据接口，同时在缓存中更新流程定义
+
+            </summary>
+            <param name="procedure"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.RemoveProcedureDefinition(System.String)">
+            <summary>
+            在缓冲中移除流程定义
+            </summary>
+            <param name="procedureCode"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.GetTaskTypeName(System.Object)">
+            <summary>
+            任务类型名称－－－任务类型
+
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.GerProcedureName(System.String)">
+            <summary>
+            获取流程定义的名称
+
+            </summary>
+            <param name="procedureCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.GetTaskName(Rms.WorkFlow.Procedure,System.String)">
+            <summary>
+            取流程定义中任务名称
+            </summary>
+            <param name="procedure"></param>
+            <param name="taskCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.SaveProcedureDefinitionData(Rms.WorkFlow.Procedure)">
+            <summary>
+            保存流程定义到DataSet中，以DataSet作为接口传递的方式。
+
+            </summary>
+            <param name="procedure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.SaveAsProcedureDefinitionData(Rms.WorkFlow.Procedure,System.String)">
+            <summary>
+            另存流程定义到DataSet中，以DataSet作为接口传递的方式。
+
+            </summary>
+            <param name="procedure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.DeleteAllTableRow(System.Data.DataTable)">
+            <summary>
+            清楚数据表中所以行
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.DefinitionManager.LoadProcedureDefinition(System.String)">
+            <summary>
+            从DataSe数据表中读出数据 
+            </summary>
+            <param name="procedureCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.WorkFlow.IActorIO">
+            <summary>
+            参与人员的IO
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.IActorIO.InputActor">
+            <summary>
+            输入定义
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.IActorIO.OutputActor(Rms.WorkFlow.Actor)">
+            <summary>
+            输出定义
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.IDefinition">
+            <summary>
+            流程定义的IO
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.IDefinition.InputDefinition(System.String)">
+            <summary>
+            输入定义
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.IDefinition.OutputDefinition(System.Data.DataSet,System.String)">
+            <summary>
+            输出定义
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.InterfaceManager">
+            <summary>
+            接口管理七
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.InterfaceManager.iActorIO">
+            <summary>
+            参与者IO操作接口
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.InterfaceManager.iDefinition">
+            <summary>
+            流程定义的IO操作接口
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.InterfaceManager.iWorkCase">
+            <summary>
+            流程的IO操作接口
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.InterfaceManager.iSystemCode">
+            <summary>
+            系统编号产生的IO
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.ISystemCode">
+            <summary>
+            系统编号接口
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.ISystemCode.GetNewSysetmCode(System.String)">
+            <summary>
+            获得系统编号的接口
+
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.IWorkCase">
+            <summary>
+            流程输入输出接口。
+
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.IWorkCase.InputWorkCase(System.String)">
+            <summary>
+            输入流程
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.IWorkCase.OutputWorkCase(System.Data.DataSet,System.String)">
+            <summary>
+            输出流程
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.Opinion">
+            <summary>
+            流程意见
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.Opinion.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.IsNew">
+            <summary>
+            新对象
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.IsMarkDelete">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.OpinionCode">
+            <summary>
+            意见编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.ApplicationCode">
+            <summary>
+            应用表单编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.ProcedureCode">
+            <summary>
+            流程定义编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.CaseCode">
+            <summary>
+            流程实例编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.OpinionType">
+            <summary>
+            意见类型
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.UserCode">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.OpinionText">
+            <summary>
+            意见正文
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.OpinionDate">
+            <summary>
+            填写意见的时间
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.TaskID">
+            <summary>
+            任务ID
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.TaskCode">
+            <summary>
+            任务编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.TaskActorName">
+            <summary>
+            会签时执行人的会签名称
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Opinion.TaskActorID">
+            <summary>
+            会签时执行人的会签ID
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.Procedure">
+            <summary>
+            流程定义
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Procedure.m_Tasks">
+            <summary>
+            Task的集合
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Procedure.m_Routers">
+            <summary>
+            路由的集合
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Procedure.m_Roles">
+            <summary>
+            角色集合
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Procedure.m_Propertys">
+            <summary>
+            属性集合
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Procedure.m_DataPackages">
+            <summary>
+            数据包的集合
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.GetTask(System.String)">
+            <summary>
+            获取Task
+            </summary>
+            <param name="taskCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.AddNewTask(Rms.WorkFlow.Task)">
+            <summary>
+            增加新Task
+            </summary>
+            <param name="task"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.RemoveTask(System.String,System.Boolean)">
+            <summary>
+            移除Task
+            </summary>
+            <param name="taskCode"></param>
+            <param name="isMarkDelete"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.GetTaskEnumerator">
+            <summary>
+            获取Task的枚举对象
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.GetRouter(System.String)">
+            <summary>
+            获取路由
+            </summary>
+            <param name="routerCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.AddNewRouter(Rms.WorkFlow.Router)">
+            <summary>
+            添加新路由
+
+            </summary>
+            <param name="router"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.RemoveRouter(System.String,System.Boolean)">
+            <summary>
+            移除路由
+            </summary>
+            <param name="routerCode"></param>
+            <param name="isMarkDelete"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.GetRouterEnumerator">
+            <summary>
+            获取路由的枚举对象
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.GetRole(System.String)">
+            <summary>
+            获取角色
+            </summary>
+            <param name="RoleCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.AddNewRole(Rms.WorkFlow.Role)">
+            <summary>
+            添加新角色
+
+            </summary>
+            <param name="RoleCase"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.RemoveRole(System.String)">
+            <summary>
+            移除角色
+            </summary>
+            <param name="RoleCode"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.GetRoleEnumerator">
+            <summary>
+            返回工作流角色枚举
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.GetProperty(System.String)">
+            <summary>
+            获取属性
+
+            </summary>
+            <param name="PropertyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.AddNewProperty(Rms.WorkFlow.Property)">
+            <summary>
+            添加新属性
+
+            </summary>
+            <param name="PropertyCase"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.RemoveProperty(System.String)">
+            <summary>
+            移除属性
+
+            </summary>
+            <param name="PropertyCode"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.GetPropertyEnumerator">
+            <summary>
+            返回工作流属性枚举
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Procedure.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.IsNew">
+            <summary>
+            新对象
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.IsMarkDelete">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.ProcedureCode">
+            <summary>
+            流程定义编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.ProcedureName">
+            <summary>
+            流程定义名称
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.ApplicationPath">
+            <summary>
+            应用表单的编辑路径
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.ApplicationInfoPath">
+            <summary>
+            应用表单的信息页面路径
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.SysType">
+            <summary>
+            系统类别
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.Remark">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.VersionNumber">
+            <summary>
+            版本号
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.ProjectCode">
+            <summary>
+            项目代码
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.CreateUser">
+            <summary>
+            创建人
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.ModifyUser">
+            <summary>
+            修改人
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.ModifyDate">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.Activity">
+            <summary>
+            活动标识
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.VersionDescription">
+            <summary>
+            版本说明
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Procedure.ProcedureRemark">
+            <summary>
+            流程说明
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.Property">
+            <summary>
+            流程控制属性类
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Property._WorkFlowProcedurePropertyCode">
+            <summary>
+            流程控制属性代码
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Property._ProcedureCode">
+            <summary>
+            所属流程代码
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Property._ProcedurePropertyName">
+            <summary>
+            流程属性名称
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Property._ProcedurePropertyType">
+            <summary>
+            流程属性类型
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Property._Remak">
+            <summary>
+            流程属性备注
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Property._Propertys">
+            <summary>
+            流程属性存储哈希表
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.Property.AddNewProperty(Rms.WorkFlow.Property)">
+            <summary>
+            增加流程属性
+
+            </summary>
+            <param name="PropertyCase"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Property.GetPropertyEnumerator(System.String)">
+            <summary>
+            返回流程属性枚举
+
+            </summary>
+            <param name="ProcedureCode">工作流代码</param>
+            <returns>流程属性枚举</returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Property.GetProperty(System.String)">
+            <summary>
+            返回某个工作流属性
+
+            </summary>
+            <param name="WorkFlowProcedurePropertyCode">工作流属性代码</param>
+            <returns>工作流控制属性</returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Property.RemoveProperty(System.String)">
+            <summary>
+            移出工作流属性
+
+            </summary>
+            <param name="WorkFlowProcedurePropertyCode">工作流属性代码</param>
+        </member>
+        <member name="M:Rms.WorkFlow.Property.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Property.WorkFlowProcedurePropertyCode">
+            <summary>
+            流程控制属性代码
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Property.ProcedureCode">
+            <summary>
+            所属工作流代码
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Property.ProcedurePropertyName">
+            <summary>
+            流程控制属性名称
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Property.ProcedurePropertyType">
+            <summary>
+            流程控制属性类型
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Property.Remak">
+            <summary>
+            流程控制属性备注
+
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.Role">
+            <summary>
+            流程角色类
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Role._WorkFlowRoleCode">
+            <summary>
+            流程角色代码
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Role._RoleName">
+            <summary>
+            角色名称
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Role._RoleType">
+            <summary>
+            角色类型
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Role._ProcedureCode">
+            <summary>
+            所属流程代码
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Role._IsAllUser">
+            <summary>
+            是否为所有用户
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Role._Remak">
+            <summary>
+            角色备注
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Role._Roles">
+            <summary>
+            角色存储哈希表
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Role._RoleComprises">
+            <summary>
+            角色组成存储哈希表
+
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.Role.AddNewRole(Rms.WorkFlow.Role)">
+            <summary>
+            增加流程角色
+            </summary>
+            <param name="RoleCase">流程角色</param>
+        </member>
+        <member name="M:Rms.WorkFlow.Role.GetRoleEnumerator(System.String)">
+            <summary>
+            返回工作流角色
+
+            </summary>
+            <param name="ProcedureCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Role.GetRole(System.String)">
+            <summary>
+            返回工作流角色
+
+            </summary>
+            <param name="WorkFlowRoleCode">工作流角色代码</param>
+            <returns>工作流角色</returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Role.RemoveRole(System.String)">
+            <summary>
+            移出工作流角色
+
+            </summary>
+            <param name="WorkFlowRoleCode">工作流角色代码</param>
+        </member>
+        <member name="M:Rms.WorkFlow.Role.GetRoleCompriseEnumerator">
+            <summary>
+            返回工作流角色组成枚举
+
+            </summary>
+            <returns>角色组成枚举</returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Role.AddNewRoleComprise(Rms.WorkFlow.RoleComprise)">
+            <summary>
+            增加流程角色组成
+            </summary>
+            <param name="RoleCompriseCase">流程角色实体</param>
+        </member>
+        <member name="M:Rms.WorkFlow.Role.GetRoleCompriseEnumerator(System.String)">
+            <summary>
+            返回流程角色枚举
+            </summary>
+            <param name="WorkFlowRoleCode">流程角色代码</param>
+            <returns>流程角色枚举</returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Role.GetRoleComprise(System.String)">
+            <summary>
+            返回流程角色组成
+            </summary>
+            <param name="WorkFlowRoleCompriseCode">流程角色组成代码</param>
+            <returns>流程角色组成</returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Role.RemoveRoleComprise(System.String)">
+            <summary>
+            移出流程角色组成
+            </summary>
+            <param name="WorkFlowRoleCompriseCode">流程角色组成代码</param>
+        </member>
+        <member name="M:Rms.WorkFlow.Role.ClearRoleComprises">
+            <summary>
+            清除角色成员
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.Role.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Role.WorkFlowRoleCode">
+            <summary>
+            流程角色代码
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Role.RoleName">
+            <summary>
+            流程角色名称
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Role.RoleType">
+            <summary>
+            角色类型
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Role.ProcedureCode">
+            <summary>
+            所属工作流代码
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Role.IsAllUser">
+            <summary>
+            是否为所有用户
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Role.Remak">
+            <summary>
+            角色备注
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.RoleComprise">
+            <summary>
+            工作流角色组成类
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.RoleComprise._WorkFlowRoleCompriseCode">
+            <summary>
+            角色组成代码
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.RoleComprise._ProcedureCode">
+            <summary>
+            流程代码
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.RoleComprise._RoleCode">
+            <summary>
+            角色组成所属角色代码
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.RoleComprise._RoleComprise">
+            <summary>
+            角色组成项
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.RoleComprise._RoleType">
+            <summary>
+            角色组成项类型
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.RoleComprise._RoleComprises">
+            <summary>
+            角色组成存储哈希表
+
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.RoleComprise.AddNewRoleComprise(Rms.WorkFlow.RoleComprise)">
+            <summary>
+            增加流程角色组成
+            </summary>
+            <param name="RoleCompriseCase">流程角色实体</param>
+        </member>
+        <member name="M:Rms.WorkFlow.RoleComprise.GetRoleCompriseEnumerator(System.String)">
+            <summary>
+            返回流程角色枚举
+            </summary>
+            <param name="WorkFlowRoleCode">流程角色代码</param>
+            <returns>流程角色枚举</returns>
+        </member>
+        <member name="M:Rms.WorkFlow.RoleComprise.GetRoleComprise(System.String)">
+            <summary>
+            返回流程角色组成
+            </summary>
+            <param name="WorkFlowRoleCompriseCode">流程角色组成代码</param>
+            <returns>流程角色组成</returns>
+        </member>
+        <member name="M:Rms.WorkFlow.RoleComprise.RemoveRoleComprise(System.String)">
+            <summary>
+            移出流程角色组成
+            </summary>
+            <param name="WorkFlowRoleCompriseCode">流程角色组成代码</param>
+        </member>
+        <member name="M:Rms.WorkFlow.RoleComprise.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.RoleComprise.WorkFlowRoleCompriseCode">
+            <summary>
+            角色组成代码
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.RoleComprise.RoleCode">
+            <summary>
+            角色组成所属角色代码
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.RoleComprise.RoleCompriseItem">
+            <summary>
+            角色组成项
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.RoleComprise.RoleType">
+            <summary>
+            角色组成项类型
+
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.RoleType">
+            <summary>
+            角色项类型
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.RoleType.Unit">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.RoleType.Station">
+            <summary>
+            岗位
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.RoleType.Porson">
+            <summary>
+            人
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.RoleType.All">
+            <summary>
+            所有
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.RoleType.Other">
+            <summary>
+            其他
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.RoleType.Int">
+            <summary>
+            数值
+
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.Router">
+            <summary>
+            路由
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Router.m_Conditions">
+            <summary>
+            条件计划
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.Router.GetCondition(System.String)">
+            <summary>
+            获取条件对象
+            </summary>
+            <param name="conditionCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Router.AddNewCondition(Rms.WorkFlow.Condition)">
+            <summary>
+            添加条件
+            </summary>
+            <param name="condition"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Router.RemoveCondition(System.String,System.Boolean)">
+            <summary>
+            移除条件
+            </summary>
+            <param name="conditionCode"></param>
+            <param name="isMarkDelete"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Router.GetConditionEnumerator">
+            <summary>
+            获取条件对象的枚举对象
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Router.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Router.IsNew">
+            <summary>
+            新对象
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Router.IsMarkDelete">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Router.RouterCode">
+            <summary>
+            路由编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Router.ProcedureCode">
+            <summary>
+            流程定义编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Router.FromTaskCode">
+            <summary>
+            来源Task编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Router.ToTaskCode">
+            <summary>
+            目标Task编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Router.FromTaskName">
+            <summary>
+            临时用,来源Task名称
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Router.ToTaskName">
+            <summary>
+            临时用,目标Task名称
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Router.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Router.ToHandle">
+            <summary>
+            暂时不用
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Router.SoftID">
+            <summary>
+            暂时编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Router.SortID">
+            <summary>
+            排序编号
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.Task">
+            <summary>
+            任务
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.Task.m_TaskActors">
+            <summary>
+            任务的候选执行者
+
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.Task.GetTaskActor(System.String)">
+            <summary>
+            执行者集合
+
+            </summary>
+            <param name="taskActorCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Task.AddNewTaskActor(Rms.WorkFlow.TaskActor)">
+            <summary>
+            添加候选执行者
+
+            </summary>
+            <param name="taskActor"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Task.RemoveTaskActor(System.String,System.Boolean)">
+            <summary>
+            移除候选执行者
+
+            </summary>
+            <param name="taskActorCode"></param>
+            <param name="isMarkDelete"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.Task.GetTaskActorEnumerator">
+            <summary>
+            获取候选执行者枚举对象
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.Task.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.IsNew">
+            <summary>
+            新对象
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.IsMarkDelete">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.TaskCode">
+            <summary>
+            Task编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.ProcedureCode">
+            <summary>
+            流程定义编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.TaskID">
+            <summary>
+            TaskID
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.TaskName">
+            <summary>
+            Task名称
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.TaskType">
+            <summary>
+            Task类型
+            	0 "一般节点";
+            	1 "开始";
+            	2 "结束";
+            	3 "并流起点";
+            	4 "并流交点";
+            	5 "会签节点";
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.TaskActorType">
+            <summary>
+            Task的特定人选标记
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.WayOfSelectPerson">
+            <summary>
+            选人方式
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.ModuleState">
+            <summary>
+            模块状态
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.IsOrderly">
+            <summary>
+            是否排序
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.CanManual">
+            <summary>
+            是否允许手工删除
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.CanEdit">
+            <summary>
+            是否能编辑
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.Copy">
+            <summary>
+            是否具有抄送功能
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.IsFinish">
+            <summary>
+            是否结束前节点
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.HasOpinion">
+            <summary>
+            是否需要填写意见
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.SortID">
+            <summary>
+            排序编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.TaskProperty">
+            <summary>
+            符合限定
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.TaskTitle">
+            <summary>
+            任务提示
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.TaskRole">
+            <summary>
+            流程角色
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.TaskMeetType">
+            <summary>
+            会签类型
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.Task.OpinionType">
+            <summary>
+            辅助控制项
+
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.TaskActor">
+            <summary>
+            任务参加者
+
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.TaskActor.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.IsNew">
+            <summary>
+            新对象
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.IsMarkDelete">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.TaskActorCode">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.TaskCode">
+            <summary>
+            Task编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.ProcedureCode">
+            <summary>
+            流程定义编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.ActorCode">
+            <summary>
+            执行者的编号(用户编号,岗位编号)
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.ActorType">
+            <summary>
+            执行者类型
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.IOrder">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.TaskActorName">
+            <summary>
+            会签时的会签ID
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.TaskActorID">
+            <summary>
+            会签时的会签名称
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.ActorProperty">
+            <summary>
+            会签时的会签属性
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.ActorNeed">
+            <summary>
+            会签时的会签必选标识
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.ActorModuleState">
+            <summary>
+            会签时的会签模块状态
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.TaskActorType">
+            <summary>
+            参与者类型
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.TaskActor.OpinionType">
+            <summary>
+            辅助控制项
+
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.WorkCase">
+            <summary>
+            流程实例
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.GetDataPackage(System.String)">
+            <summary>
+            获取数据包对象
+
+            </summary>
+            <param name="dataPackageCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.AddNewDataPackage(Rms.WorkFlow.DataPackage)">
+            <summary>
+            添加数据包
+
+            </summary>
+            <param name="dataPackage"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.RemoveDataPackage(System.String,System.Boolean)">
+            <summary>
+            移除数据包
+
+            </summary>
+            <param name="dataPackageCode"></param>
+            <param name="isMarkDelete"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.GetAct(System.String)">
+            <summary>
+            动作的集合
+
+            </summary>
+            <param name="actCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.AddNewAct(Rms.WorkFlow.Act)">
+            <summary>
+            添加新动作
+
+            </summary>
+            <param name="act"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.RemoveAct(System.String,System.Boolean)">
+            <summary>
+            移除动作
+            </summary>
+            <param name="actCode"></param>
+            <param name="isMarkDelete"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.GetOpinion(System.String)">
+            <summary>
+            获取意见对象
+            </summary>
+            <param name="opinionCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.AddNewOpinion(Rms.WorkFlow.Opinion)">
+            <summary>
+            添加新意见
+
+            </summary>
+            <param name="opinion"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.RemoveOpinion(System.String,System.Boolean)">
+            <summary>
+            移除意见
+            </summary>
+            <param name="opinionCode"></param>
+            <param name="isMarkDelete"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.GetActEnumerator">
+            <summary>
+            获取动作的枚举对象
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.GetDataPackageEnumerator">
+            <summary>
+            获取数据包的枚举对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.GetOpinionEnumerator">
+            <summary>
+            获取意见的枚举对象
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Rms.WorkFlow.WorkCase.m_CasePropertys">
+            <summary>
+            流程实例属性
+
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.GetCaseProperty(System.String)">
+            <summary>
+            获取数据包对象
+
+            </summary>
+            <param name="CasePropertyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.AddNewCaseProperty(Rms.WorkFlow.CaseProperty)">
+            <summary>
+            添加数据包
+
+            </summary>
+            <param name="CasePropertyCase"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.RemoveCaseProperty(System.String,System.Boolean)">
+            <summary>
+            移除数据包
+
+            </summary>
+            <param name="CasePropertyCode"></param>
+            <param name="isMarkDelete"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.GetCasePropertyEnumerator">
+            <summary>
+            获取数据包的枚举对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCase.#ctor">
+            <summary>
+            构造函数
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.IsNew">
+            <summary>
+            新对象
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.IsMarkDelete">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.CaseCode">
+            <summary>
+            流程实例编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.ProjectCode">
+            <summary>
+            项目编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.ProcedureCode">
+            <summary>
+            流程定义编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.ApplicationCode">
+            <summary>
+            应用表单编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.Subject">
+            <summary>
+            暂时不用
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.SourceUnitCode">
+            <summary>
+            来源单位编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.SourceUserCode">
+            <summary>
+            来源用户编号
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.CreateDate">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.Status">
+            <summary>
+            流程实例的状态
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.FinishDate">
+            <summary>
+            流程结束日期
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.Transactor">
+            <summary>
+            经办人
+
+            </summary>
+        </member>
+        <member name="P:Rms.WorkFlow.WorkCase.TransactUnit">
+            <summary>
+            经办单位（部门）
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.WorkCaseManager">
+            <summary>
+            流程实例管理
+            </summary>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.SaveSignOpinionText(Rms.WorkFlow.WorkCase,Rms.WorkFlow.Act,Rms.WorkFlow.Task,System.String,System.String)">
+            <summary>
+            保存会签时的意见
+            </summary>
+            <param name="workCase">流程实例</param>
+            <param name="act">动作</param>
+            <param name="task">当前Task</param>
+            <param name="userCode">用户编号</param>
+            <param name="opinionText">意见正文</param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.SaveOpinion(Rms.WorkFlow.Act,Rms.WorkFlow.WorkCase,System.String,System.String,Rms.WorkFlow.Task)">
+            <summary>
+            意见保存
+            </summary>
+            <param name="act">当前act</param>
+            <param name="workCase">流程实例</param>
+            <param name="opinionText">流程意见</param>
+            <param name="opinionUserCode">处理人</param>
+            <param name="currentTask">当前任务</param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.ForwardWorkCase(Rms.WorkFlow.WorkCase,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            流程向前走一步
+
+            </summary>
+            <param name="workCase">流程实例</param>
+            <param name="applicationCode">用户表单编号</param>
+            <param name="actCode">当前act的编号</param>
+            <param name="routerCode">路由编号</param>
+            <param name="userCodes">格式：  userid,taskactorid,username,taskactorName;   userid,taskactorid,username,taskactorName;   </param>
+            <param name="opinionUserCode">填写意见的用户编号</param>
+            <param name="opinionText">意见正文</param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.RetrogradeWorkCase(Rms.WorkFlow.WorkCase,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            流程向后退一步
+
+            </summary>
+            <param name="workCase">流程实例</param>
+            <param name="applicationCode">用户表单编号</param>
+            <param name="actCode">当前act的编号</param>
+            <param name="FromTaskCode">前一步任务代码</param>
+            <param name="userCodes">格式：  userid,taskactorid,username,taskactorName;   userid,taskactorid,username,taskactorName;   </param>
+            <param name="opinionUserCode">填写意见的用户编号</param>
+            <param name="opinionText">意见正文</param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.ReturnActWorkCase(Rms.WorkFlow.WorkCase,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            收回
+            </summary>
+            <param name="workCase">流程实例</param>
+            <param name="applicationCode">用户表单编号</param>
+            <param name="actCode">当前act的编号</param>
+            <param name="FromTaskCode">前一步任务代码</param>
+            <param name="userCodes">格式：  userid,taskactorid,username,taskactorName;   userid,taskactorid,username,taskactorName;   </param>
+            <param name="opinionUserCode">填写意见的用户编号</param>
+            <param name="opinionText">意见正文</param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.ForwardCopyWorkCase(Rms.WorkFlow.WorkCase,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            抄送
+
+            </summary>
+            <param name="workCase">流程实例</param>
+            <param name="applicationCode">用户表单编号</param>
+            <param name="actCode">当前act的编号</param>
+            <param name="routerCode">路由编号</param>
+            <param name="userCodes">格式：  userid,taskactorid,username,taskactorName;   userid,taskactorid,username,taskactorName;   </param>
+            <param name="opinionUserCode">填写意见的用户编号</param>
+            <param name="opinionText">意见正文</param>
+            <param name="CopyFromActCode">抄送等待标记</param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.EndWorkCase(Rms.WorkFlow.WorkCase,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            完成流程当前步
+
+            </summary>
+            <param name="workCase">流程实例</param>
+            <param name="applicationCode">用户表单编号</param>
+            <param name="actCode">当前act的编号</param>
+            <param name="routerCode">路由编号</param>
+            <param name="userCodes">格式：  userid,taskactorid,username,taskactorName;   userid,taskactorid,username,taskactorName;   </param>
+            <param name="opinionUserCode">填写意见的用户编号</param>
+            <param name="opinionText">意见正文</param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.FillNewActUser(System.String,System.String,System.String)">
+            <summary>
+            为act添加执行候选人
+            </summary>
+            <param name="actCode"></param>
+            <param name="CaseCode"></param>
+            <param name="userCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.GetActivityAct(Rms.WorkFlow.WorkCase)">
+            <summary>
+            取得该流程实例中还在活动的act
+            </summary>
+            <param name="workCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.SignWorkAct(Rms.WorkFlow.Act,System.String,System.String)">
+            <summary>
+            签收act
+            </summary>
+            <param name="act">当前act</param>
+            <param name="userCode">用户编号</param>
+            <param name="unitCode">单位编号</param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.FinishWorkCase(Rms.WorkFlow.WorkCase,Rms.WorkFlow.Act)">
+            <summary>
+            结束流程实例
+            </summary>
+            <param name="workCase">流程实例</param>
+            <param name="act">当前act</param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.StartNewWorkCase(System.String,System.String,System.String,System.String,System.String@,System.String,System.String)">
+            <summary>
+            开始一个新流程实例
+            </summary>
+            <param name="applicationCode">应用流程的单据号</param>
+            <param name="procedureCode">流程定义编号</param>
+            <param name="userCode">流程发起人</param>
+            <param name="unitCode">流程部门编号</param>
+            <param name="currentActCode">当前流程的Act编号</param>
+            <param name="Transactor">经办人</param>
+            <param name="TransactUnit">经办人部门</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.GetTaskByAct(Rms.WorkFlow.Act)">
+            <summary>
+            取某个Act的下一个Task
+            </summary>
+            <param name="act"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.GetOpinionByTaskCode(Rms.WorkFlow.WorkCase,System.String)">
+            <summary>
+            取某个Task位置上的所有意见
+
+            </summary>
+            <param name="workCase"></param>
+            <param name="taskCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.NewWorkCase">
+            <summary>
+            新建流程实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.NewAct">
+            <summary>
+            新建Act
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.NewActUser">
+            <summary>
+            新建 ActUser
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.NewDataPackage">
+            <summary>
+            新建数据包
+
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.NewOpinion">
+            <summary>
+            新建意见
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.GetWorkCase(System.String)">
+            <summary>
+            获取流程实例
+            </summary>
+            <param name="CaseCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.SaveWorkCase(Rms.WorkFlow.WorkCase)">
+            <summary>
+            调用接口，保存流程实例
+
+            </summary>
+            <param name="workCase"></param>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.SaveWorkCaseData(Rms.WorkFlow.WorkCase)">
+            <summary>
+            保存流程实例的数据
+
+            </summary>
+            <param name="workCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.LoadWorkCaseData(System.String)">
+            <summary>
+            载入流程实例
+            </summary>
+            <param name="CaseCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.WorkFlow.WorkCaseManager.WorkCaseDelete(System.String)">
+            <summary>
+            流程实例删除
+            </summary>
+            <param name="CaseCode">流程实例代码</param>
+        </member>
+        <member name="T:Rms.WorkFlow.WorkCaseStatus">
+            <summary>
+            流程状态
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.WorkCaseStatus.UnKnown">
+            <summary>
+            未知状态
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.WorkCaseStatus.Begin">
+            <summary>
+            开始
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.WorkCaseStatus.End">
+            <summary>
+            结束
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.WorkCaseStatus.Pause">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.WorkCaseStatus.Auditing">
+            <summary>
+            审核中
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.WorkCaseStatus.SignTogether">
+            <summary>
+            会签
+            </summary>
+        </member>
+        <member name="T:Rms.WorkFlow.ActStatus">
+            <summary>
+            Act 的状态
+
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.ActStatus.UnKnown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.ActStatus.Begin">
+            <summary>
+            开始，等待签收
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.ActStatus.End">
+            <summary>
+            结束
+            </summary>
+        </member>
+        <member name="F:Rms.WorkFlow.ActStatus.DealWith">
+            <summary>
+            处理中
+
+            </summary>
+        </member>
+    </members>
+</doc>

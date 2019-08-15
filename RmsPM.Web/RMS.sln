@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "G:\...\RmsPM.Web\", ".", "{C3656859-31CF-4DDD-BAB9-EE51A52E8E14}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/RmsPM.Web"
+		Debug.AspNetCompiler.PhysicalPath = "..\RmsPM.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\RmsPM.Web\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/RmsPM.Web"
+		Release.AspNetCompiler.PhysicalPath = "..\RmsPM.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\RmsPM.Web\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1189"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3656859-31CF-4DDD-BAB9-EE51A52E8E14}.Debug|.NET.ActiveCfg = Debug|.NET
+		{C3656859-31CF-4DDD-BAB9-EE51A52E8E14}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

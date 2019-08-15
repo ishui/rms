@@ -1,0 +1,91 @@
+.Over_Mac
+{
+	border: 0px;
+	background-image: url(Img/over.gif);
+	background-repeat: no-repeat;
+	_background-attachment: fixed;
+	height: 28px;
+	width: 179px;
+	color: #262626;
+	font-family: Arial, Verdana, Tahoma, Sans-Serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 6px;
+	padding-left: 6px;
+	background-color: transparent;
+	vertical-align: middle;
+}
+
+.Focus_Mac
+{
+	border: 0px;
+	background-image: url(Img/focus.gif);
+	background-repeat: no-repeat;
+	_background-attachment: fixed;
+	height: 28px;
+	width: 179px;
+	color: #262626;
+	font-family: Arial, Verdana, Tahoma, Sans-Serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 6px;
+	padding-left: 6px;
+	background-color: transparent;
+	vertical-align: middle;
+}
+
+.Default_Mac
+{	
+	
+	border: 0px;
+	background-image: url(Img/default.gif);
+	background-repeat: no-repeat;
+	_background-attachment: fixed;
+	height: 28px;
+	width: 179px;
+	color: #262626;
+	font-family: Arial, Verdana, Tahoma, Sans-Serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 6px;
+	padding-left: 6px;
+	background-color: transparent;
+	vertical-align: middle;
+}
+
+.Error_Mac
+{
+	border: 0px;
+	background-image: url(Img/error.gif);
+	background-repeat: no-repeat;
+	_background-attachment: fixed;
+	height: 28px;
+	width: 179px;
+	color: red;
+	font-family: Arial, Verdana, Tahoma, Sans-Serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 6px;
+	padding-left: 6px;
+	background-color: transparent;
+	vertical-align: middle;
+}
+.Hint_Mac
+{
+	background-image: url(Img/hintBg.gif);
+	background-repeat: no-repeat;
+	height: 25px;	
+	width: 179px;
+	background-color: white;
+	padding-top: 8px;
+	_background-attachment: fixed;
+	margin-top:-5px;
+}
+
+.Hint_Mac a, Hint_Mac a:visited, .Hint_Mac a:hover
+{
+	color: #000;
+	text-decoration: none;
+	font-size: 12px;
+	margin:2px;
+}

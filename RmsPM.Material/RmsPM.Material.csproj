@@ -1,0 +1,197 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2F7FF43C-3629-4C43-9D0E-33E5D7FC7281}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>RmsPM.Material</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="RmsPM.DAL">
+      <Name>RmsPM.DAL</Name>
+      <HintPath>..\RmsPM.DAL\bin\Debug\RmsPM.DAL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BFL\FunctionRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BFL\MaterialBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BFL\MaterialInBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BFL\MaterialInventoryBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BFL\MaterialOutBFL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\MaterialBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\MaterialImport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\MaterialInBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\MaterialInDtlBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\MaterialInventoryBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\MaterialInventoryIOBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\MaterialOutBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\BLL\MaterialOutDtlBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\MaterialDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\MaterialInDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\MaterialInDtlDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\MaterialOutDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\MaterialOutDtlDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\SqlDataProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\V_MaterialInventoryDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\DAL\V_MaterialInventoryIODAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\MaterialInDtlModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\MaterialInDtlQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\MaterialInModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\MaterialInQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\MaterialModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\MaterialOutDtlModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\MaterialOutDtlQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\MaterialOutModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\MaterialOutQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\MaterialQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\QueryBaseModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\V_MaterialInventoryIOModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\V_MaterialInventoryIOQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\V_MaterialInventoryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RmsPM\MODEL\V_MaterialInventoryQueryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RmsPM.BLL\RmsPM.BLL.csproj">
+      <Project>{76720118-3378-42AE-9131-CDBBF8B3CFC2}</Project>
+      <Name>RmsPM.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

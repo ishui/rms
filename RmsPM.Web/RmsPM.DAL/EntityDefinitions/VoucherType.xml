@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Entity>
+	<Name>VoucherType</Name>
+	<Type>Single</Type>
+	<Table>
+		<Name>VoucherType</Name>
+		<Column>
+			<Name>Code</Name>
+			<DataType>System.String</DataType>
+			<IsKey>true</IsKey>
+			<IsAllowNull>false</IsAllowNull>
+			<ColumnSize>2</ColumnSize>
+		</Column>
+		<Column>
+			<Name>Name</Name>
+			<DataType>System.String</DataType>
+			<IsKey>false</IsKey>
+			<IsAllowNull>true</IsAllowNull>
+			<ColumnSize>20</ColumnSize>
+		</Column>
+		<Sql>
+			<Name>Select</Name>
+			<String> select  Code, Name from VoucherType where  Code=@Code</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@Code</Name>
+				<Column>Code</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>SelectAll</Name>
+			<String> select  Code, Name from VoucherType</String>
+			<CommandType>Text</CommandType>
+		</Sql>
+		<Sql>
+			<Name>Insert</Name>
+			<String> Insert into VoucherType (  Code, Name ) values (  @Code, @Name )</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@Code</Name>
+				<Column>Code</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@Name</Name>
+				<Column>Name</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Update</Name>
+			<String> Update VoucherType set Code=@Code, Name=@Name where  Code=@Code</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@Code</Name>
+				<Column>Code</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+			<Param>
+				<Name>@Name</Name>
+				<Column>Name</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+		<Sql>
+			<Name>Delete</Name>
+			<String> Delete from VoucherType  where  Code=@Code</String>
+			<CommandType>Text</CommandType>
+			<Param>
+				<Name>@Code</Name>
+				<Column>Code</Column>
+				<SqlDbType>VarChar</SqlDbType>
+			</Param>
+		</Sql>
+	</Table>
+</Entity>

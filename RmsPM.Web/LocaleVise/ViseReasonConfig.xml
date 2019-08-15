@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Reason>
+  <Type Name ="设计变更" Id="01">
+    <Item value="0101" text="设计错漏"></Item>
+    <Item value="0102" text="设计优化"></Item>
+    <Item value="0103" text="材料设备"></Item>
+    <Item value="0104" text="客户需求"></Item>
+    <Item value="0105" text="施工方案要求"></Item>
+    <Item value="0106" text="其它"></Item>
+  </Type>
+  <Type Name ="现场签证" Id="02">
+    <Item value="0201" text="设计变更引起"></Item>
+    <Item value="0202" text="配合营销"></Item>
+    <Item value="0203" text="施工需要"></Item>
+    <Item value="0204" text="清单漏项"></Item>
+    <Item value="0205" text="施工方要求"></Item>
+    <Item value="0206" text="其它"></Item>
+  </Type>
+  <Type Name ="合同调整" Id="03">
+    <Item value="0301" text="材料设备供应量调整"></Item>
+    <Item value="0302" text="材料设备价格调整"></Item>
+    <Item value="0303" text="合同项目调整"></Item>
+    <Item value="0304" text="其它"></Item>
+  </Type>
+</Reason>

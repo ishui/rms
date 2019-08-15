@@ -1,0 +1,564 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <WorkFlowProcedure>
+    <ProcedureCode>100003</ProcedureCode>
+    <ProcedureName>合同审核</ProcedureName>
+    <Description>合同审核</Description>
+    <ApplicationPath>../WorkFlowPage/SM_ContractAuditing.aspx</ApplicationPath>
+    <ApplicationInfoPath>../WorkFlowPage/SM_ContractAuditing.aspx</ApplicationInfoPath>
+    <Type>0</Type>
+    <Remark />
+    <VersionNumber>0.00</VersionNumber>
+    <ProjectCode>100004</ProjectCode>
+    <CreateUser>0</CreateUser>
+    <CreateDate>2006-12-14T14:25:54.25+08:00</CreateDate>
+    <ModifyUser>100031</ModifyUser>
+    <ModifyDate>2008-03-26T15:21:26.953+08:00</ModifyDate>
+    <Activity>1</Activity>
+    <VersionDescription />
+    <ProcedureRemark />
+  </WorkFlowProcedure>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100001</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <ProcedurePropertyName>主题</ProcedurePropertyName>
+    <ProcedurePropertyType>Other</ProcedurePropertyType>
+    <Remak>A01</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100002</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <ProcedurePropertyName>申请人</ProcedurePropertyName>
+    <ProcedurePropertyType>Porson</ProcedurePropertyType>
+    <Remak>A02</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100003</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <ProcedurePropertyName>项目代码</ProcedurePropertyName>
+    <ProcedurePropertyType>Other</ProcedurePropertyType>
+    <Remak>A03</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100004</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <ProcedurePropertyName>项目部门</ProcedurePropertyName>
+    <ProcedurePropertyType>Unit</ProcedurePropertyType>
+    <Remak>A04</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100005</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <ProcedurePropertyName>业务类别</ProcedurePropertyName>
+    <ProcedurePropertyType>Other</ProcedurePropertyType>
+    <Remak>A05</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100006</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <ProcedurePropertyName>业务部门</ProcedurePropertyName>
+    <ProcedurePropertyType>Unit</ProcedurePropertyType>
+    <Remak>A06</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowProcedureProperty>
+    <WorkFlowProcedurePropertyCode>100007</WorkFlowProcedurePropertyCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <ProcedurePropertyName>表单部门</ProcedurePropertyName>
+    <ProcedurePropertyType>Other</ProcedurePropertyType>
+    <Remak>C01</Remak>
+  </WorkFlowProcedureProperty>
+  <WorkFlowRouter>
+    <RouterCode>100001</RouterCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <FromTaskCode>100001</FromTaskCode>
+    <ToTaskCode>100002</ToTaskCode>
+    <Description>开始</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>0</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100003</RouterCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <FromTaskCode>100002</FromTaskCode>
+    <ToTaskCode>100003</ToTaskCode>
+    <Description>相关部门会签</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>1</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100004</RouterCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <FromTaskCode>100003</FromTaskCode>
+    <ToTaskCode>100004</ToTaskCode>
+    <Description>项目总监审核</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>2</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100005</RouterCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <FromTaskCode>100004</FromTaskCode>
+    <ToTaskCode>100005</ToTaskCode>
+    <Description>总部合约总监</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>3</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100006</RouterCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <FromTaskCode>100005</FromTaskCode>
+    <ToTaskCode>100006</ToTaskCode>
+    <Description>总部财务总监</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>4</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100007</RouterCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <FromTaskCode>100006</FromTaskCode>
+    <ToTaskCode>100007</ToTaskCode>
+    <Description>董事会一</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>5</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100008</RouterCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <FromTaskCode>100007</FromTaskCode>
+    <ToTaskCode>100008</ToTaskCode>
+    <Description>董事会二</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>6</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100148</RouterCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <FromTaskCode>100008</FromTaskCode>
+    <ToTaskCode>100170</ToTaskCode>
+    <Description>董事会三</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>7</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100149</RouterCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <FromTaskCode>100170</FromTaskCode>
+    <ToTaskCode>100171</ToTaskCode>
+    <Description>董事会四</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>8</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100150</RouterCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <FromTaskCode>100171</FromTaskCode>
+    <ToTaskCode>100172</ToTaskCode>
+    <Description>通知申请人</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>9</SortID>
+  </WorkFlowRouter>
+  <WorkFlowRouter>
+    <RouterCode>100151</RouterCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <FromTaskCode>100172</FromTaskCode>
+    <ToTaskCode>100173</ToTaskCode>
+    <Description>结束</Description>
+    <ToHandle>0</ToHandle>
+    <SortID>10</SortID>
+  </WorkFlowRouter>
+  <WorkFlowCondition>
+    <ConditionCode>100002</ConditionCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <RouterCode>100003</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100003</ConditionCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <RouterCode>100004</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100004</ConditionCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <RouterCode>100005</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100005</ConditionCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <RouterCode>100006</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100006</ConditionCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <RouterCode>100007</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100007</ConditionCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <RouterCode>100008</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100008</ConditionCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <RouterCode>100001</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100147</ConditionCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <RouterCode>100148</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100148</ConditionCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <RouterCode>100149</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100149</ConditionCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <RouterCode>100150</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowCondition>
+    <ConditionCode>100150</ConditionCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <RouterCode>100151</RouterCode>
+    <ConditionType>0</ConditionType>
+    <Description />
+  </WorkFlowCondition>
+  <WorkFlowTask>
+    <TaskCode>100001</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <TaskID>00</TaskID>
+    <TaskName>开始</TaskName>
+    <Description />
+    <TaskType>1</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState />
+    <TaskProperty>100002</TaskProperty>
+    <TaskRole>R100008</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType />
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100002</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <TaskID>01</TaskID>
+    <TaskName>合同提交</TaskName>
+    <Description />
+    <TaskType>0</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState>申请表,3;</ModuleState>
+    <TaskProperty>100002</TaskProperty>
+    <TaskRole>R100008</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType>申请表</OpinionType>
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100003</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <TaskID>02</TaskID>
+    <TaskName>送相关部门会签</TaskName>
+    <Description />
+    <TaskType>5</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState />
+    <TaskProperty />
+    <TaskRole>R100011</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType />
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100004</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <TaskID>03</TaskID>
+    <TaskName>送项目总监</TaskName>
+    <Description />
+    <TaskType>0</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState>项目总监,3|3;</ModuleState>
+    <TaskProperty />
+    <TaskRole>R100001</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType>合约总监</OpinionType>
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100005</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <TaskID>04</TaskID>
+    <TaskName>送总部合约总监</TaskName>
+    <Description />
+    <TaskType>0</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState>合约总监,3|3;</ModuleState>
+    <TaskProperty />
+    <TaskRole>R100005</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType>财务总监</OpinionType>
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100006</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <TaskID>05</TaskID>
+    <TaskName>送总部财务总监</TaskName>
+    <Description />
+    <TaskType>0</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState>财务总监,3|3;</ModuleState>
+    <TaskProperty />
+    <TaskRole>R100006</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType>总经理</OpinionType>
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100007</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <TaskID>06</TaskID>
+    <TaskName>送董事会审批一</TaskName>
+    <Description />
+    <TaskType>0</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState>工程董事,3|3;</ModuleState>
+    <TaskProperty />
+    <TaskRole>R100022</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType />
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100008</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <TaskID>07</TaskID>
+    <TaskName>送董事会审批二</TaskName>
+    <Description />
+    <TaskType>0</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState>合约董事,3|3;</ModuleState>
+    <TaskProperty />
+    <TaskRole>R100023</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType />
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100170</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <TaskID>08</TaskID>
+    <TaskName>送董事会审批三</TaskName>
+    <Description />
+    <TaskType>0</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState>财务董事,3|3;</ModuleState>
+    <TaskProperty />
+    <TaskRole>R100024</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType />
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100171</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <TaskID>09</TaskID>
+    <TaskName>送董事会审批四</TaskName>
+    <Description />
+    <TaskType>0</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState>董事长,3|3;</ModuleState>
+    <TaskProperty />
+    <TaskRole>R100025</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType />
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100172</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <TaskID>10</TaskID>
+    <TaskName>通知申请人</TaskName>
+    <Description />
+    <TaskType>0</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState />
+    <TaskProperty>100002</TaskProperty>
+    <TaskRole>R100008</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType />
+  </WorkFlowTask>
+  <WorkFlowTask>
+    <TaskCode>100173</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <TaskID>11</TaskID>
+    <TaskName>结束</TaskName>
+    <Description />
+    <TaskType>2</TaskType>
+    <TaskActorType />
+    <WayOfSelectPerson>SinglePerson</WayOfSelectPerson>
+    <IsOrderly>0</IsOrderly>
+    <CanManual>0</CanManual>
+    <CanEdit>0</CanEdit>
+    <IsFinish>0</IsFinish>
+    <HasOpinion>0</HasOpinion>
+    <SortID>0</SortID>
+    <Copy>0</Copy>
+    <ModuleState />
+    <TaskProperty>100002</TaskProperty>
+    <TaskRole>R100008</TaskRole>
+    <TaskTitle />
+    <TaskMeetType>Unit</TaskMeetType>
+    <OpinionType />
+  </WorkFlowTask>
+  <WorkFlowTaskActor>
+    <TaskActorCode>100018</TaskActorCode>
+    <TaskCode>100003</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <ActorCode>R100011</ActorCode>
+    <ActorType>0</ActorType>
+    <IOrder>1</IOrder>
+    <TaskActorName>0</TaskActorName>
+    <TaskActorID>0</TaskActorID>
+    <ActorProperty>100004</ActorProperty>
+    <ActorNeed>0</ActorNeed>
+    <ActorModuleState>建筑设计部,3;工程部,4;合约部,4;</ActorModuleState>
+    <TaskActorType>Unit</TaskActorType>
+  </WorkFlowTaskActor>
+  <WorkFlowTaskActor>
+    <TaskActorCode>100019</TaskActorCode>
+    <TaskCode>100003</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <ActorCode>R100010</ActorCode>
+    <ActorType>0</ActorType>
+    <IOrder>1</IOrder>
+    <TaskActorName>0</TaskActorName>
+    <TaskActorID>0</TaskActorID>
+    <ActorProperty>100004</ActorProperty>
+    <ActorNeed>0</ActorNeed>
+    <ActorModuleState>建筑设计部,4;工程部,3;合约部,4;</ActorModuleState>
+    <TaskActorType>Unit</TaskActorType>
+  </WorkFlowTaskActor>
+  <WorkFlowTaskActor>
+    <TaskActorCode>100020</TaskActorCode>
+    <TaskCode>100003</TaskCode>
+    <ProcedureCode>100003</ProcedureCode>
+    <ActorCode>R100009</ActorCode>
+    <ActorType>0</ActorType>
+    <IOrder>1</IOrder>
+    <TaskActorName>0</TaskActorName>
+    <TaskActorID>0</TaskActorID>
+    <ActorProperty>100004</ActorProperty>
+    <ActorNeed>0</ActorNeed>
+    <ActorModuleState>建筑设计部,4;工程部,4;合约部,3;</ActorModuleState>
+    <TaskActorType>Unit</TaskActorType>
+  </WorkFlowTaskActor>
+</NewDataSet>

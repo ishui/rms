@@ -1,0 +1,208 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E3710C81-98CB-4C5C-849E-836DE7990949}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>Rms.ORMap</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.Xml</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\AbstractClassBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\AbstractDBCommon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\AbstractEntityDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\AbstractQueryStringBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\ApplicationConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\BlankType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\ClassBuilderFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\ClassBuilderManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\DBCommonBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\DBConnectionType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\EntityData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\EntityDataManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\ErrorClassPropertyException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\ErrorParamValueException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\FormatStringSegment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\FormatStringSegmentType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\GUIDGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\GUIDKeyStringBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\IAppConfigSetter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\IClassBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\IDBCommon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\IEntityDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\IKeyStringBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\IQueryStringBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\Log.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\QueryAgent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\QueryOrder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\QureyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\SingleEntityDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\SingleTableClassBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\SqlClientDBCommon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\SqlClientQueryAgent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\SqlManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\SqlOperatorType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\SqlStruct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\StandardEntityDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\StandardQueryStringBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\StandardStrategyStringBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\StandardTableClassBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\Strategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\StrategyType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\UserDefinedFormatKeyStringBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rms\ORMap\XmlDefineFileManage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Rms.ORMap.EntityData.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
